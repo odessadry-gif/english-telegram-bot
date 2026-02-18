@@ -3,7 +3,7 @@ import random
 import requests
 
 TOKEN = os.getenv("BOT_TOKEN")
-CHAT_ID = "@english_every_day"  # твой канал
+CHAT_ID = -1003674761753  # твой канал
 
 def send_quiz(question: str, options: list[str], correct_id: int):
     url = f"https://api.telegram.org/bot{TOKEN}/sendPoll"
