@@ -40,16 +40,15 @@ def generate_quiz():
     {
       "level": "A1 or A2",
       "category": "Grammar or Vocabulary",
-      "question": "sentence with ___ OR Ukrainian word",
+      "question": "ONLY the sentence with ___ OR ONLY one Ukrainian word",
       "options": ["...", "...", "..."],
       "correct": 0
     }
 
-    If it's Grammar, use format:
-    Fill the gap:
-    She ___ coffee in the morning.
-
-    If it's Vocabulary, use a Ukrainian word only.
+    IMPORTANT:
+    - If Grammar → return only the sentence with ___ (no extra text).
+    - If Vocabulary → return only ONE Ukrainian word.
+    - Do NOT include 'Fill the gap' or 'Translate' in the question.
     """
 
     response = client.responses.create(
@@ -71,6 +70,7 @@ Level {data['level']} · {data['category']}
 {task_text}"""
 
     return formatted_question, data["options"], data["correct"]
+
 
 
 def main():
