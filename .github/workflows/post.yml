@@ -3,23 +3,25 @@ name: Post English Quiz
 on:
   schedule:
     - cron: "0 */2 * * *"   # каждые 2 часа
-  workflow_dispatch:        # кнопка "Run workflow" вручную
+  workflow_dispatch:
 
 jobs:
   post:
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v4
 
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: "3.x"
+          python-version: '3.11'
 
       - name: Install deps
-        run: pip install requests
+        run: pip install requests openai
 
       - name: Run bot
         env:
           BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         run: python bot.py
