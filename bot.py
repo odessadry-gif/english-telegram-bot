@@ -13,7 +13,7 @@ def send_quiz(question: str, options: list[str], correct_id: int):
         "options": options,
         "type": "quiz",
         "correct_option_id": correct_id,
-        "is_anonymous": False
+        "is_anonymous": True
     }
     r = requests.post(url, json=payload, timeout=20)
     if not r.ok:
