@@ -34,15 +34,22 @@ def send_quiz(question: str, options: list[str], correct_id: int):
 
 def generate_quiz():
     prompt = """
-    Create one A1/A2 English quiz question.
-    Format strictly as JSON:
+    Create one A1/A2 English quiz.
+    Return strictly JSON in this format:
+
     {
-      "question": "...",
+      "level": "A1 or A2",
+      "category": "Grammar or Vocabulary",
+      "question": "sentence with ___ OR Ukrainian word",
       "options": ["...", "...", "..."],
       "correct": 0
     }
-    Only grammar or basic vocabulary.
-    3 options.
+
+    If it's Grammar, use format:
+    Fill the gap:
+    She ___ coffee in the morning.
+
+    If it's Vocabulary, use a Ukrainian word only.
     """
 
     response = client.responses.create(
@@ -51,10 +58,19 @@ def generate_quiz():
     )
 
     text = response.output_text.strip()
-
     data = json.loads(text)
 
-    return data["question"], data["options"], data["correct"]
+    if data["category"] == "Grammar":
+        task_text = f"Fill the gap:\n{data['question']}"
+    else:
+        task_text = f"Translate:\n{data['question']}"
+
+    formatted_question = f"""💬 DAILY ENGLISH
+Level {data['level']} · {data['category']}
+
+{task_text}"""
+
+    return formatted_question, data["options"], data["correct"]
 
 
 def main():
