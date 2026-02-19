@@ -3,25 +3,40 @@ import json
 import time
 import re
 import hashlib
+import random
 import requests
 from openai import OpenAI
 
+# =========================
+# ENV
+# =========================
 TOKEN = os.getenv("BOT_TOKEN")
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+
+# Можно оставить твой дефолт, но лучше вынести в Secrets/Env позже
 CHAT_ID = os.getenv("CHAT_ID", "-1003674761753")
 
+# =========================
+# SETTINGS
+# =========================
 HISTORY_FILE = "history.json"
-MAX_HISTORY = 800
-MAX_GEN_TRIES = 10
+MAX_HISTORY = 1200
+MAX_GEN_TRIES = 12
 
-# 4 формата в ротации
-KIND_CYCLE = ["grammar_gap", "ua_en", "guess_word", "emoji_quiz"]
+# 3 формата (emoji пока выключили)
+KIND_CYCLE = ["grammar_gap", "ua_en", "guess_word"]
+
+# Уровни: больше A2/B1
+LEVEL_POOL = ["A2", "A2", "A2", "B1", "B1"]
 
 client = OpenAI(api_key=OPENAI_API_KEY)
 
 
+# =========================
+# HELPERS
+# =========================
 def _norm(s: str) -> str:
-    s = str(s).strip().lower()
+    s = (s or "").strip().lower()
     s = re.sub(r"\s+", " ", s)
     return s
 
@@ -43,22 +58,21 @@ def load_history() -> list[dict]:
         with open(HISTORY_FILE, "r", encoding="utf-8") as f:
             data = json.load(f)
 
+        # старый формат: список строк
+        if isinstance(data, list) and data and isinstance(data[0], str):
+            return [
+                {
+                    "ts": 0,
+                    "kind": "legacy",
+                    "fp": hashlib.sha256(_norm(x).encode("utf-8")).hexdigest(),
+                    "core": x,
+                }
+                for x in data
+            ]
+
+        # новый формат: список dict
         if isinstance(data, list):
-            # поддержка старого формата: список строк
-            if data and isinstance(data[0], str):
-                return [
-                    {
-                        "ts": 0,
-                        "kind": "legacy",
-                        "fp": hashlib.sha256(_norm(x).encode("utf-8")).hexdigest(),
-                        "core": x,
-                    }
-                    for x in data
-                ]
-
-            # новый формат: список dict
             return [x for x in data if isinstance(x, dict)]
-
         return []
     except Exception:
         return []
@@ -85,14 +99,24 @@ def next_kind(history: list[dict]) -> str:
     return KIND_CYCLE[(idx + 1) % len(KIND_CYCLE)]
 
 
-def send_quiz(question: str, options: list[str], correct_id: int, explanation: str):
+def extract_json(text: str) -> dict:
+    text = (text or "").strip()
+    m = re.search(r"\{.*\}", text, re.DOTALL)
+    if not m:
+        raise ValueError("No JSON found in model output")
+    return json.loads(m.group(0))
+
+
+# =========================
+# TELEGRAM
+# =========================
+def send_poll(question: str, options: list[str], correct_id: int) -> int:
+    """
+    Возвращает message_id опубликованного poll.
+    """
     question = (question or "").strip()
     if len(question) > 280:
         question = question[:277] + "..."
-
-    explanation = (explanation or "").strip()
-    if len(explanation) > 200:
-        explanation = explanation[:200]
 
     url = f"https://api.telegram.org/bot{TOKEN}/sendPoll"
     payload = {
@@ -101,106 +125,125 @@ def send_quiz(question: str, options: list[str], correct_id: int, explanation: s
         "options": options,
         "type": "quiz",
         "correct_option_id": int(correct_id),
-        "is_anonymous": True,   # обязательно для каналов
-        "explanation": explanation,
+        "is_anonymous": True,  # для каналов обязательно
+        "allows_multiple_answers": False,
     }
 
     r = requests.post(url, json=payload, timeout=30)
     if not r.ok:
-        raise RuntimeError(f"Telegram error: {r.status_code} {r.text}")
+        raise RuntimeError(f"Telegram sendPoll error: {r.status_code} {r.text}")
+
+    data = r.json()
+    return int(data["result"]["message_id"])
 
 
-def extract_json(text: str) -> dict:
+def send_explanation(text: str, reply_to_message_id: int | None = None) -> None:
+    """
+    Отправляет короткое explanation отдельным сообщением (можно “ответом” на poll).
+    """
     text = (text or "").strip()
-    m = re.search(r"\{.*\}", text, re.DOTALL)
-    if not m:
-        raise ValueError("No JSON found")
-    return json.loads(m.group(0))
+    if not text:
+        return
+
+    url = f"https://api.telegram.org/bot{TOKEN}/sendMessage"
+    payload = {
+        "chat_id": CHAT_ID,
+        "text": text,
+        "disable_web_page_preview": True,
+    }
+    if reply_to_message_id:
+        payload["reply_to_message_id"] = int(reply_to_message_id)
+
+    r = requests.post(url, json=payload, timeout=30)
+    if not r.ok:
+        raise RuntimeError(f"Telegram sendMessage error: {r.status_code} {r.text}")
 
 
-def prompt_for(kind: str) -> str:
+# =========================
+# PROMPTS
+# =========================
+def prompt_for(kind: str, level: str) -> str:
+    # Мы заставляем модель:
+    # - делать A2/B1
+    # - давать explanation
+    # - миксовать времена/структуры
+    # - не делать одинаковые "He ___ to school every day" постоянно
     return f"""
-Create ONE Telegram quiz for English learners (A1/A2). Return STRICT JSON ONLY:
-
+Create ONE Telegram quiz for English learners. Return STRICT JSON ONLY (no markdown, no extra text):
 {{
-  "level": "A1" or "A2",
+  "level": "{level}",
   "kind": "{kind}",
-  "topic": "Grammar" or "Vocabulary" or "Riddle" or "Emoji",
+  "topic": "Grammar" or "Vocabulary" or "Riddle",
   "core": "MAIN content without extra labels",
   "question": "FINAL question text (can include line breaks)",
   "options": ["A", "B", "C"],
   "correct": 0,
-  "explanation": "Short explanation in simple English (1–2 sentences). No markdown."
+  "explanation": "1–2 short lines explaining why the correct answer is correct"
 }}
 
-Rules for each kind:
+Brand style (keep it):
+💬 DAILY ENGLISH
+Level {level} · <topic>
 
-1) kind=grammar_gap:
-- core: ONLY sentence with exactly one ___
-- question must be formatted like:
+Rules by kind:
+
+1) kind=grammar_gap
+- Make a sentence with exactly one ___ gap
+- Focus on variety of tenses/structures (A2/B1):
+  Present Simple/Continuous, Past Simple, Present Perfect (basic), Future (will/going to),
+  modals (can/should/must), comparatives, prepositions, basic conditionals (if + will)
+- Avoid cliché sentences like “He ___ to school every day.”
+- question format EXACT:
   💬 DAILY ENGLISH
-  Level <A1/A2> · Grammar
+  Level {level} · Grammar
 
   Fill the gap:
-  <core>
+  <sentence with ___>
 
-2) kind=ua_en:
-- core: ONLY one Ukrainian word (or short phrase, max 2 words)
-- options: 3 English translations (one correct)
-- question format:
+- Options: 3 variants, only 1 correct, realistic distractors
+
+2) kind=ua_en
+- core: ONE Ukrainian word or short phrase (1–3 words max)
+- options: 3 English translations (one correct), A2/B1 vocabulary (common everyday topics)
+- question format EXACT:
   💬 DAILY ENGLISH
-  Level <A1/A2> · Vocabulary
+  Level {level} · Vocabulary
 
   🇺🇦 → 🇬🇧
-  <core>
+  <ukrainian word/phrase>
 
-3) kind=guess_word:
-- core: the correct English word (one word)
-- question contains a short A1/A2 riddle (2–3 short lines), then:
-  What is it?
+3) kind=guess_word
+- core: the correct English word (one word preferred)
+- question: 2–3 short riddle lines (A2/B1) + "What is it?"
 - options: 3 words, one correct (=core)
-- question format:
+- question format EXACT:
   💬 DAILY ENGLISH
-  Level <A1/A2> · Riddle
+  Level {level} · Riddle
 
   <riddle lines>
-  What is it?
-
-4) kind=emoji_quiz:
-- core: the correct English word/phrase (1–2 words max)
-- question contains ONLY emojis line + "What is it?"
-- options: 3 answers, one correct (=core)
-- question format:
-  💬 DAILY ENGLISH
-  Level <A1/A2> · Emoji
-
-  <emoji line>
   What is it?
 
 Global rules:
 - Exactly 3 options
 - correct is 0/1/2
-- Keep it short and modern
-- Vary grammar structures and sentence templates
-- Use different tenses over time:
-  Present Simple, Present Continuous, Past Simple,
-  Future (will / going to),
-  basic conditionals, prepositions, comparatives
-- Avoid repeating the same tense too often
-- Do not generate very similar sentence patterns
-- Return strict JSON only. No extra text.
+- Keep question short, clean, “premium”
+- explanation must NOT repeat the whole rulebook; just the key reason
+- Return strict JSON only
 """.strip()
 
 
-def generate_one(kind: str) -> dict:
+def generate_one(kind: str, level: str) -> dict:
     resp = client.responses.create(
         model="gpt-5-mini",
-        input=prompt_for(kind),
+        input=prompt_for(kind, level),
     )
     raw = (resp.output_text or "").strip()
     return extract_json(raw)
 
 
+# =========================
+# MAIN LOGIC
+# =========================
 def main():
     if not TOKEN:
         raise RuntimeError("BOT_TOKEN missing")
@@ -211,37 +254,45 @@ def main():
     seen = {h.get("fp") for h in history if h.get("fp")}
 
     kind = next_kind(history)
+    level = random.choice(LEVEL_POOL)
+
     last_err = None
 
     for _ in range(MAX_GEN_TRIES):
         try:
-            data = generate_one(kind)
+            data = generate_one(kind, level)
 
-            level = str(data.get("level", "A1")).strip().upper()
-            topic = str(data.get("topic", "")).strip()
-            question = str(data.get("question", "")).strip()
+            # validate
+            question = str(data["question"]).strip()
+            options = data["options"]
+            correct = int(data["correct"])
+            explanation = str(data.get("explanation", "")).strip()
 
-            options = data.get("options")
             if not isinstance(options, list) or len(options) != 3:
                 raise ValueError("options must be list of 3")
             options = [str(x).strip() for x in options]
-
-            correct = int(data.get("correct", 0))
             if correct not in (0, 1, 2):
                 raise ValueError("correct must be 0/1/2")
 
-            explanation = str(data.get("explanation", "")).strip()
-            if not explanation:
-                explanation = "Quick tip: check the tense and the subject."
-
             core = str(data.get("core", question)).strip()
-            fp = _fp(kind, core, options)
+            topic = str(data.get("topic", "")).strip()
 
+            fp = _fp(kind, core, options)
             if fp in seen:
+                # повтор — генерим заново
                 continue
 
-            send_quiz(question, options, correct, explanation)
+            # 1) отправляем quiz
+            poll_msg_id = send_poll(question, options, correct)
 
+            # 2) отправляем explanation (reply к poll)
+            if explanation:
+                # компактный “премиум” вид
+                # можно легко поменять позже
+                exp_text = f"✅ Answer: {options[correct]}\n📝 {explanation}"
+                send_explanation(exp_text, reply_to_message_id=poll_msg_id)
+
+            # 3) пишем в историю
             history.append(
                 {
                     "ts": int(time.time()),
@@ -250,7 +301,6 @@ def main():
                     "topic": topic,
                     "core": core,
                     "fp": fp,
-                    "explanation": explanation,
                 }
             )
             save_history(history)
@@ -261,7 +311,7 @@ def main():
             continue
 
     raise RuntimeError(
-        f"Failed to generate unique quiz for kind={kind}. Last error: {last_err}"
+        f"Failed to generate unique quiz for kind={kind}, level={level}. Last error: {last_err}"
     )
 
 
