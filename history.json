@@ -1,11 +1,64 @@
 [
-  "they ___ to school every day.",
-  "💬 DAILY ENGLISH\nLevel A1 · Grammar\n\nFill the gap: She ___ coffee in the morning.",
-  "💬 DAILY ENGLISH\nLevel A1 · Grammar\n\nFill the gap: He ___ breakfast at 7 am.",
-  "💬 DAILY ENGLISH\nLevel A1 · Grammar\n\nThey ___ to school every day.",
-  "💬 DAILY ENGLISH\nLevel A1 · Grammar\n\nFill the gap: They ___ to school by bus.",
-  "💬 DAILY ENGLISH\nLevel A1 · Grammar\n\nFill the gap: They ___ to the gym on Sundays.",
-  "💬 DAILY ENGLISH\nLevel A1 · Grammar\n\nFill the gap: They ___ football on Sundays.",
-  "💬 DAILY ENGLISH\nLevel A1 · Grammar\n\nHe ___ to school every day.",
-  "💬 DAILY ENGLISH\nLevel A2 · Grammar\n\nFill the gap: They ___ to the party last night."
+  {
+    "ts": 0,
+    "kind": "legacy",
+    "fp": "cbf9e4b03e623caec481ea4130f51fdd8073f51b5b6dd533c650abf5368b11ec",
+    "core": "they ___ to school every day."
+  },
+  {
+    "ts": 0,
+    "kind": "legacy",
+    "fp": "e9d3f9b7c59fd672c6bd66649ffe01c45a9ce93e1bb7e3c925b4432c40d69ad2",
+    "core": "💬 DAILY ENGLISH\nLevel A1 · Grammar\n\nFill the gap: She ___ coffee in the morning."
+  },
+  {
+    "ts": 0,
+    "kind": "legacy",
+    "fp": "b583769cda9d8ed4d138dbb718fa224c6c259b0ad7d095b7f11d437a967b1b02",
+    "core": "💬 DAILY ENGLISH\nLevel A1 · Grammar\n\nFill the gap: He ___ breakfast at 7 am."
+  },
+  {
+    "ts": 0,
+    "kind": "legacy",
+    "fp": "b8f59815f99b04a038a1e3ed590e846c81c1f1aa6a45e409b7574c1ef0c8125b",
+    "core": "💬 DAILY ENGLISH\nLevel A1 · Grammar\n\nThey ___ to school every day."
+  },
+  {
+    "ts": 0,
+    "kind": "legacy",
+    "fp": "8d3e78f68e777f743e8fd91c119ae07b599d4ce37564b00ffe6352edfed64d83",
+    "core": "💬 DAILY ENGLISH\nLevel A1 · Grammar\n\nFill the gap: They ___ to school by bus."
+  },
+  {
+    "ts": 0,
+    "kind": "legacy",
+    "fp": "75374c8313a4fe03941f589c43cd94d6ad891dccf33ad29f6f96901e578dd32a",
+    "core": "💬 DAILY ENGLISH\nLevel A1 · Grammar\n\nFill the gap: They ___ to the gym on Sundays."
+  },
+  {
+    "ts": 0,
+    "kind": "legacy",
+    "fp": "89fd48f51fa373b910fd2fe89a7854afacdcfdae960dac487308257d8e3a8149",
+    "core": "💬 DAILY ENGLISH\nLevel A1 · Grammar\n\nFill the gap: They ___ football on Sundays."
+  },
+  {
+    "ts": 0,
+    "kind": "legacy",
+    "fp": "ac2d751ab6fe4f5e9da415a33e3e1699f72c075918a33a7ba2925ec09d78880f",
+    "core": "💬 DAILY ENGLISH\nLevel A1 · Grammar\n\nHe ___ to school every day."
+  },
+  {
+    "ts": 0,
+    "kind": "legacy",
+    "fp": "3abdea41f5e33ab90b56fe355c9a1273cfd649058a71109550e609d30f18e96b",
+    "core": "💬 DAILY ENGLISH\nLevel A2 · Grammar\n\nFill the gap: They ___ to the party last night."
+  },
+  {
+    "ts": 1771532345,
+    "kind": "grammar_gap",
+    "level": "A1",
+    "topic": "Grammar",
+    "core": "She ___ a book every night.",
+    "fp": "acef4c31249170ab801b55c84a456961bae52363f9cf0583aeb181bd4f74d2f0"
+  }
 ]
