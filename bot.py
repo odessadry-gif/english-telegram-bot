@@ -2,172 +2,236 @@ import os
 import json
 import time
 import re
+import hashlib
 import requests
 from openai import OpenAI
 
-# --- ENV ---
 TOKEN = os.getenv("BOT_TOKEN")
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
-
-# Можно оставить твой канал как ID (самое надежное) или username "@..."
-# Если хочешь — потом вынесем в GitHub Secret/Variable.
-CHAT_ID = os.getenv("CHAT_ID", "-1003674761753")
+CHAT_ID = os.getenv("CHAT_ID", "-1003674761753")  # можно оставить так
 
 HISTORY_FILE = "history.json"
-MAX_HISTORY = 500          # сколько последних вопросов держим
-MAX_GEN_TRIES = 8          # сколько раз перегенерировать, если повтор
+MAX_HISTORY = 800
+MAX_GEN_TRIES = 10
+
+# Ротация форматов
+KIND_CYCLE = ["grammar_gap", "ua_en", "guess_word", "emoji_quiz"]
+
+client = OpenAI(api_key=OPENAI_API_KEY)
 
 
-# --- helpers ---
-def load_history() -> list[str]:
+def _norm(s: str) -> str:
+    s = s.strip().lower()
+    s = re.sub(r"\s+", " ", s)
+    return s
+
+
+def _fp(kind: str, core: str, options: list[str]) -> str:
+    payload = {
+        "kind": _norm(kind),
+        "core": _norm(core),
+        "options": [_norm(x) for x in options],
+    }
+    j = json.dumps(payload, ensure_ascii=False, sort_keys=True)
+    return hashlib.sha256(j.encode("utf-8")).hexdigest()
+
+
+def load_history() -> list[dict]:
     if not os.path.exists(HISTORY_FILE):
         return []
     try:
         with open(HISTORY_FILE, "r", encoding="utf-8") as f:
             data = json.load(f)
         if isinstance(data, list):
-            return [str(x) for x in data]
+            # поддержка старого формата: список строк
+            if data and isinstance(data[0], str):
+                return [{"ts": 0, "kind": "legacy", "fp": hashlib.sha256(_norm(x).encode()).hexdigest(), "core": x} for x in data]
+            # новый формат: список dict
+            return [x for x in data if isinstance(x, dict)]
         return []
     except Exception:
         return []
 
 
-def save_history(items: list[str]) -> None:
+def save_history(items: list[dict]) -> None:
     items = items[-MAX_HISTORY:]
     with open(HISTORY_FILE, "w", encoding="utf-8") as f:
         json.dump(items, f, ensure_ascii=False, indent=2)
 
 
-def normalize_question(q: str) -> str:
-    q = q.strip()
-    q = re.sub(r"\s+", " ", q)
-    return q.lower()
+def next_kind(history: list[dict]) -> str:
+    # берём последний kind из истории и идём по циклу
+    last_kind = None
+    for item in reversed(history):
+        k = item.get("kind")
+        if k in KIND_CYCLE:
+            last_kind = k
+            break
+
+    if not last_kind:
+        return KIND_CYCLE[0]
+
+    idx = KIND_CYCLE.index(last_kind)
+    return KIND_CYCLE[(idx + 1) % len(KIND_CYCLE)]
 
 
-def extract_json(text: str) -> dict:
-    """
-    Модели иногда оборачивают JSON в текст/markdown.
-    Вытащим первый { ... } блок.
-    """
-    text = text.strip()
-    m = re.search(r"\{.*\}", text, re.DOTALL)
-    if not m:
-        raise ValueError("No JSON object found in model output")
-    return json.loads(m.group(0))
+def send_quiz(question: str, options: list[str], correct_id: int):
+    # Telegram ограничивает длину question (лучше держать коротко)
+    question = question.strip()
+    if len(question) > 280:
+        question = question[:277] + "..."
 
-
-# --- Telegram ---
-def send_quiz(question: str, options: list[str], correct_id: int) -> None:
     url = f"https://api.telegram.org/bot{TOKEN}/sendPoll"
-
     payload = {
         "chat_id": CHAT_ID,
         "question": question,
         "options": options,
         "type": "quiz",
         "correct_option_id": int(correct_id),
-        # ВАЖНО: для каналов должны быть анонимные квизы
-        "is_anonymous": True,
+        "is_anonymous": True,  # обязательно для каналов
     }
-
     r = requests.post(url, json=payload, timeout=30)
     if not r.ok:
         raise RuntimeError(f"Telegram error: {r.status_code} {r.text}")
 
 
-# --- OpenAI ---
-def generate_quiz(client: OpenAI) -> tuple[str, list[str], int, str]:
-    """
-    Возвращает: (question, options, correct_id, meta_line)
-    meta_line — строка для красоты в question.
-    """
-    prompt = """
-Create ONE short A1/A2 English quiz (grammar or basic vocabulary).
-Return STRICT JSON ONLY (no markdown, no extra text):
-{
-  "level": "A1" or "A2",
-  "topic": "Grammar" or "Vocabulary",
-  "question": "Fill the gap: She ___ coffee in the morning.",
-  "options": ["drink", "drinks", "drinking"],
-  "correct": 1
-}
+def extract_json(text: str) -> dict:
+    text = text.strip()
+    m = re.search(r"\{.*\}", text, re.DOTALL)
+    if not m:
+        raise ValueError("No JSON found")
+    return json.loads(m.group(0))
 
-Rules:
+
+def prompt_for(kind: str) -> str:
+    # 4 формата: grammar_gap / ua_en / guess_word / emoji_quiz
+    return f"""
+Create ONE Telegram quiz for English learners (A1/A2). Return STRICT JSON ONLY:
+{{
+  "level": "A1" or "A2",
+  "kind": "{kind}",
+  "topic": "Grammar" or "Vocabulary" or "Riddle" or "Emoji",
+  "core": "MAIN content without extra labels",
+  "question": "FINAL question text (can include line breaks)",
+  "options": ["A", "B", "C"],
+  "correct": 0
+}}
+
+Rules for each kind:
+
+1) kind=grammar_gap:
+- core: ONLY sentence with exactly one ___
+- question must be formatted like:
+  💬 DAILY ENGLISH
+  Level <A1/A2> · Grammar
+
+  Fill the gap:
+  <core>
+
+2) kind=ua_en:
+- core: ONLY one Ukrainian word (lowercase ok)
+- options: 3 English translations (one correct)
+- question format:
+  💬 DAILY ENGLISH
+  Level <A1/A2> · Vocabulary
+
+  🇺🇦 → 🇬🇧
+  <core>
+
+3) kind=guess_word:
+- core: the correct English word (one word)
+- question contains a short A1/A2 riddle (2–3 short lines), then:
+  What is it?
+- options: 3 words, one correct (=core)
+- question format:
+  💬 DAILY ENGLISH
+  Level <A1/A2> · Riddle
+
+  <riddle lines>
+  What is it?
+
+4) kind=emoji_quiz:
+- core: the correct English word/phrase (1–2 words max)
+- question contains ONLY emojis line + "What is it?"
+- options: 3 answers, one correct (=core)
+- question format:
+  💬 DAILY ENGLISH
+  Level <A1/A2> · Emoji
+
+  <emoji line>
+  What is it?
+
+Global rules:
 - Exactly 3 options
 - correct is 0/1/2
-- question must be short and clear
-- Avoid repeating the same sentence patterns too often
-"""
+- Keep it short, modern, non-repetitive
+- Avoid the same pattern like "He ___ to school every day" too often. Vary verbs, subjects, contexts.
+""".strip()
 
+
+def generate_one(kind: str) -> dict:
     resp = client.responses.create(
         model="gpt-5-mini",
-        input=prompt,
+        input=prompt_for(kind),
     )
-
     raw = (resp.output_text or "").strip()
-    data = extract_json(raw)
-
-    level = str(data.get("level", "A1")).strip().upper()
-    topic = str(data.get("topic", "Grammar")).strip().title()
-
-    q = str(data["question"]).strip()
-    options = [str(x).strip() for x in data["options"]]
-    correct = int(data["correct"])
-
-    # Мини-валидация
-    if len(options) != 3:
-        raise ValueError("options must contain exactly 3 items")
-    if correct not in (0, 1, 2):
-        raise ValueError("correct must be 0/1/2")
-    if not q:
-        raise ValueError("question is empty")
-
-    # Премиум-строчка (как ты хотел)
-    meta = f"💬 DAILY ENGLISH\nLevel {level} · {topic}"
-    return q, options, correct, meta
+    return extract_json(raw)
 
 
-def main() -> None:
+def main():
     if not TOKEN:
-        raise RuntimeError("BOT_TOKEN is missing (GitHub Secrets -> BOT_TOKEN).")
+        raise RuntimeError("BOT_TOKEN missing")
     if not OPENAI_API_KEY:
-        raise RuntimeError("OPENAI_API_KEY is missing (GitHub Secrets -> OPENAI_API_KEY).")
-
-    client = OpenAI(api_key=OPENAI_API_KEY)
+        raise RuntimeError("OPENAI_API_KEY missing")
 
     history = load_history()
-    history_norm = set(normalize_question(x) for x in history)
+    seen = {h.get("fp") for h in history if h.get("fp")}
 
-    last_error = None
+    kind = next_kind(history)
+    last_err = None
 
-    for attempt in range(1, MAX_GEN_TRIES + 1):
+    for _ in range(MAX_GEN_TRIES):
         try:
-            q, options, correct, meta = generate_quiz(client)
+            data = generate_one(kind)
 
-            # Чтобы вопрос был “брендовый”, но не дублировал "Fill the gap" два раза
-            # meta в отдельной строке сверху, сам q уже содержит "Fill the gap: ..."
-            final_question = f"{meta}\n\n{q}"
+            level = str(data["level"]).strip().upper()
+            topic = str(data["topic"]).strip()
+            question = str(data["question"]).strip()
 
-            key = normalize_question(final_question)
-            if key in history_norm:
-                # повтор — пробуем ещё раз
+            options = data["options"]
+            if not isinstance(options, list) or len(options) != 3:
+                raise ValueError("options must be list of 3")
+
+            options = [str(x).strip() for x in options]
+            correct = int(data["correct"])
+            if correct not in (0, 1, 2):
+                raise ValueError("correct must be 0/1/2")
+
+            core = str(data.get("core", question)).strip()
+            fp = _fp(kind, core, options)
+
+            if fp in seen:
+                # повтор — пробуем сгенерировать снова
                 continue
 
-            # отправка
-            send_quiz(final_question, options, correct)
+            send_quiz(question, options, correct)
 
-            # сохраняем в историю
-            history.append(final_question)
+            history.append({
+                "ts": int(time.time()),
+                "kind": kind,
+                "level": level,
+                "topic": topic,
+                "core": core,
+                "fp": fp,
+            })
             save_history(history)
-
             return
 
         except Exception as e:
-            last_error = e
-            # небольшой backoff на случай временных проблем
-            time.sleep(min(2 * attempt, 8))
+            last_err = e
+            continue
 
-    raise RuntimeError(f"Failed to generate unique quiz after {MAX_GEN_TRIES} tries. Last error: {last_error}")
+    raise RuntimeError(f"Failed to generate unique quiz for kind={kind}. Last error: {last_err}")
 
 
 if __name__ == "__main__":
