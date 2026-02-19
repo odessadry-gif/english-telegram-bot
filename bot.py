@@ -164,9 +164,16 @@ Rules for each kind:
 Global rules:
 - Exactly 3 options
 - correct is 0/1/2
-- Keep it short, modern, non-repetitive
-- Avoid the same pattern like "He ___ to school every day" too often. Vary verbs, subjects, contexts.
-""".strip()
+- Keep it short and modern
+- Vary grammar structures.
+- Use different tenses over time:
+  Present Simple, Present Continuous, Past Simple,
+  Future (will / going to),
+  basic conditionals, prepositions, comparatives.
+- Avoid repeating the same tense too often.
+- Do not generate very similar sentence patterns.
+- Return strict JSON only.
+
 
 
 def generate_one(kind: str) -> dict:
