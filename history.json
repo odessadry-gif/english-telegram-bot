@@ -100,5 +100,13 @@
     "topic": "Riddle",
     "core": "shadow",
     "fp": "5da5e1b17920018fd33e85f07818dbcd00e376a094c15b942156871f207e259c"
+  },
+  {
+    "ts": 1771616962,
+    "kind": "grammar_gap",
+    "level": "B1",
+    "topic": "Grammar",
+    "core": "She ___ in London for five years.",
+    "fp": "c39dad6a45d3cbe8413f466e36b6784f637336da7b179b4ba80a10485d7951fb"
   }
 ]
