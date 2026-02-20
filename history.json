@@ -92,5 +92,13 @@
     "topic": "Vocabulary",
     "core": "до побачення",
     "fp": "82c541c9f4663c18f8b75500d486bfc58c8e942f62d9409a0d9aa0401473b045"
+  },
+  {
+    "ts": 1771610297,
+    "kind": "guess_word",
+    "level": "A2",
+    "topic": "Riddle",
+    "core": "shadow",
+    "fp": "5da5e1b17920018fd33e85f07818dbcd00e376a094c15b942156871f207e259c"
   }
 ]
