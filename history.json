@@ -68,5 +68,13 @@
     "topic": "Vocabulary",
     "core": "завтра",
     "fp": "6f0ea3dd915ad21b1008745368255297ae832e9c8fcebbb482cdebef155723d3"
+  },
+  {
+    "ts": 1771586213,
+    "kind": "guess_word",
+    "level": "A2",
+    "topic": "Riddle",
+    "core": "bridge",
+    "fp": "b0f6d0e1bd6bdde5694da89d0c6b555470607dd50ad0541ff1cdb2458bd2083b"
   }
 ]
