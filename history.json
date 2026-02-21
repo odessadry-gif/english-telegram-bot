@@ -140,5 +140,13 @@
     "topic": "Vocabulary",
     "core": "магазин",
     "fp": "246aa31079745ba7bc6856cd12d95e360457c6594b02d775e50d1ddd842ab1e8"
+  },
+  {
+    "ts": 1771664210,
+    "kind": "guess_word",
+    "level": "B1",
+    "topic": "Riddle",
+    "core": "mirror",
+    "fp": "7170e6bbc0ed7c0e000e4349022a1035b68529237c7033030e3949e9e3ba19dd"
   }
 ]
