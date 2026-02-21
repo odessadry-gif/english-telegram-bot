@@ -172,5 +172,13 @@
     "topic": "Riddle",
     "core": "key",
     "fp": "4127ec3e421f07253d080d21673f08a812e4619b1c5277b403b704c4dee88d8b"
+  },
+  {
+    "ts": 1771685698,
+    "kind": "grammar_gap",
+    "level": "B1",
+    "topic": "Grammar",
+    "core": "I ___ in London since 2019.",
+    "fp": "1e8668eb08ab8ce591284f5c1364d7afb85df286038f96f4e1f2058b6e30a29e"
   }
 ]
