@@ -204,5 +204,14 @@
     "topic": "Grammar",
     "core": "I haven't seen him ___ last week.",
     "fp": "138f0ae5bcfd07e9c86a0dd2615052ecddecd575cf271f7e1e803848acfb5a76"
+  },
+  {
+    "ts": 1771707023,
+    "kind": "ua_en",
+    "level": "A2",
+    "topic": "Vocabulary",
+    "core": "запізнитися",
+    "fp": "84d85bc769108aab1fc2f9aa9384b7bf6ff1df95d58401a3aa8369b26f85d340",
+    "core_fp": "663893265799c4116694822f8645311e7c24df6e551064084e3f1c6fba813f8d"
   }
 ]
