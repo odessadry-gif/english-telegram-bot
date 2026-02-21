@@ -213,5 +213,14 @@
     "core": "запізнитися",
     "fp": "84d85bc769108aab1fc2f9aa9384b7bf6ff1df95d58401a3aa8369b26f85d340",
     "core_fp": "663893265799c4116694822f8645311e7c24df6e551064084e3f1c6fba813f8d"
+  },
+  {
+    "ts": 1771714410,
+    "kind": "guess_word",
+    "level": "A2",
+    "topic": "Riddle",
+    "core": "pocket",
+    "fp": "3359b2a4c1371d8da60fc67de360c524911df443e01a60e837d0426ae2b8833a",
+    "core_fp": "1a9f4ba93be6789ea5d14ba810071e880d14bab27e6a90a0873461e178e0d5b7"
   }
 ]
