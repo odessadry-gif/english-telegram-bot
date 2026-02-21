@@ -164,5 +164,13 @@
     "topic": "Vocabulary",
     "core": "магазин",
     "fp": "b06c7bdf3176d1fcb8068611b7f6cd43493d300ca10cc00967f2dc7dfed8067c"
+  },
+  {
+    "ts": 1771682082,
+    "kind": "guess_word",
+    "level": "A2",
+    "topic": "Riddle",
+    "core": "key",
+    "fp": "4127ec3e421f07253d080d21673f08a812e4619b1c5277b403b704c4dee88d8b"
   }
 ]
