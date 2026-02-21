@@ -148,5 +148,13 @@
     "topic": "Riddle",
     "core": "mirror",
     "fp": "7170e6bbc0ed7c0e000e4349022a1035b68529237c7033030e3949e9e3ba19dd"
+  },
+  {
+    "ts": 1771664442,
+    "kind": "grammar_gap",
+    "level": "B1",
+    "topic": "Grammar",
+    "core": "I ___ here since 2010.",
+    "fp": "ec9824046a07928b7a3efbe771124b3033f35749f22a0be9f0e0d0a06ccc02d1"
   }
 ]
