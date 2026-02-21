@@ -132,5 +132,13 @@
     "topic": "Grammar",
     "core": "If it ___ tomorrow, we will stay home.",
     "fp": "eff2d7052937be94bdac80edbf6475105d91541609840ec5872a6d67d98359d3"
+  },
+  {
+    "ts": 1771659894,
+    "kind": "ua_en",
+    "level": "A2",
+    "topic": "Vocabulary",
+    "core": "магазин",
+    "fp": "246aa31079745ba7bc6856cd12d95e360457c6594b02d775e50d1ddd842ab1e8"
   }
 ]
