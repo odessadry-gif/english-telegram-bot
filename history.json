@@ -180,5 +180,13 @@
     "topic": "Grammar",
     "core": "I ___ in London since 2019.",
     "fp": "1e8668eb08ab8ce591284f5c1364d7afb85df286038f96f4e1f2058b6e30a29e"
+  },
+  {
+    "ts": 1771693133,
+    "kind": "ua_en",
+    "level": "A2",
+    "topic": "Vocabulary",
+    "core": "магазин",
+    "fp": "27c656ed02eb8c0ef685613d07d617be6f3fcd7a96c50769d4430ff6771056cd"
   }
 ]
