@@ -124,5 +124,13 @@
     "topic": "Riddle",
     "core": "umbrella",
     "fp": "7643131ff3ac4bd42c4e79af5039c39877788dfd463a068a92f3aab0a2acfeda"
+  },
+  {
+    "ts": 1771649599,
+    "kind": "grammar_gap",
+    "level": "A2",
+    "topic": "Grammar",
+    "core": "If it ___ tomorrow, we will stay home.",
+    "fp": "eff2d7052937be94bdac80edbf6475105d91541609840ec5872a6d67d98359d3"
   }
 ]
