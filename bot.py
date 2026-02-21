@@ -10,7 +10,7 @@ from openai import OpenAI
 # ========= ENV =========
 TOKEN = os.getenv("BOT_TOKEN")
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
-CHAT_ID = os.getenv("CHAT_ID", "-1003674761753")  # твой канал (можно оставить так)
+CHAT_ID = os.getenv("CHAT_ID", "-1003674761753")
 MODEL = os.getenv("OPENAI_MODEL", "gpt-5-mini")
 
 # ========= HISTORY =========
@@ -20,6 +20,15 @@ MAX_GEN_TRIES = 12
 
 # ✅ 3 формата
 KIND_CYCLE = ["grammar_gap", "ua_en", "guess_word"]
+
+# ========= ANTI-REPEAT TUNING =========
+# Сколько последних постов данного вида считаем "окном запрета" для повторов core
+COOLDOWN_LAST_N = {
+    "ua_en": 200,        # ~16 дней при 12 постов/день и 1/3 ua_en
+    "grammar_gap": 120,  # ~10 дней (по циклу)
+}
+# Для grammar_gap дополнительно запретим повторять "шаблон" в окне
+GRAMMAR_PATTERN_LAST_N = 180
 
 client = OpenAI(api_key=OPENAI_API_KEY)
 
@@ -42,7 +51,7 @@ def normalize_core(kind: str, core: str) -> str:
     Normalization for dedupe / ban logic.
     - guess_word: global ban regardless of level (umbrella == an umbrella).
     - ua_en: normalize UA core to avoid repeats like 'магазин' 3 times.
-    - others: basic normalize.
+    - grammar_gap: keep basic normalization (pattern is handled separately).
     """
     if not core:
         return ""
@@ -68,7 +77,7 @@ def normalize_core(kind: str, core: str) -> str:
 
 
 def _fp(kind: str, core: str, options: list[str]) -> str:
-    # оставляем как есть: fp по core+options помогает от “почти одинаковых” дублей
+    # fp по core+options — полезен, но НЕ достаточен
     payload = {
         "kind": _norm(kind),
         "core": _norm(core),
@@ -76,6 +85,36 @@ def _fp(kind: str, core: str, options: list[str]) -> str:
     }
     j = json.dumps(payload, ensure_ascii=False, sort_keys=True)
     return hashlib.sha256(j.encode("utf-8")).hexdigest()
+
+
+def core_fp(kind: str, core: str) -> str:
+    """
+    Железный дедуп: только kind + normalized(core).
+    Срабатывает даже если options/explanation другие.
+    """
+    payload = {
+        "kind": _norm(kind),
+        "core": normalize_core(kind, core),
+    }
+    j = json.dumps(payload, ensure_ascii=False, sort_keys=True)
+    return hashlib.sha256(j.encode("utf-8")).hexdigest()
+
+
+def grammar_pattern_key(core: str) -> str:
+    """
+    Анти-повтор для грамматических шаблонов.
+    Пример: "I ___ here since 2010." и "She ___ in London since 2019."
+    -> схожий паттерн " <blank> since <num> "
+    """
+    s = unicodedata.normalize("NFKC", (core or "")).lower()
+    s = s.replace("___", " <blank> ")
+    # цифры и простые числительные → <num>
+    s = re.sub(r"\d+", "<num>", s)
+    s = re.sub(r"\b(one|two|three|four|five|six|seven|eight|nine|ten)\b", "<num>", s)
+    # оставим только латиницу и спец-токены
+    s = re.sub(r"[^a-z<>\s]", " ", s)
+    s = _norm_spaces(s)
+    return s
 
 
 def ensure_4_options(options: list[str]) -> list[str]:
@@ -117,7 +156,6 @@ def load_history() -> list[dict]:
                         }
                     )
                 return out
-            # новый формат (список dict)
             return [x for x in data if isinstance(x, dict)]
         return []
     except Exception:
@@ -174,7 +212,7 @@ def send_quiz_poll(question: str, options: list[str], correct_id: int, explanati
         "correct_option_id": int(correct_id),
         "is_anonymous": True,
         "allows_multiple_answers": False,
-        "explanation": explanation,  # лампочка 💡
+        "explanation": explanation,
     }
 
     r = requests.post(url, json=payload, timeout=30)
@@ -184,10 +222,6 @@ def send_quiz_poll(question: str, options: list[str], correct_id: int, explanati
 
 # ========= PROMPTS =========
 def prompt_for(kind: str) -> str:
-    # Новый вид шапки: "Level B1 / Riddle" (без DAILY ENGLISH и без ·)
-    # Всегда 4 варианта
-    # Explanation на укр
-    # Для ua_en строго формат B: correct + 2 near + trap (correct всегда index 0)
     return f"""
 Create ONE Telegram quiz for English learners (A2/B1). Return STRICT JSON ONLY (no markdown, no extra text).
 
@@ -266,21 +300,49 @@ def main():
 
     history = load_history()
 
-    # fp-dedupe (как раньше)
+    # ---------- sets from history ----------
     seen_fp = {h.get("fp") for h in history if h.get("fp")}
 
-    # глобальный бан для guess_word по normalized core (НЕ зависит от level)
+    # core-level dedupe (железный)
+    seen_core = set()
+    for h in history:
+        k = h.get("kind")
+        c = h.get("core")
+        if k in KIND_CYCLE and c:
+            # поддержка старых записей без core_fp
+            seen_core.add(h.get("core_fp") or core_fp(k, c))
+
+    # guess_word: глобальный бан по слову (навсегда)
     guess_word_banned = set()
     for h in history:
         if h.get("kind") == "guess_word":
             guess_word_banned.add(normalize_core("guess_word", h.get("core", "")))
 
-    # анти-повтор для ua_en по core (чтобы не было "магазин" 3 раза)
-    ua_en_banned = set()
-    for h in history:
-        if h.get("kind") == "ua_en":
-            ua_en_banned.add(normalize_core("ua_en", h.get("core", "")))
+    # cooldown по последним N (ua_en / grammar_gap)
+    recent_core_by_kind = {k: set() for k in COOLDOWN_LAST_N.keys()}
+    counts_by_kind = {k: 0 for k in COOLDOWN_LAST_N.keys()}
+    # идем с конца истории, набираем окно
+    for h in reversed(history):
+        k = h.get("kind")
+        if k in COOLDOWN_LAST_N and counts_by_kind[k] < COOLDOWN_LAST_N[k]:
+            c = normalize_core(k, h.get("core", ""))
+            if c:
+                recent_core_by_kind[k].add(c)
+            counts_by_kind[k] += 1
 
+    # grammar patterns cooldown
+    recent_grammar_patterns = set()
+    gp_count = 0
+    for h in reversed(history):
+        if gp_count >= GRAMMAR_PATTERN_LAST_N:
+            break
+        if h.get("kind") == "grammar_gap":
+            pk = grammar_pattern_key(h.get("core", ""))
+            if pk:
+                recent_grammar_patterns.add(pk)
+            gp_count += 1
+
+    # ---------- generation ----------
     kind = next_kind(history)
     last_err = None
 
@@ -305,41 +367,68 @@ def main():
 
             explanation = str(data.get("explanation_uk", "")).strip()
             if not explanation:
-                # дефолт на укр, чтобы лампочка не пустая
                 explanation = "Перевір підмет і час у реченні."
 
             core = str(data.get("core", "")).strip() or question
 
-            # --- специальные анти-повторы ---
+            # ---------- hard anti-repeat: core_fp ----------
+            cfp = core_fp(kind, core)
+            if cfp in seen_core:
+                continue
+
+            # ---------- guess_word global ban ----------
             if kind == "guess_word":
                 norm_word = normalize_core("guess_word", core)
                 if not norm_word:
                     continue
                 if norm_word in guess_word_banned:
-                    # глобально уже было — генерим снова
                     continue
 
+            # ---------- ua_en cooldown + format B correct always 0 ----------
             if kind == "ua_en":
                 norm_ua = normalize_core("ua_en", core)
-                if norm_ua and norm_ua in ua_en_banned:
+                if not norm_ua:
                     continue
-                # по твоему формату B correct всегда 0
+                # cooldown window
+                if norm_ua in recent_core_by_kind["ua_en"]:
+                    continue
                 correct = 0
 
-            # fp как раньше
+            # ---------- grammar_gap cooldown + pattern cooldown ----------
+            if kind == "grammar_gap":
+                norm_g = normalize_core("grammar_gap", core)
+                if norm_g and norm_g in recent_core_by_kind["grammar_gap"]:
+                    continue
+                pk = grammar_pattern_key(core)
+                if pk and pk in recent_grammar_patterns:
+                    continue
+
+            # ---------- fp dedupe as extra ----------
             fp = _fp(kind, core, options)
             if fp in seen_fp:
                 continue
 
-            # ✅ отправляем ОДИН poll
+            # ✅ send poll
             send_quiz_poll(question, options, correct, explanation)
 
-            # ✅ обновляем бан-сеты сразу
+            # ✅ update in-memory sets immediately
+            seen_fp.add(fp)
+            seen_core.add(cfp)
+
             if kind == "guess_word":
                 guess_word_banned.add(normalize_core("guess_word", core))
-            if kind == "ua_en":
-                ua_en_banned.add(normalize_core("ua_en", core))
 
+            if kind in recent_core_by_kind:
+                normc = normalize_core(kind, core)
+                if normc:
+                    recent_core_by_kind[kind].add(normc)
+
+            if kind == "grammar_gap":
+                pk = grammar_pattern_key(core)
+                if pk:
+                    recent_grammar_patterns.add(pk)
+
+            # ✅ write history
             history.append(
                 {
                     "ts": int(time.time()),
@@ -348,6 +437,7 @@ def main():
                     "topic": topic,
                     "core": core,
                     "fp": fp,
+                    "core_fp": cfp,  # IMPORTANT: for iron dedupe
                 }
             )
             save_history(history)
