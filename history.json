@@ -156,5 +156,13 @@
     "topic": "Grammar",
     "core": "I ___ here since 2010.",
     "fp": "ec9824046a07928b7a3efbe771124b3033f35749f22a0be9f0e0d0a06ccc02d1"
+  },
+  {
+    "ts": 1771671350,
+    "kind": "ua_en",
+    "level": "A2",
+    "topic": "Vocabulary",
+    "core": "магазин",
+    "fp": "b06c7bdf3176d1fcb8068611b7f6cd43493d300ca10cc00967f2dc7dfed8067c"
   }
 ]
