@@ -22,12 +22,10 @@ MAX_GEN_TRIES = 12
 KIND_CYCLE = ["grammar_gap", "ua_en", "guess_word"]
 
 # ========= ANTI-REPEAT TUNING =========
-# Сколько последних постов данного вида считаем "окном запрета" для повторов core
 COOLDOWN_LAST_N = {
-    "ua_en": 200,        # ~16 дней при 12 постов/день и 1/3 ua_en
-    "grammar_gap": 120,  # ~10 дней (по циклу)
+    "ua_en": 200,
+    "grammar_gap": 120,
 }
-# Для grammar_gap дополнительно запретим повторять "шаблон" в окне
 GRAMMAR_PATTERN_LAST_N = 180
 
 client = OpenAI(api_key=OPENAI_API_KEY)
@@ -50,7 +48,7 @@ def normalize_core(kind: str, core: str) -> str:
     """
     Normalization for dedupe / ban logic.
     - guess_word: global ban regardless of level (umbrella == an umbrella).
-    - ua_en: normalize UA core to avoid repeats like 'магазин' 3 times.
+    - ua_en: normalize UA core to avoid repeats.
     - grammar_gap: keep basic normalization (pattern is handled separately).
     """
     if not core:
@@ -60,15 +58,13 @@ def normalize_core(kind: str, core: str) -> str:
     s = s.strip("“”\"'`")
 
     if kind == "guess_word":
-        # keep letters/numbers/spaces/hyphen
         s = re.sub(r"[^a-z0-9\s\-]", " ", s)
         s = _norm_spaces(s)
-        s = ARTICLES_RE.sub("", s)  # remove leading articles
+        s = ARTICLES_RE.sub("", s)
         s = _norm_spaces(s)
         return s
 
     if kind == "ua_en":
-        # Ukrainian word/phrase: trim + normalize spaces only
         s = re.sub(r"\s+", " ", s)
         return s.strip()
 
@@ -77,7 +73,6 @@ def normalize_core(kind: str, core: str) -> str:
 
 
 def _fp(kind: str, core: str, options: list[str]) -> str:
-    # fp по core+options — полезен, но НЕ достаточен
     payload = {
         "kind": _norm(kind),
         "core": _norm(core),
@@ -88,10 +83,6 @@ def _fp(kind: str, core: str, options: list[str]) -> str:
 
 
 def core_fp(kind: str, core: str) -> str:
-    """
-    Железный дедуп: только kind + normalized(core).
-    Срабатывает даже если options/explanation другие.
-    """
     payload = {
         "kind": _norm(kind),
         "core": normalize_core(kind, core),
@@ -101,17 +92,10 @@ def core_fp(kind: str, core: str) -> str:
 
 
 def grammar_pattern_key(core: str) -> str:
-    """
-    Анти-повтор для грамматических шаблонов.
-    Пример: "I ___ here since 2010." и "She ___ in London since 2019."
-    -> схожий паттерн " <blank> since <num> "
-    """
     s = unicodedata.normalize("NFKC", (core or "")).lower()
     s = s.replace("___", " <blank> ")
-    # цифры и простые числительные → <num>
     s = re.sub(r"\d+", "<num>", s)
     s = re.sub(r"\b(one|two|three|four|five|six|seven|eight|nine|ten)\b", "<num>", s)
-    # оставим только латиницу и спец-токены
     s = re.sub(r"[^a-z<>\s]", " ", s)
     s = _norm_spaces(s)
     return s
@@ -143,7 +127,6 @@ def load_history() -> list[dict]:
         with open(HISTORY_FILE, "r", encoding="utf-8") as f:
             data = json.load(f)
         if isinstance(data, list):
-            # поддержка старого формата (список строк)
             if data and isinstance(data[0], str):
                 out = []
                 for x in data:
@@ -222,6 +205,7 @@ def send_quiz_poll(question: str, options: list[str], correct_id: int, explanati
 
 # ========= PROMPTS =========
 def prompt_for(kind: str) -> str:
+    # ❗️Level убрали ВЕЗДЕ в тексте поста. Оставили минимальный формат с 💬
     return f"""
 Create ONE Telegram quiz for English learners (A2/B1). Return STRICT JSON ONLY (no markdown, no extra text).
 
@@ -241,10 +225,9 @@ Format rules:
 
 1) kind=grammar_gap:
 - core: ONE sentence with exactly one blank: ___
-- Use varied tenses over time: Present Simple/Continuous, Past Simple, Future (will/going to), present perfect basics, comparatives, prepositions, basic conditionals.
-- Avoid repeating the same pattern too often.
+- Use varied tenses over time. Avoid repeating the same pattern too often.
 - question format MUST be exactly:
-  Level <A2/B1> / Grammar
+  💬
   Fill the gap:
   <core>
 - options: 4 variants, only ONE correct
@@ -253,7 +236,7 @@ Format rules:
 2) kind=ua_en:
 - core: ONE Ukrainian word/phrase (everyday A2/B1)
 - question format MUST be exactly:
-  Level <A2/B1> / Vocabulary
+  💬
   🇺🇦 → 🇬🇧
   <core>
 - options MUST be exactly 4 English answers in this exact order:
@@ -267,8 +250,10 @@ Format rules:
 - core: correct English word (one word, A2/B1)
 - question has 2–3 short riddle lines + "What is it?"
 - question format MUST be exactly:
-  Level <A2/B1> / Riddle
-  <riddle lines>
+  💬
+  <riddle line 1>
+  <riddle line 2>
+  (optional riddle line 3)
   What is it?
 - options: 4 words, one correct (=core)
 - correct: 0..3
@@ -300,28 +285,22 @@ def main():
 
     history = load_history()
 
-    # ---------- sets from history ----------
     seen_fp = {h.get("fp") for h in history if h.get("fp")}
 
-    # core-level dedupe (железный)
     seen_core = set()
     for h in history:
         k = h.get("kind")
         c = h.get("core")
         if k in KIND_CYCLE and c:
-            # поддержка старых записей без core_fp
             seen_core.add(h.get("core_fp") or core_fp(k, c))
 
-    # guess_word: глобальный бан по слову (навсегда)
     guess_word_banned = set()
     for h in history:
         if h.get("kind") == "guess_word":
             guess_word_banned.add(normalize_core("guess_word", h.get("core", "")))
 
-    # cooldown по последним N (ua_en / grammar_gap)
     recent_core_by_kind = {k: set() for k in COOLDOWN_LAST_N.keys()}
     counts_by_kind = {k: 0 for k in COOLDOWN_LAST_N.keys()}
-    # идем с конца истории, набираем окно
     for h in reversed(history):
         k = h.get("kind")
         if k in COOLDOWN_LAST_N and counts_by_kind[k] < COOLDOWN_LAST_N[k]:
@@ -330,7 +309,6 @@ def main():
                 recent_core_by_kind[k].add(c)
             counts_by_kind[k] += 1
 
-    # grammar patterns cooldown
     recent_grammar_patterns = set()
     gp_count = 0
     for h in reversed(history):
@@ -342,7 +320,6 @@ def main():
                 recent_grammar_patterns.add(pk)
             gp_count += 1
 
-    # ---------- generation ----------
     kind = next_kind(history)
     last_err = None
 
@@ -371,12 +348,10 @@ def main():
 
             core = str(data.get("core", "")).strip() or question
 
-            # ---------- hard anti-repeat: core_fp ----------
             cfp = core_fp(kind, core)
             if cfp in seen_core:
                 continue
 
-            # ---------- guess_word global ban ----------
             if kind == "guess_word":
                 norm_word = normalize_core("guess_word", core)
                 if not norm_word:
@@ -384,17 +359,14 @@ def main():
                 if norm_word in guess_word_banned:
                     continue
 
-            # ---------- ua_en cooldown + format B correct always 0 ----------
             if kind == "ua_en":
                 norm_ua = normalize_core("ua_en", core)
                 if not norm_ua:
                     continue
-                # cooldown window
                 if norm_ua in recent_core_by_kind["ua_en"]:
                     continue
                 correct = 0
 
-            # ---------- grammar_gap cooldown + pattern cooldown ----------
             if kind == "grammar_gap":
                 norm_g = normalize_core("grammar_gap", core)
                 if norm_g and norm_g in recent_core_by_kind["grammar_gap"]:
@@ -403,15 +375,12 @@ def main():
                 if pk and pk in recent_grammar_patterns:
                     continue
 
-            # ---------- fp dedupe as extra ----------
             fp = _fp(kind, core, options)
             if fp in seen_fp:
                 continue
 
-            # ✅ send poll
             send_quiz_poll(question, options, correct, explanation)
 
-            # ✅ update in-memory sets immediately
             seen_fp.add(fp)
             seen_core.add(cfp)
 
@@ -428,7 +397,6 @@ def main():
                 if pk:
                     recent_grammar_patterns.add(pk)
 
-            # ✅ write history
             history.append(
                 {
                     "ts": int(time.time()),
@@ -437,7 +405,7 @@ def main():
                     "topic": topic,
                     "core": core,
                     "fp": fp,
-                    "core_fp": cfp,  # IMPORTANT: for iron dedupe
+                    "core_fp": cfp,
                 }
             )
             save_history(history)
