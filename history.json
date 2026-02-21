@@ -196,5 +196,13 @@
     "topic": "Riddle",
     "core": "umbrella",
     "fp": "a3759c755f59e7edf5509327436579e4fb201b09bea412b910e1c887bdc9fd2c"
+  },
+  {
+    "ts": 1771702005,
+    "kind": "grammar_gap",
+    "level": "B1",
+    "topic": "Grammar",
+    "core": "I haven't seen him ___ last week.",
+    "fp": "138f0ae5bcfd07e9c86a0dd2615052ecddecd575cf271f7e1e803848acfb5a76"
   }
 ]
