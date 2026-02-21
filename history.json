@@ -188,5 +188,13 @@
     "topic": "Vocabulary",
     "core": "магазин",
     "fp": "27c656ed02eb8c0ef685613d07d617be6f3fcd7a96c50769d4430ff6771056cd"
+  },
+  {
+    "ts": 1771700655,
+    "kind": "guess_word",
+    "level": "B1",
+    "topic": "Riddle",
+    "core": "umbrella",
+    "fp": "a3759c755f59e7edf5509327436579e4fb201b09bea412b910e1c887bdc9fd2c"
   }
 ]
