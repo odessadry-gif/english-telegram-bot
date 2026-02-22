@@ -267,5 +267,14 @@
     "core": "сумка",
     "fp": "195dac99ab54890caa22eed0344f1eb4181b61bf743e3373a8fec4bc893df54e",
     "core_fp": "c4e99dcb9ee7516c02e27c246ad398f59d693986cf345cfff10cc4a6da011155"
+  },
+  {
+    "ts": 1771772170,
+    "kind": "guess_word",
+    "level": "A2",
+    "topic": "Riddle",
+    "core": "breakfast",
+    "fp": "f4abedeed6a9baa23dba0ff21ca70847d711a6bf27edf35168cd02c28fa60111",
+    "core_fp": "c2d70e579317ce868afcb6f6048e2c1f8c076da53e3d5ec9fe255775572f972f"
   }
 ]
