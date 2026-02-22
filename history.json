@@ -240,5 +240,14 @@
     "core": "вихідні",
     "fp": "160dfd2e0cc4af4bad0d13d60b11fa0d69b10d5c4399bb48d2ef0ff47cf62a9f",
     "core_fp": "a0ac1b1c40c993aa8cb75fbb6f8e24fad7adeb0a0b0aa4359c40205716b5d019"
+  },
+  {
+    "ts": 1771750990,
+    "kind": "guess_word",
+    "level": "A2",
+    "topic": "Riddle",
+    "core": "envelope",
+    "fp": "b935aa63e81eb011fcf2b4e370e172282854f5024fdf4a312d159ef34d3668f0",
+    "core_fp": "f1a7fc037d48d6ec637cfed11e32cebbe42accb1c0be16196df1594c936ca011"
   }
 ]
