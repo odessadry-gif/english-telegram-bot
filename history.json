@@ -258,5 +258,14 @@
     "core": "I ___ him since 2010.",
     "fp": "ea908a249b4a5fcf3b38da799d7c115d07129581921e521180ec7d9c4adee83e",
     "core_fp": "00d447d0546825f140efbca8e7fb5040b245482dfa6f2214733c58c9e0343b6e"
+  },
+  {
+    "ts": 1771768584,
+    "kind": "ua_en",
+    "level": "A2",
+    "topic": "Vocabulary",
+    "core": "сумка",
+    "fp": "195dac99ab54890caa22eed0344f1eb4181b61bf743e3373a8fec4bc893df54e",
+    "core_fp": "c4e99dcb9ee7516c02e27c246ad398f59d693986cf345cfff10cc4a6da011155"
   }
 ]
