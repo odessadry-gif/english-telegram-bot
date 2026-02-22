@@ -303,5 +303,14 @@
     "core": "library",
     "fp": "23f6c82d880c2b7033b467c6ae3d60009312384284b826b601f5c7fefcd5e12b",
     "core_fp": "d7e49b1865f0e564f81067099a9aa72d913f6d024b637d2c6070bacd50b48a46"
+  },
+  {
+    "ts": 1771800932,
+    "kind": "grammar_gap",
+    "level": "B1",
+    "topic": "Grammar",
+    "core": "I think I ___ my keys at the café.",
+    "fp": "c481289d31d34f1632bb4d78511948a7e91022ec6beb57a72b9bb8ff1cafdaa9",
+    "core_fp": "ac417093703a346005b6f30b2351298623194b7de518cb0740c49e33dea83eef"
   }
 ]
