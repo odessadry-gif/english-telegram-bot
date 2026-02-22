@@ -276,5 +276,14 @@
     "core": "breakfast",
     "fp": "f4abedeed6a9baa23dba0ff21ca70847d711a6bf27edf35168cd02c28fa60111",
     "core_fp": "c2d70e579317ce868afcb6f6048e2c1f8c076da53e3d5ec9fe255775572f972f"
+  },
+  {
+    "ts": 1771779631,
+    "kind": "grammar_gap",
+    "level": "B1",
+    "topic": "Grammar",
+    "core": "By the time she arrived, they ___ dinner.",
+    "fp": "f2ed6f372977f581ff9e906c90df7218ea825aa0c9b93ec4f40ec7bcb8e3d9c8",
+    "core_fp": "5a9bb94d500288d951de60f52b31e77c87fbbca0fd1cce790d1a65506c10a1a3"
   }
 ]
