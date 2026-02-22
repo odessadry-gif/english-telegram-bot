@@ -231,5 +231,14 @@
     "core": "They ___ tennis since morning.",
     "fp": "769ff5745fabe06fa7854a34128954700742d4cebe66f82a113d9ed1e22809ea",
     "core_fp": "0fa96313c84d10bc6fa07e8917a1655723a275f45474eea2096dbdde2614fba6"
+  },
+  {
+    "ts": 1771746717,
+    "kind": "ua_en",
+    "level": "A2",
+    "topic": "Vocabulary",
+    "core": "вихідні",
+    "fp": "160dfd2e0cc4af4bad0d13d60b11fa0d69b10d5c4399bb48d2ef0ff47cf62a9f",
+    "core_fp": "a0ac1b1c40c993aa8cb75fbb6f8e24fad7adeb0a0b0aa4359c40205716b5d019"
   }
 ]
