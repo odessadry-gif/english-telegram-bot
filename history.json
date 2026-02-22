@@ -249,5 +249,14 @@
     "core": "envelope",
     "fp": "b935aa63e81eb011fcf2b4e370e172282854f5024fdf4a312d159ef34d3668f0",
     "core_fp": "f1a7fc037d48d6ec637cfed11e32cebbe42accb1c0be16196df1594c936ca011"
+  },
+  {
+    "ts": 1771757734,
+    "kind": "grammar_gap",
+    "level": "B1",
+    "topic": "Grammar",
+    "core": "I ___ him since 2010.",
+    "fp": "ea908a249b4a5fcf3b38da799d7c115d07129581921e521180ec7d9c4adee83e",
+    "core_fp": "00d447d0546825f140efbca8e7fb5040b245482dfa6f2214733c58c9e0343b6e"
   }
 ]
