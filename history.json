@@ -222,5 +222,14 @@
     "core": "pocket",
     "fp": "3359b2a4c1371d8da60fc67de360c524911df443e01a60e837d0426ae2b8833a",
     "core_fp": "1a9f4ba93be6789ea5d14ba810071e880d14bab27e6a90a0873461e178e0d5b7"
+  },
+  {
+    "ts": 1771737058,
+    "kind": "grammar_gap",
+    "level": "B1",
+    "topic": "Grammar",
+    "core": "They ___ tennis since morning.",
+    "fp": "769ff5745fabe06fa7854a34128954700742d4cebe66f82a113d9ed1e22809ea",
+    "core_fp": "0fa96313c84d10bc6fa07e8917a1655723a275f45474eea2096dbdde2614fba6"
   }
 ]
