@@ -312,5 +312,14 @@
     "core": "I think I ___ my keys at the café.",
     "fp": "c481289d31d34f1632bb4d78511948a7e91022ec6beb57a72b9bb8ff1cafdaa9",
     "core_fp": "ac417093703a346005b6f30b2351298623194b7de518cb0740c49e33dea83eef"
+  },
+  {
+    "ts": 1771823998,
+    "kind": "ua_en",
+    "level": "A2",
+    "topic": "Vocabulary",
+    "core": "здивований",
+    "fp": "f8858d2363cddeb6bf98a75572982d9ce2815190ace33bb0d59922c3123e2715",
+    "core_fp": "baf542bf7b78e41fbc9c294bdea8ef482f435925680bc39b32c386c08fcabc1a"
   }
 ]
