@@ -330,5 +330,14 @@
     "core": "window",
     "fp": "28bd9a99f35bde5655baa39d6fca4f40e8830ceb013d9cc27dc9cbdf84463ed5",
     "core_fp": "6d66d7a7c75a8c0e157aac86c760bc78af3dd4c3289b2a23c8a243829695e7b4"
+  },
+  {
+    "ts": 1771847790,
+    "kind": "grammar_gap",
+    "level": "A2",
+    "topic": "Grammar",
+    "core": "She ___ to work by bus every day.",
+    "fp": "fc8ca8c5fc05f753977b2ce6ccc65600c0278054db38d9e3aea468021ad6a156",
+    "core_fp": "c7edf78c7acdcb7dd8806d2679ef588ab6569f8900706c99a326052b808a8dd4"
   }
 ]
