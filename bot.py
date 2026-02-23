@@ -5,6 +5,7 @@ import re
 import hashlib
 import requests
 import unicodedata
+import random
 from openai import OpenAI
 
 # ========= ENV =========
@@ -120,6 +121,20 @@ def ensure_4_options(options: list[str]) -> list[str]:
     return cleaned
 
 
+def shuffle_options_keep_correct(options: list[str], correct_idx: int) -> tuple[list[str], int]:
+    """
+    Перемешивает options и возвращает новый correct_idx.
+    """
+    if not options or correct_idx < 0 or correct_idx >= len(options):
+        return options, correct_idx
+
+    correct_value = options[correct_idx]
+    shuffled = options[:]
+    random.shuffle(shuffled)
+    new_correct = shuffled.index(correct_value)
+    return shuffled, new_correct
+
+
 def load_history() -> list[dict]:
     if not os.path.exists(HISTORY_FILE):
         return []
@@ -206,6 +221,7 @@ def send_quiz_poll(question: str, options: list[str], correct_id: int, explanati
 # ========= PROMPTS =========
 def prompt_for(kind: str) -> str:
     # ❗️Level убрали ВЕЗДЕ в тексте поста. Оставили минимальный формат с 💬
+    # ✅ grammar_gap: только простые времена (без perfect)
     return f"""
 Create ONE Telegram quiz for English learners (A2/B1). Return STRICT JSON ONLY (no markdown, no extra text).
 
@@ -225,7 +241,12 @@ Format rules:
 
 1) kind=grammar_gap:
 - core: ONE sentence with exactly one blank: ___
-- Use varied tenses over time. Avoid repeating the same pattern too often.
+- Use ONLY these tenses:
+  Present Simple, Past Simple, Future Simple (will), Present Continuous, Past Continuous.
+- DO NOT use: Present Perfect / Past Perfect / Future Perfect,
+  Present Perfect Continuous / Past Perfect Continuous / Future Perfect Continuous,
+  modals (should/might/could), conditionals, comparatives.
+- Keep sentences short and clear (A2/B1), everyday situations.
 - question format MUST be exactly:
   💬
   Fill the gap:
@@ -374,6 +395,9 @@ def main():
                 pk = grammar_pattern_key(core)
                 if pk and pk in recent_grammar_patterns:
                     continue
+
+            # ✅ перемешиваем варианты и пересчитываем correct
+            options, correct = shuffle_options_keep_correct(options, correct)
 
             fp = _fp(kind, core, options)
             if fp in seen_fp:
