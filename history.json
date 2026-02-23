@@ -339,5 +339,14 @@
     "core": "She ___ to work by bus every day.",
     "fp": "fc8ca8c5fc05f753977b2ce6ccc65600c0278054db38d9e3aea468021ad6a156",
     "core_fp": "c7edf78c7acdcb7dd8806d2679ef588ab6569f8900706c99a326052b808a8dd4"
+  },
+  {
+    "ts": 1771857490,
+    "kind": "ua_en",
+    "level": "B1",
+    "topic": "Vocabulary",
+    "core": "справжній",
+    "fp": "0d6815356bf3ca56c5b9e443bbc34e83ca9d762c50de243cfc63aee01e837205",
+    "core_fp": "0a50b6c3f2856c04a30b52598cd0a1c0f54eee7434e93c10ba19493c5af1e34d"
   }
 ]
