@@ -357,5 +357,14 @@
     "core": "book",
     "fp": "2c9b44a19548e132ed3f048b07f9651f0cb2b57d71eb540f516b88f722557c99",
     "core_fp": "a4b0b85b7512b83616fd8359ec5cff21adbe011a4b49ee724ebf9fde0458746e"
+  },
+  {
+    "ts": 1771884763,
+    "kind": "grammar_gap",
+    "level": "A2",
+    "topic": "Grammar",
+    "core": "She ___ TV now.",
+    "fp": "8341151a0f6482ae2359b00a0999df6a12f324bd51771695deb695243b70eeee",
+    "core_fp": "e85853e3b189a0be2f2c758b689d4a6b764c12455f656c472b6ec7a3bd324c84"
   }
 ]
