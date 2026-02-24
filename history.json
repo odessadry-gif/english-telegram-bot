@@ -375,5 +375,14 @@
     "core": "актуальний",
     "fp": "f3abf23e84fd800d2a9b0d22b7cd618cc0be35aae326b3f8e7fd1b0a6fb83ce9",
     "core_fp": "5f8d65f90d03b8f3e7d9718db8a7964152360c81461997ba21378e7b5ed69e5a"
+  },
+  {
+    "ts": 1771920956,
+    "kind": "guess_word",
+    "level": "A2",
+    "topic": "Riddle",
+    "core": "clock",
+    "fp": "dfbd19ad15a354f803065261be730e28efb75081499efae6af9e27e954c24e67",
+    "core_fp": "ee9f6d4a88912f6bf0c91605ebffa627a650a76951581d95b9b7179192adfa14"
   }
 ]
