@@ -366,5 +366,14 @@
     "core": "She ___ TV now.",
     "fp": "8341151a0f6482ae2359b00a0999df6a12f324bd51771695deb695243b70eeee",
     "core_fp": "e85853e3b189a0be2f2c758b689d4a6b764c12455f656c472b6ec7a3bd324c84"
+  },
+  {
+    "ts": 1771910051,
+    "kind": "ua_en",
+    "level": "B1",
+    "topic": "Vocabulary",
+    "core": "актуальний",
+    "fp": "f3abf23e84fd800d2a9b0d22b7cd618cc0be35aae326b3f8e7fd1b0a6fb83ce9",
+    "core_fp": "5f8d65f90d03b8f3e7d9718db8a7964152360c81461997ba21378e7b5ed69e5a"
   }
 ]
