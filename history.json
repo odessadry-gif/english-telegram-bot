@@ -411,5 +411,14 @@
     "core": "wallet",
     "fp": "d23c6c6dabbc82c221ba4921a2809c2372254c38f60cc792bca8e3c89103b82a",
     "core_fp": "61aa240a67c00b8066ac1bdfb8a833a3ff2d051cdf540ca6399e871700ff48cf"
+  },
+  {
+    "ts": 1771961519,
+    "kind": "grammar_gap",
+    "level": "A2",
+    "topic": "Grammar",
+    "core": "She ___ to music every morning.",
+    "fp": "fdb88d004df6c0a1658516f415e3355d81de33e21667ac98528b24816b4a5d72",
+    "core_fp": "1204bf7a66abb23b81b1f5e6eca281b16a5d39fbe8947a5f06e5ec863f2f9019"
   }
 ]
