@@ -420,5 +420,14 @@
     "core": "She ___ to music every morning.",
     "fp": "fdb88d004df6c0a1658516f415e3355d81de33e21667ac98528b24816b4a5d72",
     "core_fp": "1204bf7a66abb23b81b1f5e6eca281b16a5d39fbe8947a5f06e5ec863f2f9019"
+  },
+  {
+    "ts": 1771969997,
+    "kind": "ua_en",
+    "level": "A2",
+    "topic": "Vocabulary",
+    "core": "майже",
+    "fp": "3195b9a97a3be54dcd4231f0df77cffc35c7670ac06ee3d6b617aef4f136a568",
+    "core_fp": "329a747ecd4c1a250836c6dcb2a9a5faab594572bd9baa909e3720799053aefe"
   }
 ]
