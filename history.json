@@ -402,5 +402,14 @@
     "core": "запланувати",
     "fp": "8fecf8f09df665553d059739c07d71810be7131e01cfffa3293a8a2a51bf34a2",
     "core_fp": "32e4625ddb2aac3f63f9373552a84badd1d03b58e6eb518491f12c048ce1b970"
+  },
+  {
+    "ts": 1771946760,
+    "kind": "guess_word",
+    "level": "A2",
+    "topic": "Riddle",
+    "core": "wallet",
+    "fp": "d23c6c6dabbc82c221ba4921a2809c2372254c38f60cc792bca8e3c89103b82a",
+    "core_fp": "61aa240a67c00b8066ac1bdfb8a833a3ff2d051cdf540ca6399e871700ff48cf"
   }
 ]
