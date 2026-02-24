@@ -429,5 +429,14 @@
     "core": "майже",
     "fp": "3195b9a97a3be54dcd4231f0df77cffc35c7670ac06ee3d6b617aef4f136a568",
     "core_fp": "329a747ecd4c1a250836c6dcb2a9a5faab594572bd9baa909e3720799053aefe"
+  },
+  {
+    "ts": 1771974271,
+    "kind": "guess_word",
+    "level": "A2",
+    "topic": "Vocabulary",
+    "core": "napkin",
+    "fp": "24d6381ac16a7abc1c9c5dbf3eaa9277f34ec93036e44f2b93f4ade3b9951a17",
+    "core_fp": "2b671f0a7340aa76e13c257b6d76821c0253b613debed7f256a8934d976aad4e"
   }
 ]
