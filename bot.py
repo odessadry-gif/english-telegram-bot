@@ -17,7 +17,15 @@ MODEL = os.getenv("OPENAI_MODEL", "gpt-5-mini")
 # ========= HISTORY =========
 HISTORY_FILE = "history.json"
 MAX_HISTORY = 800
-MAX_GEN_TRIES = 12
+
+# Базовое число попыток
+MAX_GEN_TRIES_DEFAULT = 12
+# Больше попыток для сложных случаев
+MAX_GEN_TRIES_BY_KIND = {
+    "guess_word": 40,     # чтобы реже упираться в бан
+    "grammar_gap": 18,
+    "ua_en": 18,
+}
 
 # ✅ 3 формата
 KIND_CYCLE = ["grammar_gap", "ua_en", "guess_word"]
@@ -28,6 +36,9 @@ COOLDOWN_LAST_N = {
     "grammar_gap": 120,
 }
 GRAMMAR_PATTERN_LAST_N = 180
+
+# Для prompt: сколько последних guess_word запрещаем явно
+GUESS_WORD_AVOID_LAST_N = 80
 
 client = OpenAI(api_key=OPENAI_API_KEY)
 
@@ -122,12 +133,8 @@ def ensure_4_options(options: list[str]) -> list[str]:
 
 
 def shuffle_options_keep_correct(options: list[str], correct_idx: int) -> tuple[list[str], int]:
-    """
-    Перемешивает options и возвращает новый correct_idx.
-    """
     if not options or correct_idx < 0 or correct_idx >= len(options):
         return options, correct_idx
-
     correct_value = options[correct_idx]
     shuffled = options[:]
     random.shuffle(shuffled)
@@ -187,6 +194,26 @@ def extract_json(text: str) -> dict:
     return json.loads(m.group(0))
 
 
+def get_guess_word_avoid_list(history: list[dict], n: int) -> list[str]:
+    out = []
+    seen = set()
+    for h in reversed(history or []):
+        if h.get("kind") != "guess_word":
+            continue
+        w = normalize_core("guess_word", h.get("core", ""))
+        if not w or w in seen:
+            continue
+        seen.add(w)
+        out.append(w)
+        if len(out) >= n:
+            break
+    return out
+
+
+def tries_for_kind(kind: str) -> int:
+    return int(MAX_GEN_TRIES_BY_KIND.get(kind, MAX_GEN_TRIES_DEFAULT))
+
+
 # ========= TELEGRAM =========
 def send_quiz_poll(question: str, options: list[str], correct_id: int, explanation: str):
     question = (question or "").strip()
@@ -219,13 +246,16 @@ def send_quiz_poll(question: str, options: list[str], correct_id: int, explanati
 
 
 # ========= PROMPTS =========
-def prompt_for(kind: str) -> str:
-    # ❗️Level убрали ВЕЗДЕ в тексте поста. Оставили минимальный формат с 💬
-    # ✅ grammar_gap: только простые времена (без perfect)
+def prompt_for(kind: str, guess_word_avoid: list[str]) -> str:
+    avoid_line = ""
+    if kind == "guess_word" and guess_word_avoid:
+        # не делаем огромным — достаточно списка
+        avoid_line = "Avoid these words (do NOT use them as the answer): " + ", ".join(guess_word_avoid) + "\n"
+
     return f"""
 Create ONE Telegram quiz for English learners (A2/B1). Return STRICT JSON ONLY (no markdown, no extra text).
 
-JSON schema:
+{avoid_line}JSON schema:
 {{
   "level": "A2" or "B1",
   "kind": "{kind}",
@@ -243,9 +273,7 @@ Format rules:
 - core: ONE sentence with exactly one blank: ___
 - Use ONLY these tenses:
   Present Simple, Past Simple, Future Simple (will), Present Continuous, Past Continuous.
-- DO NOT use: Present Perfect / Past Perfect / Future Perfect,
-  Present Perfect Continuous / Past Perfect Continuous / Future Perfect Continuous,
-  modals (should/might/could), conditionals, comparatives.
+- DO NOT use: any Perfect tenses, modals (should/might/could), conditionals, comparatives.
 - Keep sentences short and clear (A2/B1), everyday situations.
 - question format MUST be exactly:
   💬
@@ -269,6 +297,7 @@ Format rules:
 
 3) kind=guess_word:
 - core: correct English word (one word, A2/B1)
+- Use less obvious everyday nouns/objects (NOT the most common ones).
 - question has 2–3 short riddle lines + "What is it?"
 - question format MUST be exactly:
   💬
@@ -288,10 +317,10 @@ Return STRICT JSON ONLY.
 """.strip()
 
 
-def generate_one(kind: str) -> dict:
+def generate_one(kind: str, guess_word_avoid: list[str]) -> dict:
     resp = client.responses.create(
         model=MODEL,
-        input=prompt_for(kind),
+        input=prompt_for(kind, guess_word_avoid),
     )
     raw = (getattr(resp, "output_text", None) or "").strip()
     return extract_json(raw)
@@ -306,6 +335,7 @@ def main():
 
     history = load_history()
 
+    # sets from history
     seen_fp = {h.get("fp") for h in history if h.get("fp")}
 
     seen_core = set()
@@ -315,11 +345,13 @@ def main():
         if k in KIND_CYCLE and c:
             seen_core.add(h.get("core_fp") or core_fp(k, c))
 
+    # guess_word global ban
     guess_word_banned = set()
     for h in history:
         if h.get("kind") == "guess_word":
             guess_word_banned.add(normalize_core("guess_word", h.get("core", "")))
 
+    # cooldown windows
     recent_core_by_kind = {k: set() for k in COOLDOWN_LAST_N.keys()}
     counts_by_kind = {k: 0 for k in COOLDOWN_LAST_N.keys()}
     for h in reversed(history):
@@ -341,105 +373,132 @@ def main():
                 recent_grammar_patterns.add(pk)
             gp_count += 1
 
-    kind = next_kind(history)
+    # для prompt guess_word
+    guess_word_avoid = get_guess_word_avoid_list(history, GUESS_WORD_AVOID_LAST_N)
+
+    start_kind = next_kind(history)
+    start_idx = KIND_CYCLE.index(start_kind) if start_kind in KIND_CYCLE else 0
+
+    # ✅ Главное: не падаем на одном kind. Пробуем по кругу все 3 формата.
     last_err = None
+    for shift in range(len(KIND_CYCLE)):
+        kind = KIND_CYCLE[(start_idx + shift) % len(KIND_CYCLE)]
 
-    for _ in range(MAX_GEN_TRIES):
-        try:
-            data = generate_one(kind)
+        tries = tries_for_kind(kind)
+        filtered_out = 0
 
-            level = str(data.get("level", "A2")).strip().upper()
-            if level not in ("A2", "B1"):
-                level = "A2"
+        for _ in range(tries):
+            try:
+                data = generate_one(kind, guess_word_avoid)
 
-            topic = str(data.get("topic", "Grammar")).strip()
-            question = str(data["question"]).strip()
+                question = str(data["question"]).strip()
 
-            options = ensure_4_options(data.get("options", []))
-            if len(options) != 4:
-                raise ValueError("options must be a list of 4 unique strings")
+                options = ensure_4_options(data.get("options", []))
+                if len(options) != 4:
+                    raise ValueError("options must be a list of 4 unique strings")
 
-            correct = int(data.get("correct", 0))
-            if correct not in (0, 1, 2, 3):
-                raise ValueError("correct must be 0/1/2/3")
+                correct = int(data.get("correct", 0))
+                if correct not in (0, 1, 2, 3):
+                    raise ValueError("correct must be 0..3")
 
-            explanation = str(data.get("explanation_uk", "")).strip()
-            if not explanation:
-                explanation = "Перевір підмет і час у реченні."
+                explanation = str(data.get("explanation_uk", "")).strip()
+                if not explanation:
+                    explanation = "Перевір підмет і час у реченні."
 
-            core = str(data.get("core", "")).strip() or question
+                core = str(data.get("core", "")).strip() or question
 
-            cfp = core_fp(kind, core)
-            if cfp in seen_core:
+                # hard anti-repeat core_fp
+                cfp = core_fp(kind, core)
+                if cfp in seen_core:
+                    filtered_out += 1
+                    continue
+
+                # guess_word bans
+                if kind == "guess_word":
+                    norm_word = normalize_core("guess_word", core)
+                    if not norm_word:
+                        filtered_out += 1
+                        continue
+                    if norm_word in guess_word_banned:
+                        filtered_out += 1
+                        continue
+
+                # ua_en cooldown + correct=0 in source order
+                if kind == "ua_en":
+                    norm_ua = normalize_core("ua_en", core)
+                    if not norm_ua:
+                        filtered_out += 1
+                        continue
+                    if norm_ua in recent_core_by_kind["ua_en"]:
+                        filtered_out += 1
+                        continue
+                    correct = 0
+
+                # grammar cooldown + pattern cooldown
+                if kind == "grammar_gap":
+                    norm_g = normalize_core("grammar_gap", core)
+                    if norm_g and norm_g in recent_core_by_kind["grammar_gap"]:
+                        filtered_out += 1
+                        continue
+                    pk = grammar_pattern_key(core)
+                    if pk and pk in recent_grammar_patterns:
+                        filtered_out += 1
+                        continue
+
+                # ✅ shuffle (чтобы правильный не всегда первый)
+                options, correct = shuffle_options_keep_correct(options, correct)
+
+                # fp dedupe (based on final options sent)
+                fp = _fp(kind, core, options)
+                if fp in seen_fp:
+                    filtered_out += 1
+                    continue
+
+                # ✅ send
+                send_quiz_poll(question, options, correct, explanation)
+
+                # update sets in-memory
+                seen_fp.add(fp)
+                seen_core.add(cfp)
+
+                if kind == "guess_word":
+                    guess_word_banned.add(normalize_core("guess_word", core))
+
+                if kind in recent_core_by_kind:
+                    normc = normalize_core(kind, core)
+                    if normc:
+                        recent_core_by_kind[kind].add(normc)
+
+                if kind == "grammar_gap":
+                    pk = grammar_pattern_key(core)
+                    if pk:
+                        recent_grammar_patterns.add(pk)
+
+                # save history
+                history.append(
+                    {
+                        "ts": int(time.time()),
+                        "kind": kind,
+                        "level": str(data.get("level", "A2")).strip().upper(),
+                        "topic": str(data.get("topic", "")),
+                        "core": core,
+                        "fp": fp,
+                        "core_fp": cfp,
+                    }
+                )
+                save_history(history)
+                return
+
+            except Exception as e:
+                last_err = e
                 continue
 
-            if kind == "guess_word":
-                norm_word = normalize_core("guess_word", core)
-                if not norm_word:
-                    continue
-                if norm_word in guess_word_banned:
-                    continue
+        # если дошли сюда — kind не удалось (всё отфильтровалось)
+        if last_err is None:
+            last_err = RuntimeError(f"No unique candidate for kind={kind} (filtered_out={filtered_out})")
 
-            if kind == "ua_en":
-                norm_ua = normalize_core("ua_en", core)
-                if not norm_ua:
-                    continue
-                if norm_ua in recent_core_by_kind["ua_en"]:
-                    continue
-                correct = 0
-
-            if kind == "grammar_gap":
-                norm_g = normalize_core("grammar_gap", core)
-                if norm_g and norm_g in recent_core_by_kind["grammar_gap"]:
-                    continue
-                pk = grammar_pattern_key(core)
-                if pk and pk in recent_grammar_patterns:
-                    continue
-
-            # ✅ перемешиваем варианты и пересчитываем correct
-            options, correct = shuffle_options_keep_correct(options, correct)
-
-            fp = _fp(kind, core, options)
-            if fp in seen_fp:
-                continue
-
-            send_quiz_poll(question, options, correct, explanation)
-
-            seen_fp.add(fp)
-            seen_core.add(cfp)
-
-            if kind == "guess_word":
-                guess_word_banned.add(normalize_core("guess_word", core))
-
-            if kind in recent_core_by_kind:
-                normc = normalize_core(kind, core)
-                if normc:
-                    recent_core_by_kind[kind].add(normc)
-
-            if kind == "grammar_gap":
-                pk = grammar_pattern_key(core)
-                if pk:
-                    recent_grammar_patterns.add(pk)
-
-            history.append(
-                {
-                    "ts": int(time.time()),
-                    "kind": kind,
-                    "level": level,
-                    "topic": topic,
-                    "core": core,
-                    "fp": fp,
-                    "core_fp": cfp,
-                }
-            )
-            save_history(history)
-            return
-
-        except Exception as e:
-            last_err = e
-            continue
-
-    raise RuntimeError(f"Failed to generate unique quiz for kind={kind}. Last error: {last_err}")
+    # если вдруг не получилось ни на одном kind (очень маловероятно)
+    raise RuntimeError(f"Failed to generate quiz for ALL kinds. Last error: {last_err}")
 
 
 if __name__ == "__main__":
