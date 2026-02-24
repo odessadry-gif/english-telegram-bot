@@ -393,5 +393,14 @@
     "core": "They ___ dinner now.",
     "fp": "b2d2e5f5359bb028f7bc37689e05735c9f1e8987e73c6bdabf5b51110cf23f80",
     "core_fp": "98b1fb759157371e33c846bf6c183d093eeb2ea3a7b25519fdf37d3adead8241"
+  },
+  {
+    "ts": 1771934338,
+    "kind": "ua_en",
+    "level": "A2",
+    "topic": "Vocabulary",
+    "core": "запланувати",
+    "fp": "8fecf8f09df665553d059739c07d71810be7131e01cfffa3293a8a2a51bf34a2",
+    "core_fp": "32e4625ddb2aac3f63f9373552a84badd1d03b58e6eb518491f12c048ce1b970"
   }
 ]
