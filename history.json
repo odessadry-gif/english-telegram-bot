@@ -384,5 +384,14 @@
     "core": "clock",
     "fp": "dfbd19ad15a354f803065261be730e28efb75081499efae6af9e27e954c24e67",
     "core_fp": "ee9f6d4a88912f6bf0c91605ebffa627a650a76951581d95b9b7179192adfa14"
+  },
+  {
+    "ts": 1771933574,
+    "kind": "grammar_gap",
+    "level": "A2",
+    "topic": "Grammar",
+    "core": "They ___ dinner now.",
+    "fp": "b2d2e5f5359bb028f7bc37689e05735c9f1e8987e73c6bdabf5b51110cf23f80",
+    "core_fp": "98b1fb759157371e33c846bf6c183d093eeb2ea3a7b25519fdf37d3adead8241"
   }
 ]
