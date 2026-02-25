@@ -438,5 +438,14 @@
     "core": "napkin",
     "fp": "24d6381ac16a7abc1c9c5dbf3eaa9277f34ec93036e44f2b93f4ade3b9951a17",
     "core_fp": "2b671f0a7340aa76e13c257b6d76821c0253b613debed7f256a8934d976aad4e"
+  },
+  {
+    "ts": 1771996576,
+    "kind": "grammar_gap",
+    "level": "A2",
+    "topic": "Grammar",
+    "core": "She ___ dinner now.",
+    "fp": "01fb393588a3da2c9f9e4307044448c8647dcbda8f38bb1d4131eafc307c07c6",
+    "core_fp": "3dc6d6eb8ead66e848392f98399b570ff7a8c74a6fad205373265234a702f384"
   }
 ]
