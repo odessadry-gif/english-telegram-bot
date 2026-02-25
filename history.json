@@ -447,5 +447,14 @@
     "core": "She ___ dinner now.",
     "fp": "01fb393588a3da2c9f9e4307044448c8647dcbda8f38bb1d4131eafc307c07c6",
     "core_fp": "3dc6d6eb8ead66e848392f98399b570ff7a8c74a6fad205373265234a702f384"
+  },
+  {
+    "ts": 1772006835,
+    "kind": "ua_en",
+    "level": "A2",
+    "topic": "Vocabulary",
+    "core": "зараз",
+    "fp": "f77c89a35a3e4a049bd8415a29a991c7e364496573fcc63ad0df1a5cd07d083b",
+    "core_fp": "11ef8ef5b194b76504fd710996833813920aed111989d685544259c08829a42d"
   }
 ]
