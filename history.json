@@ -465,5 +465,14 @@
     "core": "suitcase",
     "fp": "051f891a22f6a8862091e221f44de2ec8883682b817e07cca75865bd6dbeffeb",
     "core_fp": "ab68b4e8ce28410fd9edcd7d2e01ee3c4a7c0df906872f9243a4a7dccc31b59c"
+  },
+  {
+    "ts": 1772030607,
+    "kind": "grammar_gap",
+    "level": "A2",
+    "topic": "Grammar",
+    "core": "She ___ to school every day.",
+    "fp": "69ac2145fa8cf627cccb975d00baea12d4b935f3d3d4ba8be502634c7e36683d",
+    "core_fp": "fc3d69f5207a434e24e41c85734f5870c9e568369a8978bb02d08ae5082056eb"
   }
 ]
