@@ -456,5 +456,14 @@
     "core": "зараз",
     "fp": "f77c89a35a3e4a049bd8415a29a991c7e364496573fcc63ad0df1a5cd07d083b",
     "core_fp": "11ef8ef5b194b76504fd710996833813920aed111989d685544259c08829a42d"
+  },
+  {
+    "ts": 1772020586,
+    "kind": "guess_word",
+    "level": "B1",
+    "topic": "Riddle",
+    "core": "suitcase",
+    "fp": "051f891a22f6a8862091e221f44de2ec8883682b817e07cca75865bd6dbeffeb",
+    "core_fp": "ab68b4e8ce28410fd9edcd7d2e01ee3c4a7c0df906872f9243a4a7dccc31b59c"
   }
 ]
