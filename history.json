@@ -492,5 +492,14 @@
     "core": "coaster",
     "fp": "65be46422ff62a6b50e687076ae951d9215a25ae72ac7ff52071a87a9541ab29",
     "core_fp": "df9941c9e84f8f3640174d39d0d62b66fff2d2f6c9015f287e1c656d986d0d4b"
+  },
+  {
+    "ts": 1772060702,
+    "kind": "grammar_gap",
+    "level": "A2",
+    "topic": "Grammar",
+    "core": "He ___ to work by bus.",
+    "fp": "6c9f3b90386c11c38acb812ee2942166b04b27d58c42f0346a8c483a08232f4e",
+    "core_fp": "df74e9b266c1d85acf9059bbba43e8d6c7699f69f99e49138c4c7c460aa5b78f"
   }
 ]
