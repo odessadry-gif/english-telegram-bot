@@ -483,5 +483,14 @@
     "core": "поїздка",
     "fp": "1a9c05f909884c9c4c65d7cc705bcb56f56ea1ac8f6540f42bb58cf8132d109c",
     "core_fp": "f8c4e3269cc3c934f2e602d4bf49d291e8ac6289e01b2091d0e74cce70b06960"
+  },
+  {
+    "ts": 1772056185,
+    "kind": "guess_word",
+    "level": "A2",
+    "topic": "Riddle",
+    "core": "coaster",
+    "fp": "65be46422ff62a6b50e687076ae951d9215a25ae72ac7ff52071a87a9541ab29",
+    "core_fp": "df9941c9e84f8f3640174d39d0d62b66fff2d2f6c9015f287e1c656d986d0d4b"
   }
 ]
