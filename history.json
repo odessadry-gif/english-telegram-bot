@@ -474,5 +474,14 @@
     "core": "She ___ to school every day.",
     "fp": "69ac2145fa8cf627cccb975d00baea12d4b935f3d3d4ba8be502634c7e36683d",
     "core_fp": "fc3d69f5207a434e24e41c85734f5870c9e568369a8978bb02d08ae5082056eb"
+  },
+  {
+    "ts": 1772048060,
+    "kind": "ua_en",
+    "level": "A2",
+    "topic": "Vocabulary",
+    "core": "поїздка",
+    "fp": "1a9c05f909884c9c4c65d7cc705bcb56f56ea1ac8f6540f42bb58cf8132d109c",
+    "core_fp": "f8c4e3269cc3c934f2e602d4bf49d291e8ac6289e01b2091d0e74cce70b06960"
   }
 ]
