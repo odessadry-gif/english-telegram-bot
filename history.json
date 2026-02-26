@@ -546,5 +546,14 @@
     "core": "hanger",
     "fp": "7896940ed10184782c23e6d3d3c16ccda62929a5082519e4257e640bfee3fc35",
     "core_fp": "b516af687aeced0d12fcddfd57717cfc80ac10de1356b0603586c0ead3595f82"
+  },
+  {
+    "ts": 1772142403,
+    "kind": "grammar_gap",
+    "level": "A2",
+    "topic": "Grammar",
+    "core": "I ___ dinner now.",
+    "fp": "2834f4b0b951312c1b52bca2462ffba9d14f0c6ad56691462e7190acb7a60942",
+    "core_fp": "90bdd270e25e2833fd03d7045992dbf9e66ed074ea7b33942a6360aa23ad8b06"
   }
 ]
