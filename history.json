@@ -501,5 +501,14 @@
     "core": "He ___ to work by bus.",
     "fp": "6c9f3b90386c11c38acb812ee2942166b04b27d58c42f0346a8c483a08232f4e",
     "core_fp": "df74e9b266c1d85acf9059bbba43e8d6c7699f69f99e49138c4c7c460aa5b78f"
+  },
+  {
+    "ts": 1772082807,
+    "kind": "ua_en",
+    "level": "A2",
+    "topic": "Vocabulary",
+    "core": "щодня",
+    "fp": "bf4c765741ee64a0ee1323b98a9701d7cc5b79242887a567e8786a664b578237",
+    "core_fp": "5395405390dc72f3a281ee7bf0a96e9084a77fb6ccc429fe3bc9ee746da5cc07"
   }
 ]
