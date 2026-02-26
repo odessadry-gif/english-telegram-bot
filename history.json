@@ -537,5 +537,14 @@
     "core": "ресторан",
     "fp": "06266a77ac89b7029e87ca419e592c289459dfc50d7f29f825567bc94645caa2",
     "core_fp": "a6f5473fcf4e2021ce9c240aaaceaa718028ce61f73751a9b639bb3821ae641c"
+  },
+  {
+    "ts": 1772129394,
+    "kind": "guess_word",
+    "level": "A2",
+    "topic": "Riddle",
+    "core": "hanger",
+    "fp": "7896940ed10184782c23e6d3d3c16ccda62929a5082519e4257e640bfee3fc35",
+    "core_fp": "b516af687aeced0d12fcddfd57717cfc80ac10de1356b0603586c0ead3595f82"
   }
 ]
