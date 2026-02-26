@@ -555,5 +555,14 @@
     "core": "I ___ dinner now.",
     "fp": "2834f4b0b951312c1b52bca2462ffba9d14f0c6ad56691462e7190acb7a60942",
     "core_fp": "90bdd270e25e2833fd03d7045992dbf9e66ed074ea7b33942a6360aa23ad8b06"
+  },
+  {
+    "ts": 1772147100,
+    "kind": "ua_en",
+    "level": "A2",
+    "topic": "Vocabulary",
+    "core": "записка",
+    "fp": "b174f239421eb88d25784737bc4ba4c0abee7701513f30a8c977fbbbde4c4a91",
+    "core_fp": "adfdf860c4f458b8588bf4d5969137a068424c0ccc3b09e4abe4fe06bdd1b305"
   }
 ]
