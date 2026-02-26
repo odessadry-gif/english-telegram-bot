@@ -519,5 +519,14 @@
     "core": "lantern",
     "fp": "b3dd248408e33a836abad53c096cad5698f5d6abdefd0607ebebfe598c30976b",
     "core_fp": "458685a11c4bdcee02b846b3a37d0cf170b8d943809c060913b6b42a06b04d14"
+  },
+  {
+    "ts": 1772107076,
+    "kind": "grammar_gap",
+    "level": "A2",
+    "topic": "Grammar",
+    "core": "They ___ football now.",
+    "fp": "9d61fb79d064bfa4e5bf46167a3fa1526329a85f56b55b3bc7454c0e917458d4",
+    "core_fp": "ef221e6c8d21b1f57fe1905268726eaa9ed3ae62bcd4b1f63b33e1f0103a83bc"
   }
 ]
