@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Word Rush — Daily English</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --bg-1: #03050f;
+  --glass-bg: rgba(10, 20, 50, 0.55);
+  --glass-border: rgba(80, 130, 255, 0.18);
+  --glass-shine: rgba(255,255,255,0.06);
+  --text: #f0f4ff;
+  --text-dim: rgba(180, 200, 255, 0.55);
+  --electric: #4d8dff;
+  --green: #00e676;
+  --red: #ff4d6d;
+  --gold: #ffd740;
+}
+
+body {
+  background: var(--bg-1);
+  min-height: 100vh;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  padding: 24px 16px;
+  font-family: 'Space Grotesk', sans-serif;
+  position: relative;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: '';
+  position: fixed; inset: 0;
+  background:
+    radial-gradient(ellipse 600px 400px at 20% 20%, rgba(15,40,120,0.5) 0%, transparent 70%),
+    radial-gradient(ellipse 500px 500px at 80% 70%, rgba(8,25,80,0.4) 0%, transparent 70%),
+    radial-gradient(ellipse 300px 300px at 50% 50%, rgba(20,50,150,0.2) 0%, transparent 70%);
+  pointer-events: none; z-index: 0;
+}
+body > * { position: relative; z-index: 1; }
+
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(24px) saturate(1.8);
+  -webkit-backdrop-filter: blur(24px) saturate(1.8);
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.5), 0 1px 0 var(--glass-shine) inset, 0 0 0 1px rgba(255,255,255,0.03) inset;
+}
+
+/* TABS */
+.screen-tabs {
+  display: flex; gap: 6px; justify-content: center;
+  margin-bottom: 20px; flex-wrap: wrap;
+}
+.tab-btn {
+  background: rgba(10,20,50,0.6); backdrop-filter: blur(12px);
+  border: 1px solid rgba(77,141,255,0.15); border-radius: 20px;
+  padding: 7px 14px; font-size: 12px; font-weight: 600;
+  color: var(--text-dim); cursor: pointer; font-family: inherit;
+  transition: all 0.25s; letter-spacing: 0.3px;
+}
+.tab-btn:hover { border-color: rgba(77,141,255,0.4); color: var(--electric); }
+.tab-btn.active {
+  background: rgba(30,79,196,0.25); border-color: rgba(77,141,255,0.5);
+  color: #fff; box-shadow: 0 0 12px rgba(77,141,255,0.2);
+}
+
+/* PHONE */
+.phone {
+  width: 375px;
+  background: linear-gradient(180deg, #060b1a 0%, #03050f 100%);
+  border-radius: 44px;
+  border: 1.5px solid rgba(60,100,200,0.2);
+  overflow: hidden;
+  box-shadow: 0 50px 100px rgba(0,0,0,0.8), 0 0 0 1px rgba(255,255,255,0.04), 0 0 60px rgba(15,50,150,0.15);
+}
+
+.tg-header {
+  background: rgba(5,10,28,0.9); backdrop-filter: blur(20px);
+  padding: 14px 16px 12px; display: flex; align-items: center; gap: 10px;
+  border-bottom: 1px solid rgba(50,80,180,0.15);
+}
+.avatar {
+  width: 36px; height: 36px; border-radius: 50%;
+  background: linear-gradient(135deg, #1e4fc4, #0d2a7a);
+  border: 1.5px solid rgba(77,141,255,0.3);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 13px; font-weight: 700; color: white;
+  box-shadow: 0 0 12px rgba(30,79,196,0.4);
+}
+.channel-name { font-size: 15px; font-weight: 600; color: var(--text); }
+.channel-subs { font-size: 12px; color: var(--text-dim); }
+
+.chat-area {
+  padding: 16px 12px; min-height: 600px;
+  display: flex; flex-direction: column; gap: 12px; overflow-y: auto;
+}
+
+.page-label {
+  font-size: 10px; color: rgba(77,141,255,0.5);
+  text-align: center; letter-spacing: 1.5px;
+  text-transform: uppercase; font-weight: 600;
+}
+
+.game-card {
+  border-radius: 20px; overflow: hidden;
+  animation: fadeUp 0.4s cubic-bezier(0.34,1.56,0.64,1);
+}
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px) scale(0.97); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* ===== LOBBY ===== */
+.lobby { padding: 24px 20px; text-align: center; }
+.game-logo-bg {
+  width: 80px; height: 80px; border-radius: 22px; margin: 0 auto 14px;
+  background: linear-gradient(135deg, rgba(30,79,196,0.4), rgba(10,30,90,0.6));
+  border: 1px solid rgba(77,141,255,0.3);
+  display: flex; align-items: center; justify-content: center; font-size: 38px;
+  box-shadow: 0 0 30px rgba(30,79,196,0.3), 0 0 60px rgba(30,79,196,0.1);
+  animation: float 3s ease-in-out infinite;
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(2deg); }
+}
+.game-title {
+  font-size: 26px; font-weight: 800;
+  background: linear-gradient(135deg, #ffffff 30%, #6da8ff 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  letter-spacing: -0.5px; margin-bottom: 4px;
+}
+.game-subtitle { font-size: 13px; color: var(--text-dim); margin-bottom: 20px; }
+
+.rules-box {
+  background: rgba(20,40,100,0.3); border: 1px solid rgba(77,141,255,0.15);
+  border-radius: 14px; padding: 14px 16px; text-align: left; margin-bottom: 20px;
+}
+.rule {
+  font-size: 13px; color: rgba(200,215,255,0.85);
+  padding: 5px 0; display: flex; align-items: center; gap: 8px;
+}
+.rule-val { color: var(--electric); font-weight: 600; }
+
+.players-row { display: flex; align-items: center; justify-content: center; gap: 6px; margin-bottom: 20px; }
+.player-chip {
+  background: rgba(15,30,70,0.6); border: 1px solid rgba(77,141,255,0.2);
+  border-radius: 20px; padding: 5px 12px; font-size: 12px; color: var(--text-dim);
+}
+.player-chip.you {
+  border-color: rgba(77,141,255,0.5); color: var(--electric);
+  background: rgba(30,79,196,0.15);
+}
+
+.btn-primary {
+  width: 100%;
+  background: linear-gradient(135deg, #1e4fc4, #0d2a7a);
+  border: 1px solid rgba(100,160,255,0.3); border-radius: 14px; padding: 14px;
+  font-size: 15px; font-weight: 700; color: white; cursor: pointer; font-family: inherit;
+  transition: all 0.2s; letter-spacing: 0.3px;
+  box-shadow: 0 4px 20px rgba(30,79,196,0.4), 0 1px 0 rgba(255,255,255,0.1) inset;
+}
+.btn-primary:hover { background: linear-gradient(135deg, #2558d8, #1035a0); box-shadow: 0 6px 28px rgba(30,79,196,0.6); transform: translateY(-1px); }
+
+/* ===== COUNTDOWN ===== */
+.countdown-wrap { padding: 50px 20px; text-align: center; }
+.cd-ring {
+  width: 120px; height: 120px; border-radius: 50%; margin: 0 auto 16px;
+  background: rgba(20,40,100,0.4); border: 2px solid rgba(77,141,255,0.3);
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 0 40px rgba(30,79,196,0.3), 0 0 80px rgba(30,79,196,0.1);
+}
+.big-number {
+  font-size: 64px; font-weight: 800;
+  background: linear-gradient(135deg, #fff, #6da8ff);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  animation: scalePop 0.4s cubic-bezier(0.34,1.56,0.64,1);
+}
+@keyframes scalePop {
+  from { transform: scale(1.5); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+.countdown-label { font-size: 14px; color: var(--text-dim); letter-spacing: 0.5px; }
+
+/* ===== GAME ACTIVE ===== */
+.game-active { padding: 16px 18px; }
+
+.top-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+.word-counter { font-size: 11px; color: var(--text-dim); letter-spacing: 0.8px; text-transform: uppercase; font-weight: 600; }
+.timer-val {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 22px; font-weight: 600; color: var(--gold);
+  text-shadow: 0 0 12px rgba(255,215,64,0.4);
+}
+.timer-val.urgent { color: var(--red); text-shadow: 0 0 12px rgba(255,77,109,0.5); animation: blink 0.6s ease infinite; }
+@keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+
+.timer-bar { height: 4px; background: rgba(255,255,255,0.07); border-radius: 2px; overflow: hidden; margin-bottom: 14px; }
+.timer-fill {
+  height: 100%; background: linear-gradient(90deg, #1e4fc4, #4d8dff);
+  border-radius: 2px; transition: width 1s linear;
+  box-shadow: 0 0 8px rgba(77,141,255,0.5);
+}
+.timer-fill.urgent { background: linear-gradient(90deg, #c41e3a, #ff4d6d); box-shadow: 0 0 8px rgba(255,77,109,0.5); }
+
+.score-badge {
+  display: inline-flex; align-items: center; gap: 5px;
+  background: rgba(0,230,118,0.1); border: 1px solid rgba(0,230,118,0.25);
+  border-radius: 20px; padding: 4px 12px; font-size: 12px; font-weight: 700;
+  color: var(--green); margin-bottom: 14px;
+  box-shadow: 0 0 12px rgba(0,230,118,0.1);
+}
+
+.clue-box {
+  background: rgba(15,30,70,0.5); border: 1px solid rgba(77,141,255,0.15);
+  border-radius: 14px; padding: 13px 14px; margin-bottom: 14px;
+}
+.clue-label {
+  font-size: 10px; color: rgba(77,141,255,0.6);
+  text-transform: uppercase; letter-spacing: 1.5px;
+  font-weight: 600; margin-bottom: 7px;
+}
+.clue-text { font-size: 13px; color: rgba(200,215,255,0.9); line-height: 1.6; }
+
+/* 7 letter boxes */
+.word-display {
+  display: flex; gap: 5px; justify-content: center;
+  margin-bottom: 14px;
+}
+.letter-box {
+  width: 34px; height: 40px;
+  background: rgba(10,20,55,0.7);
+  border: 1.5px solid rgba(77,141,255,0.2);
+  border-radius: 9px;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 17px; font-weight: 700; color: var(--text);
+  transition: all 0.3s cubic-bezier(0.34,1.56,0.64,1);
+  flex-shrink: 0;
+}
+.letter-box.correct {
+  border-color: rgba(0,230,118,0.5); color: var(--green);
+  background: rgba(0,230,118,0.1); box-shadow: 0 0 14px rgba(0,230,118,0.2);
+}
+.letter-box.hint {
+  border-color: rgba(255,215,64,0.5); color: var(--gold);
+  background: rgba(255,215,64,0.08);
+}
+.letter-box.empty {
+  border-style: dashed; opacity: 0.4;
+}
+
+.options-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 7px; margin-bottom: 10px; }
+.option-btn {
+  background: rgba(10,22,60,0.7); border: 1.5px solid rgba(77,141,255,0.18);
+  border-radius: 12px; padding: 12px 8px;
+  font-size: 13px; font-weight: 600; color: rgba(200,215,255,0.9);
+  cursor: pointer; transition: all 0.18s; font-family: inherit; text-align: center;
+  backdrop-filter: blur(8px);
+}
+.option-btn:hover {
+  border-color: rgba(77,141,255,0.45); background: rgba(20,50,130,0.5);
+  color: white; transform: translateY(-1px); box-shadow: 0 4px 16px rgba(30,79,196,0.25);
+}
+.option-btn.correct { border-color: rgba(0,230,118,0.5); background: rgba(0,230,118,0.1); color: var(--green); box-shadow: 0 0 20px rgba(0,230,118,0.2); }
+.option-btn.wrong { border-color: rgba(255,77,109,0.5); background: rgba(255,77,109,0.1); color: var(--red); }
+
+.hint-btn {
+  width: 100%; background: transparent;
+  border: 1px dashed rgba(255,215,64,0.25); border-radius: 10px; padding: 9px;
+  font-size: 12px; font-weight: 600; color: rgba(255,215,64,0.5);
+  cursor: pointer; font-family: inherit; transition: all 0.2s; letter-spacing: 0.3px;
+}
+.hint-btn:hover { border-color: rgba(255,215,64,0.5); color: var(--gold); background: rgba(255,215,64,0.05); }
+
+/* ===== RESULTS ===== */
+.results { padding: 22px 20px; text-align: center; }
+.trophy-wrap {
+  width: 80px; height: 80px; border-radius: 22px; margin: 0 auto 14px;
+  background: linear-gradient(135deg, rgba(255,215,64,0.2), rgba(255,150,0,0.1));
+  border: 1px solid rgba(255,215,64,0.3);
+  display: flex; align-items: center; justify-content: center; font-size: 38px;
+  box-shadow: 0 0 30px rgba(255,215,64,0.2), 0 0 60px rgba(255,150,0,0.1);
+}
+.result-title {
+  font-size: 22px; font-weight: 800;
+  background: linear-gradient(135deg, #fff 30%, #ffd740 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 4px;
+}
+.result-sub { font-size: 13px; color: var(--text-dim); margin-bottom: 18px; }
+
+.stats-row { display: grid; grid-template-columns: repeat(3,1fr); gap: 8px; margin-bottom: 14px; }
+.stat-box {
+  background: rgba(10,20,55,0.6); border: 1px solid rgba(77,141,255,0.15);
+  border-radius: 14px; padding: 12px 6px; backdrop-filter: blur(8px);
+}
+.stat-val { font-size: 24px; font-weight: 800; color: var(--electric); }
+.stat-val.gold { color: var(--gold); text-shadow: 0 0 12px rgba(255,215,64,0.3); }
+.stat-val.green { color: var(--green); text-shadow: 0 0 12px rgba(0,230,118,0.3); }
+.stat-label { font-size: 10px; color: var(--text-dim); margin-top: 3px; letter-spacing: 0.5px; }
+
+/* HOW SCORING WORKS */
+.scoring-info {
+  background: rgba(10,20,55,0.5); border: 1px solid rgba(77,141,255,0.15);
+  border-radius: 14px; padding: 12px 14px; margin-bottom: 14px; text-align: left;
+}
+.scoring-title {
+  font-size: 10px; color: rgba(77,141,255,0.5);
+  text-transform: uppercase; letter-spacing: 1.5px; font-weight: 600; margin-bottom: 10px;
+}
+.scoring-row {
+  display: flex; align-items: flex-start; gap: 8px; padding: 4px 0;
+  font-size: 12px; color: rgba(180,200,255,0.75); line-height: 1.5;
+}
+.s-icon { font-size: 14px; flex-shrink: 0; margin-top: 1px; }
+.s-val { color: var(--electric); font-weight: 700; }
+
+.leaderboard {
+  background: rgba(8,16,45,0.7); border: 1px solid rgba(77,141,255,0.15);
+  border-radius: 14px; padding: 14px; margin-bottom: 16px; text-align: left;
+  backdrop-filter: blur(12px);
+}
+.lb-title {
+  font-size: 10px; color: rgba(77,141,255,0.5);
+  text-transform: uppercase; letter-spacing: 1.5px; font-weight: 600; margin-bottom: 12px;
+}
+.lb-row {
+  display: flex; align-items: center; gap: 10px; padding: 7px 0;
+  border-bottom: 1px solid rgba(50,80,180,0.12); font-size: 13px; color: rgba(200,215,255,0.85);
+}
+.lb-row:last-child { border-bottom: none; }
+.lb-rank { font-family: 'JetBrains Mono', monospace; font-weight: 600; color: var(--text-dim); width: 18px; font-size: 12px; }
+.lb-rank.gold { color: var(--gold); }
+.lb-name { flex: 1; font-weight: 500; }
+.lb-score { font-weight: 700; color: var(--electric); font-size: 13px; }
+.lb-row.you-row {
+  background: rgba(30,79,196,0.12); border-radius: 8px;
+  padding: 7px 8px; margin: 2px -4px; border-bottom: none;
+}
+.lb-row.you-row .lb-name, .lb-row.you-row .lb-rank { color: var(--electric); }
+
+.btn-green {
+  width: 100%;
+  background: linear-gradient(135deg, rgba(0,180,90,0.8), rgba(0,130,60,0.9));
+  border: 1px solid rgba(0,230,118,0.3); border-radius: 14px; padding: 14px;
+  font-size: 15px; font-weight: 700; color: white; cursor: pointer; font-family: inherit;
+  transition: all 0.2s; letter-spacing: 0.3px;
+  box-shadow: 0 4px 20px rgba(0,180,90,0.3), 0 1px 0 rgba(255,255,255,0.1) inset;
+}
+.btn-green:hover { box-shadow: 0 6px 28px rgba(0,230,118,0.35); transform: translateY(-1px); }
+
+.tg-footer {
+  background: rgba(5,10,28,0.95); backdrop-filter: blur(20px);
+  padding: 10px 16px; display: flex; align-items: center; gap: 10px;
+  border-top: 1px solid rgba(50,80,180,0.15);
+}
+.input-fake {
+  flex: 1; background: rgba(15,28,70,0.6); border: 1px solid rgba(77,141,255,0.12);
+  border-radius: 22px; padding: 9px 16px; font-size: 13px; color: var(--text-dim);
+}
+</style>
+</head>
+<body>
+
+<div style="margin-bottom:14px; text-align:center; color:rgba(77,141,255,0.5); font-size:11px; letter-spacing:1.5px; text-transform:uppercase; font-weight:600;">
+  Вибери екран
+</div>
+
+<div class="screen-tabs">
+  <button class="tab-btn active" onclick="showScreen('lobby')">🎮 Лобі</button>
+  <button class="tab-btn" onclick="showScreen('countdown')">⏳ Старт</button>
+  <button class="tab-btn" onclick="showScreen('game')">⚡ Гра</button>
+  <button class="tab-btn" onclick="showScreen('answer')">✅ Відповідь</button>
+  <button class="tab-btn" onclick="showScreen('results')">🏆 Підсумки</button>
+</div>
+
+<div class="phone">
+  <div class="tg-header">
+    <div class="avatar">E</div>
+    <div class="header-info">
+      <div class="channel-name">@english_every_day</div>
+      <div class="channel-subs">26 підписників</div>
+    </div>
+    <span style="color:rgba(77,141,255,0.4); font-size:20px;">⋯</span>
+  </div>
+
+  <div class="chat-area" id="chat-area"></div>
+
+  <div class="tg-footer">
+    <div class="input-fake">Публікація...</div>
+    <span style="font-size:22px; opacity:0.4;">🎤</span>
+  </div>
+</div>
+
+<script>
+const screens = {
+
+  lobby: `
+    <div class="page-label" style="margin-bottom:8px">Лобі</div>
+    <div class="game-card glass">
+      <div class="lobby">
+        <div class="game-logo-bg">⚡</div>
+        <div class="game-title">WORD RUSH</div>
+        <div class="game-subtitle">Вгадай 20 слів за 2 хвилини</div>
+        <div class="rules-box">
+          <div class="rule"><span>⏱</span><span><span class="rule-val">2 хвилини</span> на всю гру</span></div>
+          <div class="rule"><span>📖</span><span>Читай підказку — вибирай слово</span></div>
+          <div class="rule"><span>💡</span><span>До <span class="rule-val">3 підказок</span> за гру</span></div>
+          <div class="rule"><span>⭐</span><span>Швидша відповідь = <span class="rule-val">більше очок</span></span></div>
+          <div class="rule"><span>🏆</span><span>Найкращий результат потрапить у топ!</span></div>
+        </div>
+        <div class="players-row">
+          <div class="player-chip you">👤 Ти</div>
+          <div class="player-chip">+12 грають зараз</div>
+        </div>
+        <button class="btn-primary" onclick="showScreen('countdown')">Почати гру →</button>
+      </div>
+    </div>
+  `,
+
+  countdown: `
+    <div class="page-label" style="margin-bottom:8px">Приготуйся</div>
+    <div class="game-card glass">
+      <div class="countdown-wrap">
+        <div class="countdown-label" style="margin-bottom:20px">Гра починається через</div>
+        <div class="cd-ring">
+          <div class="big-number" id="cdNum">3</div>
+        </div>
+        <div class="countdown-label" style="margin-top:16px; color:rgba(77,141,255,0.7)">Приготуйся! 🔥</div>
+      </div>
+    </div>
+  `,
+
+  game: `
+    <div class="page-label" style="margin-bottom:8px">Слово 7 з 20</div>
+    <div class="game-card glass">
+      <div class="game-active">
+        <div class="top-row">
+          <span class="word-counter">Слово 7 / 20</span>
+          <span class="timer-val" id="timerVal">1:34</span>
+        </div>
+        <div class="timer-bar"><div class="timer-fill" id="timerFill" style="width:77%"></div></div>
+        <div><span class="score-badge">⭐ 380 очок</span></div>
+        <div class="clue-box" style="margin-top:12px">
+          <div class="clue-label">🔍 Підказка</div>
+          <div class="clue-text">You use it to write. It has ink inside and you hold it in your hand.</div>
+        </div>
+        <div class="word-display" id="letterBoxes">
+          <div class="letter-box">_</div>
+          <div class="letter-box">_</div>
+          <div class="letter-box">_</div>
+          <div class="letter-box empty">_</div>
+          <div class="letter-box empty">_</div>
+          <div class="letter-box empty">_</div>
+          <div class="letter-box empty">_</div>
+        </div>
+        <div class="options-grid">
+          <button class="option-btn" onclick="selectOption(this,false)">📱 phone</button>
+          <button class="option-btn" onclick="selectOption(this,true)">🖊 pen</button>
+          <button class="option-btn" onclick="selectOption(this,false)">📚 book</button>
+          <button class="option-btn" onclick="selectOption(this,false)">✏️ pencil</button>
+        </div>
+        <button class="hint-btn" onclick="useHint()">💡 Підказка (залишилось: 3)</button>
+      </div>
+    </div>
+  `,
+
+  answer: `
+    <div class="page-label" style="margin-bottom:8px">Правильно!</div>
+    <div class="game-card glass">
+      <div class="game-active">
+        <div class="top-row">
+          <span class="word-counter">Слово 7 / 20</span>
+          <span class="timer-val">1:31</span>
+        </div>
+        <div class="timer-bar"><div class="timer-fill" style="width:75%"></div></div>
+        <div style="margin-bottom:12px"><span class="score-badge" style="background:rgba(0,230,118,0.12);border-color:rgba(0,230,118,0.3)">⭐ 440 очок <span style="color:rgba(0,230,118,0.7);font-size:11px">+60</span></span></div>
+        <div class="clue-box" style="background:rgba(0,230,118,0.06);border-color:rgba(0,230,118,0.2)">
+          <div class="clue-label" style="color:rgba(0,230,118,0.6)">✅ Правильно!</div>
+          <div class="clue-text">You use it to write. It has ink inside and you hold it in your hand.</div>
+        </div>
+        <div class="word-display">
+          <div class="letter-box correct">P</div>
+          <div class="letter-box correct">E</div>
+          <div class="letter-box correct">N</div>
+          <div class="letter-box empty">_</div>
+          <div class="letter-box empty">_</div>
+          <div class="letter-box empty">_</div>
+          <div class="letter-box empty">_</div>
+        </div>
+        <div class="options-grid">
+          <button class="option-btn" style="opacity:0.3;pointer-events:none">📱 phone</button>
+          <button class="option-btn correct">🖊 pen ✓</button>
+          <button class="option-btn" style="opacity:0.3;pointer-events:none">📚 book</button>
+          <button class="option-btn" style="opacity:0.3;pointer-events:none">✏️ pencil</button>
+        </div>
+        <button class="btn-primary" style="margin-top:4px" onclick="showScreen('results')">Наступне слово →</button>
+      </div>
+    </div>
+  `,
+
+  results: `
+    <div class="page-label" style="margin-bottom:8px">Підсумки</div>
+    <div class="game-card glass">
+      <div class="results">
+        <div class="trophy-wrap">🏆</div>
+        <div class="result-title">Чудова гра!</div>
+        <div class="result-sub">Ти вгадав 16 з 20 слів за 1 хв 48 сек</div>
+        <div class="stats-row">
+          <div class="stat-box"><div class="stat-val gold">1240</div><div class="stat-label">ОЧОК</div></div>
+          <div class="stat-box"><div class="stat-val green">16/20</div><div class="stat-label">СЛІВ</div></div>
+          <div class="stat-box"><div class="stat-val">12с</div><div class="stat-label">ЗАЛИШОК</div></div>
+        </div>
+
+        <div class="scoring-info">
+          <div class="scoring-title">⚙️ Як рахуються очки</div>
+          <div class="scoring-row"><span class="s-icon">⚡</span><span>Швидка відповідь (&lt;5с) = <span class="s-val">+100</span> очок</span></div>
+          <div class="scoring-row"><span class="s-icon">✅</span><span>Звичайна відповідь = <span class="s-val">+60</span> очок</span></div>
+          <div class="scoring-row"><span class="s-icon">💡</span><span>Використав підказку = <span class="s-val">+30</span> очок</span></div>
+          <div class="scoring-row"><span class="s-icon">❌</span><span>Неправильна відповідь = <span class="s-val">−10</span> очок</span></div>
+          <div class="scoring-row"><span class="s-icon">🏅</span><span>Всі 20 слів = бонус <span class="s-val">+200</span> очок!</span></div>
+        </div>
+
+        <div class="leaderboard">
+          <div class="lb-title">🏅 Топ підписників сьогодні</div>
+          <div class="lb-row">
+            <span class="lb-rank gold">1</span>
+            <span class="lb-name">Alex_M</span>
+            <span class="lb-score">1850 pts</span>
+          </div>
+          <div class="lb-row">
+            <span class="lb-rank gold">2</span>
+            <span class="lb-name">Olena 🇺🇦</span>
+            <span class="lb-score">1640 pts</span>
+          </div>
+          <div class="lb-row you-row">
+            <span class="lb-rank gold">3</span>
+            <span class="lb-name">Ти 👈</span>
+            <span class="lb-score">1240 pts</span>
+          </div>
+          <div class="lb-row">
+            <span class="lb-rank">4</span>
+            <span class="lb-name">Dmytro</span>
+            <span class="lb-score">990 pts</span>
+          </div>
+          <div class="lb-row">
+            <span class="lb-rank">5</span>
+            <span class="lb-name">Kateryna</span>
+            <span class="lb-score">870 pts</span>
+          </div>
+        </div>
+        <button class="btn-green" onclick="showScreen('lobby')">🔄 Зіграти ще раз</button>
+      </div>
+    </div>
+  `
+};
+
+let cdInterval;
+function showScreen(name) {
+  clearInterval(cdInterval);
+  document.getElementById('chat-area').innerHTML = screens[name];
+  const keys = ['lobby','countdown','game','answer','results'];
+  document.querySelectorAll('.tab-btn').forEach((b,i) => b.classList.toggle('active', keys[i] === name));
+  if (name === 'countdown') startCountdown();
+  if (name === 'game') startTimer();
+}
+
+function startCountdown() {
+  let n = 3;
+  const refresh = () => {
+    const el = document.getElementById('cdNum');
+    if (!el) return;
+    el.style.animation = 'none'; el.offsetHeight;
+    el.style.animation = 'scalePop 0.4s cubic-bezier(0.34,1.56,0.64,1)';
+    el.textContent = n;
+  };
+  refresh();
+  cdInterval = setInterval(() => {
+    n--;
+    if (n === 0) { clearInterval(cdInterval); setTimeout(() => showScreen('game'), 500); return; }
+    refresh();
+  }, 900);
+}
+
+function startTimer() {
+  let secs = 94; // 1:34
+  cdInterval = setInterval(() => {
+    secs--;
+    const tv = document.getElementById('timerVal');
+    const tf = document.getElementById('timerFill');
+    if (!tv) { clearInterval(cdInterval); return; }
+    const m = Math.floor(secs/60), s = secs%60;
+    tv.textContent = m + ':' + String(s).padStart(2,'0');
+    tf.style.width = (secs/120*100) + '%';
+    if (secs <= 20) { tv.classList.add('urgent'); tf.classList.add('urgent'); }
+    if (secs <= 0) clearInterval(cdInterval);
+  }, 1000);
+}
+
+function selectOption(btn, correct) {
+  document.querySelectorAll('.option-btn').forEach(b => b.style.pointerEvents = 'none');
+  if (correct) {
+    btn.classList.add('correct');
+    setTimeout(() => showScreen('answer'), 800);
+  } else {
+    btn.classList.add('wrong');
+    setTimeout(() => {
+      btn.classList.remove('wrong'); btn.style.opacity = '0.35';
+      document.querySelectorAll('.option-btn').forEach(b => { if(b !== btn) b.style.pointerEvents = 'auto'; });
+    }, 600);
+  }
+}
+
+function useHint() {
+  const boxes = document.querySelectorAll('#letterBoxes .letter-box');
+  if (boxes[0]) { boxes[0].classList.remove('empty'); boxes[0].classList.add('hint'); boxes[0].textContent = 'P'; }
+  const h = document.querySelector('.hint-btn');
+  if (h) h.textContent = '💡 Підказка (залишилось: 2)';
+}
+
+showScreen('lobby');
+</script>
+</body>
+</html>
