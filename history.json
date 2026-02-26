@@ -528,5 +528,14 @@
     "core": "They ___ football now.",
     "fp": "9d61fb79d064bfa4e5bf46167a3fa1526329a85f56b55b3bc7454c0e917458d4",
     "core_fp": "ef221e6c8d21b1f57fe1905268726eaa9ed3ae62bcd4b1f63b33e1f0103a83bc"
+  },
+  {
+    "ts": 1772116814,
+    "kind": "ua_en",
+    "level": "A2",
+    "topic": "Vocabulary",
+    "core": "ресторан",
+    "fp": "06266a77ac89b7029e87ca419e592c289459dfc50d7f29f825567bc94645caa2",
+    "core_fp": "a6f5473fcf4e2021ce9c240aaaceaa718028ce61f73751a9b639bb3821ae641c"
   }
 ]
