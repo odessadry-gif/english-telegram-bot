@@ -510,5 +510,14 @@
     "core": "щодня",
     "fp": "bf4c765741ee64a0ee1323b98a9701d7cc5b79242887a567e8786a664b578237",
     "core_fp": "5395405390dc72f3a281ee7bf0a96e9084a77fb6ccc429fe3bc9ee746da5cc07"
+  },
+  {
+    "ts": 1772093024,
+    "kind": "guess_word",
+    "level": "B1",
+    "topic": "Vocabulary",
+    "core": "lantern",
+    "fp": "b3dd248408e33a836abad53c096cad5698f5d6abdefd0607ebebfe598c30976b",
+    "core_fp": "458685a11c4bdcee02b846b3a37d0cf170b8d943809c060913b6b42a06b04d14"
   }
 ]
