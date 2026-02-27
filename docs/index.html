@@ -1,339 +1,65 @@
-<!DOCTYPE html>
-<html lang="uk">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-<title>Word Rush — Daily English</title>
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap');
-*{margin:0;padding:0;box-sizing:border-box}
-
-:root{
-  --bg-1:#03050f;
-  --glass-bg:rgba(10,20,50,.55);
-  --glass-border:rgba(80,130,255,.18);
-  --glass-shine:rgba(255,255,255,.06);
-  --text:#f0f4ff;
-  --text-dim:rgba(180,200,255,.55);
-  --electric:#4d8dff;
-  --green:#00e676;
-  --red:#ff4d6d;
-  --gold:#ffd740;
-}
-
-body{
-  background:var(--bg-1);
-  min-height:100vh;
-  display:flex;align-items:center;justify-content:center;
-  padding:18px 12px;
-  font-family:'Space Grotesk',sans-serif;
-  position:relative;overflow-x:hidden;
-}
-
-body::before{
-  content:'';
-  position:fixed;inset:0;
-  background:
-    radial-gradient(ellipse 600px 400px at 20% 20%, rgba(15,40,120,.5) 0%, transparent 70%),
-    radial-gradient(ellipse 500px 500px at 80% 70%, rgba(8,25,80,.4) 0%, transparent 70%),
-    radial-gradient(ellipse 300px 300px at 50% 50%, rgba(20,50,150,.2) 0%, transparent 70%);
-  pointer-events:none;z-index:0;
-}
-body>*{position:relative;z-index:1}
-
-.glass{
-  background:var(--glass-bg);
-  backdrop-filter:blur(24px) saturate(1.8);
-  -webkit-backdrop-filter:blur(24px) saturate(1.8);
-  border:1px solid var(--glass-border);
-  box-shadow:0 8px 32px rgba(0,0,0,.5),0 1px 0 var(--glass-shine) inset,0 0 0 1px rgba(255,255,255,.03) inset;
-}
-
-/* APP SHELL */
-.shell{
-  width:375px;
-  background:linear-gradient(180deg,#060b1a 0%, #03050f 100%);
-  border-radius:34px;
-  border:1.5px solid rgba(60,100,200,.2);
-  overflow:hidden;
-  box-shadow:0 50px 100px rgba(0,0,0,.8), 0 0 0 1px rgba(255,255,255,.04), 0 0 60px rgba(15,50,150,.15);
-}
-
-.app-top{
-  padding:12px 16px;
-  display:flex;align-items:center;justify-content:center;
-  border-bottom:1px solid rgba(50,80,180,.15);
-  background:rgba(5,10,28,.9);
-  backdrop-filter:blur(20px);
-}
-.app-title{
-  font-size:12px;font-weight:800;letter-spacing:2px;
-  color:rgba(240,244,255,.9);
-}
-
-.main{
-  padding:16px 12px;
-  min-height:620px;
-  display:flex;flex-direction:column;gap:12px;
-}
-
-.page-label{
-  font-size:10px;color:rgba(77,141,255,.5);
-  text-align:center;letter-spacing:1.5px;
-  text-transform:uppercase;font-weight:600;
-}
-
-.card{
-  border-radius:20px;overflow:hidden;
-  animation:fadeUp .35s cubic-bezier(.34,1.56,.64,1);
-}
-@keyframes fadeUp{from{opacity:0;transform:translateY(18px) scale(.98)}to{opacity:1;transform:translateY(0) scale(1)}}
-
-/* LOBBY */
-.lobby{padding:24px 20px;text-align:center}
-.logo{
-  width:80px;height:80px;border-radius:22px;margin:0 auto 14px;
-  background:linear-gradient(135deg, rgba(30,79,196,.4), rgba(10,30,90,.6));
-  border:1px solid rgba(77,141,255,.3);
-  display:flex;align-items:center;justify-content:center;font-size:38px;
-  box-shadow:0 0 30px rgba(30,79,196,.3), 0 0 60px rgba(30,79,196,.1);
-  animation:float 3s ease-in-out infinite;
-}
-@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
-.h1{
-  font-size:26px;font-weight:800;
-  background:linear-gradient(135deg,#fff 30%, #6da8ff 100%);
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
-  letter-spacing:-.5px;margin-bottom:4px;
-}
-.sub{font-size:13px;color:var(--text-dim);margin-bottom:18px}
-.rules{
-  background:rgba(20,40,100,.28);
-  border:1px solid rgba(77,141,255,.14);
-  border-radius:14px;padding:14px 16px;text-align:left;margin-bottom:18px
-}
-.rule{font-size:13px;color:rgba(200,215,255,.85);padding:5px 0;display:flex;gap:8px;align-items:center}
-.rule b{color:var(--electric);font-weight:700}
-.btn{
-  width:100%;
-  background:linear-gradient(135deg,#1e4fc4,#0d2a7a);
-  border:1px solid rgba(100,160,255,.3);
-  border-radius:14px;padding:14px;
-  font-size:15px;font-weight:700;color:#fff;
-  cursor:pointer;font-family:inherit;
-  transition:all .18s;letter-spacing:.3px;
-  box-shadow:0 4px 20px rgba(30,79,196,.4), 0 1px 0 rgba(255,255,255,.1) inset;
-}
-.btn:hover{transform:translateY(-1px);box-shadow:0 6px 28px rgba(30,79,196,.55)}
-
-/* COUNTDOWN */
-.countdown{padding:52px 20px;text-align:center}
-.ring{
-  width:120px;height:120px;border-radius:50%;margin:0 auto 16px;
-  background:rgba(20,40,100,.4);
-  border:2px solid rgba(77,141,255,.3);
-  display:flex;align-items:center;justify-content:center;
-  box-shadow:0 0 40px rgba(30,79,196,.3), 0 0 80px rgba(30,79,196,.1);
-}
-.big{
-  font-size:64px;font-weight:800;
-  background:linear-gradient(135deg,#fff,#6da8ff);
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
-  animation:scalePop .35s cubic-bezier(.34,1.56,.64,1);
-}
-@keyframes scalePop{from{transform:scale(1.5);opacity:0}to{transform:scale(1);opacity:1}}
-.small{font-size:14px;color:var(--text-dim);letter-spacing:.5px}
-
-/* GAME */
-.game{padding:16px 18px}
-.toprow{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
-.counter{font-size:11px;color:var(--text-dim);letter-spacing:.8px;text-transform:uppercase;font-weight:600}
-.timer{
-  font-family:'JetBrains Mono',monospace;
-  font-size:22px;font-weight:600;color:var(--gold);
-  text-shadow:0 0 12px rgba(255,215,64,.35);
-}
-.timer.urgent{color:var(--red);text-shadow:0 0 12px rgba(255,77,109,.45);animation:blink .6s ease infinite}
-@keyframes blink{0%,100%{opacity:1}50%{opacity:.45}}
-.bar{height:4px;background:rgba(255,255,255,.07);border-radius:2px;overflow:hidden;margin-bottom:14px}
-.fill{height:100%;background:linear-gradient(90deg,#1e4fc4,#4d8dff);border-radius:2px;transition:width .25s linear;box-shadow:0 0 8px rgba(77,141,255,.5)}
-.fill.urgent{background:linear-gradient(90deg,#c41e3a,#ff4d6d);box-shadow:0 0 8px rgba(255,77,109,.45)}
-
-.badge{
-  display:inline-flex;gap:6px;align-items:center;
-  background:rgba(0,230,118,.10);
-  border:1px solid rgba(0,230,118,.22);
-  border-radius:20px;padding:4px 12px;
-  font-size:12px;font-weight:800;color:var(--green);
-  box-shadow:0 0 12px rgba(0,230,118,.08);
-}
-.badge .delta{font-size:11px;font-weight:700;color:rgba(0,230,118,.7)}
-
-.clue{
-  background:rgba(15,30,70,.5);
-  border:1px solid rgba(77,141,255,.15);
-  border-radius:14px;padding:13px 14px;margin:12px 0 14px;
-}
-.clue .label{
-  font-size:10px;color:rgba(77,141,255,.6);
-  text-transform:uppercase;letter-spacing:1.5px;font-weight:600;margin-bottom:7px
-}
-.clue .text{font-size:13px;color:rgba(200,215,255,.92);line-height:1.6}
-
-.word{
-  display:flex;gap:5px;justify-content:center;flex-wrap:wrap;
-  margin-bottom:14px;
-}
-.box{
-  width:34px;height:40px;border-radius:9px;
-  background:rgba(10,20,55,.7);
-  border:1.5px solid rgba(77,141,255,.2);
-  display:flex;align-items:center;justify-content:center;
-  font-family:'JetBrains Mono',monospace;
-  font-size:17px;font-weight:700;color:var(--text);
-}
-.box.empty{border-style:dashed;opacity:.45}
-.box.hint{border-color:rgba(255,215,64,.5);color:var(--gold);background:rgba(255,215,64,.08)}
-.box.correct{border-color:rgba(0,230,118,.5);color:var(--green);background:rgba(0,230,118,.10);box-shadow:0 0 14px rgba(0,230,118,.18)}
-
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-bottom:10px}
-.opt{
-  background:rgba(10,22,60,.7);
-  border:1.5px solid rgba(77,141,255,.18);
-  border-radius:12px;padding:12px 10px;
-  font-size:13px;font-weight:700;
-  color:rgba(200,215,255,.92);
-  cursor:pointer;transition:all .16s;
-  font-family:inherit;text-align:center;
-  backdrop-filter:blur(8px);
-}
-.opt:hover{border-color:rgba(77,141,255,.45);background:rgba(20,50,130,.5);color:#fff;transform:translateY(-1px);box-shadow:0 4px 16px rgba(30,79,196,.22)}
-.opt.correct{border-color:rgba(0,230,118,.5);background:rgba(0,230,118,.10);color:var(--green);box-shadow:0 0 20px rgba(0,230,118,.18)}
-.opt.wrong{border-color:rgba(255,77,109,.5);background:rgba(255,77,109,.10);color:var(--red)}
-.opt.disabled{opacity:.35;pointer-events:none}
-
-.hintbtn{
-  width:100%;
-  background:transparent;
-  border:1px dashed rgba(255,215,64,.25);
-  border-radius:10px;padding:9px;
-  font-size:12px;font-weight:800;
-  color:rgba(255,215,64,.55);
-  cursor:pointer;font-family:inherit;
-  transition:all .18s;letter-spacing:.3px;
-}
-.hintbtn:hover{border-color:rgba(255,215,64,.5);color:var(--gold);background:rgba(255,215,64,.05)}
-
-/* RESULTS */
-.results{padding:22px 20px;text-align:center}
-.trophy{
-  width:80px;height:80px;border-radius:22px;margin:0 auto 14px;
-  background:linear-gradient(135deg, rgba(255,215,64,.2), rgba(255,150,0,.1));
-  border:1px solid rgba(255,215,64,.3);
-  display:flex;align-items:center;justify-content:center;font-size:38px;
-  box-shadow:0 0 30px rgba(255,215,64,.2), 0 0 60px rgba(255,150,0,.1);
-}
-.rtitle{
-  font-size:22px;font-weight:900;
-  background:linear-gradient(135deg,#fff 30%, #ffd740 100%);
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:4px
-}
-.rsub{font-size:13px;color:var(--text-dim);margin-bottom:16px}
-
-.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:14px}
-.sbox{
-  background:rgba(10,20,55,.6);
-  border:1px solid rgba(77,141,255,.15);
-  border-radius:14px;padding:12px 6px;
-}
-.sval{font-size:24px;font-weight:900;color:var(--electric)}
-.sval.gold{color:var(--gold);text-shadow:0 0 12px rgba(255,215,64,.25)}
-.sval.green{color:var(--green);text-shadow:0 0 12px rgba(0,230,118,.25)}
-.slabel{font-size:10px;color:var(--text-dim);margin-top:3px;letter-spacing:.5px}
-
-.lb{
-  background:rgba(8,16,45,.7);
-  border:1px solid rgba(77,141,255,.15);
-  border-radius:14px;padding:14px;text-align:left;
-  backdrop-filter:blur(12px);
-  margin-bottom:14px;
-}
-.lb .ttl{
-  font-size:10px;color:rgba(77,141,255,.5);
-  text-transform:uppercase;letter-spacing:1.5px;font-weight:700;margin-bottom:12px;
-}
-.lb .row{
-  display:flex;align-items:center;gap:10px;padding:7px 0;
-  border-bottom:1px solid rgba(50,80,180,.12);
-  font-size:13px;color:rgba(200,215,255,.85);
-}
-.lb .row:last-child{border-bottom:none}
-.rank{font-family:'JetBrains Mono',monospace;font-weight:700;color:var(--text-dim);width:18px;font-size:12px}
-.rank.gold{color:var(--gold)}
-.name{flex:1;font-weight:600}
-.pts{font-weight:900;color:var(--electric);font-size:13px}
-
-.btn-green{
-  width:100%;
-  background:linear-gradient(135deg, rgba(0,180,90,.8), rgba(0,130,60,.9));
-  border:1px solid rgba(0,230,118,.3);
-  border-radius:14px;padding:14px;
-  font-size:15px;font-weight:900;color:#fff;
-  cursor:pointer;font-family:inherit;
-  transition:all .18s;letter-spacing:.3px;
-  box-shadow:0 4px 20px rgba(0,180,90,.28), 0 1px 0 rgba(255,255,255,.1) inset;
-}
-.btn-green:hover{transform:translateY(-1px);box-shadow:0 6px 28px rgba(0,230,118,.32)}
-
-@media (max-width:420px){
-  body{padding:0}
-  .shell{width:100%;border-radius:0;min-height:100vh}
-  .main{min-height:calc(100vh - 48px)}
-}
-</style>
-</head>
-<body>
-
-<div class="shell">
-  <div class="app-top">
-    <div class="app-title">WORD RUSH</div>
-  </div>
-  <div class="main" id="main"></div>
-</div>
-
-<!-- Supabase JS (CDN) -->
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-
 <script>
 // ======================================================
 // ===============  SUPABASE CONFIG  ====================
 // ======================================================
 const SUPABASE_URL = "https://ppyyxfvsyxklvxbpunjc.supabase.co";
-const SUPABASE_ANON_KEY = "sb_publishable_S2amtkjqdRb1wMk0CmThTg_efAOkjmh"; 
+const SUPABASE_ANON_KEY = "PASTE_YOUR_sb_publishable_KEY_HERE"; // <= вставь свой sb_publishable_...
 const ROUND_ID = 1;
 
-const sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+const sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY, {
+  auth: { persistSession: false, autoRefreshToken: false },
+});
+
+// ======================================================
+// ===============  UI: TOAST + ERROR BOX  ==============
+// ======================================================
+function toast(msg){
+  const t = document.createElement('div');
+  t.textContent = msg;
+  t.style.cssText = `
+    position:fixed;left:50%;bottom:20px;transform:translateX(-50%);
+    background:rgba(8,16,45,.92);border:1px solid rgba(77,141,255,.25);
+    color:rgba(240,244,255,.92);padding:10px 14px;border-radius:12px;
+    font:600 12px/1.2 'Space Grotesk',sans-serif;letter-spacing:.2px;
+    box-shadow:0 10px 30px rgba(0,0,0,.45);
+    z-index:9999;backdrop-filter:blur(12px);
+  `;
+  document.body.appendChild(t);
+  setTimeout(()=>{ t.style.opacity='0'; t.style.transition='opacity .2s'; }, 1400);
+  setTimeout(()=>t.remove(), 1700);
+}
+
+function formatSbError(e){
+  if (!e) return "Unknown error";
+  if (typeof e === 'string') return e;
+  return e.message || e.error_description || JSON.stringify(e);
+}
 
 // ======================================================
 // ===============  TELEGRAM USER  =======================
 // ======================================================
-function getTgUser(){
-  const tg = window.Telegram?.WebApp;
-  const u = tg?.initDataUnsafe?.user;
-
-  // если не из Телеги — дадим гостя (чтоб тестить в браузере)
-  const fallback = {
-    id: "guest_" + Math.random().toString(16).slice(2),
+function getOrCreateGuest(){
+  const key = "wordrush_guest_id";
+  let id = localStorage.getItem(key);
+  if (!id) {
+    id = "guest_" + Math.random().toString(16).slice(2);
+    localStorage.setItem(key, id);
+  }
+  return {
+    id,
     username: null,
     first_name: "Guest",
     last_name: null
   };
+}
 
-  return u ?? fallback;
+function getTgUser(){
+  const tg = window.Telegram?.WebApp;
+  const u = tg?.initDataUnsafe?.user;
+  return u ?? getOrCreateGuest();
 }
 
 function getDisplayName(u){
-  // username если есть, иначе имя/фамилия
   if (u?.username) return "@" + u.username;
   const fn = u?.first_name ?? "";
   const ln = u?.last_name ?? "";
@@ -345,44 +71,40 @@ function getDisplayName(u){
 // ===============  SUPABASE HELPERS  ====================
 // ======================================================
 async function fetchTop5(roundId){
-  try{
-    const { data, error } = await sb
-      .from("leaderboard")
-      .select("username, user_id, score")
-      .eq("round_id", roundId)
-      .order("score", { ascending: false })
-      .order("created_at", { ascending: true })
-      .limit(5);
+  const { data, error } = await sb
+    .from("leaderboard")
+    .select("username, user_id, score")
+    .eq("round_id", roundId)
+    .order("score", { ascending: false })
+    .order("created_at", { ascending: true })
+    .limit(5);
 
-    if (error) throw error;
+  if (error) throw error;
 
-    return (data ?? []).map(r => ({
-      name: r.username || r.user_id,
-      pts: r.score
-    }));
-  }catch(e){
-    console.error("fetchTop5 error:", e);
-    return [];
-  }
+  return (data ?? []).map(r => ({
+    name: r.username || r.user_id,
+    pts: r.score
+  }));
 }
 
 async function submitScore({ round_id, user_id, username, score }){
-  try{
-    const payload = {
-      round_id,
-      user_id: String(user_id),
-      username: username ? String(username) : null,
-      score: Number(score)
-    };
+  const payload = {
+    round_id,
+    user_id: String(user_id),
+    username: username ? String(username) : null,
+    score: Number(score),
+  };
 
-    const { error } = await sb.from("leaderboard").insert(payload);
-    if (error) throw error;
+  const { error } = await sb.from("leaderboard").insert(payload);
+  if (error) throw error;
+  return true;
+}
 
-    return true;
-  }catch(e){
-    console.error("submitScore error:", e);
-    return false;
-  }
+// Быстрая проверка связи (чтобы понимать: ключ/rls/сеть)
+async function pingSupabase(){
+  const { error } = await sb.from("leaderboard").select("id").limit(1);
+  if (error) throw error;
+  return true;
 }
 
 // ======================================================
@@ -466,9 +188,7 @@ function shuffle(arr){
   }
   return a;
 }
-function pickN(arr, n){
-  return shuffle(arr).slice(0, n);
-}
+function pickN(arr, n){ return shuffle(arr).slice(0, n); }
 function nowMs(){ return Date.now(); }
 function clamp(v,min,max){ return Math.max(min, Math.min(max, v)); }
 
@@ -516,8 +236,18 @@ function renderLobby(){
   document.getElementById('btnStart').addEventListener('click', renderCountdown);
 }
 
-function renderCountdown(){
+async function renderCountdown(){
   clearAllIntervals();
+
+  // Пингуем базу заранее, чтобы понять “ключ/rls/сеть”
+  try{
+    await pingSupabase();
+  }catch(e){
+    console.error("Supabase ping error:", e);
+    toast("Supabase error: " + formatSbError(e));
+    // всё равно дадим играть, но будет видно в конце
+  }
+
   elMain.innerHTML = `
     <div class="page-label">Приготуйся</div>
     <div class="card glass">
@@ -598,13 +328,12 @@ function updateTimerUI(secondsLeft){
 
 function buildLetterBoxes(word, revealedSet){
   const letters = word.toUpperCase().split('');
-  const boxes = letters.map((ch, i) => {
+  return letters.map((ch, i) => {
     const isRevealed = revealedSet.has(i);
     const cls = isRevealed ? 'box hint' : 'box empty';
     const val = isRevealed ? ch : '_';
     return `<div class="${cls}" data-i="${i}">${val}</div>`;
   }).join('');
-  return boxes;
 }
 
 function renderGameQuestion(){
@@ -657,8 +386,7 @@ function renderGameQuestion(){
     });
   });
 
-  const hintBtn = document.getElementById('hintBtn');
-  hintBtn.addEventListener('click', () => {
+  document.getElementById('hintBtn').addEventListener('click', () => {
     onUseHint(revealed, q.word);
   });
 
@@ -674,10 +402,8 @@ function onUseHint(revealed, word){
 
   const len = word.length;
   const candidates = [];
-  for (let i=0;i<len;i++){
-    if (!revealed.has(i)) candidates.push(i);
-  }
-  if (candidates.length === 0) return;
+  for (let i=0;i<len;i++) if (!revealed.has(i)) candidates.push(i);
+  if (!candidates.length) return;
 
   const idx = candidates[Math.floor(Math.random()*candidates.length)];
   revealed.add(idx);
@@ -685,8 +411,7 @@ function onUseHint(revealed, word){
   hintsLeft -= 1;
   score = Math.max(0, score - PENALTY_HINT);
 
-  const boxes = document.getElementById('wordBoxes');
-  boxes.innerHTML = buildLetterBoxes(word, revealed);
+  document.getElementById('wordBoxes').innerHTML = buildLetterBoxes(word, revealed);
   document.getElementById('hintBtn').textContent = hintLabel();
   document.getElementById('scoreVal').textContent = String(score);
 }
@@ -724,9 +449,7 @@ function onPickOption(btn, pickedIdx, correctIdx, revealed, word){
 
     setTimeout(() => {
       btn.classList.add('disabled');
-      buttons.forEach((b, i) => {
-        if (i !== pickedIdx) b.classList.remove('disabled');
-      });
+      buttons.forEach((b, i) => { if (i !== pickedIdx) b.classList.remove('disabled'); });
       document.getElementById('scoreVal').textContent = String(score);
     }, 500);
   }
@@ -749,20 +472,40 @@ async function finishGame(outOfTime){
   let finalScore = score;
   if (!outOfTime && wordsSolved === GAME_TOTAL_WORDS) finalScore += BONUS_FINISH;
 
-  // Telegram identity
   const user = getTgUser();
   const displayName = getDisplayName(user);
 
-  // 1) submit score
-  const ok = await submitScore({
-    round_id: ROUND_ID,
-    user_id: user.id,
-    username: (user.username ? ("@" + user.username) : displayName),
-    score: finalScore
-  });
+  let saveOk = false;
+  let saveErr = null;
 
-  // 2) fetch top 5
-  const top5 = await fetchTop5(ROUND_ID);
+  try{
+    await submitScore({
+      round_id: ROUND_ID,
+      user_id: user.id,
+      username: (user.username ? ("@" + user.username) : displayName),
+      score: finalScore
+    });
+    saveOk = true;
+    toast("Score saved ✅");
+  }catch(e){
+    saveErr = e;
+    console.error("submitScore error:", e);
+    toast("Save failed ❌");
+  }
+
+  let top5 = [];
+  let topErr = null;
+
+  try{
+    top5 = await fetchTop5(ROUND_ID);
+  }catch(e){
+    topErr = e;
+    console.error("fetchTop5 error:", e);
+  }
+
+  const errorText = saveErr
+    ? `Не вдалося зберегти результат: ${escapeHtml(formatSbError(saveErr))}`
+    : (topErr ? `Не вдалося завантажити топ: ${escapeHtml(formatSbError(topErr))}` : null);
 
   elMain.innerHTML = `
     <div class="page-label">Підсумки</div>
@@ -780,6 +523,13 @@ async function finishGame(outOfTime){
 
         <div class="lb">
           <div class="ttl">Топ підписників (Round #${ROUND_ID})</div>
+
+          ${errorText ? `
+            <div style="font-size:12px;color:rgba(255,77,109,.85);padding:6px 0;line-height:1.4">
+              ${errorText}
+            </div>
+          ` : ""}
+
           ${top5.length ? top5.map((r, i) => `
             <div class="row">
               <span class="rank ${i<2 ? 'gold':''}">${i+1}</span>
@@ -788,7 +538,7 @@ async function finishGame(outOfTime){
             </div>
           `).join('') : `
             <div style="font-size:12px;color:rgba(200,215,255,.65);padding:6px 0;">
-              ${ok ? "Поки що немає результатів." : "Не вдалося зберегти результат (перевір RLS політики/ключ)."}
+              ${saveOk ? "Поки що немає результатів." : "Немає топа (бо не збереглось або не прочиталось)."}
             </div>
           `}
         </div>
@@ -814,5 +564,3 @@ function escapeHtml(str){
 // start
 renderLobby();
 </script>
-</body>
-</html>
