@@ -627,5 +627,14 @@
     "core": "stapler",
     "fp": "0492b72c6e5b0d430e345b2366aae96e7deccfb1694040c5bf6751dc95612f14",
     "core_fp": "deaece43ba46df904a34d0f31390b90040367925bf7455c1a0ac610b9f7aff08"
+  },
+  {
+    "ts": 1772232828,
+    "kind": "grammar_gap",
+    "level": "A2",
+    "topic": "Grammar",
+    "core": "He ___ to work by bus yesterday.",
+    "fp": "e57ae231c1c5c1398b7dc93fe275da1561a03d9b31821eb3057fb880fc9b079a",
+    "core_fp": "02b232049b46a4dcfd3a99ba0ec6f1958d0844734347df55ab7d85884ee202fb"
   }
 ]
