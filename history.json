@@ -573,5 +573,14 @@
     "core": "teapot",
     "fp": "26b3a7e8e4fa0fe5e10bea4bee776b6a4eaf3060bd6972df5cbdc629fe94b7fa",
     "core_fp": "7654486b1492fd63a26e1bac614d4b312ff08b0c0c6d89c52d13abc5c8f131d7"
+  },
+  {
+    "ts": 1772179219,
+    "kind": "grammar_gap",
+    "level": "A2",
+    "topic": "Grammar",
+    "core": "She ___ to the shop every Saturday.",
+    "fp": "1ce954d9a30d838efdd155f59e1ece3609ecd03602adda46d79a3a88f82c7c42",
+    "core_fp": "2424abee16cb156efdd40c9fad875b7349e958c30860d9f00bd281ca909ac252"
   }
 ]
