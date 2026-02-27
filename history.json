@@ -591,5 +591,14 @@
     "core": "позичити",
     "fp": "cdf337fb76ae450038a1562ee2255f9b4c82662e27bca32e8b8028452e444079",
     "core_fp": "c42cc8d3dba41d503b163baa9a16e0d13e9edcbbb80dcfafb99ba3986c269447"
+  },
+  {
+    "ts": 1772201426,
+    "kind": "guess_word",
+    "level": "A2",
+    "topic": "Riddle",
+    "core": "bookmark",
+    "fp": "5c13d704e16a04fcf0d7b406d5126865311c4c697d9614124550c79d95d1fc77",
+    "core_fp": "920e4e3e68f2986e2f8905ba9399a7cbf7d1b538d1a422ddacb29063eae5a7ca"
   }
 ]
