@@ -4,11 +4,19 @@
 // ======================================================
 const SUPABASE_URL = "https://ppyyxfvsyxklvxbpunjc.supabase.co";
 const SUPABASE_ANON_KEY = "PASTE_YOUR_sb_publishable_KEY_HERE"; // <= вставь свой sb_publishable_...
-const ROUND_ID = 1;
 
 const sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY, {
   auth: { persistSession: false, autoRefreshToken: false },
 });
+
+// ======================================================
+// ===============  EDGE FUNCTION CONFIG  ===============
+// ======================================================
+const EDGE_FN_URL = `${SUPABASE_URL}/functions/v1/hyper-task`;
+const ADMIN_TOKEN = "PASTE_YOUR_ADMIN_TOKEN_HERE"; // Edge Functions → Secrets → ADMIN_TOKEN
+
+// Текущий раунд берём динамически
+let ROUND_ID = null;
 
 // ======================================================
 // ===============  UI: TOAST + ERROR BOX  ==============
@@ -33,6 +41,15 @@ function formatSbError(e){
   if (!e) return "Unknown error";
   if (typeof e === 'string') return e;
   return e.message || e.error_description || JSON.stringify(e);
+}
+
+function escapeHtml(str){
+  return String(str)
+    .replaceAll('&', '&amp;')
+    .replaceAll('<', '&lt;')
+    .replaceAll('>', '&gt;')
+    .replaceAll('"', '&quot;')
+    .replaceAll("'", '&#039;');
 }
 
 // ======================================================
@@ -68,6 +85,43 @@ function getDisplayName(u){
 }
 
 // ======================================================
+// ===============  EDGE FUNCTIONS HELPERS  =============
+// ======================================================
+async function edgePost(payload){
+  const res = await fetch(EDGE_FN_URL, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "x-admin-token": ADMIN_TOKEN
+    },
+    body: JSON.stringify(payload)
+  });
+
+  const json = await res.json().catch(()=> ({}));
+  if (!res.ok) {
+    console.error("Edge function error:", res.status, json);
+    throw new Error(json?.error || `Edge HTTP ${res.status}`);
+  }
+  return json;
+}
+
+// ВАЖНО: ожидаем что функция умеет отдавать текущий round_id
+async function getCurrentRoundId(){
+  const r = await edgePost({ action: "get_current_round" });
+  // поддержка разных форматов ответа (на всякий)
+  const rid = r?.round_id ?? r?.current_round_id ?? r?.data?.round_id ?? null;
+  if (!rid) throw new Error("Edge: round_id not found in response");
+  return Number(rid);
+}
+
+async function startNewRound(){
+  const r = await edgePost({ action: "start_new_round" });
+  const rid = r?.round_id ?? r?.new_round_id ?? r?.data?.round_id ?? null;
+  if (!rid) throw new Error("Edge: new round_id not found in response");
+  return Number(rid);
+}
+
+// ======================================================
 // ===============  SUPABASE HELPERS  ====================
 // ======================================================
 async function fetchTop5(roundId){
@@ -100,7 +154,6 @@ async function submitScore({ round_id, user_id, username, score }){
   return true;
 }
 
-// Быстрая проверка связи (чтобы понимать: ключ/rls/сеть)
 async function pingSupabase(){
   const { error } = await sb.from("leaderboard").select("id").limit(1);
   if (error) throw error;
@@ -116,7 +169,6 @@ if (window.Telegram?.WebApp) {
 
 // ======================================================
 // ===== Question pool (Restaurant/Cafe) — 30 =====
-// correct всегда 0 (правильный вариант в options[0])
 const QUESTION_POOL = [
   { word:"receipt", clue:"You get it after you pay. It shows what you ordered and the total price.", options:["receipt","menu","plate","kitchen"], correct:0 },
   { word:"reservation", clue:"You make it before coming to get a table at a specific time.", options:["reservation","recommendation","registration","resignation"], correct:0 },
@@ -210,9 +262,29 @@ function clearAllIntervals(){
   countdownInterval = null;
 }
 
+// ======================================================
+// ===============  BOOTSTRAP ROUND  ====================
+// ======================================================
+async function ensureRound(){
+  if (ROUND_ID) return ROUND_ID;
+  try{
+    ROUND_ID = await getCurrentRoundId();
+    return ROUND_ID;
+  }catch(e){
+    console.error("ensureRound error:", e);
+    toast("Round error: " + formatSbError(e));
+    // fallback: чтобы не ломать игру — оставим 1
+    ROUND_ID = 1;
+    return ROUND_ID;
+  }
+}
+
 // ===== Screens =====
-function renderLobby(){
+async function renderLobby(){
   clearAllIntervals();
+
+  const rid = await ensureRound();
+
   elMain.innerHTML = `
     <div class="page-label">Лобі</div>
     <div class="card glass">
@@ -229,11 +301,30 @@ function renderLobby(){
           <div class="rule">🏆 <span>Топ-5 оновлюється щомиті</span></div>
         </div>
 
+        <div style="margin:10px 0 2px;font-size:12px;color:rgba(200,215,255,.7)">
+          Current round: <b>#${rid}</b>
+        </div>
+
         <button class="btn" id="btnStart">Почати гру →</button>
+        <button class="hintbtn" id="btnNewRound" style="margin-top:10px">Start new round (admin)</button>
       </div>
     </div>
   `;
+
   document.getElementById('btnStart').addEventListener('click', renderCountdown);
+
+  document.getElementById('btnNewRound').addEventListener('click', async () => {
+    try{
+      toast("Creating new round...");
+      const newRid = await startNewRound();
+      ROUND_ID = newRid;
+      toast("✅ New round: #" + newRid);
+      renderLobby();
+    }catch(e){
+      console.error("startNewRound UI error:", e);
+      toast("❌ " + formatSbError(e));
+    }
+  });
 }
 
 async function renderCountdown(){
@@ -245,8 +336,9 @@ async function renderCountdown(){
   }catch(e){
     console.error("Supabase ping error:", e);
     toast("Supabase error: " + formatSbError(e));
-    // всё равно дадим играть, но будет видно в конце
   }
+
+  await ensureRound();
 
   elMain.innerHTML = `
     <div class="page-label">Приготуйся</div>
@@ -254,7 +346,7 @@ async function renderCountdown(){
       <div class="countdown">
         <div class="small" style="margin-bottom:20px">Гра починається через</div>
         <div class="ring"><div class="big" id="cdNum">3</div></div>
-        <div class="small" style="margin-top:16px;color:rgba(77,141,255,.75)">Приготуйся!</div>
+        <div class="small" style="margin-top:16px;color:rgba(77,141,255,.75)">Round #${ROUND_ID}</div>
       </div>
     </div>
   `;
@@ -348,7 +440,7 @@ function renderGameQuestion(){
   const revealed = new Set();
 
   elMain.innerHTML = `
-    <div class="page-label">Слово ${qIndex+1} з ${GAME_TOTAL_WORDS}</div>
+    <div class="page-label">Слово ${qIndex+1} з ${GAME_TOTAL_WORDS} (Round #${ROUND_ID})</div>
     <div class="card glass">
       <div class="game">
         <div class="toprow">
@@ -466,6 +558,8 @@ function showSolvedWord(word){
 async function finishGame(outOfTime){
   clearAllIntervals();
 
+  await ensureRound();
+
   const wordsSolved = outOfTime ? qIndex : GAME_TOTAL_WORDS;
   const secondsLeft = getRemainingSeconds();
 
@@ -549,16 +643,6 @@ async function finishGame(outOfTime){
   `;
 
   document.getElementById('btnAgain').addEventListener('click', renderLobby);
-}
-
-// ===== tiny safe HTML escaper =====
-function escapeHtml(str){
-  return String(str)
-    .replaceAll('&', '&amp;')
-    .replaceAll('<', '&lt;')
-    .replaceAll('>', '&gt;')
-    .replaceAll('"', '&quot;')
-    .replaceAll("'", '&#039;');
 }
 
 // start
