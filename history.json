@@ -609,5 +609,14 @@
     "core": "Tom ___ to work by bus.",
     "fp": "a7fb13190153d8578f53feadd965e4b73d3cbb1006e6c7600c96decefda63179",
     "core_fp": "db8433a8a2931ac52126a6e804c46f0f2acb99454694c78093f81a59c3de57f7"
+  },
+  {
+    "ts": 1772221724,
+    "kind": "ua_en",
+    "level": "A2",
+    "topic": "Vocabulary",
+    "core": "записатися",
+    "fp": "8ab494ddd61a368b299f3a3d2510fc5dbecab5d0e2601159a81f594dd1e1fa51",
+    "core_fp": "5162fa5a9de799a7f6560a9d00d51a71c43d36693f7c154417aae6bb5ec00605"
   }
 ]
