@@ -618,5 +618,14 @@
     "core": "записатися",
     "fp": "8ab494ddd61a368b299f3a3d2510fc5dbecab5d0e2601159a81f594dd1e1fa51",
     "core_fp": "5162fa5a9de799a7f6560a9d00d51a71c43d36693f7c154417aae6bb5ec00605"
+  },
+  {
+    "ts": 1772225872,
+    "kind": "guess_word",
+    "level": "A2",
+    "topic": "Riddle",
+    "core": "stapler",
+    "fp": "0492b72c6e5b0d430e345b2366aae96e7deccfb1694040c5bf6751dc95612f14",
+    "core_fp": "deaece43ba46df904a34d0f31390b90040367925bf7455c1a0ac610b9f7aff08"
   }
 ]
