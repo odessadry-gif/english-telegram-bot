@@ -564,5 +564,14 @@
     "core": "записка",
     "fp": "b174f239421eb88d25784737bc4ba4c0abee7701513f30a8c977fbbbde4c4a91",
     "core_fp": "adfdf860c4f458b8588bf4d5969137a068424c0ccc3b09e4abe4fe06bdd1b305"
+  },
+  {
+    "ts": 1772168772,
+    "kind": "guess_word",
+    "level": "A2",
+    "topic": "Riddle",
+    "core": "teapot",
+    "fp": "26b3a7e8e4fa0fe5e10bea4bee776b6a4eaf3060bd6972df5cbdc629fe94b7fa",
+    "core_fp": "7654486b1492fd63a26e1bac614d4b312ff08b0c0c6d89c52d13abc5c8f131d7"
   }
 ]
