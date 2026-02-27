@@ -4,7 +4,6 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
 <title>Word Rush — Daily English</title>
-
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap');
 *{margin:0;padding:0;box-sizing:border-box}
@@ -302,14 +301,518 @@ body>*{position:relative;z-index:1}
   <div class="main" id="main"></div>
 </div>
 
-<!-- Telegram WebApp SDK FIRST -->
-<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<!-- Supabase JS (CDN) -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
-<script src="./config.js"></script>
-<script src="./questions.js"></script>
-<script type="module" src="./app.js"></script>
+<script>
+// ======================================================
+// ===============  SUPABASE CONFIG  ====================
+// ======================================================
+const SUPABASE_URL = "https://ppyyxfvsyxklvxbpunjc.supabase.co";
+const SUPABASE_ANON_KEY = "PASTE_YOUR_sb_publishable_KEY_HERE"; // <-- вставь сюда sb_publishable_...
+const ROUND_ID = 1; // <-- меняй на 2,3,4... когда начнешь новый турнир
 
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-  
+const sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+// ======================================================
+// ===============  TELEGRAM USER  =======================
+// ======================================================
+function getTgUser(){
+  const tg = window.Telegram?.WebApp;
+  const u = tg?.initDataUnsafe?.user;
+
+  // если не из Телеги — дадим гостя (чтоб тестить в браузере)
+  const fallback = {
+    id: "guest_" + Math.random().toString(16).slice(2),
+    username: null,
+    first_name: "Guest",
+    last_name: null
+  };
+
+  return u ?? fallback;
+}
+
+function getDisplayName(u){
+  // username если есть, иначе имя/фамилия
+  if (u?.username) return "@" + u.username;
+  const fn = u?.first_name ?? "";
+  const ln = u?.last_name ?? "";
+  const nm = (fn + " " + ln).trim();
+  return nm || "Player";
+}
+
+// ======================================================
+// ===============  SUPABASE HELPERS  ====================
+// ======================================================
+async function fetchTop5(roundId){
+  try{
+    const { data, error } = await sb
+      .from("leaderboard")
+      .select("username, user_id, score")
+      .eq("round_id", roundId)
+      .order("score", { ascending: false })
+      .order("created_at", { ascending: true })
+      .limit(5);
+
+    if (error) throw error;
+
+    return (data ?? []).map(r => ({
+      name: r.username || r.user_id,
+      pts: r.score
+    }));
+  }catch(e){
+    console.error("fetchTop5 error:", e);
+    return [];
+  }
+}
+
+async function submitScore({ round_id, user_id, username, score }){
+  try{
+    const payload = {
+      round_id,
+      user_id: String(user_id),
+      username: username ? String(username) : null,
+      score: Number(score)
+    };
+
+    const { error } = await sb.from("leaderboard").insert(payload);
+    if (error) throw error;
+
+    return true;
+  }catch(e){
+    console.error("submitScore error:", e);
+    return false;
+  }
+}
+
+// ======================================================
+// ===== Telegram WebApp (fullscreen) =====
+if (window.Telegram?.WebApp) {
+  Telegram.WebApp.ready();
+  Telegram.WebApp.expand();
+}
+
+// ======================================================
+// ===== Question pool (Restaurant/Cafe) — 30 =====
+// correct всегда 0 (правильный вариант в options[0])
+const QUESTION_POOL = [
+  { word:"receipt", clue:"You get it after you pay. It shows what you ordered and the total price.", options:["receipt","menu","plate","kitchen"], correct:0 },
+  { word:"reservation", clue:"You make it before coming to get a table at a specific time.", options:["reservation","recommendation","registration","resignation"], correct:0 },
+  { word:"appetizer", clue:"A small dish you eat before the main course.", options:["appetizer","dessert","beverage","ingredient"], correct:0 },
+  { word:"beverage", clue:"A drink you can order: water, tea, coffee, juice.", options:["beverage","menu","dessert","service"], correct:0 },
+  { word:"waiter", clue:"This person takes your order and brings food to your table.", options:["waiter","visitor","writer","witness"], correct:0 },
+  { word:"waitress", clue:"A woman who takes your order and serves food in a restaurant.", options:["waitress","waiter","witness","writer"], correct:0 },
+  { word:"dessert", clue:"Sweet food you eat at the end of a meal.", options:["dessert","starter","salad","receipt"], correct:0 },
+  { word:"ingredient", clue:"One of the foods used to make a dish.", options:["ingredient","instruction","increase","investment"], correct:0 },
+  { word:"cashier", clue:"The person who takes your payment at the counter.", options:["cashier","chef","customer","cleaner"], correct:0 },
+  { word:"takeaway", clue:"Food you order to eat somewhere else (not in the cafe).", options:["takeaway","takeover","takeoff","take care"], correct:0 },
+
+  { word:"refill", clue:"When they fill your drink again with more coffee or water.", options:["refill","replace","reveal","repair"], correct:0 },
+  { word:"service", clue:"How well the staff helps you in a restaurant.", options:["service","surface","server","servant"], correct:0 },
+  { word:"customer", clue:"A person who buys food or drinks in a cafe.", options:["customer","consumer","costumer","client"], correct:0 },
+  { word:"portion", clue:"The amount of food served to one person.", options:["portion","position","pattern","protein"], correct:0 },
+  { word:"cutlery", clue:"Forks, knives, and spoons used for eating.", options:["cutlery","cuisine","cookery","cutlet"], correct:0 },
+  { word:"napkin", clue:"A small piece of paper or cloth you use to clean your mouth or hands.", options:["napkin","newspaper","notebook","napalm"], correct:0 },
+  { word:"counter", clue:"A long surface where you order or pay in a cafe.", options:["counter","country","counting","couch"], correct:0 },
+  { word:"barista", clue:"A person who makes coffee drinks, especially espresso.", options:["barista","bartender","baker","banker"], correct:0 },
+  { word:"espresso", clue:"A small, strong coffee made by forcing hot water through ground coffee.", options:["espresso","express","expensive","espressoo"], correct:0 },
+  { word:"cappuccino", clue:"Coffee with steamed milk and foam.", options:["cappuccino","macchiato","milkshake","americano"], correct:0 },
+
+  { word:"macchiato", clue:"An espresso with a small amount of milk or foam.", options:["macchiato","cappuccino","latte","mojito"], correct:0 },
+  { word:"americano", clue:"Espresso with added hot water.", options:["americano","amaretto","american","macaroon"], correct:0 },
+  { word:"latte", clue:"Coffee with a lot of milk, usually in a tall glass.", options:["latte","late","plate","latter"], correct:0 },
+  { word:"kettle", clue:"A device used to boil water for tea.", options:["kettle","bottle","cattle","little"], correct:0 },
+  { word:"allergy", clue:"A reaction some people have to certain foods (nuts, milk, etc.).", options:["allergy","energy","allegory","alligator"], correct:0 },
+  { word:"gluten", clue:"A protein in wheat. Some people avoid it.", options:["gluten","glue","glitter","glutton"], correct:0 },
+  { word:"spicy", clue:"Food that feels hot because of peppers or spices.", options:["spicy","species","spicey","spiky"], correct:0 },
+  { word:"vegan", clue:"A person who eats no meat, fish, eggs, or dairy.", options:["vegan","vegetable","vagina","pescatarian"], correct:0 },
+  { word:"checkout", clue:"The place or moment when you pay and finish your purchase.", options:["checkout","check in","check-up","check it"], correct:0 },
+  { word:"complaint", clue:"When you say something is wrong and ask staff to fix it.", options:["complaint","complement","complex","complete"], correct:0 }
+];
+
+// ===== Game settings =====
+const GAME_TOTAL_WORDS = 20;
+const POOL_SIZE = 30;
+const GAME_SECONDS = 120;
+const MAX_HINTS = 3;
+
+// scoring
+const SCORE_FAST = 100;        // <5s
+const SCORE_NORMAL = 60;       // >=5s
+const PENALTY_HINT = 30;       // -30 once per hint use
+const PENALTY_WRONG = 10;      // -10
+const BONUS_FINISH = 200;      // all 20
+
+// ===== State =====
+let gameQuestions = [];
+let qIndex = 0;
+let score = 0;
+let hintsLeft = MAX_HINTS;
+
+let gameStartTs = 0;
+let qStartTs = 0;
+
+let timerInterval = null;
+let countdownInterval = null;
+
+const elMain = document.getElementById('main');
+
+// ===== Helpers =====
+function shuffle(arr){
+  const a = arr.slice();
+  for(let i=a.length-1;i>0;i--){
+    const j = Math.floor(Math.random()*(i+1));
+    [a[i],a[j]] = [a[j],a[i]];
+  }
+  return a;
+}
+function pickN(arr, n){
+  return shuffle(arr).slice(0, n);
+}
+function nowMs(){ return Date.now(); }
+function clamp(v,min,max){ return Math.max(min, Math.min(max, v)); }
+
+function formatMMSS(total){
+  const m = Math.floor(total/60);
+  const s = total%60;
+  return `${m}:${String(s).padStart(2,'0')}`;
+}
+
+function getRemainingSeconds(){
+  const elapsed = Math.floor((nowMs() - gameStartTs)/1000);
+  return clamp(GAME_SECONDS - elapsed, 0, GAME_SECONDS);
+}
+
+function clearAllIntervals(){
+  if (timerInterval) clearInterval(timerInterval);
+  if (countdownInterval) clearInterval(countdownInterval);
+  timerInterval = null;
+  countdownInterval = null;
+}
+
+// ===== Screens =====
+function renderLobby(){
+  clearAllIntervals();
+  elMain.innerHTML = `
+    <div class="page-label">Лобі</div>
+    <div class="card glass">
+      <div class="lobby">
+        <div class="logo">⚡</div>
+        <div class="h1">WORD RUSH</div>
+        <div class="sub">Вгадай ${GAME_TOTAL_WORDS} слів за 2 хвилини</div>
+
+        <div class="rules">
+          <div class="rule">⏱ <span><b>2 хвилини</b> на всю гру</span></div>
+          <div class="rule">📖 <span>Читай підказку — вибирай слово</span></div>
+          <div class="rule">💡 <span>До <b>${MAX_HINTS} підказок</b> за гру</span></div>
+          <div class="rule">⭐ <span>Швидша відповідь = <b>більше очок</b></span></div>
+          <div class="rule">🏆 <span>Топ-5 оновлюється щомиті</span></div>
+        </div>
+
+        <button class="btn" id="btnStart">Почати гру →</button>
+      </div>
+    </div>
+  `;
+  document.getElementById('btnStart').addEventListener('click', renderCountdown);
+}
+
+function renderCountdown(){
+  clearAllIntervals();
+  elMain.innerHTML = `
+    <div class="page-label">Приготуйся</div>
+    <div class="card glass">
+      <div class="countdown">
+        <div class="small" style="margin-bottom:20px">Гра починається через</div>
+        <div class="ring"><div class="big" id="cdNum">3</div></div>
+        <div class="small" style="margin-top:16px;color:rgba(77,141,255,.75)">Приготуйся!</div>
+      </div>
+    </div>
+  `;
+
+  let n = 3;
+  const elNum = document.getElementById('cdNum');
+
+  const pop = () => {
+    if (!elNum) return;
+    elNum.style.animation = 'none';
+    elNum.offsetHeight;
+    elNum.style.animation = 'scalePop .35s cubic-bezier(.34,1.56,.64,1)';
+    elNum.textContent = String(n);
+  };
+  pop();
+
+  countdownInterval = setInterval(() => {
+    n--;
+    if (n === 0) {
+      clearAllIntervals();
+      startNewGame();
+      return;
+    }
+    pop();
+  }, 850);
+}
+
+// ===== Game logic =====
+function startNewGame(){
+  clearAllIntervals();
+
+  const basePool = pickN(QUESTION_POOL, Math.min(POOL_SIZE, QUESTION_POOL.length));
+  gameQuestions = pickN(basePool, GAME_TOTAL_WORDS);
+
+  qIndex = 0;
+  score = 0;
+  hintsLeft = MAX_HINTS;
+
+  gameStartTs = nowMs();
+  qStartTs = nowMs();
+
+  renderGameQuestion();
+  startGlobalTimer();
+}
+
+function startGlobalTimer(){
+  timerInterval = setInterval(() => {
+    const left = getRemainingSeconds();
+    updateTimerUI(left);
+    if (left <= 0) finishGame(true);
+  }, 250);
+}
+
+function updateTimerUI(secondsLeft){
+  const elTimer = document.getElementById('timerVal');
+  const elFill = document.getElementById('timerFill');
+  if (!elTimer || !elFill) return;
+
+  elTimer.textContent = formatMMSS(secondsLeft);
+  const pct = (secondsLeft / GAME_SECONDS) * 100;
+  elFill.style.width = `${pct}%`;
+
+  if (secondsLeft <= 20) {
+    elTimer.classList.add('urgent');
+    elFill.classList.add('urgent');
+  } else {
+    elTimer.classList.remove('urgent');
+    elFill.classList.remove('urgent');
+  }
+}
+
+function buildLetterBoxes(word, revealedSet){
+  const letters = word.toUpperCase().split('');
+  const boxes = letters.map((ch, i) => {
+    const isRevealed = revealedSet.has(i);
+    const cls = isRevealed ? 'box hint' : 'box empty';
+    const val = isRevealed ? ch : '_';
+    return `<div class="${cls}" data-i="${i}">${val}</div>`;
+  }).join('');
+  return boxes;
+}
+
+function renderGameQuestion(){
+  const q = gameQuestions[qIndex];
+  const secondsLeft = getRemainingSeconds();
+
+  const opts = q.options.slice();
+  const correctText = opts[q.correct];
+  const shuffled = shuffle(opts);
+  const correctIdx = shuffled.indexOf(correctText);
+
+  const revealed = new Set();
+
+  elMain.innerHTML = `
+    <div class="page-label">Слово ${qIndex+1} з ${GAME_TOTAL_WORDS}</div>
+    <div class="card glass">
+      <div class="game">
+        <div class="toprow">
+          <span class="counter">Слово ${qIndex+1} / ${GAME_TOTAL_WORDS}</span>
+          <span class="timer" id="timerVal">${formatMMSS(secondsLeft)}</span>
+        </div>
+        <div class="bar"><div class="fill" id="timerFill" style="width:${(secondsLeft/GAME_SECONDS)*100}%"></div></div>
+
+        <div style="margin-bottom:12px"><span class="badge">⭐ <span id="scoreVal">${score}</span> очок</span></div>
+
+        <div class="clue">
+          <div class="label">Підказка</div>
+          <div class="text">${escapeHtml(q.clue)}</div>
+        </div>
+
+        <div class="word" id="wordBoxes">
+          ${buildLetterBoxes(q.word, revealed)}
+        </div>
+
+        <div class="grid" id="optGrid">
+          ${shuffled.map((t, i) => `<button class="opt" data-i="${i}">${escapeHtml(t)}</button>`).join('')}
+        </div>
+
+        <button class="hintbtn" id="hintBtn">${hintLabel()}</button>
+      </div>
+    </div>
+  `;
+
+  updateTimerUI(secondsLeft);
+
+  const grid = document.getElementById('optGrid');
+  grid.querySelectorAll('.opt').forEach(btn => {
+    btn.addEventListener('click', () => {
+      onPickOption(btn, Number(btn.dataset.i), correctIdx, revealed, q.word);
+    });
+  });
+
+  const hintBtn = document.getElementById('hintBtn');
+  hintBtn.addEventListener('click', () => {
+    onUseHint(revealed, q.word);
+  });
+
+  qStartTs = nowMs();
+}
+
+function hintLabel(){
+  return hintsLeft > 0 ? `Підказка (залишилось: ${hintsLeft})` : `Підказок немає`;
+}
+
+function onUseHint(revealed, word){
+  if (hintsLeft <= 0) return;
+
+  const len = word.length;
+  const candidates = [];
+  for (let i=0;i<len;i++){
+    if (!revealed.has(i)) candidates.push(i);
+  }
+  if (candidates.length === 0) return;
+
+  const idx = candidates[Math.floor(Math.random()*candidates.length)];
+  revealed.add(idx);
+
+  hintsLeft -= 1;
+  score = Math.max(0, score - PENALTY_HINT);
+
+  const boxes = document.getElementById('wordBoxes');
+  boxes.innerHTML = buildLetterBoxes(word, revealed);
+  document.getElementById('hintBtn').textContent = hintLabel();
+  document.getElementById('scoreVal').textContent = String(score);
+}
+
+function onPickOption(btn, pickedIdx, correctIdx, revealed, word){
+  document.querySelectorAll('.opt').forEach(b => b.classList.add('disabled'));
+
+  const grid = document.getElementById('optGrid');
+  const buttons = grid.querySelectorAll('.opt');
+
+  const isCorrect = pickedIdx === correctIdx;
+
+  if (isCorrect) {
+    const dt = Math.floor((nowMs() - qStartTs)/1000);
+    const add = (dt < 5) ? SCORE_FAST : SCORE_NORMAL;
+    score += add;
+
+    btn.classList.remove('disabled');
+    btn.classList.add('correct');
+    btn.textContent = btn.textContent + " ✓";
+
+    showSolvedWord(word);
+
+    setTimeout(() => {
+      qIndex += 1;
+      if (qIndex >= GAME_TOTAL_WORDS) finishGame(false);
+      else renderGameQuestion();
+    }, 700);
+
+  } else {
+    score = Math.max(0, score - PENALTY_WRONG);
+
+    btn.classList.remove('disabled');
+    btn.classList.add('wrong');
+
+    setTimeout(() => {
+      btn.classList.add('disabled');
+      buttons.forEach((b, i) => {
+        if (i !== pickedIdx) b.classList.remove('disabled');
+      });
+      document.getElementById('scoreVal').textContent = String(score);
+    }, 500);
+  }
+}
+
+function showSolvedWord(word){
+  const letters = word.toUpperCase().split('');
+  const html = letters.map(ch => `<div class="box correct">${ch}</div>`).join('');
+  const boxes = document.getElementById('wordBoxes');
+  if (boxes) boxes.innerHTML = html;
+  document.getElementById('scoreVal').textContent = String(score);
+}
+
+async function finishGame(outOfTime){
+  clearAllIntervals();
+
+  const wordsSolved = outOfTime ? qIndex : GAME_TOTAL_WORDS;
+  const secondsLeft = getRemainingSeconds();
+
+  let finalScore = score;
+  if (!outOfTime && wordsSolved === GAME_TOTAL_WORDS) finalScore += BONUS_FINISH;
+
+  // Telegram identity
+  const user = getTgUser();
+  const displayName = getDisplayName(user);
+
+  // 1) submit score
+  const ok = await submitScore({
+    round_id: ROUND_ID,
+    user_id: user.id,
+    username: (user.username ? ("@" + user.username) : displayName),
+    score: finalScore
+  });
+
+  // 2) fetch top 5
+  const top5 = await fetchTop5(ROUND_ID);
+
+  elMain.innerHTML = `
+    <div class="page-label">Підсумки</div>
+    <div class="card glass">
+      <div class="results">
+        <div class="trophy">🏆</div>
+        <div class="rtitle">${outOfTime ? "Час вийшов!" : "Чудова гра!"}</div>
+        <div class="rsub">Ти вгадав ${wordsSolved} з ${GAME_TOTAL_WORDS} слів</div>
+
+        <div class="stats">
+          <div class="sbox"><div class="sval gold">${finalScore}</div><div class="slabel">ОЧОК</div></div>
+          <div class="sbox"><div class="sval green">${wordsSolved}/${GAME_TOTAL_WORDS}</div><div class="slabel">СЛІВ</div></div>
+          <div class="sbox"><div class="sval">${secondsLeft}s</div><div class="slabel">ЗАЛИШОК</div></div>
+        </div>
+
+        <div class="lb">
+          <div class="ttl">Топ підписників (Round #${ROUND_ID})</div>
+          ${top5.length ? top5.map((r, i) => `
+            <div class="row">
+              <span class="rank ${i<2 ? 'gold':''}">${i+1}</span>
+              <span class="name">${escapeHtml(r.name)}</span>
+              <span class="pts">${r.pts} pts</span>
+            </div>
+          `).join('') : `
+            <div style="font-size:12px;color:rgba(200,215,255,.65);padding:6px 0;">
+              ${ok ? "Поки що немає результатів." : "Не вдалося зберегти результат (перевір RLS політики/ключ)."}
+            </div>
+          `}
+        </div>
+
+        <button class="btn-green" id="btnAgain">Зіграти ще раз</button>
+      </div>
+    </div>
+  `;
+
+  document.getElementById('btnAgain').addEventListener('click', renderLobby);
+}
+
+// ===== tiny safe HTML escaper =====
+function escapeHtml(str){
+  return String(str)
+    .replaceAll('&', '&amp;')
+    .replaceAll('<', '&lt;')
+    .replaceAll('>', '&gt;')
+    .replaceAll('"', '&quot;')
+    .replaceAll("'", '&#039;');
+}
+
+// start
+renderLobby();
+</script>
 </body>
 </html>
