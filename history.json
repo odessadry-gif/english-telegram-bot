@@ -600,5 +600,14 @@
     "core": "bookmark",
     "fp": "5c13d704e16a04fcf0d7b406d5126865311c4c697d9614124550c79d95d1fc77",
     "core_fp": "920e4e3e68f2986e2f8905ba9399a7cbf7d1b538d1a422ddacb29063eae5a7ca"
+  },
+  {
+    "ts": 1772214955,
+    "kind": "grammar_gap",
+    "level": "A2",
+    "topic": "Grammar",
+    "core": "Tom ___ to work by bus.",
+    "fp": "a7fb13190153d8578f53feadd965e4b73d3cbb1006e6c7600c96decefda63179",
+    "core_fp": "db8433a8a2931ac52126a6e804c46f0f2acb99454694c78093f81a59c3de57f7"
   }
 ]
