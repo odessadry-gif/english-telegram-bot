@@ -672,5 +672,14 @@
     "core": "симпатичний",
     "fp": "d928fa8112e1a9d77359412b7bd9c4e8814a888cdabdc2ae6690d4da4c32187b",
     "core_fp": "9880b12e77de912a71edf0bb41c090b9bd8a7ce47420d06d855aaea2f9659e0e"
+  },
+  {
+    "ts": 1772286503,
+    "kind": "guess_word",
+    "level": "A2",
+    "topic": "Riddle",
+    "core": "receipt",
+    "fp": "81adca119efa70f6431dce36c97336d69556ea9cf5379573860c513dec3d127b",
+    "core_fp": "6bbd9a7709c28d7421699bd2b99ee87181cfda0435569c12d14a00ea2a9ce6b8"
   }
 ]
