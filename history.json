@@ -690,5 +690,14 @@
     "core": "She ___ dinner when I called.",
     "fp": "8d932ce58bc891ac3646e7941813be8b5bb3dcd665ae6a0814490ad6babfcd5f",
     "core_fp": "88f24afad817703913ab53dc8764536322b9c6ac39c21d1f3e25373c63e69a7c"
+  },
+  {
+    "ts": 1772297568,
+    "kind": "ua_en",
+    "level": "A2",
+    "topic": "Vocabulary",
+    "core": "речі",
+    "fp": "ceb87366fdb6d98865edc7db5582f546abdc718afec2dec4619a28cf99489a0e",
+    "core_fp": "bd3bfd128c882a0ca440acca129378adff657eec8e415d35e1b6d69354f57feb"
   }
 ]
