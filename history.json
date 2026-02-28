@@ -717,5 +717,14 @@
     "core": "She ___ coffee every morning.",
     "fp": "f1c267cfb4312b125e98b611b9ad9f2a1bd2409e63754bad385e9394f85be53a",
     "core_fp": "fe0884d6d9a2608c0358c75313c1170852c8e5671b5a5fc004d9327e01a2808f"
+  },
+  {
+    "ts": 1772318840,
+    "kind": "ua_en",
+    "level": "A2",
+    "topic": "Vocabulary",
+    "core": "попросити допомоги",
+    "fp": "b7182c39b04388a99d650b82c0ee78315962eb19ca6d259e2daa8506bfffd905",
+    "core_fp": "2e32da4b413cf974d69ce033bbe7736ca774f5bf4bc09d208cbe02439fa61608"
   }
 ]
