@@ -636,5 +636,14 @@
     "core": "He ___ to work by bus yesterday.",
     "fp": "e57ae231c1c5c1398b7dc93fe275da1561a03d9b31821eb3057fb880fc9b079a",
     "core_fp": "02b232049b46a4dcfd3a99ba0ec6f1958d0844734347df55ab7d85884ee202fb"
+  },
+  {
+    "ts": 1772252589,
+    "kind": "ua_en",
+    "level": "A2",
+    "topic": "Vocabulary",
+    "core": "гараж",
+    "fp": "17f89b11dcc607dfc442623ee2cb901f4cc9ed42a1151df2aca94fcb74b7cdf7",
+    "core_fp": "faa9e25e8ff87db588cc85089f9442e0d863567ec11ae552f1ced4668ad5ddd8"
   }
 ]
