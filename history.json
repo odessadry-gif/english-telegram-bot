@@ -708,5 +708,14 @@
     "core": "screwdriver",
     "fp": "12d786e836a3ded4d9fbae65b99b050a24c0aac73dd4d69c6471e7f9b9a4d07c",
     "core_fp": "d5cf820b4fe595e1e1177951022a896b03bbcfa5ccb0e2290a1141b6b3c66c44"
+  },
+  {
+    "ts": 1772311709,
+    "kind": "grammar_gap",
+    "level": "A2",
+    "topic": "Grammar",
+    "core": "She ___ coffee every morning.",
+    "fp": "f1c267cfb4312b125e98b611b9ad9f2a1bd2409e63754bad385e9394f85be53a",
+    "core_fp": "fe0884d6d9a2608c0358c75313c1170852c8e5671b5a5fc004d9327e01a2808f"
   }
 ]
