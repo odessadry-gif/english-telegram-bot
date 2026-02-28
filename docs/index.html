@@ -1,352 +1,411 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="uk">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
   <title>Word Rush — Daily English</title>
-  <meta name="theme-color" content="#06102a" />
+
+  <!-- Telegram WebApp SDK -->
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+
+  <!-- Supabase JS v2 -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
 
-  <!-- Telegram WebApp SDK -->
-  <script src="https://telegram.org/js/telegram-web-app.js"></script>
-
-  <!-- Supabase JS (v2) -->
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-
   <style>
-    :root{
-      --bg-1:#030a1f;
-      --bg-2:#06102a;
+    :root {
+      --bg-1:#03050f;
       --glass-bg: rgba(10, 20, 50, 0.55);
       --glass-border: rgba(80, 130, 255, 0.18);
       --glass-shine: rgba(255,255,255,0.06);
-
       --text: rgba(240,244,255,0.92);
-      --text-dim: rgba(200,215,255,0.68);
-
+      --text-dim: rgba(200,215,255,0.65);
       --electric: #4d8dff;
       --green: #00e676;
       --red: #ff4d6d;
       --gold: #ffd740;
+      --shadow: 0 18px 60px rgba(0,0,0,0.55);
+      --r: 24px;
     }
 
-    *{ box-sizing:border-box; }
-    html,body{ height:100%; }
-    body{
-      margin:0;
-      color:var(--text);
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
       font-family: "Space Grotesk", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color: var(--text);
       background:
-        radial-gradient(1200px 600px at 20% 10%, rgba(77,141,255,.35), transparent 55%),
-        radial-gradient(900px 600px at 80% 30%, rgba(0,230,118,.18), transparent 60%),
-        radial-gradient(900px 600px at 50% 90%, rgba(255,215,64,.12), transparent 60%),
-        linear-gradient(180deg, var(--bg-1), var(--bg-2));
-      min-height:100vh;
-      overflow-x:hidden;
+        radial-gradient(1200px 700px at 50% 10%, rgba(77,141,255,0.18), transparent 60%),
+        radial-gradient(900px 600px at 80% 70%, rgba(0,230,118,0.12), transparent 55%),
+        radial-gradient(800px 600px at 20% 80%, rgba(255,215,64,0.08), transparent 55%),
+        linear-gradient(180deg, #06102b 0%, #02030a 55%, #000 100%);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      padding: 22px 16px 30px;
     }
 
-    /* Wrapper */
-    .wrap{
-      min-height:100vh;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      padding:24px 16px;
+    .wrap {
+      width: min(520px, 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
-    .page-label{
-      font-size:12px;
-      letter-spacing:.18em;
-      text-transform:uppercase;
-      color: rgba(200,215,255,.55);
-      text-align:center;
-      margin-bottom:10px;
-    }
-
-    .card{
-      width:min(420px, 100%);
-      border-radius:24px;
-      padding:18px;
-      position:relative;
-      overflow:hidden;
-    }
-    .glass{
+    .card {
+      width: 100%;
+      border-radius: var(--r);
       background: var(--glass-bg);
-      border:1px solid var(--glass-border);
-      box-shadow: 0 18px 55px rgba(0,0,0,.55);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid var(--glass-border);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      position: relative;
+      overflow: hidden;
     }
-    .card::before{
+    .card:before{
       content:"";
-      position:absolute;
-      inset:-2px;
-      background: radial-gradient(600px 200px at 30% 0%, var(--glass-shine), transparent 60%);
+      position:absolute; inset:-2px;
+      background: radial-gradient(600px 220px at 30% 0%, rgba(255,255,255,0.08), transparent 60%);
       pointer-events:none;
     }
 
-    /* Lobby */
-    .lobby{ text-align:center; padding:6px 2px 2px; }
-    .logo{
-      width:56px;height:56px;border-radius:18px;
-      display:grid;place-items:center;
-      margin:6px auto 10px;
-      border:1px solid rgba(77,141,255,.22);
-      background: rgba(7,14,40,.45);
-      box-shadow: 0 10px 30px rgba(0,0,0,.35);
-      font-size:26px;
+    .page-label{
+      text-align:center;
+      margin: 8px 0 14px;
+      letter-spacing: 6px;
+      font-size: 12px;
+      color: rgba(200,215,255,0.45);
+      text-transform: uppercase;
     }
-    .h1{ font-size:28px; font-weight:800; letter-spacing:.06em; }
-    .sub{ color:var(--text-dim); margin-top:4px; font-size:14px; }
 
-    .rules{
-      margin:14px auto 10px;
-      text-align:left;
-      display:grid;
-      gap:8px;
-      padding:12px 12px;
-      border-radius:18px;
-      background: rgba(7,14,40,.35);
-      border:1px solid rgba(80,130,255,.14);
+    .lobby, .countdown, .game, .results {
+      padding: 22px 18px 20px;
+      position: relative;
     }
-    .rule{ font-size:13px; color: rgba(225,235,255,.85); display:flex; gap:8px; align-items:flex-start; }
-    .rule b{ color: var(--text); }
 
-    .btn, .btn-green, .hintbtn{
-      width:100%;
-      border:none;
-      border-radius:16px;
-      padding:14px 14px;
-      font-weight:800;
-      font-size:14px;
-      cursor:pointer;
-      transition: transform .08s ease, filter .15s ease, opacity .15s ease;
+    .logo {
+      width: 56px; height: 56px;
+      border-radius: 18px;
+      margin: 4px auto 14px;
+      display:flex; align-items:center; justify-content:center;
+      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(0,0,0,0.18);
+      box-shadow: 0 10px 28px rgba(0,0,0,0.35);
+      font-size: 28px;
     }
-    .btn{ background: linear-gradient(90deg, rgba(77,141,255,.95), rgba(0,230,118,.85)); color:#07102a; }
-    .btn-green{ background: rgba(0,230,118,.9); color:#07102a; }
-    .hintbtn{
-      background: rgba(7,14,40,.45);
-      color: rgba(240,244,255,.9);
-      border: 1px solid rgba(80,130,255,.18);
-      margin-top:12px;
-      font-weight:700;
+
+    .h1 {
+      text-align:center;
+      font-weight: 800;
+      letter-spacing: 4px;
+      font-size: 40px;
+      margin: 0;
     }
-    .btn:active, .btn-green:active, .hintbtn:active{ transform: translateY(1px); }
+
+    .sub {
+      text-align:center;
+      margin: 8px 0 16px;
+      color: var(--text-dim);
+      font-size: 16px;
+    }
+
+    .rules {
+      margin: 12px 0 16px;
+      padding: 14px 14px;
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(0,0,0,0.16);
+    }
+
+    .rule{
+      display:flex; gap:10px;
+      align-items:flex-start;
+      padding: 8px 2px;
+      color: rgba(230,235,255,0.85);
+      font-size: 15px;
+      line-height: 1.2;
+    }
+    .rule b { color: rgba(255,255,255,0.95); }
+    .rule span { color: rgba(210,220,255,0.82); }
+
+    .btn, .btn-green {
+      width: 100%;
+      border: 0;
+      outline: 0;
+      cursor: pointer;
+      padding: 14px 14px;
+      border-radius: 18px;
+      font-weight: 800;
+      font-size: 18px;
+      letter-spacing: 0.4px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+      transition: transform .06s ease, filter .15s ease;
+    }
+
+    .btn {
+      background: linear-gradient(90deg, rgba(77,141,255,0.95), rgba(0,230,118,0.85));
+      color: rgba(10,20,45,0.95);
+    }
+    .btn:active { transform: scale(0.99); filter: brightness(0.98); }
+
+    .btn-green {
+      background: rgba(0,230,118,0.92);
+      color: rgba(10,20,45,0.95);
+    }
 
     /* Countdown */
-    .countdown{ text-align:center; padding:20px 0 6px; }
-    .small{ font-size:13px; color: rgba(200,215,255,.7); }
+    .countdown { text-align:center; padding: 26px 18px 26px; }
+    .small { color: rgba(200,215,255,0.75); font-weight: 600; }
     .ring{
-      width:120px;height:120px;border-radius:999px;
-      margin:0 auto;
-      display:grid;place-items:center;
-      border:1px solid rgba(77,141,255,.25);
-      box-shadow: 0 12px 40px rgba(0,0,0,.45);
-      background: rgba(7,14,40,.35);
+      margin: 0 auto;
+      width: 128px; height: 128px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(0,0,0,0.16);
+      display:flex; align-items:center; justify-content:center;
+      box-shadow: 0 14px 40px rgba(0,0,0,0.45);
     }
-    .big{ font-size:44px; font-weight:900; letter-spacing:.02em; }
-    @keyframes scalePop{ from{ transform:scale(.88); opacity:.7; } to{ transform:scale(1); opacity:1; } }
+    .big{
+      font-size: 56px;
+      font-weight: 900;
+      letter-spacing: 1px;
+      animation: scalePop .35s cubic-bezier(.34,1.56,.64,1);
+    }
+    @keyframes scalePop{
+      from { transform: scale(0.86); opacity: 0.55; }
+      to { transform: scale(1); opacity: 1; }
+    }
 
     /* Game */
-    .game{ padding:6px 2px 2px; }
-    .toprow{ display:flex; justify-content:space-between; align-items:center; gap:10px; }
+    .toprow{
+      display:flex; justify-content:space-between; align-items:center;
+      margin-bottom: 10px;
+    }
     .counter{
-      font-size:12px;
-      color: rgba(200,215,255,.65);
-      letter-spacing:.02em;
+      color: rgba(200,215,255,0.7);
+      font-weight: 700;
+      font-size: 13px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
     }
     .timer{
-      font-family:"JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
-      font-weight:700;
-      font-size:12px;
-      padding:8px 10px;
-      border-radius:12px;
-      border:1px solid rgba(80,130,255,.18);
-      background: rgba(7,14,40,.35);
+      font-family: "JetBrains Mono", ui-monospace, Menlo, monospace;
+      font-size: 14px;
+      font-weight: 700;
+      padding: 6px 10px;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(0,0,0,0.18);
+      color: rgba(240,244,255,0.88);
     }
-    .timer.urgent{ border-color: rgba(255,77,109,.35); color: rgba(255,160,180,.95); }
+    .timer.urgent{ color: rgba(255,77,109,0.95); border-color: rgba(255,77,109,0.25); }
 
     .bar{
-      margin:10px 0 12px;
       width:100%;
       height:10px;
       border-radius:999px;
+      background: rgba(0,0,0,0.16);
+      border: 1px solid rgba(255,255,255,0.08);
       overflow:hidden;
-      background: rgba(255,255,255,.06);
-      border:1px solid rgba(255,255,255,.06);
+      margin-bottom: 14px;
     }
     .fill{
       height:100%;
-      width:50%;
-      border-radius:999px;
-      background: linear-gradient(90deg, rgba(77,141,255,.95), rgba(0,230,118,.8));
+      width:100%;
+      background: linear-gradient(90deg, rgba(0,230,118,0.9), rgba(77,141,255,0.9));
+      border-radius: 999px;
       transition: width .2s linear;
     }
-    .fill.urgent{ background: linear-gradient(90deg, rgba(255,77,109,.92), rgba(255,215,64,.75)); }
+    .fill.urgent{ background: linear-gradient(90deg, rgba(255,77,109,0.95), rgba(255,215,64,0.85)); }
 
     .badge{
-      display:inline-flex;
-      gap:8px;
-      align-items:center;
-      padding:8px 10px;
-      border-radius:14px;
-      border:1px solid rgba(80,130,255,.16);
-      background: rgba(7,14,40,.32);
-      font-size:12px;
-      color: rgba(240,244,255,.88);
+      display:inline-flex; align-items:center; gap:8px;
+      padding: 8px 10px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(0,0,0,0.16);
+      color: rgba(230,235,255,0.9);
+      font-weight: 700;
+      font-size: 13px;
     }
 
     .clue{
-      margin-top:10px;
-      padding:12px 12px;
-      border-radius:18px;
-      background: rgba(7,14,40,.35);
-      border:1px solid rgba(80,130,255,.14);
+      margin-top: 10px;
+      padding: 14px 14px;
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(0,0,0,0.16);
     }
     .clue .label{
-      font-size:11px;
-      letter-spacing:.14em;
-      text-transform:uppercase;
-      color: rgba(200,215,255,.55);
-      margin-bottom:6px;
+      font-size: 12px;
+      letter-spacing: 4px;
+      color: rgba(200,215,255,0.55);
+      text-transform: uppercase;
+      font-weight: 800;
+      margin-bottom: 8px;
     }
-    .clue .text{ font-size:14px; color: rgba(240,244,255,.92); line-height:1.25; }
+    .clue .text{
+      font-size: 16px;
+      color: rgba(240,244,255,0.92);
+      line-height: 1.25;
+      font-weight: 600;
+    }
 
     .word{
-      display:flex;
+      margin-top: 14px;
+      display:flex; gap:8px;
       justify-content:center;
-      flex-wrap:wrap;
-      gap:8px;
-      margin:14px 0 12px;
+      flex-wrap: wrap;
     }
     .box{
-      width:34px;height:40px;
-      border-radius:12px;
-      display:grid;place-items:center;
-      font-weight:900;
-      letter-spacing:.06em;
-      border:1px solid rgba(80,130,255,.18);
-      background: rgba(7,14,40,.35);
-      color: rgba(240,244,255,.9);
+      width: 34px; height: 42px;
+      border-radius: 14px;
+      display:flex; align-items:center; justify-content:center;
+      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(0,0,0,0.18);
+      font-weight: 900;
+      letter-spacing: 1px;
+      font-size: 16px;
+      color: rgba(240,244,255,0.9);
     }
-    .box.empty{ color: rgba(200,215,255,.35); }
-    .box.hint{ border-color: rgba(255,215,64,.22); color: rgba(255,215,64,.95); }
-    .box.correct{ border-color: rgba(0,230,118,.25); color: rgba(0,230,118,.95); }
+    .box.empty{ color: rgba(200,215,255,0.35); }
+    .box.hint{
+      border-color: rgba(255,215,64,0.25);
+      color: rgba(255,215,64,0.95);
+    }
+    .box.correct{
+      border-color: rgba(0,230,118,0.25);
+      color: rgba(0,230,118,0.95);
+      background: rgba(0,0,0,0.16);
+    }
 
     .grid{
+      margin-top: 14px;
       display:grid;
       grid-template-columns: 1fr 1fr;
-      gap:10px;
-      margin-top:8px;
+      gap: 10px;
     }
     .opt{
-      border:none;
-      border-radius:16px;
-      padding:12px 12px;
-      font-weight:800;
-      font-size:13px;
-      text-align:center;
+      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(0,0,0,0.16);
+      border-radius: 16px;
+      padding: 12px 10px;
+      color: rgba(240,244,255,0.92);
+      font-weight: 800;
+      font-size: 15px;
       cursor:pointer;
-      color: rgba(240,244,255,.92);
-      background: rgba(7,14,40,.40);
-      border:1px solid rgba(80,130,255,.14);
-      transition: transform .08s ease, filter .15s ease, opacity .15s ease, background .15s ease;
+      transition: transform .06s ease, filter .15s ease, border-color .15s ease;
     }
-    .opt:active{ transform: translateY(1px); }
-    .opt.disabled{ opacity:.45; pointer-events:none; }
-    .opt.correct{ background: rgba(0,230,118,.18); border-color: rgba(0,230,118,.30); }
-    .opt.wrong{ background: rgba(255,77,109,.16); border-color: rgba(255,77,109,.28); }
+    .opt:active{ transform: scale(0.99); }
+    .opt.disabled{ opacity: 0.55; pointer-events:none; }
+    .opt.correct{ border-color: rgba(0,230,118,0.35); }
+    .opt.wrong{ border-color: rgba(255,77,109,0.35); }
+
+    .hintbtn{
+      margin-top: 12px;
+      width:100%;
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(0,0,0,0.16);
+      color: rgba(240,244,255,0.92);
+      padding: 12px 12px;
+      font-weight: 800;
+      font-size: 15px;
+      cursor:pointer;
+    }
 
     /* Results */
-    .results{ text-align:center; padding:8px 2px 2px; }
+    .results { text-align:center; padding: 24px 18px 22px; }
     .trophy{
-      font-size:34px;
-      width:64px;height:64px;border-radius:22px;
-      display:grid;place-items:center;margin:6px auto 10px;
-      background: rgba(7,14,40,.35);
-      border:1px solid rgba(255,215,64,.18);
+      width: 64px; height: 64px;
+      margin: 2px auto 12px;
+      border-radius: 22px;
+      display:flex; align-items:center; justify-content:center;
+      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(0,0,0,0.18);
+      font-size: 28px;
     }
-    .rtitle{ font-size:24px; font-weight:900; }
-    .rsub{ color: var(--text-dim); font-size:13px; margin-top:4px; }
+    .rtitle{
+      font-size: 34px;
+      font-weight: 900;
+      margin: 0;
+      letter-spacing: 0.5px;
+    }
+    .rsub{
+      margin-top: 6px;
+      color: rgba(200,215,255,0.75);
+      font-weight: 600;
+      font-size: 16px;
+    }
 
     .stats{
-      display:grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap:10px;
-      margin:14px 0 12px;
+      display:flex; gap:10px;
+      margin: 16px 0 12px;
     }
     .sbox{
-      padding:10px 8px;
-      border-radius:18px;
-      background: rgba(7,14,40,.35);
-      border:1px solid rgba(80,130,255,.12);
+      flex:1;
+      padding: 12px 10px;
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(0,0,0,0.16);
     }
     .sval{
-      font-family:"JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
-      font-weight:900;
-      font-size:18px;
+      font-family: "JetBrains Mono", ui-monospace, Menlo, monospace;
+      font-size: 20px;
+      font-weight: 800;
+      color: rgba(240,244,255,0.92);
     }
-    .sval.gold{ color: rgba(255,215,64,.95); }
-    .sval.green{ color: rgba(0,230,118,.95); }
+    .sval.gold{ color: rgba(255,215,64,0.95); }
+    .sval.green{ color: rgba(0,230,118,0.95); }
     .slabel{
-      margin-top:3px;
-      font-size:10px;
-      letter-spacing:.14em;
-      text-transform:uppercase;
-      color: rgba(200,215,255,.55);
+      margin-top: 6px;
+      font-size: 11px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: rgba(200,215,255,0.50);
+      font-weight: 900;
     }
 
     .lb{
+      margin-top: 10px;
       text-align:left;
-      margin-top:6px;
-      padding:12px 12px;
-      border-radius:18px;
-      background: rgba(7,14,40,.35);
-      border:1px solid rgba(80,130,255,.14);
+      padding: 14px 14px;
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(0,0,0,0.16);
     }
-    .ttl{
-      font-size:11px;
-      letter-spacing:.14em;
-      text-transform:uppercase;
-      color: rgba(200,215,255,.55);
-      margin-bottom:10px;
+    .lb .ttl{
+      font-size: 12px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: rgba(200,215,255,0.55);
+      font-weight: 900;
+      margin-bottom: 10px;
     }
     .row{
-      display:grid;
-      grid-template-columns: 26px 1fr auto;
-      gap:10px;
-      align-items:center;
-      padding:8px 0;
-      border-top:1px solid rgba(255,255,255,.06);
+      display:flex; align-items:center; gap:10px;
+      padding: 10px 0;
+      border-top: 1px solid rgba(255,255,255,0.06);
     }
-    .row:first-of-type{ border-top:none; }
+    .row:first-of-type{ border-top: 0; }
     .rank{
-      width:22px;height:22px;border-radius:8px;
-      display:grid;place-items:center;
-      font-weight:900;
-      font-size:12px;
-      background: rgba(255,255,255,.06);
-      border:1px solid rgba(255,255,255,.06);
-      color: rgba(240,244,255,.88);
+      width: 28px; height: 28px;
+      border-radius: 10px;
+      display:flex; align-items:center; justify-content:center;
+      background: rgba(0,0,0,0.18);
+      border: 1px solid rgba(255,255,255,0.08);
+      font-weight: 900;
+      color: rgba(230,235,255,0.9);
+      flex: 0 0 auto;
     }
-    .rank.gold{
-      background: rgba(255,215,64,.16);
-      border-color: rgba(255,215,64,.22);
-      color: rgba(255,215,64,.95);
-    }
-    .name{ font-size:13px; color: rgba(240,244,255,.9); }
-    .pts{ font-size:12px; color: rgba(200,215,255,.75); }
-
-    /* Small screens */
-    @media (max-width: 360px){
-      .grid{ grid-template-columns: 1fr; }
-      .stats{ grid-template-columns: 1fr; }
-      .box{ width:30px;height:38px; }
-    }
+    .rank.gold{ border-color: rgba(255,215,64,0.22); color: rgba(255,215,64,0.95); }
+    .name{ flex: 1; font-weight: 800; color: rgba(240,244,255,0.92); }
+    .pts{ font-family: "JetBrains Mono", ui-monospace, Menlo, monospace; color: rgba(200,215,255,0.70); font-weight: 700; }
   </style>
 </head>
 
@@ -356,28 +415,34 @@
   </div>
 
   <script>
-  // ======================================================
-  // ===============  SUPABASE CONFIG  ====================
-  // ======================================================
+  // =======================
+  // SUPABASE CONFIG
+  // =======================
   const SUPABASE_URL = "https://ppyyxfvsyxklvxbpunjc.supabase.co";
   const SUPABASE_ANON_KEY = "sb_publishable_S2amtkjqdRb1wMk0CmThTg_efAOkjmh";
+
+  // IMPORTANT: supabase must exist (iOS white screen if not)
+  if (!window.supabase) {
+    document.getElementById('main').innerHTML =
+      '<pre style="white-space:pre-wrap;padding:16px;color:#fff;background:#111;border-radius:14px">Supabase SDK not loaded</pre>';
+    throw new Error("Supabase SDK not loaded");
+  }
 
   const sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY, {
     auth: { persistSession: false, autoRefreshToken: false },
   });
 
-  // ======================================================
-  // ===============  EDGE FUNCTION CONFIG  ===============
-  // ======================================================
-  const EDGE_FN_URL = `${SUPABASE_URL}/functions/v1/hyper-task`;
-  const ADMIN_TOKEN = "wordrush-admin-2026";
+  // =======================
+  // Telegram WebApp
+  // =======================
+  if (window.Telegram?.WebApp) {
+    Telegram.WebApp.ready();
+    Telegram.WebApp.expand();
+  }
 
-  // Текущий раунд берём динамически
-  let ROUND_ID = null;
-
-  // ======================================================
-  // ===============  UI: TOAST + ERROR BOX  ==============
-  // ======================================================
+  // =======================
+  // Utils
+  // =======================
   function toast(msg){
     const t = document.createElement('div');
     t.textContent = msg;
@@ -409,9 +474,9 @@
       .replaceAll("'", '&#039;');
   }
 
-  // ======================================================
-  // ===============  TELEGRAM USER  =======================
-  // ======================================================
+  // =======================
+  // Telegram user fallback
+  // =======================
   function getOrCreateGuest(){
     const key = "wordrush_guest_id";
     let id = localStorage.getItem(key);
@@ -441,46 +506,9 @@
     return nm || "Player";
   }
 
-  // ======================================================
-  // ===============  EDGE FUNCTIONS HELPERS  =============
-  // ======================================================
-  async function edgePost(payload){
-    const res = await fetch(EDGE_FN_URL, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "x-admin-token": ADMIN_TOKEN
-      },
-      body: JSON.stringify(payload)
-    });
-
-    const json = await res.json().catch(()=> ({}));
-    if (!res.ok) {
-      console.error("Edge function error:", res.status, json);
-      throw new Error(json?.error || `Edge HTTP ${res.status}`);
-    }
-    return json;
-  }
-
-  // ВАЖНО: ожидаем что функция умеет отдавать текущий round_id
-  async function getCurrentRoundId(){
-    const r = await edgePost({ action: "get_current_round" });
-    // поддержка разных форматов ответа (на всякий)
-    const rid = r?.round_id ?? r?.current_round_id ?? r?.data?.round_id ?? null;
-    if (!rid) throw new Error("Edge: round_id not found in response");
-    return Number(rid);
-  }
-
-  async function startNewRound(){
-    const r = await edgePost({ action: "start_new_round" });
-    const rid = r?.round_id ?? r?.new_round_id ?? r?.data?.round_id ?? null;
-    if (!rid) throw new Error("Edge: new round_id not found in response");
-    return Number(rid);
-  }
-
-  // ======================================================
-  // ===============  SUPABASE HELPERS  ====================
-  // ======================================================
+  // =======================
+  // Supabase helpers
+  // =======================
   async function fetchTop5(roundId){
     const { data, error } = await sb
       .from("leaderboard")
@@ -505,7 +533,6 @@
       username: username ? String(username) : null,
       score: Number(score),
     };
-
     const { error } = await sb.from("leaderboard").insert(payload);
     if (error) throw error;
     return true;
@@ -517,15 +544,15 @@
     return true;
   }
 
-  // ======================================================
-  // ===== Telegram WebApp (fullscreen) =====
-  if (window.Telegram?.WebApp) {
-    Telegram.WebApp.ready();
-    Telegram.WebApp.expand();
-  }
+  // =======================
+  // Round (simple)
+  // =======================
+  // Сейчас без admin-кнопок. По умолчанию Round #1.
+  let ROUND_ID = 1;
 
-  // ======================================================
-  // ===== Question pool (Restaurant/Cafe) — 30 =====
+  // =======================
+  // Question pool (Restaurant/Cafe) — 30
+  // =======================
   const QUESTION_POOL = [
     { word:"receipt", clue:"You get it after you pay. It shows what you ordered and the total price.", options:["receipt","menu","plate","kitchen"], correct:0 },
     { word:"reservation", clue:"You make it before coming to get a table at a specific time.", options:["reservation","recommendation","registration","resignation"], correct:0 },
@@ -561,7 +588,9 @@
     { word:"complaint", clue:"When you say something is wrong and ask staff to fix it.", options:["complaint","complement","complex","complete"], correct:0 }
   ];
 
-  // ===== Game settings =====
+  // =======================
+  // Game settings
+  // =======================
   const GAME_TOTAL_WORDS = 20;
   const POOL_SIZE = 30;
   const GAME_SECONDS = 120;
@@ -574,7 +603,9 @@
   const PENALTY_WRONG = 10;      // -10
   const BONUS_FINISH = 200;      // all 20
 
-  // ===== State =====
+  // =======================
+  // State
+  // =======================
   let gameQuestions = [];
   let qIndex = 0;
   let score = 0;
@@ -588,7 +619,9 @@
 
   const elMain = document.getElementById('main');
 
-  // ===== Helpers =====
+  // =======================
+  // Helpers
+  // =======================
   function shuffle(arr){
     const a = arr.slice();
     for(let i=a.length-1;i>0;i--){
@@ -619,35 +652,18 @@
     countdownInterval = null;
   }
 
-  // ======================================================
-  // ===============  BOOTSTRAP ROUND  ====================
-  // ======================================================
-  async function ensureRound(){
-    if (ROUND_ID) return ROUND_ID;
-    try{
-      ROUND_ID = await getCurrentRoundId();
-      return ROUND_ID;
-    }catch(e){
-      console.error("ensureRound error:", e);
-      toast("Round error: " + formatSbError(e));
-      // fallback: чтобы не ломать игру — оставим 1
-      ROUND_ID = 1;
-      return ROUND_ID;
-    }
-  }
-
-  // ===== Screens =====
+  // =======================
+  // Screens
+  // =======================
   async function renderLobby(){
     clearAllIntervals();
 
-    const rid = await ensureRound();
-
     elMain.innerHTML = `
       <div class="page-label">Лобі</div>
-      <div class="card glass">
+      <div class="card">
         <div class="lobby">
           <div class="logo">⚡</div>
-          <div class="h1">WORD RUSH</div>
+          <h1 class="h1">WORD RUSH</h1>
           <div class="sub">Вгадай ${GAME_TOTAL_WORDS} слів за 2 хвилини</div>
 
           <div class="rules">
@@ -658,48 +674,27 @@
             <div class="rule">🏆 <span>Топ-5 оновлюється щомиті</span></div>
           </div>
 
-          <div style="margin:10px 0 2px;font-size:12px;color:rgba(200,215,255,.7)">
-            Current round: <b>#${rid}</b>
+          <div style="margin:10px 0 2px;font-size:12px;color:rgba(200,215,255,.7);text-align:center">
+            Current round: <b>#${ROUND_ID}</b>
           </div>
 
           <button class="btn" id="btnStart">Почати гру →</button>
-          <button class="hintbtn" id="btnNewRound" style="margin-top:10px">Start new round (admin)</button>
         </div>
       </div>
     `;
 
     document.getElementById('btnStart').addEventListener('click', renderCountdown);
-
-    document.getElementById('btnNewRound').addEventListener('click', async () => {
-      try{
-        toast("Creating new round...");
-        const newRid = await startNewRound();
-        ROUND_ID = newRid;
-        toast("✅ New round: #" + newRid);
-        renderLobby();
-      }catch(e){
-        console.error("startNewRound UI error:", e);
-        toast("❌ " + formatSbError(e));
-      }
-    });
   }
 
   async function renderCountdown(){
     clearAllIntervals();
 
-    // Пингуем базу заранее, чтобы понять “ключ/rls/сеть”
-    try{
-      await pingSupabase();
-    }catch(e){
-      console.error("Supabase ping error:", e);
-      toast("Supabase error: " + formatSbError(e));
-    }
-
-    await ensureRound();
+    // ping supabase once (so we show useful toast if something wrong)
+    try { await pingSupabase(); } catch(e){ toast("Supabase: " + formatSbError(e)); }
 
     elMain.innerHTML = `
       <div class="page-label">Приготуйся</div>
-      <div class="card glass">
+      <div class="card">
         <div class="countdown">
           <div class="small" style="margin-bottom:20px">Гра починається через</div>
           <div class="ring"><div class="big" id="cdNum">3</div></div>
@@ -731,7 +726,9 @@
     }, 850);
   }
 
-  // ===== Game logic =====
+  // =======================
+  // Game logic
+  // =======================
   function startNewGame(){
     clearAllIntervals();
 
@@ -785,6 +782,10 @@
     }).join('');
   }
 
+  function hintLabel(){
+    return hintsLeft > 0 ? `Підказка (залишилось: ${hintsLeft})` : `Підказок немає`;
+  }
+
   function renderGameQuestion(){
     const q = gameQuestions[qIndex];
     const secondsLeft = getRemainingSeconds();
@@ -798,7 +799,7 @@
 
     elMain.innerHTML = `
       <div class="page-label">Слово ${qIndex+1} з ${GAME_TOTAL_WORDS} (Round #${ROUND_ID})</div>
-      <div class="card glass">
+      <div class="card">
         <div class="game">
           <div class="toprow">
             <span class="counter">Слово ${qIndex+1} / ${GAME_TOTAL_WORDS}</span>
@@ -840,10 +841,6 @@
     });
 
     qStartTs = nowMs();
-  }
-
-  function hintLabel(){
-    return hintsLeft > 0 ? `Підказка (залишилось: ${hintsLeft})` : `Підказок немає`;
   }
 
   function onUseHint(revealed, word){
@@ -915,8 +912,6 @@
   async function finishGame(outOfTime){
     clearAllIntervals();
 
-    await ensureRound();
-
     const wordsSolved = outOfTime ? qIndex : GAME_TOTAL_WORDS;
     const secondsLeft = getRemainingSeconds();
 
@@ -940,18 +935,15 @@
       toast("Score saved ✅");
     }catch(e){
       saveErr = e;
-      console.error("submitScore error:", e);
       toast("Save failed ❌");
     }
 
     let top5 = [];
     let topErr = null;
-
     try{
       top5 = await fetchTop5(ROUND_ID);
     }catch(e){
       topErr = e;
-      console.error("fetchTop5 error:", e);
     }
 
     const errorText = saveErr
@@ -960,7 +952,7 @@
 
     elMain.innerHTML = `
       <div class="page-label">Підсумки</div>
-      <div class="card glass">
+      <div class="card">
         <div class="results">
           <div class="trophy">🏆</div>
           <div class="rtitle">${outOfTime ? "Час вийшов!" : "Чудова гра!"}</div>
@@ -1002,8 +994,18 @@
     document.getElementById('btnAgain').addEventListener('click', renderLobby);
   }
 
-  // start
-  renderLobby();
+  // =======================
+  // Boot (anti white-screen)
+  // =======================
+  try {
+    renderLobby();
+  } catch (e) {
+    elMain.innerHTML = `
+      <pre style="white-space:pre-wrap;padding:16px;color:#fff;background:#111;border-radius:14px">
+JS crash:
+${String(e?.stack || e)}
+      </pre>`;
+  }
   </script>
 </body>
 </html>
