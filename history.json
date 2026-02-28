@@ -645,5 +645,14 @@
     "core": "гараж",
     "fp": "17f89b11dcc607dfc442623ee2cb901f4cc9ed42a1151df2aca94fcb74b7cdf7",
     "core_fp": "faa9e25e8ff87db588cc85089f9442e0d863567ec11ae552f1ced4668ad5ddd8"
+  },
+  {
+    "ts": 1772262298,
+    "kind": "guess_word",
+    "level": "A2",
+    "topic": "Riddle",
+    "core": "thermos",
+    "fp": "3c97081e4f690277a7b8d88c2d085eb072ec3c3bfa6c23b21e8b3660c9a74b66",
+    "core_fp": "bda0d44a10db630cb3197ae20074d2ccdfef4930ef9764aba2ef6d6fb9a46d85"
   }
 ]
