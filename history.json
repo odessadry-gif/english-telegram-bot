@@ -654,5 +654,14 @@
     "core": "thermos",
     "fp": "3c97081e4f690277a7b8d88c2d085eb072ec3c3bfa6c23b21e8b3660c9a74b66",
     "core_fp": "bda0d44a10db630cb3197ae20074d2ccdfef4930ef9764aba2ef6d6fb9a46d85"
+  },
+  {
+    "ts": 1772268923,
+    "kind": "grammar_gap",
+    "level": "A2",
+    "topic": "Grammar",
+    "core": "She ___ to work every day.",
+    "fp": "b57f6bc4b89a2dc3a6952b281e3d247e72d46188cb81dd41e162058c0a99aa0f",
+    "core_fp": "3fc7b88e8837c122eaa025962f723a611b25d0fba25a5fb662f360239ce1468d"
   }
 ]
