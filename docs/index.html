@@ -1,650 +1,1009 @@
-<script>
-// ======================================================
-// ===============  SUPABASE CONFIG  ====================
-// ======================================================
-const SUPABASE_URL = "https://ppyyxfvsyxklvxbpunjc.supabase.co";
-const SUPABASE_ANON_KEY = "sb_publishable_S2amtkjqdRb1wMk0CmThTg_efAOkjmh";
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Word Rush — Daily English</title>
+  <meta name="theme-color" content="#06102a" />
 
-const sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY, {
-  auth: { persistSession: false, autoRefreshToken: false },
-});
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
 
-// ======================================================
-// ===============  EDGE FUNCTION CONFIG  ===============
-// ======================================================
-const EDGE_FN_URL = `${SUPABASE_URL}/functions/v1/hyper-task`;
-const ADMIN_TOKEN = "wordrush-admin-2026";
+  <!-- Telegram WebApp SDK -->
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
 
-// Текущий раунд берём динамически
-let ROUND_ID = null;
+  <!-- Supabase JS (v2) -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
-// ======================================================
-// ===============  UI: TOAST + ERROR BOX  ==============
-// ======================================================
-function toast(msg){
-  const t = document.createElement('div');
-  t.textContent = msg;
-  t.style.cssText = `
-    position:fixed;left:50%;bottom:20px;transform:translateX(-50%);
-    background:rgba(8,16,45,.92);border:1px solid rgba(77,141,255,.25);
-    color:rgba(240,244,255,.92);padding:10px 14px;border-radius:12px;
-    font:600 12px/1.2 'Space Grotesk',sans-serif;letter-spacing:.2px;
-    box-shadow:0 10px 30px rgba(0,0,0,.45);
-    z-index:9999;backdrop-filter:blur(12px);
-  `;
-  document.body.appendChild(t);
-  setTimeout(()=>{ t.style.opacity='0'; t.style.transition='opacity .2s'; }, 1400);
-  setTimeout(()=>t.remove(), 1700);
-}
+  <style>
+    :root{
+      --bg-1:#030a1f;
+      --bg-2:#06102a;
+      --glass-bg: rgba(10, 20, 50, 0.55);
+      --glass-border: rgba(80, 130, 255, 0.18);
+      --glass-shine: rgba(255,255,255,0.06);
 
-function formatSbError(e){
-  if (!e) return "Unknown error";
-  if (typeof e === 'string') return e;
-  return e.message || e.error_description || JSON.stringify(e);
-}
+      --text: rgba(240,244,255,0.92);
+      --text-dim: rgba(200,215,255,0.68);
 
-function escapeHtml(str){
-  return String(str)
-    .replaceAll('&', '&amp;')
-    .replaceAll('<', '&lt;')
-    .replaceAll('>', '&gt;')
-    .replaceAll('"', '&quot;')
-    .replaceAll("'", '&#039;');
-}
+      --electric: #4d8dff;
+      --green: #00e676;
+      --red: #ff4d6d;
+      --gold: #ffd740;
+    }
 
-// ======================================================
-// ===============  TELEGRAM USER  =======================
-// ======================================================
-function getOrCreateGuest(){
-  const key = "wordrush_guest_id";
-  let id = localStorage.getItem(key);
-  if (!id) {
-    id = "guest_" + Math.random().toString(16).slice(2);
-    localStorage.setItem(key, id);
-  }
-  return {
-    id,
-    username: null,
-    first_name: "Guest",
-    last_name: null
-  };
-}
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
+    body{
+      margin:0;
+      color:var(--text);
+      font-family: "Space Grotesk", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background:
+        radial-gradient(1200px 600px at 20% 10%, rgba(77,141,255,.35), transparent 55%),
+        radial-gradient(900px 600px at 80% 30%, rgba(0,230,118,.18), transparent 60%),
+        radial-gradient(900px 600px at 50% 90%, rgba(255,215,64,.12), transparent 60%),
+        linear-gradient(180deg, var(--bg-1), var(--bg-2));
+      min-height:100vh;
+      overflow-x:hidden;
+    }
 
-function getTgUser(){
-  const tg = window.Telegram?.WebApp;
-  const u = tg?.initDataUnsafe?.user;
-  return u ?? getOrCreateGuest();
-}
+    /* Wrapper */
+    .wrap{
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:24px 16px;
+    }
 
-function getDisplayName(u){
-  if (u?.username) return "@" + u.username;
-  const fn = u?.first_name ?? "";
-  const ln = u?.last_name ?? "";
-  const nm = (fn + " " + ln).trim();
-  return nm || "Player";
-}
+    .page-label{
+      font-size:12px;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      color: rgba(200,215,255,.55);
+      text-align:center;
+      margin-bottom:10px;
+    }
 
-// ======================================================
-// ===============  EDGE FUNCTIONS HELPERS  =============
-// ======================================================
-async function edgePost(payload){
-  const res = await fetch(EDGE_FN_URL, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      "x-admin-token": ADMIN_TOKEN
-    },
-    body: JSON.stringify(payload)
+    .card{
+      width:min(420px, 100%);
+      border-radius:24px;
+      padding:18px;
+      position:relative;
+      overflow:hidden;
+    }
+    .glass{
+      background: var(--glass-bg);
+      border:1px solid var(--glass-border);
+      box-shadow: 0 18px 55px rgba(0,0,0,.55);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+    }
+    .card::before{
+      content:"";
+      position:absolute;
+      inset:-2px;
+      background: radial-gradient(600px 200px at 30% 0%, var(--glass-shine), transparent 60%);
+      pointer-events:none;
+    }
+
+    /* Lobby */
+    .lobby{ text-align:center; padding:6px 2px 2px; }
+    .logo{
+      width:56px;height:56px;border-radius:18px;
+      display:grid;place-items:center;
+      margin:6px auto 10px;
+      border:1px solid rgba(77,141,255,.22);
+      background: rgba(7,14,40,.45);
+      box-shadow: 0 10px 30px rgba(0,0,0,.35);
+      font-size:26px;
+    }
+    .h1{ font-size:28px; font-weight:800; letter-spacing:.06em; }
+    .sub{ color:var(--text-dim); margin-top:4px; font-size:14px; }
+
+    .rules{
+      margin:14px auto 10px;
+      text-align:left;
+      display:grid;
+      gap:8px;
+      padding:12px 12px;
+      border-radius:18px;
+      background: rgba(7,14,40,.35);
+      border:1px solid rgba(80,130,255,.14);
+    }
+    .rule{ font-size:13px; color: rgba(225,235,255,.85); display:flex; gap:8px; align-items:flex-start; }
+    .rule b{ color: var(--text); }
+
+    .btn, .btn-green, .hintbtn{
+      width:100%;
+      border:none;
+      border-radius:16px;
+      padding:14px 14px;
+      font-weight:800;
+      font-size:14px;
+      cursor:pointer;
+      transition: transform .08s ease, filter .15s ease, opacity .15s ease;
+    }
+    .btn{ background: linear-gradient(90deg, rgba(77,141,255,.95), rgba(0,230,118,.85)); color:#07102a; }
+    .btn-green{ background: rgba(0,230,118,.9); color:#07102a; }
+    .hintbtn{
+      background: rgba(7,14,40,.45);
+      color: rgba(240,244,255,.9);
+      border: 1px solid rgba(80,130,255,.18);
+      margin-top:12px;
+      font-weight:700;
+    }
+    .btn:active, .btn-green:active, .hintbtn:active{ transform: translateY(1px); }
+
+    /* Countdown */
+    .countdown{ text-align:center; padding:20px 0 6px; }
+    .small{ font-size:13px; color: rgba(200,215,255,.7); }
+    .ring{
+      width:120px;height:120px;border-radius:999px;
+      margin:0 auto;
+      display:grid;place-items:center;
+      border:1px solid rgba(77,141,255,.25);
+      box-shadow: 0 12px 40px rgba(0,0,0,.45);
+      background: rgba(7,14,40,.35);
+    }
+    .big{ font-size:44px; font-weight:900; letter-spacing:.02em; }
+    @keyframes scalePop{ from{ transform:scale(.88); opacity:.7; } to{ transform:scale(1); opacity:1; } }
+
+    /* Game */
+    .game{ padding:6px 2px 2px; }
+    .toprow{ display:flex; justify-content:space-between; align-items:center; gap:10px; }
+    .counter{
+      font-size:12px;
+      color: rgba(200,215,255,.65);
+      letter-spacing:.02em;
+    }
+    .timer{
+      font-family:"JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-weight:700;
+      font-size:12px;
+      padding:8px 10px;
+      border-radius:12px;
+      border:1px solid rgba(80,130,255,.18);
+      background: rgba(7,14,40,.35);
+    }
+    .timer.urgent{ border-color: rgba(255,77,109,.35); color: rgba(255,160,180,.95); }
+
+    .bar{
+      margin:10px 0 12px;
+      width:100%;
+      height:10px;
+      border-radius:999px;
+      overflow:hidden;
+      background: rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.06);
+    }
+    .fill{
+      height:100%;
+      width:50%;
+      border-radius:999px;
+      background: linear-gradient(90deg, rgba(77,141,255,.95), rgba(0,230,118,.8));
+      transition: width .2s linear;
+    }
+    .fill.urgent{ background: linear-gradient(90deg, rgba(255,77,109,.92), rgba(255,215,64,.75)); }
+
+    .badge{
+      display:inline-flex;
+      gap:8px;
+      align-items:center;
+      padding:8px 10px;
+      border-radius:14px;
+      border:1px solid rgba(80,130,255,.16);
+      background: rgba(7,14,40,.32);
+      font-size:12px;
+      color: rgba(240,244,255,.88);
+    }
+
+    .clue{
+      margin-top:10px;
+      padding:12px 12px;
+      border-radius:18px;
+      background: rgba(7,14,40,.35);
+      border:1px solid rgba(80,130,255,.14);
+    }
+    .clue .label{
+      font-size:11px;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      color: rgba(200,215,255,.55);
+      margin-bottom:6px;
+    }
+    .clue .text{ font-size:14px; color: rgba(240,244,255,.92); line-height:1.25; }
+
+    .word{
+      display:flex;
+      justify-content:center;
+      flex-wrap:wrap;
+      gap:8px;
+      margin:14px 0 12px;
+    }
+    .box{
+      width:34px;height:40px;
+      border-radius:12px;
+      display:grid;place-items:center;
+      font-weight:900;
+      letter-spacing:.06em;
+      border:1px solid rgba(80,130,255,.18);
+      background: rgba(7,14,40,.35);
+      color: rgba(240,244,255,.9);
+    }
+    .box.empty{ color: rgba(200,215,255,.35); }
+    .box.hint{ border-color: rgba(255,215,64,.22); color: rgba(255,215,64,.95); }
+    .box.correct{ border-color: rgba(0,230,118,.25); color: rgba(0,230,118,.95); }
+
+    .grid{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:10px;
+      margin-top:8px;
+    }
+    .opt{
+      border:none;
+      border-radius:16px;
+      padding:12px 12px;
+      font-weight:800;
+      font-size:13px;
+      text-align:center;
+      cursor:pointer;
+      color: rgba(240,244,255,.92);
+      background: rgba(7,14,40,.40);
+      border:1px solid rgba(80,130,255,.14);
+      transition: transform .08s ease, filter .15s ease, opacity .15s ease, background .15s ease;
+    }
+    .opt:active{ transform: translateY(1px); }
+    .opt.disabled{ opacity:.45; pointer-events:none; }
+    .opt.correct{ background: rgba(0,230,118,.18); border-color: rgba(0,230,118,.30); }
+    .opt.wrong{ background: rgba(255,77,109,.16); border-color: rgba(255,77,109,.28); }
+
+    /* Results */
+    .results{ text-align:center; padding:8px 2px 2px; }
+    .trophy{
+      font-size:34px;
+      width:64px;height:64px;border-radius:22px;
+      display:grid;place-items:center;margin:6px auto 10px;
+      background: rgba(7,14,40,.35);
+      border:1px solid rgba(255,215,64,.18);
+    }
+    .rtitle{ font-size:24px; font-weight:900; }
+    .rsub{ color: var(--text-dim); font-size:13px; margin-top:4px; }
+
+    .stats{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:10px;
+      margin:14px 0 12px;
+    }
+    .sbox{
+      padding:10px 8px;
+      border-radius:18px;
+      background: rgba(7,14,40,.35);
+      border:1px solid rgba(80,130,255,.12);
+    }
+    .sval{
+      font-family:"JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-weight:900;
+      font-size:18px;
+    }
+    .sval.gold{ color: rgba(255,215,64,.95); }
+    .sval.green{ color: rgba(0,230,118,.95); }
+    .slabel{
+      margin-top:3px;
+      font-size:10px;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      color: rgba(200,215,255,.55);
+    }
+
+    .lb{
+      text-align:left;
+      margin-top:6px;
+      padding:12px 12px;
+      border-radius:18px;
+      background: rgba(7,14,40,.35);
+      border:1px solid rgba(80,130,255,.14);
+    }
+    .ttl{
+      font-size:11px;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      color: rgba(200,215,255,.55);
+      margin-bottom:10px;
+    }
+    .row{
+      display:grid;
+      grid-template-columns: 26px 1fr auto;
+      gap:10px;
+      align-items:center;
+      padding:8px 0;
+      border-top:1px solid rgba(255,255,255,.06);
+    }
+    .row:first-of-type{ border-top:none; }
+    .rank{
+      width:22px;height:22px;border-radius:8px;
+      display:grid;place-items:center;
+      font-weight:900;
+      font-size:12px;
+      background: rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.06);
+      color: rgba(240,244,255,.88);
+    }
+    .rank.gold{
+      background: rgba(255,215,64,.16);
+      border-color: rgba(255,215,64,.22);
+      color: rgba(255,215,64,.95);
+    }
+    .name{ font-size:13px; color: rgba(240,244,255,.9); }
+    .pts{ font-size:12px; color: rgba(200,215,255,.75); }
+
+    /* Small screens */
+    @media (max-width: 360px){
+      .grid{ grid-template-columns: 1fr; }
+      .stats{ grid-template-columns: 1fr; }
+      .box{ width:30px;height:38px; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <div id="main"></div>
+  </div>
+
+  <script>
+  // ======================================================
+  // ===============  SUPABASE CONFIG  ====================
+  // ======================================================
+  const SUPABASE_URL = "https://ppyyxfvsyxklvxbpunjc.supabase.co";
+  const SUPABASE_ANON_KEY = "sb_publishable_S2amtkjqdRb1wMk0CmThTg_efAOkjmh";
+
+  const sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY, {
+    auth: { persistSession: false, autoRefreshToken: false },
   });
 
-  const json = await res.json().catch(()=> ({}));
-  if (!res.ok) {
-    console.error("Edge function error:", res.status, json);
-    throw new Error(json?.error || `Edge HTTP ${res.status}`);
+  // ======================================================
+  // ===============  EDGE FUNCTION CONFIG  ===============
+  // ======================================================
+  const EDGE_FN_URL = `${SUPABASE_URL}/functions/v1/hyper-task`;
+  const ADMIN_TOKEN = "wordrush-admin-2026";
+
+  // Текущий раунд берём динамически
+  let ROUND_ID = null;
+
+  // ======================================================
+  // ===============  UI: TOAST + ERROR BOX  ==============
+  // ======================================================
+  function toast(msg){
+    const t = document.createElement('div');
+    t.textContent = msg;
+    t.style.cssText = `
+      position:fixed;left:50%;bottom:20px;transform:translateX(-50%);
+      background:rgba(8,16,45,.92);border:1px solid rgba(77,141,255,.25);
+      color:rgba(240,244,255,.92);padding:10px 14px;border-radius:12px;
+      font:600 12px/1.2 'Space Grotesk',sans-serif;letter-spacing:.2px;
+      box-shadow:0 10px 30px rgba(0,0,0,.45);
+      z-index:9999;backdrop-filter:blur(12px);
+    `;
+    document.body.appendChild(t);
+    setTimeout(()=>{ t.style.opacity='0'; t.style.transition='opacity .2s'; }, 1400);
+    setTimeout(()=>t.remove(), 1700);
   }
-  return json;
-}
 
-// ВАЖНО: ожидаем что функция умеет отдавать текущий round_id
-async function getCurrentRoundId(){
-  const r = await edgePost({ action: "get_current_round" });
-  // поддержка разных форматов ответа (на всякий)
-  const rid = r?.round_id ?? r?.current_round_id ?? r?.data?.round_id ?? null;
-  if (!rid) throw new Error("Edge: round_id not found in response");
-  return Number(rid);
-}
-
-async function startNewRound(){
-  const r = await edgePost({ action: "start_new_round" });
-  const rid = r?.round_id ?? r?.new_round_id ?? r?.data?.round_id ?? null;
-  if (!rid) throw new Error("Edge: new round_id not found in response");
-  return Number(rid);
-}
-
-// ======================================================
-// ===============  SUPABASE HELPERS  ====================
-// ======================================================
-async function fetchTop5(roundId){
-  const { data, error } = await sb
-    .from("leaderboard")
-    .select("username, user_id, score")
-    .eq("round_id", roundId)
-    .order("score", { ascending: false })
-    .order("created_at", { ascending: true })
-    .limit(5);
-
-  if (error) throw error;
-
-  return (data ?? []).map(r => ({
-    name: r.username || r.user_id,
-    pts: r.score
-  }));
-}
-
-async function submitScore({ round_id, user_id, username, score }){
-  const payload = {
-    round_id,
-    user_id: String(user_id),
-    username: username ? String(username) : null,
-    score: Number(score),
-  };
-
-  const { error } = await sb.from("leaderboard").insert(payload);
-  if (error) throw error;
-  return true;
-}
-
-async function pingSupabase(){
-  const { error } = await sb.from("leaderboard").select("id").limit(1);
-  if (error) throw error;
-  return true;
-}
-
-// ======================================================
-// ===== Telegram WebApp (fullscreen) =====
-if (window.Telegram?.WebApp) {
-  Telegram.WebApp.ready();
-  Telegram.WebApp.expand();
-}
-
-// ======================================================
-// ===== Question pool (Restaurant/Cafe) — 30 =====
-const QUESTION_POOL = [
-  { word:"receipt", clue:"You get it after you pay. It shows what you ordered and the total price.", options:["receipt","menu","plate","kitchen"], correct:0 },
-  { word:"reservation", clue:"You make it before coming to get a table at a specific time.", options:["reservation","recommendation","registration","resignation"], correct:0 },
-  { word:"appetizer", clue:"A small dish you eat before the main course.", options:["appetizer","dessert","beverage","ingredient"], correct:0 },
-  { word:"beverage", clue:"A drink you can order: water, tea, coffee, juice.", options:["beverage","menu","dessert","service"], correct:0 },
-  { word:"waiter", clue:"This person takes your order and brings food to your table.", options:["waiter","visitor","writer","witness"], correct:0 },
-  { word:"waitress", clue:"A woman who takes your order and serves food in a restaurant.", options:["waitress","waiter","witness","writer"], correct:0 },
-  { word:"dessert", clue:"Sweet food you eat at the end of a meal.", options:["dessert","starter","salad","receipt"], correct:0 },
-  { word:"ingredient", clue:"One of the foods used to make a dish.", options:["ingredient","instruction","increase","investment"], correct:0 },
-  { word:"cashier", clue:"The person who takes your payment at the counter.", options:["cashier","chef","customer","cleaner"], correct:0 },
-  { word:"takeaway", clue:"Food you order to eat somewhere else (not in the cafe).", options:["takeaway","takeover","takeoff","take care"], correct:0 },
-
-  { word:"refill", clue:"When they fill your drink again with more coffee or water.", options:["refill","replace","reveal","repair"], correct:0 },
-  { word:"service", clue:"How well the staff helps you in a restaurant.", options:["service","surface","server","servant"], correct:0 },
-  { word:"customer", clue:"A person who buys food or drinks in a cafe.", options:["customer","consumer","costumer","client"], correct:0 },
-  { word:"portion", clue:"The amount of food served to one person.", options:["portion","position","pattern","protein"], correct:0 },
-  { word:"cutlery", clue:"Forks, knives, and spoons used for eating.", options:["cutlery","cuisine","cookery","cutlet"], correct:0 },
-  { word:"napkin", clue:"A small piece of paper or cloth you use to clean your mouth or hands.", options:["napkin","newspaper","notebook","napalm"], correct:0 },
-  { word:"counter", clue:"A long surface where you order or pay in a cafe.", options:["counter","country","counting","couch"], correct:0 },
-  { word:"barista", clue:"A person who makes coffee drinks, especially espresso.", options:["barista","bartender","baker","banker"], correct:0 },
-  { word:"espresso", clue:"A small, strong coffee made by forcing hot water through ground coffee.", options:["espresso","express","expensive","espressoo"], correct:0 },
-  { word:"cappuccino", clue:"Coffee with steamed milk and foam.", options:["cappuccino","macchiato","milkshake","americano"], correct:0 },
-
-  { word:"macchiato", clue:"An espresso with a small amount of milk or foam.", options:["macchiato","cappuccino","latte","mojito"], correct:0 },
-  { word:"americano", clue:"Espresso with added hot water.", options:["americano","amaretto","american","macaroon"], correct:0 },
-  { word:"latte", clue:"Coffee with a lot of milk, usually in a tall glass.", options:["latte","late","plate","latter"], correct:0 },
-  { word:"kettle", clue:"A device used to boil water for tea.", options:["kettle","bottle","cattle","little"], correct:0 },
-  { word:"allergy", clue:"A reaction some people have to certain foods (nuts, milk, etc.).", options:["allergy","energy","allegory","alligator"], correct:0 },
-  { word:"gluten", clue:"A protein in wheat. Some people avoid it.", options:["gluten","glue","glitter","glutton"], correct:0 },
-  { word:"spicy", clue:"Food that feels hot because of peppers or spices.", options:["spicy","species","spicey","spiky"], correct:0 },
-  { word:"vegan", clue:"A person who eats no meat, fish, eggs, or dairy.", options:["vegan","vegetable","vagina","pescatarian"], correct:0 },
-  { word:"checkout", clue:"The place or moment when you pay and finish your purchase.", options:["checkout","check in","check-up","check it"], correct:0 },
-  { word:"complaint", clue:"When you say something is wrong and ask staff to fix it.", options:["complaint","complement","complex","complete"], correct:0 }
-];
-
-// ===== Game settings =====
-const GAME_TOTAL_WORDS = 20;
-const POOL_SIZE = 30;
-const GAME_SECONDS = 120;
-const MAX_HINTS = 3;
-
-// scoring
-const SCORE_FAST = 100;        // <5s
-const SCORE_NORMAL = 60;       // >=5s
-const PENALTY_HINT = 30;       // -30 once per hint use
-const PENALTY_WRONG = 10;      // -10
-const BONUS_FINISH = 200;      // all 20
-
-// ===== State =====
-let gameQuestions = [];
-let qIndex = 0;
-let score = 0;
-let hintsLeft = MAX_HINTS;
-
-let gameStartTs = 0;
-let qStartTs = 0;
-
-let timerInterval = null;
-let countdownInterval = null;
-
-const elMain = document.getElementById('main');
-
-// ===== Helpers =====
-function shuffle(arr){
-  const a = arr.slice();
-  for(let i=a.length-1;i>0;i--){
-    const j = Math.floor(Math.random()*(i+1));
-    [a[i],a[j]] = [a[j],a[i]];
+  function formatSbError(e){
+    if (!e) return "Unknown error";
+    if (typeof e === 'string') return e;
+    return e.message || e.error_description || JSON.stringify(e);
   }
-  return a;
-}
-function pickN(arr, n){ return shuffle(arr).slice(0, n); }
-function nowMs(){ return Date.now(); }
-function clamp(v,min,max){ return Math.max(min, Math.min(max, v)); }
 
-function formatMMSS(total){
-  const m = Math.floor(total/60);
-  const s = total%60;
-  return `${m}:${String(s).padStart(2,'0')}`;
-}
-
-function getRemainingSeconds(){
-  const elapsed = Math.floor((nowMs() - gameStartTs)/1000);
-  return clamp(GAME_SECONDS - elapsed, 0, GAME_SECONDS);
-}
-
-function clearAllIntervals(){
-  if (timerInterval) clearInterval(timerInterval);
-  if (countdownInterval) clearInterval(countdownInterval);
-  timerInterval = null;
-  countdownInterval = null;
-}
-
-// ======================================================
-// ===============  BOOTSTRAP ROUND  ====================
-// ======================================================
-async function ensureRound(){
-  if (ROUND_ID) return ROUND_ID;
-  try{
-    ROUND_ID = await getCurrentRoundId();
-    return ROUND_ID;
-  }catch(e){
-    console.error("ensureRound error:", e);
-    toast("Round error: " + formatSbError(e));
-    // fallback: чтобы не ломать игру — оставим 1
-    ROUND_ID = 1;
-    return ROUND_ID;
+  function escapeHtml(str){
+    return String(str)
+      .replaceAll('&', '&amp;')
+      .replaceAll('<', '&lt;')
+      .replaceAll('>', '&gt;')
+      .replaceAll('"', '&quot;')
+      .replaceAll("'", '&#039;');
   }
-}
 
-// ===== Screens =====
-async function renderLobby(){
-  clearAllIntervals();
+  // ======================================================
+  // ===============  TELEGRAM USER  =======================
+  // ======================================================
+  function getOrCreateGuest(){
+    const key = "wordrush_guest_id";
+    let id = localStorage.getItem(key);
+    if (!id) {
+      id = "guest_" + Math.random().toString(16).slice(2);
+      localStorage.setItem(key, id);
+    }
+    return {
+      id,
+      username: null,
+      first_name: "Guest",
+      last_name: null
+    };
+  }
 
-  const rid = await ensureRound();
+  function getTgUser(){
+    const tg = window.Telegram?.WebApp;
+    const u = tg?.initDataUnsafe?.user;
+    return u ?? getOrCreateGuest();
+  }
 
-  elMain.innerHTML = `
-    <div class="page-label">Лобі</div>
-    <div class="card glass">
-      <div class="lobby">
-        <div class="logo">⚡</div>
-        <div class="h1">WORD RUSH</div>
-        <div class="sub">Вгадай ${GAME_TOTAL_WORDS} слів за 2 хвилини</div>
+  function getDisplayName(u){
+    if (u?.username) return "@" + u.username;
+    const fn = u?.first_name ?? "";
+    const ln = u?.last_name ?? "";
+    const nm = (fn + " " + ln).trim();
+    return nm || "Player";
+  }
 
-        <div class="rules">
-          <div class="rule">⏱ <span><b>2 хвилини</b> на всю гру</span></div>
-          <div class="rule">📖 <span>Читай підказку — вибирай слово</span></div>
-          <div class="rule">💡 <span>До <b>${MAX_HINTS} підказок</b> за гру</span></div>
-          <div class="rule">⭐ <span>Швидша відповідь = <b>більше очок</b></span></div>
-          <div class="rule">🏆 <span>Топ-5 оновлюється щомиті</span></div>
-        </div>
+  // ======================================================
+  // ===============  EDGE FUNCTIONS HELPERS  =============
+  // ======================================================
+  async function edgePost(payload){
+    const res = await fetch(EDGE_FN_URL, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "x-admin-token": ADMIN_TOKEN
+      },
+      body: JSON.stringify(payload)
+    });
 
-        <div style="margin:10px 0 2px;font-size:12px;color:rgba(200,215,255,.7)">
-          Current round: <b>#${rid}</b>
-        </div>
+    const json = await res.json().catch(()=> ({}));
+    if (!res.ok) {
+      console.error("Edge function error:", res.status, json);
+      throw new Error(json?.error || `Edge HTTP ${res.status}`);
+    }
+    return json;
+  }
 
-        <button class="btn" id="btnStart">Почати гру →</button>
-        <button class="hintbtn" id="btnNewRound" style="margin-top:10px">Start new round (admin)</button>
-      </div>
-    </div>
-  `;
+  // ВАЖНО: ожидаем что функция умеет отдавать текущий round_id
+  async function getCurrentRoundId(){
+    const r = await edgePost({ action: "get_current_round" });
+    // поддержка разных форматов ответа (на всякий)
+    const rid = r?.round_id ?? r?.current_round_id ?? r?.data?.round_id ?? null;
+    if (!rid) throw new Error("Edge: round_id not found in response");
+    return Number(rid);
+  }
 
-  document.getElementById('btnStart').addEventListener('click', renderCountdown);
+  async function startNewRound(){
+    const r = await edgePost({ action: "start_new_round" });
+    const rid = r?.round_id ?? r?.new_round_id ?? r?.data?.round_id ?? null;
+    if (!rid) throw new Error("Edge: new round_id not found in response");
+    return Number(rid);
+  }
 
-  document.getElementById('btnNewRound').addEventListener('click', async () => {
+  // ======================================================
+  // ===============  SUPABASE HELPERS  ====================
+  // ======================================================
+  async function fetchTop5(roundId){
+    const { data, error } = await sb
+      .from("leaderboard")
+      .select("username, user_id, score")
+      .eq("round_id", roundId)
+      .order("score", { ascending: false })
+      .order("created_at", { ascending: true })
+      .limit(5);
+
+    if (error) throw error;
+
+    return (data ?? []).map(r => ({
+      name: r.username || r.user_id,
+      pts: r.score
+    }));
+  }
+
+  async function submitScore({ round_id, user_id, username, score }){
+    const payload = {
+      round_id,
+      user_id: String(user_id),
+      username: username ? String(username) : null,
+      score: Number(score),
+    };
+
+    const { error } = await sb.from("leaderboard").insert(payload);
+    if (error) throw error;
+    return true;
+  }
+
+  async function pingSupabase(){
+    const { error } = await sb.from("leaderboard").select("id").limit(1);
+    if (error) throw error;
+    return true;
+  }
+
+  // ======================================================
+  // ===== Telegram WebApp (fullscreen) =====
+  if (window.Telegram?.WebApp) {
+    Telegram.WebApp.ready();
+    Telegram.WebApp.expand();
+  }
+
+  // ======================================================
+  // ===== Question pool (Restaurant/Cafe) — 30 =====
+  const QUESTION_POOL = [
+    { word:"receipt", clue:"You get it after you pay. It shows what you ordered and the total price.", options:["receipt","menu","plate","kitchen"], correct:0 },
+    { word:"reservation", clue:"You make it before coming to get a table at a specific time.", options:["reservation","recommendation","registration","resignation"], correct:0 },
+    { word:"appetizer", clue:"A small dish you eat before the main course.", options:["appetizer","dessert","beverage","ingredient"], correct:0 },
+    { word:"beverage", clue:"A drink you can order: water, tea, coffee, juice.", options:["beverage","menu","dessert","service"], correct:0 },
+    { word:"waiter", clue:"This person takes your order and brings food to your table.", options:["waiter","visitor","writer","witness"], correct:0 },
+    { word:"waitress", clue:"A woman who takes your order and serves food in a restaurant.", options:["waitress","waiter","witness","writer"], correct:0 },
+    { word:"dessert", clue:"Sweet food you eat at the end of a meal.", options:["dessert","starter","salad","receipt"], correct:0 },
+    { word:"ingredient", clue:"One of the foods used to make a dish.", options:["ingredient","instruction","increase","investment"], correct:0 },
+    { word:"cashier", clue:"The person who takes your payment at the counter.", options:["cashier","chef","customer","cleaner"], correct:0 },
+    { word:"takeaway", clue:"Food you order to eat somewhere else (not in the cafe).", options:["takeaway","takeover","takeoff","take care"], correct:0 },
+
+    { word:"refill", clue:"When they fill your drink again with more coffee or water.", options:["refill","replace","reveal","repair"], correct:0 },
+    { word:"service", clue:"How well the staff helps you in a restaurant.", options:["service","surface","server","servant"], correct:0 },
+    { word:"customer", clue:"A person who buys food or drinks in a cafe.", options:["customer","consumer","costumer","client"], correct:0 },
+    { word:"portion", clue:"The amount of food served to one person.", options:["portion","position","pattern","protein"], correct:0 },
+    { word:"cutlery", clue:"Forks, knives, and spoons used for eating.", options:["cutlery","cuisine","cookery","cutlet"], correct:0 },
+    { word:"napkin", clue:"A small piece of paper or cloth you use to clean your mouth or hands.", options:["napkin","newspaper","notebook","napalm"], correct:0 },
+    { word:"counter", clue:"A long surface where you order or pay in a cafe.", options:["counter","country","counting","couch"], correct:0 },
+    { word:"barista", clue:"A person who makes coffee drinks, especially espresso.", options:["barista","bartender","baker","banker"], correct:0 },
+    { word:"espresso", clue:"A small, strong coffee made by forcing hot water through ground coffee.", options:["espresso","express","expensive","espressoo"], correct:0 },
+    { word:"cappuccino", clue:"Coffee with steamed milk and foam.", options:["cappuccino","macchiato","milkshake","americano"], correct:0 },
+
+    { word:"macchiato", clue:"An espresso with a small amount of milk or foam.", options:["macchiato","cappuccino","latte","mojito"], correct:0 },
+    { word:"americano", clue:"Espresso with added hot water.", options:["americano","amaretto","american","macaroon"], correct:0 },
+    { word:"latte", clue:"Coffee with a lot of milk, usually in a tall glass.", options:["latte","late","plate","latter"], correct:0 },
+    { word:"kettle", clue:"A device used to boil water for tea.", options:["kettle","bottle","cattle","little"], correct:0 },
+    { word:"allergy", clue:"A reaction some people have to certain foods (nuts, milk, etc.).", options:["allergy","energy","allegory","alligator"], correct:0 },
+    { word:"gluten", clue:"A protein in wheat. Some people avoid it.", options:["gluten","glue","glitter","glutton"], correct:0 },
+    { word:"spicy", clue:"Food that feels hot because of peppers or spices.", options:["spicy","species","spicey","spiky"], correct:0 },
+    { word:"vegan", clue:"A person who eats no meat, fish, eggs, or dairy.", options:["vegan","vegetable","vagina","pescatarian"], correct:0 },
+    { word:"checkout", clue:"The place or moment when you pay and finish your purchase.", options:["checkout","check in","check-up","check it"], correct:0 },
+    { word:"complaint", clue:"When you say something is wrong and ask staff to fix it.", options:["complaint","complement","complex","complete"], correct:0 }
+  ];
+
+  // ===== Game settings =====
+  const GAME_TOTAL_WORDS = 20;
+  const POOL_SIZE = 30;
+  const GAME_SECONDS = 120;
+  const MAX_HINTS = 3;
+
+  // scoring
+  const SCORE_FAST = 100;        // <5s
+  const SCORE_NORMAL = 60;       // >=5s
+  const PENALTY_HINT = 30;       // -30 once per hint use
+  const PENALTY_WRONG = 10;      // -10
+  const BONUS_FINISH = 200;      // all 20
+
+  // ===== State =====
+  let gameQuestions = [];
+  let qIndex = 0;
+  let score = 0;
+  let hintsLeft = MAX_HINTS;
+
+  let gameStartTs = 0;
+  let qStartTs = 0;
+
+  let timerInterval = null;
+  let countdownInterval = null;
+
+  const elMain = document.getElementById('main');
+
+  // ===== Helpers =====
+  function shuffle(arr){
+    const a = arr.slice();
+    for(let i=a.length-1;i>0;i--){
+      const j = Math.floor(Math.random()*(i+1));
+      [a[i],a[j]] = [a[j],a[i]];
+    }
+    return a;
+  }
+  function pickN(arr, n){ return shuffle(arr).slice(0, n); }
+  function nowMs(){ return Date.now(); }
+  function clamp(v,min,max){ return Math.max(min, Math.min(max, v)); }
+
+  function formatMMSS(total){
+    const m = Math.floor(total/60);
+    const s = total%60;
+    return `${m}:${String(s).padStart(2,'0')}`;
+  }
+
+  function getRemainingSeconds(){
+    const elapsed = Math.floor((nowMs() - gameStartTs)/1000);
+    return clamp(GAME_SECONDS - elapsed, 0, GAME_SECONDS);
+  }
+
+  function clearAllIntervals(){
+    if (timerInterval) clearInterval(timerInterval);
+    if (countdownInterval) clearInterval(countdownInterval);
+    timerInterval = null;
+    countdownInterval = null;
+  }
+
+  // ======================================================
+  // ===============  BOOTSTRAP ROUND  ====================
+  // ======================================================
+  async function ensureRound(){
+    if (ROUND_ID) return ROUND_ID;
     try{
-      toast("Creating new round...");
-      const newRid = await startNewRound();
-      ROUND_ID = newRid;
-      toast("✅ New round: #" + newRid);
-      renderLobby();
+      ROUND_ID = await getCurrentRoundId();
+      return ROUND_ID;
     }catch(e){
-      console.error("startNewRound UI error:", e);
-      toast("❌ " + formatSbError(e));
+      console.error("ensureRound error:", e);
+      toast("Round error: " + formatSbError(e));
+      // fallback: чтобы не ломать игру — оставим 1
+      ROUND_ID = 1;
+      return ROUND_ID;
     }
-  });
-}
-
-async function renderCountdown(){
-  clearAllIntervals();
-
-  // Пингуем базу заранее, чтобы понять “ключ/rls/сеть”
-  try{
-    await pingSupabase();
-  }catch(e){
-    console.error("Supabase ping error:", e);
-    toast("Supabase error: " + formatSbError(e));
   }
 
-  await ensureRound();
+  // ===== Screens =====
+  async function renderLobby(){
+    clearAllIntervals();
 
-  elMain.innerHTML = `
-    <div class="page-label">Приготуйся</div>
-    <div class="card glass">
-      <div class="countdown">
-        <div class="small" style="margin-bottom:20px">Гра починається через</div>
-        <div class="ring"><div class="big" id="cdNum">3</div></div>
-        <div class="small" style="margin-top:16px;color:rgba(77,141,255,.75)">Round #${ROUND_ID}</div>
+    const rid = await ensureRound();
+
+    elMain.innerHTML = `
+      <div class="page-label">Лобі</div>
+      <div class="card glass">
+        <div class="lobby">
+          <div class="logo">⚡</div>
+          <div class="h1">WORD RUSH</div>
+          <div class="sub">Вгадай ${GAME_TOTAL_WORDS} слів за 2 хвилини</div>
+
+          <div class="rules">
+            <div class="rule">⏱ <span><b>2 хвилини</b> на всю гру</span></div>
+            <div class="rule">📖 <span>Читай підказку — вибирай слово</span></div>
+            <div class="rule">💡 <span>До <b>${MAX_HINTS} підказок</b> за гру</span></div>
+            <div class="rule">⭐ <span>Швидша відповідь = <b>більше очок</b></span></div>
+            <div class="rule">🏆 <span>Топ-5 оновлюється щомиті</span></div>
+          </div>
+
+          <div style="margin:10px 0 2px;font-size:12px;color:rgba(200,215,255,.7)">
+            Current round: <b>#${rid}</b>
+          </div>
+
+          <button class="btn" id="btnStart">Почати гру →</button>
+          <button class="hintbtn" id="btnNewRound" style="margin-top:10px">Start new round (admin)</button>
+        </div>
       </div>
-    </div>
-  `;
+    `;
 
-  let n = 3;
-  const elNum = document.getElementById('cdNum');
+    document.getElementById('btnStart').addEventListener('click', renderCountdown);
 
-  const pop = () => {
-    if (!elNum) return;
-    elNum.style.animation = 'none';
-    elNum.offsetHeight;
-    elNum.style.animation = 'scalePop .35s cubic-bezier(.34,1.56,.64,1)';
-    elNum.textContent = String(n);
-  };
-  pop();
+    document.getElementById('btnNewRound').addEventListener('click', async () => {
+      try{
+        toast("Creating new round...");
+        const newRid = await startNewRound();
+        ROUND_ID = newRid;
+        toast("✅ New round: #" + newRid);
+        renderLobby();
+      }catch(e){
+        console.error("startNewRound UI error:", e);
+        toast("❌ " + formatSbError(e));
+      }
+    });
+  }
 
-  countdownInterval = setInterval(() => {
-    n--;
-    if (n === 0) {
-      clearAllIntervals();
-      startNewGame();
-      return;
+  async function renderCountdown(){
+    clearAllIntervals();
+
+    // Пингуем базу заранее, чтобы понять “ключ/rls/сеть”
+    try{
+      await pingSupabase();
+    }catch(e){
+      console.error("Supabase ping error:", e);
+      toast("Supabase error: " + formatSbError(e));
     }
+
+    await ensureRound();
+
+    elMain.innerHTML = `
+      <div class="page-label">Приготуйся</div>
+      <div class="card glass">
+        <div class="countdown">
+          <div class="small" style="margin-bottom:20px">Гра починається через</div>
+          <div class="ring"><div class="big" id="cdNum">3</div></div>
+          <div class="small" style="margin-top:16px;color:rgba(77,141,255,.75)">Round #${ROUND_ID}</div>
+        </div>
+      </div>
+    `;
+
+    let n = 3;
+    const elNum = document.getElementById('cdNum');
+
+    const pop = () => {
+      if (!elNum) return;
+      elNum.style.animation = 'none';
+      elNum.offsetHeight;
+      elNum.style.animation = 'scalePop .35s cubic-bezier(.34,1.56,.64,1)';
+      elNum.textContent = String(n);
+    };
     pop();
-  }, 850);
-}
 
-// ===== Game logic =====
-function startNewGame(){
-  clearAllIntervals();
-
-  const basePool = pickN(QUESTION_POOL, Math.min(POOL_SIZE, QUESTION_POOL.length));
-  gameQuestions = pickN(basePool, GAME_TOTAL_WORDS);
-
-  qIndex = 0;
-  score = 0;
-  hintsLeft = MAX_HINTS;
-
-  gameStartTs = nowMs();
-  qStartTs = nowMs();
-
-  renderGameQuestion();
-  startGlobalTimer();
-}
-
-function startGlobalTimer(){
-  timerInterval = setInterval(() => {
-    const left = getRemainingSeconds();
-    updateTimerUI(left);
-    if (left <= 0) finishGame(true);
-  }, 250);
-}
-
-function updateTimerUI(secondsLeft){
-  const elTimer = document.getElementById('timerVal');
-  const elFill = document.getElementById('timerFill');
-  if (!elTimer || !elFill) return;
-
-  elTimer.textContent = formatMMSS(secondsLeft);
-  const pct = (secondsLeft / GAME_SECONDS) * 100;
-  elFill.style.width = `${pct}%`;
-
-  if (secondsLeft <= 20) {
-    elTimer.classList.add('urgent');
-    elFill.classList.add('urgent');
-  } else {
-    elTimer.classList.remove('urgent');
-    elFill.classList.remove('urgent');
+    countdownInterval = setInterval(() => {
+      n--;
+      if (n === 0) {
+        clearAllIntervals();
+        startNewGame();
+        return;
+      }
+      pop();
+    }, 850);
   }
-}
 
-function buildLetterBoxes(word, revealedSet){
-  const letters = word.toUpperCase().split('');
-  return letters.map((ch, i) => {
-    const isRevealed = revealedSet.has(i);
-    const cls = isRevealed ? 'box hint' : 'box empty';
-    const val = isRevealed ? ch : '_';
-    return `<div class="${cls}" data-i="${i}">${val}</div>`;
-  }).join('');
-}
+  // ===== Game logic =====
+  function startNewGame(){
+    clearAllIntervals();
 
-function renderGameQuestion(){
-  const q = gameQuestions[qIndex];
-  const secondsLeft = getRemainingSeconds();
+    const basePool = pickN(QUESTION_POOL, Math.min(POOL_SIZE, QUESTION_POOL.length));
+    gameQuestions = pickN(basePool, GAME_TOTAL_WORDS);
 
-  const opts = q.options.slice();
-  const correctText = opts[q.correct];
-  const shuffled = shuffle(opts);
-  const correctIdx = shuffled.indexOf(correctText);
+    qIndex = 0;
+    score = 0;
+    hintsLeft = MAX_HINTS;
 
-  const revealed = new Set();
+    gameStartTs = nowMs();
+    qStartTs = nowMs();
 
-  elMain.innerHTML = `
-    <div class="page-label">Слово ${qIndex+1} з ${GAME_TOTAL_WORDS} (Round #${ROUND_ID})</div>
-    <div class="card glass">
-      <div class="game">
-        <div class="toprow">
-          <span class="counter">Слово ${qIndex+1} / ${GAME_TOTAL_WORDS}</span>
-          <span class="timer" id="timerVal">${formatMMSS(secondsLeft)}</span>
+    renderGameQuestion();
+    startGlobalTimer();
+  }
+
+  function startGlobalTimer(){
+    timerInterval = setInterval(() => {
+      const left = getRemainingSeconds();
+      updateTimerUI(left);
+      if (left <= 0) finishGame(true);
+    }, 250);
+  }
+
+  function updateTimerUI(secondsLeft){
+    const elTimer = document.getElementById('timerVal');
+    const elFill = document.getElementById('timerFill');
+    if (!elTimer || !elFill) return;
+
+    elTimer.textContent = formatMMSS(secondsLeft);
+    const pct = (secondsLeft / GAME_SECONDS) * 100;
+    elFill.style.width = `${pct}%`;
+
+    if (secondsLeft <= 20) {
+      elTimer.classList.add('urgent');
+      elFill.classList.add('urgent');
+    } else {
+      elTimer.classList.remove('urgent');
+      elFill.classList.remove('urgent');
+    }
+  }
+
+  function buildLetterBoxes(word, revealedSet){
+    const letters = word.toUpperCase().split('');
+    return letters.map((ch, i) => {
+      const isRevealed = revealedSet.has(i);
+      const cls = isRevealed ? 'box hint' : 'box empty';
+      const val = isRevealed ? ch : '_';
+      return `<div class="${cls}" data-i="${i}">${val}</div>`;
+    }).join('');
+  }
+
+  function renderGameQuestion(){
+    const q = gameQuestions[qIndex];
+    const secondsLeft = getRemainingSeconds();
+
+    const opts = q.options.slice();
+    const correctText = opts[q.correct];
+    const shuffled = shuffle(opts);
+    const correctIdx = shuffled.indexOf(correctText);
+
+    const revealed = new Set();
+
+    elMain.innerHTML = `
+      <div class="page-label">Слово ${qIndex+1} з ${GAME_TOTAL_WORDS} (Round #${ROUND_ID})</div>
+      <div class="card glass">
+        <div class="game">
+          <div class="toprow">
+            <span class="counter">Слово ${qIndex+1} / ${GAME_TOTAL_WORDS}</span>
+            <span class="timer" id="timerVal">${formatMMSS(secondsLeft)}</span>
+          </div>
+          <div class="bar"><div class="fill" id="timerFill" style="width:${(secondsLeft/GAME_SECONDS)*100}%"></div></div>
+
+          <div style="margin-bottom:12px"><span class="badge">⭐ <span id="scoreVal">${score}</span> очок</span></div>
+
+          <div class="clue">
+            <div class="label">Підказка</div>
+            <div class="text">${escapeHtml(q.clue)}</div>
+          </div>
+
+          <div class="word" id="wordBoxes">
+            ${buildLetterBoxes(q.word, revealed)}
+          </div>
+
+          <div class="grid" id="optGrid">
+            ${shuffled.map((t, i) => `<button class="opt" data-i="${i}">${escapeHtml(t)}</button>`).join('')}
+          </div>
+
+          <button class="hintbtn" id="hintBtn">${hintLabel()}</button>
         </div>
-        <div class="bar"><div class="fill" id="timerFill" style="width:${(secondsLeft/GAME_SECONDS)*100}%"></div></div>
-
-        <div style="margin-bottom:12px"><span class="badge">⭐ <span id="scoreVal">${score}</span> очок</span></div>
-
-        <div class="clue">
-          <div class="label">Підказка</div>
-          <div class="text">${escapeHtml(q.clue)}</div>
-        </div>
-
-        <div class="word" id="wordBoxes">
-          ${buildLetterBoxes(q.word, revealed)}
-        </div>
-
-        <div class="grid" id="optGrid">
-          ${shuffled.map((t, i) => `<button class="opt" data-i="${i}">${escapeHtml(t)}</button>`).join('')}
-        </div>
-
-        <button class="hintbtn" id="hintBtn">${hintLabel()}</button>
       </div>
-    </div>
-  `;
+    `;
 
-  updateTimerUI(secondsLeft);
+    updateTimerUI(secondsLeft);
 
-  const grid = document.getElementById('optGrid');
-  grid.querySelectorAll('.opt').forEach(btn => {
-    btn.addEventListener('click', () => {
-      onPickOption(btn, Number(btn.dataset.i), correctIdx, revealed, q.word);
+    const grid = document.getElementById('optGrid');
+    grid.querySelectorAll('.opt').forEach(btn => {
+      btn.addEventListener('click', () => {
+        onPickOption(btn, Number(btn.dataset.i), correctIdx, revealed, q.word);
+      });
     });
-  });
 
-  document.getElementById('hintBtn').addEventListener('click', () => {
-    onUseHint(revealed, q.word);
-  });
-
-  qStartTs = nowMs();
-}
-
-function hintLabel(){
-  return hintsLeft > 0 ? `Підказка (залишилось: ${hintsLeft})` : `Підказок немає`;
-}
-
-function onUseHint(revealed, word){
-  if (hintsLeft <= 0) return;
-
-  const len = word.length;
-  const candidates = [];
-  for (let i=0;i<len;i++) if (!revealed.has(i)) candidates.push(i);
-  if (!candidates.length) return;
-
-  const idx = candidates[Math.floor(Math.random()*candidates.length)];
-  revealed.add(idx);
-
-  hintsLeft -= 1;
-  score = Math.max(0, score - PENALTY_HINT);
-
-  document.getElementById('wordBoxes').innerHTML = buildLetterBoxes(word, revealed);
-  document.getElementById('hintBtn').textContent = hintLabel();
-  document.getElementById('scoreVal').textContent = String(score);
-}
-
-function onPickOption(btn, pickedIdx, correctIdx, revealed, word){
-  document.querySelectorAll('.opt').forEach(b => b.classList.add('disabled'));
-
-  const grid = document.getElementById('optGrid');
-  const buttons = grid.querySelectorAll('.opt');
-
-  const isCorrect = pickedIdx === correctIdx;
-
-  if (isCorrect) {
-    const dt = Math.floor((nowMs() - qStartTs)/1000);
-    const add = (dt < 5) ? SCORE_FAST : SCORE_NORMAL;
-    score += add;
-
-    btn.classList.remove('disabled');
-    btn.classList.add('correct');
-    btn.textContent = btn.textContent + " ✓";
-
-    showSolvedWord(word);
-
-    setTimeout(() => {
-      qIndex += 1;
-      if (qIndex >= GAME_TOTAL_WORDS) finishGame(false);
-      else renderGameQuestion();
-    }, 700);
-
-  } else {
-    score = Math.max(0, score - PENALTY_WRONG);
-
-    btn.classList.remove('disabled');
-    btn.classList.add('wrong');
-
-    setTimeout(() => {
-      btn.classList.add('disabled');
-      buttons.forEach((b, i) => { if (i !== pickedIdx) b.classList.remove('disabled'); });
-      document.getElementById('scoreVal').textContent = String(score);
-    }, 500);
-  }
-}
-
-function showSolvedWord(word){
-  const letters = word.toUpperCase().split('');
-  const html = letters.map(ch => `<div class="box correct">${ch}</div>`).join('');
-  const boxes = document.getElementById('wordBoxes');
-  if (boxes) boxes.innerHTML = html;
-  document.getElementById('scoreVal').textContent = String(score);
-}
-
-async function finishGame(outOfTime){
-  clearAllIntervals();
-
-  await ensureRound();
-
-  const wordsSolved = outOfTime ? qIndex : GAME_TOTAL_WORDS;
-  const secondsLeft = getRemainingSeconds();
-
-  let finalScore = score;
-  if (!outOfTime && wordsSolved === GAME_TOTAL_WORDS) finalScore += BONUS_FINISH;
-
-  const user = getTgUser();
-  const displayName = getDisplayName(user);
-
-  let saveOk = false;
-  let saveErr = null;
-
-  try{
-    await submitScore({
-      round_id: ROUND_ID,
-      user_id: user.id,
-      username: (user.username ? ("@" + user.username) : displayName),
-      score: finalScore
+    document.getElementById('hintBtn').addEventListener('click', () => {
+      onUseHint(revealed, q.word);
     });
-    saveOk = true;
-    toast("Score saved ✅");
-  }catch(e){
-    saveErr = e;
-    console.error("submitScore error:", e);
-    toast("Save failed ❌");
+
+    qStartTs = nowMs();
   }
 
-  let top5 = [];
-  let topErr = null;
-
-  try{
-    top5 = await fetchTop5(ROUND_ID);
-  }catch(e){
-    topErr = e;
-    console.error("fetchTop5 error:", e);
+  function hintLabel(){
+    return hintsLeft > 0 ? `Підказка (залишилось: ${hintsLeft})` : `Підказок немає`;
   }
 
-  const errorText = saveErr
-    ? `Не вдалося зберегти результат: ${escapeHtml(formatSbError(saveErr))}`
-    : (topErr ? `Не вдалося завантажити топ: ${escapeHtml(formatSbError(topErr))}` : null);
+  function onUseHint(revealed, word){
+    if (hintsLeft <= 0) return;
 
-  elMain.innerHTML = `
-    <div class="page-label">Підсумки</div>
-    <div class="card glass">
-      <div class="results">
-        <div class="trophy">🏆</div>
-        <div class="rtitle">${outOfTime ? "Час вийшов!" : "Чудова гра!"}</div>
-        <div class="rsub">Ти вгадав ${wordsSolved} з ${GAME_TOTAL_WORDS} слів</div>
+    const len = word.length;
+    const candidates = [];
+    for (let i=0;i<len;i++) if (!revealed.has(i)) candidates.push(i);
+    if (!candidates.length) return;
 
-        <div class="stats">
-          <div class="sbox"><div class="sval gold">${finalScore}</div><div class="slabel">ОЧОК</div></div>
-          <div class="sbox"><div class="sval green">${wordsSolved}/${GAME_TOTAL_WORDS}</div><div class="slabel">СЛІВ</div></div>
-          <div class="sbox"><div class="sval">${secondsLeft}s</div><div class="slabel">ЗАЛИШОК</div></div>
+    const idx = candidates[Math.floor(Math.random()*candidates.length)];
+    revealed.add(idx);
+
+    hintsLeft -= 1;
+    score = Math.max(0, score - PENALTY_HINT);
+
+    document.getElementById('wordBoxes').innerHTML = buildLetterBoxes(word, revealed);
+    document.getElementById('hintBtn').textContent = hintLabel();
+    document.getElementById('scoreVal').textContent = String(score);
+  }
+
+  function onPickOption(btn, pickedIdx, correctIdx, revealed, word){
+    document.querySelectorAll('.opt').forEach(b => b.classList.add('disabled'));
+
+    const grid = document.getElementById('optGrid');
+    const buttons = grid.querySelectorAll('.opt');
+
+    const isCorrect = pickedIdx === correctIdx;
+
+    if (isCorrect) {
+      const dt = Math.floor((nowMs() - qStartTs)/1000);
+      const add = (dt < 5) ? SCORE_FAST : SCORE_NORMAL;
+      score += add;
+
+      btn.classList.remove('disabled');
+      btn.classList.add('correct');
+      btn.textContent = btn.textContent + " ✓";
+
+      showSolvedWord(word);
+
+      setTimeout(() => {
+        qIndex += 1;
+        if (qIndex >= GAME_TOTAL_WORDS) finishGame(false);
+        else renderGameQuestion();
+      }, 700);
+
+    } else {
+      score = Math.max(0, score - PENALTY_WRONG);
+
+      btn.classList.remove('disabled');
+      btn.classList.add('wrong');
+
+      setTimeout(() => {
+        btn.classList.add('disabled');
+        buttons.forEach((b, i) => { if (i !== pickedIdx) b.classList.remove('disabled'); });
+        document.getElementById('scoreVal').textContent = String(score);
+      }, 500);
+    }
+  }
+
+  function showSolvedWord(word){
+    const letters = word.toUpperCase().split('');
+    const html = letters.map(ch => `<div class="box correct">${ch}</div>`).join('');
+    const boxes = document.getElementById('wordBoxes');
+    if (boxes) boxes.innerHTML = html;
+    document.getElementById('scoreVal').textContent = String(score);
+  }
+
+  async function finishGame(outOfTime){
+    clearAllIntervals();
+
+    await ensureRound();
+
+    const wordsSolved = outOfTime ? qIndex : GAME_TOTAL_WORDS;
+    const secondsLeft = getRemainingSeconds();
+
+    let finalScore = score;
+    if (!outOfTime && wordsSolved === GAME_TOTAL_WORDS) finalScore += BONUS_FINISH;
+
+    const user = getTgUser();
+    const displayName = getDisplayName(user);
+
+    let saveOk = false;
+    let saveErr = null;
+
+    try{
+      await submitScore({
+        round_id: ROUND_ID,
+        user_id: user.id,
+        username: (user.username ? ("@" + user.username) : displayName),
+        score: finalScore
+      });
+      saveOk = true;
+      toast("Score saved ✅");
+    }catch(e){
+      saveErr = e;
+      console.error("submitScore error:", e);
+      toast("Save failed ❌");
+    }
+
+    let top5 = [];
+    let topErr = null;
+
+    try{
+      top5 = await fetchTop5(ROUND_ID);
+    }catch(e){
+      topErr = e;
+      console.error("fetchTop5 error:", e);
+    }
+
+    const errorText = saveErr
+      ? `Не вдалося зберегти результат: ${escapeHtml(formatSbError(saveErr))}`
+      : (topErr ? `Не вдалося завантажити топ: ${escapeHtml(formatSbError(topErr))}` : null);
+
+    elMain.innerHTML = `
+      <div class="page-label">Підсумки</div>
+      <div class="card glass">
+        <div class="results">
+          <div class="trophy">🏆</div>
+          <div class="rtitle">${outOfTime ? "Час вийшов!" : "Чудова гра!"}</div>
+          <div class="rsub">Ти вгадав ${wordsSolved} з ${GAME_TOTAL_WORDS} слів</div>
+
+          <div class="stats">
+            <div class="sbox"><div class="sval gold">${finalScore}</div><div class="slabel">ОЧОК</div></div>
+            <div class="sbox"><div class="sval green">${wordsSolved}/${GAME_TOTAL_WORDS}</div><div class="slabel">СЛІВ</div></div>
+            <div class="sbox"><div class="sval">${secondsLeft}s</div><div class="slabel">ЗАЛИШОК</div></div>
+          </div>
+
+          <div class="lb">
+            <div class="ttl">Топ підписників (Round #${ROUND_ID})</div>
+
+            ${errorText ? `
+              <div style="font-size:12px;color:rgba(255,77,109,.85);padding:6px 0;line-height:1.4">
+                ${errorText}
+              </div>
+            ` : ""}
+
+            ${top5.length ? top5.map((r, i) => `
+              <div class="row">
+                <span class="rank ${i<2 ? 'gold':''}">${i+1}</span>
+                <span class="name">${escapeHtml(r.name)}</span>
+                <span class="pts">${r.pts} pts</span>
+              </div>
+            `).join('') : `
+              <div style="font-size:12px;color:rgba(200,215,255,.65);padding:6px 0;">
+                ${saveOk ? "Поки що немає результатів." : "Немає топа (бо не збереглось або не прочиталось)."}
+              </div>
+            `}
+          </div>
+
+          <button class="btn-green" id="btnAgain">Зіграти ще раз</button>
         </div>
-
-        <div class="lb">
-          <div class="ttl">Топ підписників (Round #${ROUND_ID})</div>
-
-          ${errorText ? `
-            <div style="font-size:12px;color:rgba(255,77,109,.85);padding:6px 0;line-height:1.4">
-              ${errorText}
-            </div>
-          ` : ""}
-
-          ${top5.length ? top5.map((r, i) => `
-            <div class="row">
-              <span class="rank ${i<2 ? 'gold':''}">${i+1}</span>
-              <span class="name">${escapeHtml(r.name)}</span>
-              <span class="pts">${r.pts} pts</span>
-            </div>
-          `).join('') : `
-            <div style="font-size:12px;color:rgba(200,215,255,.65);padding:6px 0;">
-              ${saveOk ? "Поки що немає результатів." : "Немає топа (бо не збереглось або не прочиталось)."}
-            </div>
-          `}
-        </div>
-
-        <button class="btn-green" id="btnAgain">Зіграти ще раз</button>
       </div>
-    </div>
-  `;
+    `;
 
-  document.getElementById('btnAgain').addEventListener('click', renderLobby);
-}
+    document.getElementById('btnAgain').addEventListener('click', renderLobby);
+  }
 
-// start
-renderLobby();
-</script>
+  // start
+  renderLobby();
+  </script>
+</body>
+</html>
