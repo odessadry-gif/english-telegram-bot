@@ -681,5 +681,14 @@
     "core": "receipt",
     "fp": "81adca119efa70f6431dce36c97336d69556ea9cf5379573860c513dec3d127b",
     "core_fp": "6bbd9a7709c28d7421699bd2b99ee87181cfda0435569c12d14a00ea2a9ce6b8"
+  },
+  {
+    "ts": 1772290060,
+    "kind": "grammar_gap",
+    "level": "A2",
+    "topic": "Grammar",
+    "core": "She ___ dinner when I called.",
+    "fp": "8d932ce58bc891ac3646e7941813be8b5bb3dcd665ae6a0814490ad6babfcd5f",
+    "core_fp": "88f24afad817703913ab53dc8764536322b9c6ac39c21d1f3e25373c63e69a7c"
   }
 ]
