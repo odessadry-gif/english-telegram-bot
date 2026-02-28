@@ -699,5 +699,14 @@
     "core": "речі",
     "fp": "ceb87366fdb6d98865edc7db5582f546abdc718afec2dec4619a28cf99489a0e",
     "core_fp": "bd3bfd128c882a0ca440acca129378adff657eec8e415d35e1b6d69354f57feb"
+  },
+  {
+    "ts": 1772305115,
+    "kind": "guess_word",
+    "level": "B1",
+    "topic": "Riddle",
+    "core": "screwdriver",
+    "fp": "12d786e836a3ded4d9fbae65b99b050a24c0aac73dd4d69c6471e7f9b9a4d07c",
+    "core_fp": "d5cf820b4fe595e1e1177951022a896b03bbcfa5ccb0e2290a1141b6b3c66c44"
   }
 ]
