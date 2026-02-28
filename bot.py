@@ -11,8 +11,27 @@ from openai import OpenAI
 # ========= ENV =========
 TOKEN = os.getenv("BOT_TOKEN")
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
-CHAT_ID = os.getenv("CHAT_ID", "-1003674761753")
+CHAT_ID = os.getenv("CHAT_ID", "-1003674761753")  # куда постятся квизы (как было)
 MODEL = os.getenv("OPENAI_MODEL", "gpt-5-mini")
+
+# ✅ НОВОЕ: режимы
+# MODE=quiz      -> как раньше (по умолчанию)
+# MODE=postgame  -> отдельный пост с кнопкой
+MODE = os.getenv("MODE", "quiz").strip().lower()
+
+# ✅ НОВОЕ: куда постить кнопку (группа/канал)
+GROUP_CHAT_ID = os.getenv("GROUP_CHAT_ID", "@Official_english_every_day")
+
+# ✅ НОВОЕ: ссылка на мини-игру
+GAME_URL = os.getenv("GAME_URL", "https://odessadry-gif.github.io/english-telegram-bot/")
+
+# ✅ НОВОЕ: подпись на кнопке и текст поста
+GAME_BUTTON_TEXT = os.getenv("GAME_BUTTON_TEXT", "⚡ Word Rush")
+GAME_POST_TEXT = os.getenv(
+    "GAME_POST_TEXT",
+    "⚡ **Word Rush** — 2 хвилини на швидкий англійський челендж\n\n"
+    "Вгадай 20 слів за 2 хвилини. Спробуй побити топ-5 👇"
+)
 
 # ========= HISTORY =========
 HISTORY_FILE = "history.json"
@@ -22,7 +41,7 @@ MAX_HISTORY = 800
 MAX_GEN_TRIES_DEFAULT = 12
 # Больше попыток для сложных случаев
 MAX_GEN_TRIES_BY_KIND = {
-    "guess_word": 40,     # чтобы реже упираться в бан
+    "guess_word": 40,
     "grammar_gap": 18,
     "ua_en": 18,
 }
@@ -36,8 +55,6 @@ COOLDOWN_LAST_N = {
     "grammar_gap": 120,
 }
 GRAMMAR_PATTERN_LAST_N = 180
-
-# Для prompt: сколько последних guess_word запрещаем явно
 GUESS_WORD_AVOID_LAST_N = 80
 
 client = OpenAI(api_key=OPENAI_API_KEY)
@@ -57,12 +74,6 @@ def _norm_spaces(s: str) -> str:
 
 
 def normalize_core(kind: str, core: str) -> str:
-    """
-    Normalization for dedupe / ban logic.
-    - guess_word: global ban regardless of level (umbrella == an umbrella).
-    - ua_en: normalize UA core to avoid repeats.
-    - grammar_gap: keep basic normalization (pattern is handled separately).
-    """
     if not core:
         return ""
 
@@ -95,10 +106,7 @@ def _fp(kind: str, core: str, options: list[str]) -> str:
 
 
 def core_fp(kind: str, core: str) -> str:
-    payload = {
-        "kind": _norm(kind),
-        "core": normalize_core(kind, core),
-    }
+    payload = {"kind": _norm(kind), "core": normalize_core(kind, core)}
     j = json.dumps(payload, ensure_ascii=False, sort_keys=True)
     return hashlib.sha256(j.encode("utf-8")).hexdigest()
 
@@ -215,6 +223,14 @@ def tries_for_kind(kind: str) -> int:
 
 
 # ========= TELEGRAM =========
+def tg_api(method: str, payload: dict):
+    url = f"https://api.telegram.org/bot{TOKEN}/{method}"
+    r = requests.post(url, json=payload, timeout=30)
+    if not r.ok:
+        raise RuntimeError(f"Telegram {method} error: {r.status_code} {r.text}")
+    return r.json()
+
+
 def send_quiz_poll(question: str, options: list[str], correct_id: int, explanation: str):
     question = (question or "").strip()
     if len(question) > 280:
@@ -228,7 +244,6 @@ def send_quiz_poll(question: str, options: list[str], correct_id: int, explanati
     if len(explanation) > 200:
         explanation = explanation[:200]
 
-    url = f"https://api.telegram.org/bot{TOKEN}/sendPoll"
     payload = {
         "chat_id": CHAT_ID,
         "question": question,
@@ -239,17 +254,36 @@ def send_quiz_poll(question: str, options: list[str], correct_id: int, explanati
         "allows_multiple_answers": False,
         "explanation": explanation,
     }
+    tg_api("sendPoll", payload)
 
-    r = requests.post(url, json=payload, timeout=30)
-    if not r.ok:
-        raise RuntimeError(f"Telegram sendPoll error: {r.status_code} {r.text}")
+
+# ✅ НОВОЕ: пост с кнопкой (в группу/канал)
+def send_game_post():
+    text = (GAME_POST_TEXT or "").strip()
+    if not text:
+        text = "⚡ Word Rush — play now!"
+
+    # inline keyboard button
+    reply_markup = {
+        "inline_keyboard": [
+            [{"text": GAME_BUTTON_TEXT, "url": GAME_URL}]
+        ]
+    }
+
+    payload = {
+        "chat_id": GROUP_CHAT_ID,
+        "text": text,
+        "parse_mode": "Markdown",
+        "disable_web_page_preview": True,
+        "reply_markup": reply_markup,
+    }
+    tg_api("sendMessage", payload)
 
 
 # ========= PROMPTS =========
 def prompt_for(kind: str, guess_word_avoid: list[str]) -> str:
     avoid_line = ""
     if kind == "guess_word" and guess_word_avoid:
-        # не делаем огромным — достаточно списка
         avoid_line = "Avoid these words (do NOT use them as the answer): " + ", ".join(guess_word_avoid) + "\n"
 
     return f"""
@@ -333,9 +367,13 @@ def main():
     if not OPENAI_API_KEY:
         raise RuntimeError("OPENAI_API_KEY missing (set GitHub Secret OPENAI_API_KEY).")
 
-    history = load_history()
+    # ✅ НОВОЕ: отдельный режим поста с кнопкой (без генерации квиза)
+    if MODE == "postgame":
+        send_game_post()
+        return
 
-    # sets from history
+    # ====== ниже всё как у тебя работало ======
+    history = load_history()
     seen_fp = {h.get("fp") for h in history if h.get("fp")}
 
     seen_core = set()
@@ -345,13 +383,11 @@ def main():
         if k in KIND_CYCLE and c:
             seen_core.add(h.get("core_fp") or core_fp(k, c))
 
-    # guess_word global ban
     guess_word_banned = set()
     for h in history:
         if h.get("kind") == "guess_word":
             guess_word_banned.add(normalize_core("guess_word", h.get("core", "")))
 
-    # cooldown windows
     recent_core_by_kind = {k: set() for k in COOLDOWN_LAST_N.keys()}
     counts_by_kind = {k: 0 for k in COOLDOWN_LAST_N.keys()}
     for h in reversed(history):
@@ -373,17 +409,14 @@ def main():
                 recent_grammar_patterns.add(pk)
             gp_count += 1
 
-    # для prompt guess_word
     guess_word_avoid = get_guess_word_avoid_list(history, GUESS_WORD_AVOID_LAST_N)
 
     start_kind = next_kind(history)
     start_idx = KIND_CYCLE.index(start_kind) if start_kind in KIND_CYCLE else 0
 
-    # ✅ Главное: не падаем на одном kind. Пробуем по кругу все 3 формата.
     last_err = None
     for shift in range(len(KIND_CYCLE)):
         kind = KIND_CYCLE[(start_idx + shift) % len(KIND_CYCLE)]
-
         tries = tries_for_kind(kind)
         filtered_out = 0
 
@@ -407,13 +440,11 @@ def main():
 
                 core = str(data.get("core", "")).strip() or question
 
-                # hard anti-repeat core_fp
                 cfp = core_fp(kind, core)
                 if cfp in seen_core:
                     filtered_out += 1
                     continue
 
-                # guess_word bans
                 if kind == "guess_word":
                     norm_word = normalize_core("guess_word", core)
                     if not norm_word:
@@ -423,7 +454,6 @@ def main():
                         filtered_out += 1
                         continue
 
-                # ua_en cooldown + correct=0 in source order
                 if kind == "ua_en":
                     norm_ua = normalize_core("ua_en", core)
                     if not norm_ua:
@@ -434,7 +464,6 @@ def main():
                         continue
                     correct = 0
 
-                # grammar cooldown + pattern cooldown
                 if kind == "grammar_gap":
                     norm_g = normalize_core("grammar_gap", core)
                     if norm_g and norm_g in recent_core_by_kind["grammar_gap"]:
@@ -445,19 +474,16 @@ def main():
                         filtered_out += 1
                         continue
 
-                # ✅ shuffle (чтобы правильный не всегда первый)
+                # ✅ shuffle (как у тебя)
                 options, correct = shuffle_options_keep_correct(options, correct)
 
-                # fp dedupe (based on final options sent)
                 fp = _fp(kind, core, options)
                 if fp in seen_fp:
                     filtered_out += 1
                     continue
 
-                # ✅ send
                 send_quiz_poll(question, options, correct, explanation)
 
-                # update sets in-memory
                 seen_fp.add(fp)
                 seen_core.add(cfp)
 
@@ -474,7 +500,6 @@ def main():
                     if pk:
                         recent_grammar_patterns.add(pk)
 
-                # save history
                 history.append(
                     {
                         "ts": int(time.time()),
@@ -493,11 +518,9 @@ def main():
                 last_err = e
                 continue
 
-        # если дошли сюда — kind не удалось (всё отфильтровалось)
         if last_err is None:
             last_err = RuntimeError(f"No unique candidate for kind={kind} (filtered_out={filtered_out})")
 
-    # если вдруг не получилось ни на одном kind (очень маловероятно)
     raise RuntimeError(f"Failed to generate quiz for ALL kinds. Last error: {last_err}")
 
 
