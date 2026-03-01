@@ -771,5 +771,14 @@
     "core": "I ___ to work now.",
     "fp": "6e771b07a1d3c9fb7aebc201497ccb971816f52e37556155c97d6e4000eaf9bf",
     "core_fp": "9ad92f3ceac24de515c7bd32334f3d922423e7c56c2ae15614dfc3130f72ab81"
+  },
+  {
+    "ts": 1772376916,
+    "kind": "ua_en",
+    "level": "A2",
+    "topic": "Vocabulary",
+    "core": "журнал",
+    "fp": "ef49f65e75334b5ba082b5f3bb096011835d83dfd33ed55e1eb59d030f9df59c",
+    "core_fp": "51a775b72ae56c2f95ca69f361a64d690e020254ec4a2bd029126d1b230ded35"
   }
 ]
