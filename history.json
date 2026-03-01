@@ -735,5 +735,14 @@
     "core": "backpack",
     "fp": "496deca616157c754abd55da97f5d890e52d0c649fe3a144ee86aa0bfc6bd57e",
     "core_fp": "ece7fa0144d390bbffac497907498d03f4d995a5c54b89a518c39dc7f74ee3f2"
+  },
+  {
+    "ts": 1772351243,
+    "kind": "grammar_gap",
+    "level": "A2",
+    "topic": "Grammar",
+    "core": "She ___ her homework when I called her at 6 p.m. yesterday.",
+    "fp": "f7b0c636856b5bb7dd95c7629871ea11c87b86c8324f1dbb8b7427ff78ff55d4",
+    "core_fp": "c795494920d3b23c2a834e85c79e9862eb6d8234823748ab6efd3189bd1d93d4"
   }
 ]
