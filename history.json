@@ -726,5 +726,14 @@
     "core": "попросити допомоги",
     "fp": "b7182c39b04388a99d650b82c0ee78315962eb19ca6d259e2daa8506bfffd905",
     "core_fp": "2e32da4b413cf974d69ce033bbe7736ca774f5bf4bc09d208cbe02439fa61608"
+  },
+  {
+    "ts": 1772341860,
+    "kind": "guess_word",
+    "level": "A2",
+    "topic": "Riddle",
+    "core": "backpack",
+    "fp": "496deca616157c754abd55da97f5d890e52d0c649fe3a144ee86aa0bfc6bd57e",
+    "core_fp": "ece7fa0144d390bbffac497907498d03f4d995a5c54b89a518c39dc7f74ee3f2"
   }
 ]
