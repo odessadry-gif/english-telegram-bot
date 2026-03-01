@@ -744,5 +744,14 @@
     "core": "She ___ her homework when I called her at 6 p.m. yesterday.",
     "fp": "f7b0c636856b5bb7dd95c7629871ea11c87b86c8324f1dbb8b7427ff78ff55d4",
     "core_fp": "c795494920d3b23c2a834e85c79e9862eb6d8234823748ab6efd3189bd1d93d4"
+  },
+  {
+    "ts": 1772355661,
+    "kind": "ua_en",
+    "level": "A2",
+    "topic": "Vocabulary",
+    "core": "квиток",
+    "fp": "565c2a1bf0a15789eaf7a13bc9b05a3a24c4978baff579b8a9fcb3e07eccd961",
+    "core_fp": "15553f3a88b9fab8edf50b312d6f309528dffbed6d3743d8ee4c4f0991bf5d92"
   }
 ]
