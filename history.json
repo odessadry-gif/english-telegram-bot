@@ -753,5 +753,14 @@
     "core": "квиток",
     "fp": "565c2a1bf0a15789eaf7a13bc9b05a3a24c4978baff579b8a9fcb3e07eccd961",
     "core_fp": "15553f3a88b9fab8edf50b312d6f309528dffbed6d3743d8ee4c4f0991bf5d92"
+  },
+  {
+    "ts": 1772362405,
+    "kind": "guess_word",
+    "level": "B1",
+    "topic": "Vocabulary",
+    "core": "doormat",
+    "fp": "1621fa579b48a8a963c76a77998e6f1e993078c8161b5f0bda5f962718cccae3",
+    "core_fp": "8d73421c79900ed2404c1932d2ae8c7ad38dc66d1bf8736140e88a370f228641"
   }
 ]
