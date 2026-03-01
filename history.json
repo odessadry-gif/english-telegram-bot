@@ -807,5 +807,14 @@
     "core": "рецепт",
     "fp": "b88ef00f01e9fa47b272fa96f8c49545442f99e56bbf7740c3a626604e6c9167",
     "core_fp": "3e32c81b34e3bfcb0f8e2a0be134c96a8a95d80dc20ff401043c62b9a5020415"
+  },
+  {
+    "ts": 1772405521,
+    "kind": "guess_word",
+    "level": "A2",
+    "topic": "Riddle",
+    "core": "mattress",
+    "fp": "69c2a1824db900f81f8c3c64ba7e88447f8e391724921d90f9f395af37816c0c",
+    "core_fp": "405ad17ec777602cd2e795402edf19511f3f98af941b08a5a5991c891fb36571"
   }
 ]
