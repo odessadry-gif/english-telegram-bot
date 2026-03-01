@@ -789,5 +789,14 @@
     "core": "armchair",
     "fp": "52e4467e43d86ea2839501eef836a7943049fcb554286e2e04e89a8501f4c439",
     "core_fp": "946fd561daf80f85d17c8feb75289effa8f0d0496f947f6ccc5ca3c857877d70"
+  },
+  {
+    "ts": 1772391617,
+    "kind": "grammar_gap",
+    "level": "B1",
+    "topic": "Grammar",
+    "core": "They ___ dinner when I called.",
+    "fp": "26972927ea6b23cd6a99ca0000b78b42fe0a43dcfc7d5005c12fa7de89e66726",
+    "core_fp": "f6dd39eec984ae9673b25bbf6a0073ab90607826061c7c385ce94b00a8d1b45e"
   }
 ]
