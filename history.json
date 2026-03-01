@@ -780,5 +780,14 @@
     "core": "журнал",
     "fp": "ef49f65e75334b5ba082b5f3bb096011835d83dfd33ed55e1eb59d030f9df59c",
     "core_fp": "51a775b72ae56c2f95ca69f361a64d690e020254ec4a2bd029126d1b230ded35"
+  },
+  {
+    "ts": 1772384083,
+    "kind": "guess_word",
+    "level": "B1",
+    "topic": "Riddle",
+    "core": "armchair",
+    "fp": "52e4467e43d86ea2839501eef836a7943049fcb554286e2e04e89a8501f4c439",
+    "core_fp": "946fd561daf80f85d17c8feb75289effa8f0d0496f947f6ccc5ca3c857877d70"
   }
 ]
