@@ -798,5 +798,14 @@
     "core": "They ___ dinner when I called.",
     "fp": "26972927ea6b23cd6a99ca0000b78b42fe0a43dcfc7d5005c12fa7de89e66726",
     "core_fp": "f6dd39eec984ae9673b25bbf6a0073ab90607826061c7c385ce94b00a8d1b45e"
+  },
+  {
+    "ts": 1772398300,
+    "kind": "ua_en",
+    "level": "B1",
+    "topic": "Vocabulary",
+    "core": "рецепт",
+    "fp": "b88ef00f01e9fa47b272fa96f8c49545442f99e56bbf7740c3a626604e6c9167",
+    "core_fp": "3e32c81b34e3bfcb0f8e2a0be134c96a8a95d80dc20ff401043c62b9a5020415"
   }
 ]
