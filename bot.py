@@ -14,6 +14,9 @@ OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 CHAT_ID = os.getenv("CHAT_ID", "-1003674761753")  # куда постятся квизы (как было)
 MODEL = os.getenv("OPENAI_MODEL", "gpt-5-mini")
 
+# ✅ НОВОЕ: тема квизов (по умолчанию travel)
+THEME = os.getenv("THEME", "travel").strip().lower()
+
 # ✅ НОВОЕ: режимы
 # MODE=quiz      -> как раньше (по умолчанию)
 # MODE=postgame  -> отдельный пост с кнопкой
@@ -30,7 +33,7 @@ GAME_BUTTON_TEXT = os.getenv("GAME_BUTTON_TEXT", "⚡ Word Rush")
 GAME_POST_TEXT = os.getenv(
     "GAME_POST_TEXT",
     "⚡ **Word Rush** — 2 хвилини на швидкий англійський челендж\n\n"
-    "Вгадай 20 слів за 2 хвилини. Спробуй побити топ-5 👇"
+    "Вгадай 20 слів за 2 хвилини. Спробуй побити топ-5 👇",
 )
 
 # ========= HISTORY =========
@@ -263,10 +266,9 @@ def send_game_post():
     if not text:
         text = "⚡ Word Rush — play now!"
 
-    # inline keyboard button
     reply_markup = {
         "inline_keyboard": [
-            [{"text": GAME_BUTTON_TEXT, "url": GAME_URL}]
+            [{"text": GAME_BUTTON_TEXT, "url": GAME_URL}],
         ]
     }
 
@@ -286,9 +288,21 @@ def prompt_for(kind: str, guess_word_avoid: list[str]) -> str:
     if kind == "guess_word" and guess_word_avoid:
         avoid_line = "Avoid these words (do NOT use them as the answer): " + ", ".join(guess_word_avoid) + "\n"
 
+    theme_block = ""
+    if THEME == "travel":
+        theme_block = """
+THEME (HARD RULE): Travel & everyday trips only.
+Use contexts like: airport, boarding, passport, luggage, hotel, check-in/check-out, reservation, city transport, taxi, directions, tickets, sightseeing, money exchange, travel problems, polite requests.
+Avoid: politics, medicine, religion, explicit content, violence, war.
+""".strip()
+    elif THEME:
+        # fallback: если ты потом захочешь другую тему одним env
+        theme_block = f"THEME (HARD RULE): {THEME}. Keep everything in this theme.\n"
+
     return f"""
 Create ONE Telegram quiz for English learners (A2/B1). Return STRICT JSON ONLY (no markdown, no extra text).
 
+{theme_block}
 {avoid_line}JSON schema:
 {{
   "level": "A2" or "B1",
@@ -309,6 +323,7 @@ Format rules:
   Present Simple, Past Simple, Future Simple (will), Present Continuous, Past Continuous.
 - DO NOT use: any Perfect tenses, modals (should/might/could), conditionals, comparatives.
 - Keep sentences short and clear (A2/B1), everyday situations.
+- MUST follow the theme above.
 - question format MUST be exactly:
   💬
   Fill the gap:
@@ -317,7 +332,7 @@ Format rules:
 - correct: 0..3
 
 2) kind=ua_en:
-- core: ONE Ukrainian word/phrase (everyday A2/B1)
+- core: ONE Ukrainian word/phrase (everyday A2/B1) in the theme above
 - question format MUST be exactly:
   💬
   🇺🇦 → 🇬🇧
@@ -330,7 +345,7 @@ Format rules:
 - correct MUST be 0
 
 3) kind=guess_word:
-- core: correct English word (one word, A2/B1)
+- core: correct English word (one word, A2/B1) in the theme above.
 - Use less obvious everyday nouns/objects (NOT the most common ones).
 - question has 2–3 short riddle lines + "What is it?"
 - question format MUST be exactly:
@@ -367,7 +382,7 @@ def main():
     if not OPENAI_API_KEY:
         raise RuntimeError("OPENAI_API_KEY missing (set GitHub Secret OPENAI_API_KEY).")
 
-    # ✅ НОВОЕ: отдельный режим поста с кнопкой (без генерации квиза)
+    # ✅ режим поста с кнопкой (без генерации квиза)
     if MODE == "postgame":
         send_game_post()
         return
@@ -462,7 +477,7 @@ def main():
                     if norm_ua in recent_core_by_kind["ua_en"]:
                         filtered_out += 1
                         continue
-                    correct = 0
+                    correct = 0  # фиксировано по правилу ua_en
 
                 if kind == "grammar_gap":
                     norm_g = normalize_core("grammar_gap", core)
