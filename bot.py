@@ -11,24 +11,24 @@ from openai import OpenAI
 # ========= ENV =========
 TOKEN = os.getenv("BOT_TOKEN")
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
-CHAT_ID = os.getenv("CHAT_ID", "-1003674761753")  # куда постятся квизы (как было)
+CHAT_ID = os.getenv("CHAT_ID", "-1003674761753")  # куда постятся квизы
 MODEL = os.getenv("OPENAI_MODEL", "gpt-5-mini")
 
-# ✅ НОВОЕ: тема квизов (по умолчанию travel)
+# ✅ ТЕМА (по умолчанию travel)
 THEME = os.getenv("THEME", "travel").strip().lower()
 
-# ✅ НОВОЕ: режимы
-# MODE=quiz      -> как раньше (по умолчанию)
+# ✅ режимы
+# MODE=quiz      -> квиз (по умолчанию)
 # MODE=postgame  -> отдельный пост с кнопкой
 MODE = os.getenv("MODE", "quiz").strip().lower()
 
-# ✅ НОВОЕ: куда постить кнопку (группа/канал)
+# ✅ куда постить кнопку (группа/канал)
 GROUP_CHAT_ID = os.getenv("GROUP_CHAT_ID", "@Official_english_every_day")
 
-# ✅ НОВОЕ: ссылка на мини-игру
+# ✅ ссылка на мини-игру
 GAME_URL = os.getenv("GAME_URL", "https://odessadry-gif.github.io/english-telegram-bot/")
 
-# ✅ НОВОЕ: подпись на кнопке и текст поста
+# ✅ подпись на кнопке и текст поста
 GAME_BUTTON_TEXT = os.getenv("GAME_BUTTON_TEXT", "⚡ Word Rush")
 GAME_POST_TEXT = os.getenv(
     "GAME_POST_TEXT",
@@ -260,17 +260,12 @@ def send_quiz_poll(question: str, options: list[str], correct_id: int, explanati
     tg_api("sendPoll", payload)
 
 
-# ✅ НОВОЕ: пост с кнопкой (в группу/канал)
 def send_game_post():
     text = (GAME_POST_TEXT or "").strip()
     if not text:
         text = "⚡ Word Rush — play now!"
 
-    reply_markup = {
-        "inline_keyboard": [
-            [{"text": GAME_BUTTON_TEXT, "url": GAME_URL}],
-        ]
-    }
+    reply_markup = {"inline_keyboard": [[{"text": GAME_BUTTON_TEXT, "url": GAME_URL}]]}
 
     payload = {
         "chat_id": GROUP_CHAT_ID,
@@ -288,7 +283,7 @@ def prompt_for(kind: str, guess_word_avoid: list[str]) -> str:
     if kind == "guess_word" and guess_word_avoid:
         avoid_line = "Avoid these words (do NOT use them as the answer): " + ", ".join(guess_word_avoid) + "\n"
 
-    theme_block = ""
+    # theme block
     if THEME == "travel":
         theme_block = """
 THEME (HARD RULE): Travel & everyday trips only.
@@ -296,8 +291,9 @@ Use contexts like: airport, boarding, passport, luggage, hotel, check-in/check-o
 Avoid: politics, medicine, religion, explicit content, violence, war.
 """.strip()
     elif THEME:
-        # fallback: если ты потом захочешь другую тему одним env
-        theme_block = f"THEME (HARD RULE): {THEME}. Keep everything in this theme.\n"
+        theme_block = f"THEME (HARD RULE): {THEME}. Keep everything in this theme."
+    else:
+        theme_block = ""
 
     return f"""
 Create ONE Telegram quiz for English learners (A2/B1). Return STRICT JSON ONLY (no markdown, no extra text).
@@ -382,7 +378,7 @@ def main():
     if not OPENAI_API_KEY:
         raise RuntimeError("OPENAI_API_KEY missing (set GitHub Secret OPENAI_API_KEY).")
 
-    # ✅ режим поста с кнопкой (без генерации квиза)
+    # режим поста с кнопкой (без генерации квиза)
     if MODE == "postgame":
         send_game_post()
         return
@@ -477,7 +473,7 @@ def main():
                     if norm_ua in recent_core_by_kind["ua_en"]:
                         filtered_out += 1
                         continue
-                    correct = 0  # фиксировано по правилу ua_en
+                    correct = 0
 
                 if kind == "grammar_gap":
                     norm_g = normalize_core("grammar_gap", core)
@@ -489,7 +485,7 @@ def main():
                         filtered_out += 1
                         continue
 
-                # ✅ shuffle (как у тебя)
+                # shuffle
                 options, correct = shuffle_options_keep_correct(options, correct)
 
                 fp = _fp(kind, core, options)
