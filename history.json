@@ -834,5 +834,14 @@
     "core": "позичити гроші",
     "fp": "bfccbfac1b9897917021ab7afc33fd046466dd424ae92a7e6c2fa7cca6f1ba0c",
     "core_fp": "b718c7567d8d91f9a73b6b619ad7990361589c67a69e8beaf80ffa852f3a6ce9"
+  },
+  {
+    "ts": 1772451508,
+    "kind": "guess_word",
+    "level": "A2",
+    "topic": "Riddle",
+    "core": "doorbell",
+    "fp": "5fdb69ada3570fca51394fd3c41a6571a8b63111ad94b33636a3d69ddc564480",
+    "core_fp": "7e38eb368085fb4778d95d4c7eb9ed69f4189d6786615bcd4ae804e22853b798"
   }
 ]
