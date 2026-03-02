@@ -825,5 +825,14 @@
     "core": "She ___ dinner at 7 every evening.",
     "fp": "af16ea2c3c6973d95f75d5a3be6ef2dfc68bf168c83bdd6d517bb353979f22e5",
     "core_fp": "3e2849ae1785411238c132cf304fd7c9f0ab716296b8c5a5918a18c5e9b3d6a2"
+  },
+  {
+    "ts": 1772438461,
+    "kind": "ua_en",
+    "level": "A2",
+    "topic": "Vocabulary",
+    "core": "позичити гроші",
+    "fp": "bfccbfac1b9897917021ab7afc33fd046466dd424ae92a7e6c2fa7cca6f1ba0c",
+    "core_fp": "b718c7567d8d91f9a73b6b619ad7990361589c67a69e8beaf80ffa852f3a6ce9"
   }
 ]
