@@ -861,5 +861,14 @@
     "core": "обмін валют",
     "fp": "9e7064ea8df49a4468da19d43ad738b9c9024c576fadf50607c544e96938666d",
     "core_fp": "e29661110f3b553d54e56c30717fa05cc2879da8cb05cb38c7ef86c45b46a945"
+  },
+  {
+    "ts": 1772474506,
+    "kind": "guess_word",
+    "level": "B1",
+    "topic": "Vocabulary",
+    "core": "itinerary",
+    "fp": "de96a2c94879a8c009dafc6d53905f200b35809ffd896d8d1f644c58a3b72817",
+    "core_fp": "f6e4b4c2014c04bdaf5f9c19c589dbcd249da9617b874d3aa8b11a3684f9d5da"
   }
 ]
