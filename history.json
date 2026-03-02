@@ -816,5 +816,14 @@
     "core": "mattress",
     "fp": "69c2a1824db900f81f8c3c64ba7e88447f8e391724921d90f9f395af37816c0c",
     "core_fp": "405ad17ec777602cd2e795402edf19511f3f98af941b08a5a5991c891fb36571"
+  },
+  {
+    "ts": 1772428056,
+    "kind": "grammar_gap",
+    "level": "A2",
+    "topic": "Grammar",
+    "core": "She ___ dinner at 7 every evening.",
+    "fp": "af16ea2c3c6973d95f75d5a3be6ef2dfc68bf168c83bdd6d517bb353979f22e5",
+    "core_fp": "3e2849ae1785411238c132cf304fd7c9f0ab716296b8c5a5918a18c5e9b3d6a2"
   }
 ]
