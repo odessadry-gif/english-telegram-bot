@@ -879,5 +879,14 @@
     "core": "While I ___ my passport, the taxi arrived.",
     "fp": "3e0bd7615f240d152d3a89bb5eebb0c7daa6767ddc5f5336bb4ce0e1eed00e57",
     "core_fp": "8c6cb0f9f82109bfea27330cb9e6b2488a273e80bcfc5d49e7235a4ca18139cf"
+  },
+  {
+    "ts": 1772492226,
+    "kind": "ua_en",
+    "level": "A2",
+    "topic": "Vocabulary",
+    "core": "реєстрація в готелі",
+    "fp": "c0c238fdcb79744c6d9252775ce017e1ac642547832cbef75b581bc24e181d37",
+    "core_fp": "cc739bd006c53efa3d5426a72e857e891f58ee9e34a18e46da7b5dc01930a3c7"
   }
 ]
