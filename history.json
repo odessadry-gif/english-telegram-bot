@@ -852,5 +852,14 @@
     "core": "The taxi ___ me to the hotel now.",
     "fp": "3b91e43758dd092cfd2d9b9e0d1d9b6ab40727a64017c99deb1c052984c216c2",
     "core_fp": "a2aee7225605df47ce720c4f2b810543f14e6becebfb61ddf9058ea79811fa39"
+  },
+  {
+    "ts": 1772461793,
+    "kind": "ua_en",
+    "level": "A2",
+    "topic": "Vocabulary",
+    "core": "обмін валют",
+    "fp": "9e7064ea8df49a4468da19d43ad738b9c9024c576fadf50607c544e96938666d",
+    "core_fp": "e29661110f3b553d54e56c30717fa05cc2879da8cb05cb38c7ef86c45b46a945"
   }
 ]
