@@ -870,5 +870,14 @@
     "core": "itinerary",
     "fp": "de96a2c94879a8c009dafc6d53905f200b35809ffd896d8d1f644c58a3b72817",
     "core_fp": "f6e4b4c2014c04bdaf5f9c19c589dbcd249da9617b874d3aa8b11a3684f9d5da"
+  },
+  {
+    "ts": 1772485610,
+    "kind": "grammar_gap",
+    "level": "B1",
+    "topic": "Grammar",
+    "core": "While I ___ my passport, the taxi arrived.",
+    "fp": "3e0bd7615f240d152d3a89bb5eebb0c7daa6767ddc5f5336bb4ce0e1eed00e57",
+    "core_fp": "8c6cb0f9f82109bfea27330cb9e6b2488a273e80bcfc5d49e7235a4ca18139cf"
   }
 ]
