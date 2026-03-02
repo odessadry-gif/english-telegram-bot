@@ -843,5 +843,14 @@
     "core": "doorbell",
     "fp": "5fdb69ada3570fca51394fd3c41a6571a8b63111ad94b33636a3d69ddc564480",
     "core_fp": "7e38eb368085fb4778d95d4c7eb9ed69f4189d6786615bcd4ae804e22853b798"
+  },
+  {
+    "ts": 1772452781,
+    "kind": "grammar_gap",
+    "level": "A2",
+    "topic": "Grammar",
+    "core": "The taxi ___ me to the hotel now.",
+    "fp": "3b91e43758dd092cfd2d9b9e0d1d9b6ab40727a64017c99deb1c052984c216c2",
+    "core_fp": "a2aee7225605df47ce720c4f2b810543f14e6becebfb61ddf9058ea79811fa39"
   }
 ]
