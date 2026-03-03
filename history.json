@@ -915,5 +915,14 @@
     "core": "реєстрація",
     "fp": "54ac54952417beccb5a54b3f349531727551586e467b305cdebdf805cbade5dd",
     "core_fp": "356eac51c5ce867dea02ad6b5abb68522105d3949d87ea224bc8fc2bd1297421"
+  },
+  {
+    "ts": 1772547126,
+    "kind": "guess_word",
+    "level": "B1",
+    "topic": "Riddle",
+    "core": "turnstile",
+    "fp": "0a1c6575ca630f977db48b92d60d4f6cd8c6600a587085bbfd788f384d370997",
+    "core_fp": "da83f61f5db8b9e1776b3f6b6a22cb4371e313d06a087be4c06009377650e626"
   }
 ]
