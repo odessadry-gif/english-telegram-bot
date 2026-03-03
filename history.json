@@ -942,5 +942,14 @@
     "core": "паспортний контроль",
     "fp": "fe011be4dfb266f01cf76c5d73a68e745083ffd017b0075154460230af504703",
     "core_fp": "559c730be49c18b3a5c46d04ce5432d4dd9f28636ac2bfdfedc3307454cd2ce5"
+  },
+  {
+    "ts": 1772578602,
+    "kind": "guess_word",
+    "level": "B1",
+    "topic": "Riddle",
+    "core": "lounge",
+    "fp": "02dd6ace6e99675fbb7f5ebeed2832f7325962309ce7e5aa369ec2d71c52f583",
+    "core_fp": "ea7243b6364900abfd52307b59b776803246cd0745b8bc1f72d21b43f154de88"
   }
 ]
