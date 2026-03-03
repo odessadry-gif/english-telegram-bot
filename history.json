@@ -906,5 +906,14 @@
     "core": "We ___ in line for boarding when the gate closed.",
     "fp": "9f5eff1289be17eed61fa1fbc69c36a59d2bb1a17a88d4f93a1804cd4a76e26b",
     "core_fp": "0eb225d1c11ce81638cd155fa6b8164762d751e9e986adb15f30731876d91444"
+  },
+  {
+    "ts": 1772532340,
+    "kind": "ua_en",
+    "level": "A2",
+    "topic": "Vocabulary",
+    "core": "реєстрація",
+    "fp": "54ac54952417beccb5a54b3f349531727551586e467b305cdebdf805cbade5dd",
+    "core_fp": "356eac51c5ce867dea02ad6b5abb68522105d3949d87ea224bc8fc2bd1297421"
   }
 ]
