@@ -933,5 +933,14 @@
     "core": "He ___ a map when he travels in a new city.",
     "fp": "de714425ee8cc481a032402460664509d29884ea6d9257360af7ae1ae249cc4a",
     "core_fp": "c0a9bf6866b80c3134d3eace29524c61323ae10be92645eb64092ee17b4806d5"
+  },
+  {
+    "ts": 1772571783,
+    "kind": "ua_en",
+    "level": "B1",
+    "topic": "Vocabulary",
+    "core": "паспортний контроль",
+    "fp": "fe011be4dfb266f01cf76c5d73a68e745083ffd017b0075154460230af504703",
+    "core_fp": "559c730be49c18b3a5c46d04ce5432d4dd9f28636ac2bfdfedc3307454cd2ce5"
   }
 ]
