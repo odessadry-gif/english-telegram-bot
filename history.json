@@ -888,5 +888,14 @@
     "core": "реєстрація в готелі",
     "fp": "c0c238fdcb79744c6d9252775ce017e1ac642547832cbef75b581bc24e181d37",
     "core_fp": "cc739bd006c53efa3d5426a72e857e891f58ee9e34a18e46da7b5dc01930a3c7"
+  },
+  {
+    "ts": 1772514341,
+    "kind": "guess_word",
+    "level": "B1",
+    "topic": "Riddle",
+    "core": "carousel",
+    "fp": "563a18f4d858f29c510cc162e415012b09b05c641f212a6dc34a7781bb827b1a",
+    "core_fp": "fa404ce1461e786ce0f1778f2e33dbdb1d879048c09182c1b1c0c366a38bcae7"
   }
 ]
