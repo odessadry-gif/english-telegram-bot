@@ -897,5 +897,14 @@
     "core": "carousel",
     "fp": "563a18f4d858f29c510cc162e415012b09b05c641f212a6dc34a7781bb827b1a",
     "core_fp": "fa404ce1461e786ce0f1778f2e33dbdb1d879048c09182c1b1c0c366a38bcae7"
+  },
+  {
+    "ts": 1772524615,
+    "kind": "grammar_gap",
+    "level": "A2",
+    "topic": "Grammar",
+    "core": "We ___ in line for boarding when the gate closed.",
+    "fp": "9f5eff1289be17eed61fa1fbc69c36a59d2bb1a17a88d4f93a1804cd4a76e26b",
+    "core_fp": "0eb225d1c11ce81638cd155fa6b8164762d751e9e986adb15f30731876d91444"
   }
 ]
