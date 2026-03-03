@@ -924,5 +924,14 @@
     "core": "turnstile",
     "fp": "0a1c6575ca630f977db48b92d60d4f6cd8c6600a587085bbfd788f384d370997",
     "core_fp": "da83f61f5db8b9e1776b3f6b6a22cb4371e313d06a087be4c06009377650e626"
+  },
+  {
+    "ts": 1772561014,
+    "kind": "grammar_gap",
+    "level": "A2",
+    "topic": "Grammar",
+    "core": "He ___ a map when he travels in a new city.",
+    "fp": "de714425ee8cc481a032402460664509d29884ea6d9257360af7ae1ae249cc4a",
+    "core_fp": "c0a9bf6866b80c3134d3eace29524c61323ae10be92645eb64092ee17b4806d5"
   }
 ]
