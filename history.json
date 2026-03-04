@@ -960,5 +960,14 @@
     "core": "We ___ for the airport at 6 p.m.",
     "fp": "6cb20033d5e4bc39f99019e75602d49b7b50eb6540ef54a19c459b2b2bb375d3",
     "core_fp": "415b4872636255f94ec434fc749393bb5ec83c32e8b164032ee7212a505d0f10"
+  },
+  {
+    "ts": 1772610903,
+    "kind": "ua_en",
+    "level": "A2",
+    "topic": "Vocabulary",
+    "core": "реєстрація на рейс",
+    "fp": "a78a9b6bfa6964df5b29779047f6d77e29503dcf875066d437e573152a3cad27",
+    "core_fp": "9fc4fe075b6da018a092e6955c62c2dbbd4dbc05f70535e779af5496b81f1d1a"
   }
 ]
