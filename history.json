@@ -1014,5 +1014,14 @@
     "core": "The bus ___ at 9 o'clock every morning.",
     "fp": "8910b0e9ea29400d31a0cc83a1706d081e22d79b3ea5d852aeb6ea47197c68ab",
     "core_fp": "81e1b336b1928f61d103aa80cb3d75ff509e8dcfc6c378026d3cda88d42ab727"
+  },
+  {
+    "ts": 1772665311,
+    "kind": "ua_en",
+    "level": "A2",
+    "topic": "Vocabulary",
+    "core": "багаж",
+    "fp": "6b362d1b032094d580f35d070def8a3b44c9c39e4e15137fc5d10a9ac4affe68",
+    "core_fp": "fd364eb00fbef469ea9410bbf764d3bba55c5f04bbb4082182cd5daa8e27f19f"
   }
 ]
