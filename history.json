@@ -996,5 +996,14 @@
     "core": "забронювати",
     "fp": "649a2605854669d2f5b229f396b76215b9dfde3e1d06ba2a4bf5a7652f5f7b8d",
     "core_fp": "22a41fbab44f5d80209a4803208fdbdb2e1cac966a1bcf0fa927bd35a79071a5"
+  },
+  {
+    "ts": 1772653967,
+    "kind": "guess_word",
+    "level": "B1",
+    "topic": "Riddle",
+    "core": "customs",
+    "fp": "db20cb10a9c59131b5663be457166bbd4d2ebda8293f4e351443b38e5bd681d4",
+    "core_fp": "28b03c7bdc2f60376517814523ac517871a251315b0317fc0317505036abfd55"
   }
 ]
