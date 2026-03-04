@@ -987,5 +987,14 @@
     "core": "The passenger ___ his luggage at the counter.",
     "fp": "401000efbf3dbe8a630bc725863c938ba27819d056bea6ed252e841ec3719f20",
     "core_fp": "51ce64346ff786ed34af0d401791152ab3d226b015c731ac53c6cd400e442904"
+  },
+  {
+    "ts": 1772647312,
+    "kind": "ua_en",
+    "level": "A2",
+    "topic": "Vocabulary",
+    "core": "забронювати",
+    "fp": "649a2605854669d2f5b229f396b76215b9dfde3e1d06ba2a4bf5a7652f5f7b8d",
+    "core_fp": "22a41fbab44f5d80209a4803208fdbdb2e1cac966a1bcf0fa927bd35a79071a5"
   }
 ]
