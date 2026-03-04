@@ -1005,5 +1005,14 @@
     "core": "customs",
     "fp": "db20cb10a9c59131b5663be457166bbd4d2ebda8293f4e351443b38e5bd681d4",
     "core_fp": "28b03c7bdc2f60376517814523ac517871a251315b0317fc0317505036abfd55"
+  },
+  {
+    "ts": 1772658102,
+    "kind": "grammar_gap",
+    "level": "A2",
+    "topic": "Grammar",
+    "core": "The bus ___ at 9 o'clock every morning.",
+    "fp": "8910b0e9ea29400d31a0cc83a1706d081e22d79b3ea5d852aeb6ea47197c68ab",
+    "core_fp": "81e1b336b1928f61d103aa80cb3d75ff509e8dcfc6c378026d3cda88d42ab727"
   }
 ]
