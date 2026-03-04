@@ -978,5 +978,14 @@
     "core": "trolley",
     "fp": "4edf5fe55665e74d485239379d393840494f5284b55f60825f812706d0fefb7a",
     "core_fp": "2278dcbd095073aebd385876fc8a298febd1f604ee1917abcb957402f3fdfb65"
+  },
+  {
+    "ts": 1772633345,
+    "kind": "grammar_gap",
+    "level": "A2",
+    "topic": "Grammar",
+    "core": "The passenger ___ his luggage at the counter.",
+    "fp": "401000efbf3dbe8a630bc725863c938ba27819d056bea6ed252e841ec3719f20",
+    "core_fp": "51ce64346ff786ed34af0d401791152ab3d226b015c731ac53c6cd400e442904"
   }
 ]
