@@ -951,5 +951,14 @@
     "core": "lounge",
     "fp": "02dd6ace6e99675fbb7f5ebeed2832f7325962309ce7e5aa369ec2d71c52f583",
     "core_fp": "ea7243b6364900abfd52307b59b776803246cd0745b8bc1f72d21b43f154de88"
+  },
+  {
+    "ts": 1772600200,
+    "kind": "grammar_gap",
+    "level": "A2",
+    "topic": "Grammar",
+    "core": "We ___ for the airport at 6 p.m.",
+    "fp": "6cb20033d5e4bc39f99019e75602d49b7b50eb6540ef54a19c459b2b2bb375d3",
+    "core_fp": "415b4872636255f94ec434fc749393bb5ec83c32e8b164032ee7212a505d0f10"
   }
 ]
