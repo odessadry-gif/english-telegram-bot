@@ -1068,5 +1068,14 @@
     "core": "The bus to the city usually ___ at 9:00.",
     "fp": "96ab8e9544df079f59c6c1bddbf7e3b0885c317ba11ab177be35a0d3fb8e59e1",
     "core_fp": "0453b821ff2646702d009c5e38be65cf1e9f2f53e580b5f2a135451d20ee6fb7"
+  },
+  {
+    "ts": 1772744903,
+    "kind": "ua_en",
+    "level": "A2",
+    "topic": "Vocabulary",
+    "core": "посадка на рейс",
+    "fp": "02619dd0071b4c12d4b5ff57e27f52c706cff7c3008c92fb5e77ac60a2e42dee",
+    "core_fp": "14e8fc19efddfaa5978a71f867519237fd1173dfcc8bca3486a1490774eb7039"
   }
 ]
