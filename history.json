@@ -1041,5 +1041,14 @@
     "core": "She ___ her passport at the counter now.",
     "fp": "a0607c4986e08d555335ab516a2fe0b0d51b2789a93a04123e864561ebc56afa",
     "core_fp": "6becb1a87cccf246b2ab925f1e769bb07ae4871b1d861515a183c9680d21ee54"
+  },
+  {
+    "ts": 1772705278,
+    "kind": "ua_en",
+    "level": "A2",
+    "topic": "Vocabulary",
+    "core": "посадковий талон",
+    "fp": "3353fa7bf4c2faee0dd04e0faf1e14f612b9e27e3c41a8475b2d954a18220f15",
+    "core_fp": "fc8d84c7371414333a3b404ddfa0875b7221546a7669941e6921a4c7b3881582"
   }
 ]
