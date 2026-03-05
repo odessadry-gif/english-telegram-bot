@@ -1032,5 +1032,14 @@
     "core": "platform",
     "fp": "83971f7ac74496897126aefcc26d621192b40e988ec489ddc0c9ac135a8ef93d",
     "core_fp": "82f2698997e7c8d267b65b78da69bfbc960579b6566e32a5f7fc241959ad3fcc"
+  },
+  {
+    "ts": 1772697402,
+    "kind": "grammar_gap",
+    "level": "A2",
+    "topic": "Grammar",
+    "core": "She ___ her passport at the counter now.",
+    "fp": "a0607c4986e08d555335ab516a2fe0b0d51b2789a93a04123e864561ebc56afa",
+    "core_fp": "6becb1a87cccf246b2ab925f1e769bb07ae4871b1d861515a183c9680d21ee54"
   }
 ]
