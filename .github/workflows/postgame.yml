@@ -22,10 +22,14 @@ jobs:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           MODE: postgame
           GROUP_CHAT_ID: "@Official_english_every_day"
-          GAME_URL: "https://odessadry-gif.github.io/english-telegram-bot/"
-          GAME_BUTTON_TEXT: "⚡ Word Rush"
-          GAME_POST_TEXT: |
-            ⚡ **Word Rush** — 2 хвилини на швидкий англійський челендж
 
-            Вгадай 20 слів за 2 хвилини. Спробуй побити топ-5 👇
+          # ✅ Game (Travel Rush)
+          GAME_URL: "https://odessadry-gif.github.io/english-telegram-bot/docs/"
+          GAME_BUTTON_TEXT: "✈️ Travel Rush"
+          GAME_POST_TEXT: |
+            ✈️ **Travel Rush** — швидкий тревел-квіз
+
+            Вгадай 10 aviation та travel слів за 3 хвилини.
+            Прокачай travel vocabulary 👇
+
         run: python bot.py
