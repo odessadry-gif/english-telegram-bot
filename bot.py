@@ -29,7 +29,7 @@ GROUP_CHAT_ID = os.getenv("GROUP_CHAT_ID", "@Official_english_every_day")
 GAME_URL = os.getenv("GAME_URL", "https://odessadry-gif.github.io/english-telegram-bot/")
 
 # ✅ подпись на кнопке и текст поста
-GAME_BUTTON_TEXT = os.getenv("GAME_BUTTON_TEXT", "⚡ Word Rush")
+GAME_BUTTON_TEXT = os.getenv("GAME_BUTTON_TEXT", "⚡ TRAVEL RUSH")
 GAME_POST_TEXT = os.getenv(
     "GAME_POST_TEXT",
     "⚡ **Word Rush** — 2 хвилини на швидкий англійський челендж\n\n"
