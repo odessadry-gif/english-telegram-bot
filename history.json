@@ -1059,5 +1059,14 @@
     "core": "reception",
     "fp": "ab5cc1b8297354a1d71ea3b275c2372ec0da11cb3681643a0478086d3a6f94d4",
     "core_fp": "86e4c2ec8a3fe7c723e5f54e9b1c7423e77ab0c5e2736267f00dd48173bbd0da"
+  },
+  {
+    "ts": 1772739988,
+    "kind": "grammar_gap",
+    "level": "B1",
+    "topic": "Grammar",
+    "core": "The bus to the city usually ___ at 9:00.",
+    "fp": "96ab8e9544df079f59c6c1bddbf7e3b0885c317ba11ab177be35a0d3fb8e59e1",
+    "core_fp": "0453b821ff2646702d009c5e38be65cf1e9f2f53e580b5f2a135451d20ee6fb7"
   }
 ]
