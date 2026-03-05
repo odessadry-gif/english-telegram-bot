@@ -24,7 +24,7 @@ jobs:
           GROUP_CHAT_ID: "@Official_english_every_day"
 
           # ✅ Game (Travel Rush)
-          GAME_URL: "https://odessadry-gif.github.io/english-telegram-bot/"
+          GAME_URL: "https://odessadry-gif.github.io/english-telegram-bot/?v=3"
           GAME_BUTTON_TEXT: "✈️ Travel Rush"
           GAME_POST_TEXT: |
             ✈️ **Travel Rush** — швидкий тревел-квіз
