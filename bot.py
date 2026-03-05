@@ -26,14 +26,23 @@ MODE = os.getenv("MODE", "quiz").strip().lower()
 GROUP_CHAT_ID = os.getenv("GROUP_CHAT_ID", "@Official_english_every_day")
 
 # ✅ ссылка на мини-игру
-GAME_URL = os.getenv("GAME_URL", "https://odessadry-gif.github.io/english-telegram-bot/")
+GAME_URL = os.getenv(
+    "GAME_URL",
+    "https://odessadry-gif.github.io/english-telegram-bot/docs/"
+)
 
-# ✅ подпись на кнопке и текст поста
-GAME_BUTTON_TEXT = os.getenv("GAME_BUTTON_TEXT", "⚡ TRAVEL RUSH")
+# ✅ подпись на кнопке
+GAME_BUTTON_TEXT = os.getenv(
+    "GAME_BUTTON_TEXT",
+    "✈️ Travel Rush"
+)
+
+# ✅ текст поста
 GAME_POST_TEXT = os.getenv(
     "GAME_POST_TEXT",
-    "⚡ **Word Rush** — 2 хвилини на швидкий англійський челендж\n\n"
-    "Вгадай 20 слів за 2 хвилини. Спробуй побити топ-5 👇",
+    "✈️ **Travel Rush** — швидкий тревел-квіз\n\n"
+    "Вгадай 10 aviation та travel слів за 3 хвилини.\n"
+    "Перевір свою англійську та прокачай travel vocabulary 👇",
 )
 
 # ========= HISTORY =========
