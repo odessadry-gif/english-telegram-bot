@@ -1050,5 +1050,14 @@
     "core": "посадковий талон",
     "fp": "3353fa7bf4c2faee0dd04e0faf1e14f612b9e27e3c41a8475b2d954a18220f15",
     "core_fp": "fc8d84c7371414333a3b404ddfa0875b7221546a7669941e6921a4c7b3881582"
+  },
+  {
+    "ts": 1772721109,
+    "kind": "guess_word",
+    "level": "B1",
+    "topic": "Vocabulary",
+    "core": "reception",
+    "fp": "ab5cc1b8297354a1d71ea3b275c2372ec0da11cb3681643a0478086d3a6f94d4",
+    "core_fp": "86e4c2ec8a3fe7c723e5f54e9b1c7423e77ab0c5e2736267f00dd48173bbd0da"
   }
 ]
