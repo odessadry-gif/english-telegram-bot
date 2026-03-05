@@ -1023,5 +1023,14 @@
     "core": "багаж",
     "fp": "6b362d1b032094d580f35d070def8a3b44c9c39e4e15137fc5d10a9ac4affe68",
     "core_fp": "fd364eb00fbef469ea9410bbf764d3bba55c5f04bbb4082182cd5daa8e27f19f"
+  },
+  {
+    "ts": 1772687094,
+    "kind": "guess_word",
+    "level": "A2",
+    "topic": "Riddle",
+    "core": "platform",
+    "fp": "83971f7ac74496897126aefcc26d621192b40e988ec489ddc0c9ac135a8ef93d",
+    "core_fp": "82f2698997e7c8d267b65b78da69bfbc960579b6566e32a5f7fc241959ad3fcc"
   }
 ]
