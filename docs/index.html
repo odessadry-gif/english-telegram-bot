@@ -1,1011 +1,843 @@
 <!DOCTYPE html>
-<html lang="uk">
+<html lang="ru">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
-  <title>Word Rush — Daily English</title>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"/>
+<title>Travel Rush</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=DM+Sans:wght@400;600;800&display=swap" rel="stylesheet"/>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-  <!-- Telegram WebApp SDK -->
-  <script src="https://telegram.org/js/telegram-web-app.js"></script>
-
-  <!-- Supabase JS v2 -->
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
-
-  <style>
-    :root {
-      --bg-1:#03050f;
-      --glass-bg: rgba(10, 20, 50, 0.55);
-      --glass-border: rgba(80, 130, 255, 0.18);
-      --glass-shine: rgba(255,255,255,0.06);
-      --text: rgba(240,244,255,0.92);
-      --text-dim: rgba(200,215,255,0.65);
-      --electric: #4d8dff;
-      --green: #00e676;
-      --red: #ff4d6d;
-      --gold: #ffd740;
-      --shadow: 0 18px 60px rgba(0,0,0,0.55);
-      --r: 24px;
-    }
-
-    * { box-sizing: border-box; }
-    html, body { height: 100%; }
-    body {
-      margin: 0;
-      font-family: "Space Grotesk", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      color: var(--text);
-      background:
-        radial-gradient(1200px 700px at 50% 10%, rgba(77,141,255,0.18), transparent 60%),
-        radial-gradient(900px 600px at 80% 70%, rgba(0,230,118,0.12), transparent 55%),
-        radial-gradient(800px 600px at 20% 80%, rgba(255,215,64,0.08), transparent 55%),
-        linear-gradient(180deg, #06102b 0%, #02030a 55%, #000 100%);
-      min-height: 100vh;
-      display: flex;
-      justify-content: center;
-      padding: 22px 16px 30px;
-    }
-
-    .wrap {
-      width: min(520px, 100%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .card {
-      width: 100%;
-      border-radius: var(--r);
-      background: var(--glass-bg);
-      border: 1px solid var(--glass-border);
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      position: relative;
-      overflow: hidden;
-    }
-    .card:before{
-      content:"";
-      position:absolute; inset:-2px;
-      background: radial-gradient(600px 220px at 30% 0%, rgba(255,255,255,0.08), transparent 60%);
-      pointer-events:none;
-    }
-
-    .page-label{
-      text-align:center;
-      margin: 8px 0 14px;
-      letter-spacing: 6px;
-      font-size: 12px;
-      color: rgba(200,215,255,0.45);
-      text-transform: uppercase;
-    }
-
-    .lobby, .countdown, .game, .results {
-      padding: 22px 18px 20px;
-      position: relative;
-    }
-
-    .logo {
-      width: 56px; height: 56px;
-      border-radius: 18px;
-      margin: 4px auto 14px;
-      display:flex; align-items:center; justify-content:center;
-      border: 1px solid rgba(255,255,255,0.10);
-      background: rgba(0,0,0,0.18);
-      box-shadow: 0 10px 28px rgba(0,0,0,0.35);
-      font-size: 28px;
-    }
-
-    .h1 {
-      text-align:center;
-      font-weight: 800;
-      letter-spacing: 4px;
-      font-size: 40px;
-      margin: 0;
-    }
-
-    .sub {
-      text-align:center;
-      margin: 8px 0 16px;
-      color: var(--text-dim);
-      font-size: 16px;
-    }
-
-    .rules {
-      margin: 12px 0 16px;
-      padding: 14px 14px;
-      border-radius: 18px;
-      border: 1px solid rgba(255,255,255,0.08);
-      background: rgba(0,0,0,0.16);
-    }
-
-    .rule{
-      display:flex; gap:10px;
-      align-items:flex-start;
-      padding: 8px 2px;
-      color: rgba(230,235,255,0.85);
-      font-size: 15px;
-      line-height: 1.2;
-    }
-    .rule b { color: rgba(255,255,255,0.95); }
-    .rule span { color: rgba(210,220,255,0.82); }
-
-    .btn, .btn-green {
-      width: 100%;
-      border: 0;
-      outline: 0;
-      cursor: pointer;
-      padding: 14px 14px;
-      border-radius: 18px;
-      font-weight: 800;
-      font-size: 18px;
-      letter-spacing: 0.4px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.35);
-      transition: transform .06s ease, filter .15s ease;
-    }
-
-    .btn {
-      background: linear-gradient(90deg, rgba(77,141,255,0.95), rgba(0,230,118,0.85));
-      color: rgba(10,20,45,0.95);
-    }
-    .btn:active { transform: scale(0.99); filter: brightness(0.98); }
-
-    .btn-green {
-      background: rgba(0,230,118,0.92);
-      color: rgba(10,20,45,0.95);
-    }
-
-    /* Countdown */
-    .countdown { text-align:center; padding: 26px 18px 26px; }
-    .small { color: rgba(200,215,255,0.75); font-weight: 600; }
-    .ring{
-      margin: 0 auto;
-      width: 128px; height: 128px;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,0.10);
-      background: rgba(0,0,0,0.16);
-      display:flex; align-items:center; justify-content:center;
-      box-shadow: 0 14px 40px rgba(0,0,0,0.45);
-    }
-    .big{
-      font-size: 56px;
-      font-weight: 900;
-      letter-spacing: 1px;
-      animation: scalePop .35s cubic-bezier(.34,1.56,.64,1);
-    }
-    @keyframes scalePop{
-      from { transform: scale(0.86); opacity: 0.55; }
-      to { transform: scale(1); opacity: 1; }
-    }
-
-    /* Game */
-    .toprow{
-      display:flex; justify-content:space-between; align-items:center;
-      margin-bottom: 10px;
-    }
-    .counter{
-      color: rgba(200,215,255,0.7);
-      font-weight: 700;
-      font-size: 13px;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-    }
-    .timer{
-      font-family: "JetBrains Mono", ui-monospace, Menlo, monospace;
-      font-size: 14px;
-      font-weight: 700;
-      padding: 6px 10px;
-      border-radius: 12px;
-      border: 1px solid rgba(255,255,255,0.10);
-      background: rgba(0,0,0,0.18);
-      color: rgba(240,244,255,0.88);
-    }
-    .timer.urgent{ color: rgba(255,77,109,0.95); border-color: rgba(255,77,109,0.25); }
-
-    .bar{
-      width:100%;
-      height:10px;
-      border-radius:999px;
-      background: rgba(0,0,0,0.16);
-      border: 1px solid rgba(255,255,255,0.08);
-      overflow:hidden;
-      margin-bottom: 14px;
-    }
-    .fill{
-      height:100%;
-      width:100%;
-      background: linear-gradient(90deg, rgba(0,230,118,0.9), rgba(77,141,255,0.9));
-      border-radius: 999px;
-      transition: width .2s linear;
-    }
-    .fill.urgent{ background: linear-gradient(90deg, rgba(255,77,109,0.95), rgba(255,215,64,0.85)); }
-
-    .badge{
-      display:inline-flex; align-items:center; gap:8px;
-      padding: 8px 10px;
-      border-radius: 14px;
-      border: 1px solid rgba(255,255,255,0.08);
-      background: rgba(0,0,0,0.16);
-      color: rgba(230,235,255,0.9);
-      font-weight: 700;
-      font-size: 13px;
-    }
-
-    .clue{
-      margin-top: 10px;
-      padding: 14px 14px;
-      border-radius: 18px;
-      border: 1px solid rgba(255,255,255,0.08);
-      background: rgba(0,0,0,0.16);
-    }
-    .clue .label{
-      font-size: 12px;
-      letter-spacing: 4px;
-      color: rgba(200,215,255,0.55);
-      text-transform: uppercase;
-      font-weight: 800;
-      margin-bottom: 8px;
-    }
-    .clue .text{
-      font-size: 16px;
-      color: rgba(240,244,255,0.92);
-      line-height: 1.25;
-      font-weight: 600;
-    }
-
-    .word{
-      margin-top: 14px;
-      display:flex; gap:8px;
-      justify-content:center;
-      flex-wrap: wrap;
-    }
-    .box{
-      width: 34px; height: 42px;
-      border-radius: 14px;
-      display:flex; align-items:center; justify-content:center;
-      border: 1px solid rgba(255,255,255,0.10);
-      background: rgba(0,0,0,0.18);
-      font-weight: 900;
-      letter-spacing: 1px;
-      font-size: 16px;
-      color: rgba(240,244,255,0.9);
-    }
-    .box.empty{ color: rgba(200,215,255,0.35); }
-    .box.hint{
-      border-color: rgba(255,215,64,0.25);
-      color: rgba(255,215,64,0.95);
-    }
-    .box.correct{
-      border-color: rgba(0,230,118,0.25);
-      color: rgba(0,230,118,0.95);
-      background: rgba(0,0,0,0.16);
-    }
-
-    .grid{
-      margin-top: 14px;
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-    }
-    .opt{
-      border: 1px solid rgba(255,255,255,0.10);
-      background: rgba(0,0,0,0.16);
-      border-radius: 16px;
-      padding: 12px 10px;
-      color: rgba(240,244,255,0.92);
-      font-weight: 800;
-      font-size: 15px;
-      cursor:pointer;
-      transition: transform .06s ease, filter .15s ease, border-color .15s ease;
-    }
-    .opt:active{ transform: scale(0.99); }
-    .opt.disabled{ opacity: 0.55; pointer-events:none; }
-    .opt.correct{ border-color: rgba(0,230,118,0.35); }
-    .opt.wrong{ border-color: rgba(255,77,109,0.35); }
-
-    .hintbtn{
-      margin-top: 12px;
-      width:100%;
-      border-radius: 18px;
-      border: 1px solid rgba(255,255,255,0.10);
-      background: rgba(0,0,0,0.16);
-      color: rgba(240,244,255,0.92);
-      padding: 12px 12px;
-      font-weight: 800;
-      font-size: 15px;
-      cursor:pointer;
-    }
-
-    /* Results */
-    .results { text-align:center; padding: 24px 18px 22px; }
-    .trophy{
-      width: 64px; height: 64px;
-      margin: 2px auto 12px;
-      border-radius: 22px;
-      display:flex; align-items:center; justify-content:center;
-      border: 1px solid rgba(255,255,255,0.10);
-      background: rgba(0,0,0,0.18);
-      font-size: 28px;
-    }
-    .rtitle{
-      font-size: 34px;
-      font-weight: 900;
-      margin: 0;
-      letter-spacing: 0.5px;
-    }
-    .rsub{
-      margin-top: 6px;
-      color: rgba(200,215,255,0.75);
-      font-weight: 600;
-      font-size: 16px;
-    }
-
-    .stats{
-      display:flex; gap:10px;
-      margin: 16px 0 12px;
-    }
-    .sbox{
-      flex:1;
-      padding: 12px 10px;
-      border-radius: 18px;
-      border: 1px solid rgba(255,255,255,0.08);
-      background: rgba(0,0,0,0.16);
-    }
-    .sval{
-      font-family: "JetBrains Mono", ui-monospace, Menlo, monospace;
-      font-size: 20px;
-      font-weight: 800;
-      color: rgba(240,244,255,0.92);
-    }
-    .sval.gold{ color: rgba(255,215,64,0.95); }
-    .sval.green{ color: rgba(0,230,118,0.95); }
-    .slabel{
-      margin-top: 6px;
-      font-size: 11px;
-      letter-spacing: 4px;
-      text-transform: uppercase;
-      color: rgba(200,215,255,0.50);
-      font-weight: 900;
-    }
-
-    .lb{
-      margin-top: 10px;
-      text-align:left;
-      padding: 14px 14px;
-      border-radius: 18px;
-      border: 1px solid rgba(255,255,255,0.08);
-      background: rgba(0,0,0,0.16);
-    }
-    .lb .ttl{
-      font-size: 12px;
-      letter-spacing: 4px;
-      text-transform: uppercase;
-      color: rgba(200,215,255,0.55);
-      font-weight: 900;
-      margin-bottom: 10px;
-    }
-    .row{
-      display:flex; align-items:center; gap:10px;
-      padding: 10px 0;
-      border-top: 1px solid rgba(255,255,255,0.06);
-    }
-    .row:first-of-type{ border-top: 0; }
-    .rank{
-      width: 28px; height: 28px;
-      border-radius: 10px;
-      display:flex; align-items:center; justify-content:center;
-      background: rgba(0,0,0,0.18);
-      border: 1px solid rgba(255,255,255,0.08);
-      font-weight: 900;
-      color: rgba(230,235,255,0.9);
-      flex: 0 0 auto;
-    }
-    .rank.gold{ border-color: rgba(255,215,64,0.22); color: rgba(255,215,64,0.95); }
-    .name{ flex: 1; font-weight: 800; color: rgba(240,244,255,0.92); }
-    .pts{ font-family: "JetBrains Mono", ui-monospace, Menlo, monospace; color: rgba(200,215,255,0.70); font-weight: 700; }
-  </style>
-</head>
-
-<body>
-  <div class="wrap">
-    <div id="main"></div>
-  </div>
-
-  <script>
-  // =======================
-  // SUPABASE CONFIG
-  // =======================
-  const SUPABASE_URL = "https://ppyyxfvsyxklvxbpunjc.supabase.co";
-  const SUPABASE_ANON_KEY = "sb_publishable_S2amtkjqdRb1wMk0CmThTg_efAOkjmh";
-
-  // IMPORTANT: supabase must exist (iOS white screen if not)
-  if (!window.supabase) {
-    document.getElementById('main').innerHTML =
-      '<pre style="white-space:pre-wrap;padding:16px;color:#fff;background:#111;border-radius:14px">Supabase SDK not loaded</pre>';
-    throw new Error("Supabase SDK not loaded");
+  :root {
+    --sky: #87CEEB;
+    --deep: #1a3a5c;
+    --gold: #FFD93D;
+    --coral: #FF6B6B;
+    --mint: #6BCB77;
+    --cream: #FFF8EE;
+    --stamp: #c0392b;
   }
 
-  const sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY, {
-    auth: { persistSession: false, autoRefreshToken: false },
+  body {
+    min-height: 100dvh;
+    font-family: 'DM Sans', sans-serif;
+    background: var(--sky);
+    overflow-x: hidden;
+    position: relative;
+  }
+
+  /* ===== animated sky background ===== */
+  .sky-bg {
+    position: fixed; inset: 0; z-index: 0;
+    background: linear-gradient(180deg, #5ba3d9 0%, #a8d8ea 45%, #fde8c8 100%);
+    overflow: hidden;
+  }
+
+  .cloud {
+    position: absolute;
+    background: white;
+    border-radius: 50px;
+    opacity: 0.75;
+    animation: drift linear infinite;
+  }
+  .cloud::before, .cloud::after {
+    content: '';
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+  }
+  .cloud.c1 { width:120px; height:40px; top:12%; animation-duration:28s; animation-delay:-5s; }
+  .cloud.c1::before { width:60px; height:60px; top:-30px; left:15px; }
+  .cloud.c1::after { width:45px; height:45px; top:-20px; left:55px; }
+
+  .cloud.c2 { width:80px; height:28px; top:30%; animation-duration:20s; animation-delay:-12s; opacity:.55; }
+  .cloud.c2::before { width:40px; height:40px; top:-20px; left:10px; }
+  .cloud.c2::after { width:30px; height:30px; top:-15px; left:38px; }
+
+  .cloud.c3 { width:160px; height:50px; top:55%; animation-duration:35s; animation-delay:-2s; opacity:.4; }
+  .cloud.c3::before { width:80px; height:80px; top:-40px; left:20px; }
+  .cloud.c3::after { width:60px; height:60px; top:-30px; left:80px; }
+
+  @keyframes drift { from { transform: translateX(-220px); } to { transform: translateX(calc(100vw + 220px)); } }
+
+  .plane-bg {
+    position: fixed;
+    font-size: 48px;
+    top: 8%;
+    animation: fly 18s linear infinite;
+    opacity: 0.18;
+    z-index: 1;
+  }
+  @keyframes fly {
+    from { left: -80px; transform: rotate(-5deg); }
+    to { left: calc(100vw + 80px); transform: rotate(-5deg); }
+  }
+
+  /* ===== layout ===== */
+  #main {
+    position: relative; z-index: 2;
+    min-height: 100dvh;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    padding: 16px;
+  }
+
+  /* ===== Polaroid card ===== */
+  .polaroid {
+    background: #fff;
+    border-radius: 4px;
+    padding: 18px 18px 56px;
+    box-shadow: 4px 6px 0 rgba(0,0,0,.18), 0 12px 40px rgba(0,0,0,.22);
+    width: 100%;
+    max-width: 380px;
+    position: relative;
+    transform: rotate(-1.2deg);
+    transition: transform .3s;
+  }
+  .polaroid:hover { transform: rotate(0deg) scale(1.01); }
+
+  /* tape strips */
+  .tape {
+    position: absolute;
+    width: 60px; height: 22px;
+    background: rgba(255,220,100,.65);
+    border-radius: 2px;
+    top: -11px; left: 50%; transform: translateX(-50%);
+  }
+
+  .polaroid-photo {
+    width: 100%;
+    aspect-ratio: 4/3;
+    border-radius: 2px;
+    overflow: hidden;
+    background: linear-gradient(135deg, #1a3a5c 0%, #2d6a9f 50%, #5ba3d9 100%);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 72px;
+    position: relative;
+  }
+  .polaroid-photo .sticker {
+    position: absolute;
+    font-size: 28px;
+    opacity: .6;
+  }
+  .polaroid-photo .sticker.s1 { top:8px; right:10px; transform: rotate(12deg); }
+  .polaroid-photo .sticker.s2 { bottom:8px; left:10px; transform: rotate(-8deg); }
+
+  .polaroid-caption {
+    position: absolute;
+    bottom: 14px; left: 0; right: 0;
+    text-align: center;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 20px;
+    color: #333;
+    letter-spacing: 1px;
+  }
+
+  /* ===== stamp ===== */
+  .stamp {
+    position: absolute;
+    top: 14px; right: 14px;
+    border: 3px solid var(--stamp);
+    border-radius: 4px;
+    padding: 4px 8px;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 11px;
+    color: var(--stamp);
+    transform: rotate(8deg);
+    opacity: .85;
+    line-height: 1.3;
+    text-align: center;
+  }
+
+  /* ===== lobby ===== */
+  .lobby-wrap { padding: 0 0 8px; }
+  .logo-emoji { font-size: 56px; display: block; text-align: center; margin-bottom: 4px; }
+  .game-title {
+    font-family: 'Permanent Marker', cursive;
+    font-size: 38px;
+    color: var(--deep);
+    text-align: center;
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .game-sub { text-align: center; font-size: 13px; color: #666; margin-bottom: 18px; font-weight: 600; letter-spacing: .5px; }
+
+  .rules-strip {
+    background: var(--cream);
+    border: 2px dashed #ddd;
+    border-radius: 8px;
+    padding: 12px 14px;
+    margin-bottom: 18px;
+  }
+  .rule { display: flex; align-items: flex-start; gap: 8px; font-size: 13px; color: #444; margin-bottom: 6px; line-height: 1.35; }
+  .rule:last-child { margin-bottom: 0; }
+
+  /* ===== buttons ===== */
+  .btn-fly {
+    display: block; width: 100%;
+    background: var(--deep);
+    color: #fff;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 20px;
+    letter-spacing: 2px;
+    border: none; border-radius: 6px;
+    padding: 14px;
+    cursor: pointer;
+    box-shadow: 3px 4px 0 rgba(0,0,0,.25);
+    transition: transform .1s, box-shadow .1s;
+    text-align: center;
+  }
+  .btn-fly:hover { transform: translateY(-2px); box-shadow: 3px 6px 0 rgba(0,0,0,.22); }
+  .btn-fly:active { transform: translateY(1px); box-shadow: 1px 2px 0 rgba(0,0,0,.2); }
+  .btn-fly.green { background: var(--mint); color: #fff; }
+  .btn-fly.coral { background: var(--coral); }
+
+  /* ===== countdown ===== */
+  .countdown-wrap { text-align: center; padding: 20px 0 10px; }
+  .cd-label { font-size: 13px; color: #999; font-weight: 600; margin-bottom: 12px; letter-spacing: 1px; text-transform: uppercase; }
+  .cd-ring {
+    width: 100px; height: 100px;
+    border: 5px solid var(--deep);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 12px;
+    background: var(--gold);
+    box-shadow: 4px 5px 0 rgba(0,0,0,.2);
+    animation: pulse 0.85s ease-in-out infinite;
+  }
+  @keyframes pulse { 0%,100%{transform:scale(1)} 50%{transform:scale(1.08)} }
+  .cd-num { font-family: 'Permanent Marker', cursive; font-size: 52px; color: var(--deep); line-height: 1; }
+  .cd-sub { font-size: 13px; color: #aaa; font-weight: 600; }
+
+  /* ===== game ===== */
+  .game-wrap { width: 100%; }
+
+  .toprow { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+  .counter { font-size: 12px; font-weight: 800; color: #888; letter-spacing: .5px; text-transform: uppercase; }
+  .timer-val {
+    font-family: 'Permanent Marker', cursive;
+    font-size: 20px;
+    color: var(--deep);
+    background: var(--gold);
+    padding: 2px 10px;
+    border-radius: 4px;
+    border: 2px solid var(--deep);
+  }
+  .timer-val.urgent { background: var(--coral); color: #fff; animation: shake .3s infinite; }
+  @keyframes shake { 0%,100%{transform:rotate(0)} 25%{transform:rotate(-2deg)} 75%{transform:rotate(2deg)} }
+
+  .bar { height: 6px; background: #ddd; border-radius: 4px; overflow: hidden; margin-bottom: 14px; }
+  .fill { height: 100%; background: linear-gradient(90deg, var(--mint), var(--deep)); border-radius: 4px; transition: width .25s; }
+  .fill.urgent { background: linear-gradient(90deg, var(--coral), #c0392b); }
+
+  .score-badge {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: var(--deep); color: var(--gold);
+    font-family: 'Permanent Marker', cursive;
+    font-size: 17px;
+    padding: 4px 12px;
+    border-radius: 20px;
+    margin-bottom: 14px;
+    transform: rotate(-1deg);
+  }
+  .delta { font-size: 13px; opacity: .8; }
+
+  .clue-box {
+    background: var(--cream);
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    padding: 12px 14px;
+    margin-bottom: 14px;
+    position: relative;
+  }
+  .clue-box::before {
+    content: 'CLUE';
+    position: absolute; top: -10px; left: 12px;
+    background: var(--gold);
+    color: var(--deep);
+    font-family: 'Permanent Marker', cursive;
+    font-size: 11px;
+    padding: 1px 8px;
+    border-radius: 3px;
+    border: 2px solid var(--deep);
+  }
+  .clue-text { font-size: 15px; color: #333; font-weight: 600; line-height: 1.4; margin-top: 4px; }
+
+  .word-boxes { display: flex; flex-wrap: wrap; gap: 5px; justify-content: center; margin-bottom: 16px; min-height: 44px; }
+  .box {
+    width: 32px; height: 38px;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 17px;
+    border-radius: 4px;
+    border: 2px solid #ccc;
+    background: #f9f9f9;
+    color: #333;
+    transition: all .2s;
+  }
+  .box.hint { background: #FFF9C4; border-color: #F9A825; color: var(--deep); }
+  .box.correct { background: var(--mint); border-color: #3a9d5c; color: #fff; }
+
+  .opt-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 12px; }
+  .opt {
+    background: #fff;
+    border: 2.5px solid var(--deep);
+    border-radius: 8px;
+    padding: 10px 8px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--deep);
+    cursor: pointer;
+    transition: all .15s;
+    box-shadow: 2px 3px 0 rgba(0,0,0,.12);
+    text-align: center;
+    line-height: 1.25;
+  }
+  .opt:hover:not(.disabled):not(.correct):not(.wrong) {
+    background: var(--gold);
+    transform: translateY(-2px);
+    box-shadow: 2px 5px 0 rgba(0,0,0,.15);
+  }
+  .opt.correct { background: var(--mint); color: #fff; border-color: #3a9d5c; box-shadow: 2px 3px 0 #2d8050; }
+  .opt.wrong { background: var(--coral); color: #fff; border-color: #c0392b; box-shadow: 2px 3px 0 #a02020; }
+  .opt.disabled { opacity: .45; cursor: default; pointer-events: none; }
+
+  .hint-btn {
+    display: block; width: 100%;
+    background: transparent;
+    border: 2px dashed #bbb;
+    border-radius: 6px;
+    padding: 8px;
+    font-size: 13px;
+    font-weight: 700;
+    color: #999;
+    cursor: pointer;
+    transition: all .15s;
+  }
+  .hint-btn:hover:not(:disabled) { border-color: var(--deep); color: var(--deep); background: #f0f8ff; }
+  .hint-btn:disabled { opacity: .4; cursor: default; }
+
+  /* ===== results ===== */
+  .results-wrap { text-align: center; padding: 8px 0; }
+  .result-emoji { font-size: 64px; display: block; margin-bottom: 8px; }
+
+  .result-title {
+    font-family: 'Permanent Marker', cursive;
+    font-size: 30px;
+    color: var(--deep);
+    margin-bottom: 4px;
+  }
+  .result-sub { font-size: 13px; color: #888; font-weight: 600; margin-bottom: 18px; }
+
+  /* passport stamp result */
+  .passport {
+    background: var(--cream);
+    border: 3px solid var(--deep);
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 16px;
+    position: relative;
+    overflow: hidden;
+  }
+  .passport::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: repeating-linear-gradient(
+      45deg, transparent, transparent 10px,
+      rgba(0,0,0,.025) 10px, rgba(0,0,0,.025) 20px
+    );
+  }
+  .passport-title {
+    font-family: 'Permanent Marker', cursive;
+    font-size: 13px;
+    color: #aaa;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+
+  .stat-row { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; }
+  .stat-box {
+    background: #fff;
+    border: 2px solid var(--deep);
+    border-radius: 6px;
+    padding: 10px 16px;
+    min-width: 90px;
+    box-shadow: 2px 3px 0 rgba(0,0,0,.1);
+    transform: rotate(-1deg);
+  }
+  .stat-box:nth-child(2) { transform: rotate(1.5deg); }
+  .stat-box:nth-child(3) { transform: rotate(-.5deg); }
+  .stat-val {
+    font-family: 'Permanent Marker', cursive;
+    font-size: 28px;
+    color: var(--deep);
+    line-height: 1;
+    margin-bottom: 2px;
+  }
+  .stat-val.gold { color: #e6ac00; }
+  .stat-val.green { color: var(--mint); }
+  .stat-label { font-size: 10px; font-weight: 800; color: #aaa; text-transform: uppercase; letter-spacing: 1px; }
+
+  /* achievement stamp */
+  .achievement {
+    margin: 16px auto 0;
+    display: inline-block;
+    border: 4px double var(--stamp);
+    border-radius: 8px;
+    padding: 10px 18px;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 15px;
+    color: var(--stamp);
+    transform: rotate(-2deg);
+    background: rgba(192,57,43,.06);
+    max-width: 260px;
+    line-height: 1.3;
+  }
+
+  /* ===== page label ===== */
+  .page-label {
+    font-size: 11px;
+    font-weight: 800;
+    color: rgba(255,255,255,.7);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 10px;
+    text-shadow: 0 1px 3px rgba(0,0,0,.2);
+  }
+
+  /* ===== not in tg ===== */
+  .not-tg { text-align: center; padding: 10px 0; }
+  .not-tg p { font-size: 14px; color: #555; margin-top: 8px; line-height: 1.5; }
+</style>
+</head>
+<body>
+
+<!-- Sky BG -->
+<div class="sky-bg">
+  <div class="cloud c1"></div>
+  <div class="cloud c2"></div>
+  <div class="cloud c3"></div>
+</div>
+<div class="plane-bg">✈️</div>
+
+<!-- App root -->
+<div id="main"></div>
+
+<!-- ===== CONFIG ===== -->
+<script>
+window.GAME_CONFIG = {
+  roundId: 1,
+  roundEndsAt: null,
+  totalWords: 10,
+  timeTotalSec: 180,
+  maxHints: 3,
+  topSize: 10,
+  levels: ["easy","medium","hard"],
+  SUPABASE_URL: "",
+  SUPABASE_ANON_KEY: ""
+};
+</script>
+
+<!-- ===== QUESTIONS ===== -->
+<script>
+window.QUESTIONS = [
+  // ── EASY (20) ──
+  { level:"easy", word:"AIRPORT", clue:"The place where planes take off and land ✈️", options:["AIRPORT","SEAPORT","STATION","HARBOR"], correctIndex:0 },
+  { level:"easy", word:"PASSPORT", clue:"The document you need to cross international borders 📕", options:["TICKET","PASSPORT","LICENSE","VISA"], correctIndex:1 },
+  { level:"easy", word:"RUNWAY", clue:"The long strip where aircraft accelerate before taking off 🛫", options:["TAXIWAY","CORRIDOR","RUNWAY","PLATFORM"], correctIndex:2 },
+  { level:"easy", word:"PILOT", clue:"The person who flies the plane 🧑‍✈️", options:["PILOT","CAPTAIN","STEWARD","MECHANIC"], correctIndex:0 },
+  { level:"easy", word:"LUGGAGE", clue:"Bags and suitcases you travel with 🧳", options:["CARGO","LUGGAGE","FREIGHT","PACKAGE"], correctIndex:1 },
+  { level:"easy", word:"TERMINAL", clue:"The building at an airport where passengers check in and board 🏢", options:["HANGAR","DEPOT","TERMINAL","LOUNGE"], correctIndex:2 },
+  { level:"easy", word:"BOARDING", clue:"The process of getting onto the plane 🚪", options:["LANDING","DOCKING","TAXIING","BOARDING"], correctIndex:3 },
+  { level:"easy", word:"ALTITUDE", clue:"The height of an aircraft above sea level ⬆️", options:["ALTITUDE","LATITUDE","LONGITUDE","ATTITUDE"], correctIndex:0 },
+  { level:"easy", word:"VISA", clue:"An official permit to enter a foreign country 🗃️", options:["PERMIT","TICKET","VISA","STAMP"], correctIndex:2 },
+  { level:"easy", word:"COCKPIT", clue:"Where the pilot sits and controls the aircraft 🎛️", options:["CABIN","CARGO","COCKPIT","GALLEY"], correctIndex:2 },
+  { level:"easy", word:"SEATBELT", clue:"Safety strap you must wear during turbulence 🔒", options:["HARNESS","SEATBELT","STRAP","BUCKLE"], correctIndex:1 },
+  { level:"easy", word:"CABIN", clue:"The passenger area inside the aircraft 🪑", options:["HULL","CABIN","DECK","HOLD"], correctIndex:1 },
+  { level:"easy", word:"CUSTOMS", clue:"The border checkpoint where goods are checked 🔍", options:["SECURITY","CUSTOMS","IMMIGRATION","CONTROL"], correctIndex:1 },
+  { level:"easy", word:"LANDING", clue:"When the aircraft touches down on the runway 🛬", options:["TAKEOFF","TAXIING","LANDING","CRUISING"], correctIndex:2 },
+  { level:"easy", word:"TICKET", clue:"The document that grants you a seat on a flight 🎟️", options:["TICKET","RECEIPT","VOUCHER","BOARDING"], correctIndex:0 },
+  { level:"easy", word:"GATE", clue:"The door at the airport from which you board your flight 🚪", options:["DOOR","GATE","EXIT","ENTRY"], correctIndex:1 },
+  { level:"easy", word:"LOUNGE", clue:"A comfortable waiting area at the airport, often VIP 🛋️", options:["LOUNGE","LOBBY","HALL","ATRIUM"], correctIndex:0 },
+  { level:"easy", word:"CARGO", clue:"Goods transported by an aircraft 📦", options:["FREIGHT","LUGGAGE","CARGO","BAGGAGE"], correctIndex:2 },
+  { level:"easy", word:"CREW", clue:"All the people who operate and service the flight ✈️", options:["STAFF","TEAM","CREW","SQUAD"], correctIndex:2 },
+  { level:"easy", word:"REFUEL", clue:"To fill the aircraft with fuel before departure ⛽", options:["RELOAD","RESTOCK","REFUEL","RECHARGE"], correctIndex:2 },
+
+  // ── MEDIUM (22) ──
+  { level:"medium", word:"FUSELAGE", clue:"The main body of an aircraft where passengers sit 🛩", options:["COCKPIT","FUSELAGE","TURBINE","AILERON"], correctIndex:1 },
+  { level:"medium", word:"LAYOVER", clue:"A stop between two flights where you wait at an airport 🕐", options:["STOPOVER","TRANSFER","LAYOVER","TRANSIT"], correctIndex:2 },
+  { level:"medium", word:"TURBULENCE", clue:"Rough, bumpy air movement that shakes the plane ⚡", options:["TURBULENCE","WINDSHEAR","DOWNDRAFT","HEADWIND"], correctIndex:0 },
+  { level:"medium", word:"AUTOPILOT", clue:"A system that flies the aircraft automatically 🤖", options:["AUTOPILOT","AVIONICS","GYROSCOPE","TRANSPONDER"], correctIndex:0 },
+  { level:"medium", word:"TAILWIND", clue:"Wind blowing in the same direction as the aircraft, speeding it up 💨", options:["HEADWIND","CROSSWIND","TAILWIND","SLIPSTREAM"], correctIndex:2 },
+  { level:"medium", word:"HANGAR", clue:"A large building where aircraft are stored and maintained 🏭", options:["TERMINAL","DEPOT","APRON","HANGAR"], correctIndex:3 },
+  { level:"medium", word:"JETLAG", clue:"Fatigue caused by crossing many time zones quickly 😴", options:["AIRSICK","HEATSTROKE","DEHYDRATION","JETLAG"], correctIndex:3 },
+  { level:"medium", word:"MANIFOLD", clue:"An engine part that distributes air or exhaust to multiple outlets 🔧", options:["PISTON","MANIFOLD","CRANKSHAFT","CAMSHAFT"], correctIndex:1 },
+  { level:"medium", word:"TAXIWAY", clue:"The path aircraft use to move between runway and terminal 🛣️", options:["TAXIWAY","APRON","RUNWAY","TARMAC"], correctIndex:0 },
+  { level:"medium", word:"HEADWIND", clue:"Wind blowing against the direction of the aircraft, slowing it down 🌬️", options:["TAILWIND","CROSSWIND","SLIPSTREAM","HEADWIND"], correctIndex:3 },
+  { level:"medium", word:"GALLEY", clue:"The kitchen area on an aircraft where food is prepared 🍽️", options:["PANTRY","BUFFET","GALLEY","LARDER"], correctIndex:2 },
+  { level:"medium", word:"CHARTER", clue:"A flight hired by a group rather than a regular scheduled service 📋", options:["SHUTTLE","CHARTER","PRIVATE","EXPRESS"], correctIndex:1 },
+  { level:"medium", word:"DESCENT", clue:"When the aircraft begins to lose altitude before landing ⬇️", options:["APPROACH","DIVE","DESCENT","DROP"], correctIndex:2 },
+  { level:"medium", word:"CHECKIN", clue:"The process of registering for your flight at the airport counter 🖥️", options:["CHECKIN","BOARDING","SCREENING","CLEARANCE"], correctIndex:0 },
+  { level:"medium", word:"OVERBOOK", clue:"When an airline sells more tickets than seats available 🪑", options:["UPGRADE","WAITLIST","OVERBOOK","STANDBY"], correctIndex:2 },
+  { level:"medium", word:"MILEAGE", clue:"Points earned by frequent flyers based on distance flown 🌐", options:["POINTS","CREDIT","MILEAGE","REWARD"], correctIndex:2 },
+  { level:"medium", word:"FLAPS", clue:"Wing surfaces extended during takeoff and landing to increase lift 🪽", options:["SPOILERS","RUDDER","FLAPS","SLATS"], correctIndex:2 },
+  { level:"medium", word:"TAXIING", clue:"Moving the aircraft slowly on the ground under its own power 🚕", options:["TAXIING","ROLLING","BRAKING","TOWING"], correctIndex:0 },
+  { level:"medium", word:"MANIFEST", clue:"The official list of passengers and cargo on a flight 📝", options:["ROSTER","ITINERARY","MANIFEST","SCHEDULE"], correctIndex:2 },
+  { level:"medium", word:"HOLDING", clue:"When ATC instructs aircraft to fly in circles while waiting to land 🔄", options:["CIRCLING","WAITING","HOLDING","QUEUING"], correctIndex:2 },
+  { level:"medium", word:"PUSHBACK", clue:"When a tug truck reverses the aircraft away from the gate ↩️", options:["TOWING","PUSHBACK","REVERSE","WITHDRAW"], correctIndex:1 },
+  { level:"medium", word:"AIRSPEED", clue:"The speed of an aircraft relative to the surrounding air 💨", options:["GROUNDSPEED","AIRSPEED","WINDSPEED","MACH"], correctIndex:1 },
+
+  // ── HARD (20) ──
+  { level:"hard", word:"AILERON", clue:"Movable flaps on the wings that control the plane's roll 🛫", options:["AILERON","ELEVATOR","RUDDER","FLAP"], correctIndex:0 },
+  { level:"hard", word:"TRANSPONDER", clue:"A device that broadcasts the aircraft's identity to radar 📡", options:["TRANSMITTER","GYROSCOPE","TRANSPONDER","ALTIMETER"], correctIndex:2 },
+  { level:"hard", word:"PITOT", clue:"A tube on the aircraft that measures airspeed 🌬️", options:["VENTURI","PITOT","BERNOULLI","STATIC"], correctIndex:1 },
+  { level:"hard", word:"APRON", clue:"The paved area near hangars where aircraft are parked and loaded 🅿️", options:["APRON","TAXIWAY","THRESHOLD","TARMAC"], correctIndex:0 },
+  { level:"hard", word:"DEADHEAD", clue:"A crew member traveling on a flight as a passenger for positioning 👤", options:["STANDBY","JUMPSEATER","DEADHEAD","COMMUTER"], correctIndex:2 },
+  { level:"hard", word:"WAYPOINT", clue:"A geographic reference point used in navigation for a flight route 📍", options:["CHECKPOINT","BEACON","WAYPOINT","FIX"], correctIndex:2 },
+  { level:"hard", word:"SQUAWK", clue:"A 4-digit code entered into a transponder for air traffic control 🔢", options:["BEACON","SQUAWK","PING","PULSE"], correctIndex:1 },
+  { level:"hard", word:"AVIONICS", clue:"The electronic systems used in aircraft for navigation and communication 💻", options:["AVIONICS","HYDRAULICS","PNEUMATICS","ELECTRICS"], correctIndex:0 },
+  { level:"hard", word:"VORTEX", clue:"A dangerous swirling wake of air left behind a large aircraft 🌀", options:["SLIPSTREAM","VORTEX","TURBULENCE","DOWNDRAFT"], correctIndex:1 },
+  { level:"hard", word:"GLIDE", clue:"Flying without engine power, descending gradually ⛵", options:["GLIDE","DIVE","SOAR","COAST"], correctIndex:0 },
+  { level:"hard", word:"BEACON", clue:"A radio or light signal that helps aircraft navigate at night 🔦", options:["BEACON","RADAR","STROBE","SIGNAL"], correctIndex:0 },
+  { level:"hard", word:"STALL", clue:"When a wing loses lift because it exceeds the critical angle of attack ⚠️", options:["SPIN","STALL","DIVE","SLIP"], correctIndex:1 },
+  { level:"hard", word:"VECTOR", clue:"A heading given by ATC to guide an aircraft to its destination 🧭", options:["ROUTE","VECTOR","TRACK","BEARING"], correctIndex:1 },
+  { level:"hard", word:"CALLSIGN", clue:"The unique identifier used to address an aircraft over radio 📻", options:["TAILNUMBER","CALLSIGN","FLIGHTCODE","REGISTRY"], correctIndex:1 },
+  { level:"hard", word:"MINIMUMS", clue:"The lowest altitude a pilot can descend to before seeing the runway 📉", options:["THRESHOLD","FLOOR","MINIMUMS","BASELINE"], correctIndex:2 },
+  { level:"hard", word:"SPOILERS", clue:"Wing panels raised after landing to kill lift and slow the aircraft 🛑", options:["BRAKES","FLAPS","SPOILERS","SLATS"], correctIndex:2 },
+  { level:"hard", word:"ZENITH", clue:"The point in the sky directly above the observer 🌟", options:["APEX","ZENITH","NADIR","PEAK"], correctIndex:1 },
+  { level:"hard", word:"YOKE", clue:"The control wheel in the cockpit that steers the aircraft 🎮", options:["JOYSTICK","THROTTLE","YOKE","PEDAL"], correctIndex:2 },
+  { level:"hard", word:"MAYDAY", clue:"The international distress call used by aircraft in emergency 🆘", options:["SOS","ALERT","MAYDAY","PANPAN"], correctIndex:2 },
+  { level:"hard", word:"INERTIA", clue:"The tendency of an aircraft to keep moving in the same direction 🎯", options:["MOMENTUM","INERTIA","GRAVITY","DRAG"], correctIndex:1 },
+];
+</script>
+
+<!-- ===== GAME ===== -->
+<script type="module">
+const CFG = window.GAME_CONFIG;
+const tg = window.Telegram?.WebApp;
+
+// Telegram init
+try { tg?.ready?.(); tg?.expand?.(); } catch(_) {}
+
+function getTgUser() {
+  const u = tg?.initDataUnsafe?.user;
+  // DEV FALLBACK — remove in production
+  if (!u) return { user_id: 99999, username: "traveler", first_name: "Explorer" };
+  return { user_id: u.id, username: u.username||null, first_name: u.first_name||null };
+}
+
+// ===== DOM =====
+const $ = sel => document.querySelector(sel);
+const root = $("#main");
+function render(html) { root.innerHTML = html; }
+
+function esc(s) {
+  return String(s).replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll(">","&gt;");
+}
+function shuffle(a) {
+  const b = a.slice();
+  for(let i=b.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [b[i],b[j]]=[b[j],b[i]]; }
+  return b;
+}
+function clamp(v,mn,mx){ return Math.max(mn,Math.min(mx,v)); }
+function fmt(s){ const m=Math.floor(s/60); return `${m}:${String(s%60).padStart(2,"0")}`; }
+
+// ===== Questions =====
+function normalizeQ(q){
+  return {
+    level: q.level||"easy",
+    word: String(q.word||"").trim(),
+    clue: String(q.clue||"").trim(),
+    options: (q.options||[]).map(String),
+    correctIndex: Number.isInteger(q.correctIndex)?q.correctIndex:0
+  };
+}
+function mixOptions(q){
+  const items = q.options.map((t,i)=>({t,i}));
+  const mixed = shuffle(items);
+  return { ...q, options: mixed.map(x=>x.t), correctIndex: mixed.findIndex(x=>x.i===q.correctIndex) };
+}
+function buildRun(){
+  const pool = shuffle(window.QUESTIONS.map(normalizeQ)).filter(q=>q.options.length===4);
+  return pool.slice(0, CFG.totalWords).map(mixOptions);
+}
+
+// ===== Constants =====
+const SCORE_FAST=100, SCORE_SLOW=60, PENALTY_HINT=30, PENALTY_WRONG=10, BONUS_FINISH=200;
+
+let run = null;
+
+function startNewRun(){
+  const user = getTgUser();
+  run = {
+    user, questions:buildRun(), idx:0, score:0,
+    hintsLeft:CFG.maxHints, startTs:Date.now(), qStartTs:Date.now(),
+    timerId:null, revealed:new Set()
+  };
+  showCountdown();
+}
+
+// ===== Screens =====
+function lobbyHTML(){
+  return `
+    <div class="page-label">✈️ TRAVEL RUSH</div>
+    <div class="polaroid">
+      <div class="tape"></div>
+      <div class="stamp">BOARDING<br>PASS</div>
+      <div class="polaroid-photo">
+        ✈️
+        <span class="sticker s1">🌍</span>
+        <span class="sticker s2">🗺</span>
+      </div>
+      <div class="polaroid-caption">TRAVEL RUSH</div>
+
+      <div class="lobby-wrap" style="margin-top:44px">
+        <div class="game-sub">Aviation & Transport Quiz</div>
+        <div class="game-sub" style="font-size:12px;color:#999;margin-top:-10px;margin-bottom:14px">Guess ${CFG.totalWords} terms in ${Math.floor(CFG.timeTotalSec/60)} minutes</div>
+
+        <div class="rules-strip">
+          <div class="rule">⏱ <span><b>${Math.floor(CFG.timeTotalSec/60)} min</b> total time</span></div>
+          <div class="rule">📖 <span>Read the clue — pick the right term</span></div>
+          <div class="rule">💡 <span>Up to <b>${CFG.maxHints} hints</b> per run</span></div>
+          <div class="rule">⚡ <span>Fast answer = <b>more points</b></span></div>
+        </div>
+
+        <button class="btn-fly" id="btnStart">TAKE OFF →</button>
+      </div>
+    </div>
+  `;
+}
+
+function countdownHTML(n){
+  return `
+    <div class="page-label">GET READY FOR TAKEOFF</div>
+    <div class="polaroid">
+      <div class="tape"></div>
+      <div class="countdown-wrap">
+        <div class="cd-label">Starting in</div>
+        <div class="cd-ring"><div class="cd-num" id="cdNum">${n}</div></div>
+        <div class="cd-sub">Fasten your seatbelt ✈️</div>
+      </div>
+    </div>
+  `;
+}
+
+function gameHTML(){
+  const q = run.questions[run.idx];
+  const left = remaining();
+  return `
+    <div class="page-label">FLIGHT IN PROGRESS</div>
+    <div class="polaroid" style="transform:rotate(.5deg)">
+      <div class="tape"></div>
+      <div class="game-wrap">
+        <div class="toprow">
+          <span class="counter">Q ${run.idx+1}/${CFG.totalWords} · ${q.level.toUpperCase()}</span>
+          <span class="timer-val" id="timerVal">${fmt(left)}</span>
+        </div>
+        <div class="bar"><div class="fill" id="timerFill" style="width:${(left/CFG.timeTotalSec)*100}%"></div></div>
+
+        <div style="margin-bottom:12px">
+          <span class="score-badge">⭐ <span id="scoreVal">${run.score}</span> pts <span class="delta" id="deltaVal"></span></span>
+        </div>
+
+        <div class="clue-box">
+          <div class="clue-text">${esc(q.clue)}</div>
+        </div>
+
+        <div class="word-boxes" id="wordBoxes"></div>
+
+        <div class="opt-grid" id="optGrid">
+          ${q.options.map((t,i)=>`<button class="opt" data-i="${i}">${esc(t)}</button>`).join("")}
+        </div>
+
+        <button class="hint-btn" id="hintBtn">${hintLabel()}</button>
+      </div>
+    </div>
+  `;
+}
+
+function getEmoji(pct){
+  if(pct>=90) return { e:"🏆", t:"ELITE AVIATOR", m:"Perfect score! You were born to fly." };
+  if(pct>=70) return { e:"🥇", t:"CAPTAIN", m:"Outstanding knowledge of aviation!" };
+  if(pct>=50) return { e:"🥈", t:"CO-PILOT", m:"Solid flight — room to grow!" };
+  if(pct>=30) return { e:"🥉", t:"FLIGHT STUDENT", m:"Good start, keep studying!" };
+  return { e:"🌱", t:"FREQUENT FLYER", m:"Lots to learn — but you'll get there!" };
+}
+
+function resultsHTML({ finalScore, wordsSolved, secondsLeft, outOfTime }){
+  const maxScore = CFG.totalWords * SCORE_FAST + BONUS_FINISH;
+  const pct = Math.round((finalScore / maxScore) * 100);
+  const {e, t, m} = getEmoji(pct);
+  const accuracy = CFG.totalWords>0 ? Math.round((wordsSolved/CFG.totalWords)*100) : 0;
+
+  return `
+    <div class="page-label">${outOfTime ? "⏰ TIME'S UP!" : "🛬 LANDED!"}</div>
+    <div class="polaroid" style="transform:rotate(-1.5deg)">
+      <div class="tape"></div>
+      <div class="results-wrap">
+        <span class="result-emoji">${e}</span>
+        <div class="result-title">${t}</div>
+        <div class="result-sub">${m}</div>
+
+        <div class="passport">
+          <div class="passport-title">FLIGHT LOG</div>
+          <div class="stat-row">
+            <div class="stat-box">
+              <div class="stat-val gold">${finalScore}</div>
+              <div class="stat-label">POINTS</div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-val green">${accuracy}%</div>
+              <div class="stat-label">ACCURACY</div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-val">${secondsLeft}s</div>
+              <div class="stat-label">TIME LEFT</div>
+            </div>
+          </div>
+          <div class="achievement">
+            ${wordsSolved}/${CFG.totalWords} TERMS SOLVED ✈️
+          </div>
+        </div>
+
+        <button class="btn-fly green" id="btnAgain">FLY AGAIN →</button>
+      </div>
+    </div>
+  `;
+}
+
+// ===== Timer =====
+function remaining(){ return clamp(CFG.timeTotalSec - Math.floor((Date.now()-run.startTs)/1000), 0, CFG.timeTotalSec); }
+
+function startTimer(){
+  run.timerId = setInterval(()=>{
+    const left = remaining();
+    const et = $("#timerVal"), ef = $("#timerFill");
+    if(!et) return;
+    et.textContent = fmt(left);
+    ef.style.width = `${(left/CFG.timeTotalSec)*100}%`;
+    if(left<=20){ et.classList.add("urgent"); ef.classList.add("urgent"); }
+    else { et.classList.remove("urgent"); ef.classList.remove("urgent"); }
+    if(left<=0) finishRun(true);
+  }, 250);
+}
+
+// ===== Letters =====
+function renderLetters(word){
+  const html = word.toUpperCase().split("").map((ch,i)=>{
+    const rev = run.revealed.has(i);
+    return `<div class="box ${rev?"hint":"empty"}">${rev?esc(ch):"_"}</div>`;
+  }).join("");
+  $("#wordBoxes").innerHTML = html;
+}
+
+function hintLabel(){ return run.hintsLeft>0 ? `💡 Hint (${run.hintsLeft} left)` : `No hints left`; }
+
+function useHint(){
+  if(run.hintsLeft<=0) return;
+  const q = run.questions[run.idx];
+  const word = q.word || q.options[q.correctIndex];
+  const candidates = [];
+  for(let i=0;i<word.length;i++) if(!run.revealed.has(i)&&word[i]!==" ") candidates.push(i);
+  if(!candidates.length) return;
+
+  const pick = candidates[Math.floor(Math.random()*candidates.length)];
+  run.revealed.add(pick);
+  run.hintsLeft--;
+  run.score = Math.max(0, run.score - PENALTY_HINT);
+
+  const sv=$("#scoreVal"), dv=$("#deltaVal");
+  if(sv) sv.textContent=run.score;
+  if(dv) dv.textContent=`(-${PENALTY_HINT})`;
+
+  renderLetters(word);
+  const hb=$("#hintBtn");
+  if(hb){ hb.textContent=hintLabel(); hb.disabled=run.hintsLeft<=0; }
+}
+
+// ===== Answer =====
+function onPick(idx, btn){
+  const q=run.questions[run.idx];
+  const correct = idx===q.correctIndex;
+  const btns=[...$("#optGrid").querySelectorAll("button")];
+  btns.forEach(b=>b.classList.add("disabled"));
+
+  if(correct){
+    const sec=(Date.now()-run.qStartTs)/1000;
+    const add = sec<5 ? SCORE_FAST : SCORE_SLOW;
+    run.score += add;
+    const sv=$("#scoreVal"),dv=$("#deltaVal");
+    if(sv) sv.textContent=run.score;
+    if(dv) dv.textContent=`(+${add})`;
+    btn.classList.remove("disabled"); btn.classList.add("correct");
+
+    const word=(q.word||q.options[q.correctIndex]).toUpperCase();
+    const wb=$("#wordBoxes");
+    if(wb) wb.innerHTML=word.split("").map(ch=>`<div class="box correct">${esc(ch)}</div>`).join("");
+
+    setTimeout(()=>{ run.idx++; if(run.idx>=run.questions.length) finishRun(false); else showGame(); }, 650);
+  } else {
+    run.score = Math.max(0, run.score-PENALTY_WRONG);
+    const sv=$("#scoreVal"),dv=$("#deltaVal");
+    if(sv) sv.textContent=run.score;
+    if(dv) dv.textContent=`(-${PENALTY_WRONG})`;
+    btn.classList.remove("disabled"); btn.classList.add("wrong");
+    setTimeout(()=>{ btns.forEach(b=>{ if(b===btn) b.classList.add("disabled"); else b.classList.remove("disabled"); }); }, 450);
+  }
+}
+
+// ===== Flow =====
+function showLobby(){
+  render(lobbyHTML());
+  $("#btnStart").addEventListener("click", startNewRun);
+}
+
+function showCountdown(){
+  let n=3;
+  render(countdownHTML(n));
+  const id = setInterval(()=>{
+    n--;
+    if(n<=0){ clearInterval(id); showGame(); return; }
+    const el=$("#cdNum"); if(el) el.textContent=n;
+  }, 850);
+}
+
+function showGame(){
+  run.revealed = new Set();
+  render(gameHTML());
+  const q=run.questions[run.idx];
+  const word=(q.word||q.options[q.correctIndex]).toUpperCase();
+  renderLetters(word);
+
+  $("#optGrid").querySelectorAll("button").forEach(btn=>{
+    btn.addEventListener("click",()=>onPick(parseInt(btn.dataset.i,10),btn));
   });
 
-  // =======================
-  // Telegram WebApp
-  // =======================
-  if (window.Telegram?.WebApp) {
-    Telegram.WebApp.ready();
-    Telegram.WebApp.expand();
-  }
-
-  // =======================
-  // Utils
-  // =======================
-  function toast(msg){
-    const t = document.createElement('div');
-    t.textContent = msg;
-    t.style.cssText = `
-      position:fixed;left:50%;bottom:20px;transform:translateX(-50%);
-      background:rgba(8,16,45,.92);border:1px solid rgba(77,141,255,.25);
-      color:rgba(240,244,255,.92);padding:10px 14px;border-radius:12px;
-      font:600 12px/1.2 'Space Grotesk',sans-serif;letter-spacing:.2px;
-      box-shadow:0 10px 30px rgba(0,0,0,.45);
-      z-index:9999;backdrop-filter:blur(12px);
-    `;
-    document.body.appendChild(t);
-    setTimeout(()=>{ t.style.opacity='0'; t.style.transition='opacity .2s'; }, 1400);
-    setTimeout(()=>t.remove(), 1700);
-  }
-
-  function formatSbError(e){
-    if (!e) return "Unknown error";
-    if (typeof e === 'string') return e;
-    return e.message || e.error_description || JSON.stringify(e);
-  }
-
-  function escapeHtml(str){
-    return String(str)
-      .replaceAll('&', '&amp;')
-      .replaceAll('<', '&lt;')
-      .replaceAll('>', '&gt;')
-      .replaceAll('"', '&quot;')
-      .replaceAll("'", '&#039;');
-  }
-
-  // =======================
-  // Telegram user fallback
-  // =======================
-  function getOrCreateGuest(){
-    const key = "wordrush_guest_id";
-    let id = localStorage.getItem(key);
-    if (!id) {
-      id = "guest_" + Math.random().toString(16).slice(2);
-      localStorage.setItem(key, id);
-    }
-    return {
-      id,
-      username: null,
-      first_name: "Guest",
-      last_name: null
-    };
-  }
-
-  function getTgUser(){
-    const tg = window.Telegram?.WebApp;
-    const u = tg?.initDataUnsafe?.user;
-    return u ?? getOrCreateGuest();
-  }
-
-  function getDisplayName(u){
-    if (u?.username) return "@" + u.username;
-    const fn = u?.first_name ?? "";
-    const ln = u?.last_name ?? "";
-    const nm = (fn + " " + ln).trim();
-    return nm || "Player";
-  }
-
-  // =======================
-  // Supabase helpers
-  // =======================
-  async function fetchTop5(roundId){
-    const { data, error } = await sb
-      .from("leaderboard")
-      .select("username, user_id, score")
-      .eq("round_id", roundId)
-      .order("score", { ascending: false })
-      .order("created_at", { ascending: true })
-      .limit(5);
-
-    if (error) throw error;
-
-    return (data ?? []).map(r => ({
-      name: r.username || r.user_id,
-      pts: r.score
-    }));
-  }
-
-  async function submitScore({ round_id, user_id, username, score }){
-    const payload = {
-      round_id,
-      user_id: String(user_id),
-      username: username ? String(username) : null,
-      score: Number(score),
-    };
-    const { error } = await sb.from("leaderboard").insert(payload);
-    if (error) throw error;
-    return true;
-  }
-
-  async function pingSupabase(){
-    const { error } = await sb.from("leaderboard").select("id").limit(1);
-    if (error) throw error;
-    return true;
-  }
-
-  // =======================
-  // Round (simple)
-  // =======================
-  // Сейчас без admin-кнопок. По умолчанию Round #1.
-  let ROUND_ID = 1;
-
-  // =======================
-  // Question pool (Restaurant/Cafe) — 30
-  // =======================
-  const QUESTION_POOL = [
-    { word:"receipt", clue:"You get it after you pay. It shows what you ordered and the total price.", options:["receipt","menu","plate","kitchen"], correct:0 },
-    { word:"reservation", clue:"You make it before coming to get a table at a specific time.", options:["reservation","recommendation","registration","resignation"], correct:0 },
-    { word:"appetizer", clue:"A small dish you eat before the main course.", options:["appetizer","dessert","beverage","ingredient"], correct:0 },
-    { word:"beverage", clue:"A drink you can order: water, tea, coffee, juice.", options:["beverage","menu","dessert","service"], correct:0 },
-    { word:"waiter", clue:"This person takes your order and brings food to your table.", options:["waiter","visitor","writer","witness"], correct:0 },
-    { word:"waitress", clue:"A woman who takes your order and serves food in a restaurant.", options:["waitress","waiter","witness","writer"], correct:0 },
-    { word:"dessert", clue:"Sweet food you eat at the end of a meal.", options:["dessert","starter","salad","receipt"], correct:0 },
-    { word:"ingredient", clue:"One of the foods used to make a dish.", options:["ingredient","instruction","increase","investment"], correct:0 },
-    { word:"cashier", clue:"The person who takes your payment at the counter.", options:["cashier","chef","customer","cleaner"], correct:0 },
-    { word:"takeaway", clue:"Food you order to eat somewhere else (not in the cafe).", options:["takeaway","takeover","takeoff","take care"], correct:0 },
-
-    { word:"refill", clue:"When they fill your drink again with more coffee or water.", options:["refill","replace","reveal","repair"], correct:0 },
-    { word:"service", clue:"How well the staff helps you in a restaurant.", options:["service","surface","server","servant"], correct:0 },
-    { word:"customer", clue:"A person who buys food or drinks in a cafe.", options:["customer","consumer","costumer","client"], correct:0 },
-    { word:"portion", clue:"The amount of food served to one person.", options:["portion","position","pattern","protein"], correct:0 },
-    { word:"cutlery", clue:"Forks, knives, and spoons used for eating.", options:["cutlery","cuisine","cookery","cutlet"], correct:0 },
-    { word:"napkin", clue:"A small piece of paper or cloth you use to clean your mouth or hands.", options:["napkin","newspaper","notebook","napalm"], correct:0 },
-    { word:"counter", clue:"A long surface where you order or pay in a cafe.", options:["counter","country","counting","couch"], correct:0 },
-    { word:"barista", clue:"A person who makes coffee drinks, especially espresso.", options:["barista","bartender","baker","banker"], correct:0 },
-    { word:"espresso", clue:"A small, strong coffee made by forcing hot water through ground coffee.", options:["espresso","express","expensive","espressoo"], correct:0 },
-    { word:"cappuccino", clue:"Coffee with steamed milk and foam.", options:["cappuccino","macchiato","milkshake","americano"], correct:0 },
-
-    { word:"macchiato", clue:"An espresso with a small amount of milk or foam.", options:["macchiato","cappuccino","latte","mojito"], correct:0 },
-    { word:"americano", clue:"Espresso with added hot water.", options:["americano","amaretto","american","macaroon"], correct:0 },
-    { word:"latte", clue:"Coffee with a lot of milk, usually in a tall glass.", options:["latte","late","plate","latter"], correct:0 },
-    { word:"kettle", clue:"A device used to boil water for tea.", options:["kettle","bottle","cattle","little"], correct:0 },
-    { word:"allergy", clue:"A reaction some people have to certain foods (nuts, milk, etc.).", options:["allergy","energy","allegory","alligator"], correct:0 },
-    { word:"gluten", clue:"A protein in wheat. Some people avoid it.", options:["gluten","glue","glitter","glutton"], correct:0 },
-    { word:"spicy", clue:"Food that feels hot because of peppers or spices.", options:["spicy","species","spicey","spiky"], correct:0 },
-    { word:"vegan", clue:"A person who eats no meat, fish, eggs, or dairy.", options:["vegan","vegetable","vagina","pescatarian"], correct:0 },
-    { word:"checkout", clue:"The place or moment when you pay and finish your purchase.", options:["checkout","check in","check-up","check it"], correct:0 },
-    { word:"complaint", clue:"When you say something is wrong and ask staff to fix it.", options:["complaint","complement","complex","complete"], correct:0 }
-  ];
-
-  // =======================
-  // Game settings
-  // =======================
-  const GAME_TOTAL_WORDS = 20;
-  const POOL_SIZE = 30;
-  const GAME_SECONDS = 120;
-  const MAX_HINTS = 3;
-
-  // scoring
-  const SCORE_FAST = 100;        // <5s
-  const SCORE_NORMAL = 60;       // >=5s
-  const PENALTY_HINT = 30;       // -30 once per hint use
-  const PENALTY_WRONG = 10;      // -10
-  const BONUS_FINISH = 200;      // all 20
-
-  // =======================
-  // State
-  // =======================
-  let gameQuestions = [];
-  let qIndex = 0;
-  let score = 0;
-  let hintsLeft = MAX_HINTS;
-
-  let gameStartTs = 0;
-  let qStartTs = 0;
-
-  let timerInterval = null;
-  let countdownInterval = null;
-
-  const elMain = document.getElementById('main');
-
-  // =======================
-  // Helpers
-  // =======================
-  function shuffle(arr){
-    const a = arr.slice();
-    for(let i=a.length-1;i>0;i--){
-      const j = Math.floor(Math.random()*(i+1));
-      [a[i],a[j]] = [a[j],a[i]];
-    }
-    return a;
-  }
-  function pickN(arr, n){ return shuffle(arr).slice(0, n); }
-  function nowMs(){ return Date.now(); }
-  function clamp(v,min,max){ return Math.max(min, Math.min(max, v)); }
-
-  function formatMMSS(total){
-    const m = Math.floor(total/60);
-    const s = total%60;
-    return `${m}:${String(s).padStart(2,'0')}`;
-  }
-
-  function getRemainingSeconds(){
-    const elapsed = Math.floor((nowMs() - gameStartTs)/1000);
-    return clamp(GAME_SECONDS - elapsed, 0, GAME_SECONDS);
-  }
-
-  function clearAllIntervals(){
-    if (timerInterval) clearInterval(timerInterval);
-    if (countdownInterval) clearInterval(countdownInterval);
-    timerInterval = null;
-    countdownInterval = null;
-  }
-
-  // =======================
-  // Screens
-  // =======================
-  async function renderLobby(){
-    clearAllIntervals();
-
-    elMain.innerHTML = `
-      <div class="page-label">Лобі</div>
-      <div class="card">
-        <div class="lobby">
-          <div class="logo">⚡</div>
-          <h1 class="h1">WORD RUSH</h1>
-          <div class="sub">Вгадай ${GAME_TOTAL_WORDS} слів за 2 хвилини</div>
-
-          <div class="rules">
-            <div class="rule">⏱ <span><b>2 хвилини</b> на всю гру</span></div>
-            <div class="rule">📖 <span>Читай підказку — вибирай слово</span></div>
-            <div class="rule">💡 <span>До <b>${MAX_HINTS} підказок</b> за гру</span></div>
-            <div class="rule">⭐ <span>Швидша відповідь = <b>більше очок</b></span></div>
-            <div class="rule">🏆 <span>Топ-5 оновлюється щомиті</span></div>
-          </div>
-
-          <div style="margin:10px 0 2px;font-size:12px;color:rgba(200,215,255,.7);text-align:center">
-            Current round: <b>#${ROUND_ID}</b>
-          </div>
-
-          <button class="btn" id="btnStart">Почати гру →</button>
-        </div>
-      </div>
-    `;
-
-    document.getElementById('btnStart').addEventListener('click', renderCountdown);
-  }
-
-  async function renderCountdown(){
-    clearAllIntervals();
-
-    // ping supabase once (so we show useful toast if something wrong)
-    try { await pingSupabase(); } catch(e){ toast("Supabase: " + formatSbError(e)); }
-
-    elMain.innerHTML = `
-      <div class="page-label">Приготуйся</div>
-      <div class="card">
-        <div class="countdown">
-          <div class="small" style="margin-bottom:20px">Гра починається через</div>
-          <div class="ring"><div class="big" id="cdNum">3</div></div>
-          <div class="small" style="margin-top:16px;color:rgba(77,141,255,.75)">Round #${ROUND_ID}</div>
-        </div>
-      </div>
-    `;
-
-    let n = 3;
-    const elNum = document.getElementById('cdNum');
-
-    const pop = () => {
-      if (!elNum) return;
-      elNum.style.animation = 'none';
-      elNum.offsetHeight;
-      elNum.style.animation = 'scalePop .35s cubic-bezier(.34,1.56,.64,1)';
-      elNum.textContent = String(n);
-    };
-    pop();
-
-    countdownInterval = setInterval(() => {
-      n--;
-      if (n === 0) {
-        clearAllIntervals();
-        startNewGame();
-        return;
-      }
-      pop();
-    }, 850);
-  }
-
-  // =======================
-  // Game logic
-  // =======================
-  function startNewGame(){
-    clearAllIntervals();
-
-    const basePool = pickN(QUESTION_POOL, Math.min(POOL_SIZE, QUESTION_POOL.length));
-    gameQuestions = pickN(basePool, GAME_TOTAL_WORDS);
-
-    qIndex = 0;
-    score = 0;
-    hintsLeft = MAX_HINTS;
-
-    gameStartTs = nowMs();
-    qStartTs = nowMs();
-
-    renderGameQuestion();
-    startGlobalTimer();
-  }
-
-  function startGlobalTimer(){
-    timerInterval = setInterval(() => {
-      const left = getRemainingSeconds();
-      updateTimerUI(left);
-      if (left <= 0) finishGame(true);
-    }, 250);
-  }
-
-  function updateTimerUI(secondsLeft){
-    const elTimer = document.getElementById('timerVal');
-    const elFill = document.getElementById('timerFill');
-    if (!elTimer || !elFill) return;
-
-    elTimer.textContent = formatMMSS(secondsLeft);
-    const pct = (secondsLeft / GAME_SECONDS) * 100;
-    elFill.style.width = `${pct}%`;
-
-    if (secondsLeft <= 20) {
-      elTimer.classList.add('urgent');
-      elFill.classList.add('urgent');
-    } else {
-      elTimer.classList.remove('urgent');
-      elFill.classList.remove('urgent');
-    }
-  }
-
-  function buildLetterBoxes(word, revealedSet){
-    const letters = word.toUpperCase().split('');
-    return letters.map((ch, i) => {
-      const isRevealed = revealedSet.has(i);
-      const cls = isRevealed ? 'box hint' : 'box empty';
-      const val = isRevealed ? ch : '_';
-      return `<div class="${cls}" data-i="${i}">${val}</div>`;
-    }).join('');
-  }
-
-  function hintLabel(){
-    return hintsLeft > 0 ? `Підказка (залишилось: ${hintsLeft})` : `Підказок немає`;
-  }
-
-  function renderGameQuestion(){
-    const q = gameQuestions[qIndex];
-    const secondsLeft = getRemainingSeconds();
-
-    const opts = q.options.slice();
-    const correctText = opts[q.correct];
-    const shuffled = shuffle(opts);
-    const correctIdx = shuffled.indexOf(correctText);
-
-    const revealed = new Set();
-
-    elMain.innerHTML = `
-      <div class="page-label">Слово ${qIndex+1} з ${GAME_TOTAL_WORDS} (Round #${ROUND_ID})</div>
-      <div class="card">
-        <div class="game">
-          <div class="toprow">
-            <span class="counter">Слово ${qIndex+1} / ${GAME_TOTAL_WORDS}</span>
-            <span class="timer" id="timerVal">${formatMMSS(secondsLeft)}</span>
-          </div>
-          <div class="bar"><div class="fill" id="timerFill" style="width:${(secondsLeft/GAME_SECONDS)*100}%"></div></div>
-
-          <div style="margin-bottom:12px"><span class="badge">⭐ <span id="scoreVal">${score}</span> очок</span></div>
-
-          <div class="clue">
-            <div class="label">Підказка</div>
-            <div class="text">${escapeHtml(q.clue)}</div>
-          </div>
-
-          <div class="word" id="wordBoxes">
-            ${buildLetterBoxes(q.word, revealed)}
-          </div>
-
-          <div class="grid" id="optGrid">
-            ${shuffled.map((t, i) => `<button class="opt" data-i="${i}">${escapeHtml(t)}</button>`).join('')}
-          </div>
-
-          <button class="hintbtn" id="hintBtn">${hintLabel()}</button>
-        </div>
-      </div>
-    `;
-
-    updateTimerUI(secondsLeft);
-
-    const grid = document.getElementById('optGrid');
-    grid.querySelectorAll('.opt').forEach(btn => {
-      btn.addEventListener('click', () => {
-        onPickOption(btn, Number(btn.dataset.i), correctIdx, revealed, q.word);
-      });
-    });
-
-    document.getElementById('hintBtn').addEventListener('click', () => {
-      onUseHint(revealed, q.word);
-    });
-
-    qStartTs = nowMs();
-  }
-
-  function onUseHint(revealed, word){
-    if (hintsLeft <= 0) return;
-
-    const len = word.length;
-    const candidates = [];
-    for (let i=0;i<len;i++) if (!revealed.has(i)) candidates.push(i);
-    if (!candidates.length) return;
-
-    const idx = candidates[Math.floor(Math.random()*candidates.length)];
-    revealed.add(idx);
-
-    hintsLeft -= 1;
-    score = Math.max(0, score - PENALTY_HINT);
-
-    document.getElementById('wordBoxes').innerHTML = buildLetterBoxes(word, revealed);
-    document.getElementById('hintBtn').textContent = hintLabel();
-    document.getElementById('scoreVal').textContent = String(score);
-  }
-
-  function onPickOption(btn, pickedIdx, correctIdx, revealed, word){
-    document.querySelectorAll('.opt').forEach(b => b.classList.add('disabled'));
-
-    const grid = document.getElementById('optGrid');
-    const buttons = grid.querySelectorAll('.opt');
-
-    const isCorrect = pickedIdx === correctIdx;
-
-    if (isCorrect) {
-      const dt = Math.floor((nowMs() - qStartTs)/1000);
-      const add = (dt < 5) ? SCORE_FAST : SCORE_NORMAL;
-      score += add;
-
-      btn.classList.remove('disabled');
-      btn.classList.add('correct');
-      btn.textContent = btn.textContent + " ✓";
-
-      showSolvedWord(word);
-
-      setTimeout(() => {
-        qIndex += 1;
-        if (qIndex >= GAME_TOTAL_WORDS) finishGame(false);
-        else renderGameQuestion();
-      }, 700);
-
-    } else {
-      score = Math.max(0, score - PENALTY_WRONG);
-
-      btn.classList.remove('disabled');
-      btn.classList.add('wrong');
-
-      setTimeout(() => {
-        btn.classList.add('disabled');
-        buttons.forEach((b, i) => { if (i !== pickedIdx) b.classList.remove('disabled'); });
-        document.getElementById('scoreVal').textContent = String(score);
-      }, 500);
-    }
-  }
-
-  function showSolvedWord(word){
-    const letters = word.toUpperCase().split('');
-    const html = letters.map(ch => `<div class="box correct">${ch}</div>`).join('');
-    const boxes = document.getElementById('wordBoxes');
-    if (boxes) boxes.innerHTML = html;
-    document.getElementById('scoreVal').textContent = String(score);
-  }
-
-  async function finishGame(outOfTime){
-    clearAllIntervals();
-
-    const wordsSolved = outOfTime ? qIndex : GAME_TOTAL_WORDS;
-    const secondsLeft = getRemainingSeconds();
-
-    let finalScore = score;
-    if (!outOfTime && wordsSolved === GAME_TOTAL_WORDS) finalScore += BONUS_FINISH;
-
-    const user = getTgUser();
-    const displayName = getDisplayName(user);
-
-    let saveOk = false;
-    let saveErr = null;
-
-    try{
-      await submitScore({
-        round_id: ROUND_ID,
-        user_id: user.id,
-        username: (user.username ? ("@" + user.username) : displayName),
-        score: finalScore
-      });
-      saveOk = true;
-      toast("Score saved ✅");
-    }catch(e){
-      saveErr = e;
-      toast("Save failed ❌");
-    }
-
-    let top5 = [];
-    let topErr = null;
-    try{
-      top5 = await fetchTop5(ROUND_ID);
-    }catch(e){
-      topErr = e;
-    }
-
-    const errorText = saveErr
-      ? `Не вдалося зберегти результат: ${escapeHtml(formatSbError(saveErr))}`
-      : (topErr ? `Не вдалося завантажити топ: ${escapeHtml(formatSbError(topErr))}` : null);
-
-    elMain.innerHTML = `
-      <div class="page-label">Підсумки</div>
-      <div class="card">
-        <div class="results">
-          <div class="trophy">🏆</div>
-          <div class="rtitle">${outOfTime ? "Час вийшов!" : "Чудова гра!"}</div>
-          <div class="rsub">Ти вгадав ${wordsSolved} з ${GAME_TOTAL_WORDS} слів</div>
-
-          <div class="stats">
-            <div class="sbox"><div class="sval gold">${finalScore}</div><div class="slabel">ОЧОК</div></div>
-            <div class="sbox"><div class="sval green">${wordsSolved}/${GAME_TOTAL_WORDS}</div><div class="slabel">СЛІВ</div></div>
-            <div class="sbox"><div class="sval">${secondsLeft}s</div><div class="slabel">ЗАЛИШОК</div></div>
-          </div>
-
-          <div class="lb">
-            <div class="ttl">Топ підписників (Round #${ROUND_ID})</div>
-
-            ${errorText ? `
-              <div style="font-size:12px;color:rgba(255,77,109,.85);padding:6px 0;line-height:1.4">
-                ${errorText}
-              </div>
-            ` : ""}
-
-            ${top5.length ? top5.map((r, i) => `
-              <div class="row">
-                <span class="rank ${i<2 ? 'gold':''}">${i+1}</span>
-                <span class="name">${escapeHtml(r.name)}</span>
-                <span class="pts">${r.pts} pts</span>
-              </div>
-            `).join('') : `
-              <div style="font-size:12px;color:rgba(200,215,255,.65);padding:6px 0;">
-                ${saveOk ? "Поки що немає результатів." : "Немає топа (бо не збереглось або не прочиталось)."}
-              </div>
-            `}
-          </div>
-
-          <button class="btn-green" id="btnAgain">Зіграти ще раз</button>
-        </div>
-      </div>
-    `;
-
-    document.getElementById('btnAgain').addEventListener('click', renderLobby);
-  }
-
-  // =======================
-  // Boot (anti white-screen)
-  // =======================
-  try {
-    renderLobby();
-  } catch (e) {
-    elMain.innerHTML = `
-      <pre style="white-space:pre-wrap;padding:16px;color:#fff;background:#111;border-radius:14px">
-JS crash:
-${String(e?.stack || e)}
-      </pre>`;
-  }
-  </script>
+  const hb=$("#hintBtn");
+  hb.addEventListener("click", useHint);
+  hb.textContent=hintLabel();
+  hb.disabled=run.hintsLeft<=0;
+
+  run.qStartTs=Date.now();
+  if(!run.timerId) startTimer();
+}
+
+function finishRun(outOfTime){
+  clearInterval(run.timerId);
+  const wordsSolved = outOfTime ? run.idx : CFG.totalWords;
+  const secondsLeft = remaining();
+  let finalScore = run.score;
+  if(!outOfTime && wordsSolved===CFG.totalWords) finalScore+=BONUS_FINISH;
+
+  render(resultsHTML({ finalScore, wordsSolved, secondsLeft, outOfTime }));
+  $("#btnAgain").addEventListener("click",()=>{ run.timerId=null; startNewRun(); });
+}
+
+showLobby();
+</script>
 </body>
 </html>
