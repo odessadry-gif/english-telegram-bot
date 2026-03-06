@@ -1158,5 +1158,14 @@
     "core": "обмін валюти",
     "fp": "103c1daaa3659c97056c0a4f79a343276506fbc4fac524cc6f40e8725ead3922",
     "core_fp": "44a3e494e72b2c103c3f408e6afd70e1b01a27e18a054634c888a53cb11d061a"
+  },
+  {
+    "ts": 1772837959,
+    "kind": "guess_word",
+    "level": "B1",
+    "topic": "Vocabulary",
+    "core": "currency",
+    "fp": "8ce4c66712b7981e1f927afdcb2ffe6756c320204da8d97f071b60020d2d5133",
+    "core_fp": "25283df485e9b4d29ed87b75e838aecd553b86397bac72c1a26b5c36362b9dad"
   }
 ]
