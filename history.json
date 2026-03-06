@@ -1104,5 +1104,14 @@
     "core": "заселення",
     "fp": "3e00451925dc6bccd6c2890b44f640c38b2025e07a78b2f65cfe2cf5963e35cc",
     "core_fp": "8a749abb7952a3a9b25d471fb5d98b5c5fd02a62725c5fd9bc73cd590a7b0bdb"
+  },
+  {
+    "ts": 1772791107,
+    "kind": "guess_word",
+    "level": "B1",
+    "topic": "Riddle",
+    "core": "visa",
+    "fp": "7a23698591589f751fb1b54f77133883c307c845afc43a1624f0d378f6e4f602",
+    "core_fp": "2674b1ddf71010ec3fb703dd54ab105230a1e3f401a89a3ac8c78c88cc482ba6"
   }
 ]
