@@ -1140,5 +1140,14 @@
     "core": "fare",
     "fp": "c9508da743871b6cce6e3d9d5dffe5a56cb1829b77ba7f38ef19330ac0a456d0",
     "core_fp": "3d1085d6d126fc06841811f945ec4df28dda93a9282010d4c9f79048bdf3d491"
+  },
+  {
+    "ts": 1772826523,
+    "kind": "grammar_gap",
+    "level": "A2",
+    "topic": "Grammar",
+    "core": "I ___ my suitcase now.",
+    "fp": "e0aa02d168476a9e0c66f24bd875a67941c5fa76302371092c04ddcdefa3ad58",
+    "core_fp": "55eec78aae8dd581d75aa0833a3a52ed373356dedddc6b441f1058f20268d9b2"
   }
 ]
