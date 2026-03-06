@@ -1113,5 +1113,14 @@
     "core": "visa",
     "fp": "7a23698591589f751fb1b54f77133883c307c845afc43a1624f0d378f6e4f602",
     "core_fp": "2674b1ddf71010ec3fb703dd54ab105230a1e3f401a89a3ac8c78c88cc482ba6"
+  },
+  {
+    "ts": 1772795179,
+    "kind": "grammar_gap",
+    "level": "A2",
+    "topic": "Grammar",
+    "core": "They ___ the plane at the moment.",
+    "fp": "aae07771b998b10e283f92e95e7d226ab94072350b7227e2a2946fb53e28281c",
+    "core_fp": "ba2d8b8f65ef1a3632475585d309873d925f1dbf168b3f6e392cd997dc3a84bf"
   }
 ]
