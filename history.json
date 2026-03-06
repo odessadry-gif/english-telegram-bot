@@ -1149,5 +1149,14 @@
     "core": "I ___ my suitcase now.",
     "fp": "e0aa02d168476a9e0c66f24bd875a67941c5fa76302371092c04ddcdefa3ad58",
     "core_fp": "55eec78aae8dd581d75aa0833a3a52ed373356dedddc6b441f1058f20268d9b2"
+  },
+  {
+    "ts": 1772830930,
+    "kind": "ua_en",
+    "level": "A2",
+    "topic": "Vocabulary",
+    "core": "обмін валюти",
+    "fp": "103c1daaa3659c97056c0a4f79a343276506fbc4fac524cc6f40e8725ead3922",
+    "core_fp": "44a3e494e72b2c103c3f408e6afd70e1b01a27e18a054634c888a53cb11d061a"
   }
 ]
