@@ -1086,5 +1086,14 @@
     "core": "shuttle",
     "fp": "167d4c1be543b923aeb20927440ed1c66c898bed8509b9ff92c421afd44fc0c8",
     "core_fp": "d7fff69d05eea0b714e1f17a62f55d26f924ba4ac32d17cc671f323946e3833e"
+  },
+  {
+    "ts": 1772774178,
+    "kind": "grammar_gap",
+    "level": "B1",
+    "topic": "Grammar",
+    "core": "While we were waiting at the gate, the plane ___ late.",
+    "fp": "ac4e6317e80093544cd8ae69a7c94f46e01921329337a5dcda18e50225fd5796",
+    "core_fp": "5be28370e19403543e81c1700f1bc4f44d086b8029834cd14c4e56a2ee3a399f"
   }
 ]
