@@ -1122,5 +1122,14 @@
     "core": "They ___ the plane at the moment.",
     "fp": "aae07771b998b10e283f92e95e7d226ab94072350b7227e2a2946fb53e28281c",
     "core_fp": "ba2d8b8f65ef1a3632475585d309873d925f1dbf168b3f6e392cd997dc3a84bf"
+  },
+  {
+    "ts": 1772805992,
+    "kind": "ua_en",
+    "level": "A2",
+    "topic": "Vocabulary",
+    "core": "заселення в готель",
+    "fp": "4eb66d340cf24cef0a7fb9517ef40d2ba68017f7053d9204e5d5033667278378",
+    "core_fp": "e68490ce1d77107cb63fc8de9ddbb11e0adf2038ac96c8eae0197ea760769d0a"
   }
 ]
