@@ -1131,5 +1131,14 @@
     "core": "заселення в готель",
     "fp": "4eb66d340cf24cef0a7fb9517ef40d2ba68017f7053d9204e5d5033667278378",
     "core_fp": "e68490ce1d77107cb63fc8de9ddbb11e0adf2038ac96c8eae0197ea760769d0a"
+  },
+  {
+    "ts": 1772819700,
+    "kind": "guess_word",
+    "level": "B1",
+    "topic": "Riddle",
+    "core": "fare",
+    "fp": "c9508da743871b6cce6e3d9d5dffe5a56cb1829b77ba7f38ef19330ac0a456d0",
+    "core_fp": "3d1085d6d126fc06841811f945ec4df28dda93a9282010d4c9f79048bdf3d491"
   }
 ]
