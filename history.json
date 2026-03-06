@@ -1077,5 +1077,14 @@
     "core": "посадка на рейс",
     "fp": "02619dd0071b4c12d4b5ff57e27f52c706cff7c3008c92fb5e77ac60a2e42dee",
     "core_fp": "14e8fc19efddfaa5978a71f867519237fd1173dfcc8bca3486a1490774eb7039"
+  },
+  {
+    "ts": 1772755321,
+    "kind": "guess_word",
+    "level": "A2",
+    "topic": "Vocabulary",
+    "core": "shuttle",
+    "fp": "167d4c1be543b923aeb20927440ed1c66c898bed8509b9ff92c421afd44fc0c8",
+    "core_fp": "d7fff69d05eea0b714e1f17a62f55d26f924ba4ac32d17cc671f323946e3833e"
   }
 ]
