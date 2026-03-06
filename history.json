@@ -1095,5 +1095,14 @@
     "core": "While we were waiting at the gate, the plane ___ late.",
     "fp": "ac4e6317e80093544cd8ae69a7c94f46e01921329337a5dcda18e50225fd5796",
     "core_fp": "5be28370e19403543e81c1700f1bc4f44d086b8029834cd14c4e56a2ee3a399f"
+  },
+  {
+    "ts": 1772783643,
+    "kind": "ua_en",
+    "level": "A2",
+    "topic": "Vocabulary",
+    "core": "заселення",
+    "fp": "3e00451925dc6bccd6c2890b44f640c38b2025e07a78b2f65cfe2cf5963e35cc",
+    "core_fp": "8a749abb7952a3a9b25d471fb5d98b5c5fd02a62725c5fd9bc73cd590a7b0bdb"
   }
 ]
