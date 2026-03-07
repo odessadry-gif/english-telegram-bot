@@ -1203,5 +1203,14 @@
     "core": "Right now, the passenger ___ at the check-in desk.",
     "fp": "fa808b27e918e97b3feb43d021a97346235b52e8a1e298672dba6eaa08e6bdd8",
     "core_fp": "b752b0c28a454055a37a37127154a89fd2f9971d0be67655438fddbcc602f29a"
+  },
+  {
+    "ts": 1772891716,
+    "kind": "guess_word",
+    "level": "B1",
+    "topic": "Riddle",
+    "core": "meter",
+    "fp": "4e9aed3f92b5607549c36b4f20c4124fe38cbffb8ead2dc94fa89200416f9900",
+    "core_fp": "be38891438bab01c3e50d076f10b26669e6781dbeb6335452f30837416d64c15"
   }
 ]
