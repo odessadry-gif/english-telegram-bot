@@ -1239,5 +1239,14 @@
     "core": "conductor",
     "fp": "81c03f240c7e57fe03a9681ff4c29aef683070e50ce2389517bd161f747af5aa",
     "core_fp": "f7fddbf0a7c851b2a3bf99503a12df65336420491fe472d6c392c25f4ba697d5"
+  },
+  {
+    "ts": 1772916591,
+    "kind": "grammar_gap",
+    "level": "A2",
+    "topic": "Grammar",
+    "core": "I ___ to the station now.",
+    "fp": "f9a844e79a6fc7e58593909f781a52063ea01fd5ba9ef1157442e73a34adf159",
+    "core_fp": "aea1846fbdd6969e25b38803dddbd2d2204bc3ea31d09c8dc1fc5130a2d7c235"
   }
 ]
