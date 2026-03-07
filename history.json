@@ -1221,5 +1221,14 @@
     "core": "She ___ her passport at the airport yesterday.",
     "fp": "50d513eba2d4a63b5c654583d887cb85872e7578c7202dd39d5d48753de255d4",
     "core_fp": "15f2d2b7f95da303a3ce76d737c5e415475bf4168083598aa6fbf6a3c3390277"
+  },
+  {
+    "ts": 1772902509,
+    "kind": "ua_en",
+    "level": "A2",
+    "topic": "Vocabulary",
+    "core": "обміняти гроші",
+    "fp": "131f0db8010c7f8b013e4c5fb5e032df938f3a41ac692d5679b37f8abb29c59d",
+    "core_fp": "c069ac059f8a41d4b69232e74414744fafae6e86c82450aa8d785ae551363ce3"
   }
 ]
