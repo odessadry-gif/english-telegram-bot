@@ -1212,5 +1212,14 @@
     "core": "meter",
     "fp": "4e9aed3f92b5607549c36b4f20c4124fe38cbffb8ead2dc94fa89200416f9900",
     "core_fp": "be38891438bab01c3e50d076f10b26669e6781dbeb6335452f30837416d64c15"
+  },
+  {
+    "ts": 1772895072,
+    "kind": "grammar_gap",
+    "level": "A2",
+    "topic": "Grammar",
+    "core": "She ___ her passport at the airport yesterday.",
+    "fp": "50d513eba2d4a63b5c654583d887cb85872e7578c7202dd39d5d48753de255d4",
+    "core_fp": "15f2d2b7f95da303a3ce76d737c5e415475bf4168083598aa6fbf6a3c3390277"
   }
 ]
