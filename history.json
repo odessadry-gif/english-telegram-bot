@@ -1230,5 +1230,14 @@
     "core": "обміняти гроші",
     "fp": "131f0db8010c7f8b013e4c5fb5e032df938f3a41ac692d5679b37f8abb29c59d",
     "core_fp": "c069ac059f8a41d4b69232e74414744fafae6e86c82450aa8d785ae551363ce3"
+  },
+  {
+    "ts": 1772909973,
+    "kind": "guess_word",
+    "level": "B1",
+    "topic": "Vocabulary",
+    "core": "conductor",
+    "fp": "81c03f240c7e57fe03a9681ff4c29aef683070e50ce2389517bd161f747af5aa",
+    "core_fp": "f7fddbf0a7c851b2a3bf99503a12df65336420491fe472d6c392c25f4ba697d5"
   }
 ]
