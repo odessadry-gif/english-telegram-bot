@@ -1185,5 +1185,14 @@
     "core": "зарезервувати номер",
     "fp": "4200245226798b22e2a6b29dd720f255f8b3a1e31b295208fed938dd43b4c5b5",
     "core_fp": "3a12b1c27b6dbea6108606ab4dccff607a6be5d9ea55068440f592e3b1529a87"
+  },
+  {
+    "ts": 1772873935,
+    "kind": "guess_word",
+    "level": "B1",
+    "topic": "Riddle",
+    "core": "terminal",
+    "fp": "35cccb6adb4851b6c3a2cca1d82d7f38e911ff230448f2a87bf1c8179eb47044",
+    "core_fp": "68663da10b21ef77c4a59cf82742d2b07c3a23e10e864b98321da27374a5f665"
   }
 ]
