@@ -1194,5 +1194,14 @@
     "core": "terminal",
     "fp": "35cccb6adb4851b6c3a2cca1d82d7f38e911ff230448f2a87bf1c8179eb47044",
     "core_fp": "68663da10b21ef77c4a59cf82742d2b07c3a23e10e864b98321da27374a5f665"
+  },
+  {
+    "ts": 1772880619,
+    "kind": "grammar_gap",
+    "level": "A2",
+    "topic": "Grammar",
+    "core": "Right now, the passenger ___ at the check-in desk.",
+    "fp": "fa808b27e918e97b3feb43d021a97346235b52e8a1e298672dba6eaa08e6bdd8",
+    "core_fp": "b752b0c28a454055a37a37127154a89fd2f9971d0be67655438fddbcc602f29a"
   }
 ]
