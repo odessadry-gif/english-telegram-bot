@@ -1167,5 +1167,14 @@
     "core": "currency",
     "fp": "8ce4c66712b7981e1f927afdcb2ffe6756c320204da8d97f071b60020d2d5133",
     "core_fp": "25283df485e9b4d29ed87b75e838aecd553b86397bac72c1a26b5c36362b9dad"
+  },
+  {
+    "ts": 1772858725,
+    "kind": "grammar_gap",
+    "level": "A2",
+    "topic": "Grammar",
+    "core": "I ___ my passport now.",
+    "fp": "7e9c333699de8d13f036971220c5678a124a8b59b77c739b1e17d18e9ef012a0",
+    "core_fp": "c0b836222add8b0f5e5b43c780711b71b15fbcf19efa67588b86cfd3a8b720f5"
   }
 ]
