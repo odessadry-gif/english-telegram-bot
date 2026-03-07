@@ -1176,5 +1176,14 @@
     "core": "I ___ my passport now.",
     "fp": "7e9c333699de8d13f036971220c5678a124a8b59b77c739b1e17d18e9ef012a0",
     "core_fp": "c0b836222add8b0f5e5b43c780711b71b15fbcf19efa67588b86cfd3a8b720f5"
+  },
+  {
+    "ts": 1772868016,
+    "kind": "ua_en",
+    "level": "A2",
+    "topic": "Vocabulary",
+    "core": "зарезервувати номер",
+    "fp": "4200245226798b22e2a6b29dd720f255f8b3a1e31b295208fed938dd43b4c5b5",
+    "core_fp": "3a12b1c27b6dbea6108606ab4dccff607a6be5d9ea55068440f592e3b1529a87"
   }
 ]
