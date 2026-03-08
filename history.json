@@ -1257,5 +1257,14 @@
     "core": "passport",
     "fp": "9597898f7b459bfbd3de96dce3efc332887dab9e455c54d84e116b16f3819ea5",
     "core_fp": "e54377d05e378a4113b52a782917891696c9792c807be9744fdddcbd5c3c628a"
+  },
+  {
+    "ts": 1772946042,
+    "kind": "grammar_gap",
+    "level": "A2",
+    "topic": "Grammar",
+    "core": "When we arrived at the hotel, we ___ at the reception.",
+    "fp": "1d18dfe80d52a2a21384fa2f890b84ee1cbbc423449e146cff5b7d093559dca6",
+    "core_fp": "7d5ddfdcb86cf78189795c656115f122d60fedab801206ff0365c5b9e0d03d2e"
   }
 ]
