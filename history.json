@@ -1320,5 +1320,14 @@
     "core": "She ___ her passport at the check-in counter every time she travels.",
     "fp": "60bdb385f660cc9074149020675b66bd2d248405d03cd07854ce8ef1b9658a7f",
     "core_fp": "a0483dfb33cbb5e10ed1c7b456797d32fc0e0838e6383687180601fab3e3ad6f"
+  },
+  {
+    "ts": 1772996560,
+    "kind": "ua_en",
+    "level": "A2",
+    "topic": "Vocabulary",
+    "core": "заселитися",
+    "fp": "1676255eb3baabeceb299a60672b3cb754f253bdf22aefbdabf61a6ab4001b62",
+    "core_fp": "0ace55a94e48f0e3b0fd1298dbc652a6abcedf3f180e698152344b1fbd241697"
   }
 ]
