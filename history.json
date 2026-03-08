@@ -1284,5 +1284,14 @@
     "core": "bellhop",
     "fp": "1061b31d4666607e377ca6cd1462e24866afa169afb0c43915e333e564ff34e8",
     "core_fp": "a5bdac5e8319ec6f9dd3c11c79ff06db316b79371d357f00f65ed23a7d925a5e"
+  },
+  {
+    "ts": 1772967192,
+    "kind": "grammar_gap",
+    "level": "A2",
+    "topic": "Grammar",
+    "core": "He ___ his luggage in the taxi.",
+    "fp": "6d507262ac63c77a68a7a0e1ddc7a24cfc65883fe5492947e9529292027212ce",
+    "core_fp": "fa498695be869ae1c6c8c58a1144e1e73629eb28714f7813c3c4fbf0b2caa358"
   }
 ]
