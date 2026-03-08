@@ -1329,5 +1329,14 @@
     "core": "заселитися",
     "fp": "1676255eb3baabeceb299a60672b3cb754f253bdf22aefbdabf61a6ab4001b62",
     "core_fp": "0ace55a94e48f0e3b0fd1298dbc652a6abcedf3f180e698152344b1fbd241697"
+  },
+  {
+    "ts": 1773003158,
+    "kind": "guess_word",
+    "level": "B1",
+    "topic": "Riddle",
+    "core": "layover",
+    "fp": "339f66eb33f7a3b9583382b2fd7d370a182129f9b772db7a7a8807a97cdd3842",
+    "core_fp": "47fc78fd976942048f049e75784f155503e72b9d569fcacca28b07e35026535d"
   }
 ]
