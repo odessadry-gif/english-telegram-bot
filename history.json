@@ -1293,5 +1293,14 @@
     "core": "He ___ his luggage in the taxi.",
     "fp": "6d507262ac63c77a68a7a0e1ddc7a24cfc65883fe5492947e9529292027212ce",
     "core_fp": "fa498695be869ae1c6c8c58a1144e1e73629eb28714f7813c3c4fbf0b2caa358"
+  },
+  {
+    "ts": 1772978145,
+    "kind": "ua_en",
+    "level": "A2",
+    "topic": "Vocabulary",
+    "core": "запізнитися на рейс",
+    "fp": "4c83b1fe96f48f772ec2c417349b4b97fb45dd031dfb7b068ebff8568ddfd8ed",
+    "core_fp": "02fbf54f61c594d5f0fc50960cbf754fc40287b186c8808dfdddbd61a164fd0d"
   }
 ]
