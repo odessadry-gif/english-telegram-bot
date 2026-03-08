@@ -1302,5 +1302,14 @@
     "core": "запізнитися на рейс",
     "fp": "4c83b1fe96f48f772ec2c417349b4b97fb45dd031dfb7b068ebff8568ddfd8ed",
     "core_fp": "02fbf54f61c594d5f0fc50960cbf754fc40287b186c8808dfdddbd61a164fd0d"
+  },
+  {
+    "ts": 1772981561,
+    "kind": "guess_word",
+    "level": "A2",
+    "topic": "Riddle",
+    "core": "aisle",
+    "fp": "cd2468ea0eed59c421e2a7df87d9886493f2a12aba9ff877f7e1d14c2cf8a3ab",
+    "core_fp": "9986179a65d9dc849850cd79c0582cfa44ef2841f18aa2c9632f2209b476822d"
   }
 ]
