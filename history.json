@@ -1338,5 +1338,14 @@
     "core": "layover",
     "fp": "339f66eb33f7a3b9583382b2fd7d370a182129f9b772db7a7a8807a97cdd3842",
     "core_fp": "47fc78fd976942048f049e75784f155503e72b9d569fcacca28b07e35026535d"
+  },
+  {
+    "ts": 1773010291,
+    "kind": "grammar_gap",
+    "level": "A2",
+    "topic": "Grammar",
+    "core": "They ___ at the airport now.",
+    "fp": "eb5edc4132b16badeb837e7a3cbc2e6b2b8a23c65953684f4f438510ebea475f",
+    "core_fp": "121ebdc075fc1d4f918f2f7da63d3db9e7e1c7f3d6431b24e983681f8be0638c"
   }
 ]
