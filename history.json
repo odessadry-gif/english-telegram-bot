@@ -1311,5 +1311,14 @@
     "core": "aisle",
     "fp": "cd2468ea0eed59c421e2a7df87d9886493f2a12aba9ff877f7e1d14c2cf8a3ab",
     "core_fp": "9986179a65d9dc849850cd79c0582cfa44ef2841f18aa2c9632f2209b476822d"
+  },
+  {
+    "ts": 1772988945,
+    "kind": "grammar_gap",
+    "level": "A2",
+    "topic": "Grammar",
+    "core": "She ___ her passport at the check-in counter every time she travels.",
+    "fp": "60bdb385f660cc9074149020675b66bd2d248405d03cd07854ce8ef1b9658a7f",
+    "core_fp": "a0483dfb33cbb5e10ed1c7b456797d32fc0e0838e6383687180601fab3e3ad6f"
   }
 ]
