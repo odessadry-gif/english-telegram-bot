@@ -1275,5 +1275,14 @@
     "core": "поселення",
     "fp": "e08efead5b2115eb0acd8dea0c6205d28e6be4bc53cbf3cbef77ac13ddc608c1",
     "core_fp": "cf81306bb8fd6cdd58925fff1f5133bffd3f251dc5cbfed6bb7cafbea109069c"
+  },
+  {
+    "ts": 1772960380,
+    "kind": "guess_word",
+    "level": "A2",
+    "topic": "Riddle",
+    "core": "bellhop",
+    "fp": "1061b31d4666607e377ca6cd1462e24866afa169afb0c43915e333e564ff34e8",
+    "core_fp": "a5bdac5e8319ec6f9dd3c11c79ff06db316b79371d357f00f65ed23a7d925a5e"
   }
 ]
