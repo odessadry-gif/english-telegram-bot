@@ -1383,5 +1383,14 @@
     "core": "voucher",
     "fp": "7218f4098725ce60579d2d54d0394f24383b4054919adf5f691e6c99c4ba91c6",
     "core_fp": "596909ef8afbf85ec72f33bede790cf95c56d18d440cb8211fe008a89d40b0e4"
+  },
+  {
+    "ts": 1773079546,
+    "kind": "grammar_gap",
+    "level": "A2",
+    "topic": "Grammar",
+    "core": "I ___ my passport at the airport yesterday.",
+    "fp": "d66785b59159eaa16da274a8449bcf3ca129d2668f8dd2277788d8091dabcb32",
+    "core_fp": "60a59e21a86b725dd8b52f7d758207145b72169e0ae825ee4aefb875dbe88e21"
   }
 ]
