@@ -1374,5 +1374,14 @@
     "core": "They ___ for the hotel at 9 PM yesterday.",
     "fp": "4110710287177013d31a59db5e0839a20420e118056a363346fd3c25084d3e56",
     "core_fp": "ed75b26f181384953813f2823fdad4fe3507be751638ad7c75eb323768b15ad6"
+  },
+  {
+    "ts": 1773067514,
+    "kind": "guess_word",
+    "level": "B1",
+    "topic": "Vocabulary",
+    "core": "voucher",
+    "fp": "7218f4098725ce60579d2d54d0394f24383b4054919adf5f691e6c99c4ba91c6",
+    "core_fp": "596909ef8afbf85ec72f33bede790cf95c56d18d440cb8211fe008a89d40b0e4"
   }
 ]
