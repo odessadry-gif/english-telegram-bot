@@ -1401,5 +1401,14 @@
     "core": "проживання",
     "fp": "d13278dacacbd1319cadb78c7f29cf82a3bc1ee815792b2cf9202bb19ed648e4",
     "core_fp": "e0e6ce0273027d69c6c8342485d49e5c25c8309d5bde7eb911d8cf10d56ac140"
+  },
+  {
+    "ts": 1773097134,
+    "kind": "guess_word",
+    "level": "A2",
+    "topic": "Riddle",
+    "core": "counter",
+    "fp": "cae48c5769b137b3d8a1cc323d3fff6a597208e6f6cda5fd4fa03e91546d7cb4",
+    "core_fp": "755765e84e39eecb4f4fb7c8aa72795a96874273beea9734842af45978879e5a"
   }
 ]
