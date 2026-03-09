@@ -1392,5 +1392,14 @@
     "core": "I ___ my passport at the airport yesterday.",
     "fp": "d66785b59159eaa16da274a8449bcf3ca129d2668f8dd2277788d8091dabcb32",
     "core_fp": "60a59e21a86b725dd8b52f7d758207145b72169e0ae825ee4aefb875dbe88e21"
+  },
+  {
+    "ts": 1773090402,
+    "kind": "ua_en",
+    "level": "B1",
+    "topic": "Vocabulary",
+    "core": "проживання",
+    "fp": "d13278dacacbd1319cadb78c7f29cf82a3bc1ee815792b2cf9202bb19ed648e4",
+    "core_fp": "e0e6ce0273027d69c6c8342485d49e5c25c8309d5bde7eb911d8cf10d56ac140"
   }
 ]
