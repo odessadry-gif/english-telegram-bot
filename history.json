@@ -1347,5 +1347,14 @@
     "core": "They ___ at the airport now.",
     "fp": "eb5edc4132b16badeb837e7a3cbc2e6b2b8a23c65953684f4f438510ebea475f",
     "core_fp": "121ebdc075fc1d4f918f2f7da63d3db9e7e1c7f3d6431b24e983681f8be0638c"
+  },
+  {
+    "ts": 1773033125,
+    "kind": "ua_en",
+    "level": "A2",
+    "topic": "Vocabulary",
+    "core": "заселитися в готель",
+    "fp": "3e0354ecc21822462a11263990e7c8849e861cfe2a87f1d026a688c305335508",
+    "core_fp": "4a145f8f0698f4c8bff88949eb63dc6f3fff0785cec95c464a971e3e397c2954"
   }
 ]
