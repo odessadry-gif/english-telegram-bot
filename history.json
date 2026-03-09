@@ -1356,5 +1356,14 @@
     "core": "заселитися в готель",
     "fp": "3e0354ecc21822462a11263990e7c8849e861cfe2a87f1d026a688c305335508",
     "core_fp": "4a145f8f0698f4c8bff88949eb63dc6f3fff0785cec95c464a971e3e397c2954"
+  },
+  {
+    "ts": 1773043247,
+    "kind": "guess_word",
+    "level": "B1",
+    "topic": "Vocabulary",
+    "core": "baggage",
+    "fp": "0136d986e998d6bf2b5dfae7b44f4f30e23a042cf05d5d43c8bb7ce41217d07f",
+    "core_fp": "a35b0e48383f5984bbbb033829e472b3bf251cb7d4385ea480e8eb0995c5741d"
   }
 ]
