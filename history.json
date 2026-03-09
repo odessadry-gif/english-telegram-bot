@@ -1365,5 +1365,14 @@
     "core": "baggage",
     "fp": "0136d986e998d6bf2b5dfae7b44f4f30e23a042cf05d5d43c8bb7ce41217d07f",
     "core_fp": "a35b0e48383f5984bbbb033829e472b3bf251cb7d4385ea480e8eb0995c5741d"
+  },
+  {
+    "ts": 1773057050,
+    "kind": "grammar_gap",
+    "level": "A2",
+    "topic": "Grammar",
+    "core": "They ___ for the hotel at 9 PM yesterday.",
+    "fp": "4110710287177013d31a59db5e0839a20420e118056a363346fd3c25084d3e56",
+    "core_fp": "ed75b26f181384953813f2823fdad4fe3507be751638ad7c75eb323768b15ad6"
   }
 ]
