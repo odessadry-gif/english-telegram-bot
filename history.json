@@ -1446,5 +1446,14 @@
     "core": "рейс",
     "fp": "f5437a1cb520fe62f2e0908123eafc3948f621a201b5929807d09c800a0ea2ca",
     "core_fp": "043b0348590566f5d99ece942bed636fc4b2ca4092e0d31396df1fa64de7f2bc"
+  },
+  {
+    "ts": 1773166066,
+    "kind": "guess_word",
+    "level": "A2",
+    "topic": "Riddle",
+    "core": "safe",
+    "fp": "def796495068b009f3db371c1a1c6679fc58c5ed9338c18a4aa910ae929d8592",
+    "core_fp": "d6a8ca4d7c1f235a5dcaf91669b756313b2a5895e73b1a89bc382068d2e1bc6e"
   }
 ]
