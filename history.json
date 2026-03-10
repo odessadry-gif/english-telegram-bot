@@ -1482,5 +1482,14 @@
     "core": "whisk",
     "fp": "0eb6b195f6e0216f5872f5d26239cb9506241cb59241af4d7df82612d47cfd93",
     "core_fp": "5eeb2da7b93e1d85a0daae6b11ff9bc9b009137556116f4772943dfb53927d4e"
+  },
+  {
+    "ts": 1773183440,
+    "kind": "grammar_gap",
+    "level": "A2",
+    "topic": "Grammar",
+    "core": "The chef ___ the pasta now.",
+    "fp": "4b00e14c9743eec13542fa8e0c03e45e5a3318ec02efdaea80b716b4b82bfd0b",
+    "core_fp": "b1ad5dd3d0270c63004e62a8e0c6c6380e882a171636f082dd6f15fff808fabe"
   }
 ]
