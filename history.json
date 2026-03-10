@@ -1419,5 +1419,14 @@
     "core": "He ___ at the hotel yesterday at 10 pm.",
     "fp": "c7d4535888a9253bce1cdc226e3d2d1a3d5168678f2493799746972269446893",
     "core_fp": "5e9e57caa55b698463a06ed6e23ca305a8467cf619acdccad6db4b38f837bfb3"
+  },
+  {
+    "ts": 1773129807,
+    "kind": "guess_word",
+    "level": "B1",
+    "topic": "Riddle",
+    "core": "souvenir",
+    "fp": "e0ecdc4a39e9b6db9a29c33a9c1983d65457f7b8dc2898198f2e3dfcf129fb7d",
+    "core_fp": "26fc3e276d202121d05d057e1958b90a62c9bcc219a206b74d4612427cd2b95e"
   }
 ]
