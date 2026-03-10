@@ -14,8 +14,8 @@ OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 CHAT_ID = os.getenv("CHAT_ID", "-1003674761753")  # куда постятся квизы
 MODEL = os.getenv("OPENAI_MODEL", "gpt-5-mini")
 
-# ✅ ТЕМА (по умолчанию travel)
-THEME = os.getenv("THEME", "travel").strip().lower()
+# ✅ ТЕМА (по умолчанию food_restaurants)
+THEME = os.getenv("THEME", "food_restaurants").strip().lower()
 
 # ✅ режимы
 # MODE=quiz      -> квиз (по умолчанию)
@@ -34,15 +34,15 @@ GAME_URL = os.getenv(
 # ✅ подпись на кнопке
 GAME_BUTTON_TEXT = os.getenv(
     "GAME_BUTTON_TEXT",
-    "✈️ Travel Rush"
+    "🍔 Food Rush"
 )
 
 # ✅ текст поста
 GAME_POST_TEXT = os.getenv(
     "GAME_POST_TEXT",
-    "✈️ **Travel Rush** — швидкий тревел-квіз\n\n"
-    "Вгадай 10 aviation та travel слів за 3 хвилини.\n"
-    "Перевір свою англійську та прокачай travel vocabulary 👇",
+    "🍔 **Food Rush** — швидкий квіз про їжу та ресторани\n\n"
+    "Вгадай 10 food та restaurant слів за 3 хвилини.\n"
+    "Перевір свою англійську та прокачай food vocabulary 👇",
 )
 
 # ========= HISTORY =========
@@ -293,10 +293,10 @@ def prompt_for(kind: str, guess_word_avoid: list[str]) -> str:
         avoid_line = "Avoid these words (do NOT use them as the answer): " + ", ".join(guess_word_avoid) + "\n"
 
     # theme block
-    if THEME == "travel":
+    if THEME in ("food_restaurants", "food", "restaurants", "food_and_restaurants"):
         theme_block = """
-THEME (HARD RULE): Travel & everyday trips only.
-Use contexts like: airport, boarding, passport, luggage, hotel, check-in/check-out, reservation, city transport, taxi, directions, tickets, sightseeing, money exchange, travel problems, polite requests.
+THEME (HARD RULE): Food & Restaurants only.
+Use contexts like: food, drinks, menu, waiter, order, bill, table, reservation, cafe, restaurant, ingredients, cooking, taste, dessert, breakfast, lunch, dinner, snack, kitchen, dishes, cutlery, takeaway.
 Avoid: politics, medicine, religion, explicit content, violence, war.
 """.strip()
     elif THEME:
