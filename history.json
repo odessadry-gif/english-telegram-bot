@@ -1437,5 +1437,14 @@
     "core": "I ___ my passport at the hotel reception yesterday.",
     "fp": "2c3c8e9447bf23b259f189af464126571ef997c32ddcafa3c423146b7460e3c4",
     "core_fp": "303cd414d4fd11949fdf6fe4b85051eb696077dd41b8524eb6a9056751b5403d"
+  },
+  {
+    "ts": 1773153434,
+    "kind": "ua_en",
+    "level": "A2",
+    "topic": "Vocabulary",
+    "core": "рейс",
+    "fp": "f5437a1cb520fe62f2e0908123eafc3948f621a201b5929807d09c800a0ea2ca",
+    "core_fp": "043b0348590566f5d99ece942bed636fc4b2ca4092e0d31396df1fa64de7f2bc"
   }
 ]
