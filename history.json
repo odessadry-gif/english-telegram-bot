@@ -1428,5 +1428,14 @@
     "core": "souvenir",
     "fp": "e0ecdc4a39e9b6db9a29c33a9c1983d65457f7b8dc2898198f2e3dfcf129fb7d",
     "core_fp": "26fc3e276d202121d05d057e1958b90a62c9bcc219a206b74d4612427cd2b95e"
+  },
+  {
+    "ts": 1773137155,
+    "kind": "grammar_gap",
+    "level": "A2",
+    "topic": "Grammar",
+    "core": "I ___ my passport at the hotel reception yesterday.",
+    "fp": "2c3c8e9447bf23b259f189af464126571ef997c32ddcafa3c423146b7460e3c4",
+    "core_fp": "303cd414d4fd11949fdf6fe4b85051eb696077dd41b8524eb6a9056751b5403d"
   }
 ]
