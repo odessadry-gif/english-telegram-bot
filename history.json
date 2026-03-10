@@ -1455,5 +1455,14 @@
     "core": "safe",
     "fp": "def796495068b009f3db371c1a1c6679fc58c5ed9338c18a4aa910ae929d8592",
     "core_fp": "d6a8ca4d7c1f235a5dcaf91669b756313b2a5895e73b1a89bc382068d2e1bc6e"
+  },
+  {
+    "ts": 1773176534,
+    "kind": "grammar_gap",
+    "level": "A2",
+    "topic": "Grammar",
+    "core": "She ___ her passport when she arrived at the airport.",
+    "fp": "587f63878edc03f4329fbd42d80ddfde50eb49c989c31ce88a86d74b52671b2e",
+    "core_fp": "8b3c27c9917effa13243f24f9499297692b0481b40c3d708eec9e5f98a992b01"
   }
 ]
