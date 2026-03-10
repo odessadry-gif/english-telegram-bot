@@ -1464,5 +1464,14 @@
     "core": "She ___ her passport when she arrived at the airport.",
     "fp": "587f63878edc03f4329fbd42d80ddfde50eb49c989c31ce88a86d74b52671b2e",
     "core_fp": "8b3c27c9917effa13243f24f9499297692b0481b40c3d708eec9e5f98a992b01"
+  },
+  {
+    "ts": 1773176739,
+    "kind": "ua_en",
+    "level": "A2",
+    "topic": "Grammar",
+    "core": "They ___ at the hotel now.",
+    "fp": "678fb1a1bcf1dd5da3da73c5658c026ba75feb8c162bce1e885997c1c1ac9bac",
+    "core_fp": "f2da0cb4d73bc39ddcd99c1af6644e9c1d76b7bb556ac67c3aeaeb51c212f7f8"
   }
 ]
