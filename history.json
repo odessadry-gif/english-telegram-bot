@@ -1473,5 +1473,14 @@
     "core": "They ___ at the hotel now.",
     "fp": "678fb1a1bcf1dd5da3da73c5658c026ba75feb8c162bce1e885997c1c1ac9bac",
     "core_fp": "f2da0cb4d73bc39ddcd99c1af6644e9c1d76b7bb556ac67c3aeaeb51c212f7f8"
+  },
+  {
+    "ts": 1773177105,
+    "kind": "guess_word",
+    "level": "B1",
+    "topic": "Riddle",
+    "core": "whisk",
+    "fp": "0eb6b195f6e0216f5872f5d26239cb9506241cb59241af4d7df82612d47cfd93",
+    "core_fp": "5eeb2da7b93e1d85a0daae6b11ff9bc9b009137556116f4772943dfb53927d4e"
   }
 ]
