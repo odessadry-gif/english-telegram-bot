@@ -1410,5 +1410,14 @@
     "core": "counter",
     "fp": "cae48c5769b137b3d8a1cc323d3fff6a597208e6f6cda5fd4fa03e91546d7cb4",
     "core_fp": "755765e84e39eecb4f4fb7c8aa72795a96874273beea9734842af45978879e5a"
+  },
+  {
+    "ts": 1773118818,
+    "kind": "grammar_gap",
+    "level": "A2",
+    "topic": "Grammar",
+    "core": "He ___ at the hotel yesterday at 10 pm.",
+    "fp": "c7d4535888a9253bce1cdc226e3d2d1a3d5168678f2493799746972269446893",
+    "core_fp": "5e9e57caa55b698463a06ed6e23ca305a8467cf619acdccad6db4b38f837bfb3"
   }
 ]
