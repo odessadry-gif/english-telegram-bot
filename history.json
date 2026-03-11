@@ -1491,5 +1491,14 @@
     "core": "The chef ___ the pasta now.",
     "fp": "4b00e14c9743eec13542fa8e0c03e45e5a3318ec02efdaea80b716b4b82bfd0b",
     "core_fp": "b1ad5dd3d0270c63004e62a8e0c6c6380e882a171636f082dd6f15fff808fabe"
+  },
+  {
+    "ts": 1773205279,
+    "kind": "ua_en",
+    "level": "A2",
+    "topic": "Vocabulary",
+    "core": "посуд",
+    "fp": "327e0b10c426538e2583f810ad7425a1cd0ddef8928b4f9b06431e1304ca1c73",
+    "core_fp": "5a679153c18b8a98d23c5d4f84923acf7e750356ed0f4f34867b565995f76a09"
   }
 ]
