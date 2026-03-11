@@ -1500,5 +1500,14 @@
     "core": "посуд",
     "fp": "327e0b10c426538e2583f810ad7425a1cd0ddef8928b4f9b06431e1304ca1c73",
     "core_fp": "5a679153c18b8a98d23c5d4f84923acf7e750356ed0f4f34867b565995f76a09"
+  },
+  {
+    "ts": 1773215857,
+    "kind": "guess_word",
+    "level": "B1",
+    "topic": "Vocabulary",
+    "core": "corkscrew",
+    "fp": "ff698adcedd361239e27cfb5ec59bf815c56c90740729a10f38e93ab058abf41",
+    "core_fp": "0a33afdc68f0502d5dce8cfe1e9306ca33641cef3d3d9eb78b3eb061c7a52e21"
   }
 ]
