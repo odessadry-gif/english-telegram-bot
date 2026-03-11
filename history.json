@@ -1509,5 +1509,14 @@
     "core": "corkscrew",
     "fp": "ff698adcedd361239e27cfb5ec59bf815c56c90740729a10f38e93ab058abf41",
     "core_fp": "0a33afdc68f0502d5dce8cfe1e9306ca33641cef3d3d9eb78b3eb061c7a52e21"
+  },
+  {
+    "ts": 1773223644,
+    "kind": "grammar_gap",
+    "level": "A2",
+    "topic": "Grammar",
+    "core": "Yesterday the chef ___ a new dessert.",
+    "fp": "935b9c1f8412a18c6ef45c1568a56006ba2e6673b0969b27f453379678868848",
+    "core_fp": "a896ddfd6f37b1ebab2154875a91dae1e991a4ce50ee8fd92f8b5dd0ebd6f1f7"
   }
 ]
