@@ -1536,5 +1536,14 @@
     "core": "saucepan",
     "fp": "e00a5e6d96429ea2111343f4c80ad471bf47835ecf4c249eda5f7029d7fbd4fe",
     "core_fp": "1f8bd02fee097c632eaaf588cacca6f3ce59d91c85de86c7cd2346f2f162d024"
+  },
+  {
+    "ts": 1773262907,
+    "kind": "grammar_gap",
+    "level": "A2",
+    "topic": "Grammar",
+    "core": "The waiter ___ our food now.",
+    "fp": "b8cf6e87f89d121f2526957703cf1c819640624da699c1cd336d1465072a0561",
+    "core_fp": "aba0234aa8a3c6b6a2266c8443345abf2f82696a24e24cb5cbcb438166d6de6d"
   }
 ]
