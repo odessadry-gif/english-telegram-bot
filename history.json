@@ -1518,5 +1518,14 @@
     "core": "Yesterday the chef ___ a new dessert.",
     "fp": "935b9c1f8412a18c6ef45c1568a56006ba2e6673b0969b27f453379678868848",
     "core_fp": "a896ddfd6f37b1ebab2154875a91dae1e991a4ce50ee8fd92f8b5dd0ebd6f1f7"
+  },
+  {
+    "ts": 1773239800,
+    "kind": "ua_en",
+    "level": "A2",
+    "topic": "Vocabulary",
+    "core": "рахунок",
+    "fp": "6d854dd39c34e0f84c890fa26aca062e46f2fb1d4306528c5458a56e3c00f95b",
+    "core_fp": "e2f255cba5db90531a5cc3c5c84551b68b7ddb659f3a1b386c095088c90efc01"
   }
 ]
