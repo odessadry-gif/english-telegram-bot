@@ -1527,5 +1527,14 @@
     "core": "рахунок",
     "fp": "6d854dd39c34e0f84c890fa26aca062e46f2fb1d4306528c5458a56e3c00f95b",
     "core_fp": "e2f255cba5db90531a5cc3c5c84551b68b7ddb659f3a1b386c095088c90efc01"
+  },
+  {
+    "ts": 1773252677,
+    "kind": "guess_word",
+    "level": "B1",
+    "topic": "Riddle",
+    "core": "saucepan",
+    "fp": "e00a5e6d96429ea2111343f4c80ad471bf47835ecf4c249eda5f7029d7fbd4fe",
+    "core_fp": "1f8bd02fee097c632eaaf588cacca6f3ce59d91c85de86c7cd2346f2f162d024"
   }
 ]
