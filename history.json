@@ -1545,5 +1545,14 @@
     "core": "The waiter ___ our food now.",
     "fp": "b8cf6e87f89d121f2526957703cf1c819640624da699c1cd336d1465072a0561",
     "core_fp": "aba0234aa8a3c6b6a2266c8443345abf2f82696a24e24cb5cbcb438166d6de6d"
+  },
+  {
+    "ts": 1773269570,
+    "kind": "ua_en",
+    "level": "A2",
+    "topic": "Vocabulary",
+    "core": "замовити",
+    "fp": "15900594817b6927b7dfc46624b3fa0a0de92c4f3901f090ebec2e035b610c5f",
+    "core_fp": "df806c7446fafc564963af4fa928da751a3df77b23a1a51f9ffaade1e166a2f6"
   }
 ]
