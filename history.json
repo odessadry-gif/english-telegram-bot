@@ -1554,5 +1554,14 @@
     "core": "замовити",
     "fp": "15900594817b6927b7dfc46624b3fa0a0de92c4f3901f090ebec2e035b610c5f",
     "core_fp": "df806c7446fafc564963af4fa928da751a3df77b23a1a51f9ffaade1e166a2f6"
+  },
+  {
+    "ts": 1773292007,
+    "kind": "guess_word",
+    "level": "B1",
+    "topic": "Vocabulary",
+    "core": "condiment",
+    "fp": "35f6d12a287fd58fbb64c90c451f5ca64da5abcc533326404f5a7bf8ac1c039e",
+    "core_fp": "6e91e4dad5b7eac8dec756c4f1e6e44ccd517adde1c619ff4ed13a425fcac0de"
   }
 ]
