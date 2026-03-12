@@ -1572,5 +1572,14 @@
     "core": "We ___ a table at the restaurant last night.",
     "fp": "96884e6776d3d0edaab6e43aa0821b6010f72aa1e9b78a8ea2be56fadd009517",
     "core_fp": "805e85403218d49f22cae81392ef987d55450eb34dcb5407694e2a898beefbf6"
+  },
+  {
+    "ts": 1773310063,
+    "kind": "ua_en",
+    "level": "A2",
+    "topic": "Vocabulary",
+    "core": "десерт",
+    "fp": "02cb6a63298378e7523ad6c4192be922e5c4651c848ce4135dbb9f29bef1d209",
+    "core_fp": "582f8f77b8cfced186d677a02a56af453dab9cfe8713ba984e4112d661e395dc"
   }
 ]
