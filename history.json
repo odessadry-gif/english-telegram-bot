@@ -1563,5 +1563,14 @@
     "core": "condiment",
     "fp": "35f6d12a287fd58fbb64c90c451f5ca64da5abcc533326404f5a7bf8ac1c039e",
     "core_fp": "6e91e4dad5b7eac8dec756c4f1e6e44ccd517adde1c619ff4ed13a425fcac0de"
+  },
+  {
+    "ts": 1773302331,
+    "kind": "grammar_gap",
+    "level": "A2",
+    "topic": "Grammar",
+    "core": "We ___ a table at the restaurant last night.",
+    "fp": "96884e6776d3d0edaab6e43aa0821b6010f72aa1e9b78a8ea2be56fadd009517",
+    "core_fp": "805e85403218d49f22cae81392ef987d55450eb34dcb5407694e2a898beefbf6"
   }
 ]
