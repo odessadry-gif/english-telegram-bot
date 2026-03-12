@@ -1599,5 +1599,14 @@
     "core": "The waiter ___ our table now.",
     "fp": "a34af10e97e1a30fe568ff220620749b3a49087da161efca08e60e7f12ec17ea",
     "core_fp": "55899deebdf7ef7096fbbaa66313b0e6029376d91c63b332d4bb90395e197e5c"
+  },
+  {
+    "ts": 1773349517,
+    "kind": "ua_en",
+    "level": "A2",
+    "topic": "Vocabulary",
+    "core": "страва",
+    "fp": "75b72c3fd0fb88e55a8501c6e73337c7b53efc844c938148fa4e4d32e6f84198",
+    "core_fp": "5ba4251b559f99b42f9cfe39bd626ffd3219d732b1c87eee02ce7d8b95de1b25"
   }
 ]
