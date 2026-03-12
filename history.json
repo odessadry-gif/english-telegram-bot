@@ -1581,5 +1581,14 @@
     "core": "десерт",
     "fp": "02cb6a63298378e7523ad6c4192be922e5c4651c848ce4135dbb9f29bef1d209",
     "core_fp": "582f8f77b8cfced186d677a02a56af453dab9cfe8713ba984e4112d661e395dc"
+  },
+  {
+    "ts": 1773326217,
+    "kind": "guess_word",
+    "level": "A2",
+    "topic": "Vocabulary",
+    "core": "apron",
+    "fp": "7db0f15420712b34442785fa17084ac5508ab789ab1e4d9c8ab9bf5e48e22e2f",
+    "core_fp": "2ae89bff22b1000f65ce415b0bfa8641a4f5589fcb0aa5bd142d6330da4e42ff"
   }
 ]
