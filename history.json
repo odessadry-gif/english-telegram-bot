@@ -1608,5 +1608,14 @@
     "core": "страва",
     "fp": "75b72c3fd0fb88e55a8501c6e73337c7b53efc844c938148fa4e4d32e6f84198",
     "core_fp": "5ba4251b559f99b42f9cfe39bd626ffd3219d732b1c87eee02ce7d8b95de1b25"
+  },
+  {
+    "ts": 1773356241,
+    "kind": "guess_word",
+    "level": "B1",
+    "topic": "Riddle",
+    "core": "garnish",
+    "fp": "db24dc4eb26c016ac16556426d85520dd736c887cd150d2f085f1cd99d67f592",
+    "core_fp": "677cf7c403f0ff2b0fb9e5f47c6b10b7537e1be67260bea02d4f14cb328129ea"
   }
 ]
