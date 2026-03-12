@@ -1590,5 +1590,14 @@
     "core": "apron",
     "fp": "7db0f15420712b34442785fa17084ac5508ab789ab1e4d9c8ab9bf5e48e22e2f",
     "core_fp": "2ae89bff22b1000f65ce415b0bfa8641a4f5589fcb0aa5bd142d6330da4e42ff"
+  },
+  {
+    "ts": 1773338972,
+    "kind": "grammar_gap",
+    "level": "A2",
+    "topic": "Grammar",
+    "core": "The waiter ___ our table now.",
+    "fp": "a34af10e97e1a30fe568ff220620749b3a49087da161efca08e60e7f12ec17ea",
+    "core_fp": "55899deebdf7ef7096fbbaa66313b0e6029376d91c63b332d4bb90395e197e5c"
   }
 ]
