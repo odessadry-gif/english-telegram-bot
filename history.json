@@ -1635,5 +1635,14 @@
     "core": "чек",
     "fp": "da2b17571e304e2eb62002d382351403a21b2c57dd728d5d40e8c2a2704c49dd",
     "core_fp": "a0c6a390b4ef448ab6725ed9b9274653257808cc2840bb5eaa828ff03b079f49"
+  },
+  {
+    "ts": 1773395955,
+    "kind": "guess_word",
+    "level": "B1",
+    "topic": "Vocabulary",
+    "core": "utensil",
+    "fp": "51f3ef97894c697f19736a0dccb8ecbdda31de8dc297b561ca899749745c82b2",
+    "core_fp": "d0ed6169d551ba0addb5097e397de4ff688a72260f9120f4b74eaf5b2aecddd6"
   }
 ]
