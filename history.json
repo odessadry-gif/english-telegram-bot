@@ -1644,5 +1644,14 @@
     "core": "utensil",
     "fp": "51f3ef97894c697f19736a0dccb8ecbdda31de8dc297b561ca899749745c82b2",
     "core_fp": "d0ed6169d551ba0addb5097e397de4ff688a72260f9120f4b74eaf5b2aecddd6"
+  },
+  {
+    "ts": 1773402355,
+    "kind": "grammar_gap",
+    "level": "A2",
+    "topic": "Grammar",
+    "core": "The waiter ___ our drinks now.",
+    "fp": "5386c3eb09c0449b095b79e8d985e5eeb9d1ee745fb4674051e38bd76731bf8f",
+    "core_fp": "6758ecad570c46d868d2c9463cfaacd5546ed5550dc37e19120c61331794179a"
   }
 ]
