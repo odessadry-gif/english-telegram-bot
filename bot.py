@@ -54,7 +54,7 @@ MAX_GEN_TRIES_DEFAULT = 12
 # Больше попыток для сложных случаев
 MAX_GEN_TRIES_BY_KIND = {
     "guess_word": 40,
-    "grammar_gap": 18,
+    "grammar_gap": 24,
     "ua_en": 18,
 }
 
@@ -72,6 +72,65 @@ GUESS_WORD_AVOID_LAST_N = 80
 client = OpenAI(api_key=OPENAI_API_KEY)
 
 ARTICLES_RE = re.compile(r"^(a|an|the)\s+", re.IGNORECASE)
+
+# ========= GRAMMAR SAFETY =========
+GRAMMAR_REQUIRED_MARKERS = [
+    "now",
+    "right now",
+    "at the moment",
+    "today",
+    "tonight",
+    "every day",
+    "every morning",
+    "every evening",
+    "usually",
+    "always",
+    "often",
+    "sometimes",
+    "on weekdays",
+    "after work",
+    "before school",
+    "yesterday",
+    "last night",
+    "last week",
+    "last month",
+    "two days ago",
+    "an hour ago",
+    "tomorrow",
+    "soon",
+    "in a minute",
+    "in an hour",
+    "next week",
+    "this evening",
+]
+
+AMBIGUOUS_GRAMMAR_PATTERNS = [
+    r"\b___\b",
+]
+
+BANNED_GRAMMAR_CORES = [
+    "the waiter ___ the bill.",
+    "she ___ her passport.",
+    "he ___ to school.",
+    "they ___ dinner.",
+    "i ___ coffee.",
+]
+
+PRESENT_SIMPLE_MARKERS = [
+    "every day", "every morning", "every evening", "usually", "always", "often", "sometimes"
+]
+PRESENT_CONTINUOUS_MARKERS = [
+    "now", "right now", "at the moment", "today", "this evening", "tonight"
+]
+PAST_SIMPLE_MARKERS = [
+    "yesterday", "last night", "last week", "last month", "ago"
+]
+FUTURE_SIMPLE_MARKERS = [
+    "tomorrow", "soon", "in a minute", "in an hour", "next week"
+]
+PAST_CONTINUOUS_MARKERS = [
+    "at 5 pm yesterday", "when", "while"
+]
 
 
 # ========= HELPERS =========
@@ -234,6 +293,143 @@ def tries_for_kind(kind: str) -> int:
     return int(MAX_GEN_TRIES_BY_KIND.get(kind, MAX_GEN_TRIES_DEFAULT))
 
 
+def contains_any_marker(text: str, markers: list[str]) -> bool:
+    t = _norm_spaces((text or "").lower())
+    return any(marker in t for marker in markers)
+
+
+def count_tense_marker_groups(text: str) -> int:
+    t = _norm_spaces((text or "").lower())
+
+    groups = 0
+    if contains_any_marker(t, PRESENT_SIMPLE_MARKERS):
+        groups += 1
+    if contains_any_marker(t, PRESENT_CONTINUOUS_MARKERS):
+        groups += 1
+    if contains_any_marker(t, PAST_SIMPLE_MARKERS):
+        groups += 1
+    if contains_any_marker(t, FUTURE_SIMPLE_MARKERS):
+        groups += 1
+    if contains_any_marker(t, PAST_CONTINUOUS_MARKERS):
+        groups += 1
+
+    return groups
+
+
+def validate_grammar_gap(core: str, question: str, options: list[str], correct: int) -> None:
+    core_clean = _norm_spaces(core)
+    q_clean = _norm_spaces(question)
+
+    if core_clean.count("___") != 1:
+        raise ValueError("grammar_gap core must contain exactly one blank ___")
+
+    if not contains_any_marker(core_clean, GRAMMAR_REQUIRED_MARKERS):
+        raise ValueError("grammar_gap rejected: missing clear time/context marker")
+
+    if count_tense_marker_groups(core_clean) > 1:
+        raise ValueError("grammar_gap rejected: mixed tense markers create ambiguity")
+
+    for banned in BANNED_GRAMMAR_CORES:
+        if _norm_spaces(banned) == core_clean.lower():
+            raise ValueError("grammar_gap rejected: banned ambiguous core")
+
+    if len(options) != 4:
+        raise ValueError("grammar_gap rejected: must have 4 options")
+
+    if correct not in (0, 1, 2, 3):
+        raise ValueError("grammar_gap rejected: correct must be 0..3")
+
+    if not q_clean.startswith("💬 Fill the gap:"):
+        raise ValueError("grammar_gap rejected: invalid question format")
+
+    low_options = [_norm_spaces(x).lower() for x in options]
+    if len(set(low_options)) != 4:
+        raise ValueError("grammar_gap rejected: duplicate options")
+
+    correct_option = low_options[correct]
+
+    # Базовый эвристический контроль против двусмысленности
+    if contains_any_marker(core_clean, PRESENT_CONTINUOUS_MARKERS):
+        if correct_option not in {
+            "am", "is", "are",
+            "am going", "is going", "are going",
+            "am doing", "is doing", "are doing",
+            "am bringing", "is bringing", "are bringing",
+            "am cleaning", "is cleaning", "are cleaning",
+            "am cooking", "is cooking", "are cooking",
+            "am serving", "is serving", "are serving",
+            "am making", "is making", "are making",
+            "am eating", "is eating", "are eating",
+            "am drinking", "is drinking", "are drinking",
+            "am waiting", "is waiting", "are waiting",
+            "am looking", "is looking", "are looking",
+            "am preparing", "is preparing", "are preparing",
+            "am paying", "is paying", "are paying",
+            "am ordering", "is ordering", "are ordering",
+        } and not correct_option.startswith(("am ", "is ", "are ")):
+            raise ValueError("grammar_gap rejected: present continuous marker but correct answer is not continuous")
+
+    if contains_any_marker(core_clean, PRESENT_SIMPLE_MARKERS):
+        if correct_option.startswith(("am ", "is ", "are ")) or correct_option.startswith("will "):
+            raise ValueError("grammar_gap rejected: present simple marker but wrong tense selected")
+
+    if contains_any_marker(core_clean, FUTURE_SIMPLE_MARKERS):
+        if not correct_option.startswith("will "):
+            raise ValueError("grammar_gap rejected: future marker but correct answer is not future simple")
+
+    if contains_any_marker(core_clean, PAST_SIMPLE_MARKERS):
+        if correct_option.startswith(("am ", "is ", "are ")) or correct_option.startswith("will "):
+            raise ValueError("grammar_gap rejected: past marker but wrong tense selected")
+
+
+def validate_ua_en(core: str, question: str, options: list[str], correct: int) -> None:
+    if len(options) != 4:
+        raise ValueError("ua_en must have exactly 4 options")
+    if correct != 0:
+        raise ValueError("ua_en correct must be 0 before shuffle")
+    q = _norm_spaces(question)
+    if not q.startswith("💬 🇺🇦 → 🇬🇧"):
+        raise ValueError("ua_en invalid question format")
+
+
+def validate_guess_word(core: str, question: str, options: list[str], correct: int) -> None:
+    if len(options) != 4:
+        raise ValueError("guess_word must have exactly 4 options")
+    if correct not in (0, 1, 2, 3):
+        raise ValueError("guess_word correct must be 0..3")
+    q = _norm_spaces(question)
+    if "what is it?" not in q.lower():
+        raise ValueError("guess_word must end with 'What is it?'")
+    if len(_norm_spaces(core).split()) != 1:
+        raise ValueError("guess_word core must be exactly one word")
+
+
+def validate_generated_quiz(kind: str, data: dict) -> tuple[str, str, list[str], int, str]:
+    question = str(data["question"]).strip()
+    options = ensure_4_options(data.get("options", []))
+    if len(options) != 4:
+        raise ValueError("options must be a list of 4 unique strings")
+
+    correct = int(data.get("correct", 0))
+    if correct not in (0, 1, 2, 3):
+        raise ValueError("correct must be 0..3")
+
+    explanation = str(data.get("explanation_uk", "")).strip()
+    if not explanation:
+        explanation = "Перевір форму дієслова та підказку в реченні."
+
+    core = str(data.get("core", "")).strip() or question
+
+    if kind == "grammar_gap":
+        validate_grammar_gap(core, question, options, correct)
+    elif kind == "ua_en":
+        validate_ua_en(core, question, options, correct)
+    elif kind == "guess_word":
+        validate_guess_word(core, question, options, correct)
+
+    return question, core, options, correct, explanation
+
+
 # ========= TELEGRAM =========
 def tg_api(method: str, payload: dict):
     url = f"https://api.telegram.org/bot{TOKEN}/{method}"
@@ -292,7 +488,6 @@ def prompt_for(kind: str, guess_word_avoid: list[str]) -> str:
     if kind == "guess_word" and guess_word_avoid:
         avoid_line = "Avoid these words (do NOT use them as the answer): " + ", ".join(guess_word_avoid) + "\n"
 
-    # theme block
     if THEME in ("food_restaurants", "food", "restaurants", "food_and_restaurants"):
         theme_block = """
 THEME (HARD RULE): Food & Restaurants only.
@@ -304,10 +499,47 @@ Avoid: politics, medicine, religion, explicit content, violence, war.
     else:
         theme_block = ""
 
+    grammar_safety = """
+GRAMMAR SAFETY RULES (VERY IMPORTANT):
+- Create grammar questions with EXACTLY ONE clearly correct answer.
+- Never create ambiguous grammar questions.
+- Every grammar sentence MUST include a clear context/time marker when needed.
+- Use explicit markers such as: now, right now, at the moment, every day, usually, always, often, yesterday, last week, tomorrow, in a minute, soon.
+- Do NOT write grammar questions like: "The waiter ___ the bill." without context.
+- Reject any sentence where 2 or more options could be correct depending on interpretation.
+- Before finalizing, silently check that each wrong option is definitely wrong.
+- Keep grammar questions simple, short, everyday, A2/B1.
+- Use only one tense clue per sentence.
+- Never mix markers that point to different tenses.
+""".strip()
+
+    grammar_examples = """
+BAD EXAMPLE:
+core: The waiter ___ the bill.
+Why bad: brings / is bringing / will bring can all be possible depending on context.
+
+GOOD EXAMPLE:
+core: The waiter ___ the bill now.
+options: brings / is bringing / will bring / brought
+correct: is bringing
+
+GOOD EXAMPLE:
+core: The waiter ___ the bill every evening.
+options: brings / is bringing / will bring / brought
+correct: brings
+
+GOOD EXAMPLE:
+core: The waiter ___ the bill in a minute.
+options: brings / is bringing / will bring / brought
+correct: will bring
+""".strip()
+
     return f"""
 Create ONE Telegram quiz for English learners (A2/B1). Return STRICT JSON ONLY (no markdown, no extra text).
 
 {theme_block}
+{grammar_safety}
+{grammar_examples}
 {avoid_line}JSON schema:
 {{
   "level": "A2" or "B1",
@@ -329,6 +561,7 @@ Format rules:
 - DO NOT use: any Perfect tenses, modals (should/might/could), conditionals, comparatives.
 - Keep sentences short and clear (A2/B1), everyday situations.
 - MUST follow the theme above.
+- MUST contain a clear time/context marker.
 - question format MUST be exactly:
   💬
   Fill the gap:
@@ -365,7 +598,7 @@ Format rules:
 Global rules:
 - Exactly 4 options
 - Options must be UNIQUE
-- Keep question short + clean (premium minimal)
+- Keep question short + clean
 - explanation_uk: short and useful Ukrainian, no emojis, no "Answer:" prefix
 Return STRICT JSON ONLY.
 """.strip()
@@ -387,12 +620,10 @@ def main():
     if not OPENAI_API_KEY:
         raise RuntimeError("OPENAI_API_KEY missing (set GitHub Secret OPENAI_API_KEY).")
 
-    # режим поста с кнопкой (без генерации квиза)
     if MODE == "postgame":
         send_game_post()
         return
 
-    # ====== ниже всё как у тебя работало ======
     history = load_history()
     seen_fp = {h.get("fp") for h in history if h.get("fp")}
 
@@ -444,21 +675,7 @@ def main():
             try:
                 data = generate_one(kind, guess_word_avoid)
 
-                question = str(data["question"]).strip()
-
-                options = ensure_4_options(data.get("options", []))
-                if len(options) != 4:
-                    raise ValueError("options must be a list of 4 unique strings")
-
-                correct = int(data.get("correct", 0))
-                if correct not in (0, 1, 2, 3):
-                    raise ValueError("correct must be 0..3")
-
-                explanation = str(data.get("explanation_uk", "")).strip()
-                if not explanation:
-                    explanation = "Перевір підмет і час у реченні."
-
-                core = str(data.get("core", "")).strip() or question
+                question, core, options, correct, explanation = validate_generated_quiz(kind, data)
 
                 cfp = core_fp(kind, core)
                 if cfp in seen_core:
@@ -494,7 +711,6 @@ def main():
                         filtered_out += 1
                         continue
 
-                # shuffle
                 options, correct = shuffle_options_keep_correct(options, correct)
 
                 fp = _fp(kind, core, options)
