@@ -1698,5 +1698,14 @@
     "core": "starter",
     "fp": "955cf7ebe2fc862762fe178dee5ec09af0107284ee7bb4fe293e44362c136877",
     "core_fp": "6d031038bc4f6cd02251840a41801bda6f4afc019cc3789a971fb0e6140f4a73"
+  },
+  {
+    "ts": 1773442636,
+    "kind": "grammar_gap",
+    "level": "A2",
+    "topic": "Grammar",
+    "core": "The waiter ___ our order now.",
+    "fp": "b455f6bb2fcecbdbfdc9f44ad405af09929d56595800671b3c18dbadc7620384",
+    "core_fp": "a211067987b6bc42db847fcc26a8696f9a7e920da1ac5857a0971347ef4695d0"
   }
 ]
