@@ -1671,5 +1671,14 @@
     "core": "reservation",
     "fp": "8dd715ecba6271a75236a1f74b714ddf27d91fc83f2cc4db836a984f2df42675",
     "core_fp": "c4633f4d2e7f0f7bff579579f466ea562112db7db0c662f53a98cbf9a26030f1"
+  },
+  {
+    "ts": 1773424408,
+    "kind": "grammar_gap",
+    "level": "A2",
+    "topic": "Grammar",
+    "core": "The chef ___ the soup now.",
+    "fp": "381ecb7eb677103c61ace4e85e76421c0d3047089641c863e0316cc07c666634",
+    "core_fp": "c9114680a66081f805080657b2f3c3e6627d6d1e28f9637c22c9b6ed84731277"
   }
 ]
