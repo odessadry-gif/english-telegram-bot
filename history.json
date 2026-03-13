@@ -1662,5 +1662,14 @@
     "core": "рахунок, будь ласка",
     "fp": "c8b5daa6bc0e1d3c3af639c03a29e64c0dbc262b1a0788271b005ef2810f8a0e",
     "core_fp": "8a56d54386a51b868ffa36bc62ac58d3d53e4b2a8c01985e040b699ed8288214"
+  },
+  {
+    "ts": 1773412086,
+    "kind": "guess_word",
+    "level": "B1",
+    "topic": "Riddle",
+    "core": "reservation",
+    "fp": "8dd715ecba6271a75236a1f74b714ddf27d91fc83f2cc4db836a984f2df42675",
+    "core_fp": "c4633f4d2e7f0f7bff579579f466ea562112db7db0c662f53a98cbf9a26030f1"
   }
 ]
