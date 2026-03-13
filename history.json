@@ -1689,5 +1689,14 @@
     "core": "замовити столик",
     "fp": "c4098101d896b6b7eafb4e062275813f80625538d21126de8dba94ef56154bac",
     "core_fp": "6af393842ed9d261445d81ec16c866af8d65aaecd7dd9e655aa318ad9fc7e70e"
+  },
+  {
+    "ts": 1773435963,
+    "kind": "guess_word",
+    "level": "B1",
+    "topic": "Riddle",
+    "core": "starter",
+    "fp": "955cf7ebe2fc862762fe178dee5ec09af0107284ee7bb4fe293e44362c136877",
+    "core_fp": "6d031038bc4f6cd02251840a41801bda6f4afc019cc3789a971fb0e6140f4a73"
   }
 ]
