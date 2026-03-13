@@ -1653,5 +1653,14 @@
     "core": "The waiter ___ our drinks now.",
     "fp": "5386c3eb09c0449b095b79e8d985e5eeb9d1ee745fb4674051e38bd76731bf8f",
     "core_fp": "6758ecad570c46d868d2c9463cfaacd5546ed5550dc37e19120c61331794179a"
+  },
+  {
+    "ts": 1773411512,
+    "kind": "ua_en",
+    "level": "A2",
+    "topic": "Vocabulary",
+    "core": "рахунок, будь ласка",
+    "fp": "c8b5daa6bc0e1d3c3af639c03a29e64c0dbc262b1a0788271b005ef2810f8a0e",
+    "core_fp": "8a56d54386a51b868ffa36bc62ac58d3d53e4b2a8c01985e040b699ed8288214"
   }
 ]
