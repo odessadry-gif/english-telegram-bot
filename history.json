@@ -1680,5 +1680,14 @@
     "core": "The chef ___ the soup now.",
     "fp": "381ecb7eb677103c61ace4e85e76421c0d3047089641c863e0316cc07c666634",
     "core_fp": "c9114680a66081f805080657b2f3c3e6627d6d1e28f9637c22c9b6ed84731277"
+  },
+  {
+    "ts": 1773431358,
+    "kind": "ua_en",
+    "level": "A2",
+    "topic": "Vocabulary",
+    "core": "замовити столик",
+    "fp": "c4098101d896b6b7eafb4e062275813f80625538d21126de8dba94ef56154bac",
+    "core_fp": "6af393842ed9d261445d81ec16c866af8d65aaecd7dd9e655aa318ad9fc7e70e"
   }
 ]
