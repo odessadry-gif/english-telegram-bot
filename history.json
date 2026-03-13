@@ -1617,5 +1617,14 @@
     "core": "garnish",
     "fp": "db24dc4eb26c016ac16556426d85520dd736c887cd150d2f085f1cd99d67f592",
     "core_fp": "677cf7c403f0ff2b0fb9e5f47c6b10b7537e1be67260bea02d4f14cb328129ea"
+  },
+  {
+    "ts": 1773378273,
+    "kind": "grammar_gap",
+    "level": "A2",
+    "topic": "Grammar",
+    "core": "The waiter ___ the bill.",
+    "fp": "a392c275e532a45aa14bc65d1956c7eb2716ae3f59a7cc4645ac60d99e6c88e7",
+    "core_fp": "94ec71c4faacec5e402295d47aea3fd64bb8fb057c016056d68f152642934969"
   }
 ]
