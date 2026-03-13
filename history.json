@@ -1626,5 +1626,14 @@
     "core": "The waiter ___ the bill.",
     "fp": "a392c275e532a45aa14bc65d1956c7eb2716ae3f59a7cc4645ac60d99e6c88e7",
     "core_fp": "94ec71c4faacec5e402295d47aea3fd64bb8fb057c016056d68f152642934969"
+  },
+  {
+    "ts": 1773388746,
+    "kind": "ua_en",
+    "level": "A2",
+    "topic": "Vocabulary",
+    "core": "чек",
+    "fp": "da2b17571e304e2eb62002d382351403a21b2c57dd728d5d40e8c2a2704c49dd",
+    "core_fp": "a0c6a390b4ef448ab6725ed9b9274653257808cc2840bb5eaa828ff03b079f49"
   }
 ]
