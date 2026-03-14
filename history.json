@@ -1770,5 +1770,14 @@
     "core": "чайник",
     "fp": "452d30318a045ba22c3be0c847eb95a8dcb5fc4db3c89acc482203333118dc05",
     "core_fp": "3e8fb0d2d5661ec54b44d8c32fc60de9a060ae954c4169f18b09713be599558d"
+  },
+  {
+    "ts": 1773515832,
+    "kind": "guess_word",
+    "level": "B1",
+    "topic": "Riddle",
+    "core": "barista",
+    "fp": "124953ad785753cfe4995715cb26e1146beb7e949e834af17a21a4eb9650b002",
+    "core_fp": "b6ed31eb6d591dac43261204499d85cf675454c8317776c3f714c7e5e562e774"
   }
 ]
