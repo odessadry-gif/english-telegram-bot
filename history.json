@@ -1725,5 +1725,14 @@
     "core": "The chef ___ the soup yesterday.",
     "fp": "5dde71d3edf26fbd1fa297b5dcb191b70b642147a223c710231c3495c90688ad",
     "core_fp": "9047bb4cc0a0037303d83c46fe51fe5ff3298ae9f72f0138e262c738b9383f48"
+  },
+  {
+    "ts": 1773479371,
+    "kind": "guess_word",
+    "level": "B1",
+    "topic": "Riddle",
+    "core": "takeaway",
+    "fp": "41f4fa7a30bc28280a5f96116c53e9b7a88f028acab2dae2cbd684934126229a",
+    "core_fp": "7a29565f2668b61f3f5f6e3f61a6fbc0df8d2a8eb3b677802097ef008f04b4ef"
   }
 ]
