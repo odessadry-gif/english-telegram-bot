@@ -1761,5 +1761,14 @@
     "core": "Yesterday the waiter ___ the bill.",
     "fp": "55b1276efb4739984976fa07dee224cc7fc1de054360ed9937833c567969e27f",
     "core_fp": "ab0aff47a6d2c1faba90d19a95f933936b6517d0b922ef3017db79f577d96707"
+  },
+  {
+    "ts": 1773507851,
+    "kind": "ua_en",
+    "level": "A2",
+    "topic": "Vocabulary",
+    "core": "чайник",
+    "fp": "452d30318a045ba22c3be0c847eb95a8dcb5fc4db3c89acc482203333118dc05",
+    "core_fp": "3e8fb0d2d5661ec54b44d8c32fc60de9a060ae954c4169f18b09713be599558d"
   }
 ]
