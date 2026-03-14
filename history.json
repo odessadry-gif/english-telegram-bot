@@ -1779,5 +1779,14 @@
     "core": "barista",
     "fp": "124953ad785753cfe4995715cb26e1146beb7e949e834af17a21a4eb9650b002",
     "core_fp": "b6ed31eb6d591dac43261204499d85cf675454c8317776c3f714c7e5e562e774"
+  },
+  {
+    "ts": 1773521741,
+    "kind": "grammar_gap",
+    "level": "A2",
+    "topic": "Grammar",
+    "core": "The chef ___ breakfast now.",
+    "fp": "72b8007ff84d758e65b2b62df9a8a84477e6fcf89c84af20d6473c205ba9d4ed",
+    "core_fp": "9f105564b631b6b3f507eab56fb9445229e49f20a9ad8bcc895741b0149fa678"
   }
 ]
