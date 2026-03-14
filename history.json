@@ -1734,5 +1734,14 @@
     "core": "takeaway",
     "fp": "41f4fa7a30bc28280a5f96116c53e9b7a88f028acab2dae2cbd684934126229a",
     "core_fp": "7a29565f2668b61f3f5f6e3f61a6fbc0df8d2a8eb3b677802097ef008f04b4ef"
+  },
+  {
+    "ts": 1773485934,
+    "kind": "grammar_gap",
+    "level": "A2",
+    "topic": "Grammar",
+    "core": "The waiter ___ the menu now.",
+    "fp": "857c64339b507fecfe2eb63def32e532c37d203269bb7957d385331d0abf8eb2",
+    "core_fp": "217801db1dfd6f410a92da5d2d2cc2d9395f8754f92fd2c0f50270e782fd3fd3"
   }
 ]
