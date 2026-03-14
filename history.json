@@ -1716,5 +1716,14 @@
     "core": "tray",
     "fp": "ca974090d7a8ded094f7c919b6817886164b2de4326407820427cf65965d3cfa",
     "core_fp": "e2b2ec958a8d3d2835c065c90bd103952550584e6006a7ec93786093a6517323"
+  },
+  {
+    "ts": 1773474655,
+    "kind": "grammar_gap",
+    "level": "A2",
+    "topic": "Grammar",
+    "core": "The chef ___ the soup yesterday.",
+    "fp": "5dde71d3edf26fbd1fa297b5dcb191b70b642147a223c710231c3495c90688ad",
+    "core_fp": "9047bb4cc0a0037303d83c46fe51fe5ff3298ae9f72f0138e262c738b9383f48"
   }
 ]
