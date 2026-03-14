@@ -1752,5 +1752,14 @@
     "core": "cutlery",
     "fp": "472509ade394d079be47b28e31b057691e98c2f330d95e949110b1f6a7bbfb59",
     "core_fp": "aaf94de08fe88de8c68d8ad56f160a4a60a22961bfefc4714ba3792f4012506c"
+  },
+  {
+    "ts": 1773500306,
+    "kind": "grammar_gap",
+    "level": "A2",
+    "topic": "Grammar",
+    "core": "Yesterday the waiter ___ the bill.",
+    "fp": "55b1276efb4739984976fa07dee224cc7fc1de054360ed9937833c567969e27f",
+    "core_fp": "ab0aff47a6d2c1faba90d19a95f933936b6517d0b922ef3017db79f577d96707"
   }
 ]
