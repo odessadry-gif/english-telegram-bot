@@ -1788,5 +1788,14 @@
     "core": "The chef ___ breakfast now.",
     "fp": "72b8007ff84d758e65b2b62df9a8a84477e6fcf89c84af20d6473c205ba9d4ed",
     "core_fp": "9f105564b631b6b3f507eab56fb9445229e49f20a9ad8bcc895741b0149fa678"
+  },
+  {
+    "ts": 1773529264,
+    "kind": "guess_word",
+    "level": "A2",
+    "topic": "Riddle",
+    "core": "stool",
+    "fp": "93ddd9486a60c50b770d232b8df6904c8b815dec2ff07f9646d5e114e97d4929",
+    "core_fp": "1b58c8f497b05503b3b64b6841c001b110f839be1b6a464bc78d4fdd80c88e1d"
   }
 ]
