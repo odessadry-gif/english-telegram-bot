@@ -1824,5 +1824,14 @@
     "core": "The waiter ___ our food right now.",
     "fp": "8b14fda75ddf07c4ccd235abb9e2dc1bf8a654a699fa500d2d802776c9483787",
     "core_fp": "c0b79caa55e88ae262970e4bb9024ca8a2cf46a42a87a48974bf13d5e5c66776"
+  },
+  {
+    "ts": 1773572693,
+    "kind": "guess_word",
+    "level": "A2",
+    "topic": "Riddle",
+    "core": "pantry",
+    "fp": "eda059276fdcfca6810cc95046cb54cfc30e1b8b25eb395ad7aaab0b10742208",
+    "core_fp": "254f4b58097bbd137a7e39fa28ee96e91c27bd4906a8e390fa1f53be3f574f1f"
   }
 ]
