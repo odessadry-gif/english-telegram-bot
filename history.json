@@ -1806,5 +1806,14 @@
     "core": "The waiter ___ the bill now.",
     "fp": "2589eb6b6acdb50fd46af5142c891d396cf9932ecb907fd375ffd5bb371a2c59",
     "core_fp": "322fa578fd6c75a18f79850136f0394810d1a8db37440ea55a203de1483bc1f7"
+  },
+  {
+    "ts": 1773561606,
+    "kind": "guess_word",
+    "level": "A2",
+    "topic": "Riddle",
+    "core": "booth",
+    "fp": "504022f40415b0d5edcfa7bae4ac1bec55c205165d29aba0e4a99072aa350c95",
+    "core_fp": "683575a12a91a63155751c3426c153f5eddd639cc2457740f4f0b270cfae911a"
   }
 ]
