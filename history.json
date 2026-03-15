@@ -1869,5 +1869,14 @@
     "core": "чайна ложка",
     "fp": "9479871c70f835b7695ccc0cce67046d3b8dd5abe1b76f3b75b8882eaa534be3",
     "core_fp": "0cbc0ef4568994edd128d52019992ad9aeb05f216a96cb1c4a0f31fdbf325e78"
+  },
+  {
+    "ts": 1773608316,
+    "kind": "guess_word",
+    "level": "B1",
+    "topic": "Riddle",
+    "core": "curry",
+    "fp": "dcc79a9ab076d6b039c1ca8294a34bf03b1e287f228f86afef5a17e633d68243",
+    "core_fp": "7b437ecf56eecc47c722f312f505331fb7ef104db3769d73c3bd1e114cc0d74f"
   }
 ]
