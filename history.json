@@ -1842,5 +1842,14 @@
     "core": "The waiter ___ the menu to us now.",
     "fp": "74245104ee606fe4b0df0f7525c7188302913cf6ca05ea07c40f09eb827ff939",
     "core_fp": "f826fafe39bb2c04100235ede3b3cf6b71eb31642179c4ec1c450dafcb459cc7"
+  },
+  {
+    "ts": 1773587139,
+    "kind": "guess_word",
+    "level": "B1",
+    "topic": "Riddle",
+    "core": "ladle",
+    "fp": "3f458ee14f30692e8f46ab003fd5ca56f142a5101b357a9de0ef5d9d63df7a26",
+    "core_fp": "3b265d88e6e33122356994a574895c2c5681e2bd88023942daca58cd6594c93e"
   }
 ]
