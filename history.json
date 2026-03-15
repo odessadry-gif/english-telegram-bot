@@ -1833,5 +1833,14 @@
     "core": "pantry",
     "fp": "eda059276fdcfca6810cc95046cb54cfc30e1b8b25eb395ad7aaab0b10742208",
     "core_fp": "254f4b58097bbd137a7e39fa28ee96e91c27bd4906a8e390fa1f53be3f574f1f"
+  },
+  {
+    "ts": 1773583158,
+    "kind": "grammar_gap",
+    "level": "A2",
+    "topic": "Grammar",
+    "core": "The waiter ___ the menu to us now.",
+    "fp": "74245104ee606fe4b0df0f7525c7188302913cf6ca05ea07c40f09eb827ff939",
+    "core_fp": "f826fafe39bb2c04100235ede3b3cf6b71eb31642179c4ec1c450dafcb459cc7"
   }
 ]
