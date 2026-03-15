@@ -1815,5 +1815,14 @@
     "core": "booth",
     "fp": "504022f40415b0d5edcfa7bae4ac1bec55c205165d29aba0e4a99072aa350c95",
     "core_fp": "683575a12a91a63155751c3426c153f5eddd639cc2457740f4f0b270cfae911a"
+  },
+  {
+    "ts": 1773565586,
+    "kind": "grammar_gap",
+    "level": "A2",
+    "topic": "Grammar",
+    "core": "The waiter ___ our food right now.",
+    "fp": "8b14fda75ddf07c4ccd235abb9e2dc1bf8a654a699fa500d2d802776c9483787",
+    "core_fp": "c0b79caa55e88ae262970e4bb9024ca8a2cf46a42a87a48974bf13d5e5c66776"
   }
 ]
