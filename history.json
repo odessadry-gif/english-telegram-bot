@@ -1797,5 +1797,14 @@
     "core": "stool",
     "fp": "93ddd9486a60c50b770d232b8df6904c8b815dec2ff07f9646d5e114e97d4929",
     "core_fp": "1b58c8f497b05503b3b64b6841c001b110f839be1b6a464bc78d4fdd80c88e1d"
+  },
+  {
+    "ts": 1773552423,
+    "kind": "grammar_gap",
+    "level": "A2",
+    "topic": "Grammar",
+    "core": "The waiter ___ the bill now.",
+    "fp": "2589eb6b6acdb50fd46af5142c891d396cf9932ecb907fd375ffd5bb371a2c59",
+    "core_fp": "322fa578fd6c75a18f79850136f0394810d1a8db37440ea55a203de1483bc1f7"
   }
 ]
