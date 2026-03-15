@@ -1851,5 +1851,14 @@
     "core": "ladle",
     "fp": "3f458ee14f30692e8f46ab003fd5ca56f142a5101b357a9de0ef5d9d63df7a26",
     "core_fp": "3b265d88e6e33122356994a574895c2c5681e2bd88023942daca58cd6594c93e"
+  },
+  {
+    "ts": 1773594057,
+    "kind": "grammar_gap",
+    "level": "A2",
+    "topic": "Grammar",
+    "core": "The waiter ___ the table right now.",
+    "fp": "af2d1577d229fb58b7d3a3a1625e61d7dcb6d72f3fe96c6d54f59f8d471d1d68",
+    "core_fp": "d8de69fc4501feb2ca954288dfe9dfc35d34eca135f4ed14dfbb093612b43fc1"
   }
 ]
