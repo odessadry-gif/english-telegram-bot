@@ -1878,5 +1878,14 @@
     "core": "curry",
     "fp": "dcc79a9ab076d6b039c1ca8294a34bf03b1e287f228f86afef5a17e633d68243",
     "core_fp": "7b437ecf56eecc47c722f312f505331fb7ef104db3769d73c3bd1e114cc0d74f"
+  },
+  {
+    "ts": 1773615555,
+    "kind": "grammar_gap",
+    "level": "A2",
+    "topic": "Grammar",
+    "core": "The chef ___ the soup right now.",
+    "fp": "8d5b49140a3efd77fb55359100d5f9301ee64cea436fb62dbdc8dd541ea1634f",
+    "core_fp": "1cc83f1ad728bb4bbee76dd706e957f45731f33e9a76bcc3bf1b0babe80213d7"
   }
 ]
