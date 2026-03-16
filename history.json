@@ -1905,5 +1905,14 @@
     "core": "appetizer",
     "fp": "8f873318892c7a906a63987a24652fe8333ce10baac7cc7a86fb7b6e23bd7871",
     "core_fp": "3e52b5b7d0efd7e4a97788d138d2af4e01602483f281ec85e31adb0434511389"
+  },
+  {
+    "ts": 1773662604,
+    "kind": "grammar_gap",
+    "level": "A2",
+    "topic": "Grammar",
+    "core": "The chef ___ breakfast every morning.",
+    "fp": "0eddde219232822d154c4f1c46e124a19770c95285ef6797dc3021711a88a600",
+    "core_fp": "1f81a2861beae47231e4e4611da320b8b3c3676d395869ff8c93ff1203947956"
   }
 ]
