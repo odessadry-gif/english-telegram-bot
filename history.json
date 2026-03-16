@@ -1923,5 +1923,14 @@
     "core": "серветка",
     "fp": "6bdb6ed0ff9112124fab4c00e52678985021e695077fe53f240b5fb64edf4f51",
     "core_fp": "083e887a0f663802956c27b1dc15d2e6e9104f4bf3a30679be7f5de47c3b3edb"
+  },
+  {
+    "ts": 1773691098,
+    "kind": "guess_word",
+    "level": "B1",
+    "topic": "Riddle",
+    "core": "scone",
+    "fp": "dd2bb653d623a934c276ecd5132117c1964bb791cc31dc102c3b091340a3fefc",
+    "core_fp": "f06077616b423bf57a14fcd081a4b7d15e9f3c4034e1d06f87f29238f27e467c"
   }
 ]
