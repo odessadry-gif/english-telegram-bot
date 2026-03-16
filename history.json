@@ -1887,5 +1887,14 @@
     "core": "The chef ___ the soup right now.",
     "fp": "8d5b49140a3efd77fb55359100d5f9301ee64cea436fb62dbdc8dd541ea1634f",
     "core_fp": "1cc83f1ad728bb4bbee76dd706e957f45731f33e9a76bcc3bf1b0babe80213d7"
+  },
+  {
+    "ts": 1773640740,
+    "kind": "ua_en",
+    "level": "A2",
+    "topic": "Vocabulary",
+    "core": "закуска",
+    "fp": "4017e33ad091d50638792fa0014ef330486b1a6ec8fe516d7d1cdd4e827372c7",
+    "core_fp": "92807083ac2af6325ecf362a90dab32142130ed64663b1a0a094b9eef45ec201"
   }
 ]
