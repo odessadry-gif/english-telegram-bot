@@ -1941,5 +1941,14 @@
     "core": "The waiter ___ the tables every evening.",
     "fp": "e727ac427caebf54ce06fdaeede8f4dd9c1399d9b7fa3bc4e43e741f457a17b4",
     "core_fp": "64e4095238f3b277547a65ebdc96f48157b87a5bfc4d1af9192b9335b07f74d1"
+  },
+  {
+    "ts": 1773702400,
+    "kind": "guess_word",
+    "level": "B1",
+    "topic": "Riddle",
+    "core": "marmalade",
+    "fp": "1d4cb0c738f5f63d1bf834800848d42538282682c9a61607df2d74d3c68dfb7f",
+    "core_fp": "47c2b298e85e16c7a09e4ecf641eaf9daa406c9a10150ff34f053f55aca15cf2"
   }
 ]
