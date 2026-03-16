@@ -1896,5 +1896,14 @@
     "core": "закуска",
     "fp": "4017e33ad091d50638792fa0014ef330486b1a6ec8fe516d7d1cdd4e827372c7",
     "core_fp": "92807083ac2af6325ecf362a90dab32142130ed64663b1a0a094b9eef45ec201"
+  },
+  {
+    "ts": 1773654401,
+    "kind": "guess_word",
+    "level": "B1",
+    "topic": "Riddle",
+    "core": "appetizer",
+    "fp": "8f873318892c7a906a63987a24652fe8333ce10baac7cc7a86fb7b6e23bd7871",
+    "core_fp": "3e52b5b7d0efd7e4a97788d138d2af4e01602483f281ec85e31adb0434511389"
   }
 ]
