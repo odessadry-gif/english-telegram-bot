@@ -1914,5 +1914,14 @@
     "core": "The chef ___ breakfast every morning.",
     "fp": "0eddde219232822d154c4f1c46e124a19770c95285ef6797dc3021711a88a600",
     "core_fp": "1f81a2861beae47231e4e4611da320b8b3c3676d395869ff8c93ff1203947956"
+  },
+  {
+    "ts": 1773682792,
+    "kind": "ua_en",
+    "level": "A2",
+    "topic": "Vocabulary",
+    "core": "серветка",
+    "fp": "6bdb6ed0ff9112124fab4c00e52678985021e695077fe53f240b5fb64edf4f51",
+    "core_fp": "083e887a0f663802956c27b1dc15d2e6e9104f4bf3a30679be7f5de47c3b3edb"
   }
 ]
