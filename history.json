@@ -1932,5 +1932,14 @@
     "core": "scone",
     "fp": "dd2bb653d623a934c276ecd5132117c1964bb791cc31dc102c3b091340a3fefc",
     "core_fp": "f06077616b423bf57a14fcd081a4b7d15e9f3c4034e1d06f87f29238f27e467c"
+  },
+  {
+    "ts": 1773698257,
+    "kind": "grammar_gap",
+    "level": "A2",
+    "topic": "Grammar",
+    "core": "The waiter ___ the tables every evening.",
+    "fp": "e727ac427caebf54ce06fdaeede8f4dd9c1399d9b7fa3bc4e43e741f457a17b4",
+    "core_fp": "64e4095238f3b277547a65ebdc96f48157b87a5bfc4d1af9192b9335b07f74d1"
   }
 ]
