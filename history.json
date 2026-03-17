@@ -1959,5 +1959,14 @@
     "core": "I ___ coffee at the cafe right now.",
     "fp": "6b9484d94013c77d6d7414c5d1c817e56f7fc75c8096127d50f8414d58a381fb",
     "core_fp": "71cdb5397c7d9aa06d5299b051f75392699d96180b82bb9c4434e431b15941a8"
+  },
+  {
+    "ts": 1773734831,
+    "kind": "ua_en",
+    "level": "A2",
+    "topic": "Vocabulary",
+    "core": "перекус",
+    "fp": "662ed95d3172b8d61b2006b55bceb94c8efd93b07df92c45f88523a5d14d93b9",
+    "core_fp": "7ae2fd245b2a9fc9b4d6e7394ea79801fd9ee714d692e98ca7d64a7da627e5f8"
   }
 ]
