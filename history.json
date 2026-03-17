@@ -1968,5 +1968,14 @@
     "core": "перекус",
     "fp": "662ed95d3172b8d61b2006b55bceb94c8efd93b07df92c45f88523a5d14d93b9",
     "core_fp": "7ae2fd245b2a9fc9b4d6e7394ea79801fd9ee714d692e98ca7d64a7da627e5f8"
+  },
+  {
+    "ts": 1773748760,
+    "kind": "guess_word",
+    "level": "A2",
+    "topic": "Riddle",
+    "core": "stew",
+    "fp": "0e026b163e7e53f290ca21e9808d8f5679b18029e53fadf9313e3b236ddc41bc",
+    "core_fp": "2dc84d35c26b5cc17b75e07b1171183ba0545766ea86f670335762f7b57d0b83"
   }
 ]
