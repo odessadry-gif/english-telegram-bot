@@ -2004,5 +2004,14 @@
     "core": "We ___ breakfast at the cafe every morning.",
     "fp": "c622484dcf8a8a1874f8b49e31ac87a15a4ea21542f674f57c27cf1a6ce83886",
     "core_fp": "ba302d97b445e1b1d9366ea00dd882845d65a232ba975b24f5d93a4c3a8675b7"
+  },
+  {
+    "ts": 1773788798,
+    "kind": "ua_en",
+    "level": "A2",
+    "topic": "Vocabulary",
+    "core": "ложка",
+    "fp": "de8c911ac2a3d143d6cbaa96dc97421713ac54a949689e9f3fd80c3d03fbe21f",
+    "core_fp": "8bd40ff3c208728bb496844108ac78a17eb8989e047731c65d0e6acf2c53a830"
   }
 ]
