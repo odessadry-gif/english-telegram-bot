@@ -1950,5 +1950,14 @@
     "core": "marmalade",
     "fp": "1d4cb0c738f5f63d1bf834800848d42538282682c9a61607df2d74d3c68dfb7f",
     "core_fp": "47c2b298e85e16c7a09e4ecf641eaf9daa406c9a10150ff34f053f55aca15cf2"
+  },
+  {
+    "ts": 1773724464,
+    "kind": "grammar_gap",
+    "level": "A2",
+    "topic": "Grammar",
+    "core": "I ___ coffee at the cafe right now.",
+    "fp": "6b9484d94013c77d6d7414c5d1c817e56f7fc75c8096127d50f8414d58a381fb",
+    "core_fp": "71cdb5397c7d9aa06d5299b051f75392699d96180b82bb9c4434e431b15941a8"
   }
 ]
