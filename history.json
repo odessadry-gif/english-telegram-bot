@@ -1995,5 +1995,14 @@
     "core": "chopsticks",
     "fp": "2154fbccb89f39751b4a80ad310ea0d7581cd6dce109dea40b685c90d3745411",
     "core_fp": "218a62c852cf3f0490c303a21ff088009cd4ac37ad00f4a2aec37866201206fe"
+  },
+  {
+    "ts": 1773784609,
+    "kind": "grammar_gap",
+    "level": "A2",
+    "topic": "Grammar",
+    "core": "We ___ breakfast at the cafe every morning.",
+    "fp": "c622484dcf8a8a1874f8b49e31ac87a15a4ea21542f674f57c27cf1a6ce83886",
+    "core_fp": "ba302d97b445e1b1d9366ea00dd882845d65a232ba975b24f5d93a4c3a8675b7"
   }
 ]
