@@ -1977,5 +1977,14 @@
     "core": "stew",
     "fp": "0e026b163e7e53f290ca21e9808d8f5679b18029e53fadf9313e3b236ddc41bc",
     "core_fp": "2dc84d35c26b5cc17b75e07b1171183ba0545766ea86f670335762f7b57d0b83"
+  },
+  {
+    "ts": 1773762265,
+    "kind": "grammar_gap",
+    "level": "A2",
+    "topic": "Grammar",
+    "core": "I ___ breakfast at 7 yesterday.",
+    "fp": "ed61378ef13ea41b3b5aaf2e8b5f53bc63089cf74c0ec4f189564a2d4916e6b2",
+    "core_fp": "388f05ba467c3a05674518be5eccd0d661fa96b3fc99b8bccfa4f68cd99871c7"
   }
 ]
