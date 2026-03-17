@@ -1986,5 +1986,14 @@
     "core": "I ___ breakfast at 7 yesterday.",
     "fp": "ed61378ef13ea41b3b5aaf2e8b5f53bc63089cf74c0ec4f189564a2d4916e6b2",
     "core_fp": "388f05ba467c3a05674518be5eccd0d661fa96b3fc99b8bccfa4f68cd99871c7"
+  },
+  {
+    "ts": 1773776598,
+    "kind": "guess_word",
+    "level": "A2",
+    "topic": "Riddle",
+    "core": "chopsticks",
+    "fp": "2154fbccb89f39751b4a80ad310ea0d7581cd6dce109dea40b685c90d3745411",
+    "core_fp": "218a62c852cf3f0490c303a21ff088009cd4ac37ad00f4a2aec37866201206fe"
   }
 ]
