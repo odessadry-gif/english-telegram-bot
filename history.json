@@ -2050,5 +2050,15 @@
     "core": "Sorry, I'm running ___.",
     "fp": "c03c5f400e5ea935af72070682f6b790aac6595813a5a5d4de258d01f39b1f20",
     "core_fp": "fd0fc1c5593b6dc70ac885c1930571b3c372e5959c4ddb0324f4851e971719de"
+  },
+  {
+    "ts": 1773855808,
+    "kind": "situation_quiz",
+    "level": "B1",
+    "topic": "Everyday English",
+    "theme": "mixed",
+    "core": "Friend texts: 'Running late, order for me?'",
+    "fp": "b7791494eb2e2a154f73393f8e59b6ccd03585f7f4347ec7aa06565420bc2e1f",
+    "core_fp": "46c5c0b4cc47d9c03558b5a4a375c51a6de0b13dff14d102f1641e960f3bdd51"
   }
 ]
