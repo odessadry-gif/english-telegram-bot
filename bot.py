@@ -3,41 +3,37 @@ import json
 import time
 import re
 import hashlib
-import requests
-import unicodedata
 import random
+import unicodedata
+import requests
 from openai import OpenAI
 
 # ========= ENV =========
 TOKEN = os.getenv("BOT_TOKEN")
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
-CHAT_ID = os.getenv("CHAT_ID", "-1003674761753")  # куда постятся квизы
+CHAT_ID = os.getenv("CHAT_ID", "-1003674761753")
 MODEL = os.getenv("OPENAI_MODEL", "gpt-5-mini")
 
-# ✅ ТЕМА (по умолчанию food_restaurants)
+# Тема каналу / серії
+# food_restaurants | travel | coffee | everyday_english | mixed
 THEME = os.getenv("THEME", "food_restaurants").strip().lower()
 
-# ✅ режимы
-# MODE=quiz      -> квиз (по умолчанию)
-# MODE=postgame  -> отдельный пост с кнопкой
+# MODE=quiz      -> постимо квіз
+# MODE=postgame  -> окремий пост з кнопкою гри
 MODE = os.getenv("MODE", "quiz").strip().lower()
 
-# ✅ куда постить кнопку (группа/канал)
 GROUP_CHAT_ID = os.getenv("GROUP_CHAT_ID", "@Official_english_every_day")
 
-# ✅ ссылка на мини-игру
 GAME_URL = os.getenv(
     "GAME_URL",
     "https://odessadry-gif.github.io/english-telegram-bot/docs/"
 )
 
-# ✅ подпись на кнопке
 GAME_BUTTON_TEXT = os.getenv(
     "GAME_BUTTON_TEXT",
     "🍔 Food Rush"
 )
 
-# ✅ текст поста
 GAME_POST_TEXT = os.getenv(
     "GAME_POST_TEXT",
     "🍔 **Food Rush** — швидкий квіз про їжу та ресторани\n\n"
@@ -47,91 +43,73 @@ GAME_POST_TEXT = os.getenv(
 
 # ========= HISTORY =========
 HISTORY_FILE = "history.json"
-MAX_HISTORY = 800
+MAX_HISTORY = 1200
 
-# Базовое число попыток
-MAX_GEN_TRIES_DEFAULT = 12
-# Больше попыток для сложных случаев
+# ========= GENERATION =========
+MAX_GEN_TRIES_DEFAULT = 14
 MAX_GEN_TRIES_BY_KIND = {
-    "guess_word": 40,
-    "grammar_gap": 24,
-    "ua_en": 18,
+    "phrase_gap": 18,
+    "situation_quiz": 16,
+    "mini_dialogue": 16,
+    "what_does_it_mean": 16,
+    "ua_en": 20,
 }
 
-# ✅ 3 формата
-KIND_CYCLE = ["grammar_gap", "ua_en", "guess_word"]
+# 5 типів живих постів
+KIND_CYCLE = [
+    "situation_quiz",
+    "mini_dialogue",
+    "what_does_it_mean",
+    "ua_en",
+    "phrase_gap",
+]
 
-# ========= ANTI-REPEAT TUNING =========
+# Антиповтори
 COOLDOWN_LAST_N = {
-    "ua_en": 200,
-    "grammar_gap": 120,
+    "phrase_gap": 180,
+    "situation_quiz": 220,
+    "mini_dialogue": 220,
+    "what_does_it_mean": 220,
+    "ua_en": 240,
 }
-GRAMMAR_PATTERN_LAST_N = 180
-GUESS_WORD_AVOID_LAST_N = 80
+
+RECENT_PATTERN_LAST_N = 240
 
 client = OpenAI(api_key=OPENAI_API_KEY)
 
 ARTICLES_RE = re.compile(r"^(a|an|the)\s+", re.IGNORECASE)
 
-# ========= GRAMMAR SAFETY =========
-GRAMMAR_REQUIRED_MARKERS = [
-    "now",
-    "right now",
-    "at the moment",
-    "today",
-    "tonight",
-    "every day",
-    "every morning",
-    "every evening",
-    "usually",
-    "always",
-    "often",
-    "sometimes",
-    "on weekdays",
-    "after work",
-    "before school",
-    "yesterday",
-    "last night",
-    "last week",
-    "last month",
-    "two days ago",
-    "an hour ago",
-    "tomorrow",
-    "soon",
-    "in a minute",
-    "in an hour",
-    "next week",
-    "this evening",
-]
+# ========= THEME MAP =========
+THEME_INSTRUCTIONS = {
+    "food_restaurants": """
+Focus on: restaurant, cafe, coffee shop, menu, waiter, order, bill, reservation,
+delivery, takeaway, dessert, breakfast, lunch, dinner, drinks, food vocabulary,
+small talk in cafes, ordering food, asking for the bill, asking for a table.
+""".strip(),
 
-AMBIGUOUS_GRAMMAR_PATTERNS = [
-    r"\b___\b",
-]
+    "coffee": """
+Focus on: coffee shop, barista, latte, cappuccino, espresso, oat milk,
+to go, for here, sugar, iced coffee, hot drink, ordering politely,
+asking for size, asking for milk, paying, pick-up counter.
+""".strip(),
 
-BANNED_GRAMMAR_CORES = [
-    "the waiter ___ the bill.",
-    "she ___ her passport.",
-    "he ___ to school.",
-    "they ___ dinner.",
-    "i ___ coffee.",
-]
+    "travel": """
+Focus on: airport, hotel, taxi, booking, boarding pass, luggage,
+check-in, check-out, asking for directions, reservation, late arrival,
+small travel phrases and practical situations.
+""".strip(),
 
-PRESENT_SIMPLE_MARKERS = [
-    "every day", "every morning", "every evening", "usually", "always", "often", "sometimes"
-]
-PRESENT_CONTINUOUS_MARKERS = [
-    "now", "right now", "at the moment", "today", "this evening", "tonight"
-]
-PAST_SIMPLE_MARKERS = [
-    "yesterday", "last night", "last week", "last month", "ago"
-]
-FUTURE_SIMPLE_MARKERS = [
-    "tomorrow", "soon", "in a minute", "in an hour", "next week"
-]
-PAST_CONTINUOUS_MARKERS = [
-    "at 5 pm yesterday", "when", "while"
-]
+    "everyday_english": """
+Focus on: daily life, texting, meeting friends, being late, making plans,
+shopping, asking for help, natural replies, small talk, casual conversation,
+simple American-style spoken English.
+""".strip(),
 
+    "mixed": """
+Mix these contexts naturally: coffee shop, restaurants, food delivery,
+travel, daily life, texting, casual spoken English. Keep it practical and conversational.
+""".strip(),
+}
 
 # ========= HELPERS =========
 def _norm(s: str) -> str:
@@ -151,25 +129,21 @@ def normalize_core(kind: str, core: str) -> str:
     s = unicodedata.normalize("NFKC", str(core)).strip().lower()
     s = s.strip("“”\"'`")
 
-    if kind == "guess_word":
-        s = re.sub(r"[^a-z0-9\s\-]", " ", s)
-        s = _norm_spaces(s)
-        s = ARTICLES_RE.sub("", s)
-        s = _norm_spaces(s)
-        return s
-
     if kind == "ua_en":
         s = re.sub(r"\s+", " ", s)
         return s.strip()
 
-    s = re.sub(r"\s+", " ", s)
-    return s.strip()
+    s = re.sub(r"[^a-z0-9\s\-\?']", " ", s)
+    s = _norm_spaces(s)
+    s = ARTICLES_RE.sub("", s)
+    s = _norm_spaces(s)
+    return s
 
 
 def _fp(kind: str, core: str, options: list[str]) -> str:
     payload = {
         "kind": _norm(kind),
-        "core": _norm(core),
+        "core": normalize_core(kind, core),
         "options": [_norm(x) for x in (options or [])],
     }
     j = json.dumps(payload, ensure_ascii=False, sort_keys=True)
@@ -182,11 +156,10 @@ def core_fp(kind: str, core: str) -> str:
     return hashlib.sha256(j.encode("utf-8")).hexdigest()
 
 
-def grammar_pattern_key(core: str) -> str:
-    s = unicodedata.normalize("NFKC", (core or "")).lower()
+def pattern_key(text: str) -> str:
+    s = unicodedata.normalize("NFKC", (text or "")).lower()
     s = s.replace("___", " <blank> ")
     s = re.sub(r"\d+", "<num>", s)
-    s = re.sub(r"\b(one|two|three|four|five|six|seven|eight|nine|ten)\b", "<num>", s)
     s = re.sub(r"[^a-z<>\s]", " ", s)
     s = _norm_spaces(s)
     return s
@@ -195,8 +168,10 @@ def grammar_pattern_key(core: str) -> str:
 def ensure_4_options(options: list[str]) -> list[str]:
     if not isinstance(options, list):
         return []
+
     cleaned = []
     seen = set()
+
     for x in options:
         s = _norm_spaces(str(x))
         if not s:
@@ -208,12 +183,14 @@ def ensure_4_options(options: list[str]) -> list[str]:
         cleaned.append(s)
         if len(cleaned) == 4:
             break
+
     return cleaned
 
 
 def shuffle_options_keep_correct(options: list[str], correct_idx: int) -> tuple[list[str], int]:
     if not options or correct_idx < 0 or correct_idx >= len(options):
         return options, correct_idx
+
     correct_value = options[correct_idx]
     shuffled = options[:]
     random.shuffle(shuffled)
@@ -224,9 +201,11 @@ def shuffle_options_keep_correct(options: list[str], correct_idx: int) -> tuple[
 def load_history() -> list[dict]:
     if not os.path.exists(HISTORY_FILE):
         return []
+
     try:
         with open(HISTORY_FILE, "r", encoding="utf-8") as f:
             data = json.load(f)
+
         if isinstance(data, list):
             if data and isinstance(data[0], str):
                 out = []
@@ -241,6 +220,7 @@ def load_history() -> list[dict]:
                     )
                 return out
             return [x for x in data if isinstance(x, dict)]
+
         return []
     except Exception:
         return []
@@ -259,8 +239,10 @@ def next_kind(history: list[dict]) -> str:
         if k in KIND_CYCLE:
             last_kind = k
             break
+
     if not last_kind:
         return KIND_CYCLE[0]
+
     idx = KIND_CYCLE.index(last_kind)
     return KIND_CYCLE[(idx + 1) % len(KIND_CYCLE)]
 
@@ -273,161 +255,148 @@ def extract_json(text: str) -> dict:
     return json.loads(m.group(0))
 
 
-def get_guess_word_avoid_list(history: list[dict], n: int) -> list[str]:
-    out = []
-    seen = set()
-    for h in reversed(history or []):
-        if h.get("kind") != "guess_word":
-            continue
-        w = normalize_core("guess_word", h.get("core", ""))
-        if not w or w in seen:
-            continue
-        seen.add(w)
-        out.append(w)
-        if len(out) >= n:
-            break
-    return out
-
-
 def tries_for_kind(kind: str) -> int:
     return int(MAX_GEN_TRIES_BY_KIND.get(kind, MAX_GEN_TRIES_DEFAULT))
 
 
-def contains_any_marker(text: str, markers: list[str]) -> bool:
-    t = _norm_spaces((text or "").lower())
-    return any(marker in t for marker in markers)
+def recent_avoid_list(history: list[dict], kind: str, n: int) -> list[str]:
+    out = []
+    seen = set()
+
+    for h in reversed(history or []):
+        if h.get("kind") != kind:
+            continue
+        c = normalize_core(kind, h.get("core", ""))
+        if not c or c in seen:
+            continue
+        seen.add(c)
+        out.append(c)
+        if len(out) >= n:
+            break
+
+    return out
 
 
-def count_tense_marker_groups(text: str) -> int:
-    t = _norm_spaces((text or "").lower())
+# ========= VALIDATION =========
+def validate_common(question: str, options: list[str], correct: int, explanation: str) -> None:
+    if not question or len(question.strip()) < 8:
+        raise ValueError("question too short")
 
-    groups = 0
-    if contains_any_marker(t, PRESENT_SIMPLE_MARKERS):
-        groups += 1
-    if contains_any_marker(t, PRESENT_CONTINUOUS_MARKERS):
-        groups += 1
-    if contains_any_marker(t, PAST_SIMPLE_MARKERS):
-        groups += 1
-    if contains_any_marker(t, FUTURE_SIMPLE_MARKERS):
-        groups += 1
-    if contains_any_marker(t, PAST_CONTINUOUS_MARKERS):
-        groups += 1
-
-    return groups
-
-
-def validate_grammar_gap(core: str, question: str, options: list[str], correct: int) -> None:
-    core_clean = _norm_spaces(core)
-    q_clean = _norm_spaces(question)
-
-    if core_clean.count("___") != 1:
-        raise ValueError("grammar_gap core must contain exactly one blank ___")
-
-    if not contains_any_marker(core_clean, GRAMMAR_REQUIRED_MARKERS):
-        raise ValueError("grammar_gap rejected: missing clear time/context marker")
-
-    if count_tense_marker_groups(core_clean) > 1:
-        raise ValueError("grammar_gap rejected: mixed tense markers create ambiguity")
-
-    for banned in BANNED_GRAMMAR_CORES:
-        if _norm_spaces(banned) == core_clean.lower():
-            raise ValueError("grammar_gap rejected: banned ambiguous core")
+    if len(question) > 280:
+        raise ValueError("question too long for Telegram poll")
 
     if len(options) != 4:
-        raise ValueError("grammar_gap rejected: must have 4 options")
+        raise ValueError("must have exactly 4 options")
 
-    if correct not in (0, 1, 2, 3):
-        raise ValueError("grammar_gap rejected: correct must be 0..3")
-
-    if not q_clean.startswith("💬 Fill the gap:"):
-        raise ValueError("grammar_gap rejected: invalid question format")
-
-    low_options = [_norm_spaces(x).lower() for x in options]
-    if len(set(low_options)) != 4:
-        raise ValueError("grammar_gap rejected: duplicate options")
-
-    correct_option = low_options[correct]
-
-    # Базовый эвристический контроль против двусмысленности
-    if contains_any_marker(core_clean, PRESENT_CONTINUOUS_MARKERS):
-        if correct_option not in {
-            "am", "is", "are",
-            "am going", "is going", "are going",
-            "am doing", "is doing", "are doing",
-            "am bringing", "is bringing", "are bringing",
-            "am cleaning", "is cleaning", "are cleaning",
-            "am cooking", "is cooking", "are cooking",
-            "am serving", "is serving", "are serving",
-            "am making", "is making", "are making",
-            "am eating", "is eating", "are eating",
-            "am drinking", "is drinking", "are drinking",
-            "am waiting", "is waiting", "are waiting",
-            "am looking", "is looking", "are looking",
-            "am preparing", "is preparing", "are preparing",
-            "am paying", "is paying", "are paying",
-            "am ordering", "is ordering", "are ordering",
-        } and not correct_option.startswith(("am ", "is ", "are ")):
-            raise ValueError("grammar_gap rejected: present continuous marker but correct answer is not continuous")
-
-    if contains_any_marker(core_clean, PRESENT_SIMPLE_MARKERS):
-        if correct_option.startswith(("am ", "is ", "are ")) or correct_option.startswith("will "):
-            raise ValueError("grammar_gap rejected: present simple marker but wrong tense selected")
-
-    if contains_any_marker(core_clean, FUTURE_SIMPLE_MARKERS):
-        if not correct_option.startswith("will "):
-            raise ValueError("grammar_gap rejected: future marker but correct answer is not future simple")
-
-    if contains_any_marker(core_clean, PAST_SIMPLE_MARKERS):
-        if correct_option.startswith(("am ", "is ", "are ")) or correct_option.startswith("will "):
-            raise ValueError("grammar_gap rejected: past marker but wrong tense selected")
-
-
-def validate_ua_en(core: str, question: str, options: list[str], correct: int) -> None:
-    if len(options) != 4:
-        raise ValueError("ua_en must have exactly 4 options")
-    if correct != 0:
-        raise ValueError("ua_en correct must be 0 before shuffle")
-    q = _norm_spaces(question)
-    if not q.startswith("💬 🇺🇦 → 🇬🇧"):
-        raise ValueError("ua_en invalid question format")
-
-
-def validate_guess_word(core: str, question: str, options: list[str], correct: int) -> None:
-    if len(options) != 4:
-        raise ValueError("guess_word must have exactly 4 options")
-    if correct not in (0, 1, 2, 3):
-        raise ValueError("guess_word correct must be 0..3")
-    q = _norm_spaces(question)
-    if "what is it?" not in q.lower():
-        raise ValueError("guess_word must end with 'What is it?'")
-    if len(_norm_spaces(core).split()) != 1:
-        raise ValueError("guess_word core must be exactly one word")
-
-
-def validate_generated_quiz(kind: str, data: dict) -> tuple[str, str, list[str], int, str]:
-    question = str(data["question"]).strip()
-    options = ensure_4_options(data.get("options", []))
-    if len(options) != 4:
-        raise ValueError("options must be a list of 4 unique strings")
-
-    correct = int(data.get("correct", 0))
     if correct not in (0, 1, 2, 3):
         raise ValueError("correct must be 0..3")
 
+    low = [_norm_spaces(x).lower() for x in options]
+    if len(set(low)) != 4:
+        raise ValueError("duplicate options")
+
+    if not explanation.strip():
+        raise ValueError("empty explanation")
+
+    if len(explanation) > 200:
+        raise ValueError("explanation too long")
+
+
+def validate_phrase_gap(core: str, question: str, options: list[str], correct: int) -> None:
+    core_clean = _norm_spaces(core)
+    if core_clean.count("___") != 1:
+        raise ValueError("phrase_gap core must contain exactly one ___")
+
+    if not question.startswith("💬\nFill the gap:\n"):
+        raise ValueError("invalid phrase_gap question format")
+
+    # Захист від занадто технічної граматики
+    banned_words = [
+        "present perfect",
+        "past perfect",
+        "future perfect",
+        "conditional",
+        "modal",
+    ]
+    low_core = core_clean.lower()
+    for b in banned_words:
+        if b in low_core:
+            raise ValueError("too technical")
+
+    # Має бути жива розмова / реальна фраза
+    conversation_markers = [
+        "please", "can i", "could i", "i'd like", "do you have",
+        "for here", "to go", "the bill", "check", "order",
+        "table", "reservation", "coffee", "latte", "menu",
+        "late", "busy", "on my way", "hungry", "sorry"
+    ]
+    if not any(marker in low_core for marker in conversation_markers):
+        raise ValueError("phrase_gap is not conversational enough")
+
+
+def validate_situation_quiz(core: str, question: str, options: list[str], correct: int) -> None:
+    if not question.startswith("💬\nSituation:\n"):
+        raise ValueError("invalid situation_quiz format")
+
+    if len(_norm_spaces(core)) < 8:
+        raise ValueError("situation_quiz core too short")
+
+
+def validate_mini_dialogue(core: str, question: str, options: list[str], correct: int) -> None:
+    if not question.startswith("💬\nMini dialogue:\n"):
+        raise ValueError("invalid mini_dialogue format")
+
+    q = question.lower()
+    if "you:" not in q and "your reply:" not in q:
+        raise ValueError("mini_dialogue must contain reply slot")
+
+
+def validate_what_does_it_mean(core: str, question: str, options: list[str], correct: int) -> None:
+    if not question.startswith("💬\nWhat does it mean?\n"):
+        raise ValueError("invalid what_does_it_mean format")
+
+    if len(_norm_spaces(core).split()) > 8:
+        raise ValueError("meaning phrase too long")
+
+
+def validate_ua_en(core: str, question: str, options: list[str], correct: int) -> None:
+    if not question.startswith("💬\n🇺🇦 → 🇬🇧\n"):
+        raise ValueError("invalid ua_en format")
+    if correct != 0:
+        raise ValueError("ua_en correct must be 0 before shuffle")
+
+
+def validate_generated_quiz(kind: str, data: dict) -> tuple[str, str, list[str], int, str, str, str]:
+    level = str(data.get("level", "A2")).strip().upper()
+    topic = str(data.get("topic", "")).strip()
+    core = str(data.get("core", "")).strip()
+    question = str(data.get("question", "")).strip()
+    options = ensure_4_options(data.get("options", []))
+    correct = int(data.get("correct", 0))
     explanation = str(data.get("explanation_uk", "")).strip()
-    if not explanation:
-        explanation = "Перевір форму дієслова та підказку в реченні."
 
-    core = str(data.get("core", "")).strip() or question
+    validate_common(question, options, correct, explanation)
 
-    if kind == "grammar_gap":
-        validate_grammar_gap(core, question, options, correct)
+    if not core:
+        core = question
+
+    if kind == "phrase_gap":
+        validate_phrase_gap(core, question, options, correct)
+    elif kind == "situation_quiz":
+        validate_situation_quiz(core, question, options, correct)
+    elif kind == "mini_dialogue":
+        validate_mini_dialogue(core, question, options, correct)
+    elif kind == "what_does_it_mean":
+        validate_what_does_it_mean(core, question, options, correct)
     elif kind == "ua_en":
         validate_ua_en(core, question, options, correct)
-    elif kind == "guess_word":
-        validate_guess_word(core, question, options, correct)
+    else:
+        raise ValueError(f"unknown kind: {kind}")
 
-    return question, core, options, correct, explanation
+    if level not in ("A2", "B1"):
+        level = "A2"
+
+    return level, topic, question, core, options, correct, explanation
 
 
 # ========= TELEGRAM =========
@@ -470,7 +439,16 @@ def send_game_post():
     if not text:
         text = "⚡ Word Rush — play now!"
 
-    reply_markup = {"inline_keyboard": [[{"text": GAME_BUTTON_TEXT, "url": GAME_URL}]]}
+    reply_markup = {
+        "inline_keyboard": [
+            [
+                {
+                    "text": GAME_BUTTON_TEXT,
+                    "url": GAME_URL
+                }
+            ]
+        ]
+    }
 
     payload = {
         "chat_id": GROUP_CHAT_ID,
@@ -483,134 +461,229 @@ def send_game_post():
 
 
 # ========= PROMPTS =========
-def prompt_for(kind: str, guess_word_avoid: list[str]) -> str:
+def get_theme_block() -> str:
+    if THEME in THEME_INSTRUCTIONS:
+        return THEME_INSTRUCTIONS[THEME]
+    return THEME_INSTRUCTIONS["food_restaurants"]
+
+
+def prompt_for(kind: str, avoid_items: list[str]) -> str:
     avoid_line = ""
-    if kind == "guess_word" and guess_word_avoid:
-        avoid_line = "Avoid these words (do NOT use them as the answer): " + ", ".join(guess_word_avoid) + "\n"
-
-    if THEME in ("food_restaurants", "food", "restaurants", "food_and_restaurants"):
-        theme_block = """
-THEME (HARD RULE): Food & Restaurants only.
-Use contexts like: food, drinks, menu, waiter, order, bill, table, reservation, cafe, restaurant, ingredients, cooking, taste, dessert, breakfast, lunch, dinner, snack, kitchen, dishes, cutlery, takeaway.
-Avoid: politics, medicine, religion, explicit content, violence, war.
-""".strip()
-    elif THEME:
-        theme_block = f"THEME (HARD RULE): {THEME}. Keep everything in this theme."
-    else:
-        theme_block = ""
-
-    grammar_safety = """
-GRAMMAR SAFETY RULES (VERY IMPORTANT):
-- Create grammar questions with EXACTLY ONE clearly correct answer.
-- Never create ambiguous grammar questions.
-- Every grammar sentence MUST include a clear context/time marker when needed.
-- Use explicit markers such as: now, right now, at the moment, every day, usually, always, often, yesterday, last week, tomorrow, in a minute, soon.
-- Do NOT write grammar questions like: "The waiter ___ the bill." without context.
-- Reject any sentence where 2 or more options could be correct depending on interpretation.
-- Before finalizing, silently check that each wrong option is definitely wrong.
-- Keep grammar questions simple, short, everyday, A2/B1.
-- Use only one tense clue per sentence.
-- Never mix markers that point to different tenses.
-""".strip()
-
-    grammar_examples = """
-BAD EXAMPLE:
-core: The waiter ___ the bill.
-Why bad: brings / is bringing / will bring can all be possible depending on context.
-
-GOOD EXAMPLE:
-core: The waiter ___ the bill now.
-options: brings / is bringing / will bring / brought
-correct: is bringing
-
-GOOD EXAMPLE:
-core: The waiter ___ the bill every evening.
-options: brings / is bringing / will bring / brought
-correct: brings
-
-GOOD EXAMPLE:
-core: The waiter ___ the bill in a minute.
-options: brings / is bringing / will bring / brought
-correct: will bring
-""".strip()
+    if avoid_items:
+        avoid_line = (
+            "Avoid these recently used cores / ideas. Do NOT repeat them or make near-copies:\n- "
+            + "\n- ".join(avoid_items[:30])
+        )
 
     return f"""
-Create ONE Telegram quiz for English learners (A2/B1). Return STRICT JSON ONLY (no markdown, no extra text).
+Create ONE Telegram English quiz for learners (A2/B1).
+Return STRICT JSON ONLY. No markdown. No explanations outside JSON.
 
-{theme_block}
-{grammar_safety}
-{grammar_examples}
-{avoid_line}JSON schema:
+CHANNEL STYLE:
+- lively
+- conversational
+- practical
+- natural spoken English
+- real life situations
+- simple American-style everyday English
+- NOT technical grammar
+- NOT textbook-style dry sentences
+
+THEME:
+{get_theme_block()}
+
+ALLOWED CONTEXTS:
+- ordering coffee
+- ordering food
+- restaurant small talk
+- asking for the bill
+- delivery / takeaway
+- texting a friend
+- running late
+- making plans
+- simple travel situations
+- casual everyday spoken English
+
+HARD RULES:
+- exactly 4 options
+- exactly 1 correct answer
+- wrong answers must sound plausible but still clearly wrong
+- no duplicate options
+- keep it short and clean
+- practical English only
+- no politics, religion, war, medicine, explicit content
+- no obscure vocabulary
+- no perfect tenses
+- no grammar terminology in the question
+- avoid robotic phrasing like "Give coffee" unless used as a wrong option
+- explanation_uk must be short, useful, natural Ukrainian, max 160 chars
+
+{avoid_line}
+
+JSON schema:
 {{
   "level": "A2" or "B1",
   "kind": "{kind}",
-  "topic": "Grammar" or "Vocabulary" or "Riddle",
-  "core": "MAIN content (sentence/word) without extra labels",
-  "question": "Final question text (can include line breaks)",
+  "topic": "Coffee" or "Restaurant" or "Everyday English" or "Travel" or "Texting" or "Food",
+  "core": "main core phrase / situation / Ukrainian phrase",
+  "question": "final Telegram poll text",
   "options": ["A", "B", "C", "D"],
   "correct": 0,
-  "explanation_uk": "SHORT Ukrainian explanation (<=160 chars), plain text"
+  "explanation_uk": "short explanation in Ukrainian"
 }}
 
-Format rules:
+FORMAT RULES BY KIND:
 
-1) kind=grammar_gap:
-- core: ONE sentence with exactly one blank: ___
-- Use ONLY these tenses:
-  Present Simple, Past Simple, Future Simple (will), Present Continuous, Past Continuous.
-- DO NOT use: any Perfect tenses, modals (should/might/could), conditionals, comparatives.
-- Keep sentences short and clear (A2/B1), everyday situations.
-- MUST follow the theme above.
-- MUST contain a clear time/context marker.
+1) kind=phrase_gap
+- Use a REAL spoken phrase with one blank: ___
+- Must feel natural in a cafe / restaurant / texting / travel / daily life
 - question format MUST be exactly:
   💬
   Fill the gap:
   <core>
-- options: 4 variants, only ONE correct
-- correct: 0..3
+- Good examples:
+  "I'd like ___ latte, please."
+  "Can I get this ___ go?"
+  "Sorry, I'm running ___."
+  "Could we get ___ bill, please?"
+- Avoid school grammar vibes
 
-2) kind=ua_en:
-- core: ONE Ukrainian word/phrase (everyday A2/B1) in the theme above
+2) kind=situation_quiz
+- A short real-life situation + ask what you say
+- question format MUST be exactly:
+  💬
+  Situation:
+  <1 short situation line>
+  What do you say?
+- Example:
+  "You finished dinner and want to pay.
+  What do you say?"
+
+3) kind=mini_dialogue
+- A tiny dialogue with a reply choice
+- question format MUST be exactly:
+  💬
+  Mini dialogue:
+  Barista: What can I get for you?
+  Your reply:
+- Keep it very natural
+
+4) kind=what_does_it_mean
+- Use a common spoken phrase/text phrase
+- question format MUST be exactly:
+  💬
+  What does it mean?
+  "<core>"
+- Examples:
+  "I'm starving."
+  "I'm on my way."
+  "For here or to go?"
+  "I'm running late."
+
+5) kind=ua_en
+- core: one Ukrainian word or phrase from daily real life
 - question format MUST be exactly:
   💬
   🇺🇦 → 🇬🇧
   <core>
-- options MUST be exactly 4 English answers in this exact order:
-  1) correct (the best exact translation)
-  2) near_1 (close meaning but NOT exact)
-  3) near_2 (close meaning but NOT exact)
-  4) trap (a common learner mistake / false friend)
-- correct MUST be 0
+- options order MUST be:
+  1) exact correct translation
+  2) close but not exact
+  3) close but not exact
+  4) common learner trap
+- correct MUST be 0 before shuffle
 
-3) kind=guess_word:
-- core: correct English word (one word, A2/B1) in the theme above.
-- Use less obvious everyday nouns/objects (NOT the most common ones).
-- question has 2–3 short riddle lines + "What is it?"
-- question format MUST be exactly:
-  💬
-  <riddle line 1>
-  <riddle line 2>
-  (optional riddle line 3)
-  What is it?
-- options: 4 words, one correct (=core)
-- correct: 0..3
+QUALITY CHECK:
+Before returning JSON, silently verify:
+- the post feels alive and useful
+- a real person could say it in real life
+- only one answer is clearly correct
+- no near-duplicate of recent ideas
+- no dry technical grammar sentence
 
-Global rules:
-- Exactly 4 options
-- Options must be UNIQUE
-- Keep question short + clean
-- explanation_uk: short and useful Ukrainian, no emojis, no "Answer:" prefix
 Return STRICT JSON ONLY.
 """.strip()
 
 
-def generate_one(kind: str, guess_word_avoid: list[str]) -> dict:
-    resp = client.responses.create(
-        model=MODEL,
-        input=prompt_for(kind, guess_word_avoid),
-    )
-    raw = (getattr(resp, "output_text", None) or "").strip()
-    return extract_json(raw)
+def fallback_prompt_for(kind: str) -> str:
+    return f"""
+Return STRICT JSON ONLY.
+
+Create ONE very simple, lively Telegram English quiz (A2) with:
+- real life spoken English
+- exactly 4 unique options
+- exactly 1 correct answer
+- short Ukrainian explanation
+
+Kind: {kind}
+
+Use one of these situations:
+- coffee
+- restaurant
+- texting
+- being late
+- takeaway
+- asking for the bill
+- delivery
+- daily small talk
+
+Question format rules:
+- phrase_gap:
+  💬
+  Fill the gap:
+  <phrase with ___>
+
+- situation_quiz:
+  💬
+  Situation:
+  <situation>
+  What do you say?
+
+- mini_dialogue:
+  💬
+  Mini dialogue:
+  <line>
+  Your reply:
+
+- what_does_it_mean:
+  💬
+  What does it mean?
+  "<phrase>"
+
+- ua_en:
+  💬
+  🇺🇦 → 🇬🇧
+  <ukrainian phrase>
+
+JSON schema:
+{{
+  "level": "A2",
+  "kind": "{kind}",
+  "topic": "Everyday English",
+  "core": "...",
+  "question": "...",
+  "options": ["...", "...", "...", "..."],
+  "correct": 0,
+  "explanation_uk": "..."
+}}
+""".strip()
+
+
+def generate_one(kind: str, avoid_items: list[str]) -> dict:
+    try:
+        resp = client.responses.create(
+            model=MODEL,
+            input=prompt_for(kind, avoid_items),
+        )
+        raw = (getattr(resp, "output_text", None) or "").strip()
+        return extract_json(raw)
+    except Exception:
+        resp = client.responses.create(
+            model=MODEL,
+            input=fallback_prompt_for(kind),
+        )
+        raw = (getattr(resp, "output_text", None) or "").strip()
+        return extract_json(raw)
 
 
 # ========= MAIN =========
@@ -625,8 +698,8 @@ def main():
         return
 
     history = load_history()
-    seen_fp = {h.get("fp") for h in history if h.get("fp")}
 
+    seen_fp = {h.get("fp") for h in history if h.get("fp")}
     seen_core = set()
     for h in history:
         k = h.get("kind")
@@ -634,13 +707,9 @@ def main():
         if k in KIND_CYCLE and c:
             seen_core.add(h.get("core_fp") or core_fp(k, c))
 
-    guess_word_banned = set()
-    for h in history:
-        if h.get("kind") == "guess_word":
-            guess_word_banned.add(normalize_core("guess_word", h.get("core", "")))
-
     recent_core_by_kind = {k: set() for k in COOLDOWN_LAST_N.keys()}
     counts_by_kind = {k: 0 for k in COOLDOWN_LAST_N.keys()}
+
     for h in reversed(history):
         k = h.get("kind")
         if k in COOLDOWN_LAST_N and counts_by_kind[k] < COOLDOWN_LAST_N[k]:
@@ -649,67 +718,52 @@ def main():
                 recent_core_by_kind[k].add(c)
             counts_by_kind[k] += 1
 
-    recent_grammar_patterns = set()
-    gp_count = 0
+    recent_patterns = set()
+    pattern_count = 0
     for h in reversed(history):
-        if gp_count >= GRAMMAR_PATTERN_LAST_N:
+        if pattern_count >= RECENT_PATTERN_LAST_N:
             break
-        if h.get("kind") == "grammar_gap":
-            pk = grammar_pattern_key(h.get("core", ""))
+        if h.get("kind") in ("phrase_gap", "situation_quiz", "mini_dialogue", "what_does_it_mean"):
+            pk = pattern_key(h.get("core", ""))
             if pk:
-                recent_grammar_patterns.add(pk)
-            gp_count += 1
-
-    guess_word_avoid = get_guess_word_avoid_list(history, GUESS_WORD_AVOID_LAST_N)
+                recent_patterns.add(pk)
+            pattern_count += 1
 
     start_kind = next_kind(history)
     start_idx = KIND_CYCLE.index(start_kind) if start_kind in KIND_CYCLE else 0
 
     last_err = None
+
     for shift in range(len(KIND_CYCLE)):
         kind = KIND_CYCLE[(start_idx + shift) % len(KIND_CYCLE)]
         tries = tries_for_kind(kind)
+
+        avoid_items = recent_avoid_list(history, kind, 35)
         filtered_out = 0
 
         for _ in range(tries):
             try:
-                data = generate_one(kind, guess_word_avoid)
+                data = generate_one(kind, avoid_items)
 
-                question, core, options, correct, explanation = validate_generated_quiz(kind, data)
+                level, topic, question, core, options, correct, explanation = validate_generated_quiz(kind, data)
 
                 cfp = core_fp(kind, core)
                 if cfp in seen_core:
                     filtered_out += 1
                     continue
 
-                if kind == "guess_word":
-                    norm_word = normalize_core("guess_word", core)
-                    if not norm_word:
-                        filtered_out += 1
-                        continue
-                    if norm_word in guess_word_banned:
-                        filtered_out += 1
-                        continue
+                norm_core = normalize_core(kind, core)
+                if kind in recent_core_by_kind and norm_core in recent_core_by_kind[kind]:
+                    filtered_out += 1
+                    continue
+
+                pk = pattern_key(core)
+                if pk in recent_patterns:
+                    filtered_out += 1
+                    continue
 
                 if kind == "ua_en":
-                    norm_ua = normalize_core("ua_en", core)
-                    if not norm_ua:
-                        filtered_out += 1
-                        continue
-                    if norm_ua in recent_core_by_kind["ua_en"]:
-                        filtered_out += 1
-                        continue
                     correct = 0
-
-                if kind == "grammar_gap":
-                    norm_g = normalize_core("grammar_gap", core)
-                    if norm_g and norm_g in recent_core_by_kind["grammar_gap"]:
-                        filtered_out += 1
-                        continue
-                    pk = grammar_pattern_key(core)
-                    if pk and pk in recent_grammar_patterns:
-                        filtered_out += 1
-                        continue
 
                 options, correct = shuffle_options_keep_correct(options, correct)
 
@@ -723,25 +777,19 @@ def main():
                 seen_fp.add(fp)
                 seen_core.add(cfp)
 
-                if kind == "guess_word":
-                    guess_word_banned.add(normalize_core("guess_word", core))
+                if kind in recent_core_by_kind and norm_core:
+                    recent_core_by_kind[kind].add(norm_core)
 
-                if kind in recent_core_by_kind:
-                    normc = normalize_core(kind, core)
-                    if normc:
-                        recent_core_by_kind[kind].add(normc)
-
-                if kind == "grammar_gap":
-                    pk = grammar_pattern_key(core)
-                    if pk:
-                        recent_grammar_patterns.add(pk)
+                if pk:
+                    recent_patterns.add(pk)
 
                 history.append(
                     {
                         "ts": int(time.time()),
                         "kind": kind,
-                        "level": str(data.get("level", "A2")).strip().upper(),
-                        "topic": str(data.get("topic", "")),
+                        "level": level,
+                        "topic": topic,
+                        "theme": THEME,
                         "core": core,
                         "fp": fp,
                         "core_fp": cfp,
@@ -757,7 +805,7 @@ def main():
         if last_err is None:
             last_err = RuntimeError(f"No unique candidate for kind={kind} (filtered_out={filtered_out})")
 
-    raise RuntimeError(f"Failed to generate quiz for ALL kinds. Last error: {last_err}")
+    raise RuntimeError(f"Failed to generate quiz for all kinds. Last error: {last_err}")
 
 
 if __name__ == "__main__":
