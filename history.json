@@ -2022,5 +2022,14 @@
     "core": "saucer",
     "fp": "5b416244067c7da309e8430b25e8b9faa3256d1ed8b804e6f700f4742ac94bc9",
     "core_fp": "2e3b995a15284f3cc589e8876c4cfb6423dfb4c3cefd2cacb4c96f16df45266b"
+  },
+  {
+    "ts": 1773821105,
+    "kind": "grammar_gap",
+    "level": "A2",
+    "topic": "Grammar",
+    "core": "The chef ___ the sushi now.",
+    "fp": "33dce07ab56f7439ac546ce4a65b992eed9010c1e826a92b79c00c15d1346d23",
+    "core_fp": "93f51ece900399f535a2a6aa249192a9780a6af35a9c737367c9cc77a21e5a9c"
   }
 ]
