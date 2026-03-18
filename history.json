@@ -2031,5 +2031,14 @@
     "core": "The chef ___ the sushi now.",
     "fp": "33dce07ab56f7439ac546ce4a65b992eed9010c1e826a92b79c00c15d1346d23",
     "core_fp": "93f51ece900399f535a2a6aa249192a9780a6af35a9c737367c9cc77a21e5a9c"
+  },
+  {
+    "ts": 1773835745,
+    "kind": "guess_word",
+    "level": "A2",
+    "topic": "Riddle",
+    "core": "tablecloth",
+    "fp": "8c94c4ef903885adfa1d6fbdc7a5dbb6825689d201595f57427af708218469e9",
+    "core_fp": "7bd69dfa69c0d8f79382280a05f97df0b5051bac9edb5c316fcd83066f397a2b"
   }
 ]
