@@ -2013,5 +2013,14 @@
     "core": "ложка",
     "fp": "de8c911ac2a3d143d6cbaa96dc97421713ac54a949689e9f3fd80c3d03fbe21f",
     "core_fp": "8bd40ff3c208728bb496844108ac78a17eb8989e047731c65d0e6acf2c53a830"
+  },
+  {
+    "ts": 1773811161,
+    "kind": "guess_word",
+    "level": "A2",
+    "topic": "Riddle",
+    "core": "saucer",
+    "fp": "5b416244067c7da309e8430b25e8b9faa3256d1ed8b804e6f700f4742ac94bc9",
+    "core_fp": "2e3b995a15284f3cc589e8876c4cfb6423dfb4c3cefd2cacb4c96f16df45266b"
   }
 ]
