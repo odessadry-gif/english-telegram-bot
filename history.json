@@ -2070,5 +2070,15 @@
     "core": "ordering a latte",
     "fp": "5931a689f6810db784b65f854fb3b83a0e53cf4bff472d3c8a3e53bd2adcdecf",
     "core_fp": "ca999296499b3fa9ee80dde7965fcb117ddff897e2456c903726cc5e8d9d3d72"
+  },
+  {
+    "ts": 1773870698,
+    "kind": "what_does_it_mean",
+    "level": "A2",
+    "topic": "Everyday English",
+    "theme": "mixed",
+    "core": "I'm on my way.",
+    "fp": "bab50b39681756501bc76018e726293d231ebd50cfe08ef229083007e9054aaa",
+    "core_fp": "8800f9a5d871776d7054d6659bc11f09ba3b7ffea561720188201bd45530fd6d"
   }
 ]
