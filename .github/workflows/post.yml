@@ -15,6 +15,7 @@ concurrency:
 jobs:
   post:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -37,7 +38,7 @@ jobs:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           MODE: quiz
-          THEME: food_restaurants
+          THEME: mixed
         run: |
           python bot.py
 
