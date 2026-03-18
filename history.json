@@ -2080,5 +2080,15 @@
     "core": "I'm on my way.",
     "fp": "bab50b39681756501bc76018e726293d231ebd50cfe08ef229083007e9054aaa",
     "core_fp": "8800f9a5d871776d7054d6659bc11f09ba3b7ffea561720188201bd45530fd6d"
+  },
+  {
+    "ts": 1773874921,
+    "kind": "ua_en",
+    "level": "B1",
+    "topic": "Texting",
+    "theme": "mixed",
+    "core": "Я вже виходжу",
+    "fp": "55fc83be5d75e343284deb540f8fc096b68e7c40451115f36454dea42716c4f6",
+    "core_fp": "7919509aeba780be543e6ac4f5ed0301ae304eef7ba72850a5ebc21858eaba41"
   }
 ]
