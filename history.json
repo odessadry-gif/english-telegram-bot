@@ -2040,5 +2040,15 @@
     "core": "tablecloth",
     "fp": "8c94c4ef903885adfa1d6fbdc7a5dbb6825689d201595f57427af708218469e9",
     "core_fp": "7bd69dfa69c0d8f79382280a05f97df0b5051bac9edb5c316fcd83066f397a2b"
+  },
+  {
+    "ts": 1773842194,
+    "kind": "phrase_gap",
+    "level": "A2",
+    "topic": "Texting",
+    "theme": "mixed",
+    "core": "Sorry, I'm running ___.",
+    "fp": "c03c5f400e5ea935af72070682f6b790aac6595813a5a5d4de258d01f39b1f20",
+    "core_fp": "fd0fc1c5593b6dc70ac885c1930571b3c372e5959c4ddb0324f4851e971719de"
   }
 ]
