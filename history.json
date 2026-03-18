@@ -2060,5 +2060,15 @@
     "core": "Friend texts: 'Running late, order for me?'",
     "fp": "b7791494eb2e2a154f73393f8e59b6ccd03585f7f4347ec7aa06565420bc2e1f",
     "core_fp": "46c5c0b4cc47d9c03558b5a4a375c51a6de0b13dff14d102f1641e960f3bdd51"
+  },
+  {
+    "ts": 1773863711,
+    "kind": "mini_dialogue",
+    "level": "A2",
+    "topic": "Coffee",
+    "theme": "mixed",
+    "core": "ordering a latte",
+    "fp": "5931a689f6810db784b65f854fb3b83a0e53cf4bff472d3c8a3e53bd2adcdecf",
+    "core_fp": "ca999296499b3fa9ee80dde7965fcb117ddff897e2456c903726cc5e8d9d3d72"
   }
 ]
