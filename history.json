@@ -2130,5 +2130,15 @@
     "core": "Running 10 minutes late.",
     "fp": "14ac8bbabb935c7d6d0c49e6747d7dfe4c0cba87e35896c7828a43b1119c18e3",
     "core_fp": "6a39489a646070c04f69112ca454dfb02e7993ea49aa32687d0c987988548301"
+  },
+  {
+    "ts": 1773943744,
+    "kind": "ua_en",
+    "level": "A2",
+    "topic": "Everyday English",
+    "theme": "mixed",
+    "core": "Я буду через 10 хвилин",
+    "fp": "45e322826fa4bfb9fd82617c191e87620b7f2fdf12003834345cf774fc87e2b2",
+    "core_fp": "d8211e9b9bb599fa09ec26e4392c04cdb020f5601e6055ebfec8da031ea10867"
   }
 ]
