@@ -2090,5 +2090,15 @@
     "core": "Я вже виходжу",
     "fp": "55fc83be5d75e343284deb540f8fc096b68e7c40451115f36454dea42716c4f6",
     "core_fp": "7919509aeba780be543e6ac4f5ed0301ae304eef7ba72850a5ebc21858eaba41"
+  },
+  {
+    "ts": 1773897303,
+    "kind": "phrase_gap",
+    "level": "A2",
+    "topic": "Food",
+    "theme": "mixed",
+    "core": "Hold my order ___ I get there.",
+    "fp": "383174a75b96a4914ef6b0580ea715b5b198082a082a5666dc6700ebee7836ab",
+    "core_fp": "316afb0cb76795ff77345900716a8e2be9463a11b67f5706ca62268a2888bcd4"
   }
 ]
