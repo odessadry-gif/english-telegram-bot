@@ -2150,5 +2150,15 @@
     "core": "Leave the food ___ the table, please.",
     "fp": "10bb0c9d05b53e6954c77d19f7ce0535d21e4e3aa9d17a9c1088535f676d1bac",
     "core_fp": "7500231ee4182f144a28116ffe92a864fa69be83a75c7d30931f471181ad609f"
+  },
+  {
+    "ts": 1773961239,
+    "kind": "situation_quiz",
+    "level": "A2",
+    "topic": "Coffee",
+    "theme": "mixed",
+    "core": "ordering coffee to-go",
+    "fp": "ba7b916274753cb27aa1d234ab5d28e2434950eb04ab035c1ee67c048750ca00",
+    "core_fp": "ef73e1e18a4248e1624e55a78e8beb0b12bbc68587aa3b8135d9f4827c5cd375"
   }
 ]
