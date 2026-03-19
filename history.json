@@ -2140,5 +2140,15 @@
     "core": "Я буду через 10 хвилин",
     "fp": "45e322826fa4bfb9fd82617c191e87620b7f2fdf12003834345cf774fc87e2b2",
     "core_fp": "d8211e9b9bb599fa09ec26e4392c04cdb020f5601e6055ebfec8da031ea10867"
+  },
+  {
+    "ts": 1773957006,
+    "kind": "phrase_gap",
+    "level": "A2",
+    "topic": "Texting",
+    "theme": "mixed",
+    "core": "Leave the food ___ the table, please.",
+    "fp": "10bb0c9d05b53e6954c77d19f7ce0535d21e4e3aa9d17a9c1088535f676d1bac",
+    "core_fp": "7500231ee4182f144a28116ffe92a864fa69be83a75c7d30931f471181ad609f"
   }
 ]
