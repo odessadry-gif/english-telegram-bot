@@ -2100,5 +2100,15 @@
     "core": "Hold my order ___ I get there.",
     "fp": "383174a75b96a4914ef6b0580ea715b5b198082a082a5666dc6700ebee7836ab",
     "core_fp": "316afb0cb76795ff77345900716a8e2be9463a11b67f5706ca62268a2888bcd4"
+  },
+  {
+    "ts": 1773907215,
+    "kind": "situation_quiz",
+    "level": "A2",
+    "topic": "Coffee",
+    "theme": "mixed",
+    "core": "hold order for 10 minutes",
+    "fp": "96d54457a1421104f705d506904947a2bb62fa89f27b46f4eede1ca0154fe43b",
+    "core_fp": "e5e8d0872536217ccda36ace83836f304b877e35c02c99ecf766da50a884c4a9"
   }
 ]
