@@ -2120,5 +2120,15 @@
     "core": "ordering coffee to go with oat milk",
     "fp": "e70f20fc6472fea70c0b941acf6e7082f0f5d8276356fa3d2588bf5c9bbf1d5e",
     "core_fp": "d1d4d9256c481d82474888a1d821212543fc0a03c0894fea09b93bcd4a5ed551"
+  },
+  {
+    "ts": 1773931095,
+    "kind": "what_does_it_mean",
+    "level": "A2",
+    "topic": "Texting",
+    "theme": "mixed",
+    "core": "Running 10 minutes late.",
+    "fp": "14ac8bbabb935c7d6d0c49e6747d7dfe4c0cba87e35896c7828a43b1119c18e3",
+    "core_fp": "6a39489a646070c04f69112ca454dfb02e7993ea49aa32687d0c987988548301"
   }
 ]
