@@ -2110,5 +2110,15 @@
     "core": "hold order for 10 minutes",
     "fp": "96d54457a1421104f705d506904947a2bb62fa89f27b46f4eede1ca0154fe43b",
     "core_fp": "e5e8d0872536217ccda36ace83836f304b877e35c02c99ecf766da50a884c4a9"
+  },
+  {
+    "ts": 1773914931,
+    "kind": "mini_dialogue",
+    "level": "B1",
+    "topic": "Coffee",
+    "theme": "mixed",
+    "core": "ordering coffee to go with oat milk",
+    "fp": "e70f20fc6472fea70c0b941acf6e7082f0f5d8276356fa3d2588bf5c9bbf1d5e",
+    "core_fp": "d1d4d9256c481d82474888a1d821212543fc0a03c0894fea09b93bcd4a5ed551"
   }
 ]
