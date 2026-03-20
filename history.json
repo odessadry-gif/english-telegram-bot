@@ -2160,5 +2160,15 @@
     "core": "ordering coffee to-go",
     "fp": "ba7b916274753cb27aa1d234ab5d28e2434950eb04ab035c1ee67c048750ca00",
     "core_fp": "ef73e1e18a4248e1624e55a78e8beb0b12bbc68587aa3b8135d9f4827c5cd375"
+  },
+  {
+    "ts": 1773983253,
+    "kind": "mini_dialogue",
+    "level": "A2",
+    "topic": "Coffee",
+    "theme": "mixed",
+    "core": "ordering a coffee and muffin",
+    "fp": "4dcf175144b9dc5269fc9a3cf27e39124f375daecd0b6e01cf71ea2fd35e5e24",
+    "core_fp": "2132802ba36df195e23258334e4f679d29fab008a11fed1081459dfe1b19652e"
   }
 ]
