@@ -2170,5 +2170,15 @@
     "core": "ordering a coffee and muffin",
     "fp": "4dcf175144b9dc5269fc9a3cf27e39124f375daecd0b6e01cf71ea2fd35e5e24",
     "core_fp": "2132802ba36df195e23258334e4f679d29fab008a11fed1081459dfe1b19652e"
+  },
+  {
+    "ts": 1773993522,
+    "kind": "what_does_it_mean",
+    "level": "A2",
+    "topic": "Everyday English",
+    "theme": "mixed",
+    "core": "Can you pick up my order?",
+    "fp": "bc8c536dcf40ed365619c58e6d85779f3856787acc4ea2eef9d82c4b6dc73503",
+    "core_fp": "8983221bd49e900d110437181731f79d475c7e044e1418ddd3f5d2dba106664b"
   }
 ]
