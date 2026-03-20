@@ -2230,5 +2230,15 @@
     "core": "Keep the change.",
     "fp": "0f4643caeef80678217f8e7cd39fe527ce5a0a8ccaa5e8637ac82b6a767824ac",
     "core_fp": "ec5d4e293d9a444476e930a3762670120204276c1bcda13c8bb336afefe7f924"
+  },
+  {
+    "ts": 1774044936,
+    "kind": "ua_en",
+    "level": "A2",
+    "topic": "Coffee",
+    "theme": "mixed",
+    "core": "Залиш решту",
+    "fp": "094d8c3e1f27d0d9e293b747f2eab66fd7e544509287247025ac963db6651480",
+    "core_fp": "dadcc69007cd5598177a5ff0ce51e17d86bfe60ac3577eeb5e06c168e6965f19"
   }
 ]
