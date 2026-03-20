@@ -2200,5 +2200,15 @@
     "core": "Sorry, I'm ___ traffic. Can you wait ten minutes? I'll meet you at the coffee shop.",
     "fp": "7fb0780ab6528cd90f2ae2cf2cc4d8ffcb7f7abbd81d42dfe3e8eff7006ead29",
     "core_fp": "117279c7d0456c6af690b59712f94cff5ce39c7f243106576f47471135890422"
+  },
+  {
+    "ts": 1774029350,
+    "kind": "situation_quiz",
+    "level": "B1",
+    "topic": "Everyday English",
+    "theme": "mixed",
+    "core": "Friend: My train is in 10 minutes.",
+    "fp": "65dfacb38562b5097d1de1c75d9f238a8fa7f2b26924a4960388733e2ea0c274",
+    "core_fp": "ccc53e20469699c5166f9c5ae22cfc88302e05ae2f89e870540ab7a9781a53a6"
   }
 ]
