@@ -2210,5 +2210,15 @@
     "core": "Friend: My train is in 10 minutes.",
     "fp": "65dfacb38562b5097d1de1c75d9f238a8fa7f2b26924a4960388733e2ea0c274",
     "core_fp": "ccc53e20469699c5166f9c5ae22cfc88302e05ae2f89e870540ab7a9781a53a6"
+  },
+  {
+    "ts": 1774031493,
+    "kind": "mini_dialogue",
+    "level": "B1",
+    "topic": "Coffee",
+    "theme": "mixed",
+    "core": "ordering coffee and a snack",
+    "fp": "448397ef7406b219db7d767a25c91ba80f1d8f64936e8ca681c8eade28d4a8b8",
+    "core_fp": "6dcce61206e40a33a843605e697bd65a17c2a4e78cf09e5b549d6891c48bf797"
   }
 ]
