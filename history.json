@@ -2220,5 +2220,15 @@
     "core": "ordering coffee and a snack",
     "fp": "448397ef7406b219db7d767a25c91ba80f1d8f64936e8ca681c8eade28d4a8b8",
     "core_fp": "6dcce61206e40a33a843605e697bd65a17c2a4e78cf09e5b549d6891c48bf797"
+  },
+  {
+    "ts": 1774037945,
+    "kind": "what_does_it_mean",
+    "level": "B1",
+    "topic": "Everyday English",
+    "theme": "mixed",
+    "core": "Keep the change.",
+    "fp": "0f4643caeef80678217f8e7cd39fe527ce5a0a8ccaa5e8637ac82b6a767824ac",
+    "core_fp": "ec5d4e293d9a444476e930a3762670120204276c1bcda13c8bb336afefe7f924"
   }
 ]
