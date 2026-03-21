@@ -2340,5 +2340,15 @@
     "core": "Під'їдь до дверей, будь ласка",
     "fp": "c1e8ceb92f3932ee159b5e0d53a1b71123d0e4867b607851e839ce8d71c1aed9",
     "core_fp": "ebbcc1a0fd9dfcacaab1de508c155dc13e9bdb042272769d8a2cfd702ce6ef58"
+  },
+  {
+    "ts": 1774123970,
+    "kind": "phrase_gap",
+    "level": "A2",
+    "topic": "Texting",
+    "theme": "mixed",
+    "core": "Sorry, I'm running late. I'm ___ a taxi.",
+    "fp": "0d4928c8e141c68bd1c4fa87f66091a500f74a26721fe6dc5a454738c283fc46",
+    "core_fp": "d4b5b36f4a15bfb1926519846f37874413fb3d6793fcb16da5ddc215062f4d89"
   }
 ]
