@@ -2300,5 +2300,15 @@
     "core": "Can you put that order ___ my name?",
     "fp": "976fffb8a743732d87e2476577cfb0e01b6ab39918e107e73e38b6b8d706df92",
     "core_fp": "82bca7f7088c969eba5c00da43550e8242ea5e2bb3b7bd7a2206f3b0e5a0cbbb"
+  },
+  {
+    "ts": 1774095726,
+    "kind": "situation_quiz",
+    "level": "A2",
+    "topic": "Restaurant",
+    "theme": "mixed",
+    "core": "split the check",
+    "fp": "b940b85bc1ca3c6e97cf02d81f9ea80b292927cc15047ed93bca6f91ae1ba6a9",
+    "core_fp": "8e6e056841733e8fe3c045697b35f6d6ec9c30348c6e86d0ad4eb5c5797c8a64"
   }
 ]
