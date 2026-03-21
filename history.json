@@ -2240,5 +2240,15 @@
     "core": "Залиш решту",
     "fp": "094d8c3e1f27d0d9e293b747f2eab66fd7e544509287247025ac963db6651480",
     "core_fp": "dadcc69007cd5598177a5ff0ce51e17d86bfe60ac3577eeb5e06c168e6965f19"
+  },
+  {
+    "ts": 1774054801,
+    "kind": "phrase_gap",
+    "level": "A2",
+    "topic": "Texting",
+    "theme": "mixed",
+    "core": "Hey, running late. Can you pick up my coffee ___ me?",
+    "fp": "93d13360db559a2e60285309b17640c136de81a8eda51d04f11eda2999b540da",
+    "core_fp": "cf6cc162166726d5d00288f9be8fc4d7a168a1a37745fc66f523fa3978c1cf77"
   }
 ]
