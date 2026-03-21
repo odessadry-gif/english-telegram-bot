@@ -2320,5 +2320,15 @@
     "core": "Order a coffee and a bagel",
     "fp": "cd862ad51bf2508e4e0968b7fd03b5c145ba96331e67026b8d594c99f49954d3",
     "core_fp": "2474c29ac33bc33d2baf67ca19a287562705385584b10cfb92ce375c92fe4735"
+  },
+  {
+    "ts": 1774109704,
+    "kind": "what_does_it_mean",
+    "level": "B1",
+    "topic": "Everyday English",
+    "theme": "mixed",
+    "core": "Can you hold that for me?",
+    "fp": "e82828e58d08a2ad5c9805198cb0cbc9d7d79b2935bc996ccc67c5da37cabc28",
+    "core_fp": "0fd378e2ad063c88ee9ddc26c28ea61f9a4eba613c2850f179204a8e0cdb0043"
   }
 ]
