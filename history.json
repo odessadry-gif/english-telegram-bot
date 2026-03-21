@@ -2310,5 +2310,15 @@
     "core": "split the check",
     "fp": "b940b85bc1ca3c6e97cf02d81f9ea80b292927cc15047ed93bca6f91ae1ba6a9",
     "core_fp": "8e6e056841733e8fe3c045697b35f6d6ec9c30348c6e86d0ad4eb5c5797c8a64"
+  },
+  {
+    "ts": 1774102554,
+    "kind": "mini_dialogue",
+    "level": "A2",
+    "topic": "Coffee",
+    "theme": "mixed",
+    "core": "Order a coffee and a bagel",
+    "fp": "cd862ad51bf2508e4e0968b7fd03b5c145ba96331e67026b8d594c99f49954d3",
+    "core_fp": "2474c29ac33bc33d2baf67ca19a287562705385584b10cfb92ce375c92fe4735"
   }
 ]
