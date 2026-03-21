@@ -2350,5 +2350,15 @@
     "core": "Sorry, I'm running late. I'm ___ a taxi.",
     "fp": "0d4928c8e141c68bd1c4fa87f66091a500f74a26721fe6dc5a454738c283fc46",
     "core_fp": "d4b5b36f4a15bfb1926519846f37874413fb3d6793fcb16da5ddc215062f4d89"
+  },
+  {
+    "ts": 1774131096,
+    "kind": "situation_quiz",
+    "level": "A2",
+    "topic": "Texting",
+    "theme": "mixed",
+    "core": "Delivery shows delivered but order missing",
+    "fp": "3356acb8d6ff09f77b4fe6b234fcedfcf268113f454ac888cdae539f1287d9bb",
+    "core_fp": "340ffcff094c01c11d38c87af581cc5ad94ba4d5d0ee22e24a6f0ff1966294b9"
   }
 ]
