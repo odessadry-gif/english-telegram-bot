@@ -2330,5 +2330,15 @@
     "core": "Can you hold that for me?",
     "fp": "e82828e58d08a2ad5c9805198cb0cbc9d7d79b2935bc996ccc67c5da37cabc28",
     "core_fp": "0fd378e2ad063c88ee9ddc26c28ea61f9a4eba613c2850f179204a8e0cdb0043"
+  },
+  {
+    "ts": 1774117153,
+    "kind": "ua_en",
+    "level": "B1",
+    "topic": "Food",
+    "theme": "mixed",
+    "core": "Під'їдь до дверей, будь ласка",
+    "fp": "c1e8ceb92f3932ee159b5e0d53a1b71123d0e4867b607851e839ce8d71c1aed9",
+    "core_fp": "ebbcc1a0fd9dfcacaab1de508c155dc13e9bdb042272769d8a2cfd702ce6ef58"
   }
 ]
