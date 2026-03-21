@@ -2270,5 +2270,15 @@
     "core": "Order a coffee to go",
     "fp": "2f00ac5177f8eb1f63654634805bd9f8c99f124fd48731d78fe2f46a7e12f2ce",
     "core_fp": "8884444324556c88ab51b942d1ea852b6acc3c6de04054706a2929a7f3a1f797"
+  },
+  {
+    "ts": 1774074495,
+    "kind": "what_does_it_mean",
+    "level": "B1",
+    "topic": "Texting",
+    "theme": "mixed",
+    "core": "I owe you one.",
+    "fp": "1a09ae50537131e0072137f19e582cb170b7de7c16a97e0d7319b87953efc2e0",
+    "core_fp": "ab9d1c8567c233d81370c0dd5661693c768c22aa6dc774d2397715ce5d6ac450"
   }
 ]
