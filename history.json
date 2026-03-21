@@ -2280,5 +2280,15 @@
     "core": "I owe you one.",
     "fp": "1a09ae50537131e0072137f19e582cb170b7de7c16a97e0d7319b87953efc2e0",
     "core_fp": "ab9d1c8567c233d81370c0dd5661693c768c22aa6dc774d2397715ce5d6ac450"
+  },
+  {
+    "ts": 1774081075,
+    "kind": "ua_en",
+    "level": "B1",
+    "topic": "Texting",
+    "theme": "mixed",
+    "core": "Я застряг у трафіку",
+    "fp": "522a32fdf0fcadbd556387b53269c39def5940729189ecaaecc039227fe24456",
+    "core_fp": "0c7e2f1713efea1a6e33b0ac62c55f62b30820c81eb355855818fb037930ed7a"
   }
 ]
