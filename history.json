@@ -2250,5 +2250,15 @@
     "core": "Hey, running late. Can you pick up my coffee ___ me?",
     "fp": "93d13360db559a2e60285309b17640c136de81a8eda51d04f11eda2999b540da",
     "core_fp": "cf6cc162166726d5d00288f9be8fc4d7a168a1a37745fc66f523fa3978c1cf77"
+  },
+  {
+    "ts": 1774065225,
+    "kind": "situation_quiz",
+    "level": "A2",
+    "topic": "Texting",
+    "theme": "mixed",
+    "core": "Driver asks 'Where are you?'",
+    "fp": "08bb7ac6e27b42adec99f9cd576e9e7c231900260b3021aa809ca396cbb1b9fb",
+    "core_fp": "bfd70fb1ad2eccdf1621416ecaa84c874195e5ba3a9f264de8b52eec0076d735"
   }
 ]
