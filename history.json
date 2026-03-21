@@ -2260,5 +2260,15 @@
     "core": "Driver asks 'Where are you?'",
     "fp": "08bb7ac6e27b42adec99f9cd576e9e7c231900260b3021aa809ca396cbb1b9fb",
     "core_fp": "bfd70fb1ad2eccdf1621416ecaa84c874195e5ba3a9f264de8b52eec0076d735"
+  },
+  {
+    "ts": 1774069212,
+    "kind": "mini_dialogue",
+    "level": "A2",
+    "topic": "Coffee",
+    "theme": "mixed",
+    "core": "Order a coffee to go",
+    "fp": "2f00ac5177f8eb1f63654634805bd9f8c99f124fd48731d78fe2f46a7e12f2ce",
+    "core_fp": "8884444324556c88ab51b942d1ea852b6acc3c6de04054706a2929a7f3a1f797"
   }
 ]
