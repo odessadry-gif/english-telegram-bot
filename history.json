@@ -2370,5 +2370,15 @@
     "core": "polite coffee order",
     "fp": "c0101e85c96547458d98d9e5cd38869278b613d8f9f125a7023aecf5333aefa2",
     "core_fp": "398e5d4e081e8945d8131bcdadcd962d262e747888be0363e22322bdd76c788c"
+  },
+  {
+    "ts": 1774152479,
+    "kind": "what_does_it_mean",
+    "level": "B1",
+    "topic": "Texting",
+    "theme": "mixed",
+    "core": "I'm gonna grab a coffee, you in?",
+    "fp": "14526b4cbb7141f9069b4d3ad106b64ac2c173bb2c1b64422e387ac2834d79af",
+    "core_fp": "8e9da5a1e3916f5e2ce1fab9c26dca5d59a0ffa1b8113b905237b0493ed018bb"
   }
 ]
