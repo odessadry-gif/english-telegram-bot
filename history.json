@@ -2430,5 +2430,15 @@
     "core": "Is this for delivery or pickup?",
     "fp": "fe69d25c97419c3ac4e075369f8c5ae1d4c2e9ebc65635f42e8b9fe7a96c34ec",
     "core_fp": "057311a67e9274f21271e505c905f4b91294635dab7f4fc3b47df1f2d9b6fa3d"
+  },
+  {
+    "ts": 1774196168,
+    "kind": "ua_en",
+    "level": "A2",
+    "topic": "Everyday English",
+    "theme": "mixed",
+    "core": "Я поруч з кафе",
+    "fp": "d5d13e4202bb9cb819e08e5a7ee1808b18e51e16aa336de4efc3653f6d1d8523",
+    "core_fp": "c3d57d7f62eb69e343d073ca1bd2a4a80e52c6e4af3cc45f6e67e2eefc574054"
   }
 ]
