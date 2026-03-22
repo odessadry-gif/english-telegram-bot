@@ -2450,5 +2450,15 @@
     "core": "Running late — can you grab my coffee ___?",
     "fp": "53e7835cb44c4299bd6c318f6451fabbded607ac77ed341912639327bac46b5d",
     "core_fp": "aa2ee629cda3885ed8cc5efead5fc2a7c5a50ad25af7a8aa3663d9d8220cbb3a"
+  },
+  {
+    "ts": 1774210411,
+    "kind": "situation_quiz",
+    "level": "B1",
+    "topic": "Texting",
+    "theme": "mixed",
+    "core": "Driver: 'I'm downstairs.'",
+    "fp": "58a653004c5e99f707ae48ea67add89171b6447a0f30e2e3624cf44c8c494d8f",
+    "core_fp": "9d9d11cd4362c84f6ad895a0c1842e27b67d02a2cb9628439d94da0d9084de92"
   }
 ]
