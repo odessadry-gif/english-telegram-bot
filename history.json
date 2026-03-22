@@ -2440,5 +2440,15 @@
     "core": "Я поруч з кафе",
     "fp": "d5d13e4202bb9cb819e08e5a7ee1808b18e51e16aa336de4efc3653f6d1d8523",
     "core_fp": "c3d57d7f62eb69e343d073ca1bd2a4a80e52c6e4af3cc45f6e67e2eefc574054"
+  },
+  {
+    "ts": 1774203642,
+    "kind": "phrase_gap",
+    "level": "A2",
+    "topic": "Texting",
+    "theme": "mixed",
+    "core": "Running late — can you grab my coffee ___?",
+    "fp": "53e7835cb44c4299bd6c318f6451fabbded607ac77ed341912639327bac46b5d",
+    "core_fp": "aa2ee629cda3885ed8cc5efead5fc2a7c5a50ad25af7a8aa3663d9d8220cbb3a"
   }
 ]
