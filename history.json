@@ -2410,5 +2410,15 @@
     "core": "Leave delivery at the front desk",
     "fp": "12bb5e280f03ab27667f18c5820a75271adc2bb1d85ed639d600ca94a9df6a1d",
     "core_fp": "9c5ccf2ad1fb7d17649e64fd4ffa2333478784d5e5d43e2192b4c9fdedf2f5f1"
+  },
+  {
+    "ts": 1774182205,
+    "kind": "mini_dialogue",
+    "level": "A2",
+    "topic": "Food",
+    "theme": "mixed",
+    "core": "Order to go",
+    "fp": "9f47535a7dfa91f7e3c0d0f2241d0407bb00ceab4ad48b5b84a53b856d687125",
+    "core_fp": "1623ecada7d8101d508d76f0871367d2ec42fd9bbf26e76b23cf40a89ee719e1"
   }
 ]
