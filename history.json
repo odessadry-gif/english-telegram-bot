@@ -2460,5 +2460,15 @@
     "core": "Driver: 'I'm downstairs.'",
     "fp": "58a653004c5e99f707ae48ea67add89171b6447a0f30e2e3624cf44c8c494d8f",
     "core_fp": "9d9d11cd4362c84f6ad895a0c1842e27b67d02a2cb9628439d94da0d9084de92"
+  },
+  {
+    "ts": 1774217612,
+    "kind": "mini_dialogue",
+    "level": "B1",
+    "topic": "Everyday English",
+    "theme": "mixed",
+    "core": "Ask for a quick coffee — you're running late",
+    "fp": "ca987c6a3228b65c2e09bffc0b00b0876fa45214c3c576eadf62556a03fa4245",
+    "core_fp": "b36ef5a0f53662d31df1e14191d6b4e3e542f8a83ec5e59cac759ced842faeee"
   }
 ]
