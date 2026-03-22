@@ -2400,5 +2400,15 @@
     "core": "Could you bring the order ___ my table?",
     "fp": "20384f93fdcd16c6c94516a42bb6136039be09482f859dee2a6e75a27b1ee600",
     "core_fp": "04a696822400aceb99bc6a6a138bf6a921f33fdbc1787bf15ebfbcfb1ced51a2"
+  },
+  {
+    "ts": 1774174524,
+    "kind": "situation_quiz",
+    "level": "A2",
+    "topic": "Travel",
+    "theme": "mixed",
+    "core": "Leave delivery at the front desk",
+    "fp": "12bb5e280f03ab27667f18c5820a75271adc2bb1d85ed639d600ca94a9df6a1d",
+    "core_fp": "9c5ccf2ad1fb7d17649e64fd4ffa2333478784d5e5d43e2192b4c9fdedf2f5f1"
   }
 ]
