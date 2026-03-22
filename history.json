@@ -2420,5 +2420,15 @@
     "core": "Order to go",
     "fp": "9f47535a7dfa91f7e3c0d0f2241d0407bb00ceab4ad48b5b84a53b856d687125",
     "core_fp": "1623ecada7d8101d508d76f0871367d2ec42fd9bbf26e76b23cf40a89ee719e1"
+  },
+  {
+    "ts": 1774189053,
+    "kind": "what_does_it_mean",
+    "level": "A2",
+    "topic": "Food",
+    "theme": "mixed",
+    "core": "Is this for delivery or pickup?",
+    "fp": "fe69d25c97419c3ac4e075369f8c5ae1d4c2e9ebc65635f42e8b9fe7a96c34ec",
+    "core_fp": "057311a67e9274f21271e505c905f4b91294635dab7f4fc3b47df1f2d9b6fa3d"
   }
 ]
