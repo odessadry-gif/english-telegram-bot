@@ -2380,5 +2380,15 @@
     "core": "I'm gonna grab a coffee, you in?",
     "fp": "14526b4cbb7141f9069b4d3ad106b64ac2c173bb2c1b64422e387ac2834d79af",
     "core_fp": "8e9da5a1e3916f5e2ce1fab9c26dca5d59a0ffa1b8113b905237b0493ed018bb"
+  },
+  {
+    "ts": 1774161374,
+    "kind": "ua_en",
+    "level": "A2",
+    "topic": "Texting",
+    "theme": "mixed",
+    "core": "Я зайду по дорозі.",
+    "fp": "ea15666deeba4b2e43ed33a115effa031a2965865438efe5f418e3f1c692e3e7",
+    "core_fp": "d022b430920ef945d159aff1bda13ae8a550ff218dc1b27ee8df894c30402103"
   }
 ]
