@@ -2360,5 +2360,15 @@
     "core": "Delivery shows delivered but order missing",
     "fp": "3356acb8d6ff09f77b4fe6b234fcedfcf268113f454ac888cdae539f1287d9bb",
     "core_fp": "340ffcff094c01c11d38c87af581cc5ad94ba4d5d0ee22e24a6f0ff1966294b9"
+  },
+  {
+    "ts": 1774141481,
+    "kind": "mini_dialogue",
+    "level": "A2",
+    "topic": "Coffee",
+    "theme": "mixed",
+    "core": "polite coffee order",
+    "fp": "c0101e85c96547458d98d9e5cd38869278b613d8f9f125a7023aecf5333aefa2",
+    "core_fp": "398e5d4e081e8945d8131bcdadcd962d262e747888be0363e22322bdd76c788c"
   }
 ]
