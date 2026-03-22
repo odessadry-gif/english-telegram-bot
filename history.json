@@ -2390,5 +2390,15 @@
     "core": "Я зайду по дорозі.",
     "fp": "ea15666deeba4b2e43ed33a115effa031a2965865438efe5f418e3f1c692e3e7",
     "core_fp": "d022b430920ef945d159aff1bda13ae8a550ff218dc1b27ee8df894c30402103"
+  },
+  {
+    "ts": 1774167589,
+    "kind": "phrase_gap",
+    "level": "A2",
+    "topic": "Restaurant",
+    "theme": "mixed",
+    "core": "Could you bring the order ___ my table?",
+    "fp": "20384f93fdcd16c6c94516a42bb6136039be09482f859dee2a6e75a27b1ee600",
+    "core_fp": "04a696822400aceb99bc6a6a138bf6a921f33fdbc1787bf15ebfbcfb1ced51a2"
   }
 ]
