@@ -2500,5 +2500,15 @@
     "core": "Is that for here or ___?",
     "fp": "3e414f513aea1735a0caae61ee411657d7defe51c726150dc04c4e0fe8461173",
     "core_fp": "06205fade3c0cbff6cd72fce0aeacb4e99fb82900d2eecb883ee4da0a0c5747f"
+  },
+  {
+    "ts": 1774255249,
+    "kind": "situation_quiz",
+    "level": "A2",
+    "topic": "Restaurant",
+    "theme": "mixed",
+    "core": "ask for the check",
+    "fp": "56a58fbc590ba4b7439868fb159425b63ae5589d3064c29d18990c80c1b42093",
+    "core_fp": "e1cc822297e069e1e8d405c7037545b55634288f25bd7708a70809cd7c7cafef"
   }
 ]
