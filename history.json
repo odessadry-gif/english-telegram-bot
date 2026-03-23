@@ -2530,5 +2530,15 @@
     "core": "It's on me.",
     "fp": "9b7a43c698aa9a936b62290a85eb70eebe774beabd1b2e67965248128ecfeb94",
     "core_fp": "5679d85abe9b0a21a7eac544eecef22f4478146d27e55c3255d5cbd93436dd8d"
+  },
+  {
+    "ts": 1774277269,
+    "kind": "ua_en",
+    "level": "A2",
+    "topic": "Texting",
+    "theme": "mixed",
+    "core": "Чекай мене біля входу",
+    "fp": "46f322ed8ef4848d7ac1b9695903f97a910b9f6ff12f734e067514500228f883",
+    "core_fp": "9ec1fc813c5a074868b8dd3a1d1d6978887a122e82012f63804a434b8fb084e1"
   }
 ]
