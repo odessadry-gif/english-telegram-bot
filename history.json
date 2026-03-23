@@ -2490,5 +2490,15 @@
     "core": "Скинь фото меню, будь ласка.",
     "fp": "a503e13b2518c2faec2ee07b6b0a8b01a339d0495651f6f088666d8ccf1ee346",
     "core_fp": "862a603e7d83dd01841a724452c9c8d988c88829d29a2a61699e4e08a28b6f8a"
+  },
+  {
+    "ts": 1774248969,
+    "kind": "phrase_gap",
+    "level": "A2",
+    "topic": "Coffee",
+    "theme": "mixed",
+    "core": "Is that for here or ___?",
+    "fp": "3e414f513aea1735a0caae61ee411657d7defe51c726150dc04c4e0fe8461173",
+    "core_fp": "06205fade3c0cbff6cd72fce0aeacb4e99fb82900d2eecb883ee4da0a0c5747f"
   }
 ]
