@@ -2510,5 +2510,15 @@
     "core": "ask for the check",
     "fp": "56a58fbc590ba4b7439868fb159425b63ae5589d3064c29d18990c80c1b42093",
     "core_fp": "e1cc822297e069e1e8d405c7037545b55634288f25bd7708a70809cd7c7cafef"
+  },
+  {
+    "ts": 1774262492,
+    "kind": "mini_dialogue",
+    "level": "A2",
+    "topic": "Coffee",
+    "theme": "mixed",
+    "core": "you want to pay by card",
+    "fp": "e50e7bb817abfe6aec2f9c0a933354f4ee5ec6b730fcb65bc56def4927ae6c8e",
+    "core_fp": "0199514a53b3b715c7a0fa804b2668fc48e39131c13907d77064f7aa3592e23d"
   }
 ]
