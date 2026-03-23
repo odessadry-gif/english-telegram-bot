@@ -2520,5 +2520,15 @@
     "core": "you want to pay by card",
     "fp": "e50e7bb817abfe6aec2f9c0a933354f4ee5ec6b730fcb65bc56def4927ae6c8e",
     "core_fp": "0199514a53b3b715c7a0fa804b2668fc48e39131c13907d77064f7aa3592e23d"
+  },
+  {
+    "ts": 1774269416,
+    "kind": "what_does_it_mean",
+    "level": "B1",
+    "topic": "Everyday English",
+    "theme": "mixed",
+    "core": "It's on me.",
+    "fp": "9b7a43c698aa9a936b62290a85eb70eebe774beabd1b2e67965248128ecfeb94",
+    "core_fp": "5679d85abe9b0a21a7eac544eecef22f4478146d27e55c3255d5cbd93436dd8d"
   }
 ]
