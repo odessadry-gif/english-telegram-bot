@@ -2470,5 +2470,15 @@
     "core": "Ask for a quick coffee — you're running late",
     "fp": "ca987c6a3228b65c2e09bffc0b00b0876fa45214c3c576eadf62556a03fa4245",
     "core_fp": "b36ef5a0f53662d31df1e14191d6b4e3e542f8a83ec5e59cac759ced842faeee"
+  },
+  {
+    "ts": 1774227974,
+    "kind": "what_does_it_mean",
+    "level": "A2",
+    "topic": "Restaurant",
+    "theme": "mixed",
+    "core": "Can we split the bill?",
+    "fp": "18e757cf0b0c39f16bb282e0038957a8d36e7f809d19225d3ea4877bdf367585",
+    "core_fp": "806fbc2e452a7943e2355ec5978710984a66a8fc24e9f05b5721950a95367f80"
   }
 ]
