@@ -2540,5 +2540,15 @@
     "core": "Чекай мене біля входу",
     "fp": "46f322ed8ef4848d7ac1b9695903f97a910b9f6ff12f734e067514500228f883",
     "core_fp": "9ec1fc813c5a074868b8dd3a1d1d6978887a122e82012f63804a434b8fb084e1"
+  },
+  {
+    "ts": 1774284160,
+    "kind": "phrase_gap",
+    "level": "A2",
+    "topic": "Food",
+    "theme": "mixed",
+    "core": "Please leave the food ___ the door.",
+    "fp": "69b0c9d9309f7fa69c392ecabd7a9d867982468f57df24ff9d5af1687d2d815e",
+    "core_fp": "d26a0232295eadeef88555d9b1c35e7ed5cc0a081e5c1eb6ff85c13cadc3760e"
   }
 ]
