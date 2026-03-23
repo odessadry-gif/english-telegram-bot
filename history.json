@@ -2570,5 +2570,15 @@
     "core": "pick up an order for someone",
     "fp": "a77be01946cd4c5534c1570888a67146ad734e8ed7786d3bd2ecf58e5d30c655",
     "core_fp": "7a560b9aee30a049861c0a6f6241a7b0351e985951424bd97cf7156715f2cc36"
+  },
+  {
+    "ts": 1774304360,
+    "kind": "what_does_it_mean",
+    "level": "A2",
+    "topic": "Food",
+    "theme": "mixed",
+    "core": "Can you leave it at the door?",
+    "fp": "3520cd16e9a1db31804e865a37f1cbb9148465dba0deaf04d04e712ccf954026",
+    "core_fp": "1645a5fac628b5ed36de0f261a8620dc67eddd15bc299fed68e6e3e7ed428cf8"
   }
 ]
