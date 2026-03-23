@@ -2560,5 +2560,15 @@
     "core": "Wrong coffee",
     "fp": "f568b319317dc997fd212e3826b78978e631e8a753757ee24d68565ed74dd02d",
     "core_fp": "17c4eb581f976657217ac3eb97373ecad6743de273d224a2c4e7921215e42f74"
+  },
+  {
+    "ts": 1774297627,
+    "kind": "mini_dialogue",
+    "level": "A2",
+    "topic": "Coffee",
+    "theme": "mixed",
+    "core": "pick up an order for someone",
+    "fp": "a77be01946cd4c5534c1570888a67146ad734e8ed7786d3bd2ecf58e5d30c655",
+    "core_fp": "7a560b9aee30a049861c0a6f6241a7b0351e985951424bd97cf7156715f2cc36"
   }
 ]
