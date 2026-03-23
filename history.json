@@ -2550,5 +2550,15 @@
     "core": "Please leave the food ___ the door.",
     "fp": "69b0c9d9309f7fa69c392ecabd7a9d867982468f57df24ff9d5af1687d2d815e",
     "core_fp": "d26a0232295eadeef88555d9b1c35e7ed5cc0a081e5c1eb6ff85c13cadc3760e"
+  },
+  {
+    "ts": 1774290993,
+    "kind": "situation_quiz",
+    "level": "A2",
+    "topic": "Coffee",
+    "theme": "mixed",
+    "core": "Wrong coffee",
+    "fp": "f568b319317dc997fd212e3826b78978e631e8a753757ee24d68565ed74dd02d",
+    "core_fp": "17c4eb581f976657217ac3eb97373ecad6743de273d224a2c4e7921215e42f74"
   }
 ]
