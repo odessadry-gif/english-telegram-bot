@@ -2580,5 +2580,15 @@
     "core": "Can you leave it at the door?",
     "fp": "3520cd16e9a1db31804e865a37f1cbb9148465dba0deaf04d04e712ccf954026",
     "core_fp": "1645a5fac628b5ed36de0f261a8620dc67eddd15bc299fed68e6e3e7ed428cf8"
+  },
+  {
+    "ts": 1774313892,
+    "kind": "ua_en",
+    "level": "A2",
+    "topic": "Texting",
+    "theme": "mixed",
+    "core": "Почекай хвилину, я замовлю доставку",
+    "fp": "3c62dd445a1f21b5cd860d8762cb9f47384d555a05ec716e771c30479031b948",
+    "core_fp": "41f607bfa0b19a5a20393cfce9182122bdc086983b04d41c8740ae87a174ceec"
   }
 ]
