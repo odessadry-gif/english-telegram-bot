@@ -2610,5 +2610,15 @@
     "core": "offer to get food for a friend",
     "fp": "cde8ec9dbef9ce50436d213033bc74a34385408b71cf2780b4c5e35dbb9f7cf9",
     "core_fp": "bfa9ddf5538793b3fd11eef5a9b3763026454f4a9e8cb35ff13416240ee195b5"
+  },
+  {
+    "ts": 1774341423,
+    "kind": "mini_dialogue",
+    "level": "A2",
+    "topic": "Food",
+    "theme": "mixed",
+    "core": "Can you warm it up?",
+    "fp": "b0b538b04d945c5d169f38e3433442cfd3613e03c38be39a5e7dcda873363e09",
+    "core_fp": "d3a9f7445a5985d0be5466ab4294f0b7c9edf9a69224f61efbd3b1bac6de9f21"
   }
 ]
