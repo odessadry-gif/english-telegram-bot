@@ -2630,5 +2630,15 @@
     "core": "I'll grab us a table.",
     "fp": "d577c9fa8c7902c1934196ef06e1556eb57c3a4f2670c5486acb8fc62c5b23af",
     "core_fp": "0861cf7dcccddea8de5e039fceff476ca7560492dd1daef775f8b0a465a61ac6"
+  },
+  {
+    "ts": 1774356030,
+    "kind": "ua_en",
+    "level": "A2",
+    "topic": "Texting",
+    "theme": "mixed",
+    "core": "Пришлю тобі адресу",
+    "fp": "5af6a21c015a9b1d8362d949cc5e55db344311268992d41c461dcbf7008e9102",
+    "core_fp": "efea46aeae4335c5602045b3a17ff3f524ea91094671c44e1a9c48006fe589ec"
   }
 ]
