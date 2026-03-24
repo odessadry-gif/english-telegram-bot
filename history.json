@@ -2670,5 +2670,15 @@
     "core": "Ordering at a cafe",
     "fp": "29f50b2822e9a9261ee5ad1dd552edaaab9c03eb4aff597b9680058ba76cb275",
     "core_fp": "62f871e78b0eb95ed82dba76fa3389d92c728b12fee19934e157608f58dd1135"
+  },
+  {
+    "ts": 1774384151,
+    "kind": "what_does_it_mean",
+    "level": "A2",
+    "topic": "Restaurant",
+    "theme": "mixed",
+    "core": "Hold the onions, please.",
+    "fp": "b2d43c4e6622c4c938716492db4a595572a0670e6f2342aefeb9a244102616f5",
+    "core_fp": "4beaf98cfa2a3a396658233a1ee73374500f1eb815597ef12ee0692031aea895"
   }
 ]
