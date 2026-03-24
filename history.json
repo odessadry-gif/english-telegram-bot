@@ -2640,5 +2640,15 @@
     "core": "Пришлю тобі адресу",
     "fp": "5af6a21c015a9b1d8362d949cc5e55db344311268992d41c461dcbf7008e9102",
     "core_fp": "efea46aeae4335c5602045b3a17ff3f524ea91094671c44e1a9c48006fe589ec"
+  },
+  {
+    "ts": 1774363822,
+    "kind": "phrase_gap",
+    "level": "A2",
+    "topic": "Texting",
+    "theme": "mixed",
+    "core": "I'm on my way — can you go pick it up ___ me?",
+    "fp": "1e2a6bd6c4ac85cdc5f17f59da034f1204d7158773374a60524ca21e16acca37",
+    "core_fp": "a8bb5ce3e38490d7429dffe7efe487aaf3f55a52a133e27579c9365adf7a397a"
   }
 ]
