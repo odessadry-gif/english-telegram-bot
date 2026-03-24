@@ -2680,5 +2680,15 @@
     "core": "Hold the onions, please.",
     "fp": "b2d43c4e6622c4c938716492db4a595572a0670e6f2342aefeb9a244102616f5",
     "core_fp": "4beaf98cfa2a3a396658233a1ee73374500f1eb815597ef12ee0692031aea895"
+  },
+  {
+    "ts": 1774390725,
+    "kind": "ua_en",
+    "level": "A2",
+    "topic": "Texting",
+    "theme": "mixed",
+    "core": "Подзвони, коли приїдеш.",
+    "fp": "a64a6ab45d688f92882faef8553ce280a5f2d00e4fef79a20ff0b1092178f745",
+    "core_fp": "15d8be675fd907873f2ce499b548482afbf7e58f896cd07d8686fa7f7622d03e"
   }
 ]
