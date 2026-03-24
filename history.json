@@ -2620,5 +2620,15 @@
     "core": "Can you warm it up?",
     "fp": "b0b538b04d945c5d169f38e3433442cfd3613e03c38be39a5e7dcda873363e09",
     "core_fp": "d3a9f7445a5985d0be5466ab4294f0b7c9edf9a69224f61efbd3b1bac6de9f21"
+  },
+  {
+    "ts": 1774348723,
+    "kind": "what_does_it_mean",
+    "level": "A2",
+    "topic": "Everyday English",
+    "theme": "mixed",
+    "core": "I'll grab us a table.",
+    "fp": "d577c9fa8c7902c1934196ef06e1556eb57c3a4f2670c5486acb8fc62c5b23af",
+    "core_fp": "0861cf7dcccddea8de5e039fceff476ca7560492dd1daef775f8b0a465a61ac6"
   }
 ]
