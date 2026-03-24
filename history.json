@@ -2650,5 +2650,15 @@
     "core": "I'm on my way — can you go pick it up ___ me?",
     "fp": "1e2a6bd6c4ac85cdc5f17f59da034f1204d7158773374a60524ca21e16acca37",
     "core_fp": "a8bb5ce3e38490d7429dffe7efe487aaf3f55a52a133e27579c9365adf7a397a"
+  },
+  {
+    "ts": 1774370924,
+    "kind": "situation_quiz",
+    "level": "B1",
+    "topic": "Restaurant",
+    "theme": "mixed",
+    "core": "Ask to box your meal because you need to leave",
+    "fp": "09d7fa9c2261f35b89b62709cb94ec4d46fff8e2a338216f563c446b8b08e088",
+    "core_fp": "a39dec82bae3bba4d6bb087c0a47cb09b5cfeaa1b92e4b070babc30e4153278f"
   }
 ]
