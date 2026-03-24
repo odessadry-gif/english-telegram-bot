@@ -2660,5 +2660,15 @@
     "core": "Ask to box your meal because you need to leave",
     "fp": "09d7fa9c2261f35b89b62709cb94ec4d46fff8e2a338216f563c446b8b08e088",
     "core_fp": "a39dec82bae3bba4d6bb087c0a47cb09b5cfeaa1b92e4b070babc30e4153278f"
+  },
+  {
+    "ts": 1774377879,
+    "kind": "mini_dialogue",
+    "level": "A2",
+    "topic": "Coffee",
+    "theme": "mixed",
+    "core": "Ordering at a cafe",
+    "fp": "29f50b2822e9a9261ee5ad1dd552edaaab9c03eb4aff597b9680058ba76cb275",
+    "core_fp": "62f871e78b0eb95ed82dba76fa3389d92c728b12fee19934e157608f58dd1135"
   }
 ]
