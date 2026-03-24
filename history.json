@@ -2590,5 +2590,15 @@
     "core": "Почекай хвилину, я замовлю доставку",
     "fp": "3c62dd445a1f21b5cd860d8762cb9f47384d555a05ec716e771c30479031b948",
     "core_fp": "41f607bfa0b19a5a20393cfce9182122bdc086983b04d41c8740ae87a174ceec"
+  },
+  {
+    "ts": 1774325351,
+    "kind": "phrase_gap",
+    "level": "A2",
+    "topic": "Coffee",
+    "theme": "mixed",
+    "core": "Can I get this ___ go?",
+    "fp": "76b74b2874ffe2207f303c2aad291c9d49000c4df431c9a02b335be108949bb2",
+    "core_fp": "0048f1e8cc8da7082106e1b974c2c5f8f135249c4af497761843eaaa14e783c9"
   }
 ]
