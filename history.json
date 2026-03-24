@@ -2600,5 +2600,15 @@
     "core": "Can I get this ___ go?",
     "fp": "76b74b2874ffe2207f303c2aad291c9d49000c4df431c9a02b335be108949bb2",
     "core_fp": "0048f1e8cc8da7082106e1b974c2c5f8f135249c4af497761843eaaa14e783c9"
+  },
+  {
+    "ts": 1774334946,
+    "kind": "situation_quiz",
+    "level": "B1",
+    "topic": "Texting",
+    "theme": "mixed",
+    "core": "offer to get food for a friend",
+    "fp": "cde8ec9dbef9ce50436d213033bc74a34385408b71cf2780b4c5e35dbb9f7cf9",
+    "core_fp": "bfa9ddf5538793b3fd11eef5a9b3763026454f4a9e8cb35ff13416240ee195b5"
   }
 ]
