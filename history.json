@@ -2790,5 +2790,15 @@
     "core": "Можемо зустрітися після роботи?",
     "fp": "28ff85f513696c00ad463ba231f2319ef3cdb5dd9dbe4d0cfc8358ae4dccbc1a",
     "core_fp": "a770dbcb0afcb59be6004ab3d3072e0c70bd517b4a3df3eeb7ce3e067463b383"
+  },
+  {
+    "ts": 1774477430,
+    "kind": "phrase_gap",
+    "level": "A2",
+    "topic": "Restaurant",
+    "theme": "mixed",
+    "core": "Can I have the soup ___, please? I have a meeting in 20 minutes.",
+    "fp": "73259289f18fa1ca7d8ee0b8c9f8e545a9fb688ac6d607aad2e9e52f2c189bd5",
+    "core_fp": "e914e69b8b2965934b951270f4b51f4742bb4abce79b8d7e788a01150cb33816"
   }
 ]
