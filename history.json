@@ -2720,5 +2720,15 @@
     "core": "Delivery at the door",
     "fp": "e64eb77ae48045b0ef41a50757c04a815ff591489a19a3a4a2c72a4fa01cee49",
     "core_fp": "bab32e14435e01089aa5bab9bfbd2b6b3e4019faa541e20b84198259fc5acaf6"
+  },
+  {
+    "ts": 1774427739,
+    "kind": "what_does_it_mean",
+    "level": "B1",
+    "topic": "Everyday English",
+    "theme": "mixed",
+    "core": "It's on the way.",
+    "fp": "b409414137ec9bdcd874a2eb21d0a223975074ec6308231ee6ba2aea3732c849",
+    "core_fp": "3fab91a9065fe43789726ba800c91675d3ae5e48424cf9f895cf064387335fc0"
   }
 ]
