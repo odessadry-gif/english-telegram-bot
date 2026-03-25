@@ -2780,5 +2780,15 @@
     "core": "Keep me posted.",
     "fp": "0d6c8c2ff0b590d4642e73fc56c7c78e3a7c9ed1da5b628340845cce67ff6075",
     "core_fp": "35372e63ae2cd0e1d6c3741e4e9f6de16839dad39e23bacb94c286444d2a14ba"
+  },
+  {
+    "ts": 1774470398,
+    "kind": "ua_en",
+    "level": "A2",
+    "topic": "Texting",
+    "theme": "mixed",
+    "core": "Можемо зустрітися після роботи?",
+    "fp": "28ff85f513696c00ad463ba231f2319ef3cdb5dd9dbe4d0cfc8358ae4dccbc1a",
+    "core_fp": "a770dbcb0afcb59be6004ab3d3072e0c70bd517b4a3df3eeb7ce3e067463b383"
   }
 ]
