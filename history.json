@@ -2700,5 +2700,15 @@
     "core": "Do you have a table ___ two?",
     "fp": "31b8f7a76f0498c75f3b957352dc36c9a850685505ecff966d5dcffc6fa9e321",
     "core_fp": "247fc7c99020152a8dbbbcbe3f0b1b00bab4b358cd763714a8fc593c0e22b1ef"
+  },
+  {
+    "ts": 1774411665,
+    "kind": "situation_quiz",
+    "level": "B1",
+    "topic": "Restaurant",
+    "theme": "mixed",
+    "core": "ask for napkins and cutlery for a takeaway",
+    "fp": "652f654486b6eb068b25df4e4896c1d8af3e5f72ed17d986e72fe055dca57d32",
+    "core_fp": "48cee4e390a899e450d49ce9ba13acda0bc157a3dd24c2d117d4a77172fd2245"
   }
 ]
