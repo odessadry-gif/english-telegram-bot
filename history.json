@@ -2770,5 +2770,15 @@
     "core": "Order coffee and say you're catching a train.",
     "fp": "6b2e85c3f05ecd30af8c1925df4f67ea5217160e94dab65474ad61128402a424",
     "core_fp": "516b6521739df5c56f499f8448f31661c380f0272fb9235cb683cd9b6409a610"
+  },
+  {
+    "ts": 1774464012,
+    "kind": "what_does_it_mean",
+    "level": "B1",
+    "topic": "Texting",
+    "theme": "mixed",
+    "core": "Keep me posted.",
+    "fp": "0d6c8c2ff0b590d4642e73fc56c7c78e3a7c9ed1da5b628340845cce67ff6075",
+    "core_fp": "35372e63ae2cd0e1d6c3741e4e9f6de16839dad39e23bacb94c286444d2a14ba"
   }
 ]
