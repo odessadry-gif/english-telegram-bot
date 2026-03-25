@@ -2750,5 +2750,15 @@
     "core": "My order is under ___.",
     "fp": "fa2f269d315ed9e855574fe6341f40d225cd41efd962d221e72ae72904562ec2",
     "core_fp": "7ceebb05a0d4f81e88ee2fb53777bef06e4e30963d6d9887d65c8b2383cb3f3c"
+  },
+  {
+    "ts": 1774450263,
+    "kind": "situation_quiz",
+    "level": "B1",
+    "topic": "Restaurant",
+    "theme": "mixed",
+    "core": "ask friend to pay because you forgot your wallet",
+    "fp": "0848f73ced976929d9f3e94db9bf77f7b835a01e717864ee3ba563d04797d5eb",
+    "core_fp": "549281eb8130f37886afa87d312d7199798b8847b3a83ab61c0bc8fae07f20b3"
   }
 ]
