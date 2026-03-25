@@ -2760,5 +2760,15 @@
     "core": "ask friend to pay because you forgot your wallet",
     "fp": "0848f73ced976929d9f3e94db9bf77f7b835a01e717864ee3ba563d04797d5eb",
     "core_fp": "549281eb8130f37886afa87d312d7199798b8847b3a83ab61c0bc8fae07f20b3"
+  },
+  {
+    "ts": 1774457528,
+    "kind": "mini_dialogue",
+    "level": "B1",
+    "topic": "Coffee",
+    "theme": "mixed",
+    "core": "Order coffee and say you're catching a train.",
+    "fp": "6b2e85c3f05ecd30af8c1925df4f67ea5217160e94dab65474ad61128402a424",
+    "core_fp": "516b6521739df5c56f499f8448f31661c380f0272fb9235cb683cd9b6409a610"
   }
 ]
