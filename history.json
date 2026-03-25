@@ -2710,5 +2710,15 @@
     "core": "ask for napkins and cutlery for a takeaway",
     "fp": "652f654486b6eb068b25df4e4896c1d8af3e5f72ed17d986e72fe055dca57d32",
     "core_fp": "48cee4e390a899e450d49ce9ba13acda0bc157a3dd24c2d117d4a77172fd2245"
+  },
+  {
+    "ts": 1774421324,
+    "kind": "mini_dialogue",
+    "level": "A2",
+    "topic": "Food",
+    "theme": "mixed",
+    "core": "Delivery at the door",
+    "fp": "e64eb77ae48045b0ef41a50757c04a815ff591489a19a3a4a2c72a4fa01cee49",
+    "core_fp": "bab32e14435e01089aa5bab9bfbd2b6b3e4019faa541e20b84198259fc5acaf6"
   }
 ]
