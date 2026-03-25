@@ -2730,5 +2730,15 @@
     "core": "It's on the way.",
     "fp": "b409414137ec9bdcd874a2eb21d0a223975074ec6308231ee6ba2aea3732c849",
     "core_fp": "3fab91a9065fe43789726ba800c91675d3ae5e48424cf9f895cf064387335fc0"
+  },
+  {
+    "ts": 1774435018,
+    "kind": "ua_en",
+    "level": "A2",
+    "topic": "Restaurant",
+    "theme": "mixed",
+    "core": "Можемо сісти біля вікна?",
+    "fp": "e5dc41ac56f5dc1dab231554f07e120a02001977634f68dd0b61877e3f70cbbc",
+    "core_fp": "468fb8cdc93212837cee549637293355332e97e45f009dbbcbf32033cb843d45"
   }
 ]
