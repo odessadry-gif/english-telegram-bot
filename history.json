@@ -2740,5 +2740,15 @@
     "core": "Можемо сісти біля вікна?",
     "fp": "e5dc41ac56f5dc1dab231554f07e120a02001977634f68dd0b61877e3f70cbbc",
     "core_fp": "468fb8cdc93212837cee549637293355332e97e45f009dbbcbf32033cb843d45"
+  },
+  {
+    "ts": 1774442429,
+    "kind": "phrase_gap",
+    "level": "A2",
+    "topic": "Food",
+    "theme": "mixed",
+    "core": "My order is under ___.",
+    "fp": "fa2f269d315ed9e855574fe6341f40d225cd41efd962d221e72ae72904562ec2",
+    "core_fp": "7ceebb05a0d4f81e88ee2fb53777bef06e4e30963d6d9887d65c8b2383cb3f3c"
   }
 ]
