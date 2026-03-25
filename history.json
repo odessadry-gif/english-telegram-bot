@@ -2690,5 +2690,15 @@
     "core": "Подзвони, коли приїдеш.",
     "fp": "a64a6ab45d688f92882faef8553ce280a5f2d00e4fef79a20ff0b1092178f745",
     "core_fp": "15d8be675fd907873f2ce499b548482afbf7e58f896cd07d8686fa7f7622d03e"
+  },
+  {
+    "ts": 1774400697,
+    "kind": "phrase_gap",
+    "level": "A2",
+    "topic": "Restaurant",
+    "theme": "mixed",
+    "core": "Do you have a table ___ two?",
+    "fp": "31b8f7a76f0498c75f3b957352dc36c9a850685505ecff966d5dcffc6fa9e321",
+    "core_fp": "247fc7c99020152a8dbbbcbe3f0b1b00bab4b358cd763714a8fc593c0e22b1ef"
   }
 ]
