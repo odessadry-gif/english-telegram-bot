@@ -2870,5 +2870,15 @@
     "core": "Want to grab dinner tonight?",
     "fp": "5620d94b9a395debbc1cf420949dcb1a62b1f53196233aad10654d99a86875f3",
     "core_fp": "57b6fbd36dadd5535c91aa7b182ba6d1f2e609a491f11b71ad61dfb79f711d95"
+  },
+  {
+    "ts": 1774543883,
+    "kind": "what_does_it_mean",
+    "level": "A1",
+    "topic": "Coffee",
+    "theme": "mixed",
+    "core": "For here or to go?",
+    "fp": "3643b643dd0c1af39cdde410724a2d795467ed3c209de88907aded0f8a9fd667",
+    "core_fp": "2c90b30ac2ad0524abd1dd8c3dcec2ac2bea2e38d0f22d29cf3716b64423b901"
   }
 ]
