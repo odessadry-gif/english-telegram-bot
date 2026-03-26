@@ -2880,5 +2880,15 @@
     "core": "For here or to go?",
     "fp": "3643b643dd0c1af39cdde410724a2d795467ed3c209de88907aded0f8a9fd667",
     "core_fp": "2c90b30ac2ad0524abd1dd8c3dcec2ac2bea2e38d0f22d29cf3716b64423b901"
+  },
+  {
+    "ts": 1774550815,
+    "kind": "ua_en",
+    "level": "A1",
+    "topic": "Coffee",
+    "theme": "mixed",
+    "core": "Хочеш піти за кавою?",
+    "fp": "5821e8e965baacf0d5728e62418159c0339863faf5e84e501edcc83c0d41013e",
+    "core_fp": "bd87b21cefccb54d84c232585909b05ba92a0c7fa0cca57b295b77032b5f49f7"
   }
 ]
