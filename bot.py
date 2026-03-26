@@ -14,12 +14,10 @@ OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 CHAT_ID = os.getenv("CHAT_ID", "-1003674761753")
 MODEL = os.getenv("OPENAI_MODEL", "gpt-5-mini")
 
-# Тема каналу / серії
 # food_restaurants | travel | coffee | everyday_english | mixed
-THEME = os.getenv("THEME", "food_restaurants").strip().lower()
+THEME = os.getenv("THEME", "mixed").strip().lower()
 
-# MODE=quiz      -> постимо квіз
-# MODE=postgame  -> окремий пост з кнопкою гри
+# MODE=quiz | MODE=postgame
 MODE = os.getenv("MODE", "quiz").strip().lower()
 
 GROUP_CHAT_ID = os.getenv("GROUP_CHAT_ID", "@Official_english_every_day")
@@ -46,16 +44,15 @@ HISTORY_FILE = "history.json"
 MAX_HISTORY = 1200
 
 # ========= GENERATION =========
-MAX_GEN_TRIES_DEFAULT = 14
+MAX_GEN_TRIES_DEFAULT = 16
 MAX_GEN_TRIES_BY_KIND = {
-    "phrase_gap": 18,
-    "situation_quiz": 16,
-    "mini_dialogue": 16,
-    "what_does_it_mean": 16,
-    "ua_en": 20,
+    "phrase_gap": 20,
+    "situation_quiz": 18,
+    "mini_dialogue": 18,
+    "what_does_it_mean": 18,
+    "ua_en": 22,
 }
 
-# 5 типів живих постів
 KIND_CYCLE = [
     "situation_quiz",
     "mini_dialogue",
@@ -64,7 +61,6 @@ KIND_CYCLE = [
     "phrase_gap",
 ]
 
-# Антиповтори
 COOLDOWN_LAST_N = {
     "phrase_gap": 180,
     "situation_quiz": 220,
@@ -79,37 +75,108 @@ client = OpenAI(api_key=OPENAI_API_KEY)
 
 ARTICLES_RE = re.compile(r"^(a|an|the)\s+", re.IGNORECASE)
 
+# ========= A1/A2 SAFETY =========
+BANNED_HARD_PHRASES = [
+    "put it on my tab",
+    "confirm the time",
+    "touch base",
+    "circle back",
+    "keep me posted",
+    "heads up",
+    "it slipped my mind",
+    "rain check",
+    "no worries",
+    "piece of cake",
+    "under the weather",
+    "hit the road",
+    "figure out",
+    "work out",
+    "sort out",
+    "catch up later",
+    "i'm afraid i can't",
+    "would you mind",
+    "i was wondering if",
+]
+
+BANNED_HARD_WORDS = [
+    "tab",
+    "venue",
+    "schedule",
+    "confirm",
+    "available",
+    "reservation" ,
+    "beverage",
+    "purchase",
+    "itemized",
+    "receipt",
+    "account",
+    "charge it",
+    "complimentary",
+]
+
+EASY_CONVERSATION_MARKERS = [
+    "please",
+    "sorry",
+    "coffee",
+    "tea",
+    "water",
+    "food",
+    "menu",
+    "bill",
+    "check",
+    "late",
+    "hungry",
+    "drink",
+    "go",
+    "table",
+    "friend",
+    "wait",
+    "come",
+    "here",
+    "there",
+    "ready",
+    "want",
+    "like",
+    "can i",
+    "i'd like",
+    "for here",
+    "to go",
+    "on my way",
+]
+
 # ========= THEME MAP =========
 THEME_INSTRUCTIONS = {
     "food_restaurants": """
-Focus on: restaurant, cafe, coffee shop, menu, waiter, order, bill, reservation,
-delivery, takeaway, dessert, breakfast, lunch, dinner, drinks, food vocabulary,
-small talk in cafes, ordering food, asking for the bill, asking for a table.
+Focus on: restaurant, cafe, coffee shop, simple menu words, waiter, order, bill, table,
+food, drinks, breakfast, lunch, dinner, dessert, takeaway, delivery.
+Use very easy everyday English only.
 """.strip(),
 
     "coffee": """
-Focus on: coffee shop, barista, latte, cappuccino, espresso, oat milk,
-to go, for here, sugar, iced coffee, hot drink, ordering politely,
-asking for size, asking for milk, paying, pick-up counter.
+Focus on: coffee shop, coffee, tea, latte, cappuccino, hot, iced, milk, sugar,
+to go, for here, paying, simple barista phrases.
+Use very easy everyday English only.
 """.strip(),
 
     "travel": """
-Focus on: airport, hotel, taxi, booking, boarding pass, luggage,
-check-in, check-out, asking for directions, reservation, late arrival,
-small travel phrases and practical situations.
+Focus on: airport, hotel, taxi, booking, luggage, check-in, gate, ticket,
+simple travel phrases and very basic real-life situations.
+Use very easy everyday English only.
 """.strip(),
 
     "everyday_english": """
-Focus on: daily life, texting, meeting friends, being late, making plans,
-shopping, asking for help, natural replies, small talk, casual conversation,
-simple American-style spoken English.
+Focus on: daily life, texting, friends, being late, making plans, shopping,
+small talk, simple casual spoken English.
+Use very easy everyday English only.
 """.strip(),
 
     "mixed": """
-Mix these contexts naturally: coffee shop, restaurants, food delivery,
-travel, daily life, texting, casual spoken English. Keep it practical and conversational.
+Mix these contexts naturally: coffee shop, restaurant, food delivery, travel,
+daily life, texting, casual spoken English.
+Keep it simple, practical, and easy.
 """.strip(),
 }
+
 
 # ========= HELPERS =========
 def _norm(s: str) -> str:
@@ -277,6 +344,26 @@ def recent_avoid_list(history: list[dict], kind: str, n: int) -> list[str]:
     return out
 
 
+def looks_too_hard(text: str) -> bool:
+    low = _norm_spaces(text).lower()
+
+    for phrase in BANNED_HARD_PHRASES:
+        if phrase in low:
+            return True
+
+    words = re.findall(r"[a-z']+", low)
+    for w in words:
+        if w in BANNED_HARD_WORDS:
+            return True
+
+    return False
+
+
+def looks_easy_and_conversational(text: str) -> bool:
+    low = _norm_spaces(text).lower()
+    return any(marker in low for marker in EASY_CONVERSATION_MARKERS)
+
+
 # ========= VALIDATION =========
 def validate_common(question: str, options: list[str], correct: int, explanation: str) -> None:
     if not question or len(question.strip()) < 8:
@@ -301,36 +388,27 @@ def validate_common(question: str, options: list[str], correct: int, explanation
     if len(explanation) > 200:
         raise ValueError("explanation too long")
 
+    if looks_too_hard(question):
+        raise ValueError("question too hard")
+
+    for opt in options:
+        if looks_too_hard(opt):
+            raise ValueError("option too hard")
+
 
 def validate_phrase_gap(core: str, question: str, options: list[str], correct: int) -> None:
     core_clean = _norm_spaces(core)
+
     if core_clean.count("___") != 1:
         raise ValueError("phrase_gap core must contain exactly one ___")
 
     if not question.startswith("💬\nFill the gap:\n"):
         raise ValueError("invalid phrase_gap question format")
 
-    # Захист від занадто технічної граматики
-    banned_words = [
-        "present perfect",
-        "past perfect",
-        "future perfect",
-        "conditional",
-        "modal",
-    ]
-    low_core = core_clean.lower()
-    for b in banned_words:
-        if b in low_core:
-            raise ValueError("too technical")
+    if looks_too_hard(core_clean):
+        raise ValueError("phrase_gap too hard")
 
-    # Має бути жива розмова / реальна фраза
-    conversation_markers = [
-        "please", "can i", "could i", "i'd like", "do you have",
-        "for here", "to go", "the bill", "check", "order",
-        "table", "reservation", "coffee", "latte", "menu",
-        "late", "busy", "on my way", "hungry", "sorry"
-    ]
-    if not any(marker in low_core for marker in conversation_markers):
+    if not looks_easy_and_conversational(core_clean):
         raise ValueError("phrase_gap is not conversational enough")
 
 
@@ -341,6 +419,9 @@ def validate_situation_quiz(core: str, question: str, options: list[str], correc
     if len(_norm_spaces(core)) < 8:
         raise ValueError("situation_quiz core too short")
 
+    if looks_too_hard(core):
+        raise ValueError("situation_quiz too hard")
+
 
 def validate_mini_dialogue(core: str, question: str, options: list[str], correct: int) -> None:
     if not question.startswith("💬\nMini dialogue:\n"):
@@ -350,20 +431,30 @@ def validate_mini_dialogue(core: str, question: str, options: list[str], correct
     if "you:" not in q and "your reply:" not in q:
         raise ValueError("mini_dialogue must contain reply slot")
 
+    if looks_too_hard(core):
+        raise ValueError("mini_dialogue too hard")
+
 
 def validate_what_does_it_mean(core: str, question: str, options: list[str], correct: int) -> None:
     if not question.startswith("💬\nWhat does it mean?\n"):
         raise ValueError("invalid what_does_it_mean format")
 
-    if len(_norm_spaces(core).split()) > 8:
+    if len(_norm_spaces(core).split()) > 6:
         raise ValueError("meaning phrase too long")
+
+    if looks_too_hard(core):
+        raise ValueError("meaning phrase too hard")
 
 
 def validate_ua_en(core: str, question: str, options: list[str], correct: int) -> None:
     if not question.startswith("💬\n🇺🇦 → 🇬🇧\n"):
         raise ValueError("invalid ua_en format")
+
     if correct != 0:
         raise ValueError("ua_en correct must be 0 before shuffle")
+
+    if len(_norm_spaces(core).split()) > 5:
+        raise ValueError("ua_en too long")
 
 
 def validate_generated_quiz(kind: str, data: dict) -> tuple[str, str, list[str], int, str, str, str]:
@@ -393,7 +484,7 @@ def validate_generated_quiz(kind: str, data: dict) -> tuple[str, str, list[str],
     else:
         raise ValueError(f"unknown kind: {kind}")
 
-    if level not in ("A2", "B1"):
+    if level not in ("A1", "A2", "B1"):
         level = "A2"
 
     return level, topic, question, core, options, correct, explanation
@@ -464,7 +555,7 @@ def send_game_post():
 def get_theme_block() -> str:
     if THEME in THEME_INSTRUCTIONS:
         return THEME_INSTRUCTIONS[THEME]
-    return THEME_INSTRUCTIONS["food_restaurants"]
+    return THEME_INSTRUCTIONS["mixed"]
 
 
 def prompt_for(kind: str, avoid_items: list[str]) -> str:
@@ -476,7 +567,7 @@ def prompt_for(kind: str, avoid_items: list[str]) -> str:
         )
 
     return f"""
-Create ONE Telegram English quiz for learners (A2/B1).
+Create ONE Telegram English quiz for learners.
 Return STRICT JSON ONLY. No markdown. No explanations outside JSON.
 
 CHANNEL STYLE:
@@ -485,9 +576,39 @@ CHANNEL STYLE:
 - practical
 - natural spoken English
 - real life situations
-- simple American-style everyday English
+- very simple American-style everyday English
 - NOT technical grammar
 - NOT textbook-style dry sentences
+
+LEVEL STRATEGY (VERY IMPORTANT):
+- 55% questions should feel like A1
+- 35% questions should feel like A2
+- 10% questions may be B1
+- prefer A1/A2 if in doubt
+- use very common words
+- short phrases are better than advanced phrases
+- avoid idioms unless extremely obvious
+- avoid formal business English
+- avoid advanced restaurant or travel expressions
+
+EASY ENGLISH RULES:
+- use short sentences
+- use common daily words only
+- prefer phrases like:
+  "Can I get..."
+  "I'd like..."
+  "I'm late"
+  "I'm hungry"
+  "Let's go"
+  "Are you ready?"
+  "For here or to go?"
+  "Can we get the bill?"
+- avoid phrases like:
+  "Put it on my tab"
+  "Please confirm the time"
+  "Would you mind"
+  "I was wondering if"
+  "Keep me posted"
 
 THEME:
 {get_theme_block()}
@@ -515,14 +636,15 @@ HARD RULES:
 - no obscure vocabulary
 - no perfect tenses
 - no grammar terminology in the question
-- avoid robotic phrasing like "Give coffee" unless used as a wrong option
+- no advanced idioms
+- no formal phrases
 - explanation_uk must be short, useful, natural Ukrainian, max 160 chars
 
 {avoid_line}
 
 JSON schema:
 {{
-  "level": "A2" or "B1",
+  "level": "A1" or "A2" or "B1",
   "kind": "{kind}",
   "topic": "Coffee" or "Restaurant" or "Everyday English" or "Travel" or "Texting" or "Food",
   "core": "main core phrase / situation / Ukrainian phrase",
@@ -536,52 +658,63 @@ FORMAT RULES BY KIND:
 
 1) kind=phrase_gap
 - Use a REAL spoken phrase with one blank: ___
-- Must feel natural in a cafe / restaurant / texting / travel / daily life
+- Must feel natural in cafe / restaurant / texting / travel / daily life
+- Keep it easy, short, and common
 - question format MUST be exactly:
   💬
   Fill the gap:
   <core>
 - Good examples:
-  "I'd like ___ latte, please."
+  "I'd like ___ coffee, please."
   "Can I get this ___ go?"
   "Sorry, I'm running ___."
-  "Could we get ___ bill, please?"
-- Avoid school grammar vibes
+  "Can we get the ___, please?"
+  "I'm on my ___."
 
 2) kind=situation_quiz
 - A short real-life situation + ask what you say
+- Make it easy and common
 - question format MUST be exactly:
   💬
   Situation:
   <1 short situation line>
   What do you say?
-- Example:
+- Good examples:
+  "You want a coffee.
+  What do you say?"
   "You finished dinner and want to pay.
   What do you say?"
 
 3) kind=mini_dialogue
 - A tiny dialogue with a reply choice
+- Keep it very natural and easy
 - question format MUST be exactly:
   💬
   Mini dialogue:
-  Barista: What can I get for you?
+  <line>
   Your reply:
-- Keep it very natural
+- Good examples:
+  "Barista: What can I get for you?"
+  "Friend: Are you ready?"
+  "Waiter: Still water or sparkling?"
 
 4) kind=what_does_it_mean
 - Use a common spoken phrase/text phrase
+- Must be easy enough for A1/A2
 - question format MUST be exactly:
   💬
   What does it mean?
   "<core>"
-- Examples:
-  "I'm starving."
+- Good examples:
+  "I'm hungry."
+  "I'm late."
   "I'm on my way."
-  "For here or to go?"
-  "I'm running late."
+  "To go."
+  "For here."
 
 5) kind=ua_en
 - core: one Ukrainian word or phrase from daily real life
+- Keep it simple and short
 - question format MUST be exactly:
   💬
   🇺🇦 → 🇬🇧
@@ -597,9 +730,12 @@ QUALITY CHECK:
 Before returning JSON, silently verify:
 - the post feels alive and useful
 - a real person could say it in real life
+- the English is mostly A1/A2
 - only one answer is clearly correct
 - no near-duplicate of recent ideas
 - no dry technical grammar sentence
+- no advanced idiom
+- no hard formal phrase
 
 Return STRICT JSON ONLY.
 """.strip()
@@ -609,55 +745,61 @@ def fallback_prompt_for(kind: str) -> str:
     return f"""
 Return STRICT JSON ONLY.
 
-Create ONE very simple, lively Telegram English quiz (A2) with:
-- real life spoken English
-- exactly 4 unique options
-- exactly 1 correct answer
-- short Ukrainian explanation
+Create ONE very simple Telegram English quiz for learners.
+Target level: mostly A1/A2.
+Exactly 4 unique options.
+Exactly 1 correct answer.
+Short Ukrainian explanation.
 
 Kind: {kind}
 
-Use one of these situations:
+Use only very easy situations:
 - coffee
 - restaurant
-- texting
+- food
 - being late
-- takeaway
+- texting
+- daily life
 - asking for the bill
-- delivery
-- daily small talk
+- takeaway
+
+Avoid:
+- idioms
+- advanced phrases
+- formal English
+- difficult travel vocabulary
 
 Question format rules:
 - phrase_gap:
   💬
   Fill the gap:
-  <phrase with ___>
+  <easy phrase with ___>
 
 - situation_quiz:
   💬
   Situation:
-  <situation>
+  <easy situation>
   What do you say?
 
 - mini_dialogue:
   💬
   Mini dialogue:
-  <line>
+  <easy line>
   Your reply:
 
 - what_does_it_mean:
   💬
   What does it mean?
-  "<phrase>"
+  "<easy phrase>"
 
 - ua_en:
   💬
   🇺🇦 → 🇬🇧
-  <ukrainian phrase>
+  <easy ukrainian phrase>
 
 JSON schema:
 {{
-  "level": "A2",
+  "level": "A1",
   "kind": "{kind}",
   "topic": "Everyday English",
   "core": "...",
