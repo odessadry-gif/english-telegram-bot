@@ -2890,5 +2890,15 @@
     "core": "Хочеш піти за кавою?",
     "fp": "5821e8e965baacf0d5728e62418159c0339863faf5e84e501edcc83c0d41013e",
     "core_fp": "bd87b21cefccb54d84c232585909b05ba92a0c7fa0cca57b295b77032b5f49f7"
+  },
+  {
+    "ts": 1774556818,
+    "kind": "phrase_gap",
+    "level": "A1",
+    "topic": "Coffee",
+    "theme": "mixed",
+    "core": "I'd like ___ coffee, please.",
+    "fp": "fe7c0fa90aea3a80ba77afe893cdf8c58ad2aba11c1ac8676cdafc42a9908d21",
+    "core_fp": "0fe9c3aa6ed13e815ca56f0333c685a41f151d551ddf5a875842da0ade68c857"
   }
 ]
