@@ -2900,5 +2900,15 @@
     "core": "I'd like ___ coffee, please.",
     "fp": "fe7c0fa90aea3a80ba77afe893cdf8c58ad2aba11c1ac8676cdafc42a9908d21",
     "core_fp": "0fe9c3aa6ed13e815ca56f0333c685a41f151d551ddf5a875842da0ade68c857"
+  },
+  {
+    "ts": 1774563375,
+    "kind": "situation_quiz",
+    "level": "A1",
+    "topic": "Restaurant",
+    "theme": "mixed",
+    "core": "Your soup is cold.",
+    "fp": "a3c30d8b852ec244665338edfca3a28fadb9ad3e6e02c19f180b579bd7f050de",
+    "core_fp": "1f8182f5c0db54832de943653f54b0492acff9768b6b9f2c117b6f4b25d94e78"
   }
 ]
