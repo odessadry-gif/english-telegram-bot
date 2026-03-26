@@ -2830,5 +2830,15 @@
     "core": "Put it on my tab.",
     "fp": "bf501d3cc5fe9fe7ff69740b7e227d2bf0970ed24102515f7f8999403d6bfa33",
     "core_fp": "4473a69755590c7a51110ef8d0567aef88b0e430fec1b1952368dfa260628020"
+  },
+  {
+    "ts": 1774514405,
+    "kind": "ua_en",
+    "level": "B1",
+    "topic": "Texting",
+    "theme": "mixed",
+    "core": "Підтверди, будь ласка, час",
+    "fp": "d7624f446ea4a67dbadb8bf267450aaacbab083b8fa393f83e5550cc298ada19",
+    "core_fp": "e0341ff845932151a3e036fb8845ef32175b54fc85b528381d822595454f84ed"
   }
 ]
