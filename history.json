@@ -2860,5 +2860,15 @@
     "core": "order a coffee size",
     "fp": "16ff1c8b1fec4e1992d1627bfe2cfff3c54ba16529eaf3783cc234aaaa95b0a6",
     "core_fp": "8f1826d61e9b9389988b60b5fc1bb7229a7db2a52dd3f45e92e6e45e1d37032d"
+  },
+  {
+    "ts": 1774536956,
+    "kind": "mini_dialogue",
+    "level": "A1",
+    "topic": "Texting",
+    "theme": "mixed",
+    "core": "Want to grab dinner tonight?",
+    "fp": "5620d94b9a395debbc1cf420949dcb1a62b1f53196233aad10654d99a86875f3",
+    "core_fp": "57b6fbd36dadd5535c91aa7b182ba6d1f2e609a491f11b71ad61dfb79f711d95"
   }
 ]
