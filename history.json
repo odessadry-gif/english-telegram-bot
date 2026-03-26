@@ -2840,5 +2840,15 @@
     "core": "Підтверди, будь ласка, час",
     "fp": "d7624f446ea4a67dbadb8bf267450aaacbab083b8fa393f83e5550cc298ada19",
     "core_fp": "e0341ff845932151a3e036fb8845ef32175b54fc85b528381d822595454f84ed"
+  },
+  {
+    "ts": 1774521703,
+    "kind": "phrase_gap",
+    "level": "A1",
+    "topic": "Restaurant",
+    "theme": "mixed",
+    "core": "Can I pay ___ card?",
+    "fp": "3ad487e04d0a81daf5ccc4bea1df842a148c18e405f434dab5d131a9c14804fe",
+    "core_fp": "23229ae4b9158f1b4842577fece7eed906fad0e57e3dddcd570e050218be36f6"
   }
 ]
