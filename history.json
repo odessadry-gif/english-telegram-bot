@@ -2820,5 +2820,15 @@
     "core": "ordering breakfast in a cafe",
     "fp": "1ba3728befa7e5934157c1d2953dc044dd6a46c0699903d51a9330fe7b02bf80",
     "core_fp": "7c6e220568b753db7dd8d5876bb6e3ad0d7b5b589feba5da3ed4ec2dda714132"
+  },
+  {
+    "ts": 1774508068,
+    "kind": "what_does_it_mean",
+    "level": "B1",
+    "topic": "Restaurant",
+    "theme": "mixed",
+    "core": "Put it on my tab.",
+    "fp": "bf501d3cc5fe9fe7ff69740b7e227d2bf0970ed24102515f7f8999403d6bfa33",
+    "core_fp": "4473a69755590c7a51110ef8d0567aef88b0e430fec1b1952368dfa260628020"
   }
 ]
