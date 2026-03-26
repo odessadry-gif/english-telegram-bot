@@ -2810,5 +2810,15 @@
     "core": "ask where to meet: cafe or food court",
     "fp": "fabd2b66d122d52b6b6ae2f4d4462606fc89607eb9c6dfac2ab0ada43707e11f",
     "core_fp": "b4cfe81d5dc6126c532f8b2fdc2b74331315eb83bfe27da4dd9d69d498af63fc"
+  },
+  {
+    "ts": 1774498987,
+    "kind": "mini_dialogue",
+    "level": "B1",
+    "topic": "Coffee",
+    "theme": "mixed",
+    "core": "ordering breakfast in a cafe",
+    "fp": "1ba3728befa7e5934157c1d2953dc044dd6a46c0699903d51a9330fe7b02bf80",
+    "core_fp": "7c6e220568b753db7dd8d5876bb6e3ad0d7b5b589feba5da3ed4ec2dda714132"
   }
 ]
