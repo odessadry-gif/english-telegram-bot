@@ -2800,5 +2800,15 @@
     "core": "Can I have the soup ___, please? I have a meeting in 20 minutes.",
     "fp": "73259289f18fa1ca7d8ee0b8c9f8e545a9fb688ac6d607aad2e9e52f2c189bd5",
     "core_fp": "e914e69b8b2965934b951270f4b51f4742bb4abce79b8d7e788a01150cb33816"
+  },
+  {
+    "ts": 1774487344,
+    "kind": "situation_quiz",
+    "level": "A2",
+    "topic": "Texting",
+    "theme": "mixed",
+    "core": "ask where to meet: cafe or food court",
+    "fp": "fabd2b66d122d52b6b6ae2f4d4462606fc89607eb9c6dfac2ab0ada43707e11f",
+    "core_fp": "b4cfe81d5dc6126c532f8b2fdc2b74331315eb83bfe27da4dd9d69d498af63fc"
   }
 ]
