@@ -2920,5 +2920,15 @@
     "core": "I'm at the cafe. Where are you?",
     "fp": "f22c6515ed747664f63a8d75c68078c5b494b88b6670153065564649ed71011c",
     "core_fp": "72b943dc640b00b7a2c8dfad340ca85300ecc578e9f013a38f791d6fb48e95bb"
+  },
+  {
+    "ts": 1774585397,
+    "kind": "what_does_it_mean",
+    "level": "A1",
+    "topic": "Restaurant",
+    "theme": "mixed",
+    "core": "Can I get the bill?",
+    "fp": "720324fb7d5fd88426ced6ea4488e3fb8c52819cf3e577becd611d20b94d4e62",
+    "core_fp": "333d54cede9ee37ff699a4791b5d631f15e5ce65942d4643f39ee9b19673ea26"
   }
 ]
