@@ -2960,5 +2960,15 @@
     "core": "Order at a cafe",
     "fp": "f900b9723de020b49d25c627f1fdc034a036bfb3c9c0defcdb25b8748114e396",
     "core_fp": "090b17bbb558bb17418138c94dc0abefa941b1801d06ac2e00f3785ae6a91894"
+  },
+  {
+    "ts": 1774614892,
+    "kind": "mini_dialogue",
+    "level": "A1",
+    "topic": "Texting",
+    "theme": "mixed",
+    "core": "meet at 6",
+    "fp": "ed371bdfe7e31d0fb280ebd6871f1152ee8c97e43c7d6917377ac3f9bf6eb478",
+    "core_fp": "6b0ea16f1dbc7a19102629a99bac03a3421c0ec876419d56326551225976d02b"
   }
 ]
