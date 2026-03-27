@@ -3010,5 +3010,15 @@
     "core": "You're late to meet a friend.",
     "fp": "73b4432f13f4b87910c1e8d5dabca7cecab9dfd71c22d6505cf7d05e819bd00b",
     "core_fp": "c2ca6acc856b2192b93fe720054abf32ba700a6c700fcf22343bda5898ece031"
+  },
+  {
+    "ts": 1774649954,
+    "kind": "mini_dialogue",
+    "level": "A2",
+    "topic": "Travel",
+    "theme": "mixed",
+    "core": "Can you pick me up at the airport?",
+    "fp": "7f8acac8eda5e166010d9a1935cbcfb59a14d488e4b77cb9e4ebcfb9338ca3d7",
+    "core_fp": "071ac2a10e06b3ed4b333b5cec1ba8d52f74ed94364f46807a979cb3eaba7dc1"
   }
 ]
