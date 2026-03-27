@@ -2940,5 +2940,15 @@
     "core": "Я голодний",
     "fp": "9f37d86708bd273e67edd97c64033ee623639b1c740f28f6d6f06fcd0f49cd01",
     "core_fp": "0009cec67834e5e1d23c30757e87bb28ce53238aedfc72f743ef4f87554d2dd0"
+  },
+  {
+    "ts": 1774600631,
+    "kind": "phrase_gap",
+    "level": "A1",
+    "topic": "Restaurant",
+    "theme": "mixed",
+    "core": "Can we get the ___, please?",
+    "fp": "fd1ea1dd3e1b75bd0be2d2f64000fe2715ce047f3014fed0aba7ae4244632146",
+    "core_fp": "091026a08c24f758d7c7aab3550d497a6bc2403f675cdacd91f98d9734ceb19a"
   }
 ]
