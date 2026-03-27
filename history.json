@@ -2970,5 +2970,15 @@
     "core": "meet at 6",
     "fp": "ed371bdfe7e31d0fb280ebd6871f1152ee8c97e43c7d6917377ac3f9bf6eb478",
     "core_fp": "6b0ea16f1dbc7a19102629a99bac03a3421c0ec876419d56326551225976d02b"
+  },
+  {
+    "ts": 1774622578,
+    "kind": "what_does_it_mean",
+    "level": "A1",
+    "topic": "Coffee",
+    "theme": "mixed",
+    "core": "Can I get a refill?",
+    "fp": "abf3a5be0a9633e539dca7a165db23724773c9601fef18c81f4981ba599e5ea1",
+    "core_fp": "d7f0d00299c47050099eda17c23d724ec3fcfd9b34b97389baed7ba599081ef0"
   }
 ]
