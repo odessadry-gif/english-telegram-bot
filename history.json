@@ -2990,5 +2990,15 @@
     "core": "Можна це взяти з собою?",
     "fp": "073141b921d1eb41ba852b48e6653a0bc01309ffd516da5b8f70de7df2bd71d0",
     "core_fp": "f2e2b558f8b7e39d29b79fb25482931c62c864d61776370727d67e9230f4c324"
+  },
+  {
+    "ts": 1774636802,
+    "kind": "phrase_gap",
+    "level": "A1",
+    "topic": "Coffee",
+    "theme": "mixed",
+    "core": "For here or ___?",
+    "fp": "3c10f593e7c5508955d8569e72dbf1f7b0ec3e619f70ea804aba16e9c0c657fb",
+    "core_fp": "d399d1d8e658b3b0bfb0442827b8423df61e0287cf2d60c442007703024a2993"
   }
 ]
