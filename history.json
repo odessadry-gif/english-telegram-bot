@@ -2950,5 +2950,15 @@
     "core": "Can we get the ___, please?",
     "fp": "fd1ea1dd3e1b75bd0be2d2f64000fe2715ce047f3014fed0aba7ae4244632146",
     "core_fp": "091026a08c24f758d7c7aab3550d497a6bc2403f675cdacd91f98d9734ceb19a"
+  },
+  {
+    "ts": 1774607771,
+    "kind": "situation_quiz",
+    "level": "A1",
+    "topic": "Coffee",
+    "theme": "mixed",
+    "core": "Order at a cafe",
+    "fp": "f900b9723de020b49d25c627f1fdc034a036bfb3c9c0defcdb25b8748114e396",
+    "core_fp": "090b17bbb558bb17418138c94dc0abefa941b1801d06ac2e00f3785ae6a91894"
   }
 ]
