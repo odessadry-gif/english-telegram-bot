@@ -2980,5 +2980,15 @@
     "core": "Can I get a refill?",
     "fp": "abf3a5be0a9633e539dca7a165db23724773c9601fef18c81f4981ba599e5ea1",
     "core_fp": "d7f0d00299c47050099eda17c23d724ec3fcfd9b34b97389baed7ba599081ef0"
+  },
+  {
+    "ts": 1774629634,
+    "kind": "ua_en",
+    "level": "A1",
+    "topic": "Coffee",
+    "theme": "mixed",
+    "core": "Можна це взяти з собою?",
+    "fp": "073141b921d1eb41ba852b48e6653a0bc01309ffd516da5b8f70de7df2bd71d0",
+    "core_fp": "f2e2b558f8b7e39d29b79fb25482931c62c864d61776370727d67e9230f4c324"
   }
 ]
