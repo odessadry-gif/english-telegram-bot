@@ -3060,5 +3060,15 @@
     "core": "A friend texts: Are you free tonight?",
     "fp": "174c75bfc2e711973b7b17b16624af45d51829c5448ff45de97eb261cef379be",
     "core_fp": "ec3999692b061d340fb086d34eac240780eb5e13b7e93026b3b520c1b0df6a35"
+  },
+  {
+    "ts": 1774693188,
+    "kind": "mini_dialogue",
+    "level": "A1",
+    "topic": "Texting",
+    "theme": "mixed",
+    "core": "Friend: I'm at the cafe. Where are you?",
+    "fp": "8239cdaa7ddd53de078b84bcec73b8543b5d6a59cca2377052d572f1bd79ae15",
+    "core_fp": "0665e30e0c79e04ea0d6fcb1eddfff9260e8fd1f88a76f18abdf7c7a8a10fe17"
   }
 ]
