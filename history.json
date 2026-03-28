@@ -3090,5 +3090,15 @@
     "core": "Пішли",
     "fp": "3d1894e8c847d01e2507330b5055a67fb6c5cf96d5088972591174082b831ea5",
     "core_fp": "5e427718a52647463b65ebb7edcedd45b29e1d3fdb32dba241d62dcf0d7b3d15"
+  },
+  {
+    "ts": 1774714783,
+    "kind": "phrase_gap",
+    "level": "A1",
+    "topic": "Coffee",
+    "theme": "mixed",
+    "core": "Can I have a ___ of coffee?",
+    "fp": "c28345967216971650d917f2212f84bebc24d0e341b697ef0aa8dddc0446100a",
+    "core_fp": "f369958e3a1df6c4f15ae7eceb5113c8cdde46b3f5c2f60022f11604432e6c1f"
   }
 ]
