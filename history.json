@@ -3050,5 +3050,15 @@
     "core": "Can I get a latte ___ almond milk?",
     "fp": "0d625866a579e50ec86d50c87b9839de3d6e7520dece8aba3e0ad43feb3fa64b",
     "core_fp": "527adbd006acc74d95a381a9e545050a89f6e369316fda9c272e09e69d61d368"
+  },
+  {
+    "ts": 1774686283,
+    "kind": "situation_quiz",
+    "level": "A1",
+    "topic": "Texting",
+    "theme": "mixed",
+    "core": "A friend texts: Are you free tonight?",
+    "fp": "174c75bfc2e711973b7b17b16624af45d51829c5448ff45de97eb261cef379be",
+    "core_fp": "ec3999692b061d340fb086d34eac240780eb5e13b7e93026b3b520c1b0df6a35"
   }
 ]
