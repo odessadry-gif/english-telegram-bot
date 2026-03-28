@@ -3040,5 +3040,15 @@
     "core": "Я замовив доставку",
     "fp": "47761b2b1e8c3521c20a20920677dbe1b80731cb78ae9977555dba84fcabd108",
     "core_fp": "9d08c9a931956ab48078f22f05bd1969fa13ed272918ca71322f6d7b72aad0a4"
+  },
+  {
+    "ts": 1774680209,
+    "kind": "phrase_gap",
+    "level": "A1",
+    "topic": "Coffee",
+    "theme": "mixed",
+    "core": "Can I get a latte ___ almond milk?",
+    "fp": "0d625866a579e50ec86d50c87b9839de3d6e7520dece8aba3e0ad43feb3fa64b",
+    "core_fp": "527adbd006acc74d95a381a9e545050a89f6e369316fda9c272e09e69d61d368"
   }
 ]
