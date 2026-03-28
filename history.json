@@ -3070,5 +3070,15 @@
     "core": "Friend: I'm at the cafe. Where are you?",
     "fp": "8239cdaa7ddd53de078b84bcec73b8543b5d6a59cca2377052d572f1bd79ae15",
     "core_fp": "0665e30e0c79e04ea0d6fcb1eddfff9260e8fd1f88a76f18abdf7c7a8a10fe17"
+  },
+  {
+    "ts": 1774700837,
+    "kind": "what_does_it_mean",
+    "level": "A1",
+    "topic": "Texting",
+    "theme": "mixed",
+    "core": "Want to join?",
+    "fp": "0792fd444dced789e13b3a78aaeb15a85b584961e91a6cc658ad282a5c8a0c1e",
+    "core_fp": "999190518cbfcf29a0f208120153171ee2698886d5996e8f6c18db70cce069ca"
   }
 ]
