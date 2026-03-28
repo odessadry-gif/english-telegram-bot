@@ -3020,5 +3020,15 @@
     "core": "Can you pick me up at the airport?",
     "fp": "7f8acac8eda5e166010d9a1935cbcfb59a14d488e4b77cb9e4ebcfb9338ca3d7",
     "core_fp": "071ac2a10e06b3ed4b333b5cec1ba8d52f74ed94364f46807a979cb3eaba7dc1"
+  },
+  {
+    "ts": 1774659753,
+    "kind": "what_does_it_mean",
+    "level": "A1",
+    "topic": "Texting",
+    "theme": "mixed",
+    "core": "Be right back.",
+    "fp": "7c9e4f4e453cbd80f9022cc0885a648041bcb7defaf736384fba485810c6ab04",
+    "core_fp": "1ce3c3b2dc1af626a9040a423541932c0a3937e7f535d5582a19284306a68a64"
   }
 ]
