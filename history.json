@@ -3120,5 +3120,15 @@
     "core": "Delivery at your door",
     "fp": "10df79f015ee152c47ac541f4dc61050cfe04e2033ad89caee9b12185139bbc7",
     "core_fp": "6ea1047856847c28f63188ddc114fa054729cf2ae8adf0d9aaee78579c6294b1"
+  },
+  {
+    "ts": 1774736166,
+    "kind": "what_does_it_mean",
+    "level": "A1",
+    "topic": "Food",
+    "theme": "mixed",
+    "core": "I'm hungry.",
+    "fp": "440e826bfb74f8bd0e8fa247048495319e26c8f5f910a5eb0c52650421dae258",
+    "core_fp": "ddb80b73ba8bd5783d5ce37367aec1dd31e9a4301a856a2bdac1848c038d2e93"
   }
 ]
