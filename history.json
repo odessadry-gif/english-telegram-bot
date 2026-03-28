@@ -3110,5 +3110,15 @@
     "core": "table for two",
     "fp": "80762907f0b8d90a2653220428fcc9b53b29ef1792363b3077aa7695b3e141fe",
     "core_fp": "3eab7f95271b7cd41c94315f12b2242948847ca92865e738dc112f77b683d15d"
+  },
+  {
+    "ts": 1774728993,
+    "kind": "mini_dialogue",
+    "level": "A1",
+    "topic": "Food",
+    "theme": "mixed",
+    "core": "Delivery at your door",
+    "fp": "10df79f015ee152c47ac541f4dc61050cfe04e2033ad89caee9b12185139bbc7",
+    "core_fp": "6ea1047856847c28f63188ddc114fa054729cf2ae8adf0d9aaee78579c6294b1"
   }
 ]
