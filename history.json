@@ -3080,5 +3080,15 @@
     "core": "Want to join?",
     "fp": "0792fd444dced789e13b3a78aaeb15a85b584961e91a6cc658ad282a5c8a0c1e",
     "core_fp": "999190518cbfcf29a0f208120153171ee2698886d5996e8f6c18db70cce069ca"
+  },
+  {
+    "ts": 1774707700,
+    "kind": "ua_en",
+    "level": "A1",
+    "topic": "Everyday English",
+    "theme": "mixed",
+    "core": "Пішли",
+    "fp": "3d1894e8c847d01e2507330b5055a67fb6c5cf96d5088972591174082b831ea5",
+    "core_fp": "5e427718a52647463b65ebb7edcedd45b29e1d3fdb32dba241d62dcf0d7b3d15"
   }
 ]
