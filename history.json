@@ -3130,5 +3130,15 @@
     "core": "I'm hungry.",
     "fp": "440e826bfb74f8bd0e8fa247048495319e26c8f5f910a5eb0c52650421dae258",
     "core_fp": "ddb80b73ba8bd5783d5ce37367aec1dd31e9a4301a856a2bdac1848c038d2e93"
+  },
+  {
+    "ts": 1774746689,
+    "kind": "ua_en",
+    "level": "A1",
+    "topic": "Texting",
+    "theme": "mixed",
+    "core": "Я в дорозі",
+    "fp": "51a05a6f29220a38c7fb9ef04c9db120727d84e2ee0d42de0fc04c7294ed2080",
+    "core_fp": "d786aefb31b26a757c3800093b260bca5241084cd31210e46857596c87708525"
   }
 ]
