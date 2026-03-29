@@ -3220,5 +3220,15 @@
     "core": "Ready to order",
     "fp": "0f075bec2dab816a4894009c7de708197ee0420377d50afc29c3843b274969f1",
     "core_fp": "2bbb1584acc1f72954b05ac9840d20b6f1bc5a53a49d582029c8fc7b9ffc704f"
+  },
+  {
+    "ts": 1774815528,
+    "kind": "what_does_it_mean",
+    "level": "A1",
+    "topic": "Texting",
+    "theme": "mixed",
+    "core": "You free later?",
+    "fp": "5824ae524099cf7c9f78474ae4216789973eca3165b365c100e0295fb1266802",
+    "core_fp": "1536854d2870601c82b428c6f15a887c078d09a425eb9213ea06e6855b620cd6"
   }
 ]
