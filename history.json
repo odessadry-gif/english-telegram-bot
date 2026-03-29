@@ -3140,5 +3140,15 @@
     "core": "Я в дорозі",
     "fp": "51a05a6f29220a38c7fb9ef04c9db120727d84e2ee0d42de0fc04c7294ed2080",
     "core_fp": "d786aefb31b26a757c3800093b260bca5241084cd31210e46857596c87708525"
+  },
+  {
+    "ts": 1774758483,
+    "kind": "phrase_gap",
+    "level": "A1",
+    "topic": "Everyday English",
+    "theme": "mixed",
+    "core": "Are you ready ___ go?",
+    "fp": "4fe56398c32832bf177e655928b6609e8f13d607029b24fc14672a8371a88fcb",
+    "core_fp": "e5992ef265fcc3de4478daff9fe02720a375ba013a1fd4f8aed9d0859578f32b"
   }
 ]
