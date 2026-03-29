@@ -3200,5 +3200,15 @@
     "core": "Can you pick up my coffee ___?",
     "fp": "db7b79478a26b27a64ac2a0d72e19b4d01f8a80122a0b2e1fc7d6839c012a299",
     "core_fp": "03a0a350676b1d96d573de9443fd362f388d832a0d4d7f7732cd41c0ce6060b4"
+  },
+  {
+    "ts": 1774801241,
+    "kind": "situation_quiz",
+    "level": "A1",
+    "topic": "Travel",
+    "theme": "mixed",
+    "core": "Ask for water on a plane",
+    "fp": "5b9d0533fe59bd0dccc44e16135bd91f03873689f04438881f1e36c0279f6b21",
+    "core_fp": "12440aa4c2a84cd87d02859d7751b0029ddb374c8f889389a07908da5dcc2594"
   }
 ]
