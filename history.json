@@ -3180,5 +3180,15 @@
     "core": "Table for two, please.",
     "fp": "a509fe34f51aa48876c904b9b57298cfbb6cb77139f0fbb201c659804012b377",
     "core_fp": "db214dbab099e04382afe48703856bca6e565ae761652d8b0feca36ed69cb0cc"
+  },
+  {
+    "ts": 1774787244,
+    "kind": "ua_en",
+    "level": "A1",
+    "topic": "Texting",
+    "theme": "mixed",
+    "core": "Ти де?",
+    "fp": "59b2f74651b13cc28816158882db2eff9af172993c85902e4ca46b739dc95bfa",
+    "core_fp": "04cf0dbc42d6b635e15605e7f721cc704f111bd084379e770d5c7284a5572378"
   }
 ]
