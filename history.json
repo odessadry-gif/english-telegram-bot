@@ -3190,5 +3190,15 @@
     "core": "Ти де?",
     "fp": "59b2f74651b13cc28816158882db2eff9af172993c85902e4ca46b739dc95bfa",
     "core_fp": "04cf0dbc42d6b635e15605e7f721cc704f111bd084379e770d5c7284a5572378"
+  },
+  {
+    "ts": 1774794207,
+    "kind": "phrase_gap",
+    "level": "A1",
+    "topic": "Texting",
+    "theme": "mixed",
+    "core": "Can you pick up my coffee ___?",
+    "fp": "db7b79478a26b27a64ac2a0d72e19b4d01f8a80122a0b2e1fc7d6839c012a299",
+    "core_fp": "03a0a350676b1d96d573de9443fd362f388d832a0d4d7f7732cd41c0ce6060b4"
   }
 ]
