@@ -3150,5 +3150,15 @@
     "core": "Are you ready ___ go?",
     "fp": "4fe56398c32832bf177e655928b6609e8f13d607029b24fc14672a8371a88fcb",
     "core_fp": "e5992ef265fcc3de4478daff9fe02720a375ba013a1fd4f8aed9d0859578f32b"
+  },
+  {
+    "ts": 1774767029,
+    "kind": "situation_quiz",
+    "level": "A1",
+    "topic": "Texting",
+    "theme": "mixed",
+    "core": "Friend asks to meet now but you are busy.",
+    "fp": "955ca8b5de10573bdb64482426a94f5fead34104d3d019e3624d2bc4d6e06d09",
+    "core_fp": "f345488dfb72dfcf069ecbc9a9c7f845aca68172ace414834dfd535f72791301"
   }
 ]
