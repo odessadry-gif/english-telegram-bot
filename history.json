@@ -3160,5 +3160,15 @@
     "core": "Friend asks to meet now but you are busy.",
     "fp": "955ca8b5de10573bdb64482426a94f5fead34104d3d019e3624d2bc4d6e06d09",
     "core_fp": "f345488dfb72dfcf069ecbc9a9c7f845aca68172ace414834dfd535f72791301"
+  },
+  {
+    "ts": 1774772805,
+    "kind": "mini_dialogue",
+    "level": "A1",
+    "topic": "Everyday English",
+    "theme": "mixed",
+    "core": "Let's go for a walk.",
+    "fp": "813725d0339c4ff54f269c92aa16d8040b57163ee7b55299ea1d271e12f92c15",
+    "core_fp": "5c161ac170d7dcb2314f092e5066b2cd158549246e502c1dbf956ed8bdc4c2bf"
   }
 ]
