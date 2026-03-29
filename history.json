@@ -3170,5 +3170,15 @@
     "core": "Let's go for a walk.",
     "fp": "813725d0339c4ff54f269c92aa16d8040b57163ee7b55299ea1d271e12f92c15",
     "core_fp": "5c161ac170d7dcb2314f092e5066b2cd158549246e502c1dbf956ed8bdc4c2bf"
+  },
+  {
+    "ts": 1774779749,
+    "kind": "what_does_it_mean",
+    "level": "A1",
+    "topic": "Restaurant",
+    "theme": "mixed",
+    "core": "Table for two, please.",
+    "fp": "a509fe34f51aa48876c904b9b57298cfbb6cb77139f0fbb201c659804012b377",
+    "core_fp": "db214dbab099e04382afe48703856bca6e565ae761652d8b0feca36ed69cb0cc"
   }
 ]
