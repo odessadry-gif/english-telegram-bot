@@ -3250,5 +3250,15 @@
     "core": "Can you bring the food ___ my building?",
     "fp": "d2e53afc83147efdfaacdb34b2c2083cf2f4328de3a092a31705c59889fc07ef",
     "core_fp": "d087a9fa10b9e1d2198a901e12af5df23e9715f2a684de507b54105ba49fc4d0"
+  },
+  {
+    "ts": 1774845244,
+    "kind": "situation_quiz",
+    "level": "A1",
+    "topic": "Texting",
+    "theme": "mixed",
+    "core": "ask for the bus stop",
+    "fp": "a4e418604d6512af6efc2bf15cdbaf5664323489ce519d4c933b114bb934a51e",
+    "core_fp": "35d6ec8d395b3023fe48ed545be3a709bfa9d22ce1e0829437e00397599f3461"
   }
 ]
