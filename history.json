@@ -3240,5 +3240,15 @@
     "core": "Дай знати",
     "fp": "22af3d664b8ce1c0701ba9611ce480eb12ea33e2c717e70ff1fc1ff0759cbca2",
     "core_fp": "f8cebee3762f86a8a56b0b69edf1b4b55f416cdf344f6d6bd788af5ac8b4aba0"
+  },
+  {
+    "ts": 1774833133,
+    "kind": "phrase_gap",
+    "level": "A1",
+    "topic": "Food",
+    "theme": "mixed",
+    "core": "Can you bring the food ___ my building?",
+    "fp": "d2e53afc83147efdfaacdb34b2c2083cf2f4328de3a092a31705c59889fc07ef",
+    "core_fp": "d087a9fa10b9e1d2198a901e12af5df23e9715f2a684de507b54105ba49fc4d0"
   }
 ]
