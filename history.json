@@ -3310,5 +3310,15 @@
     "core": "Need a taxi to the train station.",
     "fp": "5d15e0d17f7bc9c0aeabbb2c8c8d454fdc593899a4c2516fdbdba38aa0f1973c",
     "core_fp": "9994417eda3985747a21eab9da21abe1e9d16bc1b0e7f70a9e61a41fc0ec7378"
+  },
+  {
+    "ts": 1774889091,
+    "kind": "mini_dialogue",
+    "level": "A1",
+    "topic": "Texting",
+    "theme": "mixed",
+    "core": "Missed the bus — friend will be late",
+    "fp": "9d7142841910918ac2eca0b74a8d7f1465d6ab56182dd5ab42def5505d2bfcaf",
+    "core_fp": "96cc82ab07ca6262bedfd212b64eb8099205dd7126068eafad473bcabc95e9b6"
   }
 ]
