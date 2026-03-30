@@ -3320,5 +3320,15 @@
     "core": "Missed the bus — friend will be late",
     "fp": "9d7142841910918ac2eca0b74a8d7f1465d6ab56182dd5ab42def5505d2bfcaf",
     "core_fp": "96cc82ab07ca6262bedfd212b64eb8099205dd7126068eafad473bcabc95e9b6"
+  },
+  {
+    "ts": 1774896176,
+    "kind": "what_does_it_mean",
+    "level": "A1",
+    "topic": "Coffee",
+    "theme": "mixed",
+    "core": "I'll take a latte.",
+    "fp": "73295c5de86a00714b9145b6a1f09e767b9143791a70837ceae835fa33114f99",
+    "core_fp": "3fc64bb2a1d59073846f8bb5f8803e1c1ee4dbb79be4dae56eba100bb989d5c8"
   }
 ]
