@@ -3260,5 +3260,15 @@
     "core": "ask for the bus stop",
     "fp": "a4e418604d6512af6efc2bf15cdbaf5664323489ce519d4c933b114bb934a51e",
     "core_fp": "35d6ec8d395b3023fe48ed545be3a709bfa9d22ce1e0829437e00397599f3461"
+  },
+  {
+    "ts": 1774854785,
+    "kind": "mini_dialogue",
+    "level": "A2",
+    "topic": "Travel",
+    "theme": "mixed",
+    "core": "One way or round trip?",
+    "fp": "8f9ca299128f48df39d7d740d87e1901022d059f915b6e0427f14b16d4c053f4",
+    "core_fp": "aac1557faedcd44cc640497cb2a364bd85c7dd8668ffe111e661acef528480e2"
   }
 ]
