@@ -3340,5 +3340,15 @@
     "core": "Я забув гаманець",
     "fp": "502c76636ffe8810b9f2a745e05945c510060e3c743fec6fa91e2253a6e18a1d",
     "core_fp": "0e0d9dc8e2e4a1e48d898143fc976f13e9ff30d32cacf04aeb4941695a1fe4b0"
+  },
+  {
+    "ts": 1774909572,
+    "kind": "phrase_gap",
+    "level": "A1",
+    "topic": "Restaurant",
+    "theme": "mixed",
+    "core": "Do you want to sit ___ or outside?",
+    "fp": "b99c2d0c91528237d26e257550786d3d2cb0b30be24856cbc17a847c4d0d4068",
+    "core_fp": "5a6c8d582868528546b9e15736b3eb77a9486ab464f6535e25969b72ea19cf3a"
   }
 ]
