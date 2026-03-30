@@ -3290,5 +3290,15 @@
     "core": "Де туалет?",
     "fp": "66f59c1d58c3e8851f8f7ce18c5293a9cdfafba36e9bb29d9f3483d238416ffd",
     "core_fp": "731d9620d2fb2dec86617dbe8ce394c98318bebbf07222137a749cbb7767a0dc"
+  },
+  {
+    "ts": 1774874964,
+    "kind": "phrase_gap",
+    "level": "A1",
+    "topic": "Everyday English",
+    "theme": "mixed",
+    "core": "Sorry, I'm ___.",
+    "fp": "dc266c32f5b7bf4db497ef0f014659592f20f8bb83251eb97b7d86aaccdf25fb",
+    "core_fp": "bedad790cab0a995c240bd17cbc730ead0eef78d5fb9c73f2f15dc2da2061b0a"
   }
 ]
