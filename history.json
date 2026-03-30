@@ -3280,5 +3280,15 @@
     "core": "Are you ready?",
     "fp": "78a74f2fd873c7ea042fbc978fe610afebf726b0879943ea8ae9f23943a26ab7",
     "core_fp": "609583facd842d2f29de2e62d3ef3d06df8ccbe21a9b84f45a2fc94de0e91311"
+  },
+  {
+    "ts": 1774867955,
+    "kind": "ua_en",
+    "level": "A1",
+    "topic": "Everyday English",
+    "theme": "mixed",
+    "core": "Де туалет?",
+    "fp": "66f59c1d58c3e8851f8f7ce18c5293a9cdfafba36e9bb29d9f3483d238416ffd",
+    "core_fp": "731d9620d2fb2dec86617dbe8ce394c98318bebbf07222137a749cbb7767a0dc"
   }
 ]
