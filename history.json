@@ -3300,5 +3300,15 @@
     "core": "Sorry, I'm ___.",
     "fp": "dc266c32f5b7bf4db497ef0f014659592f20f8bb83251eb97b7d86aaccdf25fb",
     "core_fp": "bedad790cab0a995c240bd17cbc730ead0eef78d5fb9c73f2f15dc2da2061b0a"
+  },
+  {
+    "ts": 1774882570,
+    "kind": "situation_quiz",
+    "level": "A1",
+    "topic": "Travel",
+    "theme": "mixed",
+    "core": "Need a taxi to the train station.",
+    "fp": "5d15e0d17f7bc9c0aeabbb2c8c8d454fdc593899a4c2516fdbdba38aa0f1973c",
+    "core_fp": "9994417eda3985747a21eab9da21abe1e9d16bc1b0e7f70a9e61a41fc0ec7378"
   }
 ]
