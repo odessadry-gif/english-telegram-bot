@@ -3400,5 +3400,15 @@
     "core": "I'd like ___ of coffee, please.",
     "fp": "585c1d6d1ce8550e269ffedf652fe22e3af838fac1c1fd1fb64e1d66c7e918bd",
     "core_fp": "0436637c6b0f543f1b7ad52c542ebb03bddc0d766cee18bcc742437930221575"
+  },
+  {
+    "ts": 1774961175,
+    "kind": "situation_quiz",
+    "level": "A1",
+    "topic": "Coffee",
+    "theme": "mixed",
+    "core": "Can I have a table by the window?",
+    "fp": "7ff461691ecaa0b146b44df22410afa5675a70bbfadf30dec9552259dbe8ba3e",
+    "core_fp": "388abc0559328c11031a38745f4aadb023bd9d8c38ba1bfe283dd8c183de7021"
   }
 ]
