@@ -3380,5 +3380,15 @@
     "core": "I'll have the same.",
     "fp": "e005214f44ce17581a4e70607f39c1b36ac5dac27e64f7b23793505a58b1e3c4",
     "core_fp": "236c9a2b9fc709e4bc996befd5814bf6ce02db9a66a6d780ffb38af618e4f206"
+  },
+  {
+    "ts": 1774946645,
+    "kind": "ua_en",
+    "level": "A1",
+    "topic": "Texting",
+    "theme": "mixed",
+    "core": "Ти готовий?",
+    "fp": "d399ad8b900e591ee7a1c03cc837a5f6ec874d6b563e7a8b230413c89eb2297e",
+    "core_fp": "93d04c31c6933820566b717829e1185c67cfd49957179c657fa62053666c027a"
   }
 ]
