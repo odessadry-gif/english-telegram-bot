@@ -3390,5 +3390,15 @@
     "core": "Ти готовий?",
     "fp": "d399ad8b900e591ee7a1c03cc837a5f6ec874d6b563e7a8b230413c89eb2297e",
     "core_fp": "93d04c31c6933820566b717829e1185c67cfd49957179c657fa62053666c027a"
+  },
+  {
+    "ts": 1774953745,
+    "kind": "phrase_gap",
+    "level": "A1",
+    "topic": "Coffee",
+    "theme": "mixed",
+    "core": "I'd like ___ of coffee, please.",
+    "fp": "585c1d6d1ce8550e269ffedf652fe22e3af838fac1c1fd1fb64e1d66c7e918bd",
+    "core_fp": "0436637c6b0f543f1b7ad52c542ebb03bddc0d766cee18bcc742437930221575"
   }
 ]
