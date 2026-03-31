@@ -3440,5 +3440,15 @@
     "core": "Можна меню?",
     "fp": "100eacde68f5ba58544e5263b1dfc10dce26a1015acad8569aad5750e2b4d811",
     "core_fp": "9d6ff9de8d1fdefe907252e48421050f8e06fdee3e4a9039eedd80215018e9fc"
+  },
+  {
+    "ts": 1774989152,
+    "kind": "phrase_gap",
+    "level": "A1",
+    "topic": "Texting",
+    "theme": "mixed",
+    "core": "I'll be there ___ 10 minutes.",
+    "fp": "81d3dd7bd56e5b8ceb474b6f614d2b9f955a7fe22b4c2747da3a016eea92a4a8",
+    "core_fp": "9b77f0bd95c09ec68b03dc4506c39cff6e378d34ae896eafb1df571d9b79b483"
   }
 ]
