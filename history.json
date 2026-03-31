@@ -3450,5 +3450,15 @@
     "core": "I'll be there ___ 10 minutes.",
     "fp": "81d3dd7bd56e5b8ceb474b6f614d2b9f955a7fe22b4c2747da3a016eea92a4a8",
     "core_fp": "9b77f0bd95c09ec68b03dc4506c39cff6e378d34ae896eafb1df571d9b79b483"
+  },
+  {
+    "ts": 1774995804,
+    "kind": "situation_quiz",
+    "level": "A1",
+    "topic": "Texting",
+    "theme": "mixed",
+    "core": "coffee now",
+    "fp": "361260b0cfd18a003cba5c1b6c99e1faff15c8d8e925d62d87d9e9885afb6008",
+    "core_fp": "4cb773c2657ceab54c66731cc45c0921020e42d1abc7e8d23867943a61add932"
   }
 ]
