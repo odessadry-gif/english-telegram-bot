@@ -3350,5 +3350,15 @@
     "core": "Do you want to sit ___ or outside?",
     "fp": "b99c2d0c91528237d26e257550786d3d2cb0b30be24856cbc17a847c4d0d4068",
     "core_fp": "5a6c8d582868528546b9e15736b3eb77a9486ab464f6535e25969b72ea19cf3a"
+  },
+  {
+    "ts": 1774919376,
+    "kind": "situation_quiz",
+    "level": "A1",
+    "topic": "Restaurant",
+    "theme": "mixed",
+    "core": "see dessert menu",
+    "fp": "61a3036007802c7e6694cdbb6138e78579fc4be7961967da4515a6cac70ad792",
+    "core_fp": "40048d727159489f2f23f6ccd1a4d9738b9a8017093a29fac0adcbb01ed74af9"
   }
 ]
