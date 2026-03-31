@@ -3370,5 +3370,15 @@
     "core": "My phone died. Can you text me the address?",
     "fp": "685591d715ecdfba0ec6d7e12762b947871d27a8fb672ce1fccd9a925e2a946c",
     "core_fp": "7bf9882b3ec365a50751f647e072882c7f98d888c95f08df71ccb00b76a0eaaf"
+  },
+  {
+    "ts": 1774940365,
+    "kind": "what_does_it_mean",
+    "level": "A1",
+    "topic": "Restaurant",
+    "theme": "mixed",
+    "core": "I'll have the same.",
+    "fp": "e005214f44ce17581a4e70607f39c1b36ac5dac27e64f7b23793505a58b1e3c4",
+    "core_fp": "236c9a2b9fc709e4bc996befd5814bf6ce02db9a66a6d780ffb38af618e4f206"
   }
 ]
