@@ -3410,5 +3410,15 @@
     "core": "Can I have a table by the window?",
     "fp": "7ff461691ecaa0b146b44df22410afa5675a70bbfadf30dec9552259dbe8ba3e",
     "core_fp": "388abc0559328c11031a38745f4aadb023bd9d8c38ba1bfe283dd8c183de7021"
+  },
+  {
+    "ts": 1774968896,
+    "kind": "mini_dialogue",
+    "level": "A1",
+    "topic": "Texting",
+    "theme": "mixed",
+    "core": "I'm at the coffee shop. Want anything?",
+    "fp": "09e09f35e5625cb2e64f9813330bd77959ed9ee61b26e9ea5b07ecf98c40cc1c",
+    "core_fp": "0f6e6de1752e3ab0a80ceefdb098220ac4c4a9d0fe9f25eadb09ccfa4325dc93"
   }
 ]
