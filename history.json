@@ -3510,5 +3510,15 @@
     "core": "Ask to sit outside at a cafe.",
     "fp": "c68a8d3d469828724d68601d2918ae89ba08c8f8fc06e68f8f1028b6d15e42b8",
     "core_fp": "cb5235cfb882bf91cc43a27336c775ba27a3572b1d02ca1260e02d5cb236ffd4"
+  },
+  {
+    "ts": 1775047702,
+    "kind": "mini_dialogue",
+    "level": "A1",
+    "topic": "Coffee",
+    "theme": "mixed",
+    "core": "We have banana bread today.",
+    "fp": "81d75b49f51d62fb8509194a9fa3848fc436079cfc02f0b57c704985807eec06",
+    "core_fp": "e76d6be7832f71f83fc29f35ce93e718c37c598c9c667408b91cb84ab6c83e13"
   }
 ]
