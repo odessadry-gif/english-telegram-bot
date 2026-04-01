@@ -3550,5 +3550,15 @@
     "core": "Can I get a table ___ two?",
     "fp": "d722de534dd4446be7411e935cf0352449d0574fbddff15bb55d992f125e7a48",
     "core_fp": "03ece07113a434abb7cb756c49cf085aad4c7409082f45317ea198ffad2711ac"
+  },
+  {
+    "ts": 1775075544,
+    "kind": "situation_quiz",
+    "level": "A1",
+    "topic": "Texting",
+    "theme": "mixed",
+    "core": "meet for coffee tomorrow",
+    "fp": "7709ddab96dbbb5b2ae023db05ad3b8122ca8bc78e404e42c6ccec118f02ed68",
+    "core_fp": "506be4c6f9a4332b1fe0ca664c7b794f271019358c52ed25997212a5a27ce1fc"
   }
 ]
