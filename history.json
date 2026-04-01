@@ -3480,5 +3480,15 @@
     "core": "Is this seat free?",
     "fp": "319aa5d205420024afd45cb4fff976df99968a3478e6f37326574ef5aafb8408",
     "core_fp": "c0bee428c8a7a7a85ab50e347b3a7922595ad2c5dd99b94f42a92ab5b5e1e825"
+  },
+  {
+    "ts": 1775027177,
+    "kind": "ua_en",
+    "level": "A1",
+    "topic": "Everyday English",
+    "theme": "mixed",
+    "core": "Давай підемо",
+    "fp": "4dd3a6f24c03fec67f6159e3bdf57777776b4205b4fdd26323cd647f4e797311",
+    "core_fp": "8e4536a1a87db80e8aca5051d8fda2bb1ebd3b204140b98b63c541568cc3cdaa"
   }
 ]
