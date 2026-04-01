@@ -3470,5 +3470,15 @@
     "core": "I'm stuck in traffic. Can you wait 20 minutes?",
     "fp": "05d0b9cdc64dea667914be5a58553cd884bcd430c3b2540e3d6da2e7b85328cb",
     "core_fp": "8ed13a8d6ddb7ccdb85747b2450df2dcf6a923db905aaa36895c394cd93dcf7c"
+  },
+  {
+    "ts": 1775018243,
+    "kind": "what_does_it_mean",
+    "level": "A1",
+    "topic": "Coffee",
+    "theme": "mixed",
+    "core": "Is this seat free?",
+    "fp": "319aa5d205420024afd45cb4fff976df99968a3478e6f37326574ef5aafb8408",
+    "core_fp": "c0bee428c8a7a7a85ab50e347b3a7922595ad2c5dd99b94f42a92ab5b5e1e825"
   }
 ]
