@@ -3500,5 +3500,15 @@
     "core": "I'd like a table for ___.",
     "fp": "3875aaae3551ed10f1e350508edbb53eba3e78f334b8b4c3e4543afa303aa195",
     "core_fp": "535849e61573c31b1b24c856ea3ecd8849ac448b5d641399229b41f050057e26"
+  },
+  {
+    "ts": 1775040314,
+    "kind": "situation_quiz",
+    "level": "A1",
+    "topic": "Coffee",
+    "theme": "mixed",
+    "core": "Ask to sit outside at a cafe.",
+    "fp": "c68a8d3d469828724d68601d2918ae89ba08c8f8fc06e68f8f1028b6d15e42b8",
+    "core_fp": "cb5235cfb882bf91cc43a27336c775ba27a3572b1d02ca1260e02d5cb236ffd4"
   }
 ]
