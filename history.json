@@ -3490,5 +3490,15 @@
     "core": "Давай підемо",
     "fp": "4dd3a6f24c03fec67f6159e3bdf57777776b4205b4fdd26323cd647f4e797311",
     "core_fp": "8e4536a1a87db80e8aca5051d8fda2bb1ebd3b204140b98b63c541568cc3cdaa"
+  },
+  {
+    "ts": 1775033534,
+    "kind": "phrase_gap",
+    "level": "A1",
+    "topic": "Restaurant",
+    "theme": "mixed",
+    "core": "I'd like a table for ___.",
+    "fp": "3875aaae3551ed10f1e350508edbb53eba3e78f334b8b4c3e4543afa303aa195",
+    "core_fp": "535849e61573c31b1b24c856ea3ecd8849ac448b5d641399229b41f050057e26"
   }
 ]
