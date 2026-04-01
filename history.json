@@ -3530,5 +3530,15 @@
     "core": "Be there soon.",
     "fp": "887ce2bb0c6d5000ad99f051443eed12fafdffde6b3e25da1eb7b2be354a5f1d",
     "core_fp": "8bf6b78c368f433ff1a21b09172093bc65dadb97d479ba01a89df84282a88a8c"
+  },
+  {
+    "ts": 1775061758,
+    "kind": "ua_en",
+    "level": "A1",
+    "topic": "Coffee",
+    "theme": "mixed",
+    "core": "Я заплачу карткою",
+    "fp": "82016ddb11f42bd42003bc409f3fdd20423ce931eb477f11b1de70266322e24c",
+    "core_fp": "a90f23e311e46e541f9974655a478849a19c224833b728023e57347f4cc8ec61"
   }
 ]
