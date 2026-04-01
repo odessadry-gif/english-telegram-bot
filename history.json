@@ -3520,5 +3520,15 @@
     "core": "We have banana bread today.",
     "fp": "81d75b49f51d62fb8509194a9fa3848fc436079cfc02f0b57c704985807eec06",
     "core_fp": "e76d6be7832f71f83fc29f35ce93e718c37c598c9c667408b91cb84ab6c83e13"
+  },
+  {
+    "ts": 1775055384,
+    "kind": "what_does_it_mean",
+    "level": "A1",
+    "topic": "Texting",
+    "theme": "mixed",
+    "core": "Be there soon.",
+    "fp": "887ce2bb0c6d5000ad99f051443eed12fafdffde6b3e25da1eb7b2be354a5f1d",
+    "core_fp": "8bf6b78c368f433ff1a21b09172093bc65dadb97d479ba01a89df84282a88a8c"
   }
 ]
