@@ -3560,5 +3560,15 @@
     "core": "meet for coffee tomorrow",
     "fp": "7709ddab96dbbb5b2ae023db05ad3b8122ca8bc78e404e42c6ccec118f02ed68",
     "core_fp": "506be4c6f9a4332b1fe0ca664c7b794f271019358c52ed25997212a5a27ce1fc"
+  },
+  {
+    "ts": 1775082281,
+    "kind": "mini_dialogue",
+    "level": "A1",
+    "topic": "Coffee",
+    "theme": "mixed",
+    "core": "Hot or iced?",
+    "fp": "284cea4a95b82453aa5b3ef3324ab9de167862b0276cc429d33f7dfad94fdaf6",
+    "core_fp": "0857688b618014b8d3ace068691d615f040289d7649a39528093cbe1359f50ed"
   }
 ]
