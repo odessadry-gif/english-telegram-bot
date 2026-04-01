@@ -3540,5 +3540,15 @@
     "core": "Я заплачу карткою",
     "fp": "82016ddb11f42bd42003bc409f3fdd20423ce931eb477f11b1de70266322e24c",
     "core_fp": "a90f23e311e46e541f9974655a478849a19c224833b728023e57347f4cc8ec61"
+  },
+  {
+    "ts": 1775069177,
+    "kind": "phrase_gap",
+    "level": "A1",
+    "topic": "Restaurant",
+    "theme": "mixed",
+    "core": "Can I get a table ___ two?",
+    "fp": "d722de534dd4446be7411e935cf0352449d0574fbddff15bb55d992f125e7a48",
+    "core_fp": "03ece07113a434abb7cb756c49cf085aad4c7409082f45317ea198ffad2711ac"
   }
 ]
