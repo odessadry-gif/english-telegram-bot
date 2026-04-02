@@ -3660,5 +3660,12 @@
     "core": "order delivery in 30 minutes",
     "fp": "5188af44cc665a8614f803c17753a81d414515dd697f7daa031ff306fdaecb89",
     "core_fp": "92c0dc9077939c2eff92b46a4e4825c2236b26ad2e290d2d7fb63a248a44774b"
+  },
+  {
+    "ts": 1775156344,
+    "kind": "phrase_gap",
+    "core": "Where is the train ___?",
+    "fp": "c7361f1fb8d490afb61286e1de305281c8fd0c9fb48f86fb6c29ecc2151525ed",
+    "core_fp": "04585fad4a55d729d4fa7a0aa86bc60f1d5e93931602c96729f2d59e9139634b"
   }
 ]
