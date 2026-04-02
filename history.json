@@ -3620,5 +3620,15 @@
     "core": "Your total is five dollars.",
     "fp": "6f14902eb93915b3e8fafc3c782d8483a1be157a8e3934b33eb75fdc67bec571",
     "core_fp": "ffa86900b7e1a90be63a3a4a7e2265af4d33426430290c368ad9bc2f28519ad4"
+  },
+  {
+    "ts": 1775133756,
+    "kind": "what_does_it_mean",
+    "level": "A1",
+    "topic": "Everyday English",
+    "theme": "mixed",
+    "core": "Do you want anything?",
+    "fp": "1f6c362e416916181393bbd470eaf9a8d54f870cff8b79e28239534a5f3b3190",
+    "core_fp": "ea726180b09bcb0b97ef1026ed638a594a3de04df9ca9a4bfb4def890123b028"
   }
 ]
