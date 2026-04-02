@@ -3570,5 +3570,15 @@
     "core": "Hot or iced?",
     "fp": "284cea4a95b82453aa5b3ef3324ab9de167862b0276cc429d33f7dfad94fdaf6",
     "core_fp": "0857688b618014b8d3ace068691d615f040289d7649a39528093cbe1359f50ed"
+  },
+  {
+    "ts": 1775092029,
+    "kind": "what_does_it_mean",
+    "level": "A1",
+    "topic": "Everyday English",
+    "theme": "mixed",
+    "core": "I'm all set.",
+    "fp": "aeb785168e2fe6bab492603729651f460b7ec524079cee0719b4da77230d0cd7",
+    "core_fp": "4b92fc79704cc6bef8592745741809e1c99fc20def9b0e4f992a3a0190c99469"
   }
 ]
