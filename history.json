@@ -3640,5 +3640,15 @@
     "core": "Я запізнююсь",
     "fp": "fe62e231acb5f23262eae6795285a20589690ca799049f25856150fc73bdc59c",
     "core_fp": "85b79a9dbab1f84df1154e8ba1935e0482a9cdceaf0d7dbb20acba3bd1c502f8"
+  },
+  {
+    "ts": 1775148177,
+    "kind": "phrase_gap",
+    "level": "A1",
+    "topic": "Restaurant",
+    "theme": "mixed",
+    "core": "I'd like ___ sandwich, please.",
+    "fp": "ca82b7f212b2bc0368014966dfd3ab41a7dffd05f3928fff3751051bafbfe399",
+    "core_fp": "d5dd86a10d816e123afc2a30752b47ddb045257406ca9f38e9c33fc76d7495c6"
   }
 ]
