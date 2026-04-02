@@ -3590,5 +3590,15 @@
     "core": "Я в черзі",
     "fp": "325a55972cca63e538821129ad480c25928ab798d7e087a0eec8282dc7bbd87c",
     "core_fp": "11fc2e6ad94e0c91d97a0d80cbf4172ffc46905c3b31c7b92266debb45a643fa"
+  },
+  {
+    "ts": 1775113091,
+    "kind": "phrase_gap",
+    "level": "A1",
+    "topic": "Texting",
+    "theme": "mixed",
+    "core": "Can you text me when ___ ready?",
+    "fp": "0b072a56028096728962a131e8d30869efd4daf6994ae45a15668eacdef1d812",
+    "core_fp": "bf45b985f46f53c206735486311e9f369ee97dbbb097f4933b55bfa2656496a8"
   }
 ]
