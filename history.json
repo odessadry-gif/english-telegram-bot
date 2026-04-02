@@ -3650,5 +3650,15 @@
     "core": "I'd like ___ sandwich, please.",
     "fp": "ca82b7f212b2bc0368014966dfd3ab41a7dffd05f3928fff3751051bafbfe399",
     "core_fp": "d5dd86a10d816e123afc2a30752b47ddb045257406ca9f38e9c33fc76d7495c6"
+  },
+  {
+    "ts": 1775155122,
+    "kind": "situation_quiz",
+    "level": "A1",
+    "topic": "Food",
+    "theme": "mixed",
+    "core": "order delivery in 30 minutes",
+    "fp": "5188af44cc665a8614f803c17753a81d414515dd697f7daa031ff306fdaecb89",
+    "core_fp": "92c0dc9077939c2eff92b46a4e4825c2236b26ad2e290d2d7fb63a248a44774b"
   }
 ]
