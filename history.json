@@ -3630,5 +3630,15 @@
     "core": "Do you want anything?",
     "fp": "1f6c362e416916181393bbd470eaf9a8d54f870cff8b79e28239534a5f3b3190",
     "core_fp": "ea726180b09bcb0b97ef1026ed638a594a3de04df9ca9a4bfb4def890123b028"
+  },
+  {
+    "ts": 1775141138,
+    "kind": "ua_en",
+    "level": "A1",
+    "topic": "Texting",
+    "theme": "mixed",
+    "core": "Я запізнююсь",
+    "fp": "fe62e231acb5f23262eae6795285a20589690ca799049f25856150fc73bdc59c",
+    "core_fp": "85b79a9dbab1f84df1154e8ba1935e0482a9cdceaf0d7dbb20acba3bd1c502f8"
   }
 ]
