@@ -3674,5 +3674,12 @@
     "core": "Can I pay by ___?",
     "fp": "0178f74ad5d2cce5b1e9c4217b646d12f6e6e54634954be1d8154af21773a539",
     "core_fp": "1e5894e754ae4205c26502ffdc13b2951b32040354cba49c7069b5ccab4b483d"
+  },
+  {
+    "ts": 1775168471,
+    "kind": "phrase_gap",
+    "core": "Where is the baggage ___?",
+    "fp": "604293b315ec204c5f857f89eee1e95b6d359504f92bd3c1e3695d01e9bc171d",
+    "core_fp": "1dc8a24ae96dc4008e6f89d11d6e75a4851dc3ffe169610d3fae00c6f7db7ade"
   }
 ]
