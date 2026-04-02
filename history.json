@@ -3600,5 +3600,15 @@
     "core": "Can you text me when ___ ready?",
     "fp": "0b072a56028096728962a131e8d30869efd4daf6994ae45a15668eacdef1d812",
     "core_fp": "bf45b985f46f53c206735486311e9f369ee97dbbb097f4933b55bfa2656496a8"
+  },
+  {
+    "ts": 1775119376,
+    "kind": "situation_quiz",
+    "level": "A1",
+    "topic": "Texting",
+    "theme": "mixed",
+    "core": "Want to eat out tonight?",
+    "fp": "1b26120e68b5cc4e704ea5de6644aa88735404624b49e97f1fe88354a755cc58",
+    "core_fp": "6c30e1b97d0f4d4fe8b224ab7acf67d448faaf97bbcab25ffe6d5cf2948aa32a"
   }
 ]
