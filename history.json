@@ -3681,5 +3681,12 @@
     "core": "Where is the baggage ___?",
     "fp": "604293b315ec204c5f857f89eee1e95b6d359504f92bd3c1e3695d01e9bc171d",
     "core_fp": "1dc8a24ae96dc4008e6f89d11d6e75a4851dc3ffe169610d3fae00c6f7db7ade"
+  },
+  {
+    "ts": 1775178590,
+    "kind": "phrase_gap",
+    "core": "I'll have the ___, please.",
+    "fp": "3a7f33ca6b073d206de0766d25f596edc385f55b2fd233907d8f1638c0274ce9",
+    "core_fp": "c5a9c6168ec5fd6499b03302279c33b19b65702e9550d05f161aa23b14f7d7d7"
   }
 ]
