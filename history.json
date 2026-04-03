@@ -3716,5 +3716,12 @@
     "core": "Can I get a small ___, please?",
     "fp": "0eb4bad00805661605fed22dfacb309e2fac3a8d27e092421330e48ff91bb291",
     "core_fp": "4c84973aca2d804c1b1da2d8f1839ca31a65387c7d222207251edcf07db02523"
+  },
+  {
+    "ts": 1775219824,
+    "kind": "phrase_gap",
+    "core": "Can I get the check, ___?",
+    "fp": "cd8aaf773af8b5f0eabe3fb568711d5db2cb4450a97f17b7de9272f04fd862d4",
+    "core_fp": "a209f6060cad7245b11c3a3f2adc2a697b29a5d5c98eed1ffaedb68ee782a410"
   }
 ]
