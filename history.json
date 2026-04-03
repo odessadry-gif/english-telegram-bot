@@ -3688,5 +3688,12 @@
     "core": "I'll have the ___, please.",
     "fp": "3a7f33ca6b073d206de0766d25f596edc385f55b2fd233907d8f1638c0274ce9",
     "core_fp": "c5a9c6168ec5fd6499b03302279c33b19b65702e9550d05f161aa23b14f7d7d7"
+  },
+  {
+    "ts": 1775189848,
+    "kind": "phrase_gap",
+    "core": "Can you call me a ___, please?",
+    "fp": "6afc0755b594407cc8627c94e3243f080f317e5a8f266db719c0c63ceece7fdd",
+    "core_fp": "cde70c01ddadc3b4cbbcf6ceb4a48f2a2a4470a4ee88d45c492e7ff9272d0225"
   }
 ]
