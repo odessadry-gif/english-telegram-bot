@@ -3695,5 +3695,12 @@
     "core": "Can you call me a ___, please?",
     "fp": "6afc0755b594407cc8627c94e3243f080f317e5a8f266db719c0c63ceece7fdd",
     "core_fp": "cde70c01ddadc3b4cbbcf6ceb4a48f2a2a4470a4ee88d45c492e7ff9272d0225"
+  },
+  {
+    "ts": 1775199298,
+    "kind": "phrase_gap",
+    "core": "Where is the nearest ___?",
+    "fp": "9428adf97fe31a06786c99b1a18418485db14da3b715a036f96bb33d8dc408fe",
+    "core_fp": "ca2d9a09f0958cd96b4cdb664a453d2ea581da640d38ca2d250b6db52dab899d"
   }
 ]
