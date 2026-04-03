@@ -3709,5 +3709,12 @@
     "core": "Excuse me, can you ___ me, please?",
     "fp": "3ddff4f1ce064e7e9ebc18f35e1acc00f14bc809164e9faa055a806ea5632e90",
     "core_fp": "d7f8bab1de03c8ceda7934199cc1411779539a3a232df42e0d7e6fd15410284b"
+  },
+  {
+    "ts": 1775212346,
+    "kind": "phrase_gap",
+    "core": "Can I get a small ___, please?",
+    "fp": "0eb4bad00805661605fed22dfacb309e2fac3a8d27e092421330e48ff91bb291",
+    "core_fp": "4c84973aca2d804c1b1da2d8f1839ca31a65387c7d222207251edcf07db02523"
   }
 ]
