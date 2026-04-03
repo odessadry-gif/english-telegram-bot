@@ -3702,5 +3702,12 @@
     "core": "Where is the nearest ___?",
     "fp": "9428adf97fe31a06786c99b1a18418485db14da3b715a036f96bb33d8dc408fe",
     "core_fp": "ca2d9a09f0958cd96b4cdb664a453d2ea581da640d38ca2d250b6db52dab899d"
+  },
+  {
+    "ts": 1775205536,
+    "kind": "phrase_gap",
+    "core": "Excuse me, can you ___ me, please?",
+    "fp": "3ddff4f1ce064e7e9ebc18f35e1acc00f14bc809164e9faa055a806ea5632e90",
+    "core_fp": "d7f8bab1de03c8ceda7934199cc1411779539a3a232df42e0d7e6fd15410284b"
   }
 ]
