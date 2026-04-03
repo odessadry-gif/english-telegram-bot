@@ -3737,5 +3737,12 @@
     "core": "Where can I ___ a taxi?",
     "fp": "4b114b35ffd1f3ceb6fe71c7b63bb5d19aaff6a570ce55a034c49a1e1d449d47",
     "core_fp": "9c83f8f40bb85e9fa188ea4bf4a5d8caf84edd9600f31d499d7d6b09782612e1"
+  },
+  {
+    "ts": 1775241047,
+    "kind": "phrase_gap",
+    "core": "We want a table for ___",
+    "fp": "aa9595ffebaa4e158344ba9fbd5e9f5651371b4019d20becf8af31fa5f5b5f7d",
+    "core_fp": "cb6a781e0189ea989233fd0e9bc5c7ac2b10e97686d758315bf06fb4a8704e02"
   }
 ]
