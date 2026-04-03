@@ -3730,5 +3730,12 @@
     "core": "I'd like a small coffee ___ milk.",
     "fp": "7abbf9d8f1d72968ec19e38c5e289261c8ae87e1d46b7dbe998bde63e8515b99",
     "core_fp": "67a30b586b18a822d9ebfd04a70008c720986c91cc40659781f13e6d40cf503c"
+  },
+  {
+    "ts": 1775233547,
+    "kind": "phrase_gap",
+    "core": "Where can I ___ a taxi?",
+    "fp": "4b114b35ffd1f3ceb6fe71c7b63bb5d19aaff6a570ce55a034c49a1e1d449d47",
+    "core_fp": "9c83f8f40bb85e9fa188ea4bf4a5d8caf84edd9600f31d499d7d6b09782612e1"
   }
 ]
