@@ -3744,5 +3744,12 @@
     "core": "We want a table for ___",
     "fp": "aa9595ffebaa4e158344ba9fbd5e9f5651371b4019d20becf8af31fa5f5b5f7d",
     "core_fp": "cb6a781e0189ea989233fd0e9bc5c7ac2b10e97686d758315bf06fb4a8704e02"
+  },
+  {
+    "ts": 1775247746,
+    "kind": "phrase_gap",
+    "core": "Can you help me ___ my bag?",
+    "fp": "83c3df4411aa6b1a72059698f5dd564307f8c2dcbfe2fdb5ea606cd5221cbe7e",
+    "core_fp": "313328637427e5309ecc5ecfc13e8e5b29cd8d3a9c08492e9693cfa66feb1459"
   }
 ]
