@@ -3751,5 +3751,12 @@
     "core": "Can you help me ___ my bag?",
     "fp": "83c3df4411aa6b1a72059698f5dd564307f8c2dcbfe2fdb5ea606cd5221cbe7e",
     "core_fp": "313328637427e5309ecc5ecfc13e8e5b29cd8d3a9c08492e9693cfa66feb1459"
+  },
+  {
+    "ts": 1775254897,
+    "kind": "phrase_gap",
+    "core": "Can I have a glass ___ water?",
+    "fp": "6d8f69b6240e58f0ddd716a4bf7c50f85ef60ec8ea80d5171ea3f83c7fa3f3eb",
+    "core_fp": "9e2dc9bd0e0d999912e6fe082f17a422dcd0f008729504114f448af862e5b476"
   }
 ]
