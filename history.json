@@ -3800,5 +3800,12 @@
     "core": "The taxi is ten ___ away.",
     "fp": "7ebe502f9323dbf8e3b7471ddd0c4350736d923f77e52aece22de488f43fab86",
     "core_fp": "52c23a21bbe7087f58cb69cf4840269f00aa4ae4c4b7488954fa0ae66d8eb792"
+  },
+  {
+    "ts": 1775312609,
+    "kind": "phrase_gap",
+    "core": "I want to order a ___ of coffee.",
+    "fp": "8f9f02830eaa0bfa9875810f1b544b56d22068fee343dfbca5c7185a0ffa90e2",
+    "core_fp": "90a44584c914a54dad245ef959ee861610c8f9c6cc795e06087e08c601f1bf69"
   }
 ]
