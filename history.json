@@ -3814,5 +3814,12 @@
     "core": "Can I have the Wi-Fi ___?",
     "fp": "ab9976527a7715d8f8b9646943a16d608f5e92a5057add5ce5b1c3cfd9c38b55",
     "core_fp": "b8641b5688108ece7be1e39bc7ae253b616a5082019fa37e0d0e54b56c69ffc9"
+  },
+  {
+    "ts": 1775327056,
+    "kind": "phrase_gap",
+    "core": "I need a taxi to ___.",
+    "fp": "46316ca7c5645c98a7d62248d16e5c1759d489b7809df904b78ddff1215b8aa6",
+    "core_fp": "04e8140e74cf260a8e681d46a945107639d6df16c24244c7adca506e1bb1c2e5"
   }
 ]
