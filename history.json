@@ -3821,5 +3821,12 @@
     "core": "I need a taxi to ___.",
     "fp": "46316ca7c5645c98a7d62248d16e5c1759d489b7809df904b78ddff1215b8aa6",
     "core_fp": "04e8140e74cf260a8e681d46a945107639d6df16c24244c7adca506e1bb1c2e5"
+  },
+  {
+    "ts": 1775333919,
+    "kind": "phrase_gap",
+    "core": "The taxi is ___ the hotel.",
+    "fp": "005bd78709b85ba058bcdddcda76e2803ad904ce16add6b0406aadbd33c1417a",
+    "core_fp": "0cb6414b407e8d081ef3bd8d5be54a6bcd262a5c4b3df25449f43686361464a4"
   }
 ]
