@@ -3807,5 +3807,12 @@
     "core": "I want to order a ___ of coffee.",
     "fp": "8f9f02830eaa0bfa9875810f1b544b56d22068fee343dfbca5c7185a0ffa90e2",
     "core_fp": "90a44584c914a54dad245ef959ee861610c8f9c6cc795e06087e08c601f1bf69"
+  },
+  {
+    "ts": 1775319632,
+    "kind": "phrase_gap",
+    "core": "Can I have the Wi-Fi ___?",
+    "fp": "ab9976527a7715d8f8b9646943a16d608f5e92a5057add5ce5b1c3cfd9c38b55",
+    "core_fp": "b8641b5688108ece7be1e39bc7ae253b616a5082019fa37e0d0e54b56c69ffc9"
   }
 ]
