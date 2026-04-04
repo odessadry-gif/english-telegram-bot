@@ -3758,5 +3758,12 @@
     "core": "Can I have a glass ___ water?",
     "fp": "6d8f69b6240e58f0ddd716a4bf7c50f85ef60ec8ea80d5171ea3f83c7fa3f3eb",
     "core_fp": "9e2dc9bd0e0d999912e6fe082f17a422dcd0f008729504114f448af862e5b476"
+  },
+  {
+    "ts": 1775264639,
+    "kind": "phrase_gap",
+    "core": "Where is gate ___?",
+    "fp": "3e0c4c01565e7a053b99b26a676756977e6f00d5f0e91a8f538a410f3b47d677",
+    "core_fp": "1d8671f08fef72cde9142ec783225d86e31da3bdd3d8e8ddc49be549062f4f24"
   }
 ]
