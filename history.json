@@ -3779,5 +3779,12 @@
     "core": "Can you help me ___ my bags?",
     "fp": "18e5534e659865bdf7aaaa0690636a384922568bc05d4ebf156d39bb151cfe81",
     "core_fp": "40a5530d11ff15eb9478a1f29014ab323acf94a0204c86dfdf5a311f0e5e4923"
+  },
+  {
+    "ts": 1775291317,
+    "kind": "phrase_gap",
+    "core": "The bus leaves at ___.",
+    "fp": "3d07cd42f06c419aaf6deba7f1b4eec2cc3ef6c80b0da199c68d9d24cc0727f9",
+    "core_fp": "144824574fbdcdc211b76cd0ed4d7ad06b62b3c406cc132d02b0847e85c8f48e"
   }
 ]
