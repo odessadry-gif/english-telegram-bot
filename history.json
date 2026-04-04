@@ -3765,5 +3765,12 @@
     "core": "Where is gate ___?",
     "fp": "3e0c4c01565e7a053b99b26a676756977e6f00d5f0e91a8f538a410f3b47d677",
     "core_fp": "1d8671f08fef72cde9142ec783225d86e31da3bdd3d8e8ddc49be549062f4f24"
+  },
+  {
+    "ts": 1775275593,
+    "kind": "phrase_gap",
+    "core": "Can I have a cup of ___?",
+    "fp": "7844948f77e25b8fdd986497d0a37cd63b4788496b263782b4d318d3d3b571dc",
+    "core_fp": "96ca6a23f0946e344000d9807f9e63093b8e0e9d5b156248f18d6c2343b0f5ba"
   }
 ]
