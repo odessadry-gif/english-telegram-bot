@@ -3793,5 +3793,12 @@
     "core": "The coffee is ___ hot.",
     "fp": "b69520db6374477e6d7922cc599866b725faa6d223b3c0fe8aa1bd929351f425",
     "core_fp": "b2f7fe7ed30485cbf46a3525dc0df7d0a4dc38e481ebc9530a43a474629faa89"
+  },
+  {
+    "ts": 1775305640,
+    "kind": "phrase_gap",
+    "core": "The taxi is ten ___ away.",
+    "fp": "7ebe502f9323dbf8e3b7471ddd0c4350736d923f77e52aece22de488f43fab86",
+    "core_fp": "52c23a21bbe7087f58cb69cf4840269f00aa4ae4c4b7488954fa0ae66d8eb792"
   }
 ]
