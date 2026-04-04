@@ -3786,5 +3786,12 @@
     "core": "The bus leaves at ___.",
     "fp": "3d07cd42f06c419aaf6deba7f1b4eec2cc3ef6c80b0da199c68d9d24cc0727f9",
     "core_fp": "144824574fbdcdc211b76cd0ed4d7ad06b62b3c406cc132d02b0847e85c8f48e"
+  },
+  {
+    "ts": 1775298113,
+    "kind": "phrase_gap",
+    "core": "The coffee is ___ hot.",
+    "fp": "b69520db6374477e6d7922cc599866b725faa6d223b3c0fe8aa1bd929351f425",
+    "core_fp": "b2f7fe7ed30485cbf46a3525dc0df7d0a4dc38e481ebc9530a43a474629faa89"
   }
 ]
