@@ -3772,5 +3772,12 @@
     "core": "Can I have a cup of ___?",
     "fp": "7844948f77e25b8fdd986497d0a37cd63b4788496b263782b4d318d3d3b571dc",
     "core_fp": "96ca6a23f0946e344000d9807f9e63093b8e0e9d5b156248f18d6c2343b0f5ba"
+  },
+  {
+    "ts": 1775285212,
+    "kind": "phrase_gap",
+    "core": "Can you help me ___ my bags?",
+    "fp": "18e5534e659865bdf7aaaa0690636a384922568bc05d4ebf156d39bb151cfe81",
+    "core_fp": "40a5530d11ff15eb9478a1f29014ab323acf94a0204c86dfdf5a311f0e5e4923"
   }
 ]
