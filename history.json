@@ -3856,5 +3856,12 @@
     "core": "Can you call a ___, please?",
     "fp": "160526b1d31cdb7b0f60d6e97508902907ae754c8b13414f9836ac1a6419d9b5",
     "core_fp": "bbc1c4f1dcdfd73ffd585fd5ce12186310602dd98768a35290c9cdb26d19a24c"
+  },
+  {
+    "ts": 1775377840,
+    "kind": "phrase_gap",
+    "core": "Can I have a window ___?",
+    "fp": "2a5d486d6c0db6840b934f6e390c657c9a1e5d5ae4f42833efa4504cf77a5803",
+    "core_fp": "dc3cc165362f07f6d78482eb08f056c626bdad0bd9bed66d3042539864c8e7b4"
   }
 ]
