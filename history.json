@@ -3870,5 +3870,12 @@
     "core": "Where is the bus ___?",
     "fp": "05f0ca9501c09b8bb7b1352a3f847291b5345319fb8adf5bb9a74a92d818ecbe",
     "core_fp": "ee3016db4c64d103fac54e966b17eb039e98af30769a2326521f77e868c456ad"
+  },
+  {
+    "ts": 1775392350,
+    "kind": "phrase_gap",
+    "core": "Is this table ___?",
+    "fp": "6f5a8950285ff7046ac7d817adc3ea6daa6d9ce04cacd467a9e4a1ed45ce3368",
+    "core_fp": "cf82cd446637025bd846b28466211225ade8050c80d7cf14121f97ed1ed348b1"
   }
 ]
