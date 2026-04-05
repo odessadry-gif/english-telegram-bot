@@ -3898,5 +3898,12 @@
     "core": "I'm ___ for the bus.",
     "fp": "003142ccf3bbb1617a6965f9928c9079cef2931007a86fd643a2990a2fab98ea",
     "core_fp": "60d259d0c9e477b2656933d25c57119ddaa2e6cdef2a0f4e15269f27e28bc4d0"
+  },
+  {
+    "ts": 1775420474,
+    "kind": "phrase_gap",
+    "core": "Where is the bathroom, ___?",
+    "fp": "7dd6ed7312998e41eb0fb211a79cfee40abae5d10b51183b206a3c1b42404d74",
+    "core_fp": "76489ae9c25ff3799134df48c297afb9e0b296d1a096b7c30641f30b030a2214"
   }
 ]
