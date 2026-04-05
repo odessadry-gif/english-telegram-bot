@@ -3842,5 +3842,12 @@
     "core": "The taxi will be here ___ 5 minutes.",
     "fp": "246a62280e9d1d85ab9988dd156c39307ccd7bdaa495ec950f84109e913a653a",
     "core_fp": "b8bf8033ae385d0a1bcd1138e7981b935bb5781f9b867c6a040002efbf0e7490"
+  },
+  {
+    "ts": 1775363189,
+    "kind": "phrase_gap",
+    "core": "Can I have a medium ___, please?",
+    "fp": "1b1c8d98b7bd5923302565895b8d13953af076da88f252b5b91df70a254776e2",
+    "core_fp": "5031fb81ac95c7c3cc35357d7b7eac8b45c806661b5d32d2c2d377ff3664b082"
   }
 ]
