@@ -3905,5 +3905,12 @@
     "core": "Where is the bathroom, ___?",
     "fp": "7dd6ed7312998e41eb0fb211a79cfee40abae5d10b51183b206a3c1b42404d74",
     "core_fp": "76489ae9c25ff3799134df48c297afb9e0b296d1a096b7c30641f30b030a2214"
+  },
+  {
+    "ts": 1775427556,
+    "kind": "phrase_gap",
+    "core": "Can I pay with ___?",
+    "fp": "a4ad9f25606504725050931cb6ffd4435f827137eedade86b623c0dce5859f31",
+    "core_fp": "f8ec1e54620791239607227ecbddbd23ea6e4a264229c5d504b47425ac3871e9"
   }
 ]
