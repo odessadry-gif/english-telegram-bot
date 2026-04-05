@@ -3884,5 +3884,12 @@
     "core": "Can I have a napkin, ___?",
     "fp": "7d2aa496b8adf6896fc590198a541f8727be59f31f5f4660eed8284fe7bafc7d",
     "core_fp": "2850a10807b73668955821351d731eeef2f090194e95da7dec1c7f157a778e97"
+  },
+  {
+    "ts": 1775406122,
+    "kind": "phrase_gap",
+    "core": "I’d like a ___ coffee.",
+    "fp": "a15ebf81c02859f9356a2975c06824346589727d76e4594658903776a79a6e78",
+    "core_fp": "3cdfd56ce5735f0e204639bc657279f183dad4a044b806e4d4dadc7f57f3dacc"
   }
 ]
