@@ -3891,5 +3891,12 @@
     "core": "I’d like a ___ coffee.",
     "fp": "a15ebf81c02859f9356a2975c06824346589727d76e4594658903776a79a6e78",
     "core_fp": "3cdfd56ce5735f0e204639bc657279f183dad4a044b806e4d4dadc7f57f3dacc"
+  },
+  {
+    "ts": 1775413593,
+    "kind": "phrase_gap",
+    "core": "I'm ___ for the bus.",
+    "fp": "003142ccf3bbb1617a6965f9928c9079cef2931007a86fd643a2990a2fab98ea",
+    "core_fp": "60d259d0c9e477b2656933d25c57119ddaa2e6cdef2a0f4e15269f27e28bc4d0"
   }
 ]
