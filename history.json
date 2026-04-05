@@ -3863,5 +3863,12 @@
     "core": "Can I have a window ___?",
     "fp": "2a5d486d6c0db6840b934f6e390c657c9a1e5d5ae4f42833efa4504cf77a5803",
     "core_fp": "dc3cc165362f07f6d78482eb08f056c626bdad0bd9bed66d3042539864c8e7b4"
+  },
+  {
+    "ts": 1775384541,
+    "kind": "phrase_gap",
+    "core": "Where is the bus ___?",
+    "fp": "05f0ca9501c09b8bb7b1352a3f847291b5345319fb8adf5bb9a74a92d818ecbe",
+    "core_fp": "ee3016db4c64d103fac54e966b17eb039e98af30769a2326521f77e868c456ad"
   }
 ]
