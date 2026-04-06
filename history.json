@@ -3975,5 +3975,12 @@
     "core": "Where can I buy a ___?",
     "fp": "2d1ba295c494310046c080af78749506f6f5bfbeded160070d4e70a819b6bde1",
     "core_fp": "1cadaeb8f5dc6ccc30fc538f7ff3983784db266926ed95dceb35aebf34395fad"
+  },
+  {
+    "ts": 1775504126,
+    "kind": "grammar_gap",
+    "core": "My room is ___ the third floor.",
+    "fp": "6b0ead7234d2742e3b30585dd8cd869522eb2418dcbdc1da6f704ffd2a2aebd1",
+    "core_fp": "63b9fb7ea4b1d9581cc707da923526945ec5f6eee0ace6db42508989d7791a7c"
   }
 ]
