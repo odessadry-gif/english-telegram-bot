@@ -3968,5 +3968,12 @@
     "core": "The train is ___ minutes late.",
     "fp": "8dee36cf318d70a013b0c6e7382337d808068cf7e875e48a0cbdbd80496a870f",
     "core_fp": "bbbd1bd95be017f4a9af8fc0dc57b990bbe15372e403b11a343e15a477765f34"
+  },
+  {
+    "ts": 1775500944,
+    "kind": "phrase_gap",
+    "core": "Where can I buy a ___?",
+    "fp": "2d1ba295c494310046c080af78749506f6f5bfbeded160070d4e70a819b6bde1",
+    "core_fp": "1cadaeb8f5dc6ccc30fc538f7ff3983784db266926ed95dceb35aebf34395fad"
   }
 ]
