@@ -3933,5 +3933,12 @@
     "core": "Can I have the bill ___?",
     "fp": "c9c62a7455521ff6c23266683039dc5848f14420e70b0f370202c5a242ebeaa9",
     "core_fp": "f425d6ca5d0fc11340878e049311d18d1772a37c6a69e592581bc253cd7b5b7c"
+  },
+  {
+    "ts": 1775466038,
+    "kind": "phrase_gap",
+    "core": "We are hungry. Let's get a ___.",
+    "fp": "26e8f5c9261c1dd4cb5d35490e7ac76ae83377daf3665e07bcfeb09f2e733675",
+    "core_fp": "16b410bf864e13dca351776d677a4f134cde7b6a4e179faf74dfe2156b6b0182"
   }
 ]
