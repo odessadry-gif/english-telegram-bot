@@ -3940,5 +3940,12 @@
     "core": "We are hungry. Let's get a ___.",
     "fp": "26e8f5c9261c1dd4cb5d35490e7ac76ae83377daf3665e07bcfeb09f2e733675",
     "core_fp": "16b410bf864e13dca351776d677a4f134cde7b6a4e179faf74dfe2156b6b0182"
+  },
+  {
+    "ts": 1775472368,
+    "kind": "phrase_gap",
+    "core": "Can I get a coffee to ___?",
+    "fp": "e3b199b1ab78d117dd4176bde3da57f955388c710abde8800f6149ac5d645ecc",
+    "core_fp": "b86eb822b126ac2637f5f8776ae03b3547cef9af23077df00567ff70baefef2f"
   }
 ]
