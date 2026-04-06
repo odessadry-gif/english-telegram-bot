@@ -3919,5 +3919,12 @@
     "core": "I am at the coffee ___.",
     "fp": "4cf6bebaad6559b1b008bfef1384a93bd803d4d94a8e9e9ebf37d60d2e9ef1eb",
     "core_fp": "30e64f0d531f1be238fc78b477214fdc65b2a67bd7905081ae0dc23f2050768c"
+  },
+  {
+    "ts": 1775450293,
+    "kind": "phrase_gap",
+    "core": "How ___ is the coffee?",
+    "fp": "0ef3a0c079c55fcacfdc54777466ca69e61f799923b62466e2fb04eff37bbb80",
+    "core_fp": "9d1d680235178017f1649d90c852139d81131cecda55fc8ee28c67321408b8d0"
   }
 ]
