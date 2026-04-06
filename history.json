@@ -3954,5 +3954,12 @@
     "core": "I'd like my coffee ___, please.",
     "fp": "1cfa03d3fb341eacf700545524135826d2d7db55f3a9d69a97054e7fa5ecf2c5",
     "core_fp": "f5a7523fb22e730b15ec0c78330dfdcf45615bef9af8b36cbed4532fa103126e"
+  },
+  {
+    "ts": 1775486702,
+    "kind": "phrase_gap",
+    "core": "Sorry, I am ___.",
+    "fp": "e2cf870c8441bff05080940de52a0494596a784f2e8eb443ff7de720c30e21ea",
+    "core_fp": "7c111d8adec7ce8d731bf1ebb26ef0f5a1fc7870b632953ae93b57efc2cdd357"
   }
 ]
