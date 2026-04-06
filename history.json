@@ -3947,5 +3947,12 @@
     "core": "Can I get a coffee to ___?",
     "fp": "e3b199b1ab78d117dd4176bde3da57f955388c710abde8800f6149ac5d645ecc",
     "core_fp": "b86eb822b126ac2637f5f8776ae03b3547cef9af23077df00567ff70baefef2f"
+  },
+  {
+    "ts": 1775479350,
+    "kind": "phrase_gap",
+    "core": "I'd like my coffee ___, please.",
+    "fp": "1cfa03d3fb341eacf700545524135826d2d7db55f3a9d69a97054e7fa5ecf2c5",
+    "core_fp": "f5a7523fb22e730b15ec0c78330dfdcf45615bef9af8b36cbed4532fa103126e"
   }
 ]
