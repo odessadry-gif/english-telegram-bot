@@ -33,7 +33,7 @@ GAME_POST_TEXT = os.getenv(
     "GAME_POST_TEXT",
     "☕ **Travel Rush** — швидкий квіз з англійської\n\n"
     "Короткі фрази про подорожі, кавʼярню, їжу та everyday English.\n"
-    "Обери правильне слово й прокачай англійську за 2 хвилини 👇",
+    "Обери правильну відповідь і прокачай англійську за 2 хвилини 👇",
 )
 
 # ========= HISTORY =========
@@ -41,6 +41,13 @@ HISTORY_FILE = "history.json"
 MAX_HISTORY = 1500
 RECENT_CORE_LIMIT = 300
 RECENT_PATTERN_LIMIT = 220
+RECENT_RIDDLE_ANSWER_LIMIT = 120
+
+QUIZ_TYPE_WEIGHTS = {
+    "grammar_gap": 50,
+    "ua_en": 30,
+    "riddle": 20,
+}
 
 client = OpenAI(api_key=OPENAI_API_KEY)
 
@@ -112,6 +119,15 @@ GOOD_SIMPLE_MARKERS = [
     "ready",
     "sorry",
     "please",
+    "home",
+    "work",
+    "school",
+    "room",
+    "phone",
+    "book",
+    "chair",
+    "window",
+    "door",
     "to go",
     "for here",
     "on my way",
@@ -119,6 +135,8 @@ GOOD_SIMPLE_MARKERS = [
     "i'd like",
     "we need",
     "where is",
+    "how much",
+    "what time",
 ]
 
 # ========= HELPERS =========
@@ -135,7 +153,7 @@ def _norm_spaces(s: str) -> str:
 def normalize_core(text: str) -> str:
     s = unicodedata.normalize("NFKC", str(text or "")).strip().lower()
     s = s.strip("“”\"'`")
-    s = re.sub(r"[^a-z0-9\s\-\?']", " ", s)
+    s = re.sub(r"[^a-z0-9а-яіїєґ\s\-\?']", " ", s)
     s = _norm_spaces(s)
     s = ARTICLES_RE.sub("", s)
     s = _norm_spaces(s)
@@ -146,13 +164,14 @@ def pattern_key(text: str) -> str:
     s = unicodedata.normalize("NFKC", (text or "")).lower()
     s = s.replace("___", " <blank> ")
     s = re.sub(r"\d+", "<num>", s)
-    s = re.sub(r"[^a-z<>\s]", " ", s)
+    s = re.sub(r"[^a-zа-яіїєґ<>\s]", " ", s)
     s = _norm_spaces(s)
     return s
 
 
-def fp_for(core: str, options: list[str]) -> str:
+def fp_for(kind: str, core: str, options: list[str]) -> str:
     payload = {
+        "kind": kind,
         "core": normalize_core(core),
         "options": [_norm(x) for x in (options or [])],
     }
@@ -160,8 +179,12 @@ def fp_for(core: str, options: list[str]) -> str:
     return hashlib.sha256(raw.encode("utf-8")).hexdigest()
 
 
-def core_fp(core: str) -> str:
-    raw = json.dumps({"core": normalize_core(core)}, ensure_ascii=False, sort_keys=True)
+def core_fp(kind: str, core: str) -> str:
+    raw = json.dumps(
+        {"kind": kind, "core": normalize_core(core)},
+        ensure_ascii=False,
+        sort_keys=True,
+    )
     return hashlib.sha256(raw.encode("utf-8")).hexdigest()
 
 
@@ -212,16 +235,40 @@ def save_history(items: list[dict]) -> None:
         json.dump(items, f, ensure_ascii=False, indent=2)
 
 
-def recent_cores(history: list[dict], n: int) -> list[str]:
+def recent_cores(history: list[dict], n: int, kind: str | None = None) -> list[str]:
     out = []
     seen = set()
 
     for item in reversed(history or []):
+        if kind and item.get("kind") != kind:
+            continue
+
         core = normalize_core(item.get("core", ""))
         if not core or core in seen:
             continue
+
         seen.add(core)
         out.append(core)
+        if len(out) >= n:
+            break
+
+    return out
+
+
+def recent_riddle_answers(history: list[dict], n: int) -> list[str]:
+    out = []
+    seen = set()
+
+    for item in reversed(history or []):
+        if item.get("kind") != "riddle":
+            continue
+
+        answer = normalize_core(item.get("answer", ""))
+        if not answer or answer in seen:
+            continue
+
+        seen.add(answer)
+        out.append(answer)
         if len(out) >= n:
             break
 
@@ -256,8 +303,17 @@ def extract_json(text: str) -> dict:
     return json.loads(m.group(0))
 
 
+def pick_quiz_type() -> str:
+    pool = (
+        ["grammar_gap"] * QUIZ_TYPE_WEIGHTS["grammar_gap"] +
+        ["ua_en"] * QUIZ_TYPE_WEIGHTS["ua_en"] +
+        ["riddle"] * QUIZ_TYPE_WEIGHTS["riddle"]
+    )
+    return random.choice(pool)
+
+
 # ========= VALIDATION =========
-def validate_generated(data: dict) -> tuple[str, str, list[str], int, str]:
+def validate_generated(data: dict, quiz_type: str) -> tuple[str, str, list[str], int, str, str]:
     core = str(data.get("core", "")).strip()
     question = str(data.get("question", "")).strip()
     options = ensure_4_options(data.get("options", []))
@@ -266,12 +322,6 @@ def validate_generated(data: dict) -> tuple[str, str, list[str], int, str]:
 
     if not core:
         raise ValueError("empty core")
-
-    if core.count("___") != 1:
-        raise ValueError("core must contain exactly one ___")
-
-    if not question.startswith("💬\nFill the gap:\n"):
-        raise ValueError("wrong question format")
 
     if len(question) > 220:
         raise ValueError("question too long")
@@ -282,15 +332,19 @@ def validate_generated(data: dict) -> tuple[str, str, list[str], int, str]:
     if correct not in (0, 1, 2, 3):
         raise ValueError("correct must be 0..3")
 
-    low_opts = [_norm_spaces(x).lower() for x in options]
-    if len(set(low_opts)) != 4:
-        raise ValueError("duplicate options")
-
     if not explanation:
         raise ValueError("empty explanation")
 
     if len(explanation) > 180:
         raise ValueError("explanation too long")
+
+    low_opts = [_norm_spaces(x).lower() for x in options]
+    if len(set(low_opts)) != 4:
+        raise ValueError("duplicate options")
+
+    normalized_opts = [normalize_core(x) for x in options]
+    if len(set(normalized_opts)) != 4:
+        raise ValueError("options too similar")
 
     if looks_too_hard(core) or looks_too_hard(question):
         raise ValueError("too hard")
@@ -299,16 +353,64 @@ def validate_generated(data: dict) -> tuple[str, str, list[str], int, str]:
         if looks_too_hard(opt):
             raise ValueError("hard option")
 
-    if not looks_simple_enough(core):
-        raise ValueError("not simple enough")
+    # ===== grammar_gap =====
+    if quiz_type == "grammar_gap":
+        if core.count("___") != 1:
+            raise ValueError("grammar_gap: core must contain exactly one ___")
 
-    # Додаткова перевірка проти двох правильних відповідей:
-    # правильна відповідь має бути 1-3 слова, без майже дубля.
-    normalized_opts = [normalize_core(x) for x in options]
-    if len(set(normalized_opts)) != 4:
-        raise ValueError("options too similar")
+        if not question.startswith("💬\nFill the gap:\n"):
+            raise ValueError("grammar_gap: wrong question format")
 
-    return core, question, options, correct, explanation
+        if not looks_simple_enough(core):
+            raise ValueError("grammar_gap: not simple enough")
+
+        return core, question, options, correct, explanation, ""
+
+    # ===== ua_en =====
+    if quiz_type == "ua_en":
+        if "___" in core:
+            raise ValueError("ua_en: core must not contain blank")
+
+        if not question.startswith("💬\n🇺🇦 → 🇬🇧\n"):
+            raise ValueError("ua_en: wrong question format")
+
+        if len(core.split()) > 8:
+            raise ValueError("ua_en: core too long")
+
+        correct_option = options[correct].strip()
+        if len(correct_option.split()) > 8:
+            raise ValueError("ua_en: correct option too long")
+
+        return core, question, options, correct, explanation, ""
+
+    # ===== riddle =====
+    if quiz_type == "riddle":
+        answer = str(data.get("answer", "")).strip()
+
+        if "___" in core:
+            raise ValueError("riddle: no blank allowed")
+
+        if not answer:
+            raise ValueError("riddle: empty answer")
+
+        if len(answer.split()) != 1:
+            raise ValueError("riddle: answer must be one word")
+
+        if not question.startswith("💬\n"):
+            raise ValueError("riddle: wrong question prefix")
+
+        if "What is it?" not in question:
+            raise ValueError("riddle: question must contain 'What is it?'")
+
+        if len(core.splitlines()) < 2:
+            raise ValueError("riddle: core should have 2-3 short clue lines")
+
+        if normalize_core(answer) != normalize_core(options[correct]):
+            raise ValueError("riddle: answer must equal correct option")
+
+        return core, question, options, correct, explanation, answer
+
+    raise ValueError("unknown quiz type")
 
 
 # ========= TELEGRAM =========
@@ -357,94 +459,102 @@ def send_game_post():
 
 
 # ========= PROMPTS =========
-def build_prompt(avoid_items: list[str]) -> str:
+def build_prompt(quiz_type: str, avoid_items: list[str], avoid_answers: list[str]) -> str:
     avoid_block = ""
     if avoid_items:
         avoid_block = (
-            "Avoid these recent sentence ideas. Do not repeat or make near-copies:\n- "
+            "Avoid these recent ideas. Do not repeat or make near-copies:\n- "
             + "\n- ".join(avoid_items[:40])
         )
 
-    return f"""
-Create ONE Telegram English quiz for beginners.
-Return STRICT JSON ONLY.
+    avoid_answers_block = ""
+    if quiz_type == "riddle" and avoid_answers:
+        avoid_answers_block = (
+            "Avoid these recent riddle answers. Do not repeat them:\n- "
+            + "\n- ".join(avoid_answers[:40])
+        )
 
-GOAL:
-Make a super clear A1/A2 "fill the gap" poll.
-It must be fast, obvious, and fun.
-No brain-twister questions.
-Only ONE answer must be correct.
-
-MAIN FORMAT:
-- complete sentence with ONE blank: ___
-- user must choose ONE word or short phrase for the blank
-
-TOPICS TO MIX:
-- travel
-- food
-- ordering food
-- coffee shop small talk
-- simple everyday phrases
-- small talk with a stranger
-- being late
-- asking for help
-- hotel / airport / taxi / cafe basics
-
+    common_rules = """
 LEVEL:
 - 70% A1
 - 25% A2
 - 5% easy B1
 Prefer A1 if unsure.
 
-VERY IMPORTANT RULES:
+GLOBAL RULES:
 - exactly 4 options
 - exactly 1 correct answer
-- wrong answers must be clearly wrong
 - no second correct answer
-- no "all options look okay"
-- no advanced vocabulary
-- no formal business English
-- no idioms
+- wrong answers must be clearly wrong
 - no perfect tenses
-- no modal complexity
-- sentence must sound natural in real life
-- keep it short and very clear
+- no idioms
+- no business English
+- no tricky grammar
+- no advanced service phrases
+- very clear and useful in real life
 - explanation_uk must be short and simple
-- use American-style everyday English
+- use natural everyday English
+""".strip()
 
-GOOD EXAMPLES OF SENTENCE STYLE:
-- Can I get a ___, please?
-- I need a ___ to the airport.
-- We want a table for ___.
-- I’m running ___.
-- Is this seat ___?
-- Can I pay by ___?
-- My room number is ___.
-- I’d like a ___ coffee.
-- Where is the train ___?
-- I’m on my ___.
+    if quiz_type == "grammar_gap":
+        return f"""
+Create ONE Telegram English poll for beginners.
+Return STRICT JSON ONLY.
 
-BAD STYLE:
-- tricky grammar
-- abstract situations
-- multiple good answers
-- long wording
-- textbook English
-- formal service phrases
-- advanced travel vocabulary
+TYPE:
+grammar_gap
 
-OPTION RULES:
-- the correct option should be very clearly the best fit
-- wrong options can be:
-  1) same category but wrong meaning
-  2) common learner mistake
-  3) funny trap but obviously wrong in context
-- do NOT make two near-synonyms that both fit
+GOAL:
+Make a super clear A1/A2 fill-the-gap question.
+Only ONE answer must fit.
+No doubtful phrasing.
+Avoid slippery cases like article + drink/food if it may confuse beginners.
 
-QUESTION FORMAT MUST BE EXACTLY:
+TOPICS:
+- travel
+- food
+- ordering food
+- coffee shop
+- hotel
+- taxi
+- airport
+- train
+- simple daily life
+- asking for help
+- being late
+
+{common_rules}
+
+FORMAT:
 💬
 Fill the gap:
 <sentence with ___>
+
+RULES FOR SENTENCE:
+- exactly one blank: ___
+- short sentence
+- answer in 1-2 seconds
+- one obvious best option
+- include enough context
+- good for A1/A2 learners
+- prefer verbs, basic nouns, pronouns, time markers, simple prepositions
+- avoid phrases where two words can sound okay
+
+GOOD EXAMPLES:
+- I am ___ now.
+- She ___ at home.
+- We need a ___ for two.
+- Where is my ___?
+- He goes to work by ___.
+- I’m on my ___.
+- Can I pay by ___?
+- The train is at ___ 5.
+
+BAD EXAMPLES:
+- I’d like a ___ coffee.
+- anything with two natural answers
+- anything too textbook
+- anything without context
 
 JSON schema:
 {{
@@ -455,22 +565,159 @@ JSON schema:
   "explanation_uk": "short explanation in Ukrainian"
 }}
 
-EXTRA QUALITY CHECK:
-Before returning JSON, silently verify:
+EXTRA CHECK:
 - only one answer works
-- sentence is easy without context
-- user can answer in 1-2 seconds
-- sentence is useful in real life
-- no repeated recent idea
+- no ambiguity
+- fast to solve
+- simple enough for beginners
 
 {avoid_block}
 
 Return STRICT JSON ONLY.
 """.strip()
 
+    if quiz_type == "ua_en":
+        return f"""
+Create ONE Telegram English poll for beginners.
+Return STRICT JSON ONLY.
 
-def fallback_prompt() -> str:
-    return """
+TYPE:
+ua_en
+
+GOAL:
+Make a very clear Ukrainian-to-English multiple choice quiz.
+Only ONE translation must be correct.
+
+TOPICS:
+- travel
+- food
+- coffee shop
+- hotel
+- airport
+- taxi
+- daily life
+- simple phrases
+- basic communication
+
+{common_rules}
+
+FORMAT:
+💬
+🇺🇦 → 🇬🇧
+<Ukrainian phrase>
+
+RULES:
+- Ukrainian phrase must be short: 2-8 words
+- English correct answer must be short and natural
+- exactly one correct translation
+- 2 wrong options should be close-ish learner mistakes
+- 1 wrong option may be a trap
+- no two English options may both fit
+- avoid formal language
+- avoid long sentences
+
+GOOD EXAMPLES:
+- Я голодний.
+- Де мій квиток?
+- Мені потрібне таксі.
+- Я вже йду.
+- Скільки це коштує?
+
+JSON schema:
+{{
+  "core": "Ukrainian phrase",
+  "question": "💬\\n🇺🇦 → 🇬🇧\\n<Ukrainian phrase>",
+  "options": ["...", "...", "...", "..."],
+  "correct": 0,
+  "explanation_uk": "short explanation in Ukrainian"
+}}
+
+EXTRA CHECK:
+- exactly one correct translation
+- no optional synonyms that also fit
+- simple and useful
+
+{avoid_block}
+
+Return STRICT JSON ONLY.
+""".strip()
+
+    if quiz_type == "riddle":
+        return f"""
+Create ONE Telegram English poll for beginners.
+Return STRICT JSON ONLY.
+
+TYPE:
+riddle
+
+GOAL:
+Make a very easy one-word English riddle for A1/A2.
+It must be fun and simple.
+
+TOPICS:
+- basic everyday objects
+- food
+- transport
+- travel items
+- home items
+- simple nature words
+- body parts
+- school / cafe / hotel basics
+
+{common_rules}
+
+FORMAT:
+💬
+<2 or 3 very short clue lines>
+What is it?
+
+RULES:
+- answer must be ONE English word
+- clues must be very easy
+- user should solve in 2-4 seconds
+- no poetic clues
+- no abstract words
+- no rare nouns
+- options must be 4 one-word answers if possible
+- only one answer fits clearly
+
+GOOD EXAMPLES:
+It is yellow.
+Monkeys like it.
+What is it?
+
+You sleep on it.
+It is in your bedroom.
+What is it?
+
+JSON schema:
+{{
+  "core": "clue line 1\\nclue line 2",
+  "question": "💬\\nclue line 1\\nclue line 2\\nWhat is it?",
+  "options": ["...", "...", "...", "..."],
+  "correct": 0,
+  "answer": "oneword",
+  "explanation_uk": "short explanation in Ukrainian"
+}}
+
+EXTRA CHECK:
+- answer is one word
+- no repeated recent answers
+- only one option matches
+- very easy
+
+{avoid_block}
+{avoid_answers_block}
+
+Return STRICT JSON ONLY.
+""".strip()
+
+    raise ValueError("Unknown quiz type")
+
+
+def fallback_prompt(quiz_type: str) -> str:
+    if quiz_type == "grammar_gap":
+        return """
 Return STRICT JSON ONLY.
 
 Create ONE very easy English fill-the-gap quiz for Telegram.
@@ -480,8 +727,8 @@ Rules:
 - 4 unique options
 - 1 correct answer only
 - very clear
+- no ambiguity
 - useful in real life
-- topics: travel, coffee shop, food, ordering, hotel, taxi, everyday English
 
 Question format exactly:
 💬
@@ -498,19 +745,79 @@ JSON schema:
 }
 """.strip()
 
+    if quiz_type == "ua_en":
+        return """
+Return STRICT JSON ONLY.
 
-def generate_one(avoid_items: list[str]) -> dict:
+Create ONE very easy Ukrainian-to-English quiz for Telegram.
+
+Rules:
+- A1/A2 only
+- 4 unique options
+- 1 correct translation only
+- short phrase
+- very clear
+
+Question format exactly:
+💬
+🇺🇦 → 🇬🇧
+<Ukrainian phrase>
+
+JSON schema:
+{
+  "core": "Ukrainian phrase",
+  "question": "💬\\n🇺🇦 → 🇬🇧\\n<Ukrainian phrase>",
+  "options": ["...", "...", "...", "..."],
+  "correct": 0,
+  "explanation_uk": "short explanation in Ukrainian"
+}
+""".strip()
+
+    if quiz_type == "riddle":
+        return """
+Return STRICT JSON ONLY.
+
+Create ONE very easy one-word English riddle for Telegram.
+
+Rules:
+- A1/A2 only
+- 4 unique options
+- 1 correct answer only
+- answer = one word
+- very easy and clear
+
+Question format exactly:
+💬
+<clue line 1>
+<clue line 2>
+What is it?
+
+JSON schema:
+{
+  "core": "clue line 1\\nclue line 2",
+  "question": "💬\\nclue line 1\\nclue line 2\\nWhat is it?",
+  "options": ["...", "...", "...", "..."],
+  "correct": 0,
+  "answer": "oneword",
+  "explanation_uk": "short explanation in Ukrainian"
+}
+""".strip()
+
+    raise ValueError("Unknown quiz type")
+
+
+def generate_one(quiz_type: str, avoid_items: list[str], avoid_answers: list[str]) -> dict:
     try:
         resp = client.responses.create(
             model=MODEL,
-            input=build_prompt(avoid_items),
+            input=build_prompt(quiz_type, avoid_items, avoid_answers),
         )
         raw = (getattr(resp, "output_text", None) or "").strip()
         return extract_json(raw)
     except Exception:
         resp = client.responses.create(
             model=MODEL,
-            input=fallback_prompt(),
+            input=fallback_prompt(quiz_type),
         )
         raw = (getattr(resp, "output_text", None) or "").strip()
         return extract_json(raw)
@@ -528,59 +835,90 @@ def main():
         return
 
     history = load_history()
+
     seen_fp = {h.get("fp") for h in history if h.get("fp")}
     seen_core_fp = {h.get("core_fp") for h in history if h.get("core_fp")}
 
-    recent_core_set = set(recent_cores(history, RECENT_CORE_LIMIT))
+    recent_patterns_by_kind = {
+        "grammar_gap": set(),
+        "ua_en": set(),
+        "riddle": set(),
+    }
 
-    recent_patterns = set()
-    pattern_count = 0
+    pattern_counts = {
+        "grammar_gap": 0,
+        "ua_en": 0,
+        "riddle": 0,
+    }
+
     for h in reversed(history):
-        if pattern_count >= RECENT_PATTERN_LIMIT:
-            break
+        kind = h.get("kind")
+        if kind not in recent_patterns_by_kind:
+            continue
+        if pattern_counts[kind] >= RECENT_PATTERN_LIMIT:
+            continue
+
         core = h.get("core", "")
         pk = pattern_key(core)
         if pk:
-            recent_patterns.add(pk)
-            pattern_count += 1
+            recent_patterns_by_kind[kind].add(pk)
+            pattern_counts[kind] += 1
 
-    avoid_items = recent_cores(history, 40)
+    recent_core_sets = {
+        "grammar_gap": set(recent_cores(history, RECENT_CORE_LIMIT, "grammar_gap")),
+        "ua_en": set(recent_cores(history, RECENT_CORE_LIMIT, "ua_en")),
+        "riddle": set(recent_cores(history, RECENT_CORE_LIMIT, "riddle")),
+    }
+
+    recent_riddle_answer_set = set(recent_riddle_answers(history, RECENT_RIDDLE_ANSWER_LIMIT))
 
     last_err = None
 
-    for _ in range(30):
+    for _ in range(40):
         try:
-            data = generate_one(avoid_items)
-            core, question, options, correct, explanation = validate_generated(data)
+            quiz_type = pick_quiz_type()
+            avoid_items = recent_cores(history, 40, quiz_type)
+            avoid_answers = recent_riddle_answers(history, 40) if quiz_type == "riddle" else []
 
-            cfp = core_fp(core)
+            data = generate_one(quiz_type, avoid_items, avoid_answers)
+            core, question, options, correct, explanation, answer = validate_generated(data, quiz_type)
+
+            cfp = core_fp(quiz_type, core)
             if cfp in seen_core_fp:
                 continue
 
             norm_core = normalize_core(core)
-            if norm_core in recent_core_set:
+            if norm_core in recent_core_sets[quiz_type]:
                 continue
 
             pk = pattern_key(core)
-            if pk in recent_patterns:
+            if pk in recent_patterns_by_kind[quiz_type]:
                 continue
 
-            fp = fp_for(core, options)
+            if quiz_type == "riddle":
+                norm_answer = normalize_core(answer)
+                if norm_answer in recent_riddle_answer_set:
+                    continue
+
+            fp = fp_for(quiz_type, core, options)
             if fp in seen_fp:
                 continue
 
             shuffled_options, new_correct = shuffle_options_keep_correct(options, correct)
             send_quiz_poll(question, shuffled_options, new_correct, explanation)
 
-            history.append(
-                {
-                    "ts": int(time.time()),
-                    "kind": "phrase_gap",
-                    "core": core,
-                    "fp": fp_for(core, shuffled_options),
-                    "core_fp": cfp,
-                }
-            )
+            history_item = {
+                "ts": int(time.time()),
+                "kind": quiz_type,
+                "core": core,
+                "fp": fp_for(quiz_type, core, shuffled_options),
+                "core_fp": cfp,
+            }
+
+            if quiz_type == "riddle":
+                history_item["answer"] = answer
+
+            history.append(history_item)
             save_history(history)
             return
 
