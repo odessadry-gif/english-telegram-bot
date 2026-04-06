@@ -3926,5 +3926,12 @@
     "core": "How ___ is the coffee?",
     "fp": "0ef3a0c079c55fcacfdc54777466ca69e61f799923b62466e2fb04eff37bbb80",
     "core_fp": "9d1d680235178017f1649d90c852139d81131cecda55fc8ee28c67321408b8d0"
+  },
+  {
+    "ts": 1775459683,
+    "kind": "phrase_gap",
+    "core": "Can I have the bill ___?",
+    "fp": "c9c62a7455521ff6c23266683039dc5848f14420e70b0f370202c5a242ebeaa9",
+    "core_fp": "f425d6ca5d0fc11340878e049311d18d1772a37c6a69e592581bc253cd7b5b7c"
   }
 ]
