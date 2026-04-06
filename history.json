@@ -3989,5 +3989,13 @@
     "core": "Де вихід?",
     "fp": "46b429e56a92594e9e68c3a79487baa3538ac2d6f4b128772ebfb1f4c6e6f6c6",
     "core_fp": "2c51b69a0fd0fb9ae9b3598a7f7cda7db028e16f40075b9d62d72a64269872af"
+  },
+  {
+    "ts": 1775514177,
+    "kind": "riddle",
+    "core": "It is cold.\nYou keep food here.",
+    "fp": "88b3ed5216f5139ca8597afaa06d38d691d799ceb8d5d24be08516a236c1f65c",
+    "core_fp": "e2f2054d9a9159979565103191add023831617bab6622867d3a4fa4b3e5acb46",
+    "answer": "fridge"
   }
 ]
