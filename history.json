@@ -3912,5 +3912,12 @@
     "core": "Can I pay with ___?",
     "fp": "a4ad9f25606504725050931cb6ffd4435f827137eedade86b623c0dce5859f31",
     "core_fp": "f8ec1e54620791239607227ecbddbd23ea6e4a264229c5d504b47425ac3871e9"
+  },
+  {
+    "ts": 1775437979,
+    "kind": "phrase_gap",
+    "core": "I am at the coffee ___.",
+    "fp": "4cf6bebaad6559b1b008bfef1384a93bd803d4d94a8e9e9ebf37d60d2e9ef1eb",
+    "core_fp": "30e64f0d531f1be238fc78b477214fdc65b2a67bd7905081ae0dc23f2050768c"
   }
 ]
