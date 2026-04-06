@@ -3961,5 +3961,12 @@
     "core": "Sorry, I am ___.",
     "fp": "e2cf870c8441bff05080940de52a0494596a784f2e8eb443ff7de720c30e21ea",
     "core_fp": "7c111d8adec7ce8d731bf1ebb26ef0f5a1fc7870b632953ae93b57efc2cdd357"
+  },
+  {
+    "ts": 1775493313,
+    "kind": "phrase_gap",
+    "core": "The train is ___ minutes late.",
+    "fp": "8dee36cf318d70a013b0c6e7382337d808068cf7e875e48a0cbdbd80496a870f",
+    "core_fp": "bbbd1bd95be017f4a9af8fc0dc57b990bbe15372e403b11a343e15a477765f34"
   }
 ]
