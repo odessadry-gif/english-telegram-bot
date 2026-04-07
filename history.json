@@ -4055,5 +4055,13 @@
     "core": "The train leaves ___ 5 minutes.",
     "fp": "9ab68c6807a14a3dca0549f0e33c01b350add91ed042cea0dd1fb56b50ff61a1",
     "core_fp": "c50f8e37048195121b47bb5755f13e872a07c561a705af96dab348dc51cb3e53"
+  },
+  {
+    "ts": 1775587382,
+    "kind": "riddle",
+    "core": "It opens a door.\nYou keep it on a ring.",
+    "fp": "653d6d8c289844f1ff5b03eebcbbaf5255d1ed6710d6d8b5b9ce0b8eaa96144d",
+    "core_fp": "1f0bb7f97510aac6f5631050bb2661e569cf5ba16b00073a6d1c095b93c3ba86",
+    "answer": "key"
   }
 ]
