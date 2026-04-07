@@ -4026,5 +4026,12 @@
     "core": "I need a taxi ___ 7.",
     "fp": "b0d07b8076784441b4993c57d40c579ddc1a2354675f1e27c1da45be021da6a2",
     "core_fp": "53d4eec63b46a5f0dde4bc9dfe113ba700b820d60ee322f5cd5f516a359e7557"
+  },
+  {
+    "ts": 1775558703,
+    "kind": "grammar_gap",
+    "core": "I need to ___ a taxi.",
+    "fp": "0b60905059b89de13a0552c1f135ab0cc77c1a8288e77214d60195343214ae13",
+    "core_fp": "aa5b58115aa9222a669646ef8a57c0bc7471ebfc23ab8d976e51ec21503d1c6a"
   }
 ]
