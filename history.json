@@ -4004,5 +4004,13 @@
     "core": "I ___ a taxi now.",
     "fp": "44d9574a6149e156d8ede7dc76b752c15366c42e2dcc1f23b9677a216a5482e3",
     "core_fp": "0b9013b03a2bb65c04f62e8a2c591dba19ce3db72c0291d363ab6f1b3267fd4a"
+  },
+  {
+    "ts": 1775535730,
+    "kind": "riddle",
+    "core": "You use it every morning.\nYou clean your teeth with it.",
+    "fp": "d43b0d0b076cf15ba499c453b3f334c61e24394bf6fa067eda798a93364c9bf8",
+    "core_fp": "09dbd1ae2649ff1c20458ed8bf3618153caae37bf57e4f896ed70e9554faf722",
+    "answer": "toothbrush"
   }
 ]
