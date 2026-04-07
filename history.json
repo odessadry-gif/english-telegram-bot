@@ -4070,5 +4070,12 @@
     "core": "Де я можу сісти?",
     "fp": "06a939040a3c43605e0ca6756e664fc1e2e6b664862a5925698394e959345bd7",
     "core_fp": "390fe052475e2a2af18432d3c0480abe3b941323e9036159befeb8e2b815b7dc"
+  },
+  {
+    "ts": 1775600776,
+    "kind": "grammar_gap",
+    "core": "I ___ late.",
+    "fp": "4902384d94306611b8fa7f1ffd31644023f8b0f2304833e5d9cb808e6ead0134",
+    "core_fp": "31e918e6871824a108d96b0c3a9e5cf1e50aef03f6dd296a9a98e01631730770"
   }
 ]
