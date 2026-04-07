@@ -4048,5 +4048,12 @@
     "core": "Я в готелі",
     "fp": "d67701167f281a3eae6caf3d4506d4fc136d94f977c39ce8ba4c94400c9a1663",
     "core_fp": "1ab5d5b9e57df2922a567d843edbbec6895a1b4bb19d684bbecfe771364dfe58"
+  },
+  {
+    "ts": 1775580214,
+    "kind": "grammar_gap",
+    "core": "The train leaves ___ 5 minutes.",
+    "fp": "9ab68c6807a14a3dca0549f0e33c01b350add91ed042cea0dd1fb56b50ff61a1",
+    "core_fp": "c50f8e37048195121b47bb5755f13e872a07c561a705af96dab348dc51cb3e53"
   }
 ]
