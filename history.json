@@ -4019,5 +4019,12 @@
     "core": "Can I ___ a table for two?",
     "fp": "254d60a11709762af4ccdc08a07f4a45742dd96aae4510fa6ecd9540377da348",
     "core_fp": "0f2be44d1932d8e9d90b4603be1ed7ecd1862713a9b6a4824dcf1e5df25023bc"
+  },
+  {
+    "ts": 1775551778,
+    "kind": "grammar_gap",
+    "core": "I need a taxi ___ 7.",
+    "fp": "b0d07b8076784441b4993c57d40c579ddc1a2354675f1e27c1da45be021da6a2",
+    "core_fp": "53d4eec63b46a5f0dde4bc9dfe113ba700b820d60ee322f5cd5f516a359e7557"
   }
 ]
