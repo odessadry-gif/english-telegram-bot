@@ -4063,5 +4063,12 @@
     "fp": "653d6d8c289844f1ff5b03eebcbbaf5255d1ed6710d6d8b5b9ce0b8eaa96144d",
     "core_fp": "1f0bb7f97510aac6f5631050bb2661e569cf5ba16b00073a6d1c095b93c3ba86",
     "answer": "key"
+  },
+  {
+    "ts": 1775594015,
+    "kind": "ua_en",
+    "core": "Де я можу сісти?",
+    "fp": "06a939040a3c43605e0ca6756e664fc1e2e6b664862a5925698394e959345bd7",
+    "core_fp": "390fe052475e2a2af18432d3c0480abe3b941323e9036159befeb8e2b815b7dc"
   }
 ]
