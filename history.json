@@ -4041,5 +4041,12 @@
     "fp": "22c5dcf573699dbf6e8044b154d261c90d0359a42b43e47e0b44aa8ecc57879e",
     "core_fp": "8699d4ad2696f3745aa8995259b1cb303cabc3076b35f47862acb36014f73907",
     "answer": "apple"
+  },
+  {
+    "ts": 1775573952,
+    "kind": "ua_en",
+    "core": "Я в готелі",
+    "fp": "d67701167f281a3eae6caf3d4506d4fc136d94f977c39ce8ba4c94400c9a1663",
+    "core_fp": "1ab5d5b9e57df2922a567d843edbbec6895a1b4bb19d684bbecfe771364dfe58"
   }
 ]
