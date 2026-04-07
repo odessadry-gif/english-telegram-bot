@@ -4012,5 +4012,12 @@
     "fp": "d43b0d0b076cf15ba499c453b3f334c61e24394bf6fa067eda798a93364c9bf8",
     "core_fp": "09dbd1ae2649ff1c20458ed8bf3618153caae37bf57e4f896ed70e9554faf722",
     "answer": "toothbrush"
+  },
+  {
+    "ts": 1775545274,
+    "kind": "grammar_gap",
+    "core": "Can I ___ a table for two?",
+    "fp": "254d60a11709762af4ccdc08a07f4a45742dd96aae4510fa6ecd9540377da348",
+    "core_fp": "0f2be44d1932d8e9d90b4603be1ed7ecd1862713a9b6a4824dcf1e5df25023bc"
   }
 ]
