@@ -4033,5 +4033,13 @@
     "core": "I need to ___ a taxi.",
     "fp": "0b60905059b89de13a0552c1f135ab0cc77c1a8288e77214d60195343214ae13",
     "core_fp": "aa5b58115aa9222a669646ef8a57c0bc7471ebfc23ab8d976e51ec21503d1c6a"
+  },
+  {
+    "ts": 1775566275,
+    "kind": "riddle",
+    "core": "It is a fruit.\nIt is often red or green",
+    "fp": "22c5dcf573699dbf6e8044b154d261c90d0359a42b43e47e0b44aa8ecc57879e",
+    "core_fp": "8699d4ad2696f3745aa8995259b1cb303cabc3076b35f47862acb36014f73907",
+    "answer": "apple"
   }
 ]
