@@ -3997,5 +3997,12 @@
     "fp": "88b3ed5216f5139ca8597afaa06d38d691d799ceb8d5d24be08516a236c1f65c",
     "core_fp": "e2f2054d9a9159979565103191add023831617bab6622867d3a4fa4b3e5acb46",
     "answer": "fridge"
+  },
+  {
+    "ts": 1775524200,
+    "kind": "grammar_gap",
+    "core": "I ___ a taxi now.",
+    "fp": "44d9574a6149e156d8ede7dc76b752c15366c42e2dcc1f23b9677a216a5482e3",
+    "core_fp": "0b9013b03a2bb65c04f62e8a2c591dba19ce3db72c0291d363ab6f1b3267fd4a"
   }
 ]
