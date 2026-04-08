@@ -4142,5 +4142,13 @@
     "core": "Де мій багаж?",
     "fp": "02c804e846505b74fa7d23fdf2a7c374587d434569f88f4ca5905dcf5a868ee8",
     "core_fp": "e81db1d6e8d09b58408f13869a9edbcc3419347fb0d2f34dd8ab585f9c9c219e"
+  },
+  {
+    "ts": 1775680223,
+    "kind": "riddle",
+    "core": "You sit on it.\nIt has a back.",
+    "fp": "858e39eb07a1edf2d40c5fa8e885ea84158d641058b7a9690f05e40b6414bf69",
+    "core_fp": "34ff787806bf73ad7574a8fcda19025cfc73ad38a0fbe74b0fbad8f5e4c806c9",
+    "answer": "chair"
   }
 ]
