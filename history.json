@@ -4128,5 +4128,12 @@
     "core": "She is ___ the taxi now.",
     "fp": "a1c90771b14ca04a950840343ddbb5605180bc6ce3fed510ce2ef3dbb59f14a4",
     "core_fp": "a6b959faa19c116213fff00dec0d67b4df9b760e8d03020b8c4b68f062e5ee92"
+  },
+  {
+    "ts": 1775666965,
+    "kind": "grammar_gap",
+    "core": "I want a table ___ two.",
+    "fp": "3b921b90e84f8534e01883c49c45ff1a748f4de4dc1f48a6247f8df3cdb86bfa",
+    "core_fp": "e5a0ebe2d575758033417bb59e7e6b75e2e6902cce623d6b2347b711cb3a2a5d"
   }
 ]
