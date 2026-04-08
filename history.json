@@ -4121,5 +4121,12 @@
     "core": "Мені потрібна вода.",
     "fp": "4e40b1823f3275761418852751fe4768d1fee7da6e31383579d159969f4392db",
     "core_fp": "9ca5f195c3aa969d0edad2acc4dc312d3c2fc99daeb52357238c2a7343b4fb99"
+  },
+  {
+    "ts": 1775660442,
+    "kind": "grammar_gap",
+    "core": "She is ___ the taxi now.",
+    "fp": "a1c90771b14ca04a950840343ddbb5605180bc6ce3fed510ce2ef3dbb59f14a4",
+    "core_fp": "a6b959faa19c116213fff00dec0d67b4df9b760e8d03020b8c4b68f062e5ee92"
   }
 ]
