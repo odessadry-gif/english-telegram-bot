@@ -4100,5 +4100,12 @@
     "fp": "1b85a897af2afaeb7ee49f34c6ee4f2fbd0d884bc73fb9be49aed1349e984836",
     "core_fp": "80837311d59c55760d624521b48f04fde2a43a00829388aa4d78027d324e78ba",
     "answer": "shoe"
+  },
+  {
+    "ts": 1775638159,
+    "kind": "grammar_gap",
+    "core": "Please call a taxi ___ me.",
+    "fp": "78cab1a918b5da1f5307e7f3fa9de8e9eb73352ca2fa34dd7a87eb6b25f04e27",
+    "core_fp": "305e9305e76d3ac5e8b95eaf0729efd4a09eccf8cfe8c8cc7134dd823ff1e1e8"
   }
 ]
