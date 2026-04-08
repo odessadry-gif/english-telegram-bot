@@ -4092,5 +4092,13 @@
     "fp": "0cdd771e50ec6e1f213adc51fd4e5de3000ef741adcf83df07278e91b22e45cd",
     "core_fp": "05e1286bfd54f45da2b080430b7b210ce23613b240de0d50a887a5ac4ebcf943",
     "answer": "pen"
+  },
+  {
+    "ts": 1775631825,
+    "kind": "riddle",
+    "core": "You wear it on your foot.\nIt comes in pairs.",
+    "fp": "1b85a897af2afaeb7ee49f34c6ee4f2fbd0d884bc73fb9be49aed1349e984836",
+    "core_fp": "80837311d59c55760d624521b48f04fde2a43a00829388aa4d78027d324e78ba",
+    "answer": "shoe"
   }
 ]
