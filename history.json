@@ -4077,5 +4077,12 @@
     "core": "I ___ late.",
     "fp": "4902384d94306611b8fa7f1ffd31644023f8b0f2304833e5d9cb808e6ead0134",
     "core_fp": "31e918e6871824a108d96b0c3a9e5cf1e50aef03f6dd296a9a98e01631730770"
+  },
+  {
+    "ts": 1775610700,
+    "kind": "ua_en",
+    "core": "Мені холодно",
+    "fp": "8335471558182a1778a69e0021bd9a86858f2922d43d3a37bc60301f93ed3c5f",
+    "core_fp": "ede285542b37f7a6dc05d6df4e2071308e83fc2e840385fd80abd830cd50ec18"
   }
 ]
