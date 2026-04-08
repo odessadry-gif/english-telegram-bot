@@ -4135,5 +4135,12 @@
     "core": "I want a table ___ two.",
     "fp": "3b921b90e84f8534e01883c49c45ff1a748f4de4dc1f48a6247f8df3cdb86bfa",
     "core_fp": "e5a0ebe2d575758033417bb59e7e6b75e2e6902cce623d6b2347b711cb3a2a5d"
+  },
+  {
+    "ts": 1775674777,
+    "kind": "ua_en",
+    "core": "Де мій багаж?",
+    "fp": "02c804e846505b74fa7d23fdf2a7c374587d434569f88f4ca5905dcf5a868ee8",
+    "core_fp": "e81db1d6e8d09b58408f13869a9edbcc3419347fb0d2f34dd8ab585f9c9c219e"
   }
 ]
