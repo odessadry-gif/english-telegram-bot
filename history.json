@@ -4114,5 +4114,12 @@
     "core": "Я втомився",
     "fp": "113406ba014d5807eecdb5354adc66d5247b5ee7ecf8ad60de0475c2a19ec4ee",
     "core_fp": "b76750b135d7e9a4b5da8d9d9f19863f4079b88dd13ced9ecb3b61da9214e0c9"
+  },
+  {
+    "ts": 1775652651,
+    "kind": "ua_en",
+    "core": "Мені потрібна вода.",
+    "fp": "4e40b1823f3275761418852751fe4768d1fee7da6e31383579d159969f4392db",
+    "core_fp": "9ca5f195c3aa969d0edad2acc4dc312d3c2fc99daeb52357238c2a7343b4fb99"
   }
 ]
