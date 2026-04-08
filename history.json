@@ -4150,5 +4150,12 @@
     "fp": "858e39eb07a1edf2d40c5fa8e885ea84158d641058b7a9690f05e40b6414bf69",
     "core_fp": "34ff787806bf73ad7574a8fcda19025cfc73ad38a0fbe74b0fbad8f5e4c806c9",
     "answer": "chair"
+  },
+  {
+    "ts": 1775687259,
+    "kind": "ua_en",
+    "core": "Я хочу чай",
+    "fp": "24987703e86acf3c06064f41ed5905b8300c411a759c6f197256d3042ac49b39",
+    "core_fp": "07face3ef65b1271c51163a07396633e3ff03fad846a075a2ab77c238c0b44e1"
   }
 ]
