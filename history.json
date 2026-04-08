@@ -4107,5 +4107,12 @@
     "core": "Please call a taxi ___ me.",
     "fp": "78cab1a918b5da1f5307e7f3fa9de8e9eb73352ca2fa34dd7a87eb6b25f04e27",
     "core_fp": "305e9305e76d3ac5e8b95eaf0729efd4a09eccf8cfe8c8cc7134dd823ff1e1e8"
+  },
+  {
+    "ts": 1775645254,
+    "kind": "ua_en",
+    "core": "Я втомився",
+    "fp": "113406ba014d5807eecdb5354adc66d5247b5ee7ecf8ad60de0475c2a19ec4ee",
+    "core_fp": "b76750b135d7e9a4b5da8d9d9f19863f4079b88dd13ced9ecb3b61da9214e0c9"
   }
 ]
