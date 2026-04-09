@@ -4203,5 +4203,12 @@
     "fp": "07f39c64eefda5f61f292a214295ab9be9db0c9f27f4a987867500098dd241f6",
     "core_fp": "fcc48039f9d5d9d329da22b513b9e859e55567f52ad34091ef4e0babd60ac7ef",
     "answer": "hat"
+  },
+  {
+    "ts": 1775747542,
+    "kind": "grammar_gap",
+    "core": "She ___ at home.",
+    "fp": "c7d3e73bdb485c42f17ab371646e9b97ad5524391a1e5d0cb2135bd9e06f2b61",
+    "core_fp": "12a89d6e23b7df1edf3343fbb78af9df57e384eb1fe36610b75fc1eea669e61e"
   }
 ]
