@@ -4231,5 +4231,12 @@
     "core": "Ви приймаєте картки?",
     "fp": "8c209699edf7cab11621a25e1b75991b85af866f0368b06ead8cc5ea4c70609e",
     "core_fp": "44228250f839959ecad112f6f280b00a8f0af67fe1beaab4a08fe5bc25784c1e"
+  },
+  {
+    "ts": 1775773749,
+    "kind": "grammar_gap",
+    "core": "He takes the train ___ work.",
+    "fp": "86b7e2269629626dcd947a9a8fcf5aab939106ef98677497ec301d27a1621ab5",
+    "core_fp": "46d4fe455888bd2cb9c451fc1f7458128c5ecec929dee3e2de2699411a6dc24e"
   }
 ]
