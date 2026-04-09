@@ -4217,5 +4217,12 @@
     "core": "The train is ___ 5.",
     "fp": "afcf756baf45b065ac46072bc55312775f1b18a8be3d5e1ce8b6d9c94f312c2a",
     "core_fp": "6249efa0269bf74f8d3a251cbeb9420ee6189b1b5cdc1ae5b698571c82c10383"
+  },
+  {
+    "ts": 1775760223,
+    "kind": "grammar_gap",
+    "core": "Can you ___ me, please?",
+    "fp": "0463302c07589310380510a360b2673b6e5c486ff3f8933102d20a141b7056bb",
+    "core_fp": "b3455df981a5785c7e03bdf77bba35292232083a4e921be277ab2a69d6287c82"
   }
 ]
