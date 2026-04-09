@@ -4157,5 +4157,12 @@
     "core": "Я хочу чай",
     "fp": "24987703e86acf3c06064f41ed5905b8300c411a759c6f197256d3042ac49b39",
     "core_fp": "07face3ef65b1271c51163a07396633e3ff03fad846a075a2ab77c238c0b44e1"
+  },
+  {
+    "ts": 1775696497,
+    "kind": "grammar_gap",
+    "core": "I ___ a room for two.",
+    "fp": "c7f5233ea95155c01852dae75c55d2dd6a0f840637e53c1ed69c2c74907dcaaa",
+    "core_fp": "f604f8e53d8c2ff8d09b5245add45dd5d2ff794f778d4b6b4866674de8a931ab"
   }
 ]
