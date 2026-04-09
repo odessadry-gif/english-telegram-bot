@@ -4164,5 +4164,13 @@
     "core": "I ___ a room for two.",
     "fp": "c7f5233ea95155c01852dae75c55d2dd6a0f840637e53c1ed69c2c74907dcaaa",
     "core_fp": "f604f8e53d8c2ff8d09b5245add45dd5d2ff794f778d4b6b4866674de8a931ab"
+  },
+  {
+    "ts": 1775708528,
+    "kind": "riddle",
+    "core": "You use it to bite.\nIt is in your mouth.",
+    "fp": "84c3dc08313780c1cda3b6b70aaebdbb2082f2bcfdaa73a5e62f30169e6ad922",
+    "core_fp": "9d2f1decf2098a5a100eb2ad0c1767b711f5a033e8fb5ec1fc256d407c3e360f",
+    "answer": "tooth"
   }
 ]
