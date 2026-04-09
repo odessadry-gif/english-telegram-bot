@@ -4172,5 +4172,13 @@
     "fp": "84c3dc08313780c1cda3b6b70aaebdbb2082f2bcfdaa73a5e62f30169e6ad922",
     "core_fp": "9d2f1decf2098a5a100eb2ad0c1767b711f5a033e8fb5ec1fc256d407c3e360f",
     "answer": "tooth"
+  },
+  {
+    "ts": 1775718468,
+    "kind": "riddle",
+    "core": "You carry things in it.\nYou take it to school.",
+    "fp": "a7e2fe371a20ca23e95a575060d9757ad3005e3b35c39f188429f02a1bcf9762",
+    "core_fp": "b2cf1b94eed439861d9baab6b255e1a6344b3cebf7b50a5e05ff7ff5ae21c618",
+    "answer": "bag"
   }
 ]
