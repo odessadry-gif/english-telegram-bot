@@ -4195,5 +4195,13 @@
     "fp": "3be89c9308ecdcb66c58cb5160b8ac8526a995ce7969337b1847cbe4fd351da3",
     "core_fp": "8fda0aa54c0041bd47d24d0b1a63be9e83206e23236fa3fe146fa255dc67d0ac",
     "answer": "plate"
+  },
+  {
+    "ts": 1775739250,
+    "kind": "riddle",
+    "core": "You wear it on your head.\nIt is for sun or rain.",
+    "fp": "07f39c64eefda5f61f292a214295ab9be9db0c9f27f4a987867500098dd241f6",
+    "core_fp": "fcc48039f9d5d9d329da22b513b9e859e55567f52ad34091ef4e0babd60ac7ef",
+    "answer": "hat"
   }
 ]
