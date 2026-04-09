@@ -4187,5 +4187,13 @@
     "core": "Де станція метро?",
     "fp": "0cf9858b5f939618fcb3e2793a8e904608af2b9a61bd80c71d7adff6861d66a9",
     "core_fp": "e0b323a5c30af667df49e5e6cee98888722af51f2a3da189e36107a0ec03669e"
+  },
+  {
+    "ts": 1775731865,
+    "kind": "riddle",
+    "core": "You eat from it.\nIt is flat and round",
+    "fp": "3be89c9308ecdcb66c58cb5160b8ac8526a995ce7969337b1847cbe4fd351da3",
+    "core_fp": "8fda0aa54c0041bd47d24d0b1a63be9e83206e23236fa3fe146fa255dc67d0ac",
+    "answer": "plate"
   }
 ]
