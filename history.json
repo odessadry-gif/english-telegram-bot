@@ -4224,5 +4224,12 @@
     "core": "Can you ___ me, please?",
     "fp": "0463302c07589310380510a360b2673b6e5c486ff3f8933102d20a141b7056bb",
     "core_fp": "b3455df981a5785c7e03bdf77bba35292232083a4e921be277ab2a69d6287c82"
+  },
+  {
+    "ts": 1775767120,
+    "kind": "ua_en",
+    "core": "Ви приймаєте картки?",
+    "fp": "8c209699edf7cab11621a25e1b75991b85af866f0368b06ead8cc5ea4c70609e",
+    "core_fp": "44228250f839959ecad112f6f280b00a8f0af67fe1beaab4a08fe5bc25784c1e"
   }
 ]
