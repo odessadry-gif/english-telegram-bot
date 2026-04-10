@@ -4253,5 +4253,13 @@
     "fp": "f8a97df13e6954a3ce3c43539439635991ee8263c2498ecf5823b2baf50e6f0c",
     "core_fp": "2dbc2b530a6f5210a3c09294ae9e9fe2acbb214b67c62beb65baeb591b0c7591",
     "answer": "door"
+  },
+  {
+    "ts": 1775805153,
+    "kind": "riddle",
+    "core": "You look out of it.\nIt is in a room.",
+    "fp": "3934df714a5bcf480b3a1a5e94f1ec7ce7d9418db4b6a5b22e5764b1dffc79b1",
+    "core_fp": "2532e2b2ca56a53b7bcd55e57caba9c655170e0fbe8ad9b6ed6de4d4fac2069b",
+    "answer": "window"
   }
 ]
