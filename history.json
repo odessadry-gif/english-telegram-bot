@@ -4261,5 +4261,12 @@
     "fp": "3934df714a5bcf480b3a1a5e94f1ec7ce7d9418db4b6a5b22e5764b1dffc79b1",
     "core_fp": "2532e2b2ca56a53b7bcd55e57caba9c655170e0fbe8ad9b6ed6de4d4fac2069b",
     "answer": "window"
+  },
+  {
+    "ts": 1775811480,
+    "kind": "grammar_gap",
+    "core": "The taxi is ___ the hotel.",
+    "fp": "afb6a445fdcf9ba2368cc31634291c25950c33849ac00d5dbb09e178c698fbc0",
+    "core_fp": "0f1930e5e0fbf4054852961ad4e512c1497393d0349dfd200c428d7583106836"
   }
 ]
