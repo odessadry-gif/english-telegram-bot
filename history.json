@@ -4311,5 +4311,12 @@
     "fp": "9221552e2b391199a2d0948ae98841f1e1f020bda511da211b680ae90ef2af28",
     "core_fp": "bc849b86bf969ffa6759cce5764a0cf027ec7e328a4def69151c831eb7e08089",
     "answer": "nose"
+  },
+  {
+    "ts": 1775859887,
+    "kind": "grammar_gap",
+    "core": "I ___ a room.",
+    "fp": "935338ea8c14dff44d359a8b7417e9067cc4f0007913f97baeb02ad29558a776",
+    "core_fp": "92a694739299bbd3666e46bb056bc5f383364704471ea7555ab0fe3c6a4abf15"
   }
 ]
