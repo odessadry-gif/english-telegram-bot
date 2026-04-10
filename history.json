@@ -4245,5 +4245,13 @@
     "core": "We need a table ___ two people.",
     "fp": "a6f261b326ba92d1d2222b4dfbb894c628d74e22109d60690cade249aa3cfa0a",
     "core_fp": "c76e811d67efccd022c577e4c36b1cce4656b88aa33de3738886a14355cfb7ea"
+  },
+  {
+    "ts": 1775795753,
+    "kind": "riddle",
+    "core": "It has a handle.\nYou open it to go in",
+    "fp": "f8a97df13e6954a3ce3c43539439635991ee8263c2498ecf5823b2baf50e6f0c",
+    "core_fp": "2dbc2b530a6f5210a3c09294ae9e9fe2acbb214b67c62beb65baeb591b0c7591",
+    "answer": "door"
   }
 ]
