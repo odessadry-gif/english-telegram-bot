@@ -4275,5 +4275,12 @@
     "core": "Де зупинка автобуса?",
     "fp": "d6f1896e147abd50685bcd4b012958bf5b1e808d9ad26e5cec7f22e8518c6afc",
     "core_fp": "36bf052f65d0416f17d0593d2b258e40bf59ce4c2cdf742566d5d3df11796933"
+  },
+  {
+    "ts": 1775824807,
+    "kind": "grammar_gap",
+    "core": "I lost my room ___.",
+    "fp": "d0739c19fa52b106044cd1842169c6d8545abfb4b76b766379e0035ddfa525dc",
+    "core_fp": "693e4b94c206a3ab0e1f5f8b5d5d900b386d634c4e18967d0d4ef4038d850591"
   }
 ]
