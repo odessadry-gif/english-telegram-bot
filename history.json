@@ -4238,5 +4238,12 @@
     "core": "He takes the train ___ work.",
     "fp": "86b7e2269629626dcd947a9a8fcf5aab939106ef98677497ec301d27a1621ab5",
     "core_fp": "46d4fe455888bd2cb9c451fc1f7458128c5ecec929dee3e2de2699411a6dc24e"
+  },
+  {
+    "ts": 1775783526,
+    "kind": "grammar_gap",
+    "core": "We need a table ___ two people.",
+    "fp": "a6f261b326ba92d1d2222b4dfbb894c628d74e22109d60690cade249aa3cfa0a",
+    "core_fp": "c76e811d67efccd022c577e4c36b1cce4656b88aa33de3738886a14355cfb7ea"
   }
 ]
