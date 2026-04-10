@@ -4268,5 +4268,12 @@
     "core": "The taxi is ___ the hotel.",
     "fp": "afb6a445fdcf9ba2368cc31634291c25950c33849ac00d5dbb09e178c698fbc0",
     "core_fp": "0f1930e5e0fbf4054852961ad4e512c1497393d0349dfd200c428d7583106836"
+  },
+  {
+    "ts": 1775817712,
+    "kind": "ua_en",
+    "core": "Де зупинка автобуса?",
+    "fp": "d6f1896e147abd50685bcd4b012958bf5b1e808d9ad26e5cec7f22e8518c6afc",
+    "core_fp": "36bf052f65d0416f17d0593d2b258e40bf59ce4c2cdf742566d5d3df11796933"
   }
 ]
