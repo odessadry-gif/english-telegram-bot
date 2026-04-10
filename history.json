@@ -4289,5 +4289,12 @@
     "core": "Я хочу вийти тут.",
     "fp": "7a5d1a17c1f298fd4d7628d3f9c37714a772c8532cbdd39ba04c201916c362e3",
     "core_fp": "154f756e50dc18d97144142c3090a9ec001960132a7007568db101244075e282"
+  },
+  {
+    "ts": 1775839097,
+    "kind": "grammar_gap",
+    "core": "Can you help me ___ my bag?",
+    "fp": "ca53b480ff2e209c41ef40d64975c6c331ecb5c62bdc36093513af1fef88b116",
+    "core_fp": "09e9ff75b6aa944a8d836178e88a01087fab683d22583d4ee0e94d66b09eea6f"
   }
 ]
