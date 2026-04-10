@@ -4282,5 +4282,12 @@
     "core": "I lost my room ___.",
     "fp": "d0739c19fa52b106044cd1842169c6d8545abfb4b76b766379e0035ddfa525dc",
     "core_fp": "693e4b94c206a3ab0e1f5f8b5d5d900b386d634c4e18967d0d4ef4038d850591"
+  },
+  {
+    "ts": 1775832103,
+    "kind": "ua_en",
+    "core": "Я хочу вийти тут.",
+    "fp": "7a5d1a17c1f298fd4d7628d3f9c37714a772c8532cbdd39ba04c201916c362e3",
+    "core_fp": "154f756e50dc18d97144142c3090a9ec001960132a7007568db101244075e282"
   }
 ]
