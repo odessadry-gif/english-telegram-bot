@@ -4303,5 +4303,13 @@
     "core": "Can I ___ a table?",
     "fp": "1d03d624c13b11d33dd67d670d8d7c61a11f869dd2c4eda594fe88b402c121a1",
     "core_fp": "c91978ba317149c70aa22c8c8a7c5b263a3b3f15fb6593ae94265827e2e15452"
+  },
+  {
+    "ts": 1775852627,
+    "kind": "riddle",
+    "core": "You smell with it.\nIt is on your face.",
+    "fp": "9221552e2b391199a2d0948ae98841f1e1f020bda511da211b680ae90ef2af28",
+    "core_fp": "bc849b86bf969ffa6759cce5764a0cf027ec7e328a4def69151c831eb7e08089",
+    "answer": "nose"
   }
 ]
