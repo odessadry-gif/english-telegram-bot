@@ -4296,5 +4296,12 @@
     "core": "Can you help me ___ my bag?",
     "fp": "ca53b480ff2e209c41ef40d64975c6c331ecb5c62bdc36093513af1fef88b116",
     "core_fp": "09e9ff75b6aa944a8d836178e88a01087fab683d22583d4ee0e94d66b09eea6f"
+  },
+  {
+    "ts": 1775846206,
+    "kind": "grammar_gap",
+    "core": "Can I ___ a table?",
+    "fp": "1d03d624c13b11d33dd67d670d8d7c61a11f869dd2c4eda594fe88b402c121a1",
+    "core_fp": "c91978ba317149c70aa22c8c8a7c5b263a3b3f15fb6593ae94265827e2e15452"
   }
 ]
