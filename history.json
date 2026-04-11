@@ -4369,5 +4369,12 @@
     "core": "Де найближче таксі?",
     "fp": "fe48097e2942e002b788d9c1d67ded5f914d218309377492cb02c91d85b06e41",
     "core_fp": "b8fabf7829f6308aa512c3a40896aa7050aed6cd4cdf9f72532cf836e30194a5"
+  },
+  {
+    "ts": 1775924506,
+    "kind": "grammar_gap",
+    "core": "Where ___ the taxi?",
+    "fp": "9b052edd18ff544270e357c472b3a9149bd740288284270aee5875879ca8f682",
+    "core_fp": "b67363ac9e70a034d718c9ac9fd8e2a0b0c3a3660ee166514ca8e7f6b784a642"
   }
 ]
