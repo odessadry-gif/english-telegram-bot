@@ -4355,5 +4355,12 @@
     "fp": "cef3e5014d5cd0232065a633b27f693934e97813c97113ca1c37deee92e2bdae",
     "core_fp": "03f3dea048c8d18963e3888a7e1b1f08a78c7efae4ee751a4f1ebceb8e1dc2cb",
     "answer": "car"
+  },
+  {
+    "ts": 1775910572,
+    "kind": "ua_en",
+    "core": "Мені потрібна допомога",
+    "fp": "1896288aac2d9ed645fa90cfd2c385eec9a26c9d894305dc0a8259336e77f1b1",
+    "core_fp": "a7c3c343da8d354baf4743e3392479d03a7dde0fb442edfd2ee621c162db78fb"
   }
 ]
