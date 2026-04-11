@@ -4362,5 +4362,12 @@
     "core": "Мені потрібна допомога",
     "fp": "1896288aac2d9ed645fa90cfd2c385eec9a26c9d894305dc0a8259336e77f1b1",
     "core_fp": "a7c3c343da8d354baf4743e3392479d03a7dde0fb442edfd2ee621c162db78fb"
+  },
+  {
+    "ts": 1775917600,
+    "kind": "ua_en",
+    "core": "Де найближче таксі?",
+    "fp": "fe48097e2942e002b788d9c1d67ded5f914d218309377492cb02c91d85b06e41",
+    "core_fp": "b8fabf7829f6308aa512c3a40896aa7050aed6cd4cdf9f72532cf836e30194a5"
   }
 ]
