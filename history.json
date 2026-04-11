@@ -4384,5 +4384,13 @@
     "fp": "a472247e00c9ff3ab5c8c0bb04894ca6df8823bea7e470e5d44cd0b777bb906c",
     "core_fp": "b1ce7ee5deb594eb8e42d1d9e133e3b163922763f4725aae77d1488e2ddad220",
     "answer": "ear"
+  },
+  {
+    "ts": 1775938715,
+    "kind": "riddle",
+    "core": "It moves on tracks.\nMany people ride it.",
+    "fp": "efc2245f8708bebd4976a0a877eef92b927f0f532b88f34ad79709bf122c6a9f",
+    "core_fp": "98ded1ca42c020f246e373220f0dcf26c32c93a46a6ae61ac052e0b5dbbb2183",
+    "answer": "train"
   }
 ]
