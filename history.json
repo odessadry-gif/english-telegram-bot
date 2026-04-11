@@ -4347,5 +4347,13 @@
     "fp": "4e9b72386ab2e8f7f0564b5cc226305948a27b20e2906e577b97385bf4536756",
     "core_fp": "123a4fd45b9a69866aa943ebd40e56e9a6933111c7e0441224cdeffd1c45349c",
     "answer": "spoon"
+  },
+  {
+    "ts": 1775902897,
+    "kind": "riddle",
+    "core": "It has four wheels.\nYou drive it.",
+    "fp": "cef3e5014d5cd0232065a633b27f693934e97813c97113ca1c37deee92e2bdae",
+    "core_fp": "03f3dea048c8d18963e3888a7e1b1f08a78c7efae4ee751a4f1ebceb8e1dc2cb",
+    "answer": "car"
   }
 ]
