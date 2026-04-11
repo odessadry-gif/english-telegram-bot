@@ -4325,5 +4325,12 @@
     "core": "I ___ coffee every morning.",
     "fp": "fa1e971c9a2609247477d4610f8e82c3f9fde9ea47c3ec55a3f7af1479d4f435",
     "core_fp": "6b3273f70c5d00e9ccfbb88e47eb2a1b134154acb25b79f266f49183ee355178"
+  },
+  {
+    "ts": 1775880530,
+    "kind": "grammar_gap",
+    "core": "The train leaves ___ 8.",
+    "fp": "80471ef332ea290a0a1ef2f10cd49186091ba6980c69603d7f449b52f7cbcd14",
+    "core_fp": "1af2081e168e65afc40c5f52eddd5c8717631000d55ef25c55cd28485386cb50"
   }
 ]
