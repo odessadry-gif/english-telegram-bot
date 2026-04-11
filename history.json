@@ -4318,5 +4318,12 @@
     "core": "I ___ a room.",
     "fp": "935338ea8c14dff44d359a8b7417e9067cc4f0007913f97baeb02ad29558a776",
     "core_fp": "92a694739299bbd3666e46bb056bc5f383364704471ea7555ab0fe3c6a4abf15"
+  },
+  {
+    "ts": 1775869667,
+    "kind": "grammar_gap",
+    "core": "I ___ coffee every morning.",
+    "fp": "fa1e971c9a2609247477d4610f8e82c3f9fde9ea47c3ec55a3f7af1479d4f435",
+    "core_fp": "6b3273f70c5d00e9ccfbb88e47eb2a1b134154acb25b79f266f49183ee355178"
   }
 ]
