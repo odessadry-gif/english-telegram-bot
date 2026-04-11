@@ -4339,5 +4339,13 @@
     "core": "Мені потрібен квиток",
     "fp": "6eca7a9ad825125cdaf41b600ff9b10cc76287199de676acf938c3dc4abccc99",
     "core_fp": "021875fbab97b73aafe9e8694e11da498191cd65e343f1b8bf64b05923ee3352"
+  },
+  {
+    "ts": 1775896126,
+    "kind": "riddle",
+    "core": "You eat soup with it.\nIt is round and can be metal or plastic.",
+    "fp": "4e9b72386ab2e8f7f0564b5cc226305948a27b20e2906e577b97385bf4536756",
+    "core_fp": "123a4fd45b9a69866aa943ebd40e56e9a6933111c7e0441224cdeffd1c45349c",
+    "answer": "spoon"
   }
 ]
