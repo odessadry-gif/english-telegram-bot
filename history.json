@@ -4392,5 +4392,12 @@
     "fp": "efc2245f8708bebd4976a0a877eef92b927f0f532b88f34ad79709bf122c6a9f",
     "core_fp": "98ded1ca42c020f246e373220f0dcf26c32c93a46a6ae61ac052e0b5dbbb2183",
     "answer": "train"
+  },
+  {
+    "ts": 1775945911,
+    "kind": "grammar_gap",
+    "core": "She is ___ the taxi.",
+    "fp": "935fdecf09dd3ee20db22fa3d1f5d06f1d6f64eb51b7cc4422e4bab559c16020",
+    "core_fp": "ce8d138083b4e560bb8061c068baf2ec0228908bd978ef5bd0b2dea345dcf680"
   }
 ]
