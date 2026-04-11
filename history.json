@@ -4332,5 +4332,12 @@
     "core": "The train leaves ___ 8.",
     "fp": "80471ef332ea290a0a1ef2f10cd49186091ba6980c69603d7f449b52f7cbcd14",
     "core_fp": "1af2081e168e65afc40c5f52eddd5c8717631000d55ef25c55cd28485386cb50"
+  },
+  {
+    "ts": 1775889896,
+    "kind": "ua_en",
+    "core": "Мені потрібен квиток",
+    "fp": "6eca7a9ad825125cdaf41b600ff9b10cc76287199de676acf938c3dc4abccc99",
+    "core_fp": "021875fbab97b73aafe9e8694e11da498191cd65e343f1b8bf64b05923ee3352"
   }
 ]
