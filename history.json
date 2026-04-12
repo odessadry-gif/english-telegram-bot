@@ -4457,5 +4457,12 @@
     "fp": "a6953a8e2595dab1c959355a73521b599cc051bcd37335472b5fd740e3418a3e",
     "core_fp": "4b68de6e812eb4c3bec63acbef8466279b9f0ed821e96ae3145e0c10d310a63a",
     "answer": "ruler"
+  },
+  {
+    "ts": 1776018605,
+    "kind": "ua_en",
+    "core": "Що це?",
+    "fp": "78110e1d6f7a9722a27cbcbc07917dbd7549471fad7bfde751cd18bc17c392fe",
+    "core_fp": "307272fee4b6051f541ef4471af1c62d68415972b6ea531802e99479088f5bcd"
   }
 ]
