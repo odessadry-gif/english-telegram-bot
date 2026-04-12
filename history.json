@@ -4441,5 +4441,13 @@
     "core": "Ви говорите англійською?",
     "fp": "ce885a3232cda4cd00cb4c5ccaca2221430191055519c5870288325acef23776",
     "core_fp": "bfc7615613214580234b204be227ce4588b6655aabd475535e2defca82b0d8b0"
+  },
+  {
+    "ts": 1776004282,
+    "kind": "riddle",
+    "core": "You drink from it.\nIt can be hot or cold.",
+    "fp": "c0c187e1a7eed5054606e2b703535204f947b55860068e4d438ff14161ca0129",
+    "core_fp": "a989aa35a5125a8daf33bddcce3942e8c424f85c512060b8d8cbbf96fde40a30",
+    "answer": "cup"
   }
 ]
