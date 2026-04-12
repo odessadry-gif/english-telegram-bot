@@ -4449,5 +4449,13 @@
     "fp": "c0c187e1a7eed5054606e2b703535204f947b55860068e4d438ff14161ca0129",
     "core_fp": "a989aa35a5125a8daf33bddcce3942e8c424f85c512060b8d8cbbf96fde40a30",
     "answer": "cup"
+  },
+  {
+    "ts": 1776011051,
+    "kind": "riddle",
+    "core": "You measure length.\nYou use it at school.",
+    "fp": "a6953a8e2595dab1c959355a73521b599cc051bcd37335472b5fd740e3418a3e",
+    "core_fp": "4b68de6e812eb4c3bec63acbef8466279b9f0ed821e96ae3145e0c10d310a63a",
+    "answer": "ruler"
   }
 ]
