@@ -4420,5 +4420,12 @@
     "core": "Де моя кімната?",
     "fp": "7d07e08952e56ff461501682dff9567e39862483d5017293de56a5c7b045d7e8",
     "core_fp": "31d910cb5b93924398b947c0b8a04f782f9891f38f3e60e619f5f5a0d5c40b84"
+  },
+  {
+    "ts": 1775982918,
+    "kind": "grammar_gap",
+    "core": "He is ___ a taxi.",
+    "fp": "e04f4fa70d9a5385f804b9bd2a3bbe5251cf83746d0df10e8bacb40a5473dfde",
+    "core_fp": "f303c97a476782241d7b94c745531f9b064acda63b5f4e967f2b2003a4dd5e5b"
   }
 ]
