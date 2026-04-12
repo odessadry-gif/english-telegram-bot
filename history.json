@@ -4464,5 +4464,12 @@
     "core": "Що це?",
     "fp": "78110e1d6f7a9722a27cbcbc07917dbd7549471fad7bfde751cd18bc17c392fe",
     "core_fp": "307272fee4b6051f541ef4471af1c62d68415972b6ea531802e99479088f5bcd"
+  },
+  {
+    "ts": 1776025311,
+    "kind": "grammar_gap",
+    "core": "Can you help me ___ my bags?",
+    "fp": "86c30d0d32ef5189d9dc6abc4a1d9620d0ce530d02212f8e9432b6f435928f30",
+    "core_fp": "cc714a00b33ad579c1b2f88dc6c6b74928aaecc767c19bff0d00e2df7c3f1304"
   }
 ]
