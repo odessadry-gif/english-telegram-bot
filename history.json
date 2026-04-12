@@ -4471,5 +4471,12 @@
     "core": "Can you help me ___ my bags?",
     "fp": "86c30d0d32ef5189d9dc6abc4a1d9620d0ce530d02212f8e9432b6f435928f30",
     "core_fp": "cc714a00b33ad579c1b2f88dc6c6b74928aaecc767c19bff0d00e2df7c3f1304"
+  },
+  {
+    "ts": 1776032426,
+    "kind": "ua_en",
+    "core": "Де кафе?",
+    "fp": "5d8f7eed61e90283e1c57ef4f25db9e112e75ca10a278f7ecfabc63232c5e876",
+    "core_fp": "46493624f796c932aa3c49f1d6f0d9a63412d81cd9ab676378ec13b0f3e1287d"
   }
 ]
