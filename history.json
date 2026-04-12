@@ -4399,5 +4399,12 @@
     "core": "She is ___ the taxi.",
     "fp": "935fdecf09dd3ee20db22fa3d1f5d06f1d6f64eb51b7cc4422e4bab559c16020",
     "core_fp": "ce8d138083b4e560bb8061c068baf2ec0228908bd978ef5bd0b2dea345dcf680"
+  },
+  {
+    "ts": 1775956600,
+    "kind": "ua_en",
+    "core": "Скільки це коштує?",
+    "fp": "cdc18b05f712d604384bbf7735954bf22f62329345efc9fe7c0a8b9cb40f82d1",
+    "core_fp": "54dc1c50ec513e1c501eaa0fb00ec672b706c198403e67040a800c4af34958ba"
   }
 ]
