@@ -4406,5 +4406,12 @@
     "core": "Скільки це коштує?",
     "fp": "cdc18b05f712d604384bbf7735954bf22f62329345efc9fe7c0a8b9cb40f82d1",
     "core_fp": "54dc1c50ec513e1c501eaa0fb00ec672b706c198403e67040a800c4af34958ba"
+  },
+  {
+    "ts": 1775968583,
+    "kind": "grammar_gap",
+    "core": "The train arrives ___ 5 o'clock.",
+    "fp": "278fb7601c260819500db8ff09fcf89180d7fcbe139c46e53dfb35711ff052d6",
+    "core_fp": "21b9ed304bf9456bfed56b57f3fe029d99525f590e4ae8232926137acbb42e4f"
   }
 ]
