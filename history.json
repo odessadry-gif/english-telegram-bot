@@ -4413,5 +4413,12 @@
     "core": "The train arrives ___ 5 o'clock.",
     "fp": "278fb7601c260819500db8ff09fcf89180d7fcbe139c46e53dfb35711ff052d6",
     "core_fp": "21b9ed304bf9456bfed56b57f3fe029d99525f590e4ae8232926137acbb42e4f"
+  },
+  {
+    "ts": 1775977256,
+    "kind": "ua_en",
+    "core": "Де моя кімната?",
+    "fp": "7d07e08952e56ff461501682dff9567e39862483d5017293de56a5c7b045d7e8",
+    "core_fp": "31d910cb5b93924398b947c0b8a04f782f9891f38f3e60e619f5f5a0d5c40b84"
   }
 ]
