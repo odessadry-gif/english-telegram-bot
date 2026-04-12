@@ -4434,5 +4434,12 @@
     "core": "Це далеко?",
     "fp": "780249fe591db1172adad635c823a3ecdd62a5aa34f1ee26d2ce6eab3e508e27",
     "core_fp": "62bb83569b6c64f98ee1220908bfe92516e1caf3a52eb5f798f4c2c3f253c109"
+  },
+  {
+    "ts": 1775997189,
+    "kind": "ua_en",
+    "core": "Ви говорите англійською?",
+    "fp": "ce885a3232cda4cd00cb4c5ccaca2221430191055519c5870288325acef23776",
+    "core_fp": "bfc7615613214580234b204be227ce4588b6655aabd475535e2defca82b0d8b0"
   }
 ]
