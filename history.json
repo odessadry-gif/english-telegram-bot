@@ -4427,5 +4427,12 @@
     "core": "He is ___ a taxi.",
     "fp": "e04f4fa70d9a5385f804b9bd2a3bbe5251cf83746d0df10e8bacb40a5473dfde",
     "core_fp": "f303c97a476782241d7b94c745531f9b064acda63b5f4e967f2b2003a4dd5e5b"
+  },
+  {
+    "ts": 1775989672,
+    "kind": "ua_en",
+    "core": "Це далеко?",
+    "fp": "780249fe591db1172adad635c823a3ecdd62a5aa34f1ee26d2ce6eab3e508e27",
+    "core_fp": "62bb83569b6c64f98ee1220908bfe92516e1caf3a52eb5f798f4c2c3f253c109"
   }
 ]
