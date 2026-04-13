@@ -4501,5 +4501,12 @@
     "core": "The keys are ___ the table.",
     "fp": "16ed91b22b5bda04efd4d60e442e140947fea04661ded5d674381237b5774805",
     "core_fp": "02ac79ea1c40dc4dc6b72d2c6cfcaa6447d39a57db1dadadac1f8a57a28f2c10"
+  },
+  {
+    "ts": 1776072240,
+    "kind": "ua_en",
+    "core": "Це місце вільне?",
+    "fp": "1893085dbf341a768dddf10d471df4a889970bc836e6a98b0c442c01391fa22a",
+    "core_fp": "46709b6bd56c839a2f28f9fcf18786b54edc70c03696e7e3b5b1474dbf7cbf2b"
   }
 ]
