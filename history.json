@@ -4478,5 +4478,13 @@
     "core": "Де кафе?",
     "fp": "5d8f7eed61e90283e1c57ef4f25db9e112e75ca10a278f7ecfabc63232c5e876",
     "core_fp": "46493624f796c932aa3c49f1d6f0d9a63412d81cd9ab676378ec13b0f3e1287d"
+  },
+  {
+    "ts": 1776043073,
+    "kind": "riddle",
+    "core": "It shows the time.\nYou see it on the wall.",
+    "fp": "bfa7fb973ca16fdb6351fc6a6268391778730b719dcce97290147416b0ef322a",
+    "core_fp": "c3da9b98fab979aaa7d4a17f7acbbc75826189c08a93ffe3849f24e299bb8054",
+    "answer": "clock"
   }
 ]
