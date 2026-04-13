@@ -4529,5 +4529,12 @@
     "core": "We need a table ___ two.",
     "fp": "59421580da20ce9d80758ba50e4f762c6da87b828b24304db9545f97f44ac9e0",
     "core_fp": "4dfcc69ec60cf6678ac2d390f82941f2274e49797712e08d0e6a92dc03ea2f1f"
+  },
+  {
+    "ts": 1776099131,
+    "kind": "grammar_gap",
+    "core": "She ___ a room.",
+    "fp": "8900df85c13c87345c79f9001aaf8abe89ec9c82a7967305809dd0f77234dd60",
+    "core_fp": "c7857bfc1c52148a6e4092904913268829117b75aeb52a689afb729662ae5a84"
   }
 ]
