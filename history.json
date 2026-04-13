@@ -4486,5 +4486,13 @@
     "fp": "bfa7fb973ca16fdb6351fc6a6268391778730b719dcce97290147416b0ef322a",
     "core_fp": "c3da9b98fab979aaa7d4a17f7acbbc75826189c08a93ffe3849f24e299bb8054",
     "answer": "clock"
+  },
+  {
+    "ts": 1776055669,
+    "kind": "riddle",
+    "core": "You call people with it\nYou keep it in your pocket",
+    "fp": "c1ac9b9a4fff0c443b46b1966bac86f8130c3881aa31b845e52c6a40111398d6",
+    "core_fp": "1daac8739b17a1e4bd1ec212c2f0020498a153a9ae460d2fefd4f8d3232c0c27",
+    "answer": "phone"
   }
 ]
