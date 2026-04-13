@@ -4508,5 +4508,12 @@
     "core": "Це місце вільне?",
     "fp": "1893085dbf341a768dddf10d471df4a889970bc836e6a98b0c442c01391fa22a",
     "core_fp": "46709b6bd56c839a2f28f9fcf18786b54edc70c03696e7e3b5b1474dbf7cbf2b"
+  },
+  {
+    "ts": 1776078416,
+    "kind": "ua_en",
+    "core": "Де моя сумка?",
+    "fp": "b73b248df4e7d3bef1e6110b41c092baa5f46f4ae4d199d666b3ab39c8e34080",
+    "core_fp": "03f9984255586a0229d1c7a861665a7c206a2cb21c2ef51fdb0d5e3ec069b28b"
   }
 ]
