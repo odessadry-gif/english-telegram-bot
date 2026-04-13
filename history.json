@@ -4515,5 +4515,12 @@
     "core": "Де моя сумка?",
     "fp": "b73b248df4e7d3bef1e6110b41c092baa5f46f4ae4d199d666b3ab39c8e34080",
     "core_fp": "03f9984255586a0229d1c7a861665a7c206a2cb21c2ef51fdb0d5e3ec069b28b"
+  },
+  {
+    "ts": 1776084895,
+    "kind": "grammar_gap",
+    "core": "The train is ___ 5 o'clock.",
+    "fp": "bb7ed6971f1eb169c1f93ab2d69bbcf2831bf5bb2b7584383e56ede53143ec21",
+    "core_fp": "f4d04ea2284eb2f0a06fa8215180aa8e16c83750498a4603a66d6df523aab77d"
   }
 ]
