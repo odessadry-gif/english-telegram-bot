@@ -4494,5 +4494,12 @@
     "fp": "c1ac9b9a4fff0c443b46b1966bac86f8130c3881aa31b845e52c6a40111398d6",
     "core_fp": "1daac8739b17a1e4bd1ec212c2f0020498a153a9ae460d2fefd4f8d3232c0c27",
     "answer": "phone"
+  },
+  {
+    "ts": 1776065580,
+    "kind": "grammar_gap",
+    "core": "The keys are ___ the table.",
+    "fp": "16ed91b22b5bda04efd4d60e442e140947fea04661ded5d674381237b5774805",
+    "core_fp": "02ac79ea1c40dc4dc6b72d2c6cfcaa6447d39a57db1dadadac1f8a57a28f2c10"
   }
 ]
