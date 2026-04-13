@@ -4550,5 +4550,13 @@
     "core": "Одне морозиво, будь ласка",
     "fp": "778021abfacb1a4b8b54439563c432d25fc0ea12066653be9b0beb77b7375172",
     "core_fp": "6185a41fdebbdf2eb7e31f5c72dcb565c15515e533c4d3f5cdfa0763415aafcc"
+  },
+  {
+    "ts": 1776119593,
+    "kind": "riddle",
+    "core": "We eat at it.\nIt has a flat top.",
+    "fp": "2bca7a341938a2fc053c5672b372f5cdb456983ae2ddb24ed7a36af08df9417b",
+    "core_fp": "3af3d2de8eda24dc440c8a9fd1cda5d9d0c7048fd39f2acfde7949ad255a7589",
+    "answer": "table"
   }
 ]
