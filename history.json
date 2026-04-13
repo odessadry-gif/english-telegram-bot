@@ -4522,5 +4522,12 @@
     "core": "The train is ___ 5 o'clock.",
     "fp": "bb7ed6971f1eb169c1f93ab2d69bbcf2831bf5bb2b7584383e56ede53143ec21",
     "core_fp": "f4d04ea2284eb2f0a06fa8215180aa8e16c83750498a4603a66d6df523aab77d"
+  },
+  {
+    "ts": 1776092817,
+    "kind": "grammar_gap",
+    "core": "We need a table ___ two.",
+    "fp": "59421580da20ce9d80758ba50e4f762c6da87b828b24304db9545f97f44ac9e0",
+    "core_fp": "4dfcc69ec60cf6678ac2d390f82941f2274e49797712e08d0e6a92dc03ea2f1f"
   }
 ]
