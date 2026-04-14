@@ -4579,5 +4579,12 @@
     "core": "Я хочу каву",
     "fp": "c66b26ce006b4df69712bc0259b471cbe986d8259e5f7e04f8b50aae3075ec41",
     "core_fp": "12bc42590a99cad4b0eec03b5c5ea4382abb0e41bb342b60de45b28813007d04"
+  },
+  {
+    "ts": 1776157695,
+    "kind": "ua_en",
+    "core": "Скільки часу?",
+    "fp": "c782118bf3c15081d16280f61aed6157c64118fbb69a2321fe67d04be81fc112",
+    "core_fp": "23996d9601bdc2c25ffaa168358a27d1e5ef73cce0e3a7a24b0aefff5bb24971"
   }
 ]
