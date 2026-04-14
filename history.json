@@ -4608,5 +4608,12 @@
     "core": "I ___ a taxi at 9.",
     "fp": "3de59edc1e300acab9a0a5fddfbb9c5c6c4b6cf94ba0555cd6c552ca29de5e44",
     "core_fp": "36cfc297ec57f7179233efca9150038ca3ffb5d85b5d082a0e6c912d4c784973"
+  },
+  {
+    "ts": 1776185594,
+    "kind": "grammar_gap",
+    "core": "Where ___ the bus?",
+    "fp": "05a9db6fa5d768e0837910abf69c3bc41d536d635d6aa1df213928eb9d1f586f",
+    "core_fp": "557a43bbc8f46a4a681b31f61a5d8266b107c49fced1961c5f940e02e136862c"
   }
 ]
