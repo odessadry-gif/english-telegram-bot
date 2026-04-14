@@ -4615,5 +4615,12 @@
     "core": "Where ___ the bus?",
     "fp": "05a9db6fa5d768e0837910abf69c3bc41d536d635d6aa1df213928eb9d1f586f",
     "core_fp": "557a43bbc8f46a4a681b31f61a5d8266b107c49fced1961c5f940e02e136862c"
+  },
+  {
+    "ts": 1776192930,
+    "kind": "grammar_gap",
+    "core": "The coffee is ___ the table.",
+    "fp": "72446bc6b39118f240afa85b18930c1d4bd050f0b1218ee0ee1782c1fd7d1ac5",
+    "core_fp": "74daab7bfbfee411c4a2cff3c83110e752e4d7bf4a63c871dc50d46a7d59566c"
   }
 ]
