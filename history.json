@@ -4558,5 +4558,12 @@
     "fp": "2bca7a341938a2fc053c5672b372f5cdb456983ae2ddb24ed7a36af08df9417b",
     "core_fp": "3af3d2de8eda24dc440c8a9fd1cda5d9d0c7048fd39f2acfde7949ad255a7589",
     "answer": "table"
+  },
+  {
+    "ts": 1776129408,
+    "kind": "ua_en",
+    "core": "Я загубив ключі",
+    "fp": "913547dbe4b29fd62e796c93a25a0f241e90d5ac0969741c0d7f01f29ffcaad9",
+    "core_fp": "99ae76c9877e54070c97357b115928eff5db45f888049c49e5931df73093b2a0"
   }
 ]
