@@ -4601,5 +4601,12 @@
     "fp": "6c966aabab272f2e2d8256549fae7f9d2820ec7c1144924f76dd010ce4a0637c",
     "core_fp": "faf5d427dd0abccf61c7872c7d15595cbdbb2ce8099a3049460abf8ea6c549c7",
     "answer": "bell"
+  },
+  {
+    "ts": 1776179109,
+    "kind": "grammar_gap",
+    "core": "I ___ a taxi at 9.",
+    "fp": "3de59edc1e300acab9a0a5fddfbb9c5c6c4b6cf94ba0555cd6c552ca29de5e44",
+    "core_fp": "36cfc297ec57f7179233efca9150038ca3ffb5d85b5d082a0e6c912d4c784973"
   }
 ]
