@@ -4565,5 +4565,12 @@
     "core": "Я загубив ключі",
     "fp": "913547dbe4b29fd62e796c93a25a0f241e90d5ac0969741c0d7f01f29ffcaad9",
     "core_fp": "99ae76c9877e54070c97357b115928eff5db45f888049c49e5931df73093b2a0"
+  },
+  {
+    "ts": 1776141308,
+    "kind": "ua_en",
+    "core": "Я хочу сніданок",
+    "fp": "ac2c51339ffd82482b3b1d692b2fdbc59f9a4b2c41af35ab070f788dddd0df6e",
+    "core_fp": "10433abbd3bf130ff9008f77129b4a22c2c3b3dc61104faf35575a8b2a4b5a70"
   }
 ]
