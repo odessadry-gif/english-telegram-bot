@@ -4593,5 +4593,13 @@
     "core": "Я в таксі",
     "fp": "10f3204d04fe460dd25c0148c1468322d403e828a2657b5a34ae5c30554e2695",
     "core_fp": "fdcbc79d417d5d9cd9a6a9ee84eb7fe0f00fac4af1862c6d88790623e2d01a23"
+  },
+  {
+    "ts": 1776171318,
+    "kind": "riddle",
+    "core": "It makes a sound.\nYou hear it at school.",
+    "fp": "6c966aabab272f2e2d8256549fae7f9d2820ec7c1144924f76dd010ce4a0637c",
+    "core_fp": "faf5d427dd0abccf61c7872c7d15595cbdbb2ce8099a3049460abf8ea6c549c7",
+    "answer": "bell"
   }
 ]
