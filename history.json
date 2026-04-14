@@ -4629,5 +4629,12 @@
     "core": "He ___ coffee every morning.",
     "fp": "d8f6d7e139dfc2496378d663528c662817c008a258a296b671fc6d9fe95508cd",
     "core_fp": "903185943ccd6354a2547ebd54426f9ae3b3018da61daba533e88237ee8b0db4"
+  },
+  {
+    "ts": 1776206076,
+    "kind": "ua_en",
+    "core": "Стіл на двох, будь ласка",
+    "fp": "bbf5b061a001bfe8d53a01e354138345ea3a5d5cc66a2886d6694dbc80a97998",
+    "core_fp": "18b62e7316938ed17b5707600df9d3533ecc2aecf0592a4e600c8dbcb689b21b"
   }
 ]
