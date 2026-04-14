@@ -4572,5 +4572,12 @@
     "core": "Я хочу сніданок",
     "fp": "ac2c51339ffd82482b3b1d692b2fdbc59f9a4b2c41af35ab070f788dddd0df6e",
     "core_fp": "10433abbd3bf130ff9008f77129b4a22c2c3b3dc61104faf35575a8b2a4b5a70"
+  },
+  {
+    "ts": 1776150903,
+    "kind": "ua_en",
+    "core": "Я хочу каву",
+    "fp": "c66b26ce006b4df69712bc0259b471cbe986d8259e5f7e04f8b50aae3075ec41",
+    "core_fp": "12bc42590a99cad4b0eec03b5c5ea4382abb0e41bb342b60de45b28813007d04"
   }
 ]
