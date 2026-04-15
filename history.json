@@ -4687,5 +4687,13 @@
     "core": "Я не розумію",
     "fp": "2250445cce5e1a34d5e5d0f2bacce1b9a5a24ec1a66e2dff807399703fa2fe8a",
     "core_fp": "8ab41381ded210a178d40024213ea42f73eccd43037f11ca3a3ec2ed0dd56afb"
+  },
+  {
+    "ts": 1776289860,
+    "kind": "riddle",
+    "core": "You look at your face.\nIt is in the bathroom",
+    "fp": "bb82a370090e2ad5f121fc6c6a861a40517b0eec9277765cf527831a3e67fb77",
+    "core_fp": "aefb215ae4d42c46cb43504dfd5b158d8ce7ce291cf94c573d8b67fd6f89367a",
+    "answer": "mirror"
   }
 ]
