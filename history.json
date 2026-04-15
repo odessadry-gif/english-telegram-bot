@@ -4673,5 +4673,12 @@
     "core": "We need ___ for two.",
     "fp": "853178deb404e333c66267455d965358db2f9056b0afe0d5c14dde092c60161d",
     "core_fp": "22726aa3e0bab497bf37b34cb98950cfdea61fcb890a13cd635ebc962a057076"
+  },
+  {
+    "ts": 1776269030,
+    "kind": "ua_en",
+    "core": "Відкрийте вікно",
+    "fp": "226df0ea72aceac8294ac399c8b2a6462b7c3fc53214e3a9b0f2dadbf22c323e",
+    "core_fp": "c125046f2e5754cb6fd034ad8bd00c3ab2a7804e0c71f5682633e055fd50b660"
   }
 ]
