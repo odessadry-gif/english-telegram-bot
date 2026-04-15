@@ -4659,5 +4659,12 @@
     "fp": "2d7fa0e5c0e2cb6fda02a6c240b78eeb39f7228828176d23c0bb4a09d1a8a0d1",
     "core_fp": "f95de0c13aa5d4c5651f5fb9278a2dee38316ef58fe2b424c14630e363bc6f4a",
     "answer": "fork"
+  },
+  {
+    "ts": 1776244144,
+    "kind": "grammar_gap",
+    "core": "The train ___ at 7.",
+    "fp": "6776b4a97e38977923844c3dcfc9d77bf84f5ce8c743273dcef1c7d72fe73bdb",
+    "core_fp": "d0cdee96a61c5e112aaf1cdbff261204b1916b51035abfc3833681d94fa75e59"
   }
 ]
