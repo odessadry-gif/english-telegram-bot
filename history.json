@@ -4666,5 +4666,12 @@
     "core": "The train ___ at 7.",
     "fp": "6776b4a97e38977923844c3dcfc9d77bf84f5ce8c743273dcef1c7d72fe73bdb",
     "core_fp": "d0cdee96a61c5e112aaf1cdbff261204b1916b51035abfc3833681d94fa75e59"
+  },
+  {
+    "ts": 1776259250,
+    "kind": "grammar_gap",
+    "core": "We need ___ for two.",
+    "fp": "853178deb404e333c66267455d965358db2f9056b0afe0d5c14dde092c60161d",
+    "core_fp": "22726aa3e0bab497bf37b34cb98950cfdea61fcb890a13cd635ebc962a057076"
   }
 ]
