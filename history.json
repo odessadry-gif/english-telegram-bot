@@ -4636,5 +4636,13 @@
     "core": "Стіл на двох, будь ласка",
     "fp": "bbf5b061a001bfe8d53a01e354138345ea3a5d5cc66a2886d6694dbc80a97998",
     "core_fp": "18b62e7316938ed17b5707600df9d3533ecc2aecf0592a4e600c8dbcb689b21b"
+  },
+  {
+    "ts": 1776215806,
+    "kind": "riddle",
+    "core": "It goes on the road.\nMany people ride it.",
+    "fp": "76229161b7f5450844c943a25011cf7b79e2869caf91c3077e68d9f4159a7e86",
+    "core_fp": "6083340e3969486c3546a6f4a823e4d61b945a1282a2ce1f2bd981c5371e75e8",
+    "answer": "bus"
   }
 ]
