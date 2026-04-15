@@ -4651,5 +4651,13 @@
     "core": "Більше цукру, будь ласка",
     "fp": "2ba9c58b863f5e2ad25831a63fe708ea888c7d0b4b2110fab2486d0337ace17a",
     "core_fp": "43f5ca577fc96e80fbee9d6687a19fa401fbde34a71f86bbadd0b2d713b4586a"
+  },
+  {
+    "ts": 1776237297,
+    "kind": "riddle",
+    "core": "You eat with it.\nIt has four thin parts.",
+    "fp": "2d7fa0e5c0e2cb6fda02a6c240b78eeb39f7228828176d23c0bb4a09d1a8a0d1",
+    "core_fp": "f95de0c13aa5d4c5651f5fb9278a2dee38316ef58fe2b424c14630e363bc6f4a",
+    "answer": "fork"
   }
 ]
