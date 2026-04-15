@@ -4644,5 +4644,12 @@
     "fp": "76229161b7f5450844c943a25011cf7b79e2869caf91c3077e68d9f4159a7e86",
     "core_fp": "6083340e3969486c3546a6f4a823e4d61b945a1282a2ce1f2bd981c5371e75e8",
     "answer": "bus"
+  },
+  {
+    "ts": 1776227730,
+    "kind": "ua_en",
+    "core": "Більше цукру, будь ласка",
+    "fp": "2ba9c58b863f5e2ad25831a63fe708ea888c7d0b4b2110fab2486d0337ace17a",
+    "core_fp": "43f5ca577fc96e80fbee9d6687a19fa401fbde34a71f86bbadd0b2d713b4586a"
   }
 ]
