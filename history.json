@@ -4702,5 +4702,12 @@
     "core": "Мені потрібна кімната",
     "fp": "c3b87958d4126bf9899e7cc8a1d7122234552fd682bee2c9e075df4265822bec",
     "core_fp": "b38e812793e648d35edca9b12470d09b9b4be7169a9e59ccfc415455ebc6342a"
+  },
+  {
+    "ts": 1776317374,
+    "kind": "ua_en",
+    "core": "Як доїхати сюди?",
+    "fp": "61b0281b4928df1914b0c4843be422bb4c74e899019e774397d0e9e2f5e5c55b",
+    "core_fp": "dc2795ad4daae163a39af022a7a760f3bc335b1d0129e27848dbdeea58329875"
   }
 ]
