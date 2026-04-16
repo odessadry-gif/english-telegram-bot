@@ -4724,5 +4724,12 @@
     "fp": "a920eb954c388c88b926449436a2428737355b0ff5a7ac0647bb2f84adba3381",
     "core_fp": "fe504fc5554f919603f18428977c2200c00ab9302ba3dc0666aa4d0728388513",
     "answer": "milk"
+  },
+  {
+    "ts": 1776345933,
+    "kind": "ua_en",
+    "core": "Без цукру, будь ласка",
+    "fp": "a7e3419bb3ea36b4dafd23da87709067fe00ec34563a9773d8456869e72ab50d",
+    "core_fp": "b640fa51652ed423c4ed311d809a2e3fe9681cfaacb2bb6ea2405f19db04fa6b"
   }
 ]
