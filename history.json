@@ -4716,5 +4716,13 @@
     "core": "Я забув паспорт",
     "fp": "83edc44de95ae7bbf928cd16e71bb4d62c2b1678c055a328825d057b65a763c3",
     "core_fp": "4655aa29c76c0f7dff5687c8b19e648505ed13eef4af1bbfd38ee1ca9d330832"
+  },
+  {
+    "ts": 1776334653,
+    "kind": "riddle",
+    "core": "It is white\nIt comes from cows",
+    "fp": "a920eb954c388c88b926449436a2428737355b0ff5a7ac0647bb2f84adba3381",
+    "core_fp": "fe504fc5554f919603f18428977c2200c00ab9302ba3dc0666aa4d0728388513",
+    "answer": "milk"
   }
 ]
