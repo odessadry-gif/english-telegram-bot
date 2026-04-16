@@ -4738,5 +4738,12 @@
     "core": "Де вхід?",
     "fp": "0df625d86540e34c2b0ecb79e7cc202b76af19c1667d244baf43640e81b03004",
     "core_fp": "3b4815d02bf77ee1ce66fbbfe5a1e5f3d82d5683a3962bb38ea66b050b969c49"
+  },
+  {
+    "ts": 1776366599,
+    "kind": "ua_en",
+    "core": "Подзвоніть мені",
+    "fp": "f78787fd0f843fcf205406e4f4fdefd17ee2e6815c1d44d7aa897c48c5715771",
+    "core_fp": "875439448f2b4c05eee7e659cef39281b185360dbf737b49288548e72a94d872"
   }
 ]
