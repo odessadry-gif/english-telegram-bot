@@ -4695,5 +4695,12 @@
     "fp": "bb82a370090e2ad5f121fc6c6a861a40517b0eec9277765cf527831a3e67fb77",
     "core_fp": "aefb215ae4d42c46cb43504dfd5b158d8ce7ce291cf94c573d8b67fd6f89367a",
     "answer": "mirror"
+  },
+  {
+    "ts": 1776306529,
+    "kind": "ua_en",
+    "core": "Мені потрібна кімната",
+    "fp": "c3b87958d4126bf9899e7cc8a1d7122234552fd682bee2c9e075df4265822bec",
+    "core_fp": "b38e812793e648d35edca9b12470d09b9b4be7169a9e59ccfc415455ebc6342a"
   }
 ]
