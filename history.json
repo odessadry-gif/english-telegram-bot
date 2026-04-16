@@ -4745,5 +4745,12 @@
     "core": "Подзвоніть мені",
     "fp": "f78787fd0f843fcf205406e4f4fdefd17ee2e6815c1d44d7aa897c48c5715771",
     "core_fp": "875439448f2b4c05eee7e659cef39281b185360dbf737b49288548e72a94d872"
+  },
+  {
+    "ts": 1776375722,
+    "kind": "ua_en",
+    "core": "Я шукаю готель.",
+    "fp": "3cc2e0369244f033de5db4dec713f3c22a88af946c993bd02e7a824ff5297e19",
+    "core_fp": "f8f9fb62850588c44b3d801321c0ec7f1569a3ba96db0fa4b5a562eb855485a4"
   }
 ]
