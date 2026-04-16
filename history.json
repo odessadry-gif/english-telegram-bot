@@ -4731,5 +4731,12 @@
     "core": "Без цукру, будь ласка",
     "fp": "a7e3419bb3ea36b4dafd23da87709067fe00ec34563a9773d8456869e72ab50d",
     "core_fp": "b640fa51652ed423c4ed311d809a2e3fe9681cfaacb2bb6ea2405f19db04fa6b"
+  },
+  {
+    "ts": 1776356517,
+    "kind": "ua_en",
+    "core": "Де вхід?",
+    "fp": "0df625d86540e34c2b0ecb79e7cc202b76af19c1667d244baf43640e81b03004",
+    "core_fp": "3b4815d02bf77ee1ce66fbbfe5a1e5f3d82d5683a3962bb38ea66b050b969c49"
   }
 ]
