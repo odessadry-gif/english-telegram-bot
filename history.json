@@ -4709,5 +4709,12 @@
     "core": "Як доїхати сюди?",
     "fp": "61b0281b4928df1914b0c4843be422bb4c74e899019e774397d0e9e2f5e5c55b",
     "core_fp": "dc2795ad4daae163a39af022a7a760f3bc335b1d0129e27848dbdeea58329875"
+  },
+  {
+    "ts": 1776324599,
+    "kind": "ua_en",
+    "core": "Я забув паспорт",
+    "fp": "83edc44de95ae7bbf928cd16e71bb4d62c2b1678c055a328825d057b65a763c3",
+    "core_fp": "4655aa29c76c0f7dff5687c8b19e648505ed13eef4af1bbfd38ee1ca9d330832"
   }
 ]
