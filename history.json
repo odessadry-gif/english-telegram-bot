@@ -4774,5 +4774,13 @@
     "fp": "5318a6b28c29463011be046ab6dd97d26a71c59f59368d90182570e28502c9c1",
     "core_fp": "2519cdafbd17abb97bfd723508f28cd61e42e275279f3d1d8cc42786866b4983",
     "answer": "water"
+  },
+  {
+    "ts": 1776420776,
+    "kind": "riddle",
+    "core": "I have pages.\nYou read me.",
+    "fp": "15d7756a018ff33437cf2a56d10862dd6d0f7858c6b48ccf4fd91a036d6cbbad",
+    "core_fp": "6df6c0c9be2eebb1fafa718f8d93b535324c3c1f38e9a2b94e1c16d8263238c4",
+    "answer": "book"
   }
 ]
