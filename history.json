@@ -4804,5 +4804,12 @@
     "core": "Мені жарко",
     "fp": "d4a0bc726cd1dc7aa91e8e176657016d10c61b5274eb236d675de5cbd17b06b9",
     "core_fp": "957f086d0214b3f597fa7c0fcc963217468ca9a204682a4727b9016085a2bf98"
+  },
+  {
+    "ts": 1776461994,
+    "kind": "grammar_gap",
+    "core": "Where ___ the train station?",
+    "fp": "c0546f1628a1502a349c585529a47f3796ae2448d353c2d9909cfcd589dc9cb4",
+    "core_fp": "3e425a470d92a698cadf09c0ecc8e6447529d12da5c002917de9a5b001010e50"
   }
 ]
