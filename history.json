@@ -4759,5 +4759,12 @@
     "core": "Please call me ___ taxi.",
     "fp": "f23c2a2c59390dd22e3908ab53ee02efd05eea481ea82ed775414afbaa68d30a",
     "core_fp": "72b6439d42f215d832262e1a01aae19cf1fabcd71b21c68b32bdd1b48b09bc75"
+  },
+  {
+    "ts": 1776403642,
+    "kind": "ua_en",
+    "core": "Мені потрібне таксі.",
+    "fp": "bd491fb91bc521233662341ec4d4037b96e89b749c5b610d75b18a7357fea79f",
+    "core_fp": "1652bc28b45ab3f138e6d715059967b209704ee5f0b4af3e00e82e3830b3c31f"
   }
 ]
