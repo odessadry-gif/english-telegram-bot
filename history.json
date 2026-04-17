@@ -4797,5 +4797,12 @@
     "core": "She ___ a taxi to the hotel yesterday.",
     "fp": "29bd7d194aa4cf538311d8b3d6b459b776d1549bd1a9b4bed6b0e3e278dfffba",
     "core_fp": "8894b68c87d63d6cd4584a9a3081becdc1f1697722a8d7517e29d2d386186fa0"
+  },
+  {
+    "ts": 1776452332,
+    "kind": "ua_en",
+    "core": "Мені жарко",
+    "fp": "d4a0bc726cd1dc7aa91e8e176657016d10c61b5274eb236d675de5cbd17b06b9",
+    "core_fp": "957f086d0214b3f597fa7c0fcc963217468ca9a204682a4727b9016085a2bf98"
   }
 ]
