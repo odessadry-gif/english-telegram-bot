@@ -4766,5 +4766,13 @@
     "core": "Мені потрібне таксі.",
     "fp": "bd491fb91bc521233662341ec4d4037b96e89b749c5b610d75b18a7357fea79f",
     "core_fp": "1652bc28b45ab3f138e6d715059967b209704ee5f0b4af3e00e82e3830b3c31f"
+  },
+  {
+    "ts": 1776410971,
+    "kind": "riddle",
+    "core": "It is clear.\nYou drink it.",
+    "fp": "5318a6b28c29463011be046ab6dd97d26a71c59f59368d90182570e28502c9c1",
+    "core_fp": "2519cdafbd17abb97bfd723508f28cd61e42e275279f3d1d8cc42786866b4983",
+    "answer": "water"
   }
 ]
