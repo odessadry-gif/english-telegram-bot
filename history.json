@@ -4782,5 +4782,13 @@
     "fp": "15d7756a018ff33437cf2a56d10862dd6d0f7858c6b48ccf4fd91a036d6cbbad",
     "core_fp": "6df6c0c9be2eebb1fafa718f8d93b535324c3c1f38e9a2b94e1c16d8263238c4",
     "answer": "book"
+  },
+  {
+    "ts": 1776431724,
+    "kind": "riddle",
+    "core": "I am yellow\nYou peel me",
+    "fp": "8f84b4a9c6fc74f6062ab19d5754dadbc63e51e640db43134733fc0edc19ca6e",
+    "core_fp": "4109755f7bc8d823ed65e4af1d5a09e7c742828a28af6fbdace2c9a1f7ea2edb",
+    "answer": "banana"
   }
 ]
