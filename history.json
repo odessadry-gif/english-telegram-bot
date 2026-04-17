@@ -4790,5 +4790,12 @@
     "fp": "8f84b4a9c6fc74f6062ab19d5754dadbc63e51e640db43134733fc0edc19ca6e",
     "core_fp": "4109755f7bc8d823ed65e4af1d5a09e7c742828a28af6fbdace2c9a1f7ea2edb",
     "answer": "banana"
+  },
+  {
+    "ts": 1776441595,
+    "kind": "grammar_gap",
+    "core": "She ___ a taxi to the hotel yesterday.",
+    "fp": "29bd7d194aa4cf538311d8b3d6b459b776d1549bd1a9b4bed6b0e3e278dfffba",
+    "core_fp": "8894b68c87d63d6cd4584a9a3081becdc1f1697722a8d7517e29d2d386186fa0"
   }
 ]
