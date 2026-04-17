@@ -4752,5 +4752,12 @@
     "core": "Я шукаю готель.",
     "fp": "3cc2e0369244f033de5db4dec713f3c22a88af946c993bd02e7a824ff5297e19",
     "core_fp": "f8f9fb62850588c44b3d801321c0ec7f1569a3ba96db0fa4b5a562eb855485a4"
+  },
+  {
+    "ts": 1776392734,
+    "kind": "grammar_gap",
+    "core": "Please call me ___ taxi.",
+    "fp": "f23c2a2c59390dd22e3908ab53ee02efd05eea481ea82ed775414afbaa68d30a",
+    "core_fp": "72b6439d42f215d832262e1a01aae19cf1fabcd71b21c68b32bdd1b48b09bc75"
   }
 ]
