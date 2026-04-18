@@ -4841,5 +4841,12 @@
     "core": "Can you ___ me with my bags?",
     "fp": "3e49aee06bc18a4d123e1c47417aed702082c7b142fd9b9af9d6026b2b0b91dd",
     "core_fp": "370fd0d360c5f8c751287fb7f9f8729b36c21ac1a1dd75c3d54dccc506f30149"
+  },
+  {
+    "ts": 1776517101,
+    "kind": "grammar_gap",
+    "core": "He ___ to work by train.",
+    "fp": "e09786a8c15cff722fbf6e7f3fbec50c2acbdb1969a3514ea9ea5945fecfcacf",
+    "core_fp": "2e4e97dcce5b237106fa1357f4764c752e70b830ae0ba5df9611bc9651f857dd"
   }
 ]
