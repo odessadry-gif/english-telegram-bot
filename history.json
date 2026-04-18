@@ -4863,5 +4863,12 @@
     "core": "Де банкомат?",
     "fp": "8f8e0d50d86fe629e9384ac614785f1140659e11eaf7f769f68b2c680e2f9662",
     "core_fp": "e283f8a61f1bd0ef97652cc043cfb42d935b168f43282edd0351ad06814b8c9f"
+  },
+  {
+    "ts": 1776547973,
+    "kind": "grammar_gap",
+    "core": "Please ___ me a taxi.",
+    "fp": "901dc3c2a30c9f05bfd3b9e31cd19c14f05893f0466a95be547620c53255236d",
+    "core_fp": "50b0df2d66325ff5e136fa116c688a2bc39df037700698fa420f48f1fc6c800b"
   }
 ]
