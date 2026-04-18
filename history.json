@@ -4848,5 +4848,13 @@
     "core": "He ___ to work by train.",
     "fp": "e09786a8c15cff722fbf6e7f3fbec50c2acbdb1969a3514ea9ea5945fecfcacf",
     "core_fp": "2e4e97dcce5b237106fa1357f4764c752e70b830ae0ba5df9611bc9651f857dd"
+  },
+  {
+    "ts": 1776526558,
+    "kind": "riddle",
+    "core": "You look at it to find places.\nIt shows cities and roads",
+    "fp": "63816d4699cd5b8790bceac990dec41445430203982e29b15c724c9f0d76c0d7",
+    "core_fp": "92ca18181053c8c074c9d3dc7bfb39510337632ee878b5e050ffa9712a5f95a7",
+    "answer": "map"
   }
 ]
