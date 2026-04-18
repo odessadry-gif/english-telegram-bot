@@ -4826,5 +4826,13 @@
     "core": "Мені потрібна карта",
     "fp": "5b709618c825ac2d2d51f0f38609386c8cdbc3c4924683a62658870a5361595a",
     "core_fp": "b2899f8bd0a9ec030ac7010cfc208e40e00bbfc124f6a601d51dc008b88c42b5"
+  },
+  {
+    "ts": 1776495898,
+    "kind": "riddle",
+    "core": "You wear it on your foot.\nIt keeps your foot warm.",
+    "fp": "4f160b71eecf4273a35046749ae36f8c481b7099079fa12c77d2d7ffcb34bcb8",
+    "core_fp": "1e38db7042b9c76b0c12a3d0172c725f786c25d675558f110bd5b6b3f9f4d3d5",
+    "answer": "sock"
   }
 ]
