@@ -4819,5 +4819,12 @@
     "fp": "96b095777a97401a5aad426e3362cefe468ce7ef8167238e607d032daac80627",
     "core_fp": "711f6cb554f5a9da045e2a7ec5d5fe3d062387adb607fe2cf3f56835885b644e",
     "answer": "eye"
+  },
+  {
+    "ts": 1776488741,
+    "kind": "ua_en",
+    "core": "Мені потрібна карта",
+    "fp": "5b709618c825ac2d2d51f0f38609386c8cdbc3c4924683a62658870a5361595a",
+    "core_fp": "b2899f8bd0a9ec030ac7010cfc208e40e00bbfc124f6a601d51dc008b88c42b5"
   }
 ]
