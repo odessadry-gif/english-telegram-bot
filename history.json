@@ -4834,5 +4834,12 @@
     "fp": "4f160b71eecf4273a35046749ae36f8c481b7099079fa12c77d2d7ffcb34bcb8",
     "core_fp": "1e38db7042b9c76b0c12a3d0172c725f786c25d675558f110bd5b6b3f9f4d3d5",
     "answer": "sock"
+  },
+  {
+    "ts": 1776505515,
+    "kind": "grammar_gap",
+    "core": "Can you ___ me with my bags?",
+    "fp": "3e49aee06bc18a4d123e1c47417aed702082c7b142fd9b9af9d6026b2b0b91dd",
+    "core_fp": "370fd0d360c5f8c751287fb7f9f8729b36c21ac1a1dd75c3d54dccc506f30149"
   }
 ]
