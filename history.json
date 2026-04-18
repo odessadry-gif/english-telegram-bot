@@ -4811,5 +4811,13 @@
     "core": "Where ___ the train station?",
     "fp": "c0546f1628a1502a349c585529a47f3796ae2448d353c2d9909cfcd589dc9cb4",
     "core_fp": "3e425a470d92a698cadf09c0ecc8e6447529d12da5c002917de9a5b001010e50"
+  },
+  {
+    "ts": 1776478084,
+    "kind": "riddle",
+    "core": "You see with it.\nYou have two.",
+    "fp": "96b095777a97401a5aad426e3362cefe468ce7ef8167238e607d032daac80627",
+    "core_fp": "711f6cb554f5a9da045e2a7ec5d5fe3d062387adb607fe2cf3f56835885b644e",
+    "answer": "eye"
   }
 ]
