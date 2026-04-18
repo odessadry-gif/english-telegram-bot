@@ -4856,5 +4856,12 @@
     "fp": "63816d4699cd5b8790bceac990dec41445430203982e29b15c724c9f0d76c0d7",
     "core_fp": "92ca18181053c8c074c9d3dc7bfb39510337632ee878b5e050ffa9712a5f95a7",
     "answer": "map"
+  },
+  {
+    "ts": 1776537956,
+    "kind": "ua_en",
+    "core": "Де банкомат?",
+    "fp": "8f8e0d50d86fe629e9384ac614785f1140659e11eaf7f769f68b2c680e2f9662",
+    "core_fp": "e283f8a61f1bd0ef97652cc043cfb42d935b168f43282edd0351ad06814b8c9f"
   }
 ]
