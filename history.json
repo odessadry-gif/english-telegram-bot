@@ -4908,5 +4908,13 @@
     "fp": "276d98267686fcc60bd5dc086de7a85ebc7cd6ac804525785b5bec430985bc09",
     "core_fp": "ccc47bb07d4bf923400d27c6af7fd4f3bbb81910f2fcd9383f31024915624cbb",
     "answer": "lamp"
+  },
+  {
+    "ts": 1776612959,
+    "kind": "riddle",
+    "core": "It has a shell.\nYou cook it for breakfast",
+    "fp": "0e8ef0635ff588c298850b395fde9d45c33db8b1aec24ecad2d4730659b3c55d",
+    "core_fp": "40ae015e0e2f4430363896f85be1dfdc8962cbf8aceb1835abc2a850a9485649",
+    "answer": "egg"
   }
 ]
