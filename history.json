@@ -4916,5 +4916,12 @@
     "fp": "0e8ef0635ff588c298850b395fde9d45c33db8b1aec24ecad2d4730659b3c55d",
     "core_fp": "40ae015e0e2f4430363896f85be1dfdc8962cbf8aceb1835abc2a850a9485649",
     "answer": "egg"
+  },
+  {
+    "ts": 1776624376,
+    "kind": "grammar_gap",
+    "core": "Can I have a table ___ two?",
+    "fp": "e2320f11d3a71fa73ba13aab6d1e54c79eb6f12e5a524954cacd810b3a48251a",
+    "core_fp": "67ea17bd67c35aa62e793fd38d16aba21d7377064dd0de66ad048b43c424ca3a"
   }
 ]
