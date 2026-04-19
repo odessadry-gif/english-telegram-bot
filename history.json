@@ -4900,5 +4900,13 @@
     "fp": "adb8388791bdb97a5939a35dc6ff8891acac5a31afa64d1fa2980546265851ce",
     "core_fp": "2b3ddb704f9f3490e19e59949ada70a961cfd42a671de868670a9d7aace2165e",
     "answer": "pillow"
+  },
+  {
+    "ts": 1776603453,
+    "kind": "riddle",
+    "core": "It gives light.\nYou turn it on.",
+    "fp": "276d98267686fcc60bd5dc086de7a85ebc7cd6ac804525785b5bec430985bc09",
+    "core_fp": "ccc47bb07d4bf923400d27c6af7fd4f3bbb81910f2fcd9383f31024915624cbb",
+    "answer": "lamp"
   }
 ]
