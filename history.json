@@ -4884,5 +4884,13 @@
     "core": "I need a taxi ___ the airport.",
     "fp": "1c012663cee97fea29708e4d29bbe02cacd2e11a50dc111b3d6da946fd45ad43",
     "core_fp": "ceb970e0010013709e33e9aeb4571929ff2cf823c8b41566060e392f70c2ad76"
+  },
+  {
+    "ts": 1776583008,
+    "kind": "riddle",
+    "core": "It is tall.\nIt has leaves.",
+    "fp": "5a44ff5ad7adc1305c1c0394c8f4bdbaccca4484cee6082fd5ff1b930b2a62e2",
+    "core_fp": "e6c58ad32749ab522bb0a3425287a5a7211b8022d314a32d6daca611aec7ab08",
+    "answer": "tree"
   }
 ]
