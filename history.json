@@ -4892,5 +4892,13 @@
     "fp": "5a44ff5ad7adc1305c1c0394c8f4bdbaccca4484cee6082fd5ff1b930b2a62e2",
     "core_fp": "e6c58ad32749ab522bb0a3425287a5a7211b8022d314a32d6daca611aec7ab08",
     "answer": "tree"
+  },
+  {
+    "ts": 1776591894,
+    "kind": "riddle",
+    "core": "You put it on a bed.\nYou put your head on it.",
+    "fp": "adb8388791bdb97a5939a35dc6ff8891acac5a31afa64d1fa2980546265851ce",
+    "core_fp": "2b3ddb704f9f3490e19e59949ada70a961cfd42a671de868670a9d7aace2165e",
+    "answer": "pillow"
   }
 ]
