@@ -4923,5 +4923,12 @@
     "core": "Can I have a table ___ two?",
     "fp": "e2320f11d3a71fa73ba13aab6d1e54c79eb6f12e5a524954cacd810b3a48251a",
     "core_fp": "67ea17bd67c35aa62e793fd38d16aba21d7377064dd0de66ad048b43c424ca3a"
+  },
+  {
+    "ts": 1776634427,
+    "kind": "grammar_gap",
+    "core": "I ___ to the hotel now.",
+    "fp": "16257573332f2dc55d4f473bca6daa46941524a93e06db7e13aa74bd1735b4c9",
+    "core_fp": "fd37e7087398ca544992a431d4c4d063c75593817c067429420dd850e9b2aab8"
   }
 ]
