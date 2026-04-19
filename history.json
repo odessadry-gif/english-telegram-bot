@@ -4877,5 +4877,12 @@
     "core": "Where ___ the bus stop?",
     "fp": "5b1750b3f974d018ac8af01819d900aa66e6bc245c52dca45a8ef6d6e9fe7cfd",
     "core_fp": "053a71656fea56be43c0b32ff007e96c2a24b1bb2989454b4676205c635f516c"
+  },
+  {
+    "ts": 1776576427,
+    "kind": "grammar_gap",
+    "core": "I need a taxi ___ the airport.",
+    "fp": "1c012663cee97fea29708e4d29bbe02cacd2e11a50dc111b3d6da946fd45ad43",
+    "core_fp": "ceb970e0010013709e33e9aeb4571929ff2cf823c8b41566060e392f70c2ad76"
   }
 ]
