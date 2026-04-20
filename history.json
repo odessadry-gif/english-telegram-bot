@@ -4976,5 +4976,12 @@
     "fp": "99350c6d0e36163b92f5e935bdb205a2f85bc44164f70ed7d33883d822039335",
     "core_fp": "48db5361e448880f4cdb5b6f66ae96b3081c7ad706f7a4549bb4cde445a704d1",
     "answer": "rain"
+  },
+  {
+    "ts": 1776711786,
+    "kind": "ua_en",
+    "core": "Будьте обережні",
+    "fp": "6cfab8d9ebfde5791792f21dc2ea77bb1e5f3331ee40020185292f574f9881c0",
+    "core_fp": "4e051374ad4756bab487db24c26451b3cf0017958e1247ea31a080e3f4e2f08f"
   }
 ]
