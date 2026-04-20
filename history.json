@@ -4945,5 +4945,12 @@
     "core": "Can I ___ by card?",
     "fp": "665292611f16c44f1443408df4b98d08829060f9d4320d23589ad2de5aeac6fe",
     "core_fp": "cd336f04101a40b9179d5bcf7836ba8eddf4d0bc6ad76d1e945f93063c771e47"
+  },
+  {
+    "ts": 1776672226,
+    "kind": "grammar_gap",
+    "core": "The bus is ___ 9.",
+    "fp": "a63cd8c5f1ee2b2616f8171065af37e90a2660a33ff8bab9bb71d8d480ae7835",
+    "core_fp": "817859c8c0f0a5ee749b4645760e3300da121ae63141c613f140bdebcc561429"
   }
 ]
