@@ -4968,5 +4968,13 @@
     "fp": "17fe163f82648faebae3548efea6940272f17e77f2b21f0f3c2a0854dad267ef",
     "core_fp": "0a030200bf276a79d5ff131f3cf4781e1ceb4e1a99e0a4ab99833409ef320236",
     "answer": "finger"
+  },
+  {
+    "ts": 1776701265,
+    "kind": "riddle",
+    "core": "It falls from the sky.\nPeople use an umbrella.",
+    "fp": "99350c6d0e36163b92f5e935bdb205a2f85bc44164f70ed7d33883d822039335",
+    "core_fp": "48db5361e448880f4cdb5b6f66ae96b3081c7ad706f7a4549bb4cde445a704d1",
+    "answer": "rain"
   }
 ]
