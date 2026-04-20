@@ -4952,5 +4952,13 @@
     "core": "The bus is ___ 9.",
     "fp": "a63cd8c5f1ee2b2616f8171065af37e90a2660a33ff8bab9bb71d8d480ae7835",
     "core_fp": "817859c8c0f0a5ee749b4645760e3300da121ae63141c613f140bdebcc561429"
+  },
+  {
+    "ts": 1776681981,
+    "kind": "riddle",
+    "core": "It is a fruit.\nIt is orange.",
+    "fp": "6b6498fa7fdaa7d5a1c570ff5fdef8de941c3525e367d4788366a2bcefee2c18",
+    "core_fp": "60c99dd14921903270307c1621e74548140ad3e9efd207906aeab2f612eaa7e0",
+    "answer": "orange"
   }
 ]
