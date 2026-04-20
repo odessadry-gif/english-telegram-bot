@@ -4983,5 +4983,12 @@
     "core": "Будьте обережні",
     "fp": "6cfab8d9ebfde5791792f21dc2ea77bb1e5f3331ee40020185292f574f9881c0",
     "core_fp": "4e051374ad4756bab487db24c26451b3cf0017958e1247ea31a080e3f4e2f08f"
+  },
+  {
+    "ts": 1776721446,
+    "kind": "grammar_gap",
+    "core": "I ordered a coffee ___ sugar.",
+    "fp": "608ba208485f7599e5c5e0074a0fd4f901b3942aa85e769c8cfad228bae0ec1c",
+    "core_fp": "81968aa98f6d4a115f638cef386202fdccfad27df0a669a4f924a2716677189a"
   }
 ]
