@@ -4930,5 +4930,13 @@
     "core": "I ___ to the hotel now.",
     "fp": "16257573332f2dc55d4f473bca6daa46941524a93e06db7e13aa74bd1735b4c9",
     "core_fp": "fd37e7087398ca544992a431d4c4d063c75593817c067429420dd850e9b2aab8"
+  },
+  {
+    "ts": 1776652245,
+    "kind": "riddle",
+    "core": "You wrap it around your neck.\nYou wear it in winter.",
+    "fp": "7ee3e78b4ac7cbb94da70e34682adfe41c6596abc5add0673dad238c4e952307",
+    "core_fp": "fde9b74bda4dc53f4450e635a79ee99e641dc0addd35a5c731782c8db9f93d51",
+    "answer": "scarf"
   }
 ]
