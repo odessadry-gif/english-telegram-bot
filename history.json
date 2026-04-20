@@ -4938,5 +4938,12 @@
     "fp": "7ee3e78b4ac7cbb94da70e34682adfe41c6596abc5add0673dad238c4e952307",
     "core_fp": "fde9b74bda4dc53f4450e635a79ee99e641dc0addd35a5c731782c8db9f93d51",
     "answer": "scarf"
+  },
+  {
+    "ts": 1776663529,
+    "kind": "grammar_gap",
+    "core": "Can I ___ by card?",
+    "fp": "665292611f16c44f1443408df4b98d08829060f9d4320d23589ad2de5aeac6fe",
+    "core_fp": "cd336f04101a40b9179d5bcf7836ba8eddf4d0bc6ad76d1e945f93063c771e47"
   }
 ]
