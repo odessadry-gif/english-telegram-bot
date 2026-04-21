@@ -5004,5 +5004,13 @@
     "core": "Де туалет, будь ласка?",
     "fp": "3f9c15dee39272db2da866f2b456073a76acb5fd88a0581122cf169c5cdc6b93",
     "core_fp": "682307b73c3305fa23569bdfb1a1f8e280e993ef4844dd690a984da0e2dfb68f"
+  },
+  {
+    "ts": 1776757590,
+    "kind": "riddle",
+    "core": "It keeps you warm at night.\nYou use it on a bed.",
+    "fp": "62c3047ff9547873471604765c14872591d04be56e377156feb5e45cbb15f33f",
+    "core_fp": "65d7aaa9d8a9ec3665d7cb1f62804c8fc7892ebe6eb273d411298bf5099f2a91",
+    "answer": "blanket"
   }
 ]
