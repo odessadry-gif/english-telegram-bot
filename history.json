@@ -5026,5 +5026,12 @@
     "core": "Можна рахунок?",
     "fp": "1b8d7055862df45824b59133baa446c6e84a72348a396f079fcb3edcc6276bab",
     "core_fp": "c874b349beef829afec95d240a74e501f1f862d8d0b52edc3591e07eafbb1721"
+  },
+  {
+    "ts": 1776787768,
+    "kind": "ua_en",
+    "core": "Коли наш рейс?",
+    "fp": "bbd0b5ce1080bddb6cc73c5434f3ff36bacd2d424c554ac2b208a99a55f8bd77",
+    "core_fp": "deef82fed9487f33246b7b0e334b8e4a7178bd59c3397892904c2afa5b8c8805"
   }
 ]
