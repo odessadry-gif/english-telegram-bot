@@ -5033,5 +5033,12 @@
     "core": "Коли наш рейс?",
     "fp": "bbd0b5ce1080bddb6cc73c5434f3ff36bacd2d424c554ac2b208a99a55f8bd77",
     "core_fp": "deef82fed9487f33246b7b0e334b8e4a7178bd59c3397892904c2afa5b8c8805"
+  },
+  {
+    "ts": 1776798654,
+    "kind": "grammar_gap",
+    "core": "I ___ a room for tonight.",
+    "fp": "08c798e6c45eb8aad6b8a4ade5302e8ee3d1e5a7b9696888b81d4b9cec737859",
+    "core_fp": "104320ee2db48bcc994d78df22d4533f8d4f1e3c159c2713989956c7b98fdc43"
   }
 ]
