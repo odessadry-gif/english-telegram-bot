@@ -5040,5 +5040,12 @@
     "core": "I ___ a room for tonight.",
     "fp": "08c798e6c45eb8aad6b8a4ade5302e8ee3d1e5a7b9696888b81d4b9cec737859",
     "core_fp": "104320ee2db48bcc994d78df22d4533f8d4f1e3c159c2713989956c7b98fdc43"
+  },
+  {
+    "ts": 1776807887,
+    "kind": "grammar_gap",
+    "core": "I am ___ coffee now.",
+    "fp": "1a10486d3b227ec91cd1c6075c66bc5759208cfdb703ff6aa31af40fc7418232",
+    "core_fp": "77325772671e5a172f39ea5aaa6265f9fedf737a36fbf6d9c427462780e6725c"
   }
 ]
