@@ -5012,5 +5012,12 @@
     "fp": "62c3047ff9547873471604765c14872591d04be56e377156feb5e45cbb15f33f",
     "core_fp": "65d7aaa9d8a9ec3665d7cb1f62804c8fc7892ebe6eb273d411298bf5099f2a91",
     "answer": "blanket"
+  },
+  {
+    "ts": 1776766666,
+    "kind": "grammar_gap",
+    "core": "I am ___ the bus.",
+    "fp": "a5d265b15d3ae82cabb045282a61dac41be0c91f3cd10bc19db32b9e683d389a",
+    "core_fp": "0fb201edd20cc31231585cc58bdc19c20402a9c2d07577b635c0b434845e2112"
   }
 ]
