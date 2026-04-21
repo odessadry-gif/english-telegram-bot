@@ -5019,5 +5019,12 @@
     "core": "I am ___ the bus.",
     "fp": "a5d265b15d3ae82cabb045282a61dac41be0c91f3cd10bc19db32b9e683d389a",
     "core_fp": "0fb201edd20cc31231585cc58bdc19c20402a9c2d07577b635c0b434845e2112"
+  },
+  {
+    "ts": 1776777804,
+    "kind": "ua_en",
+    "core": "Можна рахунок?",
+    "fp": "1b8d7055862df45824b59133baa446c6e84a72348a396f079fcb3edcc6276bab",
+    "core_fp": "c874b349beef829afec95d240a74e501f1f862d8d0b52edc3591e07eafbb1721"
   }
 ]
