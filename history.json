@@ -4990,5 +4990,12 @@
     "core": "I ordered a coffee ___ sugar.",
     "fp": "608ba208485f7599e5c5e0074a0fd4f901b3942aa85e769c8cfad228bae0ec1c",
     "core_fp": "81968aa98f6d4a115f638cef386202fdccfad27df0a669a4f924a2716677189a"
+  },
+  {
+    "ts": 1776738375,
+    "kind": "grammar_gap",
+    "core": "I need a taxi ___ 8 o'clock.",
+    "fp": "22d323c79e525dd65fcc1b6208b2504ef99e77f4190eba26e413fc4d32a34b90",
+    "core_fp": "8a9ecc003920e19fbd7bf034d009585bbede464d472ef0e08c956c86a6ce35e5"
   }
 ]
