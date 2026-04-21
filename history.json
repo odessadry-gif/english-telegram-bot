@@ -4997,5 +4997,12 @@
     "core": "I need a taxi ___ 8 o'clock.",
     "fp": "22d323c79e525dd65fcc1b6208b2504ef99e77f4190eba26e413fc4d32a34b90",
     "core_fp": "8a9ecc003920e19fbd7bf034d009585bbede464d472ef0e08c956c86a6ce35e5"
+  },
+  {
+    "ts": 1776749163,
+    "kind": "ua_en",
+    "core": "Де туалет, будь ласка?",
+    "fp": "3f9c15dee39272db2da866f2b456073a76acb5fd88a0581122cf169c5cdc6b93",
+    "core_fp": "682307b73c3305fa23569bdfb1a1f8e280e993ef4844dd690a984da0e2dfb68f"
   }
 ]
