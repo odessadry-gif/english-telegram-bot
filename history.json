@@ -5069,5 +5069,12 @@
     "core": "I ___ late for the train now.",
     "fp": "94fed4aeb5365001a8c1ca3ae7bbce26e507d03cffe1f7acb950cd08a099a5f7",
     "core_fp": "2213fc5bac58916b02e0b295d84a8b36a19ffc23c0d22291cb84a409a7d18770"
+  },
+  {
+    "ts": 1776853081,
+    "kind": "ua_en",
+    "core": "Де моя ручка?",
+    "fp": "cc2f16bad03a3e46ab2a09da2e8caec0763f0c22f2d5146c343d94450f073dd5",
+    "core_fp": "0f1e13536085824d14792685e7b75488cf74e30a2f6d469bf5aa08af7959efd5"
   }
 ]
