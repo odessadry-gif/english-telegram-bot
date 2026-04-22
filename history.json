@@ -5076,5 +5076,13 @@
     "core": "Де моя ручка?",
     "fp": "cc2f16bad03a3e46ab2a09da2e8caec0763f0c22f2d5146c343d94450f073dd5",
     "core_fp": "0f1e13536085824d14792685e7b75488cf74e30a2f6d469bf5aa08af7959efd5"
+  },
+  {
+    "ts": 1776864160,
+    "kind": "riddle",
+    "core": "You eat it for breakfast.\nYou make toast with it.",
+    "fp": "9213fe5fea16c99df765c2a6f41eac653b5218a4bb7f874a04b516fc81e941b5",
+    "core_fp": "1dc42a7c899c08dfc83271fbbdb41faa434c949882a5e6ce9a63ce7790b3ca23",
+    "answer": "bread"
   }
 ]
