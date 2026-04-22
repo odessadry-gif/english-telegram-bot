@@ -5091,5 +5091,12 @@
     "core": "Коли сніданок?",
     "fp": "b1a00cc73ee6f14e6a5551b5b45dfabba590b26f64f2bff74ac8955ce3017fd5",
     "core_fp": "b6ab3ef8532c091538e933455b6540f9143a21fde646936f5b06c3c67f98cef5"
+  },
+  {
+    "ts": 1776885099,
+    "kind": "grammar_gap",
+    "core": "The train is at platform ___.",
+    "fp": "3279720dec8c2113831f87828c2c22aec23bf8815d5b3a4d5725b541b82c8b98",
+    "core_fp": "5c4495d226be3e17645c91c23f4c843f87ad811031246b764be9710d92c4dcd7"
   }
 ]
