@@ -5062,5 +5062,12 @@
     "core": "The taxi will arrive ___ five minutes.",
     "fp": "f7a3e4a85b5abd90285435f2c94571a1b43c0ade808426d25dd8642c0eaa90df",
     "core_fp": "15e08112de175e58fc4401d6fe61e1b8f80f2fd5b41f5c54e51f64ae76c4ba90"
+  },
+  {
+    "ts": 1776843826,
+    "kind": "grammar_gap",
+    "core": "I ___ late for the train now.",
+    "fp": "94fed4aeb5365001a8c1ca3ae7bbce26e507d03cffe1f7acb950cd08a099a5f7",
+    "core_fp": "2213fc5bac58916b02e0b295d84a8b36a19ffc23c0d22291cb84a409a7d18770"
   }
 ]
