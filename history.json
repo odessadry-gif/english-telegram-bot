@@ -5055,5 +5055,12 @@
     "fp": "87a58578c3bf17dc070addafebbcc5dc0ee4343472b7e7b6da720ecbe6e34252",
     "core_fp": "5ed70b71ea40ef0b19bf3bcf16090b02156661e1d7cf7bf324d21cd2552ad71b",
     "answer": "bottle"
+  },
+  {
+    "ts": 1776835440,
+    "kind": "grammar_gap",
+    "core": "The taxi will arrive ___ five minutes.",
+    "fp": "f7a3e4a85b5abd90285435f2c94571a1b43c0ade808426d25dd8642c0eaa90df",
+    "core_fp": "15e08112de175e58fc4401d6fe61e1b8f80f2fd5b41f5c54e51f64ae76c4ba90"
   }
 ]
