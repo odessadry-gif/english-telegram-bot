@@ -5084,5 +5084,12 @@
     "fp": "9213fe5fea16c99df765c2a6f41eac653b5218a4bb7f874a04b516fc81e941b5",
     "core_fp": "1dc42a7c899c08dfc83271fbbdb41faa434c949882a5e6ce9a63ce7790b3ca23",
     "answer": "bread"
+  },
+  {
+    "ts": 1776874110,
+    "kind": "ua_en",
+    "core": "Коли сніданок?",
+    "fp": "b1a00cc73ee6f14e6a5551b5b45dfabba590b26f64f2bff74ac8955ce3017fd5",
+    "core_fp": "b6ab3ef8532c091538e933455b6540f9143a21fde646936f5b06c3c67f98cef5"
   }
 ]
