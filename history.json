@@ -5047,5 +5047,13 @@
     "core": "I am ___ coffee now.",
     "fp": "1a10486d3b227ec91cd1c6075c66bc5759208cfdb703ff6aa31af40fc7418232",
     "core_fp": "77325772671e5a172f39ea5aaa6265f9fedf737a36fbf6d9c427462780e6725c"
+  },
+  {
+    "ts": 1776824677,
+    "kind": "riddle",
+    "core": "It has a cap.\nYou drink from it.",
+    "fp": "87a58578c3bf17dc070addafebbcc5dc0ee4343472b7e7b6da720ecbe6e34252",
+    "core_fp": "5ed70b71ea40ef0b19bf3bcf16090b02156661e1d7cf7bf324d21cd2552ad71b",
+    "answer": "bottle"
   }
 ]
