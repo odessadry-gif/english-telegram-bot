@@ -5098,5 +5098,12 @@
     "core": "The train is at platform ___.",
     "fp": "3279720dec8c2113831f87828c2c22aec23bf8815d5b3a4d5725b541b82c8b98",
     "core_fp": "5c4495d226be3e17645c91c23f4c843f87ad811031246b764be9710d92c4dcd7"
+  },
+  {
+    "ts": 1776894561,
+    "kind": "grammar_gap",
+    "core": "I need to go ___ gate 5.",
+    "fp": "93f05693b377b1cb5a48c1bfd51281ceae6e20961bd6daf84074cd0f033240b4",
+    "core_fp": "7d3d3abc4fa420e4252e68371c30c571ecd9958c4d5435dcea28e45851238c92"
   }
 ]
