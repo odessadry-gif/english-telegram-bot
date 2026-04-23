@@ -5155,5 +5155,12 @@
     "core": "My ticket is ___ the table.",
     "fp": "89330965f0ed120a131447b7a2bb38435f5d1f38aff8df382ae652ef923cd743",
     "core_fp": "33942bb81e8226efd8a19a928922ee8eb9ef06f068822be876c6a63be1c3721f"
+  },
+  {
+    "ts": 1776980602,
+    "kind": "grammar_gap",
+    "core": "How much ___ the taxi to the station?",
+    "fp": "98f184ce7183fb427101e5b340b1666580d2c0c6adbb60610adbbd9a32019bad",
+    "core_fp": "b36801c2f5763516236d1ab500da3e3511254dbe63fa434e6b9ced3fff5120eb"
   }
 ]
