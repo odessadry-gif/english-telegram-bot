@@ -5148,5 +5148,12 @@
     "core": "Зупиніться тут, будь ласка",
     "fp": "9041322a152ba879ed3e32455282cd3ddf4de79ed6fa0599163c96dcea8cdf75",
     "core_fp": "cf3025de9f60a24285196582a5de81ebe2e37886bc4dc558799eec202b52b0ac"
+  },
+  {
+    "ts": 1776971135,
+    "kind": "grammar_gap",
+    "core": "My ticket is ___ the table.",
+    "fp": "89330965f0ed120a131447b7a2bb38435f5d1f38aff8df382ae652ef923cd743",
+    "core_fp": "33942bb81e8226efd8a19a928922ee8eb9ef06f068822be876c6a63be1c3721f"
   }
 ]
