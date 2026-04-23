@@ -5134,5 +5134,12 @@
     "core": "Коли прибуває автобус?",
     "fp": "695d2702972ff6734adeb7015f86e573403e0a234ebeff382ef3ada4956f4ca8",
     "core_fp": "142bcfd3da0557a0f5139702dba52c36790a9474683a2f01e25f934a8129ed42"
+  },
+  {
+    "ts": 1776950706,
+    "kind": "grammar_gap",
+    "core": "My train is ___ 7 o'clock.",
+    "fp": "7a5c45545e9d4756389713a9dcaba16fb1dda260b6d85e77b0731b4339b0eff4",
+    "core_fp": "1892429a1350af1254f4f828aff2db015b2b71cb4496054e5cd77354aff28540"
   }
 ]
