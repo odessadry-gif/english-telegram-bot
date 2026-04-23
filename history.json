@@ -5105,5 +5105,13 @@
     "core": "I need to go ___ gate 5.",
     "fp": "93f05693b377b1cb5a48c1bfd51281ceae6e20961bd6daf84074cd0f033240b4",
     "core_fp": "7d3d3abc4fa420e4252e68371c30c571ecd9958c4d5435dcea28e45851238c92"
+  },
+  {
+    "ts": 1776911288,
+    "kind": "riddle",
+    "core": "You rub it on paper.\nIt removes pencil marks.",
+    "fp": "45e1a8762ee552b7fa1358df6a3a48fea2af6b90436a1018f0cd2026ced33758",
+    "core_fp": "58df37ca9aab86c4d97205715264341bb429ae429c7c0b9df2c866d473027bd4",
+    "answer": "eraser"
   }
 ]
