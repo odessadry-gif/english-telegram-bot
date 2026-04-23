@@ -5127,5 +5127,12 @@
     "core": "I am ___ the taxi.",
     "fp": "41ae26d8fbbba1951b1c7ee887a7a92a3e2a8b4a45e84403ccbcd83a2075f00d",
     "core_fp": "6e690e26b4093138700833c4f4ea163b7fcfd79ed6454d96a935fbfd85ac1732"
+  },
+  {
+    "ts": 1776939802,
+    "kind": "ua_en",
+    "core": "Коли прибуває автобус?",
+    "fp": "695d2702972ff6734adeb7015f86e573403e0a234ebeff382ef3ada4956f4ca8",
+    "core_fp": "142bcfd3da0557a0f5139702dba52c36790a9474683a2f01e25f934a8129ed42"
   }
 ]
