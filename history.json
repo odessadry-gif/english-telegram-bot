@@ -5120,5 +5120,12 @@
     "core": "I want ___ coffee.",
     "fp": "14941df9bc345a4de7c6b610f37b8c8c40e6afac6df5dc462cc0052b3c9f006b",
     "core_fp": "b72fab88bba2d8de21ec25693a60c57c8d1bde3f5cbb181cc7f98eda19bb166f"
+  },
+  {
+    "ts": 1776930520,
+    "kind": "grammar_gap",
+    "core": "I am ___ the taxi.",
+    "fp": "41ae26d8fbbba1951b1c7ee887a7a92a3e2a8b4a45e84403ccbcd83a2075f00d",
+    "core_fp": "6e690e26b4093138700833c4f4ea163b7fcfd79ed6454d96a935fbfd85ac1732"
   }
 ]
