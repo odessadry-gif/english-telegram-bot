@@ -5113,5 +5113,12 @@
     "fp": "45e1a8762ee552b7fa1358df6a3a48fea2af6b90436a1018f0cd2026ced33758",
     "core_fp": "58df37ca9aab86c4d97205715264341bb429ae429c7c0b9df2c866d473027bd4",
     "answer": "eraser"
+  },
+  {
+    "ts": 1776922205,
+    "kind": "grammar_gap",
+    "core": "I want ___ coffee.",
+    "fp": "14941df9bc345a4de7c6b610f37b8c8c40e6afac6df5dc462cc0052b3c9f006b",
+    "core_fp": "b72fab88bba2d8de21ec25693a60c57c8d1bde3f5cbb181cc7f98eda19bb166f"
   }
 ]
