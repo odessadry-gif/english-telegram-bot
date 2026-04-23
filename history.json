@@ -5141,5 +5141,12 @@
     "core": "My train is ___ 7 o'clock.",
     "fp": "7a5c45545e9d4756389713a9dcaba16fb1dda260b6d85e77b0731b4339b0eff4",
     "core_fp": "1892429a1350af1254f4f828aff2db015b2b71cb4496054e5cd77354aff28540"
+  },
+  {
+    "ts": 1776961739,
+    "kind": "ua_en",
+    "core": "Зупиніться тут, будь ласка",
+    "fp": "9041322a152ba879ed3e32455282cd3ddf4de79ed6fa0599163c96dcea8cdf75",
+    "core_fp": "cf3025de9f60a24285196582a5de81ebe2e37886bc4dc558799eec202b52b0ac"
   }
 ]
