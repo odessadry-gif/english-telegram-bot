@@ -5197,5 +5197,12 @@
     "core": "I am ___ the bus stop.",
     "fp": "31b484f04c641f3a035675f479d6c0b5a33466fbd0a986d48899eaf2b56e252f",
     "core_fp": "29b4a23456d7fff48d5d9bd122441fa9abdf4b0df25fc17e876ed25d351af3dd"
+  },
+  {
+    "ts": 1777046673,
+    "kind": "ua_en",
+    "core": "Скільки людей?",
+    "fp": "397a512c776fea60f2fbd7ea04934f9eb369ea11d08fbb30a774f7c6940bccaf",
+    "core_fp": "d91322320e4c3dd9ab52d3bc5fde65b3209719beaf9364b37c5580d8df46501b"
   }
 ]
