@@ -5162,5 +5162,12 @@
     "core": "How much ___ the taxi to the station?",
     "fp": "98f184ce7183fb427101e5b340b1666580d2c0c6adbb60610adbbd9a32019bad",
     "core_fp": "b36801c2f5763516236d1ab500da3e3511254dbe63fa434e6b9ced3fff5120eb"
+  },
+  {
+    "ts": 1776997673,
+    "kind": "ua_en",
+    "core": "У вас є Wi‑Fi?",
+    "fp": "1405475607d54abc4866f57076a6fd51d4b0f2b8869611e1ef799d7748f34d76",
+    "core_fp": "e0571d90d0f71637f9dd1279f6ed58a34c5d0974225975ba315a2099a640eae5"
   }
 ]
