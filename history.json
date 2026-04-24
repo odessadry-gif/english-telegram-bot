@@ -5169,5 +5169,12 @@
     "core": "У вас є Wi‑Fi?",
     "fp": "1405475607d54abc4866f57076a6fd51d4b0f2b8869611e1ef799d7748f34d76",
     "core_fp": "e0571d90d0f71637f9dd1279f6ed58a34c5d0974225975ba315a2099a640eae5"
+  },
+  {
+    "ts": 1777008812,
+    "kind": "grammar_gap",
+    "core": "Take the taxi ___ the station.",
+    "fp": "00c8f535a0cda271a93f82f11b6487471549a6966534d42c47e4f6808fc2ef28",
+    "core_fp": "77e593ed8d8761fa00945e6f6e3cc5ac23bd9ef0c56ffeaa7e5dfcdc4cef0b3a"
   }
 ]
