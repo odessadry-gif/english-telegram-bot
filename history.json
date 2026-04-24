@@ -5183,5 +5183,12 @@
     "core": "Можна тут сісти?",
     "fp": "d425086d75009ddc8f7e78715335ed473679bf2fea0a745cb55f4a4c6705e7c7",
     "core_fp": "4c9f89fba6725eb45c9f9e403d49e84f94b6fd05656cfbacb77b37d4823fc2ca"
+  },
+  {
+    "ts": 1777026124,
+    "kind": "grammar_gap",
+    "core": "Where ___ the bathroom?",
+    "fp": "d9123dd6e844c3200a04e8608afae152fe13ce03a799f8db8a7eb53a69471c92",
+    "core_fp": "3d0d52d5fe7961b35713b2c3dcc573abb55497df8de28c1e5b17f524028c4d42"
   }
 ]
