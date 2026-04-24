@@ -5176,5 +5176,12 @@
     "core": "Take the taxi ___ the station.",
     "fp": "00c8f535a0cda271a93f82f11b6487471549a6966534d42c47e4f6808fc2ef28",
     "core_fp": "77e593ed8d8761fa00945e6f6e3cc5ac23bd9ef0c56ffeaa7e5dfcdc4cef0b3a"
+  },
+  {
+    "ts": 1777017635,
+    "kind": "ua_en",
+    "core": "Можна тут сісти?",
+    "fp": "d425086d75009ddc8f7e78715335ed473679bf2fea0a745cb55f4a4c6705e7c7",
+    "core_fp": "4c9f89fba6725eb45c9f9e403d49e84f94b6fd05656cfbacb77b37d4823fc2ca"
   }
 ]
