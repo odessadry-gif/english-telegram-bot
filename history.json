@@ -5190,5 +5190,12 @@
     "core": "Where ___ the bathroom?",
     "fp": "d9123dd6e844c3200a04e8608afae152fe13ce03a799f8db8a7eb53a69471c92",
     "core_fp": "3d0d52d5fe7961b35713b2c3dcc573abb55497df8de28c1e5b17f524028c4d42"
+  },
+  {
+    "ts": 1777036808,
+    "kind": "grammar_gap",
+    "core": "I am ___ the bus stop.",
+    "fp": "31b484f04c641f3a035675f479d6c0b5a33466fbd0a986d48899eaf2b56e252f",
+    "core_fp": "29b4a23456d7fff48d5d9bd122441fa9abdf4b0df25fc17e876ed25d351af3dd"
   }
 ]
