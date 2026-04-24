@@ -5211,5 +5211,12 @@
     "core": "The train leaves ___ 9 o'clock.",
     "fp": "52b55c5a2abb554663bf18522244a262c4c501171461ca53072c9caa792ce5e1",
     "core_fp": "320347a341621eeea5b96c39dedfcefc87b49107c43498fde6e8699a3a0c7ae5"
+  },
+  {
+    "ts": 1777067088,
+    "kind": "ua_en",
+    "core": "Коли виїжджаємо?",
+    "fp": "e4eb2bd6e7a437d128971070b79b4012f60eea1ae9b0355a8c54d3a2b28441e6",
+    "core_fp": "6090a06cb8832eda36ac2a5badea2ead54a663631063a2f23a46706dca392c5f"
   }
 ]
