@@ -5218,5 +5218,12 @@
     "core": "Коли виїжджаємо?",
     "fp": "e4eb2bd6e7a437d128971070b79b4012f60eea1ae9b0355a8c54d3a2b28441e6",
     "core_fp": "6090a06cb8832eda36ac2a5badea2ead54a663631063a2f23a46706dca392c5f"
+  },
+  {
+    "ts": 1777083038,
+    "kind": "grammar_gap",
+    "core": "She is waiting ___ the taxi.",
+    "fp": "568a9cf13589a60090a488cbc5f1b9cf37c2bef6c60e4a906084057202dc73df",
+    "core_fp": "38982ffb7d5e9059fb1178f814388bfa613ec1760bb394fa4af751ea5e613c81"
   }
 ]
