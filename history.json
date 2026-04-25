@@ -5260,5 +5260,12 @@
     "core": "Can I have a ___ of coffee?",
     "fp": "c5ef05d5a4034b0b806b9952916ab2357775ac8e3bd980e2c8a41debf953ade2",
     "core_fp": "caa52b9be20523d3e1631a9762be2aeb73481cd35e2efb2f661f123289f870d1"
+  },
+  {
+    "ts": 1777143016,
+    "kind": "grammar_gap",
+    "core": "She is ___ a taxi.",
+    "fp": "159fae4967c5ca85a9c082a9b4ff29840e604c543682bae9d2adebe27bd7fa63",
+    "core_fp": "ca813cf91b123646cb239ae670516a9a2d6f4c728c35b3ec68314678f7642a7f"
   }
 ]
