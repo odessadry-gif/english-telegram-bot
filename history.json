@@ -5225,5 +5225,12 @@
     "core": "She is waiting ___ the taxi.",
     "fp": "568a9cf13589a60090a488cbc5f1b9cf37c2bef6c60e4a906084057202dc73df",
     "core_fp": "38982ffb7d5e9059fb1178f814388bfa613ec1760bb394fa4af751ea5e613c81"
+  },
+  {
+    "ts": 1777093864,
+    "kind": "ua_en",
+    "core": "Я шукаю кафе.",
+    "fp": "2106ef7eefc7658b5214edbed9458d99e4275bd7c6fbb9d9a608c540e9c1a204",
+    "core_fp": "273a4c8f2884af8c3650fc86354f4da42805a88390e2b7e8d900b0af955fe15b"
   }
 ]
