@@ -5253,5 +5253,12 @@
     "core": "I ___ at the hotel now.",
     "fp": "8920b3a9b14e72309db2987f6ef3ab37f3071b1926a44a17fa707cf19f9ab266",
     "core_fp": "1e1b4f296bbf18fbe783743dce3462cb614eddb455f6cd31d31c9cd1da567bf6"
+  },
+  {
+    "ts": 1777131544,
+    "kind": "grammar_gap",
+    "core": "Can I have a ___ of coffee?",
+    "fp": "c5ef05d5a4034b0b806b9952916ab2357775ac8e3bd980e2c8a41debf953ade2",
+    "core_fp": "caa52b9be20523d3e1631a9762be2aeb73481cd35e2efb2f661f123289f870d1"
   }
 ]
