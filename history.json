@@ -5246,5 +5246,12 @@
     "core": "She is ___ home.",
     "fp": "2966c35ed6df250fdd97ec09d619a0f594f5d6445d6384d6d34cffe8d8cc3f68",
     "core_fp": "736e59dbb43457ba2bbe51458ea02d13168ce71f18f1c4afb71e1723cbdcdb2d"
+  },
+  {
+    "ts": 1777122018,
+    "kind": "grammar_gap",
+    "core": "I ___ at the hotel now.",
+    "fp": "8920b3a9b14e72309db2987f6ef3ab37f3071b1926a44a17fa707cf19f9ab266",
+    "core_fp": "1e1b4f296bbf18fbe783743dce3462cb614eddb455f6cd31d31c9cd1da567bf6"
   }
 ]
