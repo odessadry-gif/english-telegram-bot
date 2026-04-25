@@ -5239,5 +5239,12 @@
     "core": "Please ___ the window.",
     "fp": "465e52daaa1c4d8646cbae0b196b58a916e680afaf2199452409494808db9e98",
     "core_fp": "c35432e0e23bd0d86535aa52aced09d41a227721c896a7af679289b5b4b6d414"
+  },
+  {
+    "ts": 1777110677,
+    "kind": "grammar_gap",
+    "core": "She is ___ home.",
+    "fp": "2966c35ed6df250fdd97ec09d619a0f594f5d6445d6384d6d34cffe8d8cc3f68",
+    "core_fp": "736e59dbb43457ba2bbe51458ea02d13168ce71f18f1c4afb71e1723cbdcdb2d"
   }
 ]
