@@ -5232,5 +5232,12 @@
     "core": "Я шукаю кафе.",
     "fp": "2106ef7eefc7658b5214edbed9458d99e4275bd7c6fbb9d9a608c540e9c1a204",
     "core_fp": "273a4c8f2884af8c3650fc86354f4da42805a88390e2b7e8d900b0af955fe15b"
+  },
+  {
+    "ts": 1777101150,
+    "kind": "grammar_gap",
+    "core": "Please ___ the window.",
+    "fp": "465e52daaa1c4d8646cbae0b196b58a916e680afaf2199452409494808db9e98",
+    "core_fp": "c35432e0e23bd0d86535aa52aced09d41a227721c896a7af679289b5b4b6d414"
   }
 ]
