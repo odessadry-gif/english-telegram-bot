@@ -5295,5 +5295,12 @@
     "core": "I ___ a taxi to the airport.",
     "fp": "895de4d55d617a0363460295952d3bedc13c0fc7758af95bc71345dfe0a782d8",
     "core_fp": "f2083a6c6eaced370b2f74facfb09558b4bcfa712a15f2b698bc1bdc7f738345"
+  },
+  {
+    "ts": 1777197262,
+    "kind": "ua_en",
+    "core": "Де автобусна зупинка?",
+    "fp": "60f9f275381d1da499872d63045dddb6d09232b00a535e69e7176984d35fd90e",
+    "core_fp": "fa5708f70666232ae696227d237d96d7eff54bbe2e40abcecd7265dcca23bff1"
   }
 ]
