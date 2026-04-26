@@ -5316,5 +5316,12 @@
     "core": "Чай чи кава?",
     "fp": "6783cfc1f69c9d0d078f3175aaab537f10b8767d2fc687c74364be40535d817e",
     "core_fp": "c6ec23451377a779d18305ce148b54ce2aabf65495012ea83a8352bc40d02231"
+  },
+  {
+    "ts": 1777229510,
+    "kind": "ua_en",
+    "core": "Де тут вихід?",
+    "fp": "9f38fb8214270a1cc51ca10f2acad28fc9a0ea4b94dab8ab78d60bf6e744e912",
+    "core_fp": "3a217a12e5af464d1af3b47be23c60a6c021f396a86eb5dc7ee93c293b758ba6"
   }
 ]
