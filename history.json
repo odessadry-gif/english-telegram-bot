@@ -5302,5 +5302,12 @@
     "core": "Де автобусна зупинка?",
     "fp": "60f9f275381d1da499872d63045dddb6d09232b00a535e69e7176984d35fd90e",
     "core_fp": "fa5708f70666232ae696227d237d96d7eff54bbe2e40abcecd7265dcca23bff1"
+  },
+  {
+    "ts": 1777208535,
+    "kind": "ua_en",
+    "core": "Коли наступний поїзд?",
+    "fp": "762d0729254cb666e5257b91320e5d7e5b8ec1e0fced98ffccf0ba2d9209c409",
+    "core_fp": "d5aff37b991710bb9568b073082a4d7633bfb0cb9aa6dc5c60a5b7367b44f6a1"
   }
 ]
