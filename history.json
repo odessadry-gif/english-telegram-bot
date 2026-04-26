@@ -5309,5 +5309,12 @@
     "core": "Коли наступний поїзд?",
     "fp": "762d0729254cb666e5257b91320e5d7e5b8ec1e0fced98ffccf0ba2d9209c409",
     "core_fp": "d5aff37b991710bb9568b073082a4d7633bfb0cb9aa6dc5c60a5b7367b44f6a1"
+  },
+  {
+    "ts": 1777217986,
+    "kind": "ua_en",
+    "core": "Чай чи кава?",
+    "fp": "6783cfc1f69c9d0d078f3175aaab537f10b8767d2fc687c74364be40535d817e",
+    "core_fp": "c6ec23451377a779d18305ce148b54ce2aabf65495012ea83a8352bc40d02231"
   }
 ]
