@@ -5274,5 +5274,12 @@
     "core": "She ___ at the hotel.",
     "fp": "7026531ee99d33040b28ef7d7c092903c1e3621762c4d0c785c72c121470d520",
     "core_fp": "36f9399fe2fe4dd01ca1196f90463c6862a70103d38f63a514ae40c3685c1e80"
+  },
+  {
+    "ts": 1777170749,
+    "kind": "grammar_gap",
+    "core": "I ___ late for the train.",
+    "fp": "d642ffda3c9e2ec17dbd075ecaec9dbc01b8209f630dbfbbfc4be2f4daad36ef",
+    "core_fp": "dbf4595c247e7bb8e1e6665698c3c612ccce1e8e12468dc43f45b4556d31d348"
   }
 ]
