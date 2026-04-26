@@ -5281,5 +5281,12 @@
     "core": "I ___ late for the train.",
     "fp": "d642ffda3c9e2ec17dbd075ecaec9dbc01b8209f630dbfbbfc4be2f4daad36ef",
     "core_fp": "dbf4595c247e7bb8e1e6665698c3c612ccce1e8e12468dc43f45b4556d31d348"
+  },
+  {
+    "ts": 1777181892,
+    "kind": "grammar_gap",
+    "core": "Call me ___ taxi.",
+    "fp": "02649c5cbea38cd1c4309d76328f0327ce7eece78d0d8883f4d3a2b8eb81695e",
+    "core_fp": "6d8cf54815fb2d087b66a2595d5649f29ed3f519a7818e22803a20b8c08ec5f4"
   }
 ]
