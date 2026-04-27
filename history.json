@@ -5375,5 +5375,13 @@
     "core": "I ___ in a taxi now.",
     "fp": "1d3498467835e1deb952e949d2713f3f705178b7b796d326d7dc913fc25e50eb",
     "core_fp": "d030d208252d6211148d597405f7db8ecf76d776948bb1fd6cb11f3f701d81d7"
+  },
+  {
+    "ts": 1777307106,
+    "kind": "grammar_gap",
+    "level": "A1",
+    "core": "I ___ hungry.",
+    "fp": "a4d0efbabc2b6d91ff755dd5b1c47df04e297b49378b7f92ba1fa1b9b44bd250",
+    "core_fp": "cde2a00520db99a35b25eba44e25a001e1af65f1e2eb87189d92c01a33500d39"
   }
 ]
