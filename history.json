@@ -5359,5 +5359,13 @@
     "fp": "eccd9ca48203c86909c65c46be9482236a9ddeadf1e8fd1e82cac28c54288c2e",
     "core_fp": "7751d6e5cf7607598e4776ce72e476d35f05e51194823f5ac2ab35f13ec12f80",
     "answer": "mouth"
+  },
+  {
+    "ts": 1777293495,
+    "kind": "grammar_gap",
+    "level": "B1",
+    "core": "How ___ the food?",
+    "fp": "0ff27768c40e57851e0aaaeab930beec5086b41ccd017b3c89e5b7412860ba98",
+    "core_fp": "d288a5fafd9c550c29ea594a137b6c24baeecd33aa30b59b7a892823be09c6eb"
   }
 ]
