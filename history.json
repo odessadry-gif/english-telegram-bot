@@ -5367,5 +5367,13 @@
     "core": "How ___ the food?",
     "fp": "0ff27768c40e57851e0aaaeab930beec5086b41ccd017b3c89e5b7412860ba98",
     "core_fp": "d288a5fafd9c550c29ea594a137b6c24baeecd33aa30b59b7a892823be09c6eb"
+  },
+  {
+    "ts": 1777297703,
+    "kind": "grammar_gap",
+    "level": "A1",
+    "core": "I ___ in a taxi now.",
+    "fp": "1d3498467835e1deb952e949d2713f3f705178b7b796d326d7dc913fc25e50eb",
+    "core_fp": "d030d208252d6211148d597405f7db8ecf76d776948bb1fd6cb11f3f701d81d7"
   }
 ]
