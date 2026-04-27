@@ -5391,5 +5391,13 @@
     "core": "My train is ___ 6 p.m.",
     "fp": "447ee2d4aa57efa639183cc677b9db30e4331500e380bb1049c625f5a8c78e66",
     "core_fp": "9d1fd7d658ed4f5386448cb003c1c2abc59c9e67bb33c4d722355141ac6ac25d"
+  },
+  {
+    "ts": 1777326777,
+    "kind": "grammar_gap",
+    "level": "B1",
+    "core": "We ___ a taxi at 8.",
+    "fp": "5e902a8ed5694932dd627358202f9d86fa643ffba8e8ec32602dd5c77aeea759",
+    "core_fp": "6727518d0ce81e00ef7c8733d79baec9b7be7f4dadd67d135cf832ffa572fcf3"
   }
 ]
