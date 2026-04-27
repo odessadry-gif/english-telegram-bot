@@ -49,6 +49,12 @@ QUIZ_TYPE_WEIGHTS = {
     "riddle": 20,
 }
 
+LEVEL_WEIGHTS = {
+    "A1": 20,
+    "A2": 35,
+    "B1": 45,
+}
+
 client = OpenAI(api_key=OPENAI_API_KEY)
 
 ARTICLES_RE = re.compile(r"^(a|an|the)\s+", re.IGNORECASE)
@@ -312,6 +318,13 @@ def pick_quiz_type() -> str:
     return random.choice(pool)
 
 
+def pick_level() -> str:
+    pool = []
+    for level, weight in LEVEL_WEIGHTS.items():
+        pool.extend([level] * weight)
+    return random.choice(pool)
+
+
 # ========= VALIDATION =========
 def validate_generated(data: dict, quiz_type: str) -> tuple[str, str, list[str], int, str, str]:
     core = str(data.get("core", "")).strip()
@@ -459,7 +472,7 @@ def send_game_post():
 
 
 # ========= PROMPTS =========
-def build_prompt(quiz_type: str, avoid_items: list[str], avoid_answers: list[str]) -> str:
+def build_prompt(quiz_type: str, target_level: str, avoid_items: list[str], avoid_answers: list[str]) -> str:
     avoid_block = ""
     if avoid_items:
         avoid_block = (
@@ -476,10 +489,10 @@ def build_prompt(quiz_type: str, avoid_items: list[str], avoid_answers: list[str
 
     common_rules = """
 LEVEL:
-- 70% A1
-- 25% A2
-- 5% easy B1
-Prefer A1 if unsure.
+- Target level for this poll: {target_level}
+- A1 = very basic words and simple present / be
+- A2 = practical everyday phrases and simple travel/food situations
+- B1 = natural everyday English, short useful phrases, still clear and not advanced
 
 GLOBAL RULES:
 - exactly 4 options
@@ -494,18 +507,18 @@ GLOBAL RULES:
 - very clear and useful in real life
 - explanation_uk must be short and simple
 - use natural everyday English
-""".strip()
+""".format(target_level=target_level).strip()
 
     if quiz_type == "grammar_gap":
         return f"""
-Create ONE Telegram English poll for beginners.
+Create ONE Telegram English poll for A1-B1 learners.
 Return STRICT JSON ONLY.
 
 TYPE:
 grammar_gap
 
 GOAL:
-Make a super clear A1/A2 fill-the-gap question.
+Make a super clear {target_level} fill-the-gap question.
 Only ONE answer must fit.
 No doubtful phrasing.
 Avoid slippery cases like article + drink/food if it may confuse beginners.
@@ -536,7 +549,7 @@ RULES FOR SENTENCE:
 - answer in 1-2 seconds
 - one obvious best option
 - include enough context
-- good for A1/A2 learners
+- good for the target level: {target_level}
 - prefer verbs, basic nouns, pronouns, time markers, simple prepositions
 - avoid phrases where two words can sound okay
 
@@ -578,7 +591,7 @@ Return STRICT JSON ONLY.
 
     if quiz_type == "ua_en":
         return f"""
-Create ONE Telegram English poll for beginners.
+Create ONE Telegram English poll for A1-B1 learners.
 Return STRICT JSON ONLY.
 
 TYPE:
@@ -586,6 +599,7 @@ ua_en
 
 GOAL:
 Make a very clear Ukrainian-to-English multiple choice quiz.
+Target level: {target_level}.
 Only ONE translation must be correct.
 
 TOPICS:
@@ -644,14 +658,14 @@ Return STRICT JSON ONLY.
 
     if quiz_type == "riddle":
         return f"""
-Create ONE Telegram English poll for beginners.
+Create ONE Telegram English poll for A1-B1 learners.
 Return STRICT JSON ONLY.
 
 TYPE:
 riddle
 
 GOAL:
-Make a very easy one-word English riddle for A1/A2.
+Make a clear one-word English riddle for {target_level}.
 It must be fun and simple.
 
 TOPICS:
@@ -715,15 +729,15 @@ Return STRICT JSON ONLY.
     raise ValueError("Unknown quiz type")
 
 
-def fallback_prompt(quiz_type: str) -> str:
+def fallback_prompt(quiz_type: str, target_level: str) -> str:
     if quiz_type == "grammar_gap":
-        return """
+        return f"""
 Return STRICT JSON ONLY.
 
-Create ONE very easy English fill-the-gap quiz for Telegram.
+Create ONE clear English fill-the-gap quiz for Telegram.
 
 Rules:
-- A1/A2 only
+- target level: {target_level}
 - 4 unique options
 - 1 correct answer only
 - very clear
@@ -736,23 +750,23 @@ Fill the gap:
 <sentence with ___>
 
 JSON schema:
-{
+{{
   "core": "sentence with ___",
   "question": "💬\\nFill the gap:\\n<sentence with ___>",
   "options": ["...", "...", "...", "..."],
   "correct": 0,
   "explanation_uk": "short explanation in Ukrainian"
-}
+}}
 """.strip()
 
     if quiz_type == "ua_en":
-        return """
+        return f"""
 Return STRICT JSON ONLY.
 
-Create ONE very easy Ukrainian-to-English quiz for Telegram.
+Create ONE clear Ukrainian-to-English quiz for Telegram.
 
 Rules:
-- A1/A2 only
+- target level: {target_level}
 - 4 unique options
 - 1 correct translation only
 - short phrase
@@ -764,23 +778,23 @@ Question format exactly:
 <Ukrainian phrase>
 
 JSON schema:
-{
+{{
   "core": "Ukrainian phrase",
   "question": "💬\\n🇺🇦 → 🇬🇧\\n<Ukrainian phrase>",
   "options": ["...", "...", "...", "..."],
   "correct": 0,
   "explanation_uk": "short explanation in Ukrainian"
-}
+}}
 """.strip()
 
     if quiz_type == "riddle":
-        return """
+        return f"""
 Return STRICT JSON ONLY.
 
-Create ONE very easy one-word English riddle for Telegram.
+Create ONE clear one-word English riddle for Telegram.
 
 Rules:
-- A1/A2 only
+- target level: {target_level}
 - 4 unique options
 - 1 correct answer only
 - answer = one word
@@ -793,31 +807,31 @@ Question format exactly:
 What is it?
 
 JSON schema:
-{
+{{
   "core": "clue line 1\\nclue line 2",
   "question": "💬\\nclue line 1\\nclue line 2\\nWhat is it?",
   "options": ["...", "...", "...", "..."],
   "correct": 0,
   "answer": "oneword",
   "explanation_uk": "short explanation in Ukrainian"
-}
+}}
 """.strip()
 
     raise ValueError("Unknown quiz type")
 
 
-def generate_one(quiz_type: str, avoid_items: list[str], avoid_answers: list[str]) -> dict:
+def generate_one(quiz_type: str, target_level: str, avoid_items: list[str], avoid_answers: list[str]) -> dict:
     try:
         resp = client.responses.create(
             model=MODEL,
-            input=build_prompt(quiz_type, avoid_items, avoid_answers),
+            input=build_prompt(quiz_type, target_level, avoid_items, avoid_answers),
         )
         raw = (getattr(resp, "output_text", None) or "").strip()
         return extract_json(raw)
     except Exception:
         resp = client.responses.create(
             model=MODEL,
-            input=fallback_prompt(quiz_type),
+            input=fallback_prompt(quiz_type, target_level),
         )
         raw = (getattr(resp, "output_text", None) or "").strip()
         return extract_json(raw)
@@ -877,10 +891,11 @@ def main():
     for _ in range(40):
         try:
             quiz_type = pick_quiz_type()
+            target_level = pick_level()
             avoid_items = recent_cores(history, 40, quiz_type)
             avoid_answers = recent_riddle_answers(history, 40) if quiz_type == "riddle" else []
 
-            data = generate_one(quiz_type, avoid_items, avoid_answers)
+            data = generate_one(quiz_type, target_level, avoid_items, avoid_answers)
             core, question, options, correct, explanation, answer = validate_generated(data, quiz_type)
 
             cfp = core_fp(quiz_type, core)
@@ -910,6 +925,7 @@ def main():
             history_item = {
                 "ts": int(time.time()),
                 "kind": quiz_type,
+                "level": target_level,
                 "core": core,
                 "fp": fp_for(quiz_type, core, shuffled_options),
                 "core_fp": cfp,
