@@ -5337,5 +5337,12 @@
     "core": "Where ___ the coffee shop?",
     "fp": "d457c0f0b56b99e9e7038c669878ab2c05376b13198bc76bf11b5d133f140e35",
     "core_fp": "6ecf75058cd7dc9f3c77f4e35a6b244f861b541aa4e292331c0beb945549879c"
+  },
+  {
+    "ts": 1777269148,
+    "kind": "grammar_gap",
+    "core": "Where ___ my ticket?",
+    "fp": "8f364391b418fb8c4dd391794ee08640de28f62aeb82ab902fc645d20d6c7882",
+    "core_fp": "edf23b3aa601bb6126ba93b7cb32425cd582d34582f2fd82aa29c9a069024c8e"
   }
 ]
