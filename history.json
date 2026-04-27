@@ -5351,5 +5351,13 @@
     "core": "Де багаж?",
     "fp": "f96f0f684fc631b2d6cd605330e63a5cda1fe0345ba4578f4d8ecd3cd08ce523",
     "core_fp": "a58b189ea8dc174658f4c7362a4c86e8973dfdea052350657de8635051e6d98d"
+  },
+  {
+    "ts": 1777287734,
+    "kind": "riddle",
+    "core": "You use it to eat.\nIt is on your face.",
+    "fp": "eccd9ca48203c86909c65c46be9482236a9ddeadf1e8fd1e82cac28c54288c2e",
+    "core_fp": "7751d6e5cf7607598e4776ce72e476d35f05e51194823f5ac2ab35f13ec12f80",
+    "answer": "mouth"
   }
 ]
