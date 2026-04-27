@@ -5344,5 +5344,12 @@
     "core": "Where ___ my ticket?",
     "fp": "8f364391b418fb8c4dd391794ee08640de28f62aeb82ab902fc645d20d6c7882",
     "core_fp": "edf23b3aa601bb6126ba93b7cb32425cd582d34582f2fd82aa29c9a069024c8e"
+  },
+  {
+    "ts": 1777278061,
+    "kind": "ua_en",
+    "core": "Де багаж?",
+    "fp": "f96f0f684fc631b2d6cd605330e63a5cda1fe0345ba4578f4d8ecd3cd08ce523",
+    "core_fp": "a58b189ea8dc174658f4c7362a4c86e8973dfdea052350657de8635051e6d98d"
   }
 ]
