@@ -5447,5 +5447,13 @@
     "core": "How long ___ the train take?",
     "fp": "a078abfe20e55bc97a36e613dbaaf083c9b79eb52163e44a0f3edd072eebd46a",
     "core_fp": "a8f822e60b20b4f8db2cba8dfca884957131ea22c0c6e3bd6e21a2e1254494d6"
+  },
+  {
+    "ts": 1777404586,
+    "kind": "ua_en",
+    "level": "A2",
+    "core": "Без молока, будь ласка",
+    "fp": "f70111617c9531ace6c0ac56b939bde18c97d00148044452aae0e2b8af030497",
+    "core_fp": "3cc5857e8accfb877b88806c2ff98fe6897e61e5ba85178f7df88f3265e15c6b"
   }
 ]
