@@ -5415,5 +5415,13 @@
     "core": "She booked a room ___ two nights.",
     "fp": "88e02d2d99cd9c162ef2026af8cf103b3adf2a0f939ce3829a859f442241247e",
     "core_fp": "db27e4ee0d9dd5ea8e1bb800e44188e39f770ec090059b4212739beac9e7fd5a"
+  },
+  {
+    "ts": 1777365048,
+    "kind": "grammar_gap",
+    "level": "B1",
+    "core": "She checked ___ at 2 PM.",
+    "fp": "a61c57ac31646c1816505604f9841485dc56c0207fc75a1d22a783f32c3f05ea",
+    "core_fp": "c0ad82fb1e3c04b3dc02beb84fb7523497939722d57f5fa7a8064893d532b181"
   }
 ]
