@@ -5399,5 +5399,13 @@
     "core": "We ___ a taxi at 8.",
     "fp": "5e902a8ed5694932dd627358202f9d86fa643ffba8e8ec32602dd5c77aeea759",
     "core_fp": "6727518d0ce81e00ef7c8733d79baec9b7be7f4dadd67d135cf832ffa572fcf3"
+  },
+  {
+    "ts": 1777344172,
+    "kind": "ua_en",
+    "level": "A2",
+    "core": "Сніданок включено?",
+    "fp": "c721f35f7d4f1f2f33cb35551f9bc15bf2bc4bd95de5a8eb429ec59e5b8253ff",
+    "core_fp": "d238f7fa0737a6a1333c4ffcfe6efc60973525e264b13c56a70449eff311c6aa"
   }
 ]
