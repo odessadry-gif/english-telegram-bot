@@ -5439,5 +5439,13 @@
     "core": "Як ви сьогодні?",
     "fp": "efb7ca2eb7d663ddb816619d24b55dae6a67acf7b1f3ea3e6deeac2cc5608a40",
     "core_fp": "b4cd7482111b689016afa4b8d60c7a3c8453e06518e95db2aca6b470c6c4a620"
+  },
+  {
+    "ts": 1777394997,
+    "kind": "grammar_gap",
+    "level": "B1",
+    "core": "How long ___ the train take?",
+    "fp": "a078abfe20e55bc97a36e613dbaaf083c9b79eb52163e44a0f3edd072eebd46a",
+    "core_fp": "a8f822e60b20b4f8db2cba8dfca884957131ea22c0c6e3bd6e21a2e1254494d6"
   }
 ]
