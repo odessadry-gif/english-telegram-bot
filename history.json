@@ -5455,5 +5455,13 @@
     "core": "Без молока, будь ласка",
     "fp": "f70111617c9531ace6c0ac56b939bde18c97d00148044452aae0e2b8af030497",
     "core_fp": "3cc5857e8accfb877b88806c2ff98fe6897e61e5ba85178f7df88f3265e15c6b"
+  },
+  {
+    "ts": 1777413394,
+    "kind": "grammar_gap",
+    "level": "B1",
+    "core": "Do you have a table ___ two?",
+    "fp": "0a581fdd731f1dc54250332c5e8062506a3cb38317eac9300ddbd0a53722619e",
+    "core_fp": "37b6b50fc3cf2aa050d6f7d8837097d1af87a5c74dd60f4464b6293f10fc02af"
   }
 ]
