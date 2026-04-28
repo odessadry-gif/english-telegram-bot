@@ -5423,5 +5423,13 @@
     "core": "She checked ___ at 2 PM.",
     "fp": "a61c57ac31646c1816505604f9841485dc56c0207fc75a1d22a783f32c3f05ea",
     "core_fp": "c0ad82fb1e3c04b3dc02beb84fb7523497939722d57f5fa7a8064893d532b181"
+  },
+  {
+    "ts": 1777374260,
+    "kind": "ua_en",
+    "level": "B1",
+    "core": "Можна зарядити телефон?",
+    "fp": "551942b03bf112c5698480c7931f04040bf0f1c96119e45c0083c44bc8d45fdc",
+    "core_fp": "cab5283bffdf3eb0a648304d2a8439f0e80835f0d70b0c64a50504e3e4893a40"
   }
 ]
