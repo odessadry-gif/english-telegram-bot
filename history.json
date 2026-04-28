@@ -5431,5 +5431,13 @@
     "core": "Можна зарядити телефон?",
     "fp": "551942b03bf112c5698480c7931f04040bf0f1c96119e45c0083c44bc8d45fdc",
     "core_fp": "cab5283bffdf3eb0a648304d2a8439f0e80835f0d70b0c64a50504e3e4893a40"
+  },
+  {
+    "ts": 1777384819,
+    "kind": "ua_en",
+    "level": "B1",
+    "core": "Як ви сьогодні?",
+    "fp": "efb7ca2eb7d663ddb816619d24b55dae6a67acf7b1f3ea3e6deeac2cc5608a40",
+    "core_fp": "b4cd7482111b689016afa4b8d60c7a3c8453e06518e95db2aca6b470c6c4a620"
   }
 ]
