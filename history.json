@@ -5407,5 +5407,13 @@
     "core": "Сніданок включено?",
     "fp": "c721f35f7d4f1f2f33cb35551f9bc15bf2bc4bd95de5a8eb429ec59e5b8253ff",
     "core_fp": "d238f7fa0737a6a1333c4ffcfe6efc60973525e264b13c56a70449eff311c6aa"
+  },
+  {
+    "ts": 1777355887,
+    "kind": "grammar_gap",
+    "level": "B1",
+    "core": "She booked a room ___ two nights.",
+    "fp": "88e02d2d99cd9c162ef2026af8cf103b3adf2a0f939ce3829a859f442241247e",
+    "core_fp": "db27e4ee0d9dd5ea8e1bb800e44188e39f770ec090059b4212739beac9e7fd5a"
   }
 ]
