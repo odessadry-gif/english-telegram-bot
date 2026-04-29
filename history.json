@@ -5487,5 +5487,13 @@
     "core": "Можна меню, будь ласка?",
     "fp": "eb6586f4454ca984abdfc0277749f3ed5d14a68a6bcb82f751abeb9303bd8324",
     "core_fp": "9a56cbee976d45fb1e8cc70f2be15c2a57b399e8cec967ac9fe514736fe38520"
+  },
+  {
+    "ts": 1777460049,
+    "kind": "ua_en",
+    "level": "A1",
+    "core": "Де тут таксі?",
+    "fp": "774292f68d66e62d5197f72033aa385141ab31e0a66ad8236e80685f57f51c49",
+    "core_fp": "aaa0f11ec06453a165e750bb5a740cb7df47a6cdbc5f962eda878ea7926f52b2"
   }
 ]
