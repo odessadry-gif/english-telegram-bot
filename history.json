@@ -5463,5 +5463,13 @@
     "core": "Do you have a table ___ two?",
     "fp": "0a581fdd731f1dc54250332c5e8062506a3cb38317eac9300ddbd0a53722619e",
     "core_fp": "37b6b50fc3cf2aa050d6f7d8837097d1af87a5c74dd60f4464b6293f10fc02af"
+  },
+  {
+    "ts": 1777430577,
+    "kind": "ua_en",
+    "level": "B1",
+    "core": "Я маю алергію на горіхи",
+    "fp": "8b09c6e08d66f04c6bb94e0ae0969870a955792e0680ea30af8368f08d5a7c73",
+    "core_fp": "95ae7a25966cbc201451c5c27ee82307e4891179f406b40e9418ce594188e582"
   }
 ]
