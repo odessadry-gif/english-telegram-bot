@@ -5511,5 +5511,13 @@
     "core": "Check-in opens ___ 2 pm.",
     "fp": "b0714c1611b772e4b4c724165c4e4677a723f9f76f372f0e872e5d270c173bdd",
     "core_fp": "9f592ebe6eed5e8dea6d7aeba9ed234959ff474068ffeeb978de83b969ebe907"
+  },
+  {
+    "ts": 1777490628,
+    "kind": "ua_en",
+    "level": "A2",
+    "core": "Де найближчий ресторан?",
+    "fp": "f4e03b9d0c482b744537fc726357699adb9464b8132838d8cace3d06eef5f53b",
+    "core_fp": "a4c750d55ddf12c8ed579ee2939de26a2d016284326124db5c985db2891da589"
   }
 ]
