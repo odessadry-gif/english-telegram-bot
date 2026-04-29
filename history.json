@@ -5503,5 +5503,13 @@
     "core": "Я буду чекати тут",
     "fp": "bc380b500aab9f7c1bd7f5914d9097d3213e066898b8590f983c6cd27fab0ab3",
     "core_fp": "70cff80cd8759e1bcf5e7245ddb4573b3012a872a15c0377f761e82b733d66f1"
+  },
+  {
+    "ts": 1777480020,
+    "kind": "grammar_gap",
+    "level": "B1",
+    "core": "Check-in opens ___ 2 pm.",
+    "fp": "b0714c1611b772e4b4c724165c4e4677a723f9f76f372f0e872e5d270c173bdd",
+    "core_fp": "9f592ebe6eed5e8dea6d7aeba9ed234959ff474068ffeeb978de83b969ebe907"
   }
 ]
