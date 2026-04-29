@@ -5519,5 +5519,13 @@
     "core": "Де найближчий ресторан?",
     "fp": "f4e03b9d0c482b744537fc726357699adb9464b8132838d8cace3d06eef5f53b",
     "core_fp": "a4c750d55ddf12c8ed579ee2939de26a2d016284326124db5c985db2891da589"
+  },
+  {
+    "ts": 1777499910,
+    "kind": "grammar_gap",
+    "level": "A2",
+    "core": "Where ___ the train?",
+    "fp": "07f472ffd18401516473db7cb0df9df8d9697daff9aa675543022240f4151425",
+    "core_fp": "9f68902dbc5bce49b156f1be8dd927ad26d327c779e9b239ebf680abd04dde20"
   }
 ]
