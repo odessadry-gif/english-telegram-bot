@@ -5495,5 +5495,13 @@
     "core": "Де тут таксі?",
     "fp": "774292f68d66e62d5197f72033aa385141ab31e0a66ad8236e80685f57f51c49",
     "core_fp": "aaa0f11ec06453a165e750bb5a740cb7df47a6cdbc5f962eda878ea7926f52b2"
+  },
+  {
+    "ts": 1777470673,
+    "kind": "ua_en",
+    "level": "B1",
+    "core": "Я буду чекати тут",
+    "fp": "bc380b500aab9f7c1bd7f5914d9097d3213e066898b8590f983c6cd27fab0ab3",
+    "core_fp": "70cff80cd8759e1bcf5e7245ddb4573b3012a872a15c0377f761e82b733d66f1"
   }
 ]
