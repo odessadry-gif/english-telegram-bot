@@ -5551,5 +5551,13 @@
     "core": "Я хочу дві кави",
     "fp": "eb5ebf94336bc4d46a6ea76d753eb746b364758d41b93efaf2c2b473754b9c06",
     "core_fp": "daeb69c65318ba9ff4fbca61ec951fa747da96fb4b7f8bd8e065e9b749e79456"
+  },
+  {
+    "ts": 1777546399,
+    "kind": "ua_en",
+    "level": "B1",
+    "core": "Ви можете мені допомогти?",
+    "fp": "60e967c8773c92dc2b6915987876322e328e131985b4d96e2c7872a4cd5f261e",
+    "core_fp": "70bdc72b33dd6f05de96ce94d58978fe542f790679e60e2f29a4e69fe8d75a01"
   }
 ]
