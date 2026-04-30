@@ -5584,5 +5584,13 @@
     "fp": "5d3d1184fb9d9a570edb0efc59061f27b60e82e42955d64cc14225e511f2c10b",
     "core_fp": "87c5a41b92f2c5ed8960ac4783bfd8a3ab3d0bf80a4ee8bd4cdf57cdf1563c79",
     "answer": "ticket"
+  },
+  {
+    "ts": 1777586120,
+    "kind": "grammar_gap",
+    "level": "A1",
+    "core": "I ___ the bus to work every day.",
+    "fp": "32b99fe8f93ec51eb9e78865c076bc3abfbaeae61730e0cba65de378315e5a76",
+    "core_fp": "cc58acbf1afb5b58dd7560827e0ff683d05b6f52d6d864e4804594948cbe13a2"
   }
 ]
