@@ -5543,5 +5543,13 @@
     "core": "Я хочу столик",
     "fp": "a58f305a6ac20dc13ed8124331060e7d02745f080a4b9c5a7b4849741b4067e8",
     "core_fp": "35f1849b84536110a3ac56c47693b23f6511ce38d7cc31edd9d281698aeaf965"
+  },
+  {
+    "ts": 1777537535,
+    "kind": "ua_en",
+    "level": "B1",
+    "core": "Я хочу дві кави",
+    "fp": "eb5ebf94336bc4d46a6ea76d753eb746b364758d41b93efaf2c2b473754b9c06",
+    "core_fp": "daeb69c65318ba9ff4fbca61ec951fa747da96fb4b7f8bd8e065e9b749e79456"
   }
 ]
