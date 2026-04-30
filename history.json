@@ -5575,5 +5575,14 @@
     "core": "I ___ at home.",
     "fp": "3e39ec61c103438cec8aa3456b45e475abbd9f8c5548f9165406b46c9ff27b3b",
     "core_fp": "060ac8d906764d9c6f1d07665c96a26cc3f910b10019004389f9c340f8ae686f"
+  },
+  {
+    "ts": 1777576673,
+    "kind": "riddle",
+    "level": "B1",
+    "core": "You buy it for a train\nIt shows your seat and time",
+    "fp": "5d3d1184fb9d9a570edb0efc59061f27b60e82e42955d64cc14225e511f2c10b",
+    "core_fp": "87c5a41b92f2c5ed8960ac4783bfd8a3ab3d0bf80a4ee8bd4cdf57cdf1563c79",
+    "answer": "ticket"
   }
 ]
