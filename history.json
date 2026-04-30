@@ -5527,5 +5527,13 @@
     "core": "Where ___ the train?",
     "fp": "07f472ffd18401516473db7cb0df9df8d9697daff9aa675543022240f4151425",
     "core_fp": "9f68902dbc5bce49b156f1be8dd927ad26d327c779e9b239ebf680abd04dde20"
+  },
+  {
+    "ts": 1777517011,
+    "kind": "grammar_gap",
+    "level": "A2",
+    "core": "I need a room ___ two nights.",
+    "fp": "7a01db4f89deefe5a573350313ad49d2bb84269af376aee6d423424ce9dd7d71",
+    "core_fp": "5cc1e1285fb0ebb0cbedc7c0f8fd0548a43d22f3ac4b0a2a99094462a91a8d0f"
   }
 ]
