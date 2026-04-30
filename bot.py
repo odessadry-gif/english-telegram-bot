@@ -14,28 +14,6 @@ OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 CHAT_ID = os.getenv("CHAT_ID", "-1003674761753")
 MODEL = os.getenv("OPENAI_MODEL", "gpt-5-mini")
 
-# MODE=quiz | MODE=postgame
-MODE = os.getenv("MODE", "quiz").strip().lower()
-
-GROUP_CHAT_ID = os.getenv("GROUP_CHAT_ID", "@Official_english_every_day")
-
-GAME_URL = os.getenv(
-    "GAME_URL",
-    "https://odessadry-gif.github.io/english-telegram-bot/docs/"
-)
-
-GAME_BUTTON_TEXT = os.getenv(
-    "GAME_BUTTON_TEXT",
-    "☕ Travel Rush"
-)
-
-GAME_POST_TEXT = os.getenv(
-    "GAME_POST_TEXT",
-    "☕ **Travel Rush** — швидкий квіз з англійської\n\n"
-    "Короткі фрази про подорожі, кавʼярню, їжу та everyday English.\n"
-    "Обери правильну відповідь і прокачай англійську за 2 хвилини 👇",
-)
-
 # ========= HISTORY =========
 HISTORY_FILE = "history.json"
 MAX_HISTORY = 1500
@@ -449,28 +427,6 @@ def send_quiz_poll(question: str, options: list[str], correct_id: int, explanati
     tg_api("sendPoll", payload)
 
 
-def send_game_post():
-    reply_markup = {
-        "inline_keyboard": [
-            [
-                {
-                    "text": GAME_BUTTON_TEXT,
-                    "url": GAME_URL
-                }
-            ]
-        ]
-    }
-
-    payload = {
-        "chat_id": GROUP_CHAT_ID,
-        "text": GAME_POST_TEXT.strip(),
-        "parse_mode": "Markdown",
-        "disable_web_page_preview": True,
-        "reply_markup": reply_markup,
-    }
-    tg_api("sendMessage", payload)
-
-
 # ========= PROMPTS =========
 def build_prompt(quiz_type: str, target_level: str, avoid_items: list[str], avoid_answers: list[str]) -> str:
     avoid_block = ""
@@ -843,10 +799,6 @@ def main():
         raise RuntimeError("BOT_TOKEN missing")
     if not OPENAI_API_KEY:
         raise RuntimeError("OPENAI_API_KEY missing")
-
-    if MODE == "postgame":
-        send_game_post()
-        return
 
     history = load_history()
 
