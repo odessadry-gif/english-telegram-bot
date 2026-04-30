@@ -450,6 +450,13 @@ LEVEL:
 - A2 = practical everyday phrases and simple travel/food situations
 - B1 = natural everyday English, short useful phrases, still clear and not advanced
 
+CORE TOPICS:
+- daily life: home, work, shopping, time, plans, phone, simple routines
+- travel: airport, train, taxi, hotel, tickets, luggage, directions
+- food & cafe: menu, ordering, drinks, bill, preferences, simple requests
+- social phrases: greetings, small talk, meeting, apologies, invitations
+- help & problems: asking for help, being late, lost items, simple complaints
+
 GLOBAL RULES:
 - exactly 4 options
 - exactly 1 correct answer
@@ -478,19 +485,6 @@ Make a super clear {target_level} fill-the-gap question.
 Only ONE answer must fit.
 No doubtful phrasing.
 Avoid slippery cases like article + drink/food if it may confuse beginners.
-
-TOPICS:
-- travel
-- food
-- ordering food
-- coffee shop
-- hotel
-- taxi
-- airport
-- train
-- simple daily life
-- asking for help
-- being late
 
 {common_rules}
 
@@ -558,17 +552,6 @@ Make a very clear Ukrainian-to-English multiple choice quiz.
 Target level: {target_level}.
 Only ONE translation must be correct.
 
-TOPICS:
-- travel
-- food
-- coffee shop
-- hotel
-- airport
-- taxi
-- daily life
-- simple phrases
-- basic communication
-
 {common_rules}
 
 FORMAT:
@@ -623,16 +606,6 @@ riddle
 GOAL:
 Make a clear one-word English riddle for {target_level}.
 It must be fun and simple.
-
-TOPICS:
-- basic everyday objects
-- food
-- transport
-- travel items
-- home items
-- simple nature words
-- body parts
-- school / cafe / hotel basics
 
 {common_rules}
 
