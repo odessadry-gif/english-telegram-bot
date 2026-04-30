@@ -5567,5 +5567,13 @@
     "core": "Я запізнюся",
     "fp": "51387b4fa26c7ec2a03dfbf6f4a8c9cadab0dc96e81a8da6bd7c1f6183260845",
     "core_fp": "7929a34fc3e0bc5d2aae412d9fc285c2adbede7964646c701a585b971cbcccae"
+  },
+  {
+    "ts": 1777565881,
+    "kind": "grammar_gap",
+    "level": "A1",
+    "core": "I ___ at home.",
+    "fp": "3e39ec61c103438cec8aa3456b45e475abbd9f8c5548f9165406b46c9ff27b3b",
+    "core_fp": "060ac8d906764d9c6f1d07665c96a26cc3f910b10019004389f9c340f8ae686f"
   }
 ]
