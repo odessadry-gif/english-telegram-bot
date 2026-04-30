@@ -5559,5 +5559,13 @@
     "core": "Ви можете мені допомогти?",
     "fp": "60e967c8773c92dc2b6915987876322e328e131985b4d96e2c7872a4cd5f261e",
     "core_fp": "70bdc72b33dd6f05de96ce94d58978fe542f790679e60e2f29a4e69fe8d75a01"
+  },
+  {
+    "ts": 1777557064,
+    "kind": "ua_en",
+    "level": "B1",
+    "core": "Я запізнюся",
+    "fp": "51387b4fa26c7ec2a03dfbf6f4a8c9cadab0dc96e81a8da6bd7c1f6183260845",
+    "core_fp": "7929a34fc3e0bc5d2aae412d9fc285c2adbede7964646c701a585b971cbcccae"
   }
 ]
