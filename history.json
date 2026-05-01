@@ -5608,5 +5608,13 @@
     "core": "Я загубив валізу",
     "fp": "b1d444135064d65ecca227ee62623900f2e9fc6a5afd20b746d206678f192af6",
     "core_fp": "c8c7f96151bc2e0ca25175d7aac4a0edcf3c1332bf08b98e1fb157e194e29c36"
+  },
+  {
+    "ts": 1777630892,
+    "kind": "ua_en",
+    "level": "A1",
+    "core": "Де мій рюкзак?",
+    "fp": "bea155ce223a8939bbd72f6e7a33bc4d1e18d4bdd4e709e666831c01e0b47618",
+    "core_fp": "3b35ed480fec608b2623a7e669ecfec7f41f609e9549b44f85f26ad689942185"
   }
 ]
