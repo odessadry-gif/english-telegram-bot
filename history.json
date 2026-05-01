@@ -5592,5 +5592,13 @@
     "core": "I ___ the bus to work every day.",
     "fp": "32b99fe8f93ec51eb9e78865c076bc3abfbaeae61730e0cba65de378315e5a76",
     "core_fp": "cc58acbf1afb5b58dd7560827e0ff683d05b6f52d6d864e4804594948cbe13a2"
+  },
+  {
+    "ts": 1777603854,
+    "kind": "grammar_gap",
+    "level": "B1",
+    "core": "I ___ home at 6 every day.",
+    "fp": "b660f1815219f26ca42b707a6b876f73d6ed5a1d2f4a3a0a2e40d79e675d6b12",
+    "core_fp": "d928529a59625d821cf2f6809bb725b2a96716fdbeb0584e2c04998b0da56196"
   }
 ]
