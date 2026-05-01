@@ -5600,5 +5600,13 @@
     "core": "I ___ home at 6 every day.",
     "fp": "b660f1815219f26ca42b707a6b876f73d6ed5a1d2f4a3a0a2e40d79e675d6b12",
     "core_fp": "d928529a59625d821cf2f6809bb725b2a96716fdbeb0584e2c04998b0da56196"
+  },
+  {
+    "ts": 1777616114,
+    "kind": "ua_en",
+    "level": "B1",
+    "core": "Я загубив валізу",
+    "fp": "b1d444135064d65ecca227ee62623900f2e9fc6a5afd20b746d206678f192af6",
+    "core_fp": "c8c7f96151bc2e0ca25175d7aac4a0edcf3c1332bf08b98e1fb157e194e29c36"
   }
 ]
