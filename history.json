@@ -5624,5 +5624,13 @@
     "core": "Я відкрию вікно",
     "fp": "89d31b8f96a9166df397b83d841c76ce5425a75ebb0ce5138225694e65258e47",
     "core_fp": "565df847ba066b7050c49902f7e87ba46788f9091bd9da5b7e8bccb437f0c600"
+  },
+  {
+    "ts": 1777650963,
+    "kind": "grammar_gap",
+    "level": "B1",
+    "core": "I ___ my phone at home yesterday.",
+    "fp": "8f71fe096f4c338af291f4ea00e855f72450fa34d38d35878c19b8337564d41a",
+    "core_fp": "2435efc5eb2575d91991d989599b61b1609393729d625af86497bad9992bebd4"
   }
 ]
