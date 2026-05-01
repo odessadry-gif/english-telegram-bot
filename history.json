@@ -5632,5 +5632,13 @@
     "core": "I ___ my phone at home yesterday.",
     "fp": "8f71fe096f4c338af291f4ea00e855f72450fa34d38d35878c19b8337564d41a",
     "core_fp": "2435efc5eb2575d91991d989599b61b1609393729d625af86497bad9992bebd4"
+  },
+  {
+    "ts": 1777662534,
+    "kind": "ua_en",
+    "level": "B1",
+    "core": "Я заплачу окремо",
+    "fp": "65146b88e8ae55ecc148c928eee109b8f4981a59a61d275521dc2918d9227ea7",
+    "core_fp": "7d74a43725d8ea20ed8fcf4a6edc9010f0d49d1d062a23d602dd51e95cdd16da"
   }
 ]
