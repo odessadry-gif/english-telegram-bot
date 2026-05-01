@@ -5640,5 +5640,14 @@
     "core": "Я заплачу окремо",
     "fp": "65146b88e8ae55ecc148c928eee109b8f4981a59a61d275521dc2918d9227ea7",
     "core_fp": "7d74a43725d8ea20ed8fcf4a6edc9010f0d49d1d062a23d602dd51e95cdd16da"
+  },
+  {
+    "ts": 1777672326,
+    "kind": "riddle",
+    "level": "A2",
+    "core": "You need it to travel abroad.\nIt shows your name and photo",
+    "fp": "01e1dfc2fe393d2c99b9fdaf7bbe1d53dbd337d1c0d164525163e224fd8595d0",
+    "core_fp": "5e17f066bd131df4355c04da371a96d4ec288627ea20173b3f9c8ab326062c47",
+    "answer": "passport"
   }
 ]
