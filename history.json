@@ -5616,5 +5616,13 @@
     "core": "Де мій рюкзак?",
     "fp": "bea155ce223a8939bbd72f6e7a33bc4d1e18d4bdd4e709e666831c01e0b47618",
     "core_fp": "3b35ed480fec608b2623a7e669ecfec7f41f609e9549b44f85f26ad689942185"
+  },
+  {
+    "ts": 1777641305,
+    "kind": "ua_en",
+    "level": "A2",
+    "core": "Я відкрию вікно",
+    "fp": "89d31b8f96a9166df397b83d841c76ce5425a75ebb0ce5138225694e65258e47",
+    "core_fp": "565df847ba066b7050c49902f7e87ba46788f9091bd9da5b7e8bccb437f0c600"
   }
 ]
