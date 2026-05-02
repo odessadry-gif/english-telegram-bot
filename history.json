@@ -5690,5 +5690,13 @@
     "core": "Ви вільні сьогодні?",
     "fp": "07feabd3198e94884118436ebfc8f91c29afc60b1b6f79887b62518f1cd52155",
     "core_fp": "31fea95ba37133b1f291ca55dc49f46c9d3261d1a1b961c30f6d48da4a4a5ffc"
+  },
+  {
+    "ts": 1777736603,
+    "kind": "grammar_gap",
+    "level": "A2",
+    "core": "The bus arrives ___ 6.",
+    "fp": "1e9d7e8b9754cf818b8b5603989c1085d8bfe62ce386ea7143698339e6d9752b",
+    "core_fp": "a40346defa69eeffff45cae5788a03e518693d6620a79af3e9e41e71e3f68010"
   }
 ]
