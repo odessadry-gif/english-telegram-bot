@@ -5674,5 +5674,13 @@
     "fp": "866a2231a2daae918a540e6b796f674250b49cc68ce2398a892bec59a4d6a105",
     "core_fp": "5517c2c9378d7ffdeb8a2fd06102828b441823c4e222d37f228d49a63e6d0cdb",
     "answer": "suitcase"
+  },
+  {
+    "ts": 1777715859,
+    "kind": "ua_en",
+    "level": "A2",
+    "core": "Я забув ключі",
+    "fp": "f3226ba3ba083d124cd70ec2efa75e041c865b25601d26c9507287467461e119",
+    "core_fp": "34656bda7bc70fe3aea0759fe751c99e0fd51067dc5ff96ee02b13c7e661eaf6"
   }
 ]
