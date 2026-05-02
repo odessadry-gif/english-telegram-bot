@@ -5706,5 +5706,13 @@
     "core": "We ___ at work.",
     "fp": "3852be694a4239a8dc67a6b5758ea4429a079777ca6ffba9c705aa5641ed2d2b",
     "core_fp": "d6f6fdc7106dcbeacf9cd335f6e071e93dc35c5df9796a31a644a484c6c428f9"
+  },
+  {
+    "ts": 1777757929,
+    "kind": "grammar_gap",
+    "level": "B1",
+    "core": "She works ___ Monday.",
+    "fp": "41a5439a64ad8d5ca92514b6e5cea27f094480d601e2132188fe0360bf8a3d50",
+    "core_fp": "f45b74783ff537e333da44d61b1392629be512750d512055a7974eb6bd05bd74"
   }
 ]
