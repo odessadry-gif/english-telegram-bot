@@ -5657,5 +5657,13 @@
     "core": "She ___ the bus to work.",
     "fp": "babc319bb973b9c5bbd1778fd6e11754f883ab67fb83ef5c560cb25247343766",
     "core_fp": "a7ad617954f7da0080de8a344ff6d15aed531da03ad41fc844bf3415d39efa18"
+  },
+  {
+    "ts": 1777700104,
+    "kind": "ua_en",
+    "level": "A2",
+    "core": "Я хочу заплатити",
+    "fp": "472181071a807ee96c262b71c705b3b5c22c9573353c154b37649c0507f5ffc6",
+    "core_fp": "0fb477d998b034f99b771732f4663a10aa2fe02314307044450dc3c074ca74ea"
   }
 ]
