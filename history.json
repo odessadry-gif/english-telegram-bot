@@ -5665,5 +5665,14 @@
     "core": "Я хочу заплатити",
     "fp": "472181071a807ee96c262b71c705b3b5c22c9573353c154b37649c0507f5ffc6",
     "core_fp": "0fb477d998b034f99b771732f4663a10aa2fe02314307044450dc3c074ca74ea"
+  },
+  {
+    "ts": 1777707655,
+    "kind": "riddle",
+    "level": "A2",
+    "core": "You put clothes in it.\nIt has wheels.",
+    "fp": "866a2231a2daae918a540e6b796f674250b49cc68ce2398a892bec59a4d6a105",
+    "core_fp": "5517c2c9378d7ffdeb8a2fd06102828b441823c4e222d37f228d49a63e6d0cdb",
+    "answer": "suitcase"
   }
 ]
