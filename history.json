@@ -5754,5 +5754,13 @@
     "core": "Я шукаю роботу",
     "fp": "f3c407742255b4bf666daf7bb3da1961f120e5e0231ad9c05512ff32d3d408cc",
     "core_fp": "2213bba1129b03e72ef69ead65c4990c3bc4652a47cf563a47451ffa727bcd68"
+  },
+  {
+    "ts": 1777823116,
+    "kind": "ua_en",
+    "level": "A2",
+    "core": "Де мій паспорт?",
+    "fp": "dcf0f26d9fac8b3792e8b72842dc4bd175d69a8ed85982174a165a192948fb5e",
+    "core_fp": "1e59526b35f70e39c6f73b126676d200a4117241db1649df72b8a39d7acb7883"
   }
 ]
