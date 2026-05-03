@@ -5738,5 +5738,13 @@
     "core": "Де ринок?",
     "fp": "5e1877e1a048ba3cf40839ac03da697030ce23c4ed44f52c8551958a8e42e82f",
     "core_fp": "30ee604d175bd1b6818988a7d3ef818fddcb7d059312a8dc7bfcd33b28ac4351"
+  },
+  {
+    "ts": 1777802572,
+    "kind": "ua_en",
+    "level": "B1",
+    "core": "Дайте мені знати",
+    "fp": "335c35d6ad5b5faa406838e7bc7bf6e5b1d984035fe1daf5f4929aa84bdb679f",
+    "core_fp": "76c8b9ebdd7afec654e85864340f3b2e371bea6cd10dbace6181611e418f2fac"
   }
 ]
