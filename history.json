@@ -5714,5 +5714,13 @@
     "core": "She works ___ Monday.",
     "fp": "41a5439a64ad8d5ca92514b6e5cea27f094480d601e2132188fe0360bf8a3d50",
     "core_fp": "f45b74783ff537e333da44d61b1392629be512750d512055a7974eb6bd05bd74"
+  },
+  {
+    "ts": 1777776208,
+    "kind": "ua_en",
+    "level": "B1",
+    "core": "Я залишаюся вдома сьогодні",
+    "fp": "2877a4c0bcc1d5450fd92e7c98829e83b6b357464af8922d5dab1f5a29619732",
+    "core_fp": "7ba3ab7b6fe4a87715dd45d0ddb26b9226ccc60d7739762a3bd47e78db8af023"
   }
 ]
