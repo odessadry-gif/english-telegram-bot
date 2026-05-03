@@ -5722,5 +5722,13 @@
     "core": "Я залишаюся вдома сьогодні",
     "fp": "2877a4c0bcc1d5450fd92e7c98829e83b6b357464af8922d5dab1f5a29619732",
     "core_fp": "7ba3ab7b6fe4a87715dd45d0ddb26b9226ccc60d7739762a3bd47e78db8af023"
+  },
+  {
+    "ts": 1777787824,
+    "kind": "grammar_gap",
+    "level": "A2",
+    "core": "I need to buy a ___ for the train.",
+    "fp": "1e19ff544d4ddf6ce862509d82bacee812d3b36b83bdb4a433fafef0b82610d5",
+    "core_fp": "862020148739a50b49af0ed1bea03be769f7d302bb662f0c19d6b1a3c56b6b16"
   }
 ]
