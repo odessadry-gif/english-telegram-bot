@@ -5746,5 +5746,13 @@
     "core": "Дайте мені знати",
     "fp": "335c35d6ad5b5faa406838e7bc7bf6e5b1d984035fe1daf5f4929aa84bdb679f",
     "core_fp": "76c8b9ebdd7afec654e85864340f3b2e371bea6cd10dbace6181611e418f2fac"
+  },
+  {
+    "ts": 1777813513,
+    "kind": "ua_en",
+    "level": "B1",
+    "core": "Я шукаю роботу",
+    "fp": "f3c407742255b4bf666daf7bb3da1961f120e5e0231ad9c05512ff32d3d408cc",
+    "core_fp": "2213bba1129b03e72ef69ead65c4990c3bc4652a47cf563a47451ffa727bcd68"
   }
 ]
