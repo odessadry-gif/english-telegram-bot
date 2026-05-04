@@ -5794,5 +5794,13 @@
     "core": "Please ___ the door.",
     "fp": "319f8a17e981829828701b63e0436d66180faa0e454c0e670b71352e86c0094a",
     "core_fp": "bfaf2f2173c847f8f2be482b52476594928bad6bebdf6440272c41de6bec62dc"
+  },
+  {
+    "ts": 1777892647,
+    "kind": "ua_en",
+    "level": "B1",
+    "core": "Де найближчий туалет?",
+    "fp": "b0abfb17f8e154a60afb6be5e16b26301b08ab3973dea6093100ddf81eb80784",
+    "core_fp": "b61b95e0380d1406d4071a2401e5a280ac4845d5cb29187affc4eaaf13a81658"
   }
 ]
