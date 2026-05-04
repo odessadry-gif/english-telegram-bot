@@ -5786,5 +5786,13 @@
     "core": "Я її не знаю.",
     "fp": "3358eb834db5939d84a9118c527505ac1144fdeb40b6b2300c37d5cf900a52d4",
     "core_fp": "b87e1c5f32939a82fc94a7a70e8f4d6b4836d47696156af133d88fe8a2f1c472"
+  },
+  {
+    "ts": 1777875120,
+    "kind": "grammar_gap",
+    "level": "B1",
+    "core": "Please ___ the door.",
+    "fp": "319f8a17e981829828701b63e0436d66180faa0e454c0e670b71352e86c0094a",
+    "core_fp": "bfaf2f2173c847f8f2be482b52476594928bad6bebdf6440272c41de6bec62dc"
   }
 ]
