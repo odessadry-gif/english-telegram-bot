@@ -5810,5 +5810,14 @@
     "core": "He is ___ the phone.",
     "fp": "bd20866f5d3380475ea3936a16be6b2515de83b79cf9961200e413e1d0ebe8d5",
     "core_fp": "a4c8db55fc97dbc8f53f42dff9d2fc30b2cf01b8fd3ea59c7b233b1140c2f10b"
+  },
+  {
+    "ts": 1777913074,
+    "kind": "riddle",
+    "level": "B1",
+    "core": "You keep money and cards in it.\nIt fits in your pocket.",
+    "fp": "7571e990fd4e474cf01259e8a2631e02f7fe714fd110a27b7e8f61f4f38dd8c0",
+    "core_fp": "bf055cf837c971e6f0aa0a55b1f790a9e33d55b72f5d6e663a7db0dd4ba30f3f",
+    "answer": "wallet"
   }
 ]
