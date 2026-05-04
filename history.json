@@ -5802,5 +5802,13 @@
     "core": "Де найближчий туалет?",
     "fp": "b0abfb17f8e154a60afb6be5e16b26301b08ab3973dea6093100ddf81eb80784",
     "core_fp": "b61b95e0380d1406d4071a2401e5a280ac4845d5cb29187affc4eaaf13a81658"
+  },
+  {
+    "ts": 1777902874,
+    "kind": "grammar_gap",
+    "level": "B1",
+    "core": "He is ___ the phone.",
+    "fp": "bd20866f5d3380475ea3936a16be6b2515de83b79cf9961200e413e1d0ebe8d5",
+    "core_fp": "a4c8db55fc97dbc8f53f42dff9d2fc30b2cf01b8fd3ea59c7b233b1140c2f10b"
   }
 ]
