@@ -5819,5 +5819,13 @@
     "fp": "7571e990fd4e474cf01259e8a2631e02f7fe714fd110a27b7e8f61f4f38dd8c0",
     "core_fp": "bf055cf837c971e6f0aa0a55b1f790a9e33d55b72f5d6e663a7db0dd4ba30f3f",
     "answer": "wallet"
+  },
+  {
+    "ts": 1777922766,
+    "kind": "grammar_gap",
+    "level": "A2",
+    "core": "We arrive ___ the hotel at 3.",
+    "fp": "cf11c0255e90ed84bf6430de861d8733c810b6aa28b6164f13e0d72b8364b7b9",
+    "core_fp": "78d74a495dd8acf0f091d2ce2a48221621bcada3608da0ff5c5ca964bcb34e43"
   }
 ]
