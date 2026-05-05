@@ -5835,5 +5835,13 @@
     "core": "Він вдома.",
     "fp": "1a6d74ddbf42c5c785e06b29786bffe5cad9bef0b92efe9766047e262de4dd20",
     "core_fp": "ad67272f60c90c48de14b553fd3e49b1a9c5c703cebfc37a76488795d27619b0"
+  },
+  {
+    "ts": 1777948506,
+    "kind": "grammar_gap",
+    "level": "A2",
+    "core": "Can you ___ the window, please?",
+    "fp": "a1579ba3eba5e05cc40ae4baad44a4cdfa8b7baf90b5d1a8a51d4344599ff7a9",
+    "core_fp": "be2b0902280ae340d3613145830b5718db9105e5dbf3165a88779f3cfd59d26f"
   }
 ]
