@@ -5875,5 +5875,13 @@
     "core": "Скільки часу це займе?",
     "fp": "6ef6f6f34da959fcc1af3eec97a13338b6a7fb1fe4ac74afdd95cdf5de7c8f14",
     "core_fp": "060697daa829384986ff73c06d4e011c160fb904c61d76e7156b1a22238cd0e8"
+  },
+  {
+    "ts": 1778008701,
+    "kind": "grammar_gap",
+    "level": "A2",
+    "core": "She ___ a taxi to the airport.",
+    "fp": "cacf2e4f58ff6617dfdc7aeb773671110f681fafe0e55ded3f7fa43a131cfe1a",
+    "core_fp": "a16b110b9a8a61b561ff8d4539c7cd9e89c853cb1f05574be8e2d10fe25df048"
   }
 ]
