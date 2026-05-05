@@ -5883,5 +5883,13 @@
     "core": "She ___ a taxi to the airport.",
     "fp": "cacf2e4f58ff6617dfdc7aeb773671110f681fafe0e55ded3f7fa43a131cfe1a",
     "core_fp": "a16b110b9a8a61b561ff8d4539c7cd9e89c853cb1f05574be8e2d10fe25df048"
+  },
+  {
+    "ts": 1778018400,
+    "kind": "ua_en",
+    "level": "B1",
+    "core": "Поверніть направо на розі",
+    "fp": "b6e1a2ebd4e7069efe31e37a6161beae549f51f398e08485bea1a26d7bafd164",
+    "core_fp": "bf6b1a99bd192dd55479d8ed6d33f04d75054edb288acbfc6bdd371e76f27eba"
   }
 ]
