@@ -5851,5 +5851,13 @@
     "core": "Put your bag ___ the chair.",
     "fp": "3977064d142e8aa1654e8cbb7cbe868a69e335b0671fb5bb0be035bacaa1e6ac",
     "core_fp": "f7c7a9f86766deec56ca770553c272f2186c67811c5cec94734065b02dae0f26"
+  },
+  {
+    "ts": 1777968445,
+    "kind": "ua_en",
+    "level": "A2",
+    "core": "У мене жар",
+    "fp": "48d4d84952525c08735e5fafa9380ac1c9d706d9c26e80af3bc69c3fdfdee48f",
+    "core_fp": "7696a07e83b89e49f18303b25f171154683be3ab7194007f2314aa72608a373d"
   }
 ]
