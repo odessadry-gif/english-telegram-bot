@@ -5859,5 +5859,13 @@
     "core": "У мене жар",
     "fp": "48d4d84952525c08735e5fafa9380ac1c9d706d9c26e80af3bc69c3fdfdee48f",
     "core_fp": "7696a07e83b89e49f18303b25f171154683be3ab7194007f2314aa72608a373d"
+  },
+  {
+    "ts": 1777977872,
+    "kind": "ua_en",
+    "level": "B1",
+    "core": "Я йду до магазину",
+    "fp": "658b5e47af16e53aeb2bef5f676ab12d12fd1b093b2e3998f0a7366d3099094f",
+    "core_fp": "ab8bc3122be153a7b484681a9e0a05ff80d6a9cf4fa8d7abb499f1daa65e4930"
   }
 ]
