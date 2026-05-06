@@ -5915,5 +5915,13 @@
     "core": "He goes to work ___ bus.",
     "fp": "4b687696744e62bc1e652078e3307d1bb0f20d87e37711123b5d0f28262f9207",
     "core_fp": "b03e55ecb26bacfbd135c9f675d6c0555d9107cfa5eb82f031760219fab6d352"
+  },
+  {
+    "ts": 1778065528,
+    "kind": "grammar_gap",
+    "level": "B1",
+    "core": "She ___ home at 6.",
+    "fp": "ecb253a9b86aeeb7ec9daeb945f67ac4bcc51791b1d9f26597a2d1b077863cc4",
+    "core_fp": "34c9e6793ed7e0b0677303e4b7717ec18660f2991f3b3ff44689b68b7a39463a"
   }
 ]
