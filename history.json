@@ -5931,5 +5931,13 @@
     "core": "Я втомлений",
     "fp": "dc2ebe249e675355a96a1f9bdf6b0c8e30a0e1a5259b8105bf7eb1361fdfa91c",
     "core_fp": "542b675c626ee9c95abfc607b5544614ea987c22b7125e74d0b942646c4edde2"
+  },
+  {
+    "ts": 1778084776,
+    "kind": "ua_en",
+    "level": "A2",
+    "core": "Де тут автобусна зупинка?",
+    "fp": "697d0c5f6659700d755d86aeca415beca84b8a81e1892b7253aae712906c11d2",
+    "core_fp": "ab76cc4026839dfe0678eb44d60cf0566843251928322cfb1cc74d4c66b68a02"
   }
 ]
