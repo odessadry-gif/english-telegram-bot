@@ -5939,5 +5939,13 @@
     "core": "Де тут автобусна зупинка?",
     "fp": "697d0c5f6659700d755d86aeca415beca84b8a81e1892b7253aae712906c11d2",
     "core_fp": "ab76cc4026839dfe0678eb44d60cf0566843251928322cfb1cc74d4c66b68a02"
+  },
+  {
+    "ts": 1778096625,
+    "kind": "grammar_gap",
+    "level": "B1",
+    "core": "She asked him ___ the window.",
+    "fp": "2fd9ec7f2f38921e085c60d78e20308e11414edaec4213b22805e99811ebf3bf",
+    "core_fp": "f2a09cfd4a9a352858c4490b1b8f227bd531df378d625a08e1d8df68aac4c62e"
   }
 ]
