@@ -5899,5 +5899,13 @@
     "core": "Can I pay ___ card?",
     "fp": "be400bfba7ac4b95d03541a989182072bec5dbebc89083c7829b2a984ef5c2ab",
     "core_fp": "12da36d48ac6686e34aadaac34015dcecf6bf5b3194b01fead0e4c38b87c89c5"
+  },
+  {
+    "ts": 1778046975,
+    "kind": "grammar_gap",
+    "level": "B1",
+    "core": "She is ___ the phone.",
+    "fp": "1a1ca11e947fed91c519092416e939939ba75de81e685e4b9f35023de038a14f",
+    "core_fp": "350421f91f9ca9e02a752d10d2a45164971a7c8f6b479a97e90a8a5246b06e43"
   }
 ]
