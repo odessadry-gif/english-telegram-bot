@@ -5923,5 +5923,13 @@
     "core": "She ___ home at 6.",
     "fp": "ecb253a9b86aeeb7ec9daeb945f67ac4bcc51791b1d9f26597a2d1b077863cc4",
     "core_fp": "34c9e6793ed7e0b0677303e4b7717ec18660f2991f3b3ff44689b68b7a39463a"
+  },
+  {
+    "ts": 1778076275,
+    "kind": "ua_en",
+    "level": "A1",
+    "core": "Я втомлений",
+    "fp": "dc2ebe249e675355a96a1f9bdf6b0c8e30a0e1a5259b8105bf7eb1361fdfa91c",
+    "core_fp": "542b675c626ee9c95abfc607b5544614ea987c22b7125e74d0b942646c4edde2"
   }
 ]
