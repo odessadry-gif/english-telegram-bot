@@ -5947,5 +5947,13 @@
     "core": "She asked him ___ the window.",
     "fp": "2fd9ec7f2f38921e085c60d78e20308e11414edaec4213b22805e99811ebf3bf",
     "core_fp": "f2a09cfd4a9a352858c4490b1b8f227bd531df378d625a08e1d8df68aac4c62e"
+  },
+  {
+    "ts": 1778104488,
+    "kind": "ua_en",
+    "level": "B1",
+    "core": "Чи можна сісти тут?",
+    "fp": "c83bc0262311343db68ef851ed2b33d73753ec7e7136a5337323f9f3b58f6758",
+    "core_fp": "ef2c3a07f09e39324e712294e3ae3057f55a0412451e17a1ab2ad0caa7aa8277"
   }
 ]
