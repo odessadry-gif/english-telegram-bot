@@ -5891,5 +5891,13 @@
     "core": "Поверніть направо на розі",
     "fp": "b6e1a2ebd4e7069efe31e37a6161beae549f51f398e08485bea1a26d7bafd164",
     "core_fp": "bf6b1a99bd192dd55479d8ed6d33f04d75054edb288acbfc6bdd371e76f27eba"
+  },
+  {
+    "ts": 1778035122,
+    "kind": "grammar_gap",
+    "level": "B1",
+    "core": "Can I pay ___ card?",
+    "fp": "be400bfba7ac4b95d03541a989182072bec5dbebc89083c7829b2a984ef5c2ab",
+    "core_fp": "12da36d48ac6686e34aadaac34015dcecf6bf5b3194b01fead0e4c38b87c89c5"
   }
 ]
