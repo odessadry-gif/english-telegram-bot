@@ -5987,5 +5987,13 @@
     "core": "She ___ to work by bike.",
     "fp": "ada8cb471072b1b92020d7ae95f1c8e4a1b49e8660914fe6a641cf5d0539c156",
     "core_fp": "c27f50b2e77dbe04282c3854543f3320a31dce63a0fcbd3df70ed2bf58e712c8"
+  },
+  {
+    "ts": 1778172520,
+    "kind": "ua_en",
+    "level": "B1",
+    "core": "Скільки у вас часу?",
+    "fp": "5d85cf21ddebaabcb2e6a27693e632a37bc24d188260d634ea2617c3862bcce6",
+    "core_fp": "571e992a00e374f5338f54886643ab0e9529adac4e3f0e16b84df266ea22a3f3"
   }
 ]
