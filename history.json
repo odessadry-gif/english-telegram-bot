@@ -5955,5 +5955,13 @@
     "core": "Чи можна сісти тут?",
     "fp": "c83bc0262311343db68ef851ed2b33d73753ec7e7136a5337323f9f3b58f6758",
     "core_fp": "ef2c3a07f09e39324e712294e3ae3057f55a0412451e17a1ab2ad0caa7aa8277"
+  },
+  {
+    "ts": 1778121589,
+    "kind": "ua_en",
+    "level": "B1",
+    "core": "Де тут аптека?",
+    "fp": "72987c2dd01edaee71d70c1c8c2f142cc4d0bd9b9dba5db2347dfd7e79b09c01",
+    "core_fp": "66fbf2f5e46780f5f06f213ddd57f9f38b494d00d7fcaf035c80822d6578cedf"
   }
 ]
