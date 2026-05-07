@@ -5979,5 +5979,13 @@
     "core": "He ___ the bus every morning.",
     "fp": "d3856e7a7f76969e973801bd1860a332990ea3c41378665e60ef92e735038b86",
     "core_fp": "13e927da12212aa42ee44e49f504f2bdae5e8ac84ae379e44e8615da0066c7c9"
+  },
+  {
+    "ts": 1778162578,
+    "kind": "grammar_gap",
+    "level": "B1",
+    "core": "She ___ to work by bike.",
+    "fp": "ada8cb471072b1b92020d7ae95f1c8e4a1b49e8660914fe6a641cf5d0539c156",
+    "core_fp": "c27f50b2e77dbe04282c3854543f3320a31dce63a0fcbd3df70ed2bf58e712c8"
   }
 ]
