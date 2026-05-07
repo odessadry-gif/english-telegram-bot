@@ -5963,5 +5963,13 @@
     "core": "Де тут аптека?",
     "fp": "72987c2dd01edaee71d70c1c8c2f142cc4d0bd9b9dba5db2347dfd7e79b09c01",
     "core_fp": "66fbf2f5e46780f5f06f213ddd57f9f38b494d00d7fcaf035c80822d6578cedf"
+  },
+  {
+    "ts": 1778134254,
+    "kind": "ua_en",
+    "level": "A2",
+    "core": "У мене питання",
+    "fp": "6ad464f231251f1b5599125fa496d997b067d85b5a79da255f261a4e062fb96e",
+    "core_fp": "570f2dd0c42887620006178cd5863daa100c81fb7f283c4f844503bdbcabb5f4"
   }
 ]
