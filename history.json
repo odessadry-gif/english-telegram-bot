@@ -6003,5 +6003,13 @@
     "core": "Я забронював номер",
     "fp": "233cea96f8f82392eb09f5be1d412ad487dc8e5248851b8f22ad4dd2d1d5b8de",
     "core_fp": "5e9003dde60b74157f8e5cfbff4fe9346d922694f15a488513d214da626edcab"
+  },
+  {
+    "ts": 1778191020,
+    "kind": "grammar_gap",
+    "level": "B1",
+    "core": "The train leaves ___ 9:00.",
+    "fp": "ad7f815f522992adcbc3914a70779038287cd44206a7463a13ffff392a9f98e3",
+    "core_fp": "5742179925790c1417f8421217a6a1b34d3e2f53f6a14d6d99366bb4bf085dab"
   }
 ]
