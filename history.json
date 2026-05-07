@@ -5995,5 +5995,13 @@
     "core": "Скільки у вас часу?",
     "fp": "5d85cf21ddebaabcb2e6a27693e632a37bc24d188260d634ea2617c3862bcce6",
     "core_fp": "571e992a00e374f5338f54886643ab0e9529adac4e3f0e16b84df266ea22a3f3"
+  },
+  {
+    "ts": 1778182924,
+    "kind": "ua_en",
+    "level": "A2",
+    "core": "Я забронював номер",
+    "fp": "233cea96f8f82392eb09f5be1d412ad487dc8e5248851b8f22ad4dd2d1d5b8de",
+    "core_fp": "5e9003dde60b74157f8e5cfbff4fe9346d922694f15a488513d214da626edcab"
   }
 ]
