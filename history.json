@@ -5971,5 +5971,13 @@
     "core": "У мене питання",
     "fp": "6ad464f231251f1b5599125fa496d997b067d85b5a79da255f261a4e062fb96e",
     "core_fp": "570f2dd0c42887620006178cd5863daa100c81fb7f283c4f844503bdbcabb5f4"
+  },
+  {
+    "ts": 1778152120,
+    "kind": "grammar_gap",
+    "level": "A2",
+    "core": "He ___ the bus every morning.",
+    "fp": "d3856e7a7f76969e973801bd1860a332990ea3c41378665e60ef92e735038b86",
+    "core_fp": "13e927da12212aa42ee44e49f504f2bdae5e8ac84ae379e44e8615da0066c7c9"
   }
 ]
