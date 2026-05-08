@@ -41,11 +41,13 @@ MAX_HISTORY = 1500
 RECENT_CORE_LIMIT = 300
 RECENT_PATTERN_LIMIT = 220
 RECENT_RIDDLE_ANSWER_LIMIT = 120
+RECENT_IDIOM_LIMIT = 30
 
 QUIZ_TYPE_WEIGHTS = {
-    "grammar_gap": 50,
-    "ua_en": 30,
-    "riddle": 20,
+    "grammar_gap": 40,
+    "ua_en": 25,
+    "riddle": 15,
+    "idiom_meaning": 20,
 }
 
 LEVEL_WEIGHTS = {
@@ -57,6 +59,59 @@ LEVEL_WEIGHTS = {
 client = None
 
 ARTICLES_RE = re.compile(r"^(a|an|the)\s+", re.IGNORECASE)
+
+IDIOM_BANK = [
+    ("A piece of cake", "Дуже легко, простіше простого"),
+    ("Actions speak louder than words", "Вчинки важливіші за слова"),
+    ("A dime a dozen", "Дуже багато, нічого особливого"),
+    ("All ears", "Уважно слухати"),
+    ("Apple of my eye", "Найдорожча людина"),
+    ("Back to the drawing board", "Почати все спочатку"),
+    ("Barking up the wrong tree", "Шукати не там"),
+    ("Bite the bullet", "Зціпити зуби й зробити неприємне"),
+    ("Break a leg", "Удачі"),
+    ("Burn the midnight oil", "Працювати або вчитися до пізньої ночі"),
+    ("By the skin of one's teeth", "Ледве-ледве"),
+    ("Cry over spilled milk", "Шкодувати про те, що вже сталося"),
+    ("Curiosity killed the cat", "Надмірна цікавість може нашкодити"),
+    ("Cut to the chase", "Перейти до суті"),
+    ("Don't count your chickens before they hatch", "Не радій завчасно"),
+    ("Every cloud has a silver lining", "Немає лиха без добра"),
+    ("Face the music", "Відповісти за наслідки"),
+    ("Fish out of water", "Почуватися не у своїй тарілці"),
+    ("Fit as a fiddle", "Бути у чудовій формі"),
+    ("Get a taste of your own medicine", "Отримати те саме у відповідь"),
+    ("Get cold feet", "Злякатися в останній момент"),
+    ("Give someone the cold shoulder", "Холодно ставитися до когось"),
+    ("Go the extra mile", "Зробити більше, ніж очікують"),
+    ("Hit the nail on the head", "Влучити точно в ціль"),
+    ("In the same boat", "Бути в однаковому становищі"),
+    ("Kill two birds with one stone", "Зробити дві справи одночасно"),
+    ("Let the cat out of the bag", "Видати секрет"),
+    ("Make a long story short", "Коротко кажучи"),
+    ("Miss the boat", "Втратити шанс"),
+    ("Monkey business", "Підозрілі або дурні справи"),
+    ("No pain, no gain", "Без зусиль немає результату"),
+    ("On the ball", "Бути зібраним і швидко реагувати"),
+    ("Once in a blue moon", "Дуже рідко"),
+    ("A piece of my mind", "Відверта критика або думка"),
+    ("Pull someone's leg", "Жартувати з когось"),
+    ("Rain or shine", "За будь-яких обставин"),
+    ("Read between the lines", "Читати між рядків"),
+    ("Rule of thumb", "Практичне правило"),
+    ("Saved by the bell", "Врятований в останній момент"),
+    ("See eye to eye", "Мати однаковий погляд"),
+    ("Sit on the fence", "Не визначатися зі стороною"),
+    ("Speak of the devil", "Легкий на згадку"),
+    ("Spill the beans", "Розповісти секрет"),
+    ("Steal someone's thunder", "Привласнити чужу увагу або ідею"),
+    ("Take it with a grain of salt", "Сприймати критично"),
+    ("Under the weather", "Погано почуватися"),
+    ("Up in the air", "Ще не вирішено"),
+    ("When pigs fly", "Коли рак на горі свисне"),
+    ("You can't judge a book by its cover", "Не суди за зовнішнім виглядом"),
+    ("Zip it", "Замовкни"),
+]
 
 # ========= HARD FILTERS =========
 BANNED_HARD_PHRASES = [
@@ -309,11 +364,9 @@ def extract_json(text: str) -> dict:
 
 
 def pick_quiz_type() -> str:
-    pool = (
-        ["grammar_gap"] * QUIZ_TYPE_WEIGHTS["grammar_gap"] +
-        ["ua_en"] * QUIZ_TYPE_WEIGHTS["ua_en"] +
-        ["riddle"] * QUIZ_TYPE_WEIGHTS["riddle"]
-    )
+    pool = []
+    for quiz_type, weight in QUIZ_TYPE_WEIGHTS.items():
+        pool.extend([quiz_type] * weight)
     return random.choice(pool)
 
 
@@ -322,6 +375,25 @@ def pick_level() -> str:
     for level, weight in LEVEL_WEIGHTS.items():
         pool.extend([level] * weight)
     return random.choice(pool)
+
+
+def generate_idiom_quiz(recent_idioms: set[str]) -> dict:
+    available = [
+        item for item in IDIOM_BANK
+        if normalize_core(item[0]) not in recent_idioms
+    ] or IDIOM_BANK[:]
+
+    idiom, meaning = random.choice(available)
+    distractors = [m for i, m in IDIOM_BANK if i != idiom]
+    options = [meaning, *random.sample(distractors, 3)]
+
+    return {
+        "core": idiom,
+        "question": f"💬\nIDIOM:\n{idiom}\nЩо це означає?",
+        "options": options,
+        "correct": 0,
+        "explanation_uk": f"{idiom} — {meaning}.",
+    }
 
 
 # ========= VALIDATION =========
@@ -357,6 +429,24 @@ def validate_generated(data: dict, quiz_type: str) -> tuple[str, str, list[str],
     normalized_opts = [normalize_core(x) for x in options]
     if len(set(normalized_opts)) != 4:
         raise ValueError("options too similar")
+
+    # ===== idiom_meaning =====
+    if quiz_type == "idiom_meaning":
+        if core not in {idiom for idiom, _ in IDIOM_BANK}:
+            raise ValueError("idiom_meaning: unknown idiom")
+
+        if not question.startswith("💬\nIDIOM:\n"):
+            raise ValueError("idiom_meaning: wrong question format")
+
+        if "Що це означає?" not in question:
+            raise ValueError("idiom_meaning: missing Ukrainian prompt")
+
+        correct_option = options[correct].strip()
+        expected = dict(IDIOM_BANK)[core]
+        if correct_option != expected:
+            raise ValueError("idiom_meaning: wrong correct meaning")
+
+        return core, question, options, correct, explanation, ""
 
     if looks_too_hard(core) or looks_too_hard(question):
         raise ValueError("too hard")
@@ -848,12 +938,14 @@ def main():
         "grammar_gap": set(),
         "ua_en": set(),
         "riddle": set(),
+        "idiom_meaning": set(),
     }
 
     pattern_counts = {
         "grammar_gap": 0,
         "ua_en": 0,
         "riddle": 0,
+        "idiom_meaning": 0,
     }
 
     for h in reversed(history):
@@ -873,6 +965,7 @@ def main():
         "grammar_gap": set(recent_cores(history, RECENT_CORE_LIMIT, "grammar_gap")),
         "ua_en": set(recent_cores(history, RECENT_CORE_LIMIT, "ua_en")),
         "riddle": set(recent_cores(history, RECENT_CORE_LIMIT, "riddle")),
+        "idiom_meaning": set(recent_cores(history, RECENT_IDIOM_LIMIT, "idiom_meaning")),
     }
 
     recent_riddle_answer_set = set(recent_riddle_answers(history, RECENT_RIDDLE_ANSWER_LIMIT))
@@ -882,15 +975,18 @@ def main():
     for _ in range(40):
         try:
             quiz_type = pick_quiz_type()
-            target_level = pick_level()
+            target_level = "B1" if quiz_type == "idiom_meaning" else pick_level()
             avoid_items = recent_cores(history, 40, quiz_type)
             avoid_answers = recent_riddle_answers(history, 40) if quiz_type == "riddle" else []
 
-            data = generate_one(quiz_type, target_level, avoid_items, avoid_answers)
+            if quiz_type == "idiom_meaning":
+                data = generate_idiom_quiz(recent_core_sets["idiom_meaning"])
+            else:
+                data = generate_one(quiz_type, target_level, avoid_items, avoid_answers)
             core, question, options, correct, explanation, answer = validate_generated(data, quiz_type)
 
             cfp = core_fp(quiz_type, core)
-            if cfp in seen_core_fp:
+            if quiz_type != "idiom_meaning" and cfp in seen_core_fp:
                 continue
 
             norm_core = normalize_core(core)
@@ -907,7 +1003,7 @@ def main():
                     continue
 
             fp = fp_for(quiz_type, core, options)
-            if fp in seen_fp:
+            if quiz_type != "idiom_meaning" and fp in seen_fp:
                 continue
 
             shuffled_options, new_correct = shuffle_options_keep_correct(options, correct)
