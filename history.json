@@ -6027,5 +6027,13 @@
     "core": "Можна мені воду?",
     "fp": "b20210d03f8036280b8c7f712264ef433cecc0e6e3abe90b7e3ec52e1b9d2372",
     "core_fp": "6e87d4e10b90623a6653bb135e9f6850e197a9168faf3f594abcf30f4a1ed621"
+  },
+  {
+    "ts": 1778225262,
+    "kind": "ua_en",
+    "level": "B1",
+    "core": "Коли наступний автобус?",
+    "fp": "85b9c3a0a94d9f563e22dae80e99d1aecfae12f8eba4141e134b06042217ae0b",
+    "core_fp": "f18acbb6efc8feb324333c42f33d18aaa194fe1196260a7777c8cced72bad705"
   }
 ]
