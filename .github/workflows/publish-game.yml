@@ -1,0 +1,70 @@
+name: Publish Game Post
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: publish-game-post
+  cancel-in-progress: false
+
+jobs:
+  post:
+    if: github.event_name == 'workflow_dispatch' || contains(github.event.head_commit.message, '[publish game]')
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install deps
+        run: |
+          python -m pip install --upgrade pip
+          pip install openai requests
+
+      - name: Wait for GitHub Pages
+        env:
+          GAME_URL: "https://odessadry-gif.github.io/english-telegram-bot/?tg=1"
+          GAME_PHOTO_URL: "https://odessadry-gif.github.io/english-telegram-bot/assets/game-banner.png"
+        run: |
+          for url in "$GAME_URL" "$GAME_PHOTO_URL"; do
+            echo "Waiting for $url"
+            for i in {1..36}; do
+              if curl -fsSL "$url" >/dev/null; then
+                echo "Ready: $url"
+                break
+              fi
+              if [ "$i" = "36" ]; then
+                echo "Timed out waiting for $url"
+                exit 1
+              fi
+              sleep 10
+            done
+          done
+
+      - name: Publish game post
+        env:
+          BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
+          CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          MODE: game_post
+          GAME_URL: "https://odessadry-gif.github.io/english-telegram-bot/?tg=1"
+          GAME_PHOTO_URL: "https://odessadry-gif.github.io/english-telegram-bot/assets/game-banner.png"
+          GAME_POST_TEXT: |
+            🎮 Твоя англійська краща, ніж здається
+
+            Пройди мінігру на 120 питань
+            і перевір рівень A2-B1.
+
+            Живі фрази, подорожі, кафе та щоденні ситуації.
+        run: |
+          python bot.py
