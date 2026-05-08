@@ -18,6 +18,10 @@ GAME_URL = os.getenv(
     "GAME_URL",
     "https://odessadry-gif.github.io/english-telegram-bot/?tg=1",
 ).strip()
+GAME_PHOTO_URL = os.getenv(
+    "GAME_PHOTO_URL",
+    "https://odessadry-gif.github.io/english-telegram-bot/assets/game-banner.png",
+).strip()
 GAME_BUTTON_TEXT = os.getenv("GAME_BUTTON_TEXT", "🎮 Play").strip()
 GAME_POST_TEXT = os.getenv(
     "GAME_POST_TEXT",
@@ -448,19 +452,33 @@ def send_game_post():
     if not GAME_URL.startswith("https://"):
         raise RuntimeError("GAME_URL must start with https://")
 
+    reply_markup = {
+        "inline_keyboard": [
+            [
+                {
+                    "text": GAME_BUTTON_TEXT,
+                    "url": GAME_URL,
+                }
+            ]
+        ]
+    }
+
+    if GAME_PHOTO_URL:
+        payload = {
+            "chat_id": CHAT_ID,
+            "photo": GAME_PHOTO_URL,
+            "caption": GAME_POST_TEXT,
+            "reply_markup": reply_markup,
+        }
+        tg_api("sendPhoto", payload)
+        return
+
     payload = {
         "chat_id": CHAT_ID,
         "text": GAME_POST_TEXT,
         "disable_web_page_preview": True,
         "reply_markup": {
-            "inline_keyboard": [
-                [
-                    {
-                        "text": GAME_BUTTON_TEXT,
-                        "url": GAME_URL,
-                    }
-                ]
-            ]
+            "inline_keyboard": reply_markup["inline_keyboard"]
         },
     }
     tg_api("sendMessage", payload)

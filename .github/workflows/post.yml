@@ -17,6 +17,10 @@ on:
         description: "Mini game URL"
         required: false
         default: "https://odessadry-gif.github.io/english-telegram-bot/?tg=1"
+      game_photo_url:
+        description: "Photo URL for the game post"
+        required: false
+        default: "https://odessadry-gif.github.io/english-telegram-bot/assets/game-banner.png"
       game_post_text:
         description: "Text for the game post"
         required: false
@@ -56,6 +60,7 @@ jobs:
           CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           MODE: ${{ inputs.mode || 'quiz' }}
           GAME_URL: ${{ inputs.game_url || 'https://odessadry-gif.github.io/english-telegram-bot/?tg=1' }}
+          GAME_PHOTO_URL: ${{ inputs.game_photo_url || 'https://odessadry-gif.github.io/english-telegram-bot/assets/game-banner.png' }}
           GAME_POST_TEXT: ${{ inputs.game_post_text }}
         run: |
           python bot.py
