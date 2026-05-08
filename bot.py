@@ -37,11 +37,11 @@ GAME_POST_TEXT = os.getenv(
 
 # ========= HISTORY =========
 HISTORY_FILE = "history.json"
+IDIOMS_FILE = "idioms.json"
 MAX_HISTORY = 1500
 RECENT_CORE_LIMIT = 300
 RECENT_PATTERN_LIMIT = 220
 RECENT_RIDDLE_ANSWER_LIMIT = 120
-RECENT_IDIOM_LIMIT = 30
 
 QUIZ_TYPE_WEIGHTS = {
     "grammar_gap": 40,
@@ -60,58 +60,7 @@ client = None
 
 ARTICLES_RE = re.compile(r"^(a|an|the)\s+", re.IGNORECASE)
 
-IDIOM_BANK = [
-    ("A piece of cake", "Дуже легко, простіше простого"),
-    ("Actions speak louder than words", "Вчинки важливіші за слова"),
-    ("A dime a dozen", "Дуже багато, нічого особливого"),
-    ("All ears", "Уважно слухати"),
-    ("Apple of my eye", "Найдорожча людина"),
-    ("Back to the drawing board", "Почати все спочатку"),
-    ("Barking up the wrong tree", "Шукати не там"),
-    ("Bite the bullet", "Зціпити зуби й зробити неприємне"),
-    ("Break a leg", "Удачі"),
-    ("Burn the midnight oil", "Працювати або вчитися до пізньої ночі"),
-    ("By the skin of one's teeth", "Ледве-ледве"),
-    ("Cry over spilled milk", "Шкодувати про те, що вже сталося"),
-    ("Curiosity killed the cat", "Надмірна цікавість може нашкодити"),
-    ("Cut to the chase", "Перейти до суті"),
-    ("Don't count your chickens before they hatch", "Не радій завчасно"),
-    ("Every cloud has a silver lining", "Немає лиха без добра"),
-    ("Face the music", "Відповісти за наслідки"),
-    ("Fish out of water", "Почуватися не у своїй тарілці"),
-    ("Fit as a fiddle", "Бути у чудовій формі"),
-    ("Get a taste of your own medicine", "Отримати те саме у відповідь"),
-    ("Get cold feet", "Злякатися в останній момент"),
-    ("Give someone the cold shoulder", "Холодно ставитися до когось"),
-    ("Go the extra mile", "Зробити більше, ніж очікують"),
-    ("Hit the nail on the head", "Влучити точно в ціль"),
-    ("In the same boat", "Бути в однаковому становищі"),
-    ("Kill two birds with one stone", "Зробити дві справи одночасно"),
-    ("Let the cat out of the bag", "Видати секрет"),
-    ("Make a long story short", "Коротко кажучи"),
-    ("Miss the boat", "Втратити шанс"),
-    ("Monkey business", "Підозрілі або дурні справи"),
-    ("No pain, no gain", "Без зусиль немає результату"),
-    ("On the ball", "Бути зібраним і швидко реагувати"),
-    ("Once in a blue moon", "Дуже рідко"),
-    ("A piece of my mind", "Відверта критика або думка"),
-    ("Pull someone's leg", "Жартувати з когось"),
-    ("Rain or shine", "За будь-яких обставин"),
-    ("Read between the lines", "Читати між рядків"),
-    ("Rule of thumb", "Практичне правило"),
-    ("Saved by the bell", "Врятований в останній момент"),
-    ("See eye to eye", "Мати однаковий погляд"),
-    ("Sit on the fence", "Не визначатися зі стороною"),
-    ("Speak of the devil", "Легкий на згадку"),
-    ("Spill the beans", "Розповісти секрет"),
-    ("Steal someone's thunder", "Привласнити чужу увагу або ідею"),
-    ("Take it with a grain of salt", "Сприймати критично"),
-    ("Under the weather", "Погано почуватися"),
-    ("Up in the air", "Ще не вирішено"),
-    ("When pigs fly", "Коли рак на горі свисне"),
-    ("You can't judge a book by its cover", "Не суди за зовнішнім виглядом"),
-    ("Zip it", "Замовкни"),
-]
+idiom_bank_cache = None
 
 # ========= HARD FILTERS =========
 BANNED_HARD_PHRASES = [
@@ -295,6 +244,65 @@ def save_history(items: list[dict]) -> None:
         json.dump(items, f, ensure_ascii=False, indent=2)
 
 
+def load_idiom_bank() -> list[dict]:
+    global idiom_bank_cache
+
+    if idiom_bank_cache is not None:
+        return idiom_bank_cache
+
+    with open(IDIOMS_FILE, "r", encoding="utf-8") as f:
+        raw = json.load(f)
+
+    if not isinstance(raw, list):
+        raise ValueError("idioms.json must contain a list")
+
+    out = []
+    seen = set()
+
+    for item in raw:
+        if not isinstance(item, dict):
+            raise ValueError("Each idiom item must be an object")
+
+        idiom = _norm_spaces(str(item.get("idiom", "")))
+        meaning = _norm_spaces(str(item.get("meaning_uk", "")))
+        key = normalize_core(idiom)
+
+        if not idiom or not meaning:
+            raise ValueError("Each idiom needs idiom and meaning_uk")
+        if key in seen:
+            raise ValueError(f"Duplicate idiom in idioms.json: {idiom}")
+
+        seen.add(key)
+        out.append({"idiom": idiom, "meaning_uk": meaning, "key": key})
+
+    if len(out) < 4:
+        raise ValueError("idioms.json must contain at least 4 idioms")
+
+    idiom_bank_cache = out
+    return out
+
+
+def idiom_cycle_used(history: list[dict], idiom_keys: set[str]) -> set[str]:
+    used = set()
+
+    for item in reversed(history or []):
+        if item.get("kind") != "idiom_meaning":
+            continue
+
+        key = normalize_core(item.get("core", ""))
+        if not key or key not in idiom_keys:
+            continue
+
+        if key in used:
+            continue
+
+        used.add(key)
+        if len(used) >= len(idiom_keys):
+            return set()
+
+    return used
+
+
 def recent_cores(history: list[dict], n: int, kind: str | None = None) -> list[str]:
     out = []
     seen = set()
@@ -377,14 +385,20 @@ def pick_level() -> str:
     return random.choice(pool)
 
 
-def generate_idiom_quiz(recent_idioms: set[str]) -> dict:
+def generate_idiom_quiz(used_idioms: set[str]) -> dict:
+    idiom_bank = load_idiom_bank()
     available = [
-        item for item in IDIOM_BANK
-        if normalize_core(item[0]) not in recent_idioms
-    ] or IDIOM_BANK[:]
+        item for item in idiom_bank
+        if item["key"] not in used_idioms
+    ] or idiom_bank[:]
 
-    idiom, meaning = random.choice(available)
-    distractors = [m for i, m in IDIOM_BANK if i != idiom]
+    item = random.choice(available)
+    idiom = item["idiom"]
+    meaning = item["meaning_uk"]
+    distractors = [
+        other["meaning_uk"] for other in idiom_bank
+        if other["key"] != item["key"]
+    ]
     options = [meaning, *random.sample(distractors, 3)]
 
     return {
@@ -432,7 +446,8 @@ def validate_generated(data: dict, quiz_type: str) -> tuple[str, str, list[str],
 
     # ===== idiom_meaning =====
     if quiz_type == "idiom_meaning":
-        if core not in {idiom for idiom, _ in IDIOM_BANK}:
+        idioms = {item["idiom"]: item["meaning_uk"] for item in load_idiom_bank()}
+        if core not in idioms:
             raise ValueError("idiom_meaning: unknown idiom")
 
         if not question.startswith("💬\nIDIOM:\n"):
@@ -442,7 +457,7 @@ def validate_generated(data: dict, quiz_type: str) -> tuple[str, str, list[str],
             raise ValueError("idiom_meaning: missing Ukrainian prompt")
 
         correct_option = options[correct].strip()
-        expected = dict(IDIOM_BANK)[core]
+        expected = idioms[core]
         if correct_option != expected:
             raise ValueError("idiom_meaning: wrong correct meaning")
 
@@ -965,8 +980,10 @@ def main():
         "grammar_gap": set(recent_cores(history, RECENT_CORE_LIMIT, "grammar_gap")),
         "ua_en": set(recent_cores(history, RECENT_CORE_LIMIT, "ua_en")),
         "riddle": set(recent_cores(history, RECENT_CORE_LIMIT, "riddle")),
-        "idiom_meaning": set(recent_cores(history, RECENT_IDIOM_LIMIT, "idiom_meaning")),
+        "idiom_meaning": set(),
     }
+    idiom_keys = {item["key"] for item in load_idiom_bank()}
+    idiom_used_this_cycle = idiom_cycle_used(history, idiom_keys)
 
     recent_riddle_answer_set = set(recent_riddle_answers(history, RECENT_RIDDLE_ANSWER_LIMIT))
 
@@ -980,7 +997,7 @@ def main():
             avoid_answers = recent_riddle_answers(history, 40) if quiz_type == "riddle" else []
 
             if quiz_type == "idiom_meaning":
-                data = generate_idiom_quiz(recent_core_sets["idiom_meaning"])
+                data = generate_idiom_quiz(idiom_used_this_cycle)
             else:
                 data = generate_one(quiz_type, target_level, avoid_items, avoid_answers)
             core, question, options, correct, explanation, answer = validate_generated(data, quiz_type)
