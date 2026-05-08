@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily English Mini Game</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--ink:#0d0d0d;--paper:#f7f4ea;--acid:#3dff6e;--pink:#ff3ca0;--blue:#1947ff;--yellow:#ffe234;--muted:#cfcabe}
+body{min-height:100vh;background:linear-gradient(135deg,#ece7d8 0%,#b8b1a4 100%);font-family:"Space Mono",monospace;color:var(--ink);overflow-x:hidden}
+.stage{min-height:100vh;display:grid;grid-template-columns:minmax(320px,520px) minmax(360px,440px);align-items:center;justify-content:center;gap:54px;padding:42px}
+.copy{display:flex;flex-direction:column;gap:24px}
+.eyebrow{font-family:"Press Start 2P";font-size:11px;background:var(--acid);border:3px solid var(--ink);width:max-content;padding:11px 14px;box-shadow:6px 6px 0 var(--ink)}
+h1{font-family:"Press Start 2P";font-size:42px;line-height:1.35;letter-spacing:0;color:var(--ink);max-width:520px}
+.lead{font-size:22px;line-height:1.6;max-width:480px}
+.cta-row{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.cta{font-family:"Press Start 2P";font-size:10px;background:var(--ink);color:var(--paper);border:3px solid var(--ink);padding:18px 22px;box-shadow:6px 6px 0 var(--acid)}
+.tag{font-family:"Press Start 2P";font-size:8px;background:var(--paper);border:2px solid var(--ink);padding:12px 14px}
+.phone{width:390px;height:760px;background:#111;border:12px solid #111;border-radius:54px;padding:16px;box-shadow:24px 30px 0 rgba(13,13,13,.22),0 0 0 4px #000;position:relative}
+.phone:before{content:"";position:absolute;top:14px;left:50%;transform:translateX(-50%);width:118px;height:28px;background:#050505;border-radius:20px;z-index:5}
+.screen{height:100%;border-radius:38px;background:#c8c6bf;overflow-y:auto;overflow-x:hidden;padding:18px 14px 20px;display:flex;flex-direction:column;gap:10px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.screen::-webkit-scrollbar{display:none}
+.top-bar{background:var(--ink);border:3px solid var(--ink);border-bottom:5px solid var(--acid);display:flex;align-items:center;justify-content:space-between;padding:18px 16px 14px;margin-top:6px}
+.channel{font-family:"Press Start 2P";font-size:7px;line-height:1.8;color:var(--acid)}
+.score{font-family:"Press Start 2P";font-size:9px;background:var(--acid);border:2px solid var(--ink);padding:8px 10px}
+.card{background:var(--paper);border:3px solid var(--ink);padding:14px}
+.meta{display:flex;justify-content:space-between;align-items:center;margin-bottom:9px}
+.mini{font-family:"Press Start 2P";font-size:7px;color:#6e6a62;line-height:1.7}
+.track{height:14px;background:var(--muted);border:2px solid var(--ink)}
+.fill{height:100%;background:var(--acid);width:10%;transition:width .35s steps(10)}
+.word-card{padding:24px 18px 20px;min-height:154px}
+.cat{font-family:"Press Start 2P";font-size:6px;background:var(--yellow);border:2px solid var(--ink);display:inline-block;padding:7px 10px;margin-bottom:16px}
+.ua{font-family:"Press Start 2P";font-size:25px;line-height:1.45;word-break:break-word}
+.hint{font-size:12px;color:#777;margin-top:10px}
+.answers{display:grid;grid-template-columns:1fr 1fr;background:var(--ink);gap:3px;border:3px solid var(--ink)}
+.ans{min-height:92px;background:var(--paper);border:0;text-align:left;padding:16px 12px;display:flex;flex-direction:column;gap:10px;cursor:pointer}
+.ans small{font-family:"Press Start 2P";font-size:7px;color:#aaa}
+.ans strong{font-family:"Press Start 2P";font-size:12px;line-height:1.55;color:var(--ink)}
+.ans.correct{background:var(--ink)}.ans.correct small{color:var(--acid)}.ans.correct strong{color:var(--paper)}
+.ans.wrong{background:var(--pink)}.ans.dimmed{opacity:.24;pointer-events:none}
+.feedback{display:none;border:3px solid var(--ink);padding:13px 14px;font-family:"Press Start 2P";font-size:7px;line-height:1.9;gap:12px;align-items:center}
+.feedback.ok{display:flex;background:var(--acid)}.feedback.no{display:flex;background:var(--pink)}
+.next{font-family:"Press Start 2P";font-size:10px;background:var(--ink);color:var(--paper);border:3px solid var(--ink);padding:18px;cursor:pointer}
+.pills{display:flex;gap:10px;flex-wrap:wrap}.pill{font-family:"Press Start 2P";font-size:6px;background:var(--paper);border:2px solid var(--ink);padding:8px}.pill.green{background:var(--acid)}.pill.yellow{background:var(--yellow)}
+.finish{display:none;height:100%;align-items:center;justify-content:center;text-align:center;flex-direction:column;gap:22px}.finish.show{display:flex}
+.fin-title{font-family:"Press Start 2P";font-size:24px;line-height:1.55}.fin-score{font-family:"Press Start 2P";font-size:38px;background:var(--acid);border:3px solid var(--ink);padding:20px 26px}.fin-sub{font-size:14px;line-height:1.7;max-width:270px}
+@media(max-width:900px){.stage{grid-template-columns:1fr;gap:28px;padding:24px}.copy{text-align:center;align-items:center}h1{font-size:28px}.lead{font-size:18px}.phone{width:min(390px,94vw);height:min(730px,82vh);margin:auto}}
+body.tg-app{min-height:100vh;min-height:100dvh;background:#c8c6bf}
+body.tg-app .stage{display:block;min-height:100vh;min-height:100dvh;padding:0}
+body.tg-app .copy{display:none}
+body.tg-app .phone{width:100%;height:100vh;height:100dvh;margin:0;padding:0;border:0;border-radius:0;box-shadow:none;background:#c8c6bf}
+body.tg-app .phone:before{display:none}
+body.tg-app .screen{border-radius:0;padding:12px;min-height:100vh;min-height:100dvh}
+body.tg-app .top-bar{margin-top:0}
+</style>
+</head>
+<body>
+<main class="stage">
+  <section class="copy">
+    <div class="eyebrow">DAILY ENGLISH</div>
+    <h1>2 хвилини англійської щодня</h1>
+    <p class="lead">Мінігра з живими фразами A2-B1. Обирай значення, збирай streak і прокачуй реальний English без нудної теорії.</p>
+    <div class="cta-row">
+      <div class="cta">ГРАЙ У ТЕЛЕФОНІ</div>
+      <div class="tag">@Official_english_every_day</div>
+    </div>
+  </section>
+
+  <section class="phone" aria-label="Phone preview">
+    <div class="screen">
+      <div id="game">
+        <div class="top-bar">
+          <div class="channel">@Official_english<br>_every_day</div>
+          <div class="score" id="score">✓ 0</div>
+        </div>
+        <div class="card">
+          <div class="meta">
+            <span class="mini" id="qLabel">Питання 1 / 120</span>
+            <span class="mini" id="streak">🔥 0</span>
+          </div>
+          <div class="track"><div class="fill" id="progress"></div></div>
+        </div>
+        <div class="card word-card">
+          <div class="cat" id="cat">DAILY LIFE</div>
+          <div class="ua" id="ua">Квиток</div>
+          <div class="hint">Оберіть правильне значення →</div>
+        </div>
+        <div class="answers" id="answers"></div>
+        <div class="feedback" id="feedback"><b id="fbIcon">★</b><span id="fbText"></span></div>
+        <button class="next" id="nextBtn" type="button">ДАЛІ →</button>
+        <div class="pills">
+          <span class="pill green">A2-B1</span>
+          <span class="pill yellow">70/30 MIX</span>
+          <span class="pill">120 Q</span>
+        </div>
+      </div>
+      <div class="finish" id="finish">
+        <div class="fin-title">GAME<br>OVER!</div>
+        <div class="fin-score" id="finScore">0/120</div>
+        <div class="fin-sub" id="finSub">Практикуйся щодня — і результат ростиме.</div>
+        <button class="next" type="button" id="restartBtn">ГРАТИ ЗНОВУ</button>
+      </div>
+    </div>
+  </section>
+</main>
+
+<script>
+const makePool=rows=>rows.trim().split("\n").map(line=>{
+  const [ua,cat,ans,...wrong]=line.split("|").map(x=>x.trim());
+  return {ua,cat,ans,opts:[ans,...wrong]};
+});
+
+const tg=window.Telegram?.WebApp;
+const isTelegramMiniApp=Boolean(tg?.initData);
+if(isTelegramMiniApp){
+  document.body.classList.add("tg-app");
+  tg.ready();
+  tg.expand();
+  tg.MainButton?.hide();
+}
+
+const wordSentencePool=makePool(`
+I need to check in at the hotel.|TRAVEL|Мені потрібно зареєструватися в готелі|Мені потрібно виселитися з готелю|Я хочу замовити вечерю|Я шукаю автобус
+Could you split the bill?|CAFE|Можете розділити рахунок?|Можете принести меню?|Можете закрити двері?|Можете викликати таксі?
+I missed my train.|TRAVEL|Я пропустив свій потяг|Я знайшов свій квиток|Я чекаю на каву|Я замовив кімнату
+She sounds upset.|SOCIAL|Вона звучить засмучено|Вона виглядає голодною|Вона працює швидко|Вона живе поруч
+Can I get a refund?|PROBLEM|Можна отримати повернення коштів?|Можна отримати новий пароль?|Можна взяти парасольку?|Можна залишити чайові?
+I am looking for the nearest pharmacy.|DAILY|Я шукаю найближчу аптеку|Я шукаю дешевий готель|Я купую квиток|Я бронюю столик
+Let's meet after work.|SOCIAL|Зустріньмося після роботи|Працюймо швидше|Почекаймо на поїзд|Замовмо сніданок
+The order is taking too long.|CAFE|Замовлення готують занадто довго|Рахунок занадто дешевий|Кава занадто холодна|Офіціант дуже зайнятий
+I left my wallet in the taxi.|PROBLEM|Я залишив гаманець у таксі|Я оплатив таксі карткою|Я замовив таксі додому|Я загубив ключі в готелі
+We should book tickets in advance.|TRAVEL|Нам варто забронювати квитки заздалегідь|Нам варто скасувати поїздку|Нам треба купити воду|Нам треба запитати дорогу
+The meeting was moved to Friday.|WORK|Зустріч перенесли на п'ятницю|Зустріч закінчилась раніше|Зустріч була онлайн|Зустріч скасували назавжди
+Could you speak a bit slower?|HELP|Можете говорити трохи повільніше?|Можете написати швидше?|Можете прийти раніше?|Можете оплатити зараз?
+I need a receipt, please.|CAFE|Мені потрібен чек, будь ласка|Мені потрібен ключ|Мені потрібна знижка|Мені потрібен автобус
+The flight was delayed.|TRAVEL|Рейс затримали|Рейс скасували назавжди|Рейс прибув раніше|Рейс був дешевий
+I have a reservation.|HOTEL|У мене є бронювання|У мене є помилка|У мене є подарунок|У мене є зустріч
+Can I pay by card?|CAFE|Можна оплатити карткою?|Можна сісти біля вікна?|Можна замовити таксі?|Можна відкрити двері?
+I need to charge my phone.|DAILY|Мені потрібно зарядити телефон|Мені потрібно змінити номер|Мені потрібно купити квиток|Мені потрібно забрати каву
+The room is too noisy.|HOTEL|У кімнаті занадто шумно|Кімната дуже чиста|Кімната коштує мало|Кімната поруч з кафе
+I got lost.|PROBLEM|Я загубився|Я виграв|Я заплатив|Я поспав
+Can you recommend a good cafe?|CAFE|Можете порадити хороше кафе?|Можете закрити кафе?|Можете купити квиток?|Можете знайти мій багаж?
+I am running late.|DAILY|Я запізнююсь|Я бігаю швидко|Я йду додому|Я дуже голодний
+This seat is taken.|TRAVEL|Це місце зайняте|Це місце дешеве|Цей квиток старий|Цей стіл чистий
+I need a one-way ticket.|TRAVEL|Мені потрібен квиток в один бік|Мені потрібен зворотний дзвінок|Мені потрібна одна кава|Мені потрібен ключ
+The soup is too salty.|CAFE|Суп занадто солоний|Суп занадто холодний|Суп дуже дешевий|Суп уже оплачений
+Could we sit outside?|CAFE|Можемо сісти надворі?|Можемо оплатити карткою?|Можемо прийти завтра?|Можемо забрати багаж?
+I need some fresh air.|DAILY|Мені потрібно трохи свіжого повітря|Мені потрібна нова адреса|Мені потрібен дешевий готель|Мені потрібен чек
+What time does it close?|DAILY|О котрій це закривається?|О котрій це відкрили?|Скільки це коштує?|Де це знаходиться?
+I am not sure yet.|SOCIAL|Я ще не впевнений|Я вже готовий|Я не голодний|Я не вдома
+Could you send me the address?|SOCIAL|Можете надіслати мені адресу?|Можете оплатити рахунок?|Можете принести меню?|Можете закрити вікно?
+I need to cancel my booking.|TRAVEL|Мені потрібно скасувати бронювання|Мені потрібно підтвердити пароль|Мені потрібно замовити десерт|Мені потрібно купити воду
+The line is too long.|DAILY|Черга занадто довга|Лінія дуже пряма|Рахунок занадто великий|Дорога дуже тиха
+I need a table for two.|CAFE|Мені потрібен столик на двох|Мені потрібен квиток на двох|Мені потрібна кімната на ніч|Мені потрібен стіл для роботи
+Can I have it to go?|CAFE|Можна з собою?|Можна тут сісти?|Можна без цукру?|Можна дешевше?
+I am allergic to nuts.|CAFE|У мене алергія на горіхи|Я люблю горіхи|Я продаю горіхи|Я загубив горіхи
+This is not what I ordered.|CAFE|Це не те, що я замовив|Це було дуже смачно|Це мій старий чек|Це моя кімната
+The train leaves in ten minutes.|TRAVEL|Потяг вирушає за десять хвилин|Потяг прибув учора|Потяг коштує десять гривень|Потяг зупинився назавжди
+I need to change my ticket.|TRAVEL|Мені потрібно змінити квиток|Мені потрібно купити каву|Мені потрібно знайти аптеку|Мені потрібно відкрити рахунок
+Can you help me with my luggage?|TRAVEL|Можете допомогти з багажем?|Можете принести рахунок?|Можете знайти меню?|Можете закрити двері?
+I lost my passport.|PROBLEM|Я загубив паспорт|Я знайшов паспорт|Я купив квиток|Я оплатив готель
+Could you repeat that?|HELP|Можете повторити це?|Можете видалити це?|Можете оплатити це?|Можете приготувати це?
+I am trying to find the station.|TRAVEL|Я намагаюся знайти станцію|Я намагаюся замовити суп|Я намагаюся купити сорочку|Я намагаюся закрити вікно
+The coffee tastes bitter.|CAFE|Кава на смак гірка|Кава виглядає дорого|Кава звучить голосно|Кава стоїть біля дверей
+Do you have any recommendations?|SOCIAL|У вас є рекомендації?|У вас є проблеми?|У вас є багаж?|У вас є пароль?
+I need to make a quick call.|DAILY|Мені потрібно швидко подзвонити|Мені потрібно швидко поїсти|Мені потрібно швидко спати|Мені потрібно швидко заплатити
+I will be there in five minutes.|SOCIAL|Я буду там за п'ять хвилин|Я був там учора|Я живу там п'ять років|Я працюю там щодня
+Can we reschedule?|WORK|Можемо перенести зустріч?|Можемо відкрити магазин?|Можемо замовити каву?|Можемо сісти біля вікна?
+I need to print this document.|WORK|Мені потрібно роздрукувати цей документ|Мені потрібно перекласти меню|Мені потрібно знайти вокзал|Мені потрібно скасувати рейс
+The deadline is tomorrow.|WORK|Дедлайн завтра|Зустріч учора|Рейс сьогодні|Квиток дешевий
+I forgot my password.|PROBLEM|Я забув пароль|Я знайшов пароль|Я змінив готель|Я оплатив таксі
+Can you turn it down?|DAILY|Можете зробити тихіше?|Можете зробити дорожче?|Можете відкрити рахунок?|Можете замовити десерт?
+I am waiting for a friend.|SOCIAL|Я чекаю друга|Я шукаю друга|Я допомагаю другу|Я телефоную другу
+It depends on the weather.|DAILY|Це залежить від погоди|Це знаходиться під погодою|Це дорожче через квиток|Це звучить як проблема
+I need something cheaper.|SHOPPING|Мені потрібно щось дешевше|Мені потрібно щось голосніше|Мені потрібно щось холодніше|Мені потрібно щось важче
+Do you have this in a smaller size?|SHOPPING|У вас є це меншого розміру?|У вас є це ближче до вокзалу?|У вас є це без квитка?|У вас є це після роботи?
+Can I try it on?|SHOPPING|Можна приміряти?|Можна оплатити?|Можна забронювати?|Можна скасувати?
+I need to return this item.|SHOPPING|Мені потрібно повернути цей товар|Мені потрібно забрати цей автобус|Мені потрібно відкрити цей файл|Мені потрібно замовити цей суп
+The battery is almost dead.|DAILY|Батарея майже розряджена|Батарея дуже дорога|Батарея нова|Батарея у валізі
+I am out of cash.|DAILY|У мене закінчилась готівка|Я вийшов з кафе|Я біля каси|Я забув пароль
+Could you take a photo of us?|TRAVEL|Можете сфотографувати нас?|Можете принести нам чек?|Можете знайти наш багаж?|Можете забронювати нам номер?
+I need directions to the museum.|TRAVEL|Мені потрібен маршрут до музею|Мені потрібен квиток з музею|Мені потрібна знижка в кафе|Мені потрібен пароль від Wi-Fi
+Is breakfast included?|HOTEL|Сніданок включено?|Сніданок готовий?|Сніданок скасували?|Сніданок занадто дорогий?
+The Wi-Fi is not working.|PROBLEM|Wi-Fi не працює|Wi-Fi дуже швидкий|Wi-Fi вже оплачений|Wi-Fi у валізі
+Can I leave my bags here?|TRAVEL|Можна залишити тут сумки?|Можна купити тут сумки?|Можна відкрити тут сумки?|Можна оплатити тут сумки?
+I am here for the interview.|WORK|Я тут на співбесіду|Я тут на вечерю|Я тут на рейс|Я тут на знижку
+Could you email me the details?|WORK|Можете надіслати деталі на email?|Можете купити мені квиток?|Можете принести мені каву?|Можете відкрити мені кімнату?
+I need more time.|DAILY|Мені потрібно більше часу|Мені потрібно більше солі|Мені потрібно більше багажу|Мені потрібно більше шуму
+That makes sense.|SOCIAL|Це має сенс|Це коштує дорого|Це звучить голосно|Це виглядає старим
+I disagree with that.|SOCIAL|Я з цим не згоден|Я це не розумію|Я це вже купив|Я це загубив
+Can you give me an example?|HELP|Можете навести приклад?|Можете дати мені ключ?|Можете принести рахунок?|Можете знайти аптеку?
+I need to think about it.|SOCIAL|Мені потрібно подумати про це|Мені потрібно заплатити за це|Мені потрібно забути це|Мені потрібно повторити це
+I am not feeling well.|HEALTH|Я погано почуваюся|Я добре виглядаю|Я швидко працюю|Я чекаю друга
+I need a doctor.|HEALTH|Мені потрібен лікар|Мені потрібен водій|Мені потрібен офіціант|Мені потрібен учитель
+My stomach hurts.|HEALTH|У мене болить живіт|У мене болить квиток|У мене новий гаманець|У мене холодна кава
+Could you write it down?|HELP|Можете це записати?|Можете це з'їсти?|Можете це оплатити?|Можете це забронювати?
+I need to catch a bus.|TRAVEL|Мені потрібно встигнути на автобус|Мені потрібно зловити м'яч|Мені потрібно купити каву|Мені потрібно знайти чек
+The bus stop is nearby.|TRAVEL|Автобусна зупинка поруч|Автобусна зупинка дорога|Автобусна зупинка закрита|Автобусна зупинка у меню
+I changed my mind.|SOCIAL|Я передумав|Я змінив готель|Я загубив думку|Я відкрив рахунок
+This app is useful.|DAILY|Цей додаток корисний|Цей додаток дорогий|Цей додаток загубився|Цей додаток готує каву
+I need to update my profile.|DAILY|Мені потрібно оновити профіль|Мені потрібно видалити багаж|Мені потрібно оплатити суп|Мені потрібно знайти аптеку
+The price went up.|SHOPPING|Ціна піднялася|Ціна впала на підлогу|Ціна була смачна|Ціна загубилась
+I found a better option.|DAILY|Я знайшов кращий варіант|Я загубив кращий квиток|Я купив дешевший суп|Я відкрив новий пароль
+Can we talk later?|SOCIAL|Можемо поговорити пізніше?|Можемо оплатити пізніше?|Можемо поїхати швидше?|Можемо мовчати зараз?
+I have to leave soon.|SOCIAL|Мені скоро треба йти|Мені треба залишити сумку|Мені треба приїхати вчора|Мені треба відкрити кафе
+The place was crowded.|DAILY|Місце було переповнене|Місце було закрите назавжди|Місце було дуже дешеве|Місце було під дощем
+I need to get some rest.|HEALTH|Мені потрібно трохи відпочити|Мені потрібно купити ліки|Мені потрібно знайти ресторан|Мені потрібно оплатити квиток
+The service was excellent.|CAFE|Обслуговування було відмінне|Сервіс був закритий|Рахунок був загублений|Меню було занадто гостре
+Could you show me the way?|TRAVEL|Можете показати мені дорогу?|Можете показати мені рахунок?|Можете приготувати мені вечерю?|Можете змінити мій пароль?
+I usually take the bus to work.|DAILY|Я зазвичай їжджу на роботу автобусом|Я зазвичай сплю в автобусі|Я зазвичай купую автобус|Я зазвичай працюю в кафе
+This is harder than I expected.|DAILY|Це складніше, ніж я очікував|Це дешевше, ніж я очікував|Це ближче, ніж я очікував|Це смачніше, ніж я очікував
+Can you explain the difference?|HELP|Можете пояснити різницю?|Можете оплатити різницю?|Можете забути різницю?|Можете замовити різницю?
+`);
+
+const phrasePool=makePool(`
+Spill the beans|IDIOM|Розповісти секрет|Розлити каву|Почати сварку|Забути відповідь
+Steal someone's thunder|IDIOM|Привласнити чужу увагу|Вкрасти парасольку|Сказати правду|Заспокоїти друга
+Take it with a grain of salt|IDIOM|Не вірити всьому одразу|Додати сіль|Погодитися швидко|Зробити помилку
+Under the weather|IDIOM|Погано почуватися|Бути надворі|Любити дощ|Запізнитися
+Up in the air|IDIOM|Ще не вирішено|Летіти літаком|Бути щасливим|Говорити голосно
+When pigs fly|IDIOM|Майже ніколи|Дуже скоро|Після обіду|Без проблем
+You can't judge a book by its cover|IDIOM|Не суди за виглядом|Читай більше книг|Закрий обкладинку|Обери красиве
+Zip it|IDIOM|Замовкни|Застібни куртку|Відкрий файл|Пиши швидше
+Break the ice|IDIOM|Почати розмову|Розбити лід|Заморозити воду|Закінчити зустріч
+A piece of cake|IDIOM|Дуже легко|Шматок торта|Дуже дорого|Погана ідея
+Hit the road|IDIOM|Вирушати в дорогу|Вдарити дорогу|Зупинити машину|Повернутися додому
+Call it a day|IDIOM|Закінчити роботу на сьогодні|Подзвонити вдень|Назвати день|Почати заново
+Keep an eye on it|IDIOM|Приглядати за цим|Тримати око|Закрити очі|Знайти це випадково
+Let me know|PHRASE|Дай мені знати|Дозволь мені піти|Залиш мене самого|Навчи мене зараз
+No worries|PHRASE|Без проблем|Не хвилюй мене|Немає новин|Не працює
+Sounds good|PHRASE|Звучить добре|Говори голосно|Це поганий звук|Послухай уважно
+I'm on my way|PHRASE|Я вже в дорозі|Я біля дому|Я загубив шлях|Я чекаю на тебе
+Hang on a second|PHRASE|Зачекай секунду|Повіс це вище|Закрий вікно|Поклади слухавку
+It's up to you|PHRASE|Це залежить від тебе|Це над тобою|Це дуже важко|Це вже готово
+Make up your mind|IDIOM|Визначся|Зроби макіяж|Зміни пароль|Запам'ятай адресу
+Out of the blue|IDIOM|Раптово|Із синього кольору|Поза домом|Без квитка
+Once in a while|IDIOM|Час від часу|Один раз у черзі|Раз на хвилину|Ніколи
+Better late than never|IDIOM|Краще пізно, ніж ніколи|Краще рано, ніж дорого|Краще швидко, ніж голосно|Краще вдома, ніж тут
+The sooner the better|PHRASE|Чим швидше, тим краще|Чим дорожче, тим краще|Чим пізніше, тим краще|Чим тихіше, тим краще
+I changed my mind|PHRASE|Я передумав|Я змінив голову|Я забув пароль|Я знайшов квиток
+Take your time|PHRASE|Не поспішай|Забери годинник|Плати вчасно|Приходь раніше
+It rings a bell|IDIOM|Це щось нагадує|Дзвонить дзвінок|Це дуже голосно|Це не працює
+Cut to the chase|IDIOM|Перейти до суті|Різати погоню|Бігти швидше|Закінчити розмову
+Keep it simple|PHRASE|Зроби простіше|Тримай це важким|Залиш це дорогим|Сховай це
+Fair enough|PHRASE|Справедливо|Досить ярмарку|Надто дешево|Не чесно взагалі
+`);
+let Qs=[],cur=0,score=0,streak=0,answered=false;
+const $=id=>document.getElementById(id);
+const shuffle=a=>[...a].sort(()=>Math.random()-0.5);
+const buildRound=()=>shuffle([...wordSentencePool,...phrasePool]);
+
+function render(){
+  answered=false;
+  const q=Qs[cur];
+  $("progress").style.width=`${((cur+1)/Qs.length)*100}%`;
+  $("qLabel").textContent=`Питання ${cur+1} / ${Qs.length}`;
+  $("cat").textContent=q.cat;
+  $("ua").textContent=q.ua;
+  $("feedback").className="feedback";
+  $("answers").innerHTML="";
+  shuffle(q.opts).forEach((opt,i)=>{
+    const b=document.createElement("button");
+    b.className="ans";
+    b.innerHTML=`<small>${["A","B","C","D"][i]}</small><strong>${opt}</strong>`;
+    b.onclick=()=>pick(opt,q.ans,b);
+    $("answers").appendChild(b);
+  });
+}
+function pick(chosen,correct,btn){
+  if(answered)return; answered=true;
+  const buttons=[...document.querySelectorAll(".ans")];
+  if(chosen===correct){
+    score++; streak++;
+    btn.classList.add("correct");
+    $("fbIcon").textContent="★";
+    $("fbText").textContent=`CORRECT! "${correct}"`;
+    $("feedback").className="feedback ok";
+  }else{
+    streak=0;
+    btn.classList.add("wrong");
+    buttons.forEach(b=>{if(b.innerText.includes(correct))b.classList.add("correct")});
+    $("fbIcon").textContent="✗";
+    $("fbText").textContent=`Правильно: "${correct}"`;
+    $("feedback").className="feedback no";
+  }
+  buttons.forEach(b=>{if(!b.classList.contains("correct")&&!b.classList.contains("wrong"))b.classList.add("dimmed")});
+  $("score").textContent=`✓ ${score}`;
+  $("streak").textContent=`🔥 ${streak}`;
+}
+function next(){
+  cur++;
+  if(cur>=Qs.length){
+    $("game").style.display="none";
+    $("finish").className="finish show";
+    $("finScore").textContent=`${score}/${Qs.length}`;
+    $("finSub").textContent=score>=8?"Ти на хвилі. Заходь у канал за новим квізом.":"Ще трохи практики — і буде краще.";
+  }else render();
+}
+function restart(){
+  cur=0;score=0;streak=0;
+  Qs=buildRound();
+  $("game").style.display="block";
+  $("finish").className="finish";
+  $("score").textContent="✓ 0";
+  $("streak").textContent="🔥 0";
+  render();
+}
+$("nextBtn").onclick=next;
+$("restartBtn").onclick=restart;
+Qs=buildRound();
+render();
+</script>
+</body>
+</html>
