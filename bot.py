@@ -13,6 +13,23 @@ TOKEN = os.getenv("BOT_TOKEN")
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 CHAT_ID = os.getenv("CHAT_ID", "-1003674761753")
 MODEL = os.getenv("OPENAI_MODEL", "gpt-5-mini")
+MODE = os.getenv("MODE", "quiz").strip().lower()
+GAME_URL = os.getenv(
+    "GAME_URL",
+    "https://odessadry-gif.github.io/english-telegram-bot/?tg=1",
+).strip()
+GAME_BUTTON_TEXT = os.getenv("GAME_BUTTON_TEXT", "🎮 Play").strip()
+GAME_POST_TEXT = os.getenv(
+    "GAME_POST_TEXT",
+    (
+        "🎮 Перевір свій English\n\n"
+        "120 коротких питань A2-B1:\n"
+        "• живі фрази\n"
+        "• кафе, подорожі, щоденні ситуації\n"
+        "• трохи ідіом\n\n"
+        "2 хвилини практики щодня."
+    ),
+).replace("\\n", "\n").strip()
 
 # ========= HISTORY =========
 HISTORY_FILE = "history.json"
@@ -427,6 +444,28 @@ def send_quiz_poll(question: str, options: list[str], correct_id: int, explanati
     tg_api("sendPoll", payload)
 
 
+def send_game_post():
+    if not GAME_URL.startswith("https://"):
+        raise RuntimeError("GAME_URL must start with https://")
+
+    payload = {
+        "chat_id": CHAT_ID,
+        "text": GAME_POST_TEXT,
+        "disable_web_page_preview": True,
+        "reply_markup": {
+            "inline_keyboard": [
+                [
+                    {
+                        "text": GAME_BUTTON_TEXT,
+                        "url": GAME_URL,
+                    }
+                ]
+            ]
+        },
+    }
+    tg_api("sendMessage", payload)
+
+
 # ========= PROMPTS =========
 def build_prompt(quiz_type: str, target_level: str, avoid_items: list[str], avoid_answers: list[str]) -> str:
     avoid_block = ""
@@ -770,6 +809,11 @@ def generate_one(quiz_type: str, target_level: str, avoid_items: list[str], avoi
 def main():
     if not TOKEN:
         raise RuntimeError("BOT_TOKEN missing")
+
+    if MODE in ("game", "game_post", "play"):
+        send_game_post()
+        return
+
     if not OPENAI_API_KEY:
         raise RuntimeError("OPENAI_API_KEY missing")
 

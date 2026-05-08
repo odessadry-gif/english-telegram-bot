@@ -4,6 +4,23 @@ on:
   schedule:
     - cron: "0 */3 * * *"
   workflow_dispatch:
+    inputs:
+      mode:
+        description: "What to post"
+        required: false
+        default: "quiz"
+        type: choice
+        options:
+          - quiz
+          - game_post
+      game_url:
+        description: "Mini game URL"
+        required: false
+        default: "https://odessadry-gif.github.io/english-telegram-bot/?tg=1"
+      game_post_text:
+        description: "Text for the game post"
+        required: false
+        default: "🎮 Перевір свій English\n\n120 коротких питань A2-B1:\n• живі фрази\n• кафе, подорожі, щоденні ситуації\n• трохи ідіом\n\n2 хвилини практики щодня."
 
 permissions:
   contents: write
@@ -37,6 +54,9 @@ jobs:
           BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          MODE: ${{ inputs.mode || 'quiz' }}
+          GAME_URL: ${{ inputs.game_url || 'https://odessadry-gif.github.io/english-telegram-bot/?tg=1' }}
+          GAME_POST_TEXT: ${{ inputs.game_post_text }}
         run: |
           python bot.py
 

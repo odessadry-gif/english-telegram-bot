@@ -115,12 +115,13 @@ const makePool=rows=>rows.trim().split("\n").map(line=>{
 });
 
 const tg=window.Telegram?.WebApp;
-const isTelegramMiniApp=Boolean(tg?.initData);
+const params=new URLSearchParams(window.location.search);
+const isTelegramMiniApp=Boolean(tg?.initData) || params.get("tg") === "1";
 if(isTelegramMiniApp){
   document.body.classList.add("tg-app");
-  tg.ready();
-  tg.expand();
-  tg.MainButton?.hide();
+  tg?.ready();
+  tg?.expand();
+  tg?.MainButton?.hide();
 }
 
 const wordSentencePool=makePool(`
