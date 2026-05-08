@@ -6035,5 +6035,13 @@
     "core": "Коли наступний автобус?",
     "fp": "85b9c3a0a94d9f563e22dae80e99d1aecfae12f8eba4141e134b06042217ae0b",
     "core_fp": "f18acbb6efc8feb324333c42f33d18aaa194fe1196260a7777c8cced72bad705"
+  },
+  {
+    "ts": 1778235826,
+    "kind": "ua_en",
+    "level": "B1",
+    "core": "Де мої ключі?",
+    "fp": "c2a048d190bac436967f6ce127fb494c485ad2c0c790d2d80f3d26d5f8d4693a",
+    "core_fp": "ba3635075a5c596c3c2f3acbd5143955e987604d1866d84c055609ca8b4290ce"
   }
 ]
