@@ -6043,5 +6043,13 @@
     "core": "Де мої ключі?",
     "fp": "c2a048d190bac436967f6ce127fb494c485ad2c0c790d2d80f3d26d5f8d4693a",
     "core_fp": "ba3635075a5c596c3c2f3acbd5143955e987604d1866d84c055609ca8b4290ce"
+  },
+  {
+    "ts": 1778246862,
+    "kind": "grammar_gap",
+    "level": "A1",
+    "core": "She ___ late today.",
+    "fp": "4eacdcc22758417531048d9896a579ae35c6b38eb1787703b8ce579b03c58c85",
+    "core_fp": "cb829b746fd70d10375eb2276abe7c2b5e05559aa487ccd2c25c39b6d88cd380"
   }
 ]
