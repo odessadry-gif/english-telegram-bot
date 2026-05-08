@@ -6011,5 +6011,13 @@
     "core": "The train leaves ___ 9:00.",
     "fp": "ad7f815f522992adcbc3914a70779038287cd44206a7463a13ffff392a9f98e3",
     "core_fp": "5742179925790c1417f8421217a6a1b34d3e2f53f6a14d6d99366bb4bf085dab"
+  },
+  {
+    "ts": 1778208277,
+    "kind": "ua_en",
+    "level": "B1",
+    "core": "Квиток в один кінець",
+    "fp": "5ab94768fb5a97f91c143df2724023a9ee3fb79422565a880d45ae8e4902b1b9",
+    "core_fp": "ec87b608bc3b646af6e70ea08b3ec2b4566600258e1762f0c4cdd09195aa7f5d"
   }
 ]
