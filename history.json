@@ -6067,5 +6067,13 @@
     "core": "Відкрий двері, будь ласка.",
     "fp": "30175df60d88f1810678d99fad42a8728f1f5c1a30612e7c0161dfba29befcda",
     "core_fp": "b4cf26634e49901acf3a5eac5a1637839623d23fd53a527c773530fd73891aee"
+  },
+  {
+    "ts": 1778277487,
+    "kind": "ua_en",
+    "level": "B1",
+    "core": "Де вийти?",
+    "fp": "524fe2b2c0bf05858073f0e4bea777ae4574b9dd7fecbd456cf8efffd74edab3",
+    "core_fp": "5c5bb05dbf5ab8e4563ae7cdcd52d287c70571c2d71e5f4f691472e6734b0986"
   }
 ]
