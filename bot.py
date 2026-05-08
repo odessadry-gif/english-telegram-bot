@@ -54,7 +54,7 @@ LEVEL_WEIGHTS = {
     "B1": 45,
 }
 
-client = OpenAI(api_key=OPENAI_API_KEY)
+client = None
 
 ARTICLES_RE = re.compile(r"^(a|an|the)\s+", re.IGNORECASE)
 
@@ -807,6 +807,10 @@ JSON schema:
 
 
 def generate_one(quiz_type: str, target_level: str, avoid_items: list[str], avoid_answers: list[str]) -> dict:
+    global client
+    if client is None:
+        client = OpenAI(api_key=OPENAI_API_KEY)
+
     try:
         resp = client.responses.create(
             model=MODEL,
