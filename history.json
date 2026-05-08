@@ -6051,5 +6051,13 @@
     "core": "She ___ late today.",
     "fp": "4eacdcc22758417531048d9896a579ae35c6b38eb1787703b8ce579b03c58c85",
     "core_fp": "cb829b746fd70d10375eb2276abe7c2b5e05559aa487ccd2c25c39b6d88cd380"
+  },
+  {
+    "ts": 1778256924,
+    "kind": "idiom_meaning",
+    "level": "B1",
+    "core": "Make a long story short",
+    "fp": "f342585ebd03c2b9c9d9d9214c4312f6365046a48e01d6067cbfb60245bbbadc",
+    "core_fp": "bfb1de1e8ba860ef82d8df432463b50eb97803122dd6636a9783c2f3ebb1e4d7"
   }
 ]
