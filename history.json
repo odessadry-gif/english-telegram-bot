@@ -6115,5 +6115,13 @@
     "core": "Я готую вечерю",
     "fp": "52be06a80e7ebba75ad7eb0fbfc82859000c2a9112d2df6c77c56e2d55c12fb4",
     "core_fp": "9b1005aa9ed6053974c836353fbf542d31578f40393179592050241bf98ead99"
+  },
+  {
+    "ts": 1778341839,
+    "kind": "ua_en",
+    "level": "A1",
+    "core": "Я йду на роботу зараз",
+    "fp": "55ac072d01e6ac2579e71b711d8aed6dcfe31beb2aea9ca2a3ab1e0a034567e2",
+    "core_fp": "33869415fc12235322bf08789cb94bf4b8d128e9b5b81cceebaba541b970a5dd"
   }
 ]
