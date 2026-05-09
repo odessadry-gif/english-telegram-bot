@@ -6091,5 +6091,13 @@
     "core": "Куди ви їдете?",
     "fp": "234edfe67e069946413047a09369315fad268fc7d688c01955b8ccd4af238345",
     "core_fp": "4a437ea469714293af74a8e042f7cc5d95ccab53199b53f132ec23fbf094c263"
+  },
+  {
+    "ts": 1778313259,
+    "kind": "grammar_gap",
+    "level": "B1",
+    "core": "Please close the door ___ you leave.",
+    "fp": "130e5e4dfe29c7a325b3b85be33ee9fec82aa5acaf74977cdfcd7b817d8d236a",
+    "core_fp": "9d34ab352be2efd69bf6132daf0e544ecfd944aed796924d12e12920e1c9c13e"
   }
 ]
