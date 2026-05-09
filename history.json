@@ -6131,5 +6131,13 @@
     "core": "Де мій телефон?",
     "fp": "8a1fbabee803b63d5740d81fcab975b8fe1e06c62ad6096f08ecdfc1a1822911",
     "core_fp": "d52617ec56df57fa50a48abaf2aeef3cf950caa4c2209a30ccd86f4757517463"
+  },
+  {
+    "ts": 1778362875,
+    "kind": "ua_en",
+    "level": "A2",
+    "core": "Де тут банк?",
+    "fp": "f85126b2acd6cd5afe48534e0c9deaeb0fb0e6ebe4d528707214b4f163937042",
+    "core_fp": "03506501ac8257a2f6fc55a9188b94158945710ef0b005b2a2fe06542a9f8f86"
   }
 ]
