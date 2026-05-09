@@ -6083,5 +6083,13 @@
     "core": "Can I ___ the bill?",
     "fp": "217f08eb6824a0e9013374a3e4add7ff27aad1824187ae40b95894ef183eb5c3",
     "core_fp": "f917b971ba025bf89c00918472a073da70417d1cbeea0bb40ea6b8039efd5b56"
+  },
+  {
+    "ts": 1778305639,
+    "kind": "ua_en",
+    "level": "B1",
+    "core": "Куди ви їдете?",
+    "fp": "234edfe67e069946413047a09369315fad268fc7d688c01955b8ccd4af238345",
+    "core_fp": "4a437ea469714293af74a8e042f7cc5d95ccab53199b53f132ec23fbf094c263"
   }
 ]
