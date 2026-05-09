@@ -6099,5 +6099,13 @@
     "core": "Please close the door ___ you leave.",
     "fp": "130e5e4dfe29c7a325b3b85be33ee9fec82aa5acaf74977cdfcd7b817d8d236a",
     "core_fp": "9d34ab352be2efd69bf6132daf0e544ecfd944aed796924d12e12920e1c9c13e"
+  },
+  {
+    "ts": 1778321033,
+    "kind": "idiom_meaning",
+    "level": "B1",
+    "core": "Bite the bullet",
+    "fp": "a6346d1fd771b5734fd7bea279681db76b7f17cea4622d0203b6c5315d29fd23",
+    "core_fp": "6c69bc8b8492af1215604191b4e88cb720d0b6f9507f30eed2dd6748d9223afe"
   }
 ]
