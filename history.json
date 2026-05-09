@@ -6075,5 +6075,13 @@
     "core": "Де вийти?",
     "fp": "524fe2b2c0bf05858073f0e4bea777ae4574b9dd7fecbd456cf8efffd74edab3",
     "core_fp": "5c5bb05dbf5ab8e4563ae7cdcd52d287c70571c2d71e5f4f691472e6734b0986"
+  },
+  {
+    "ts": 1778294378,
+    "kind": "grammar_gap",
+    "level": "A2",
+    "core": "Can I ___ the bill?",
+    "fp": "217f08eb6824a0e9013374a3e4add7ff27aad1824187ae40b95894ef183eb5c3",
+    "core_fp": "f917b971ba025bf89c00918472a073da70417d1cbeea0bb40ea6b8039efd5b56"
   }
 ]
