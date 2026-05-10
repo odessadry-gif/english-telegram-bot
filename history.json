@@ -6139,5 +6139,13 @@
     "core": "Де тут банк?",
     "fp": "f85126b2acd6cd5afe48534e0c9deaeb0fb0e6ebe4d528707214b4f163937042",
     "core_fp": "03506501ac8257a2f6fc55a9188b94158945710ef0b005b2a2fe06542a9f8f86"
+  },
+  {
+    "ts": 1778381033,
+    "kind": "idiom_meaning",
+    "level": "B1",
+    "core": "Apple of my eye",
+    "fp": "cc0f8920b2acd3e3621f43c87701d15c0a1b7534fd50bf6052b3c0b9773434f7",
+    "core_fp": "7deb91960a3dcef6b30c7617349d34842125a17a824586f0e8dd4c3395f9cf5b"
   }
 ]
