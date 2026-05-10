@@ -6171,5 +6171,13 @@
     "core": "I am waiting ___ the bus.",
     "fp": "fdd56f74c28521bc83419eb59ee9602e5345a8df9b014747c6adf5d041cd26c1",
     "core_fp": "b4852746be4cc003c1141c6b33b453c92c2260f14e79317341127226fa35c398"
+  },
+  {
+    "ts": 1778428321,
+    "kind": "ua_en",
+    "level": "A2",
+    "core": "Це моя сумка",
+    "fp": "6fe5761ff6dfc597649762842c21593ca899c59269c80cd9f3ff773716796062",
+    "core_fp": "9b572ca5f52859f67f5c672ffb70f3926d34cc5628e62ecc08b2aa134e67fbd5"
   }
 ]
