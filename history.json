@@ -6179,5 +6179,13 @@
     "core": "Це моя сумка",
     "fp": "6fe5761ff6dfc597649762842c21593ca899c59269c80cd9f3ff773716796062",
     "core_fp": "9b572ca5f52859f67f5c672ffb70f3926d34cc5628e62ecc08b2aa134e67fbd5"
+  },
+  {
+    "ts": 1778439598,
+    "kind": "idiom_meaning",
+    "level": "B1",
+    "core": "Rule of thumb",
+    "fp": "cced73f7fa5fd79e85278c04eb0f99ea12dcbe071c99d60663385545dccb75dd",
+    "core_fp": "d2933ec17947cfd3c27996a095ebce846bf0c32b33e282e95cc17d2689ce44d5"
   }
 ]
