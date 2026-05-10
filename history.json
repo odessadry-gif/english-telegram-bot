@@ -6163,5 +6163,13 @@
     "core": "He ___ work at nine.",
     "fp": "66ceb0b13198ff8d4018f2e0945c9cc176f943f4522d4115c9b894221a703177",
     "core_fp": "e47f64f7291e91ecc46d628f4ec3ba6a803da1fdddf1a8f2e39c1226bc410e68"
+  },
+  {
+    "ts": 1778418815,
+    "kind": "grammar_gap",
+    "level": "B1",
+    "core": "I am waiting ___ the bus.",
+    "fp": "fdd56f74c28521bc83419eb59ee9602e5345a8df9b014747c6adf5d041cd26c1",
+    "core_fp": "b4852746be4cc003c1141c6b33b453c92c2260f14e79317341127226fa35c398"
   }
 ]
