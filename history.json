@@ -6187,5 +6187,13 @@
     "core": "Rule of thumb",
     "fp": "cced73f7fa5fd79e85278c04eb0f99ea12dcbe071c99d60663385545dccb75dd",
     "core_fp": "d2933ec17947cfd3c27996a095ebce846bf0c32b33e282e95cc17d2689ce44d5"
+  },
+  {
+    "ts": 1778449457,
+    "kind": "idiom_meaning",
+    "level": "B1",
+    "core": "Monkey business",
+    "fp": "3e8cfe2bd477ff8853ea5921dce6f8c3190032192b00a3fcd4fbfb2c587a2885",
+    "core_fp": "53aaaa0e205d12d904f4f595ea35e27db62da2f4fe45af13ea0dc4add8ed6347"
   }
 ]
