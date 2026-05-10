@@ -6155,5 +6155,13 @@
     "core": "Hit the nail on the head",
     "fp": "3a0f2f4775384ee3f34270a670f953b8de5fcc0859619c3dc150504e1eb3e46e",
     "core_fp": "1f27eb53825b739db97d0a5133f8d13c4c43119dcdf059a119e499cddb291234"
+  },
+  {
+    "ts": 1778407970,
+    "kind": "grammar_gap",
+    "level": "A1",
+    "core": "He ___ work at nine.",
+    "fp": "66ceb0b13198ff8d4018f2e0945c9cc176f943f4522d4115c9b894221a703177",
+    "core_fp": "e47f64f7291e91ecc46d628f4ec3ba6a803da1fdddf1a8f2e39c1226bc410e68"
   }
 ]
