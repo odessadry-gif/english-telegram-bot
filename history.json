@@ -6203,5 +6203,13 @@
     "core": "Face the music",
     "fp": "3ef6ccd3b1dfd75e0ff97cc2e581e55cf980e09bbb21cd2fc5a13a9822a92cb9",
     "core_fp": "9722acaa46037a4300ea1b08354e4972203580de04d4d0b27bfa294849fa7189"
+  },
+  {
+    "ts": 1778481518,
+    "kind": "grammar_gap",
+    "level": "A2",
+    "core": "He ___ his keys at home yesterday.",
+    "fp": "99607b4ca70b5df30a04d8c09d47cd3bbc977aa0870fc3db58c9a10a8a6a6f0c",
+    "core_fp": "62789d04c431aa4bc9732da4928399e7479867e1ed93a2e35f44c66df25bcf54"
   }
 ]
