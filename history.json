@@ -6235,5 +6235,13 @@
     "core": "Once in a blue moon",
     "fp": "df3c4db4bd5e13ad114aff0d5717d458186ffc25c3f54ad17dd063b5b2b98a12",
     "core_fp": "1a9e77d8bbd663537f2cd1fc58f757de5adc11fe442b1e8aa42e81d14b6b2937"
+  },
+  {
+    "ts": 1778537144,
+    "kind": "grammar_gap",
+    "level": "A2",
+    "core": "She works ___ the morning.",
+    "fp": "167c3d554bc524ecaec234105dacfacb7d17f316e0217f610f0193c1266f42eb",
+    "core_fp": "540fc9022d445fc7eb38a0ab7d0366feea041511250567ac8d84a10c75be62c6"
   }
 ]
