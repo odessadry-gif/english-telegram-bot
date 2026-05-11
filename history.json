@@ -6219,5 +6219,13 @@
     "core": "I need to go ___ the station.",
     "fp": "1fdba74d42327e17d7d85fb975ad378e5dfc2af38b91a3027568c675d13b099b",
     "core_fp": "34fb1819dcde52e1145680101bbf35ab7361c5d743a121bfcdb7df66a40d532a"
+  },
+  {
+    "ts": 1778520187,
+    "kind": "grammar_gap",
+    "level": "B1",
+    "core": "I always charge my phone ___ night.",
+    "fp": "9ff5a7561eaf07e9d685bec7a90fc379212170dbdeb4f7dc60ed33ebe0f4d04c",
+    "core_fp": "bee567cdd77816f3e2cf5ad1eaf933174b14f1349ade40bf89d3115cfa3551eb"
   }
 ]
