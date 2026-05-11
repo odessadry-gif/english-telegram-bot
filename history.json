@@ -6195,5 +6195,13 @@
     "core": "Monkey business",
     "fp": "3e8cfe2bd477ff8853ea5921dce6f8c3190032192b00a3fcd4fbfb2c587a2885",
     "core_fp": "53aaaa0e205d12d904f4f595ea35e27db62da2f4fe45af13ea0dc4add8ed6347"
+  },
+  {
+    "ts": 1778468052,
+    "kind": "idiom_meaning",
+    "level": "B1",
+    "core": "Face the music",
+    "fp": "3ef6ccd3b1dfd75e0ff97cc2e581e55cf980e09bbb21cd2fc5a13a9822a92cb9",
+    "core_fp": "9722acaa46037a4300ea1b08354e4972203580de04d4d0b27bfa294849fa7189"
   }
 ]
