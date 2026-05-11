@@ -6227,5 +6227,13 @@
     "core": "I always charge my phone ___ night.",
     "fp": "9ff5a7561eaf07e9d685bec7a90fc379212170dbdeb4f7dc60ed33ebe0f4d04c",
     "core_fp": "bee567cdd77816f3e2cf5ad1eaf933174b14f1349ade40bf89d3115cfa3551eb"
+  },
+  {
+    "ts": 1778528743,
+    "kind": "idiom_meaning",
+    "level": "B1",
+    "core": "Once in a blue moon",
+    "fp": "df3c4db4bd5e13ad114aff0d5717d458186ffc25c3f54ad17dd063b5b2b98a12",
+    "core_fp": "1a9e77d8bbd663537f2cd1fc58f757de5adc11fe442b1e8aa42e81d14b6b2937"
   }
 ]
