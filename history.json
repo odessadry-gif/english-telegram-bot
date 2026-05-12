@@ -6291,5 +6291,13 @@
     "core": "Я загубив квиток",
     "fp": "dffefe201a8cb676db5086aed0e5c6e3601c76a03f2a0e913b2a10e410424009",
     "core_fp": "972774c9d8d10df66411561a60a5598b20f1b978e79cb8feb7be8adffccab970"
+  },
+  {
+    "ts": 1778623887,
+    "kind": "idiom_meaning",
+    "level": "B1",
+    "core": "See eye to eye",
+    "fp": "8d99299374f69861f6f8f8bc314308ea66a3673e8bfe20a563d28c1a92b724aa",
+    "core_fp": "5d648a1d65eb95f96493787defdadb4a7e208f062dae3cf2577fc818be352791"
   }
 ]
