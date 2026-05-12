@@ -6267,5 +6267,13 @@
     "core": "Spill the beans",
     "fp": "c8a93bff13c5a89de7a1e1b6f46c0148b4d7901a7a2e39dfed7c85c314ad5a22",
     "core_fp": "bff4f549b5e67b1dc0f23f46a9819dd522af17fc8ed181c56d1af571f22ab275"
+  },
+  {
+    "ts": 1778595580,
+    "kind": "ua_en",
+    "level": "A2",
+    "core": "Де наступна станція?",
+    "fp": "7d6fdb2a452e383e33a9e1dd1c1458020a352e9e9e877994def9a91ac6631258",
+    "core_fp": "1d5280720ec5d3d1ade808661231bf7cf9f4c4f7f36eb17135e53db2bb75e719"
   }
 ]
