@@ -6243,5 +6243,13 @@
     "core": "She works ___ the morning.",
     "fp": "167c3d554bc524ecaec234105dacfacb7d17f316e0217f610f0193c1266f42eb",
     "core_fp": "540fc9022d445fc7eb38a0ab7d0366feea041511250567ac8d84a10c75be62c6"
+  },
+  {
+    "ts": 1778553914,
+    "kind": "idiom_meaning",
+    "level": "B1",
+    "core": "Give someone the cold shoulder",
+    "fp": "e7a80fb34bdfc1a775d0bc5b0ab4b420c1d54db9af6df0b35a10fb4570b1e3b6",
+    "core_fp": "dd03ed33e0f74196e24531ac9eed901ddb50bbb4e5ec033c66b36c783414ae2d"
   }
 ]
