@@ -6275,5 +6275,13 @@
     "core": "Де наступна станція?",
     "fp": "7d6fdb2a452e383e33a9e1dd1c1458020a352e9e9e877994def9a91ac6631258",
     "core_fp": "1d5280720ec5d3d1ade808661231bf7cf9f4c4f7f36eb17135e53db2bb75e719"
+  },
+  {
+    "ts": 1778605817,
+    "kind": "grammar_gap",
+    "level": "B1",
+    "core": "He put the keys ___ the table.",
+    "fp": "55dcba359d2a9584504e2767c7c9f3113d37c5c1914f49b646ee93a1b2248a98",
+    "core_fp": "ac609c54e5cb3f51d9f73c00d3b2c2bfcd5f46338839d1fd5e045645af0fb540"
   }
 ]
