@@ -6251,5 +6251,13 @@
     "core": "Give someone the cold shoulder",
     "fp": "e7a80fb34bdfc1a775d0bc5b0ab4b420c1d54db9af6df0b35a10fb4570b1e3b6",
     "core_fp": "dd03ed33e0f74196e24531ac9eed901ddb50bbb4e5ec033c66b36c783414ae2d"
+  },
+  {
+    "ts": 1778566452,
+    "kind": "idiom_meaning",
+    "level": "B1",
+    "core": "By the skin of one's teeth",
+    "fp": "3e4ef0da293f906ccef112f13624774645e0c28da9b17040bc6da25bba7921dd",
+    "core_fp": "0082870a2005f35e9af2efef59f67181ec01b5d29de6e0c72129f265efc661c3"
   }
 ]
