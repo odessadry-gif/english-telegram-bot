@@ -6283,5 +6283,13 @@
     "core": "He put the keys ___ the table.",
     "fp": "55dcba359d2a9584504e2767c7c9f3113d37c5c1914f49b646ee93a1b2248a98",
     "core_fp": "ac609c54e5cb3f51d9f73c00d3b2c2bfcd5f46338839d1fd5e045645af0fb540"
+  },
+  {
+    "ts": 1778615269,
+    "kind": "ua_en",
+    "level": "A2",
+    "core": "Я загубив квиток",
+    "fp": "dffefe201a8cb676db5086aed0e5c6e3601c76a03f2a0e913b2a10e410424009",
+    "core_fp": "972774c9d8d10df66411561a60a5598b20f1b978e79cb8feb7be8adffccab970"
   }
 ]
