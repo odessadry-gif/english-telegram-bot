@@ -6307,5 +6307,13 @@
     "core": "I am ___ home.",
     "fp": "c7638a9af4ad6118d2f4e961b4114544aff6b944200d62d45c22d9a14376bd70",
     "core_fp": "034d46e891b5d2afd4809243a19c3326c275b913bd0e4ed990ae858203c26abe"
+  },
+  {
+    "ts": 1778653528,
+    "kind": "ua_en",
+    "level": "A2",
+    "core": "Де тут ресторан?",
+    "fp": "22e59ee9c9eeecb3afa46445fbd822f333360471493ba6c643a37ebcf05588e0",
+    "core_fp": "ff3dc8ef4d6b4759eeae5c978025045554c0cb0c790a0110924cf60c5aa7dc69"
   }
 ]
