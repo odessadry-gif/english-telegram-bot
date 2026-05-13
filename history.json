@@ -6331,5 +6331,13 @@
     "core": "Speak of the devil",
     "fp": "7c6de1cdcbf7ce0a9f523dc2040d38f8c90a2e3b679eddf5a295145bcbfd6b0e",
     "core_fp": "e425ec9fc89d96b81ade150e2602007530649c3c86a1d34b79e85c22220429d5"
+  },
+  {
+    "ts": 1778692480,
+    "kind": "idiom_meaning",
+    "level": "B1",
+    "core": "Read between the lines",
+    "fp": "80b94c1bca21ef2d324634502c0337fe64c5b5796afef17914dbf561978f8cc9",
+    "core_fp": "70caf28974ad22f592be6d744f65d99f669a44f7d45351c52814a7a47a545c0f"
   }
 ]
