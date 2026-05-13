@@ -6323,5 +6323,13 @@
     "core": "A piece of cake",
     "fp": "0c68204947bc6f5a0df13f372fe683f2d5387fba28284e7da040e6ec41802e30",
     "core_fp": "17a10b445291d62ecab91ce8701d6985dfe36f39e07e3b4077ee97fb733f3698"
+  },
+  {
+    "ts": 1778682481,
+    "kind": "idiom_meaning",
+    "level": "B1",
+    "core": "Speak of the devil",
+    "fp": "7c6de1cdcbf7ce0a9f523dc2040d38f8c90a2e3b679eddf5a295145bcbfd6b0e",
+    "core_fp": "e425ec9fc89d96b81ade150e2602007530649c3c86a1d34b79e85c22220429d5"
   }
 ]
