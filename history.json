@@ -6299,5 +6299,13 @@
     "core": "See eye to eye",
     "fp": "8d99299374f69861f6f8f8bc314308ea66a3673e8bfe20a563d28c1a92b724aa",
     "core_fp": "5d648a1d65eb95f96493787defdadb4a7e208f062dae3cf2577fc818be352791"
+  },
+  {
+    "ts": 1778640661,
+    "kind": "grammar_gap",
+    "level": "A2",
+    "core": "I am ___ home.",
+    "fp": "c7638a9af4ad6118d2f4e961b4114544aff6b944200d62d45c22d9a14376bd70",
+    "core_fp": "034d46e891b5d2afd4809243a19c3326c275b913bd0e4ed990ae858203c26abe"
   }
 ]
