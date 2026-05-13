@@ -6339,5 +6339,13 @@
     "core": "Read between the lines",
     "fp": "80b94c1bca21ef2d324634502c0337fe64c5b5796afef17914dbf561978f8cc9",
     "core_fp": "70caf28974ad22f592be6d744f65d99f669a44f7d45351c52814a7a47a545c0f"
+  },
+  {
+    "ts": 1778701923,
+    "kind": "idiom_meaning",
+    "level": "B1",
+    "core": "All ears",
+    "fp": "6ef8c757b4469eaeadc0dc4dfff808af8e06c9cb7319b1c330d0c2f16cda9163",
+    "core_fp": "d5b9cd33b3cbeeba0f74931fe97a1b565f30d90010e1b44fbba8f48a195923fc"
   }
 ]
