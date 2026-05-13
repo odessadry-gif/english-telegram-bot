@@ -6315,5 +6315,13 @@
     "core": "Де тут ресторан?",
     "fp": "22e59ee9c9eeecb3afa46445fbd822f333360471493ba6c643a37ebcf05588e0",
     "core_fp": "ff3dc8ef4d6b4759eeae5c978025045554c0cb0c790a0110924cf60c5aa7dc69"
+  },
+  {
+    "ts": 1778671750,
+    "kind": "idiom_meaning",
+    "level": "B1",
+    "core": "A piece of cake",
+    "fp": "0c68204947bc6f5a0df13f372fe683f2d5387fba28284e7da040e6ec41802e30",
+    "core_fp": "17a10b445291d62ecab91ce8701d6985dfe36f39e07e3b4077ee97fb733f3698"
   }
 ]
