@@ -6379,5 +6379,13 @@
     "core": "Я трохи запізнюся",
     "fp": "947f5dd6dfd1ab50349579c0d94a0cc0a2a73bd9336582ee6063a8a01b30fad4",
     "core_fp": "05a5409a8e270ef327dd0b5a39cb87346aaa8b9e83fc7e01917cd0044ac38d05"
+  },
+  {
+    "ts": 1778767513,
+    "kind": "ua_en",
+    "level": "A1",
+    "core": "Ви можете допомогти мені?",
+    "fp": "5491c66cabd25c68a420281754c047d491ddb4a083a8bef0067d2551bffae80e",
+    "core_fp": "a5be334dbad97e0164f9a6282366780fd127dca29eb9a9827ec6fb4e7910ad17"
   }
 ]
