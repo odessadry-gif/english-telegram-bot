@@ -6363,5 +6363,13 @@
     "core": "I ___ to work by train.",
     "fp": "47c07d2ca54269a33148a28f6ade8ee9b4c6cc7f8bb8f5f5ce25c4f7390dedd0",
     "core_fp": "9699707d7133e7e641b67d5f1d84d23eba948a004ec2fe9ff0ae392212c4be12"
+  },
+  {
+    "ts": 1778739883,
+    "kind": "ua_en",
+    "level": "B1",
+    "core": "Я бронюю номер",
+    "fp": "46fce81dea5e96b4a5cbcf162ee015f97a89b2b1963ebca67c48929b61a285cf",
+    "core_fp": "3fe97e5b119497abcc548bfc00ec5597f620927653b9f5ae5e3ddd7a26068207"
   }
 ]
