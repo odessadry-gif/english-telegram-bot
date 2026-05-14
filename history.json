@@ -6355,5 +6355,13 @@
     "core": "A dime a dozen",
     "fp": "0a69fdf71e5a24dfbbc87592daeeb61bfddfea7fb86e9fba98571677d4e377ec",
     "core_fp": "40921b47aed7a46a32f52c8cce841e1879bc7e2a64d19bc10eef34f0e4eb2ddf"
+  },
+  {
+    "ts": 1778727189,
+    "kind": "grammar_gap",
+    "level": "A2",
+    "core": "I ___ to work by train.",
+    "fp": "47c07d2ca54269a33148a28f6ade8ee9b4c6cc7f8bb8f5f5ce25c4f7390dedd0",
+    "core_fp": "9699707d7133e7e641b67d5f1d84d23eba948a004ec2fe9ff0ae392212c4be12"
   }
 ]
