@@ -6451,5 +6451,13 @@
     "core": "In the same boat",
     "fp": "5b81e260c5747eeefd770968922facb99361d0fbe3d6b35b255089f367d336bc",
     "core_fp": "d30776a57f1133d23e2b77946eb537acb36eb7bbafc6598dc6009e97e60dcb80"
+  },
+  {
+    "ts": 1778873196,
+    "kind": "grammar_gap",
+    "level": "A2",
+    "core": "The bus stops ___ the station.",
+    "fp": "cc96aedf96855f8fa226d07efc59d8a1ef914071fd4be7f5f5749f7e11220797",
+    "core_fp": "df0292f8ac2fe9561837ecbe348a039679b817dd236892a45f74ccc3a53af857"
   }
 ]
