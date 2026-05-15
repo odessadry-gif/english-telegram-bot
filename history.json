@@ -6435,5 +6435,13 @@
     "core": "Burn the midnight oil",
     "fp": "c0862f953419ede445f3d1ddf44826c73957ff175c66a559a266b0958d959edb",
     "core_fp": "e7982e2ad3497d22f2f84e5be84eb4fc391220015c8eb6556b32f8721264ce4b"
+  },
+  {
+    "ts": 1778853713,
+    "kind": "grammar_gap",
+    "level": "A1",
+    "core": "He ___ at home.",
+    "fp": "6e2281afac7fb2f16e6995b06993160a2643456ef3aeb1053e37523d1d54b27b",
+    "core_fp": "4c87b4b6b07693ca1dffd29a839b798aead172de2c2917b28f73325ea92dab7f"
   }
 ]
