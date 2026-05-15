@@ -6427,5 +6427,13 @@
     "core": "Я плачу готівкою",
     "fp": "604ab66afc8a2f8435daaaa5d4f4bbed2c087322ae68cd94a6d10f3a9426a6b9",
     "core_fp": "67c137a0c61f515b159f54fcd2b6d9dfa07fb046ac95aef5456341056b57e2f5"
+  },
+  {
+    "ts": 1778844015,
+    "kind": "idiom_meaning",
+    "level": "B1",
+    "core": "Burn the midnight oil",
+    "fp": "c0862f953419ede445f3d1ddf44826c73957ff175c66a559a266b0958d959edb",
+    "core_fp": "e7982e2ad3497d22f2f84e5be84eb4fc391220015c8eb6556b32f8721264ce4b"
   }
 ]
