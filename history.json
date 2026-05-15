@@ -6459,5 +6459,14 @@
     "core": "The bus stops ___ the station.",
     "fp": "cc96aedf96855f8fa226d07efc59d8a1ef914071fd4be7f5f5749f7e11220797",
     "core_fp": "df0292f8ac2fe9561837ecbe348a039679b817dd236892a45f74ccc3a53af857"
+  },
+  {
+    "ts": 1778882281,
+    "kind": "riddle",
+    "level": "B1",
+    "core": "You sleep here when you travel.\nYou pay for a room.",
+    "fp": "bd4df45cc8721542aafa31de382bf61acbe6e9c3df5b0286f68c2c6cb76148d3",
+    "core_fp": "eb846df37e8407264437bfd4a090c77e53ac1070af3bb9ef34c34d1ed13ad40e",
+    "answer": "hotel"
   }
 ]
