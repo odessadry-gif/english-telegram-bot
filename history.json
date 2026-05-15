@@ -6443,5 +6443,13 @@
     "core": "He ___ at home.",
     "fp": "6e2281afac7fb2f16e6995b06993160a2643456ef3aeb1053e37523d1d54b27b",
     "core_fp": "4c87b4b6b07693ca1dffd29a839b798aead172de2c2917b28f73325ea92dab7f"
+  },
+  {
+    "ts": 1778863758,
+    "kind": "idiom_meaning",
+    "level": "B1",
+    "core": "In the same boat",
+    "fp": "5b81e260c5747eeefd770968922facb99361d0fbe3d6b35b255089f367d336bc",
+    "core_fp": "d30776a57f1133d23e2b77946eb537acb36eb7bbafc6598dc6009e97e60dcb80"
   }
 ]
