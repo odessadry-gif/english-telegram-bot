@@ -6516,5 +6516,13 @@
     "core": "Under the weather",
     "fp": "be3b26f003f0d0ef5cca71a3d15a7046e41b2220e49ec4a774f508f715f5c32a",
     "core_fp": "bb6d0e67cdc3ffb6ba4bb40b618cf195fde8b2db454993c0511a57e1feaf0ad8"
+  },
+  {
+    "ts": 1778958047,
+    "kind": "idiom_meaning",
+    "level": "B1",
+    "core": "Up in the air",
+    "fp": "64d107c31a7ca8fc413f6b3e7c7ac6c55db826c1267c6dce3bf09f8d36bedf3e",
+    "core_fp": "dba0b346faefdda7a95e77f41e4f3f6c14605109790558573345bb7e81ef2695"
   }
 ]
