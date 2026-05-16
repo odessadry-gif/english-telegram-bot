@@ -6524,5 +6524,13 @@
     "core": "Up in the air",
     "fp": "64d107c31a7ca8fc413f6b3e7c7ac6c55db826c1267c6dce3bf09f8d36bedf3e",
     "core_fp": "dba0b346faefdda7a95e77f41e4f3f6c14605109790558573345bb7e81ef2695"
+  },
+  {
+    "ts": 1778967917,
+    "kind": "ua_en",
+    "level": "A1",
+    "core": "Я йду додому",
+    "fp": "6729689352deb38bd5f93026fa47ba5057cd6f02d8c6b24998b625caa8598f4e",
+    "core_fp": "bf1c2bce6903586a6baa0bd9a360aaf0a37a1dd0d371928d786f7a12e555e787"
   }
 ]
