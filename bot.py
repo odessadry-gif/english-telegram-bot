@@ -5,6 +5,7 @@ import re
 import hashlib
 import random
 import unicodedata
+from collections import Counter
 import requests
 from openai import OpenAI
 
@@ -43,11 +44,12 @@ RECENT_CORE_LIMIT = 300
 RECENT_PATTERN_LIMIT = 220
 RECENT_RIDDLE_ANSWER_LIMIT = 120
 
-QUIZ_TYPE_WEIGHTS = {
-    "grammar_gap": 40,
-    "ua_en": 25,
-    "riddle": 15,
-    "idiom_meaning": 20,
+QUIZ_TYPE_CYCLE_SIZE = 20
+QUIZ_TYPE_CYCLE_QUOTAS = {
+    "grammar_gap": 8,
+    "ua_en": 5,
+    "riddle": 3,
+    "idiom_meaning": 4,
 }
 
 LEVEL_WEIGHTS = {
@@ -371,10 +373,26 @@ def extract_json(text: str) -> dict:
     return json.loads(m.group(0))
 
 
-def pick_quiz_type() -> str:
+def pick_quiz_type(history: list[dict]) -> str:
+    quiz_history = [
+        item for item in history
+        if item.get("kind") in QUIZ_TYPE_CYCLE_QUOTAS
+    ]
+    cycle_position = len(quiz_history) % QUIZ_TYPE_CYCLE_SIZE
+    current_cycle = quiz_history[-cycle_position:] if cycle_position else []
+    used = Counter(item["kind"] for item in current_cycle)
+
     pool = []
-    for quiz_type, weight in QUIZ_TYPE_WEIGHTS.items():
-        pool.extend([quiz_type] * weight)
+    for quiz_type, quota in QUIZ_TYPE_CYCLE_QUOTAS.items():
+        remaining = max(0, quota - used[quiz_type])
+        pool.extend([quiz_type] * remaining)
+
+    # Old histories may begin mid-cycle with an uneven mix. If that happens,
+    # start the next choice from the clean quota bag instead of getting stuck.
+    if not pool:
+        for quiz_type, quota in QUIZ_TYPE_CYCLE_QUOTAS.items():
+            pool.extend([quiz_type] * quota)
+
     return random.choice(pool)
 
 
@@ -987,12 +1005,12 @@ def main():
 
     recent_riddle_answer_set = set(recent_riddle_answers(history, RECENT_RIDDLE_ANSWER_LIMIT))
 
+    quiz_type = pick_quiz_type(history)
+    target_level = "B1" if quiz_type == "idiom_meaning" else pick_level()
     last_err = None
 
     for _ in range(40):
         try:
-            quiz_type = pick_quiz_type()
-            target_level = "B1" if quiz_type == "idiom_meaning" else pick_level()
             avoid_items = recent_cores(history, 40, quiz_type)
             avoid_answers = recent_riddle_answers(history, 40) if quiz_type == "riddle" else []
 
