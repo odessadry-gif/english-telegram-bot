@@ -6492,5 +6492,13 @@
     "core": "Cry over spilled milk",
     "fp": "186509e4c93cd8582863a7d1c4ef567055ddfd175df8112e7ea047ac0001f1ef",
     "core_fp": "4cd4cbda1ab152da3c8c3f977558f9af4c369c7ad97352cefcf6d57e5f9d134f"
+  },
+  {
+    "ts": 1778926344,
+    "kind": "idiom_meaning",
+    "level": "B1",
+    "core": "You can't judge a book by its cover",
+    "fp": "a4501d6ad97d24c76c58665ecd2b74c7b2c4cb9fef6b1f01615435c6eafbf442",
+    "core_fp": "dcb2b2bf3812317b6cef513e29f03fb38b59aaf5ad3d0176c429bbfb3cd627b6"
   }
 ]
