@@ -6468,5 +6468,13 @@
     "fp": "bd4df45cc8721542aafa31de382bf61acbe6e9c3df5b0286f68c2c6cb76148d3",
     "core_fp": "eb846df37e8407264437bfd4a090c77e53ac1070af3bb9ef34c34d1ed13ad40e",
     "answer": "hotel"
+  },
+  {
+    "ts": 1778899321,
+    "kind": "idiom_meaning",
+    "level": "B1",
+    "core": "Every cloud has a silver lining",
+    "fp": "c794e79f1c799d94a7b8d71bc60232965bd6d2875a9fd177bbec8a4575ff0827",
+    "core_fp": "5b3edbdaba3a1da7f28bf394cc8cfbd07aee8ea2ce50828eef96c57867dd7f01"
   }
 ]
