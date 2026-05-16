@@ -6476,5 +6476,13 @@
     "core": "Every cloud has a silver lining",
     "fp": "c794e79f1c799d94a7b8d71bc60232965bd6d2875a9fd177bbec8a4575ff0827",
     "core_fp": "5b3edbdaba3a1da7f28bf394cc8cfbd07aee8ea2ce50828eef96c57867dd7f01"
+  },
+  {
+    "ts": 1778910783,
+    "kind": "grammar_gap",
+    "level": "A2",
+    "core": "It's hot. Please ___ the window.",
+    "fp": "18aa5d89b268b4089a3436038c74561a8bf4f49db408be8b6e485329f7c57c8e",
+    "core_fp": "2800c908944caa15c67c7573406ee1bd33fa4ae4ad75e08aba5d2c5d7ddbe0ee"
   }
 ]
