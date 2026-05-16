@@ -6508,5 +6508,13 @@
     "core": "Я пропустив автобус",
     "fp": "8bca8e202413f1f180a8552f3fd59942e88ec5d3e25a8bd77eadc00b51c30d35",
     "core_fp": "223358fd32aedb01d969e0095d2db715e0fb5a8271df9dd96840566236667eb0"
+  },
+  {
+    "ts": 1778947013,
+    "kind": "idiom_meaning",
+    "level": "B1",
+    "core": "Under the weather",
+    "fp": "be3b26f003f0d0ef5cca71a3d15a7046e41b2220e49ec4a774f508f715f5c32a",
+    "core_fp": "bb6d0e67cdc3ffb6ba4bb40b618cf195fde8b2db454993c0511a57e1feaf0ad8"
   }
 ]
