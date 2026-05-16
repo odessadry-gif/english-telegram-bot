@@ -6500,5 +6500,13 @@
     "core": "You can't judge a book by its cover",
     "fp": "a4501d6ad97d24c76c58665ecd2b74c7b2c4cb9fef6b1f01615435c6eafbf442",
     "core_fp": "dcb2b2bf3812317b6cef513e29f03fb38b59aaf5ad3d0176c429bbfb3cd627b6"
+  },
+  {
+    "ts": 1778937423,
+    "kind": "ua_en",
+    "level": "B1",
+    "core": "Я пропустив автобус",
+    "fp": "8bca8e202413f1f180a8552f3fd59942e88ec5d3e25a8bd77eadc00b51c30d35",
+    "core_fp": "223358fd32aedb01d969e0095d2db715e0fb5a8271df9dd96840566236667eb0"
   }
 ]
