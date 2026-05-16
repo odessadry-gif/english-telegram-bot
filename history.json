@@ -6484,5 +6484,13 @@
     "core": "It's hot. Please ___ the window.",
     "fp": "18aa5d89b268b4089a3436038c74561a8bf4f49db408be8b6e485329f7c57c8e",
     "core_fp": "2800c908944caa15c67c7573406ee1bd33fa4ae4ad75e08aba5d2c5d7ddbe0ee"
+  },
+  {
+    "ts": 1778918453,
+    "kind": "idiom_meaning",
+    "level": "B1",
+    "core": "Cry over spilled milk",
+    "fp": "186509e4c93cd8582863a7d1c4ef567055ddfd175df8112e7ea047ac0001f1ef",
+    "core_fp": "4cd4cbda1ab152da3c8c3f977558f9af4c369c7ad97352cefcf6d57e5f9d134f"
   }
 ]
