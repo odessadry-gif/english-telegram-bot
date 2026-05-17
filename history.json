@@ -6549,5 +6549,13 @@
     "fp": "24eff1cfedc0a0d521ae5db61cde936b7aefdd8727a3eea5abb95cd753c6dcbf",
     "core_fp": "ea9fb373fd6497381c39b37a41cf006ed3e8cebd646d45faedbe5023647cf8c8",
     "answer": "taxi"
+  },
+  {
+    "ts": 1779013274,
+    "kind": "grammar_gap",
+    "level": "B1",
+    "core": "The taxi will arrive ___ 5 minutes.",
+    "fp": "9543326f5439860954520addcfd6d3bcc7cfc51c70b2f1857ee7efba446a7a99",
+    "core_fp": "863b1e3ddb8e06dcd544da198771ad0cc0cee8e9ffa46e583e057c7b8686d3d1"
   }
 ]
