@@ -6574,5 +6574,13 @@
     "fp": "adc5989d399607a536b8a86df0331d42ef62d994c63cc80d43f25031f431e147",
     "core_fp": "b49906fc252348ab3cfe1245203337c3af59f31455dfaf86b64c0467280cf2e4",
     "answer": "kitchen"
+  },
+  {
+    "ts": 1779044748,
+    "kind": "grammar_gap",
+    "level": "A1",
+    "core": "They ___ at work now.",
+    "fp": "2f40f4cbc64a66318f525f757a70ebca6dedb2151f30a948f1026bab426e1deb",
+    "core_fp": "79f700e5bb93493f6d4ffa464320ec489fb3a677f292dad62e9203512e72e7c0"
   }
 ]
