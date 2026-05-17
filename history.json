@@ -6540,5 +6540,14 @@
     "core": "Ви вільні завтра?",
     "fp": "b3e2c823fcf570508e3ca573f8c48ec7601fee1170c52372caa80633c1388e85",
     "core_fp": "1fce101f0994609c66ca9fb598a49b621ac6b441dd69eb5aa5208498cdd2365e"
+  },
+  {
+    "ts": 1778999023,
+    "kind": "riddle",
+    "level": "A2",
+    "core": "You call it by phone.\nIt takes you on the road.",
+    "fp": "24eff1cfedc0a0d521ae5db61cde936b7aefdd8727a3eea5abb95cd753c6dcbf",
+    "core_fp": "ea9fb373fd6497381c39b37a41cf006ed3e8cebd646d45faedbe5023647cf8c8",
+    "answer": "taxi"
   }
 ]
