@@ -6532,5 +6532,13 @@
     "core": "Я йду додому",
     "fp": "6729689352deb38bd5f93026fa47ba5057cd6f02d8c6b24998b625caa8598f4e",
     "core_fp": "bf1c2bce6903586a6baa0bd9a360aaf0a37a1dd0d371928d786f7a12e555e787"
+  },
+  {
+    "ts": 1778986255,
+    "kind": "ua_en",
+    "level": "B1",
+    "core": "Ви вільні завтра?",
+    "fp": "b3e2c823fcf570508e3ca573f8c48ec7601fee1170c52372caa80633c1388e85",
+    "core_fp": "1fce101f0994609c66ca9fb598a49b621ac6b441dd69eb5aa5208498cdd2365e"
   }
 ]
