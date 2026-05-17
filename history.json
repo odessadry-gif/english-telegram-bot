@@ -6557,5 +6557,13 @@
     "core": "The taxi will arrive ___ 5 minutes.",
     "fp": "9543326f5439860954520addcfd6d3bcc7cfc51c70b2f1857ee7efba446a7a99",
     "core_fp": "863b1e3ddb8e06dcd544da198771ad0cc0cee8e9ffa46e583e057c7b8686d3d1"
+  },
+  {
+    "ts": 1779023737,
+    "kind": "grammar_gap",
+    "level": "B1",
+    "core": "Can I leave a message ___ you?",
+    "fp": "d691399b889127c70e7a706d48d0358eeaf5c9506428eef526c8d1ad88fd637c",
+    "core_fp": "257d88fd2ec34759e404df25aefc15ea07ef09d3c51cb996499a2ca5c4015532"
   }
 ]
