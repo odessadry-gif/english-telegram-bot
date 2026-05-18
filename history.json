@@ -6590,5 +6590,13 @@
     "core": "I ___ at work today.",
     "fp": "d4e16a1a4dd90aedac506692c473ab769bd96ab308e6a034ac17eee97e7752a0",
     "core_fp": "ed6d4aef7cf806e7e71cf4ec0afb18fd415a33032b9e081c4e667ec19c554375"
+  },
+  {
+    "ts": 1779074890,
+    "kind": "ua_en",
+    "level": "A1",
+    "core": "Я хочу квиток",
+    "fp": "135dc00462b4547d85fe7d0c91066e6c6c74c61f9a2f2042bb99e01c6d2c584e",
+    "core_fp": "a45ea0b49914dcf26512b44afe0389c9f51204be7beb95fed2ed7a91e92ad3c4"
   }
 ]
