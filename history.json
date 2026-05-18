@@ -6606,5 +6606,14 @@
     "core": "I left my bag ___ the taxi.",
     "fp": "f46bc4f6c21c7bd8b0b3a81eb971a85e34c41485af86a92e48b76ac3995a0a81",
     "core_fp": "ceb3bfc62c42a27fd3e7f82edcadc792f4a4977293ddb3b6c9b92224ef7d8b70"
+  },
+  {
+    "ts": 1779118042,
+    "kind": "riddle",
+    "level": "A2",
+    "core": "You say this when you are late.\nYou say it for a small mistake.",
+    "fp": "6b24cd2aed543ace7c83b92e9c19d5e9db0286a528f3e19fd0f76571b3276f25",
+    "core_fp": "94d95c888a3c067b3badda575423f109228f47fc15a156c619ca09ed7a925345",
+    "answer": "sorry"
   }
 ]
