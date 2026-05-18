@@ -6623,5 +6623,13 @@
     "core": "Cut to the chase",
     "fp": "b9ba9a8ba717b8a780158c8a3dd9d20ea6a2282baf2747036bef3b33b4c0c4b3",
     "core_fp": "abcc9b79ecd917558eb7a4129f8d53adce0dc3319da161e10718e2016da50b9f"
+  },
+  {
+    "ts": 1779141699,
+    "kind": "grammar_gap",
+    "level": "B1",
+    "core": "He is waiting ___ the bus.",
+    "fp": "643a1b3e653e8548fc4df0b82a385d8a6b0f46d463493c7cf22964d810729262",
+    "core_fp": "e3fafe1a35bb6371f6e1048777e2a2ef16b5cbb2d67b23167ade24fbc5871b65"
   }
 ]
