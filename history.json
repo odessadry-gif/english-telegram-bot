@@ -6615,5 +6615,13 @@
     "fp": "6b24cd2aed543ace7c83b92e9c19d5e9db0286a528f3e19fd0f76571b3276f25",
     "core_fp": "94d95c888a3c067b3badda575423f109228f47fc15a156c619ca09ed7a925345",
     "answer": "sorry"
+  },
+  {
+    "ts": 1779133333,
+    "kind": "idiom_meaning",
+    "level": "B1",
+    "core": "Cut to the chase",
+    "fp": "b9ba9a8ba717b8a780158c8a3dd9d20ea6a2282baf2747036bef3b33b4c0c4b3",
+    "core_fp": "abcc9b79ecd917558eb7a4129f8d53adce0dc3319da161e10718e2016da50b9f"
   }
 ]
