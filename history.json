@@ -6598,5 +6598,13 @@
     "core": "Я хочу квиток",
     "fp": "135dc00462b4547d85fe7d0c91066e6c6c74c61f9a2f2042bb99e01c6d2c584e",
     "core_fp": "a45ea0b49914dcf26512b44afe0389c9f51204be7beb95fed2ed7a91e92ad3c4"
+  },
+  {
+    "ts": 1779098314,
+    "kind": "grammar_gap",
+    "level": "A2",
+    "core": "I left my bag ___ the taxi.",
+    "fp": "f46bc4f6c21c7bd8b0b3a81eb971a85e34c41485af86a92e48b76ac3995a0a81",
+    "core_fp": "ceb3bfc62c42a27fd3e7f82edcadc792f4a4977293ddb3b6c9b92224ef7d8b70"
   }
 ]
