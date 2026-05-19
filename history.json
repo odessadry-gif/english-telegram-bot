@@ -6647,5 +6647,13 @@
     "core": "Я забув свій паспорт",
     "fp": "10f4635af1d30d27652e9e9140f2b249a1fd51d416d0b4461e1cd442acd57c3a",
     "core_fp": "2eb7b5f735469edfee75f59c8fbc9dc11b76fdcf23fbd08e21c020fca4761c30"
+  },
+  {
+    "ts": 1779192496,
+    "kind": "grammar_gap",
+    "level": "A2",
+    "core": "She is waiting ___ the bus.",
+    "fp": "66d5afa8bfee95d9369f392889445b0f733d13dcd06c9a5062489e663d07b920",
+    "core_fp": "a45c246349b8f6e549f6d2737e8cb2eb27f0c362fef917b12534548e1ecd9023"
   }
 ]
