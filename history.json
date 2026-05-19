@@ -6671,5 +6671,14 @@
     "core": "The train arrives ___ 6.",
     "fp": "013f69da44e4bc2e663d49d1d74b1712b1eaba14b11c2e833a675dbef859919e",
     "core_fp": "ddceadae397cee6e37245909e98be5196ff02ddf582aa0fc91b3248b63623f3c"
+  },
+  {
+    "ts": 1779229444,
+    "kind": "riddle",
+    "level": "B1",
+    "core": "You ask for it after you finish a meal.\nIt shows the total price",
+    "fp": "8b91668a8d55ab1c7e15539a3db5f708d4dfbae02e6acaefb0b1e70ade36b919",
+    "core_fp": "2ac3fef0af9b7ad6382dd1743e08fa46bf657f3092385b45cc339e03edb45df5",
+    "answer": "bill"
   }
 ]
