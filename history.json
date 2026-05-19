@@ -6655,5 +6655,13 @@
     "core": "She is waiting ___ the bus.",
     "fp": "66d5afa8bfee95d9369f392889445b0f733d13dcd06c9a5062489e663d07b920",
     "core_fp": "a45c246349b8f6e549f6d2737e8cb2eb27f0c362fef917b12534548e1ecd9023"
+  },
+  {
+    "ts": 1779212244,
+    "kind": "grammar_gap",
+    "level": "B1",
+    "core": "My phone is ___ the table.",
+    "fp": "b8611ef315262ada235e50eef4463f5ccb675c8df5c7ba82e8d673af2928b013",
+    "core_fp": "ec4a33a4feab11e29dbde251b039ccca7b4a1cec4f34e12ed3acc7a15ce8c29e"
   }
 ]
