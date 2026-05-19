@@ -6639,5 +6639,13 @@
     "core": "Please ___ the light when you leave.",
     "fp": "3cd563a964b1556a2cf0ce85ae4db1a8386ee5a84968212cbb890e4b6014b540",
     "core_fp": "dafae2a90b186d16eeb5ceb106c4d4d62d3fcb0db3ca4feece802b35399d7cdd"
+  },
+  {
+    "ts": 1779173434,
+    "kind": "ua_en",
+    "level": "B1",
+    "core": "Я забув свій паспорт",
+    "fp": "10f4635af1d30d27652e9e9140f2b249a1fd51d416d0b4461e1cd442acd57c3a",
+    "core_fp": "2eb7b5f735469edfee75f59c8fbc9dc11b76fdcf23fbd08e21c020fca4761c30"
   }
 ]
