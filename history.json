@@ -6663,5 +6663,13 @@
     "core": "My phone is ___ the table.",
     "fp": "b8611ef315262ada235e50eef4463f5ccb675c8df5c7ba82e8d673af2928b013",
     "core_fp": "ec4a33a4feab11e29dbde251b039ccca7b4a1cec4f34e12ed3acc7a15ce8c29e"
+  },
+  {
+    "ts": 1779220225,
+    "kind": "grammar_gap",
+    "level": "A2",
+    "core": "The train arrives ___ 6.",
+    "fp": "013f69da44e4bc2e663d49d1d74b1712b1eaba14b11c2e833a675dbef859919e",
+    "core_fp": "ddceadae397cee6e37245909e98be5196ff02ddf582aa0fc91b3248b63623f3c"
   }
 ]
