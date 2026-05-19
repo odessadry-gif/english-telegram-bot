@@ -6631,5 +6631,13 @@
     "core": "He is waiting ___ the bus.",
     "fp": "643a1b3e653e8548fc4df0b82a385d8a6b0f46d463493c7cf22964d810729262",
     "core_fp": "e3fafe1a35bb6371f6e1048777e2a2ef16b5cbb2d67b23167ade24fbc5871b65"
+  },
+  {
+    "ts": 1779159421,
+    "kind": "grammar_gap",
+    "level": "B1",
+    "core": "Please ___ the light when you leave.",
+    "fp": "3cd563a964b1556a2cf0ce85ae4db1a8386ee5a84968212cbb890e4b6014b540",
+    "core_fp": "dafae2a90b186d16eeb5ceb106c4d4d62d3fcb0db3ca4feece802b35399d7cdd"
   }
 ]
