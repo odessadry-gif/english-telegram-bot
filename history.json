@@ -6688,5 +6688,13 @@
     "core": "Back to the drawing board",
     "fp": "abfb75a72bf3269dcf3ec734bbfb72c3ce5d255d68588ddd5b4f1b9b3aeacd75",
     "core_fp": "c5474331e8a5820911bcaca46a3a1abc182f05aecefa6080409f9ad11a015f3a"
+  },
+  {
+    "ts": 1779259883,
+    "kind": "ua_en",
+    "level": "A1",
+    "core": "Де тут магазин?",
+    "fp": "d327ebcde487185f99f0606962671864c3901cfafb9483553bcdb4f947c5b225",
+    "core_fp": "e076908398f4fd30e09e303d03eae2866468eb0a32ff4ceb4bc5271df133e817"
   }
 ]
