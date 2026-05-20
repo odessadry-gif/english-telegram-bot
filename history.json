@@ -6696,5 +6696,13 @@
     "core": "Де тут магазин?",
     "fp": "d327ebcde487185f99f0606962671864c3901cfafb9483553bcdb4f947c5b225",
     "core_fp": "e076908398f4fd30e09e303d03eae2866468eb0a32ff4ceb4bc5271df133e817"
+  },
+  {
+    "ts": 1779277703,
+    "kind": "idiom_meaning",
+    "level": "B1",
+    "core": "Let the cat out of the bag",
+    "fp": "bbebc2ee6aa1f8438b1f759e2d2691bc8f53d0dcf0fbd8cec607f6ae2047977b",
+    "core_fp": "de8000ba2d60e251b5a7274a6d90dac98d0d7881ae05c86a82498c45301ec477"
   }
 ]
