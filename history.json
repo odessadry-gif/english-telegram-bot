@@ -6720,5 +6720,13 @@
     "core": "We ___ at home.",
     "fp": "13b798adcc68c96fe2a5040aae6e38e111e55d8672fc5289cb53084fd9525a52",
     "core_fp": "a1dac83eae572cba5330aa99a7f225414c06463b618b804d6c77f611db892ed1"
+  },
+  {
+    "ts": 1779307952,
+    "kind": "ua_en",
+    "level": "A2",
+    "core": "Я залишаюся тут",
+    "fp": "b56606529937ccb8388eb48f8605b9b9cb04ce6fd262205dfe441b88afebc8b2",
+    "core_fp": "d0b19d2b67a80e41f963e74923a03be1b4a4244c4076360265e6d863415beab6"
   }
 ]
