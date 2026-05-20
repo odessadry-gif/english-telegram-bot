@@ -6712,5 +6712,13 @@
     "core": "Коли поїзд?",
     "fp": "7833475258809aa8726a73a580f545940202d39d78851512873988bdb168ff8a",
     "core_fp": "03e7b6baa22a0a6e682533431be061d3bb0669fa7d1f4d5fcf789b22aef5a066"
+  },
+  {
+    "ts": 1779299714,
+    "kind": "grammar_gap",
+    "level": "A1",
+    "core": "We ___ at home.",
+    "fp": "13b798adcc68c96fe2a5040aae6e38e111e55d8672fc5289cb53084fd9525a52",
+    "core_fp": "a1dac83eae572cba5330aa99a7f225414c06463b618b804d6c77f611db892ed1"
   }
 ]
