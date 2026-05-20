@@ -6680,5 +6680,13 @@
     "fp": "8b91668a8d55ab1c7e15539a3db5f708d4dfbae02e6acaefb0b1e70ade36b919",
     "core_fp": "2ac3fef0af9b7ad6382dd1743e08fa46bf657f3092385b45cc339e03edb45df5",
     "answer": "bill"
+  },
+  {
+    "ts": 1779245832,
+    "kind": "idiom_meaning",
+    "level": "B1",
+    "core": "Back to the drawing board",
+    "fp": "abfb75a72bf3269dcf3ec734bbfb72c3ce5d255d68588ddd5b4f1b9b3aeacd75",
+    "core_fp": "c5474331e8a5820911bcaca46a3a1abc182f05aecefa6080409f9ad11a015f3a"
   }
 ]
