@@ -6704,5 +6704,13 @@
     "core": "Let the cat out of the bag",
     "fp": "bbebc2ee6aa1f8438b1f759e2d2691bc8f53d0dcf0fbd8cec607f6ae2047977b",
     "core_fp": "de8000ba2d60e251b5a7274a6d90dac98d0d7881ae05c86a82498c45301ec477"
+  },
+  {
+    "ts": 1779289152,
+    "kind": "ua_en",
+    "level": "A2",
+    "core": "Коли поїзд?",
+    "fp": "7833475258809aa8726a73a580f545940202d39d78851512873988bdb168ff8a",
+    "core_fp": "03e7b6baa22a0a6e682533431be061d3bb0669fa7d1f4d5fcf789b22aef5a066"
   }
 ]
