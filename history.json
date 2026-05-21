@@ -6761,5 +6761,13 @@
     "core": "Я зайнятий",
     "fp": "1c78c9358a0d5f2feaf9b1eff7e257c249c656cd87ce33972c1e7235e2b361d2",
     "core_fp": "b7948590d8d89639ffa2c4e4078b9955a28d5fe5d31f5e833790e89d0c0532a6"
+  },
+  {
+    "ts": 1779393066,
+    "kind": "idiom_meaning",
+    "level": "B1",
+    "core": "Rain or shine",
+    "fp": "553527f4577250bf738a31e04c6c63c3ef06b082b1115f0a05521b2a59eacee3",
+    "core_fp": "1037b1ef7fe58cfbaed39431d3631a0b96d28cdfe75f93c5577370ed68e34528"
   }
 ]
