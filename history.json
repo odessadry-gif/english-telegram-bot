@@ -6736,5 +6736,14 @@
     "core": "Barking up the wrong tree",
     "fp": "6600caa30e53903833ffe0f3f7c1c30b1693bcaa3c54b6c95f0671ce283f048c",
     "core_fp": "9a1fb77cfb2163e72f4a06f334fd038e681a0ab4115a840692d3405d01080992"
+  },
+  {
+    "ts": 1779334282,
+    "kind": "riddle",
+    "level": "B1",
+    "core": "They open doors.\nYou keep them on a ring.",
+    "fp": "c348bb58b2ab951368e785b825ff273f1ff44339cf0825e2a69aa4ed0b2855ed",
+    "core_fp": "ff081887d3a9c6409a97134cee952c59f792a0391b252b89e4b548253b57db96",
+    "answer": "keys"
   }
 ]
