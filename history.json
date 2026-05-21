@@ -6769,5 +6769,13 @@
     "core": "Rain or shine",
     "fp": "553527f4577250bf738a31e04c6c63c3ef06b082b1115f0a05521b2a59eacee3",
     "core_fp": "1037b1ef7fe58cfbaed39431d3631a0b96d28cdfe75f93c5577370ed68e34528"
+  },
+  {
+    "ts": 1779401882,
+    "kind": "idiom_meaning",
+    "level": "B1",
+    "core": "Get cold feet",
+    "fp": "8be96d493e11a8b14fe4074339ce243547df6408f325a6bfcf34b8bfdf7986c5",
+    "core_fp": "a1a66ef013168c40eb7037c00cf4d7aa922656a1220113f10a909db96ba1afe6"
   }
 ]
