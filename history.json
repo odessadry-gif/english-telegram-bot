@@ -6745,5 +6745,13 @@
     "fp": "c348bb58b2ab951368e785b825ff273f1ff44339cf0825e2a69aa4ed0b2855ed",
     "core_fp": "ff081887d3a9c6409a97134cee952c59f792a0391b252b89e4b548253b57db96",
     "answer": "keys"
+  },
+  {
+    "ts": 1779356198,
+    "kind": "grammar_gap",
+    "level": "B1",
+    "core": "When ___ the bus arrive?",
+    "fp": "92a4b115ec173fc9b1d654ed64556fc41fa8fe7a6e3ccd4d0ae9bf2a94150f63",
+    "core_fp": "5f62602e1b0a0ddf8e7a9338bc64471518c29cbedb3aa76b62beb61766f927b1"
   }
 ]
