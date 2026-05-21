@@ -6753,5 +6753,13 @@
     "core": "When ___ the bus arrive?",
     "fp": "92a4b115ec173fc9b1d654ed64556fc41fa8fe7a6e3ccd4d0ae9bf2a94150f63",
     "core_fp": "5f62602e1b0a0ddf8e7a9338bc64471518c29cbedb3aa76b62beb61766f927b1"
+  },
+  {
+    "ts": 1779376737,
+    "kind": "ua_en",
+    "level": "A1",
+    "core": "Я зайнятий",
+    "fp": "1c78c9358a0d5f2feaf9b1eff7e257c249c656cd87ce33972c1e7235e2b361d2",
+    "core_fp": "b7948590d8d89639ffa2c4e4078b9955a28d5fe5d31f5e833790e89d0c0532a6"
   }
 ]
