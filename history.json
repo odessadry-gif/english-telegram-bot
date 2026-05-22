@@ -6817,5 +6817,13 @@
     "core": "Sorry, I'm ___ the wrong train.",
     "fp": "687a76d51b1e408da76432140da0199e5d632be62616e0821fd694f821aaf0be",
     "core_fp": "beed9bf7d7d3f1ca46aafb098bde41b46d19d7f292ad5ec4dd3d273fd55a6081"
+  },
+  {
+    "ts": 1779478902,
+    "kind": "grammar_gap",
+    "level": "B1",
+    "core": "He usually ___ the bus to work.",
+    "fp": "fd3876cdc7f64daf0f7c110c846d4a5d1663bab4939dbeaceed5a87947fc64d0",
+    "core_fp": "8c02c0649603221c3ade210b21fc8a3632cb17c259c6f20713f00aeffac108d4"
   }
 ]
