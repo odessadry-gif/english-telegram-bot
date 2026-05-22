@@ -6793,5 +6793,13 @@
     "core": "Я хочу подивитися меню",
     "fp": "d4bee0d4daf3887efdbf9a89fb534018b292287fde0319fad71ccc5aa65cde9d",
     "core_fp": "a2bbc8bccf5ce5b1f9758c7339f18f04fe517ea3d84180077de2b083c9e67af8"
+  },
+  {
+    "ts": 1779450525,
+    "kind": "grammar_gap",
+    "level": "B1",
+    "core": "I am waiting ___ the bus stop.",
+    "fp": "fc8980e7e093c11321ce49261d791e86cf6f1cd861120c3e5dcd074970bee95c",
+    "core_fp": "1821d0e4e2f1dc80df5467203c390cfa00afb91dc5e02e9a1dc97322018c0d87"
   }
 ]
