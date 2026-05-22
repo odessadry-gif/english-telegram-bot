@@ -6825,5 +6825,13 @@
     "core": "He usually ___ the bus to work.",
     "fp": "fd3876cdc7f64daf0f7c110c846d4a5d1663bab4939dbeaceed5a87947fc64d0",
     "core_fp": "8c02c0649603221c3ade210b21fc8a3632cb17c259c6f20713f00aeffac108d4"
+  },
+  {
+    "ts": 1779487563,
+    "kind": "idiom_meaning",
+    "level": "B1",
+    "core": "No pain, no gain",
+    "fp": "5deaab7b954da6dbe13a13e55b98a6118182865d7521493e7cfa1396dc15bf79",
+    "core_fp": "e4c2b1f2eb4b5f3e613de577c56fd6fe4bac521e1b895bc371b23f952dacceb1"
   }
 ]
