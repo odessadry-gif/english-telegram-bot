@@ -6777,5 +6777,13 @@
     "core": "Get cold feet",
     "fp": "8be96d493e11a8b14fe4074339ce243547df6408f325a6bfcf34b8bfdf7986c5",
     "core_fp": "a1a66ef013168c40eb7037c00cf4d7aa922656a1220113f10a909db96ba1afe6"
+  },
+  {
+    "ts": 1779420383,
+    "kind": "grammar_gap",
+    "level": "B1",
+    "core": "I usually start work ___ nine.",
+    "fp": "af69f1c2ac56cee55f92517cc83c103be6baed1a4b1bc883a5ee95c8d669dadf",
+    "core_fp": "c344472bf715f243ae97b724d0144e29e24a87576369ea2b3e5b62788e21dde6"
   }
 ]
