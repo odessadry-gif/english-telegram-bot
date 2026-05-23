@@ -6859,5 +6859,13 @@
     "fp": "66288f72a1d4f940bd2c589daa41109da3dee69d46bee683a36ae951824256fd",
     "core_fp": "215377bd3a7e32247ff1661b316c8f378ddfe610d546014b9623d7b90ce5ef47",
     "answer": "watch"
+  },
+  {
+    "ts": 1779542453,
+    "kind": "ua_en",
+    "level": "B1",
+    "core": "Це занадто дорого",
+    "fp": "735d1f9a3df0e5ddd2fca8e20d131f3b6f4b96861dacbb8574d6cc87f500baff",
+    "core_fp": "eea7cea0889cb53e540e0a290cea915091cc756e96e2a1766e21c1721f8ec80e"
   }
 ]
