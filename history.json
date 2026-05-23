@@ -6833,5 +6833,13 @@
     "core": "No pain, no gain",
     "fp": "5deaab7b954da6dbe13a13e55b98a6118182865d7521493e7cfa1396dc15bf79",
     "core_fp": "e4c2b1f2eb4b5f3e613de577c56fd6fe4bac521e1b895bc371b23f952dacceb1"
+  },
+  {
+    "ts": 1779504401,
+    "kind": "ua_en",
+    "level": "B1",
+    "core": "Де вихід на посадку?",
+    "fp": "bee76e0ef9e9a03ffde3ad33760f3d785179fc80907cada0fb73a644df56079a",
+    "core_fp": "410a04285cfefce74d4fe2317d399dd9d5fe8f6d6fb366347030f5fcd47c138f"
   }
 ]
