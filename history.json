@@ -6883,5 +6883,14 @@
     "core": "Where ___ my bag?",
     "fp": "1dfdc516ec41d1a832b85d5a98eda1dfebb2d6d3f7283da51b57e1d04f475ea4",
     "core_fp": "454f5f4118ddae23d3cb3280ea3eb361bc5e39baa4c699630fce8ac9f7b868e3"
+  },
+  {
+    "ts": 1779573211,
+    "kind": "riddle",
+    "level": "B1",
+    "core": "A main meal at the middle of the day.\nYou often eat it at work or school.",
+    "fp": "20374a631a706be618d42fc40b48a8417523d992f3ffefab52768b4110c416f0",
+    "core_fp": "28f0cc36b7a9e4a80e906975c457c6a1eca4cd23ff5b35f0a32a7eab6898c848",
+    "answer": "lunch"
   }
 ]
