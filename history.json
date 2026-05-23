@@ -6850,5 +6850,14 @@
     "fp": "2a357c60b44e5920f484ab07ccde361945d0667deaac165a87fced0549c30eec",
     "core_fp": "d990b516e4c3955c9068338567c92d365b2d83bff50c0caf49dada42e2a79f2a",
     "answer": "plane"
+  },
+  {
+    "ts": 1779531910,
+    "kind": "riddle",
+    "level": "B1",
+    "core": "You wear it on your wrist.\nIt shows the time.",
+    "fp": "66288f72a1d4f940bd2c589daa41109da3dee69d46bee683a36ae951824256fd",
+    "core_fp": "215377bd3a7e32247ff1661b316c8f378ddfe610d546014b9623d7b90ce5ef47",
+    "answer": "watch"
   }
 ]
