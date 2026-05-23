@@ -6841,5 +6841,14 @@
     "core": "Де вихід на посадку?",
     "fp": "bee76e0ef9e9a03ffde3ad33760f3d785179fc80907cada0fb73a644df56079a",
     "core_fp": "410a04285cfefce74d4fe2317d399dd9d5fe8f6d6fb366347030f5fcd47c138f"
+  },
+  {
+    "ts": 1779516709,
+    "kind": "riddle",
+    "level": "B1",
+    "core": "It flies in the sky.\nYou use it to travel.",
+    "fp": "2a357c60b44e5920f484ab07ccde361945d0667deaac165a87fced0549c30eec",
+    "core_fp": "d990b516e4c3955c9068338567c92d365b2d83bff50c0caf49dada42e2a79f2a",
+    "answer": "plane"
   }
 ]
