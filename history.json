@@ -6867,5 +6867,13 @@
     "core": "Це занадто дорого",
     "fp": "735d1f9a3df0e5ddd2fca8e20d131f3b6f4b96861dacbb8574d6cc87f500baff",
     "core_fp": "eea7cea0889cb53e540e0a290cea915091cc756e96e2a1766e21c1721f8ec80e"
+  },
+  {
+    "ts": 1779552030,
+    "kind": "grammar_gap",
+    "level": "B1",
+    "core": "They ___ to work every day.",
+    "fp": "1c73093a05f29db163747d554189390d778463313bc3c2933a105d06702b98b7",
+    "core_fp": "c8164f107867c6737dc011d397fb3ddcea37483467cb7d66391355d0baa1a9e0"
   }
 ]
