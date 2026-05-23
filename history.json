@@ -6875,5 +6875,13 @@
     "core": "They ___ to work every day.",
     "fp": "1c73093a05f29db163747d554189390d778463313bc3c2933a105d06702b98b7",
     "core_fp": "c8164f107867c6737dc011d397fb3ddcea37483467cb7d66391355d0baa1a9e0"
+  },
+  {
+    "ts": 1779563210,
+    "kind": "grammar_gap",
+    "level": "A1",
+    "core": "Where ___ my bag?",
+    "fp": "1dfdc516ec41d1a832b85d5a98eda1dfebb2d6d3f7283da51b57e1d04f475ea4",
+    "core_fp": "454f5f4118ddae23d3cb3280ea3eb361bc5e39baa4c699630fce8ac9f7b868e3"
   }
 ]
