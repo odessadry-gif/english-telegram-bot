@@ -6892,5 +6892,13 @@
     "fp": "20374a631a706be618d42fc40b48a8417523d992f3ffefab52768b4110c416f0",
     "core_fp": "28f0cc36b7a9e4a80e906975c457c6a1eca4cd23ff5b35f0a32a7eab6898c848",
     "answer": "lunch"
+  },
+  {
+    "ts": 1779591543,
+    "kind": "grammar_gap",
+    "level": "A1",
+    "core": "I ___ at home now.",
+    "fp": "cd3b17d7486a3c5ca7e8de822ef79065a2f4987e3ac527f1ecf43335522a7cde",
+    "core_fp": "31ecb4aaab3215605d3efe26f08c70d3b29f295b7cfd3ca1af7d2e22b2d9f0d9"
   }
 ]
