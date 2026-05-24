@@ -6932,5 +6932,14 @@
     "core": "Можете повторити, будь ласка?",
     "fp": "4f7098dcd28d649ca4d400c607b4b8af935c4869837f66901060893cef856d33",
     "core_fp": "b7b689675e2f9dff5ad74484ba61db6460fa37056e04c1a5d4d3ecf7898fc483"
+  },
+  {
+    "ts": 1779650115,
+    "kind": "riddle",
+    "level": "A2",
+    "core": "You boil water with it.\nYou use it in the kitchen.",
+    "fp": "1c6eb2ce6bb3d3c02d486dd853523a6b52063e72f76e050f52b375b7d4a032d0",
+    "core_fp": "67a7f7098462c7167c8027bf36d2ba9be1c0058578aa4263e7d54145ab161e61",
+    "answer": "kettle"
   }
 ]
