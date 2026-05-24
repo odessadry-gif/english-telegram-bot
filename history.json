@@ -6900,5 +6900,13 @@
     "core": "I ___ at home now.",
     "fp": "cd3b17d7486a3c5ca7e8de822ef79065a2f4987e3ac527f1ecf43335522a7cde",
     "core_fp": "31ecb4aaab3215605d3efe26f08c70d3b29f295b7cfd3ca1af7d2e22b2d9f0d9"
+  },
+  {
+    "ts": 1779604877,
+    "kind": "grammar_gap",
+    "level": "A2",
+    "core": "The train leaves ___ 5 pm.",
+    "fp": "f7bd210fb0d3a22e419d37daba60af6a1960fa0a4a90c7450e16fab949342fef",
+    "core_fp": "605aaf7c3608fe9e86bac8a975b525c68793c1860dd086ef9fb3a926af45de91"
   }
 ]
