@@ -6916,5 +6916,13 @@
     "core": "Коли відкривається магазин?",
     "fp": "ecf2d6d54d056435d898922070a26714cf50f045b61d7d2e23380f462ab1d367",
     "core_fp": "cf315ddb4709bb4be690064811417d7c8b703955770db72073d9707a3affb8c7"
+  },
+  {
+    "ts": 1779628894,
+    "kind": "ua_en",
+    "level": "B1",
+    "core": "Де тут перукарня?",
+    "fp": "333bb48a7e6d69ce0b3efa21d47ff213170ddd2ce9ad657d93c0f10902af097c",
+    "core_fp": "491602f81388cc171d258b92374bfab23d8182ffdb11ebea8f2d52f4eb6680c5"
   }
 ]
