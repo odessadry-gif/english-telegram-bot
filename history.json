@@ -6941,5 +6941,13 @@
     "fp": "1c6eb2ce6bb3d3c02d486dd853523a6b52063e72f76e050f52b375b7d4a032d0",
     "core_fp": "67a7f7098462c7167c8027bf36d2ba9be1c0058578aa4263e7d54145ab161e61",
     "answer": "kettle"
+  },
+  {
+    "ts": 1779659698,
+    "kind": "ua_en",
+    "level": "A1",
+    "core": "У мене болить голова",
+    "fp": "749b907c0ee70160a53f5d782f3f7533708810bf3f3042f9294cc4270e2cec33",
+    "core_fp": "0e8bdd8352f2e9e790136cc7c23e50a41f6d4b8460e5a090e0a96728ceb685e1"
   }
 ]
