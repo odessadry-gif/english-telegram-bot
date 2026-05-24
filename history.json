@@ -6908,5 +6908,13 @@
     "core": "The train leaves ___ 5 pm.",
     "fp": "f7bd210fb0d3a22e419d37daba60af6a1960fa0a4a90c7450e16fab949342fef",
     "core_fp": "605aaf7c3608fe9e86bac8a975b525c68793c1860dd086ef9fb3a926af45de91"
+  },
+  {
+    "ts": 1779618550,
+    "kind": "ua_en",
+    "level": "B1",
+    "core": "Коли відкривається магазин?",
+    "fp": "ecf2d6d54d056435d898922070a26714cf50f045b61d7d2e23380f462ab1d367",
+    "core_fp": "cf315ddb4709bb4be690064811417d7c8b703955770db72073d9707a3affb8c7"
   }
 ]
