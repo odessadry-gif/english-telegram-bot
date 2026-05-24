@@ -6924,5 +6924,13 @@
     "core": "Де тут перукарня?",
     "fp": "333bb48a7e6d69ce0b3efa21d47ff213170ddd2ce9ad657d93c0f10902af097c",
     "core_fp": "491602f81388cc171d258b92374bfab23d8182ffdb11ebea8f2d52f4eb6680c5"
+  },
+  {
+    "ts": 1779638378,
+    "kind": "ua_en",
+    "level": "A2",
+    "core": "Можете повторити, будь ласка?",
+    "fp": "4f7098dcd28d649ca4d400c607b4b8af935c4869837f66901060893cef856d33",
+    "core_fp": "b7b689675e2f9dff5ad74484ba61db6460fa37056e04c1a5d4d3ecf7898fc483"
   }
 ]
