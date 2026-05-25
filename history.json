@@ -6957,5 +6957,13 @@
     "core": "Please put the keys ___ your pocket.",
     "fp": "5a9f03bafe6a3eb774f749033220416ba025fb0f95414fc5667edbae95575b1b",
     "core_fp": "0d06a885c0901b40ddd7ff17b2751f029d92a6b27a94ea12de65971db124835e"
+  },
+  {
+    "ts": 1779703320,
+    "kind": "ua_en",
+    "level": "A2",
+    "core": "Ми голодні",
+    "fp": "4f415b75808a48fcf8bba30b13e1bffd9a1e132c0ba43ebcb89a2da6d5cfc010",
+    "core_fp": "174b8d873819b43698a4501b5979fe4359b09ed3435b4e4507b737af931e04bf"
   }
 ]
