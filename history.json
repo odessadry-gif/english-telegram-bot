@@ -6965,5 +6965,13 @@
     "core": "Ми голодні",
     "fp": "4f415b75808a48fcf8bba30b13e1bffd9a1e132c0ba43ebcb89a2da6d5cfc010",
     "core_fp": "174b8d873819b43698a4501b5979fe4359b09ed3435b4e4507b737af931e04bf"
+  },
+  {
+    "ts": 1779720563,
+    "kind": "idiom_meaning",
+    "level": "B1",
+    "core": "Go the extra mile",
+    "fp": "dd02eb04d8da3c93e1f35308ebbfa68c62d6b1620a411b36eb3525881f4ed1e1",
+    "core_fp": "a3543000ee9b983b8ffee9ffdcc1e0c447cd4db1f4568b262a912df879ef3ab5"
   }
 ]
