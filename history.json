@@ -6973,5 +6973,13 @@
     "core": "Go the extra mile",
     "fp": "dd02eb04d8da3c93e1f35308ebbfa68c62d6b1620a411b36eb3525881f4ed1e1",
     "core_fp": "a3543000ee9b983b8ffee9ffdcc1e0c447cd4db1f4568b262a912df879ef3ab5"
+  },
+  {
+    "ts": 1779728720,
+    "kind": "idiom_meaning",
+    "level": "B1",
+    "core": "Sit on the fence",
+    "fp": "0833ae8ca3930a3f742030a5e6d420fe7ae588a26cc3414ce191f79c6e51d094",
+    "core_fp": "62a27b0709c22fde31d5cef5385754612b33f057af2620abd2c3d73916ec594c"
   }
 ]
