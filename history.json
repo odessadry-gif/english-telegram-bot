@@ -6989,5 +6989,13 @@
     "core": "Мені потрібна віза",
     "fp": "3096dc4972d9dee9a6d2ee782a0edeae95c2209ec897fc3e552229a43e261563",
     "core_fp": "09fac29a17788a9cc807020f8f9fd9e195f66e26a4f3adea5607ecaa62b5a8ca"
+  },
+  {
+    "ts": 1779746824,
+    "kind": "grammar_gap",
+    "level": "B1",
+    "core": "I work ___ Mondays.",
+    "fp": "9e5e4f1292c2bd07857e6325f1da1acccd044a869410bd2e852c2f2d1df137ac",
+    "core_fp": "20783f4ac487226266b2ee9ec65540e3182562713614d1276930ff3ca3fb0e99"
   }
 ]
