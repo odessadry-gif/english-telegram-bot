@@ -6949,5 +6949,13 @@
     "core": "У мене болить голова",
     "fp": "749b907c0ee70160a53f5d782f3f7533708810bf3f3042f9294cc4270e2cec33",
     "core_fp": "0e8bdd8352f2e9e790136cc7c23e50a41f6d4b8460e5a090e0a96728ceb685e1"
+  },
+  {
+    "ts": 1779680106,
+    "kind": "grammar_gap",
+    "level": "A2",
+    "core": "Please put the keys ___ your pocket.",
+    "fp": "5a9f03bafe6a3eb774f749033220416ba025fb0f95414fc5667edbae95575b1b",
+    "core_fp": "0d06a885c0901b40ddd7ff17b2751f029d92a6b27a94ea12de65971db124835e"
   }
 ]
