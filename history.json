@@ -7005,5 +7005,13 @@
     "core": "They ___ at school.",
     "fp": "587a4f89b8dd299ab7b85246a43922dd5024a3425153540905dca3650feb9c5d",
     "core_fp": "46e12e6b347d5f5f75b204df6d84ec4daf678341d950d36d38cd31bbf861d589"
+  },
+  {
+    "ts": 1779777894,
+    "kind": "grammar_gap",
+    "level": "B1",
+    "core": "She is waiting ___ the bus stop.",
+    "fp": "466e52e60d775e98e1d2604903344bb7e3fd1cd06f8ba6ecf7c2a5fced90e99c",
+    "core_fp": "88548e066f05a81e9b4203852012e70ba97658bfbdf8e8cf7f0867dbe069a519"
   }
 ]
