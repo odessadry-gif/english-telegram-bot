@@ -6997,5 +6997,13 @@
     "core": "I work ___ Mondays.",
     "fp": "9e5e4f1292c2bd07857e6325f1da1acccd044a869410bd2e852c2f2d1df137ac",
     "core_fp": "20783f4ac487226266b2ee9ec65540e3182562713614d1276930ff3ca3fb0e99"
+  },
+  {
+    "ts": 1779764051,
+    "kind": "grammar_gap",
+    "level": "A1",
+    "core": "They ___ at school.",
+    "fp": "587a4f89b8dd299ab7b85246a43922dd5024a3425153540905dca3650feb9c5d",
+    "core_fp": "46e12e6b347d5f5f75b204df6d84ec4daf678341d950d36d38cd31bbf861d589"
   }
 ]
