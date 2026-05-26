@@ -7013,5 +7013,14 @@
     "core": "She is waiting ___ the bus stop.",
     "fp": "466e52e60d775e98e1d2604903344bb7e3fd1cd06f8ba6ecf7c2a5fced90e99c",
     "core_fp": "88548e066f05a81e9b4203852012e70ba97658bfbdf8e8cf7f0867dbe069a519"
+  },
+  {
+    "ts": 1779818268,
+    "kind": "riddle",
+    "level": "A2",
+    "core": "You read it in a cafe.\nIt shows food.",
+    "fp": "b552a8c867b646fe42a724812147e16f023a1a889b8bd244c83793b410586743",
+    "core_fp": "50f097c2d409b256e6bd4761b0b8b22a9d4753dde56b0d4095c5fd238739756d",
+    "answer": "menu"
   }
 ]
