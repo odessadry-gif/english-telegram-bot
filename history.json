@@ -7030,5 +7030,13 @@
     "core": "I ___ to work yesterday.",
     "fp": "d9a167df81b61074f98beb45db6e7e56447f73beef4ed17c90853b1e1d8afdd5",
     "core_fp": "6239e1639c842ef35124f399f9dddba9505f3bd6a4becd6ba900d6e66d69416a"
+  },
+  {
+    "ts": 1779833880,
+    "kind": "idiom_meaning",
+    "level": "B1",
+    "core": "Kill two birds with one stone",
+    "fp": "341bd8bd0ed1b19c4c4851bb769526f148a67415b06e6edc5683d31ca902688b",
+    "core_fp": "714260c272dd08d75913f62bbd6aef64122b46a75c4c190692b29711a251eb13"
   }
 ]
