@@ -7054,5 +7054,13 @@
     "core": "Steal someone's thunder",
     "fp": "e65e8900e35010343d1bfc1df14aa3bc6d1b0f271fcdf2c738e745f9cf57d77d",
     "core_fp": "6f93efc31e8e2753639c942bc2b0aa0edbc57a908f683dd738b543ceb5f43e2b"
+  },
+  {
+    "ts": 1779896162,
+    "kind": "grammar_gap",
+    "level": "A2",
+    "core": "He ___ the bus to work.",
+    "fp": "e6d6f39b413fc42d3c35624fae237ae3529e17b090291ffb5bc01ab565b33e01",
+    "core_fp": "63cbe834cc7d1036b56fc5b77445e821bc308f32594bf201d4dff4e6c284b0c6"
   }
 ]
