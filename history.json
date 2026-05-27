@@ -7046,5 +7046,13 @@
     "core": "Where ___ my phone?",
     "fp": "0eb8c8130dc137f7eb8e8c9ff1922015ff6a42b1dcde9ae84529b2863adc6cbe",
     "core_fp": "6c9301ce9d455a2448aae5caf3cd3bfecc20fb11f0b18ecb97c74efebb106ddc"
+  },
+  {
+    "ts": 1779874833,
+    "kind": "idiom_meaning",
+    "level": "B1",
+    "core": "Steal someone's thunder",
+    "fp": "e65e8900e35010343d1bfc1df14aa3bc6d1b0f271fcdf2c738e745f9cf57d77d",
+    "core_fp": "6f93efc31e8e2753639c942bc2b0aa0edbc57a908f683dd738b543ceb5f43e2b"
   }
 ]
