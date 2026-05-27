@@ -7038,5 +7038,13 @@
     "core": "Kill two birds with one stone",
     "fp": "341bd8bd0ed1b19c4c4851bb769526f148a67415b06e6edc5683d31ca902688b",
     "core_fp": "714260c272dd08d75913f62bbd6aef64122b46a75c4c190692b29711a251eb13"
+  },
+  {
+    "ts": 1779852811,
+    "kind": "grammar_gap",
+    "level": "A1",
+    "core": "Where ___ my phone?",
+    "fp": "0eb8c8130dc137f7eb8e8c9ff1922015ff6a42b1dcde9ae84529b2863adc6cbe",
+    "core_fp": "6c9301ce9d455a2448aae5caf3cd3bfecc20fb11f0b18ecb97c74efebb106ddc"
   }
 ]
