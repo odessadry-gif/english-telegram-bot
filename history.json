@@ -7062,5 +7062,13 @@
     "core": "He ___ the bus to work.",
     "fp": "e6d6f39b413fc42d3c35624fae237ae3529e17b090291ffb5bc01ab565b33e01",
     "core_fp": "63cbe834cc7d1036b56fc5b77445e821bc308f32594bf201d4dff4e6c284b0c6"
+  },
+  {
+    "ts": 1779912722,
+    "kind": "grammar_gap",
+    "level": "A1",
+    "core": "I ___ coffee in the morning.",
+    "fp": "f73dcdec1c1ff5ff00b142031c5a6a74a76964af392f27a42aaedfbbc09f8249",
+    "core_fp": "c9bac8963d25676cb5611cf8ac214a29b983e89396ee5b5e7e154ecd10092fec"
   }
 ]
