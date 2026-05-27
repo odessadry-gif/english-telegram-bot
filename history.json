@@ -7070,5 +7070,14 @@
     "core": "I ___ coffee in the morning.",
     "fp": "f73dcdec1c1ff5ff00b142031c5a6a74a76964af392f27a42aaedfbbc09f8249",
     "core_fp": "c9bac8963d25676cb5611cf8ac214a29b983e89396ee5b5e7e154ecd10092fec"
+  },
+  {
+    "ts": 1779920938,
+    "kind": "riddle",
+    "level": "A1",
+    "core": "It has a handle.\nYou drink hot tea from it",
+    "fp": "c3df1dc2b3cd1ca8d6057d00eb41abb9b6e70061cff0a3a278db8834f01f62a5",
+    "core_fp": "4917ff8b0a194b4374f114cc5e37e5e4743f2805a542af942df851149d745e90",
+    "answer": "mug"
   }
 ]
