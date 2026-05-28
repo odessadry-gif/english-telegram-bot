@@ -7079,5 +7079,14 @@
     "fp": "c3df1dc2b3cd1ca8d6057d00eb41abb9b6e70061cff0a3a278db8834f01f62a5",
     "core_fp": "4917ff8b0a194b4374f114cc5e37e5e4743f2805a542af942df851149d745e90",
     "answer": "mug"
+  },
+  {
+    "ts": 1779936950,
+    "kind": "riddle",
+    "level": "A2",
+    "core": "You wash your body here.\nYou use soap and water.",
+    "fp": "e2e902b336e5aaae7da55cb9bff0f324635955fb90a898ea16d66478ccd32964",
+    "core_fp": "6fffc4691a693e0fe4ed4f8f4d5f8a27cc3ad0df2c26a64cbed9e67be69e2fe1",
+    "answer": "shower"
   }
 ]
