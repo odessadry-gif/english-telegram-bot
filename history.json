@@ -7088,5 +7088,13 @@
     "fp": "e2e902b336e5aaae7da55cb9bff0f324635955fb90a898ea16d66478ccd32964",
     "core_fp": "6fffc4691a693e0fe4ed4f8f4d5f8a27cc3ad0df2c26a64cbed9e67be69e2fe1",
     "answer": "shower"
+  },
+  {
+    "ts": 1779951218,
+    "kind": "grammar_gap",
+    "level": "A1",
+    "core": "He ___ to work by car.",
+    "fp": "b1941842f092d36d1e5eb0b1cd9dd5eb2866854185f8f009241bc569fc8b1b23",
+    "core_fp": "bfbb0f0a946f1be8254d57f0879c205242a29197f8b5af74ac674673676f9518"
   }
 ]
