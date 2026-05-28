@@ -7104,5 +7104,14 @@
     "core": "Curiosity killed the cat",
     "fp": "ee631f000bab4ed671736bf27ef0227a8230e99bc9fffc4d34b8c7c5c0d82921",
     "core_fp": "ba189f6be768ea4050cea726aeed06c5ae22a47bc8471fe2c44f87c19149c53d"
+  },
+  {
+    "ts": 1779992039,
+    "kind": "riddle",
+    "level": "A2",
+    "core": "You drink it in the morning.\nIt is brown and hot.",
+    "fp": "09e926f88fd4cccfd9b2d5df144b69b7a65f4c68277b4432d1445e822ea0483b",
+    "core_fp": "5fd2dfb139be4ac54b44c19893f410ddd841335f20ed8484b78ec073b993fef3",
+    "answer": "coffee"
   }
 ]
