@@ -7113,5 +7113,13 @@
     "fp": "09e926f88fd4cccfd9b2d5df144b69b7a65f4c68277b4432d1445e822ea0483b",
     "core_fp": "5fd2dfb139be4ac54b44c19893f410ddd841335f20ed8484b78ec073b993fef3",
     "answer": "coffee"
+  },
+  {
+    "ts": 1780008003,
+    "kind": "idiom_meaning",
+    "level": "B1",
+    "core": "Don't count your chickens before they hatch",
+    "fp": "0a9b2f1f143c9c0ad5ff8fca8b487edc9b51ffebaa65c1423155a0d95df60f97",
+    "core_fp": "7ba977676ad5a54c199098cd5666efbf78c680daac2f3b183b914ba76acf7d38"
   }
 ]
