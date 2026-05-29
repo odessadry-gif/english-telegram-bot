@@ -7129,5 +7129,13 @@
     "core": "Take it with a grain of salt",
     "fp": "c437f91ebac591570097bb503fc0e9d8a0837ca737653aa8369ee0a2f817a332",
     "core_fp": "941983a25c6d6d2f4d08b4abd6ad9f3a863fd24ab027d839050f480734c7fb85"
+  },
+  {
+    "ts": 1780037794,
+    "kind": "ua_en",
+    "level": "B1",
+    "core": "У мене немає грошей",
+    "fp": "3f220bbf84c37a98e2419886bdbaf48d5c74e1a4aba0f35d76ab4b2dcdf220a7",
+    "core_fp": "44af312bd7921ba2a35d55417e7b65735be0ba759d66261a20a23c7ed3b9dd2f"
   }
 ]
