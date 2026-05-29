@@ -7137,5 +7137,14 @@
     "core": "У мене немає грошей",
     "fp": "3f220bbf84c37a98e2419886bdbaf48d5c74e1a4aba0f35d76ab4b2dcdf220a7",
     "core_fp": "44af312bd7921ba2a35d55417e7b65735be0ba759d66261a20a23c7ed3b9dd2f"
+  },
+  {
+    "ts": 1780057085,
+    "kind": "riddle",
+    "level": "A2",
+    "core": "It wakes you in the morning.\nIt makes a loud sound.",
+    "fp": "8b6604cf85723cb13b54cc1007a9710dbabe4b92cb88ed0539df2c4993295d17",
+    "core_fp": "36edff9f015dcda890446b688c53d0ac65e9654d88ce079e1f52a823f630303d",
+    "answer": "alarm"
   }
 ]
