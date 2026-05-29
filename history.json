@@ -7154,5 +7154,13 @@
     "core": "She ___ the bus every morning.",
     "fp": "22a36611c3590cf8ecc79e9e703ca542a9f2fc979221d6c0f630302f1a6e01cf",
     "core_fp": "b81efa2d218999ea407803ddc15731bdbe5cec6c60c3f143b369f99760989747"
+  },
+  {
+    "ts": 1780093663,
+    "kind": "grammar_gap",
+    "level": "B1",
+    "core": "I left my keys ___ the table.",
+    "fp": "b2c3efb9a57a20a2cb5a4b8e969072f97714dd76acdfc0923c08f88d64735343",
+    "core_fp": "c9f2104bbd06a5ec28ce19a17e664ed5feece0dfcbfb1e5827311dda229592dc"
   }
 ]
