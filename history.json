@@ -7146,5 +7146,13 @@
     "fp": "8b6604cf85723cb13b54cc1007a9710dbabe4b92cb88ed0539df2c4993295d17",
     "core_fp": "36edff9f015dcda890446b688c53d0ac65e9654d88ce079e1f52a823f630303d",
     "answer": "alarm"
+  },
+  {
+    "ts": 1780078396,
+    "kind": "grammar_gap",
+    "level": "B1",
+    "core": "She ___ the bus every morning.",
+    "fp": "22a36611c3590cf8ecc79e9e703ca542a9f2fc979221d6c0f630302f1a6e01cf",
+    "core_fp": "b81efa2d218999ea407803ddc15731bdbe5cec6c60c3f143b369f99760989747"
   }
 ]
