@@ -365,6 +365,19 @@ def looks_simple_enough(text: str) -> bool:
     return any(marker in low for marker in GOOD_SIMPLE_MARKERS)
 
 
+def reject_ua_en_option(option: str, correct_option: bool) -> None:
+    low = _norm_spaces(option).lower()
+
+    if re.search(r"\b(?:don['’]?t|doesn['’]?t|didn['’]?t|haven['’]?t|hasn['’]?t)\b.*\bsome\b", low):
+        raise ValueError("ua_en: negative option uses some")
+
+    if re.search(r"\b(?:i|you|we|they|he|she|it)\s+(?:haven['’]?t|hasn['’]?t)\s+(?!got\b)\w+", low):
+        raise ValueError("ua_en: unnatural haven't/hasn't without got")
+
+    if correct_option and re.search(r"\b(?:i|you|we|they|he|she|it)\s+(?:have|has)\s+no\b", low):
+        raise ValueError("ua_en: avoid formal have no as correct answer")
+
+
 def extract_json(text: str) -> dict:
     text = (text or "").strip()
     m = re.search(r"\{.*\}", text, re.DOTALL)
@@ -515,6 +528,9 @@ def validate_generated(data: dict, quiz_type: str) -> tuple[str, str, list[str],
         correct_option = options[correct].strip()
         if len(correct_option.split()) > 8:
             raise ValueError("ua_en: correct option too long")
+
+        for idx, option in enumerate(options):
+            reject_ua_en_option(option, idx == correct)
 
         return core, question, options, correct, explanation, ""
 
@@ -748,6 +764,9 @@ RULES:
 - no two English options may both fit
 - avoid formal language
 - avoid long sentences
+- for Ukrainian "немає", prefer natural English like "don't/doesn't have any"; avoid "have no" as the correct answer
+- never use "some" in negative options like "don't have some"
+- never use "haven't/hasn't + noun" without "got"
 
 GOOD EXAMPLES:
 - Я голодний.
@@ -880,6 +899,9 @@ Rules:
 - 1 correct translation only
 - short phrase
 - very clear
+- for Ukrainian "немає", prefer natural English like "don't/doesn't have any"; avoid "have no" as the correct answer
+- never use "some" in negative options like "don't have some"
+- never use "haven't/hasn't + noun" without "got"
 
 Question format exactly:
 💬
