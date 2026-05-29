@@ -7121,5 +7121,13 @@
     "core": "Don't count your chickens before they hatch",
     "fp": "0a9b2f1f143c9c0ad5ff8fca8b487edc9b51ffebaa65c1423155a0d95df60f97",
     "core_fp": "7ba977676ad5a54c199098cd5666efbf78c680daac2f3b183b914ba76acf7d38"
+  },
+  {
+    "ts": 1780023411,
+    "kind": "idiom_meaning",
+    "level": "B1",
+    "core": "Take it with a grain of salt",
+    "fp": "c437f91ebac591570097bb503fc0e9d8a0837ca737653aa8369ee0a2f817a332",
+    "core_fp": "941983a25c6d6d2f4d08b4abd6ad9f3a863fd24ab027d839050f480734c7fb85"
   }
 ]
