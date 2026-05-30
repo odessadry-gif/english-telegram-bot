@@ -7194,5 +7194,13 @@
     "core": "Де тут туалет?",
     "fp": "b5709bb53f3aebee9f343912ef33063f3ec0a09299c591d1e95e94d5815d3d0c",
     "core_fp": "2255fbae3fabf6acc9720d2b73afe4c4931802f593fa5b48e7ad0810cfc62627"
+  },
+  {
+    "ts": 1780157010,
+    "kind": "grammar_gap",
+    "level": "B1",
+    "core": "Sorry, I ___ late.",
+    "fp": "183dff5d137cd2e31e6c86e5f1b1552bfac7cb309f9282db94386ad36f62663e",
+    "core_fp": "3e9949a18ea10904bcecc5fd0707a644e5f529d041cd2483e7dce764e672082f"
   }
 ]
