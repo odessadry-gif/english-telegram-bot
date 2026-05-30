@@ -7210,5 +7210,13 @@
     "core": "Де мій квиток?",
     "fp": "6966203950d43e9936c00518d9bdc5569b4995b33f3b7ef4ec6ca7c945e74de5",
     "core_fp": "93528f6ae44f40b190c6b70ecddcb636deb8d221d70a5c5cf1faa72871e63c9e"
+  },
+  {
+    "ts": 1780178374,
+    "kind": "grammar_gap",
+    "level": "A1",
+    "core": "She ___ to work at 8.",
+    "fp": "1901c23b906ed05f5ac458af35eaf92000a5bda21c9acd631838370d3f0a5045",
+    "core_fp": "be1611c2158c5ee450d92b9634c57af6b56ab9912ef89bc92e0d70cddb03736e"
   }
 ]
