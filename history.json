@@ -7186,5 +7186,13 @@
     "core": "Я зателефоную тобі пізніше.",
     "fp": "d57f68ed24a992ce32668f1aca894bb3d3d5bce6b958253abf435e4d64b3f9d9",
     "core_fp": "873102e1ccb4c0fe1a3e48c99161f0656e3959354395212aa3ec7d2b94263d44"
+  },
+  {
+    "ts": 1780147445,
+    "kind": "ua_en",
+    "level": "A2",
+    "core": "Де тут туалет?",
+    "fp": "b5709bb53f3aebee9f343912ef33063f3ec0a09299c591d1e95e94d5815d3d0c",
+    "core_fp": "2255fbae3fabf6acc9720d2b73afe4c4931802f593fa5b48e7ad0810cfc62627"
   }
 ]
