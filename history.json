@@ -7202,5 +7202,13 @@
     "core": "Sorry, I ___ late.",
     "fp": "183dff5d137cd2e31e6c86e5f1b1552bfac7cb309f9282db94386ad36f62663e",
     "core_fp": "3e9949a18ea10904bcecc5fd0707a644e5f529d041cd2483e7dce764e672082f"
+  },
+  {
+    "ts": 1780168257,
+    "kind": "ua_en",
+    "level": "A2",
+    "core": "Де мій квиток?",
+    "fp": "6966203950d43e9936c00518d9bdc5569b4995b33f3b7ef4ec6ca7c945e74de5",
+    "core_fp": "93528f6ae44f40b190c6b70ecddcb636deb8d221d70a5c5cf1faa72871e63c9e"
   }
 ]
