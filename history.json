@@ -7162,5 +7162,13 @@
     "core": "I left my keys ___ the table.",
     "fp": "b2c3efb9a57a20a2cb5a4b8e969072f97714dd76acdfc0923c08f88d64735343",
     "core_fp": "c9f2104bbd06a5ec28ce19a17e664ed5feece0dfcbfb1e5827311dda229592dc"
+  },
+  {
+    "ts": 1780109393,
+    "kind": "idiom_meaning",
+    "level": "B1",
+    "core": "Get a taste of your own medicine",
+    "fp": "e9ca326faf64838965e801458dd674bc7229e9db2e328f30e97349354826240f",
+    "core_fp": "f36c2721a60b5a8013f7b40101ea91a492cab59ffd0200e9e32d6b976be8aac3"
   }
 ]
