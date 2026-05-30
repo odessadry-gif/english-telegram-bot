@@ -7170,5 +7170,13 @@
     "core": "Get a taste of your own medicine",
     "fp": "e9ca326faf64838965e801458dd674bc7229e9db2e328f30e97349354826240f",
     "core_fp": "f36c2721a60b5a8013f7b40101ea91a492cab59ffd0200e9e32d6b976be8aac3"
+  },
+  {
+    "ts": 1780122138,
+    "kind": "grammar_gap",
+    "level": "B1",
+    "core": "I'm ___ my homework.",
+    "fp": "1083e75a05fe5271d96169f0f3e3e228d9fe76314de479ba079ee1ecc173c2ad",
+    "core_fp": "6567188ee33c5a6f73db90e87ef901cd6683ff7dfc7a19626a9235b43fba8e83"
   }
 ]
