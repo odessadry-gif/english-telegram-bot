@@ -7234,5 +7234,13 @@
     "core": "Я відчинив двері",
     "fp": "af9e939f210fec7433f4d8016614ad9dd1b95fb303b5c1421c17c1110c28cfad",
     "core_fp": "90e74708230e5db8398dfed6308d33fe4570e4401f628560d7f3ba3c7312a41c"
+  },
+  {
+    "ts": 1780224932,
+    "kind": "grammar_gap",
+    "level": "B1",
+    "core": "She put the keys ___ the table.",
+    "fp": "da6dd9d01b8bdce9281fddab3430eaea0ae4281761b594edc71d2a95ad314061",
+    "core_fp": "76063e49d30fd1177ad51d71b9bd0f9a2d119d2d402252a5b872e6d26fb062bd"
   }
 ]
