@@ -7218,5 +7218,13 @@
     "core": "She ___ to work at 8.",
     "fp": "1901c23b906ed05f5ac458af35eaf92000a5bda21c9acd631838370d3f0a5045",
     "core_fp": "be1611c2158c5ee450d92b9634c57af6b56ab9912ef89bc92e0d70cddb03736e"
+  },
+  {
+    "ts": 1780198452,
+    "kind": "grammar_gap",
+    "level": "B1",
+    "core": "Please put the keys ___ the table.",
+    "fp": "f8f376a44842c38f5078333e280b008cd6cfcc77874e43bf9acc10d1476caf2a",
+    "core_fp": "fe69af93bb5640ce42c6233a287d2c8057aac3c5896acf227a9f274434b03e52"
   }
 ]
