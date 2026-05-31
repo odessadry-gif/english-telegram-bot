@@ -7258,5 +7258,13 @@
     "core": "Я трохи втомився",
     "fp": "fd5afb8300bad0a2837f7146eb77a373aee71b56808eacc114fa5d7544dcf978",
     "core_fp": "885874d6aeb735ffbdfa7d3421ea7457ffa8f07648ae5b2144ee7018ccb3aace"
+  },
+  {
+    "ts": 1780254822,
+    "kind": "ua_en",
+    "level": "A2",
+    "core": "Я хочу кави",
+    "fp": "39c8e76cd982043b9e816ff877cabff779b2a7829d339e3252d03729b963c422",
+    "core_fp": "db1018dbc839efa9cdbf58ee7ffcb08e643eb2682eb37769750b85ea8cd138d3"
   }
 ]
