@@ -7250,5 +7250,13 @@
     "core": "She ___ hungry.",
     "fp": "b1d7d08da920888467349a5e317f84ab20b9599dc1a78a1fe580c07eb39165ce",
     "core_fp": "06eb3d25ea544c55a58725ff541c00a685602799533f17ff6790b402cc5c74de"
+  },
+  {
+    "ts": 1780243538,
+    "kind": "ua_en",
+    "level": "B1",
+    "core": "Я трохи втомився",
+    "fp": "fd5afb8300bad0a2837f7146eb77a373aee71b56808eacc114fa5d7544dcf978",
+    "core_fp": "885874d6aeb735ffbdfa7d3421ea7457ffa8f07648ae5b2144ee7018ccb3aace"
   }
 ]
