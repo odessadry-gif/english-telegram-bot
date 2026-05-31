@@ -7226,5 +7226,13 @@
     "core": "Please put the keys ___ the table.",
     "fp": "f8f376a44842c38f5078333e280b008cd6cfcc77874e43bf9acc10d1476caf2a",
     "core_fp": "fe69af93bb5640ce42c6233a287d2c8057aac3c5896acf227a9f274434b03e52"
+  },
+  {
+    "ts": 1780216948,
+    "kind": "ua_en",
+    "level": "B1",
+    "core": "Я відчинив двері",
+    "fp": "af9e939f210fec7433f4d8016614ad9dd1b95fb303b5c1421c17c1110c28cfad",
+    "core_fp": "90e74708230e5db8398dfed6308d33fe4570e4401f628560d7f3ba3c7312a41c"
   }
 ]
