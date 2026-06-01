@@ -7274,5 +7274,13 @@
     "core": "Я йду в магазин",
     "fp": "32bf9b6b51a17d770314c2d5a58798b23746da0a4d74ac49f7bd1f9a3ac306ad",
     "core_fp": "9e599892a822902d53c37829dcf71d3a55ef4ad6c3a1e0aaa1a15fe819e66d8a"
+  },
+  {
+    "ts": 1780285683,
+    "kind": "ua_en",
+    "level": "B1",
+    "core": "У мене немає ключів",
+    "fp": "7d33f822c6dd4e06c0f179855f4c823be8ccde9886052c1e5d5893786382d1a8",
+    "core_fp": "52c38c70ce76c52999328926ce8d2c9cedaa159b10fd3f72a47b0dbb859c193a"
   }
 ]
