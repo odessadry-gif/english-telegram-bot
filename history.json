@@ -7282,5 +7282,13 @@
     "core": "У мене немає ключів",
     "fp": "7d33f822c6dd4e06c0f179855f4c823be8ccde9886052c1e5d5893786382d1a8",
     "core_fp": "52c38c70ce76c52999328926ce8d2c9cedaa159b10fd3f72a47b0dbb859c193a"
+  },
+  {
+    "ts": 1780313294,
+    "kind": "idiom_meaning",
+    "level": "B1",
+    "core": "Fit as a fiddle",
+    "fp": "462f98603854b8ef195c5cc44347276d8b3bc426c0fe21f47be8e26a719904f2",
+    "core_fp": "0a83766afa125abc0d0d3f2d007c468699359379308b61a7f22f5e3a43bcf5db"
   }
 ]
