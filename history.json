@@ -7299,5 +7299,13 @@
     "fp": "a3b58c8f3592fed175772a426d990f38ca7e9aed1232b63c2e7812db86e405b7",
     "core_fp": "12d79adcda3a4c4afebe2ccc54ccc369ce650e177f4c826919e0d9c433f949a4",
     "answer": "charger"
+  },
+  {
+    "ts": 1780349396,
+    "kind": "idiom_meaning",
+    "level": "B1",
+    "core": "Actions speak louder than words",
+    "fp": "f59604cc6b71951b369aebbd9d7dd0a0b9ecacf51516628e2ebe9f7b94c0f26c",
+    "core_fp": "3e110d06c7502ace2d438e149c715073a889693f45746679f7e6950c9dedf233"
   }
 ]
