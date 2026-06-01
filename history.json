@@ -7290,5 +7290,14 @@
     "core": "Fit as a fiddle",
     "fp": "462f98603854b8ef195c5cc44347276d8b3bc426c0fe21f47be8e26a719904f2",
     "core_fp": "0a83766afa125abc0d0d3f2d007c468699359379308b61a7f22f5e3a43bcf5db"
+  },
+  {
+    "ts": 1780335450,
+    "kind": "riddle",
+    "level": "A2",
+    "core": "You plug it in.\nIt charges a phone.",
+    "fp": "a3b58c8f3592fed175772a426d990f38ca7e9aed1232b63c2e7812db86e405b7",
+    "core_fp": "12d79adcda3a4c4afebe2ccc54ccc369ce650e177f4c826919e0d9c433f949a4",
+    "answer": "charger"
   }
 ]
