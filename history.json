@@ -7307,5 +7307,13 @@
     "core": "Actions speak louder than words",
     "fp": "f59604cc6b71951b369aebbd9d7dd0a0b9ecacf51516628e2ebe9f7b94c0f26c",
     "core_fp": "3e110d06c7502ace2d438e149c715073a889693f45746679f7e6950c9dedf233"
+  },
+  {
+    "ts": 1780371713,
+    "kind": "grammar_gap",
+    "level": "A2",
+    "core": "I have a room ___ two nights.",
+    "fp": "f5cf5fb8ba15e117c234307adda6992a383f928b31461bc2503ebddf8f3888b0",
+    "core_fp": "f0b961233dd60bca3cb90dbfaf2efd324a74d9780d1942c58fca77c4592c4f87"
   }
 ]
