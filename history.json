@@ -7331,5 +7331,13 @@
     "core": "I'm on my way ___ you.",
     "fp": "a584eee28a47aef8b00c91dbfcffe7f338c6dcff288299434d19fbb4367ca775",
     "core_fp": "40d76bae8830e69059ffea228764e36538fbea468ac47688048d8f5bb43f3293"
+  },
+  {
+    "ts": 1780433105,
+    "kind": "idiom_meaning",
+    "level": "B1",
+    "core": "Pull someone's leg",
+    "fp": "bc8f300f8c7b49101c3413f9bfbbaf1f333641f1e661396a16db75394ede5ed4",
+    "core_fp": "7e610a27d224e8fed435e3ff6b0310ffe05061ddfde16e3a09db4def4029febf"
   }
 ]
