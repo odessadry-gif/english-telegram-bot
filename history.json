@@ -7339,5 +7339,14 @@
     "core": "Pull someone's leg",
     "fp": "bc8f300f8c7b49101c3413f9bfbbaf1f333641f1e661396a16db75394ede5ed4",
     "core_fp": "7e610a27d224e8fed435e3ff6b0310ffe05061ddfde16e3a09db4def4029febf"
+  },
+  {
+    "ts": 1780441430,
+    "kind": "riddle",
+    "level": "A2",
+    "core": "People wait here\nTrains stop here",
+    "fp": "09ed9e958a253613e70536d6dc3446330435187746625d7179d108bf5fbe4593",
+    "core_fp": "0d496621ef3e7adc9e66271d23ac1a72a049aec9cd44bd47d6185591f8e4fcbc",
+    "answer": "station"
   }
 ]
