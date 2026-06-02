@@ -7315,5 +7315,13 @@
     "core": "I have a room ___ two nights.",
     "fp": "f5cf5fb8ba15e117c234307adda6992a383f928b31461bc2503ebddf8f3888b0",
     "core_fp": "f0b961233dd60bca3cb90dbfaf2efd324a74d9780d1942c58fca77c4592c4f87"
+  },
+  {
+    "ts": 1780395595,
+    "kind": "grammar_gap",
+    "level": "B1",
+    "core": "She usually ___ coffee in the morning.",
+    "fp": "b9df824364645806b52f318605c39c929e9c8855373c026cedac75a13717851e",
+    "core_fp": "2febac66ae0b4b144dae99c43493ab20a363984addac13fee4327b6e985aae97"
   }
 ]
