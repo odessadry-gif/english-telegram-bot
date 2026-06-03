@@ -7364,5 +7364,13 @@
     "core": "Мені потрібен зарядний пристрій",
     "fp": "c9a0e694a6e6b3a8140ef36d402369878e87d31d97cbefb8234ae7d19f8f67d5",
     "core_fp": "b329f2bf7c7bcd454b4c9715903fc3aba043a40a96d5d60df2a655397652f2d0"
+  },
+  {
+    "ts": 1780505028,
+    "kind": "grammar_gap",
+    "level": "B1",
+    "core": "I ___ the bill yesterday.",
+    "fp": "694f2de010054d34bbe2139755c9f39ea63f56e5a7b28ef04f2f17cd4952af3f",
+    "core_fp": "95addfd6c4be4891aaa9113ff006467e64cd28ff739dda1d76ab13af79232fc2"
   }
 ]
