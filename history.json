@@ -7348,5 +7348,13 @@
     "fp": "09ed9e958a253613e70536d6dc3446330435187746625d7179d108bf5fbe4593",
     "core_fp": "0d496621ef3e7adc9e66271d23ac1a72a049aec9cd44bd47d6185591f8e4fcbc",
     "answer": "station"
+  },
+  {
+    "ts": 1780458729,
+    "kind": "grammar_gap",
+    "level": "A2",
+    "core": "Please call me ___ 7 pm.",
+    "fp": "93bd6e14df63b23fd000691c50251f551abdfd571fb45abf689490165c553277",
+    "core_fp": "3c7f1d74a2f9d9c78a97df4ea11368dc1d1702d671314bc3f01c35bf400a239d"
   }
 ]
