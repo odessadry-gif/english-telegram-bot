@@ -7381,5 +7381,13 @@
     "fp": "554712a04b6b6dda546e6c51e8e6fa6ca79c3b46f31190d48cd0b71faedafbe2",
     "core_fp": "8c4fdc2ddd12cb9880ed0aa6acb3e5b57b9294b4ace9187f0711f3f3280cc79a",
     "answer": "bed"
+  },
+  {
+    "ts": 1780527921,
+    "kind": "grammar_gap",
+    "level": "A2",
+    "core": "She is ___ work now.",
+    "fp": "8bdd408d13bb7dd0d8e83af66e84ab3075492e871672c4b55f1051efaf9b5242",
+    "core_fp": "76ef8e1241353f85c044c2220cefad505b0bac060a44978e8092bd07421bb278"
   }
 ]
