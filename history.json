@@ -7356,5 +7356,13 @@
     "core": "Please call me ___ 7 pm.",
     "fp": "93bd6e14df63b23fd000691c50251f551abdfd571fb45abf689490165c553277",
     "core_fp": "3c7f1d74a2f9d9c78a97df4ea11368dc1d1702d671314bc3f01c35bf400a239d"
+  },
+  {
+    "ts": 1780484056,
+    "kind": "ua_en",
+    "level": "B1",
+    "core": "Мені потрібен зарядний пристрій",
+    "fp": "c9a0e694a6e6b3a8140ef36d402369878e87d31d97cbefb8234ae7d19f8f67d5",
+    "core_fp": "b329f2bf7c7bcd454b4c9715903fc3aba043a40a96d5d60df2a655397652f2d0"
   }
 ]
