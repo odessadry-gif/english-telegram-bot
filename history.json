@@ -7372,5 +7372,14 @@
     "core": "I ___ the bill yesterday.",
     "fp": "694f2de010054d34bbe2139755c9f39ea63f56e5a7b28ef04f2f17cd4952af3f",
     "core_fp": "95addfd6c4be4891aaa9113ff006467e64cd28ff739dda1d76ab13af79232fc2"
+  },
+  {
+    "ts": 1780520161,
+    "kind": "riddle",
+    "level": "A1",
+    "core": "You sleep on it.\nIt is in your bedroom.",
+    "fp": "554712a04b6b6dda546e6c51e8e6fa6ca79c3b46f31190d48cd0b71faedafbe2",
+    "core_fp": "8c4fdc2ddd12cb9880ed0aa6acb3e5b57b9294b4ace9187f0711f3f3280cc79a",
+    "answer": "bed"
   }
 ]
