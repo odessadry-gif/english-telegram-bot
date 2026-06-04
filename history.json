@@ -7389,5 +7389,13 @@
     "core": "She is ___ work now.",
     "fp": "8bdd408d13bb7dd0d8e83af66e84ab3075492e871672c4b55f1051efaf9b5242",
     "core_fp": "76ef8e1241353f85c044c2220cefad505b0bac060a44978e8092bd07421bb278"
+  },
+  {
+    "ts": 1780544655,
+    "kind": "idiom_meaning",
+    "level": "B1",
+    "core": "Zip it",
+    "fp": "18b3510e17b0b1c028d46b1565578030a37324404ffd2131fb334e86bfb57489",
+    "core_fp": "279553b5e5038b21e578769c648e183acbd444550d0195226566542197e064da"
   }
 ]
