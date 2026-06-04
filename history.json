@@ -7405,5 +7405,13 @@
     "core": "We need a ___ for two.",
     "fp": "cfe3b1d98be79e2b1964b742ea85ce5f1717ac7de4166ff0998f2891e785977c",
     "core_fp": "c0215669ba473f56cc051bcd95779b4ce0e0bb94de06ce7e27064ccf304355c1"
+  },
+  {
+    "ts": 1780584880,
+    "kind": "grammar_gap",
+    "level": "B1",
+    "core": "I booked a room ___ three nights.",
+    "fp": "b333bbc893bbe46ddf74098952ef13993efe3d27716ccd8d1b881f6a3dd00d11",
+    "core_fp": "d3274d7a7fa71dca3a0027d7759e3b47043bb5d5f76bdb99dfd3cf40dc3728f7"
   }
 ]
