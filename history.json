@@ -7413,5 +7413,13 @@
     "core": "I booked a room ___ three nights.",
     "fp": "b333bbc893bbe46ddf74098952ef13993efe3d27716ccd8d1b881f6a3dd00d11",
     "core_fp": "d3274d7a7fa71dca3a0027d7759e3b47043bb5d5f76bdb99dfd3cf40dc3728f7"
+  },
+  {
+    "ts": 1780595102,
+    "kind": "grammar_gap",
+    "level": "B1",
+    "core": "I ___ to work by bus every day.",
+    "fp": "6a0d4d780f5afab3d639b0e8aefa87f686e71ebadb6ea8598804590bc71eb002",
+    "core_fp": "c557a11ff96ff7d85fb5c45b4951b9f55cea14eebe3f499e65748ff296c4df91"
   }
 ]
