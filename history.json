@@ -7430,5 +7430,13 @@
     "fp": "24d05c7afb810d5589da8daed99fc05b6c6559da63a5a4a5d0d338dc15f068bc",
     "core_fp": "b0830960e8cc6b3bf9ac694980e6061b6a682d50f8eeb56b21533b85821b2987",
     "answer": "cash"
+  },
+  {
+    "ts": 1780611545,
+    "kind": "idiom_meaning",
+    "level": "B1",
+    "core": "Miss the boat",
+    "fp": "a6888f6f8316c0dd7920702ebc1d095b5a7280ab04868b302d7d7456a8104fd8",
+    "core_fp": "0ce67d4a28288fa04a50295543415df165b023b2cad15029f4d9a82de7320fa2"
   }
 ]
