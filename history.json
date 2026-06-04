@@ -7421,5 +7421,14 @@
     "core": "I ___ to work by bus every day.",
     "fp": "6a0d4d780f5afab3d639b0e8aefa87f686e71ebadb6ea8598804590bc71eb002",
     "core_fp": "c557a11ff96ff7d85fb5c45b4951b9f55cea14eebe3f499e65748ff296c4df91"
+  },
+  {
+    "ts": 1780603385,
+    "kind": "riddle",
+    "level": "A2",
+    "core": "Paper and coins\nYou pay with it",
+    "fp": "24d05c7afb810d5589da8daed99fc05b6c6559da63a5a4a5d0d338dc15f068bc",
+    "core_fp": "b0830960e8cc6b3bf9ac694980e6061b6a682d50f8eeb56b21533b85821b2987",
+    "answer": "cash"
   }
 ]
