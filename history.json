@@ -7479,5 +7479,13 @@
     "core": "We are ___ the taxi now.",
     "fp": "7e89e3ffbccb50b680fdf728af7a3079b1b5bc637ac7768ec9fe57e1434f4a68",
     "core_fp": "6ea3f0a5313dec7da834b6f24ddc87249ed6a834a37c2eb5cde6c9c1aa2a647d"
+  },
+  {
+    "ts": 1780697632,
+    "kind": "ua_en",
+    "level": "A1",
+    "core": "Котра година?",
+    "fp": "8057c8b76566ac7f0f10f0cdae583deedfbe5c87580b0149d2e35521c4457a1f",
+    "core_fp": "849fffa84f4050dbf97d810d79beb9c9dd2e8f667e2d36b73428566efe6a901e"
   }
 ]
