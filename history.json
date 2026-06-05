@@ -7455,5 +7455,13 @@
     "fp": "23be09e9ef5da3a2c9baaa6e1f4cccc91aa3292e6e9094f5cf9d96a8d3bd9f55",
     "core_fp": "9f4ff1ad03c5341951c5b1e75fb08507b90bb4f657d2f2d60a3224cf71e6d772",
     "answer": "stairs"
+  },
+  {
+    "ts": 1780670781,
+    "kind": "grammar_gap",
+    "level": "A2",
+    "core": "I ___ the bus at 8.",
+    "fp": "457ed2657d4e0bc427092f337c7e2442eaad83fe5702f82a8d21567903ef9a97",
+    "core_fp": "e0d7945701710cba83edee691670148881407b776ac0f7485c2d72c19a886f09"
   }
 ]
