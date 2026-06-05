@@ -7446,5 +7446,14 @@
     "core": "Я не можу знайти свої ключі",
     "fp": "1509db5935b1526291333ded6fcb4ee8e10b4da598fbb2f34ae28acbb3c05195",
     "core_fp": "48aee550d7f3b60c9da110efe92472bec27a168a72ead09d45999ed20c7425ec"
+  },
+  {
+    "ts": 1780652683,
+    "kind": "riddle",
+    "level": "A2",
+    "core": "You go up and down.\nIt has many steps",
+    "fp": "23be09e9ef5da3a2c9baaa6e1f4cccc91aa3292e6e9094f5cf9d96a8d3bd9f55",
+    "core_fp": "9f4ff1ad03c5341951c5b1e75fb08507b90bb4f657d2f2d60a3224cf71e6d772",
+    "answer": "stairs"
   }
 ]
