@@ -7438,5 +7438,13 @@
     "core": "Miss the boat",
     "fp": "a6888f6f8316c0dd7920702ebc1d095b5a7280ab04868b302d7d7456a8104fd8",
     "core_fp": "0ce67d4a28288fa04a50295543415df165b023b2cad15029f4d9a82de7320fa2"
+  },
+  {
+    "ts": 1780630352,
+    "kind": "ua_en",
+    "level": "B1",
+    "core": "Я не можу знайти свої ключі",
+    "fp": "1509db5935b1526291333ded6fcb4ee8e10b4da598fbb2f34ae28acbb3c05195",
+    "core_fp": "48aee550d7f3b60c9da110efe92472bec27a168a72ead09d45999ed20c7425ec"
   }
 ]
