@@ -7463,5 +7463,13 @@
     "core": "I ___ the bus at 8.",
     "fp": "457ed2657d4e0bc427092f337c7e2442eaad83fe5702f82a8d21567903ef9a97",
     "core_fp": "e0d7945701710cba83edee691670148881407b776ac0f7485c2d72c19a886f09"
+  },
+  {
+    "ts": 1780679600,
+    "kind": "idiom_meaning",
+    "level": "B1",
+    "core": "On the ball",
+    "fp": "f189e44a28c14e0f29618ad1702890ef57a81e5f4268965a832392a426e4837a",
+    "core_fp": "59c5f6b1b0f4af4a9b336ebf22d782e2c82ac2a4b8fc43d0e2833b3ffebbeafd"
   }
 ]
