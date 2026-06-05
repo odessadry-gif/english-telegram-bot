@@ -7471,5 +7471,13 @@
     "core": "On the ball",
     "fp": "f189e44a28c14e0f29618ad1702890ef57a81e5f4268965a832392a426e4837a",
     "core_fp": "59c5f6b1b0f4af4a9b336ebf22d782e2c82ac2a4b8fc43d0e2833b3ffebbeafd"
+  },
+  {
+    "ts": 1780689084,
+    "kind": "grammar_gap",
+    "level": "B1",
+    "core": "We are ___ the taxi now.",
+    "fp": "7e89e3ffbccb50b680fdf728af7a3079b1b5bc637ac7768ec9fe57e1434f4a68",
+    "core_fp": "6ea3f0a5313dec7da834b6f24ddc87249ed6a834a37c2eb5cde6c9c1aa2a647d"
   }
 ]
