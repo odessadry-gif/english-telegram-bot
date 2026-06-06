@@ -31,14 +31,13 @@ GAME_POST_TEXT = os.getenv(
         "120 коротких питань A2-B1:\n"
         "• живі фрази\n"
         "• кафе, подорожі, щоденні ситуації\n"
-        "• трохи ідіом\n\n"
+        "• корисна граматика без перевантаження\n\n"
         "2 хвилини практики щодня."
     ),
 ).replace("\\n", "\n").strip()
 
 # ========= HISTORY =========
 HISTORY_FILE = "history.json"
-IDIOMS_FILE = "idioms.json"
 MAX_HISTORY = 1500
 RECENT_CORE_LIMIT = 300
 RECENT_PATTERN_LIMIT = 220
@@ -46,10 +45,9 @@ RECENT_RIDDLE_ANSWER_LIMIT = 120
 
 QUIZ_TYPE_CYCLE_SIZE = 20
 QUIZ_TYPE_CYCLE_QUOTAS = {
-    "grammar_gap": 8,
-    "ua_en": 5,
-    "riddle": 3,
-    "idiom_meaning": 4,
+    "grammar_gap": 10,
+    "ua_en": 6,
+    "riddle": 4,
 }
 
 LEVEL_WEIGHTS = {
@@ -61,8 +59,6 @@ LEVEL_WEIGHTS = {
 client = None
 
 ARTICLES_RE = re.compile(r"^(a|an|the)\s+", re.IGNORECASE)
-
-idiom_bank_cache = None
 
 # ========= HARD FILTERS =========
 BANNED_HARD_PHRASES = [
@@ -246,65 +242,6 @@ def save_history(items: list[dict]) -> None:
         json.dump(items, f, ensure_ascii=False, indent=2)
 
 
-def load_idiom_bank() -> list[dict]:
-    global idiom_bank_cache
-
-    if idiom_bank_cache is not None:
-        return idiom_bank_cache
-
-    with open(IDIOMS_FILE, "r", encoding="utf-8") as f:
-        raw = json.load(f)
-
-    if not isinstance(raw, list):
-        raise ValueError("idioms.json must contain a list")
-
-    out = []
-    seen = set()
-
-    for item in raw:
-        if not isinstance(item, dict):
-            raise ValueError("Each idiom item must be an object")
-
-        idiom = _norm_spaces(str(item.get("idiom", "")))
-        meaning = _norm_spaces(str(item.get("meaning_uk", "")))
-        key = normalize_core(idiom)
-
-        if not idiom or not meaning:
-            raise ValueError("Each idiom needs idiom and meaning_uk")
-        if key in seen:
-            raise ValueError(f"Duplicate idiom in idioms.json: {idiom}")
-
-        seen.add(key)
-        out.append({"idiom": idiom, "meaning_uk": meaning, "key": key})
-
-    if len(out) < 4:
-        raise ValueError("idioms.json must contain at least 4 idioms")
-
-    idiom_bank_cache = out
-    return out
-
-
-def idiom_cycle_used(history: list[dict], idiom_keys: set[str]) -> set[str]:
-    used = set()
-
-    for item in reversed(history or []):
-        if item.get("kind") != "idiom_meaning":
-            continue
-
-        key = normalize_core(item.get("core", ""))
-        if not key or key not in idiom_keys:
-            continue
-
-        if key in used:
-            continue
-
-        used.add(key)
-        if len(used) >= len(idiom_keys):
-            return set()
-
-    return used
-
-
 def recent_cores(history: list[dict], n: int, kind: str | None = None) -> list[str]:
     out = []
     seen = set()
@@ -416,31 +353,6 @@ def pick_level() -> str:
     return random.choice(pool)
 
 
-def generate_idiom_quiz(used_idioms: set[str]) -> dict:
-    idiom_bank = load_idiom_bank()
-    available = [
-        item for item in idiom_bank
-        if item["key"] not in used_idioms
-    ] or idiom_bank[:]
-
-    item = random.choice(available)
-    idiom = item["idiom"]
-    meaning = item["meaning_uk"]
-    distractors = [
-        other["meaning_uk"] for other in idiom_bank
-        if other["key"] != item["key"]
-    ]
-    options = [meaning, *random.sample(distractors, 3)]
-
-    return {
-        "core": idiom,
-        "question": f"💬\nIDIOM:\n{idiom}\nЩо це означає?",
-        "options": options,
-        "correct": 0,
-        "explanation_uk": f"{idiom} — {meaning}.",
-    }
-
-
 # ========= VALIDATION =========
 def validate_generated(data: dict, quiz_type: str) -> tuple[str, str, list[str], int, str, str]:
     core = str(data.get("core", "")).strip()
@@ -474,25 +386,6 @@ def validate_generated(data: dict, quiz_type: str) -> tuple[str, str, list[str],
     normalized_opts = [normalize_core(x) for x in options]
     if len(set(normalized_opts)) != 4:
         raise ValueError("options too similar")
-
-    # ===== idiom_meaning =====
-    if quiz_type == "idiom_meaning":
-        idioms = {item["idiom"]: item["meaning_uk"] for item in load_idiom_bank()}
-        if core not in idioms:
-            raise ValueError("idiom_meaning: unknown idiom")
-
-        if not question.startswith("💬\nIDIOM:\n"):
-            raise ValueError("idiom_meaning: wrong question format")
-
-        if "Що це означає?" not in question:
-            raise ValueError("idiom_meaning: missing Ukrainian prompt")
-
-        correct_option = options[correct].strip()
-        expected = idioms[core]
-        if correct_option != expected:
-            raise ValueError("idiom_meaning: wrong correct meaning")
-
-        return core, question, options, correct, explanation, ""
 
     if looks_too_hard(core) or looks_too_hard(question):
         raise ValueError("too hard")
@@ -993,14 +886,12 @@ def main():
         "grammar_gap": set(),
         "ua_en": set(),
         "riddle": set(),
-        "idiom_meaning": set(),
     }
 
     pattern_counts = {
         "grammar_gap": 0,
         "ua_en": 0,
         "riddle": 0,
-        "idiom_meaning": 0,
     }
 
     for h in reversed(history):
@@ -1020,15 +911,12 @@ def main():
         "grammar_gap": set(recent_cores(history, RECENT_CORE_LIMIT, "grammar_gap")),
         "ua_en": set(recent_cores(history, RECENT_CORE_LIMIT, "ua_en")),
         "riddle": set(recent_cores(history, RECENT_CORE_LIMIT, "riddle")),
-        "idiom_meaning": set(),
     }
-    idiom_keys = {item["key"] for item in load_idiom_bank()}
-    idiom_used_this_cycle = idiom_cycle_used(history, idiom_keys)
 
     recent_riddle_answer_set = set(recent_riddle_answers(history, RECENT_RIDDLE_ANSWER_LIMIT))
 
     quiz_type = pick_quiz_type(history)
-    target_level = "B1" if quiz_type == "idiom_meaning" else pick_level()
+    target_level = pick_level()
     last_err = None
 
     for _ in range(40):
@@ -1036,14 +924,11 @@ def main():
             avoid_items = recent_cores(history, 40, quiz_type)
             avoid_answers = recent_riddle_answers(history, 40) if quiz_type == "riddle" else []
 
-            if quiz_type == "idiom_meaning":
-                data = generate_idiom_quiz(idiom_used_this_cycle)
-            else:
-                data = generate_one(quiz_type, target_level, avoid_items, avoid_answers)
+            data = generate_one(quiz_type, target_level, avoid_items, avoid_answers)
             core, question, options, correct, explanation, answer = validate_generated(data, quiz_type)
 
             cfp = core_fp(quiz_type, core)
-            if quiz_type != "idiom_meaning" and cfp in seen_core_fp:
+            if cfp in seen_core_fp:
                 continue
 
             norm_core = normalize_core(core)
@@ -1060,7 +945,7 @@ def main():
                     continue
 
             fp = fp_for(quiz_type, core, options)
-            if quiz_type != "idiom_meaning" and fp in seen_fp:
+            if fp in seen_fp:
                 continue
 
             shuffled_options, new_correct = shuffle_options_keep_correct(options, correct)

@@ -24,7 +24,7 @@ on:
       game_post_text:
         description: "Text for the game post"
         required: false
-        default: "🎮 Перевір свій English\n\n120 коротких питань A2-B1:\n• живі фрази\n• кафе, подорожі, щоденні ситуації\n• трохи ідіом\n\n2 хвилини практики щодня."
+        default: "🎮 Перевір свій English\n\n120 коротких питань A2-B1:\n• живі фрази\n• кафе, подорожі, щоденні ситуації\n• корисна граматика без перевантаження\n\n2 хвилини практики щодня."
 
 permissions:
   contents: write
