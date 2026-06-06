@@ -7503,5 +7503,13 @@
     "core": "Мені треба квиток",
     "fp": "5ef7678457773c3ad8e3992eeacff7d567f3595b343f32a942637b204856d740",
     "core_fp": "62940658957631b87b914dc3e651a0f9438435909293874c965db7ad349729f2"
+  },
+  {
+    "ts": 1780743128,
+    "kind": "idiom_meaning",
+    "level": "B1",
+    "core": "Fish out of water",
+    "fp": "ff13d30d6f308076ce628eaac281e3a67dc3842a722b13b105e90657604890f2",
+    "core_fp": "9e28dda2c94c275a6192950a0a16a5488fc06b422240791980c76c438ef9c867"
   }
 ]
