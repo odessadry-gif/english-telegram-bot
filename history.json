@@ -7519,5 +7519,13 @@
     "core": "I am ___ the phone.",
     "fp": "4778dead5e48ca312d632101a965e39183fe9438c1cf989e72267948ff234837",
     "core_fp": "f73a43be798b84fb7e0e191ef8de6a0b986701593b76268dbc385aff56b0722e"
+  },
+  {
+    "ts": 1780761859,
+    "kind": "idiom_meaning",
+    "level": "B1",
+    "core": "When pigs fly",
+    "fp": "9e95a30129c7e1f4a13d8bee38bf5dd9e1f83a615733ed5202662d16abe0c970",
+    "core_fp": "659c9ad09cd72029262b25a150534b1e6e7f4b38d149e1c1d957d24e02c8c1f4"
   }
 ]
