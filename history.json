@@ -7511,5 +7511,13 @@
     "core": "Fish out of water",
     "fp": "ff13d30d6f308076ce628eaac281e3a67dc3842a722b13b105e90657604890f2",
     "core_fp": "9e28dda2c94c275a6192950a0a16a5488fc06b422240791980c76c438ef9c867"
+  },
+  {
+    "ts": 1780752413,
+    "kind": "grammar_gap",
+    "level": "B1",
+    "core": "I am ___ the phone.",
+    "fp": "4778dead5e48ca312d632101a965e39183fe9438c1cf989e72267948ff234837",
+    "core_fp": "f73a43be798b84fb7e0e191ef8de6a0b986701593b76268dbc385aff56b0722e"
   }
 ]
