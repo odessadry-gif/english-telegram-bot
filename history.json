@@ -7535,5 +7535,14 @@
     "core": "Мені потрібно таксі зараз",
     "fp": "7e90ed37ddbd804e42745c27e0cf489ec64686eb738f8bcceccc432617e74319",
     "core_fp": "a9a479cfd06d2aacc8608271d7e0b4a95d5ad977edb60d6418fd41338dc61083"
+  },
+  {
+    "ts": 1780783344,
+    "kind": "riddle",
+    "level": "B1",
+    "core": "You say this when you meet someone.\nIt is a short greeting.",
+    "fp": "2aa4bcba1e59140b93084d2bf351713660e17e8cee44da93f9725923608ee87c",
+    "core_fp": "ae1a71d3b0d2b91972c927241be3e78e54d086d450affc9a26351f3b18049451",
+    "answer": "hello"
   }
 ]
