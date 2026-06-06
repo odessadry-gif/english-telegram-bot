@@ -7527,5 +7527,13 @@
     "core": "When pigs fly",
     "fp": "9e95a30129c7e1f4a13d8bee38bf5dd9e1f83a615733ed5202662d16abe0c970",
     "core_fp": "659c9ad09cd72029262b25a150534b1e6e7f4b38d149e1c1d957d24e02c8c1f4"
+  },
+  {
+    "ts": 1780773533,
+    "kind": "ua_en",
+    "level": "B1",
+    "core": "Мені потрібно таксі зараз",
+    "fp": "7e90ed37ddbd804e42745c27e0cf489ec64686eb738f8bcceccc432617e74319",
+    "core_fp": "a9a479cfd06d2aacc8608271d7e0b4a95d5ad977edb60d6418fd41338dc61083"
   }
 ]
