@@ -7576,5 +7576,13 @@
     "core": "Я готовий замовляти",
     "fp": "3943a5200142925596111deed44c0eb78013bf9647cf689cc20486e0dc49984c",
     "core_fp": "8d40f1e7fba2b50ed769ff88f90297452c60fadfae4a5bddfc6ee270373399c1"
+  },
+  {
+    "ts": 1780848782,
+    "kind": "grammar_gap",
+    "level": "A2",
+    "core": "She ___ a blue bag.",
+    "fp": "007b5dabf9e8111bcbf126be7aae78deb3a36a4e0d02ddba5aa097a695b11597",
+    "core_fp": "fb03b53a0484941228a15453588cb97a8a1e73503cd49c84f71c74b399649fea"
   }
 ]
