@@ -7552,5 +7552,13 @@
     "core": "I can't find my bag. Did you see ___?",
     "fp": "3feca411aa059fc2f685f870d07862d1b5c01295d6bc4c07f6ea85ccc4c762bf",
     "core_fp": "a854da806415783b3993d48ac3476e44c5e6434a910172efefc31f717a989c11"
+  },
+  {
+    "ts": 1780822402,
+    "kind": "grammar_gap",
+    "level": "B1",
+    "core": "He goes to work ___ car.",
+    "fp": "4fcb925fe2e9d7831083536f690a0d5445406e4ff750bf90a69a7cceda0cd684",
+    "core_fp": "d75a31f6ab06a3eaeb6d4a958eba7c952b0e37a01d8e41683a0ec93f28f32576"
   }
 ]
