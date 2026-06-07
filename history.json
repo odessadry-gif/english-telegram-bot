@@ -7560,5 +7560,13 @@
     "core": "He goes to work ___ car.",
     "fp": "4fcb925fe2e9d7831083536f690a0d5445406e4ff750bf90a69a7cceda0cd684",
     "core_fp": "d75a31f6ab06a3eaeb6d4a958eba7c952b0e37a01d8e41683a0ec93f28f32576"
+  },
+  {
+    "ts": 1780830507,
+    "kind": "grammar_gap",
+    "level": "B1",
+    "core": "She ___ her homework every day.",
+    "fp": "ff293100a484b4c88e3205f9eae065f922602dc265469df3882c1967cd74dfe7",
+    "core_fp": "df9916b5cd456079d871e34693d3a92628fdc00c194b9ed03da251e0ddba929c"
   }
 ]
