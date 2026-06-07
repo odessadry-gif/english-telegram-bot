@@ -7544,5 +7544,13 @@
     "fp": "2aa4bcba1e59140b93084d2bf351713660e17e8cee44da93f9725923608ee87c",
     "core_fp": "ae1a71d3b0d2b91972c927241be3e78e54d086d450affc9a26351f3b18049451",
     "answer": "hello"
+  },
+  {
+    "ts": 1780803527,
+    "kind": "grammar_gap",
+    "level": "B1",
+    "core": "I can't find my bag. Did you see ___?",
+    "fp": "3feca411aa059fc2f685f870d07862d1b5c01295d6bc4c07f6ea85ccc4c762bf",
+    "core_fp": "a854da806415783b3993d48ac3476e44c5e6434a910172efefc31f717a989c11"
   }
 ]
