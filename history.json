@@ -7584,5 +7584,13 @@
     "core": "She ___ a blue bag.",
     "fp": "007b5dabf9e8111bcbf126be7aae78deb3a36a4e0d02ddba5aa097a695b11597",
     "core_fp": "fb03b53a0484941228a15453588cb97a8a1e73503cd49c84f71c74b399649fea"
+  },
+  {
+    "ts": 1780859969,
+    "kind": "grammar_gap",
+    "level": "B1",
+    "core": "Please ___ the door when you leave.",
+    "fp": "8b92168cfde24a124c7177ffaf81a95f555b4e587b63c55295043bb4633f0869",
+    "core_fp": "08f8e383f92bd763b56473cbd50ae2aecbc2001afd27d3d2e00eac5e9acd664d"
   }
 ]
