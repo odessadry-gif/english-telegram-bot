@@ -7592,5 +7592,13 @@
     "core": "Please ___ the door when you leave.",
     "fp": "8b92168cfde24a124c7177ffaf81a95f555b4e587b63c55295043bb4633f0869",
     "core_fp": "08f8e383f92bd763b56473cbd50ae2aecbc2001afd27d3d2e00eac5e9acd664d"
+  },
+  {
+    "ts": 1780869724,
+    "kind": "grammar_gap",
+    "level": "A2",
+    "core": "He ___ to work at 8.",
+    "fp": "1e84158ccaa244279d2163e3db972344ce8829125cf6eed336d62b41bd8a1633",
+    "core_fp": "dfb5c0e9f6a1d6d701a77379e74f8ecc16e00fa617baadb5fbf9235138430916"
   }
 ]
