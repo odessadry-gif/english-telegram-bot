@@ -7608,5 +7608,13 @@
     "core": "She keeps her phone ___ her pocket.",
     "fp": "9f6a1d76a4580468a15ec643fc292d28745455a81a7962155ff14e83d06aa0cc",
     "core_fp": "530f07dde3c8dad11afc45ef5e33b4e74d4c6f8d81a20aa5bd62bc97adc0a45d"
+  },
+  {
+    "ts": 1780915747,
+    "kind": "grammar_gap",
+    "level": "B1",
+    "core": "I left my phone ___ the taxi.",
+    "fp": "9e6f11606b2a8aa4f5cab331f6293130811b5089d4d59cbdef1d8fd6944b3792",
+    "core_fp": "eafffec4da54e2621afccb141646d19486d145443b79425bfebfb77ff08ab9f8"
   }
 ]
