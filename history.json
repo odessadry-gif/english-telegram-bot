@@ -7634,5 +7634,14 @@
     "fp": "003926826db82d86802fe6b67384959358bd56db6e5fa3275340eb0656cbc304",
     "core_fp": "eccec333ebc7a524587e8d759a4488822b3db45543692164490cd8d46adcfbcf",
     "answer": "doorbell"
+  },
+  {
+    "ts": 1780957497,
+    "kind": "riddle",
+    "level": "B1",
+    "core": "It is in the kitchen.\nYou bake food in it.",
+    "fp": "4928a276f17f54e59c70e7d2a11452f28c167bcc6b3ca28c14a2250405d13adb",
+    "core_fp": "7ec835f36638f02938ebf9440671389ff7177ac54420fc90de64f5b99e6c03cb",
+    "answer": "oven"
   }
 ]
