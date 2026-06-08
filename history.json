@@ -7600,5 +7600,13 @@
     "core": "He ___ to work at 8.",
     "fp": "1e84158ccaa244279d2163e3db972344ce8829125cf6eed336d62b41bd8a1633",
     "core_fp": "dfb5c0e9f6a1d6d701a77379e74f8ecc16e00fa617baadb5fbf9235138430916"
+  },
+  {
+    "ts": 1780890204,
+    "kind": "grammar_gap",
+    "level": "B1",
+    "core": "She keeps her phone ___ her pocket.",
+    "fp": "9f6a1d76a4580468a15ec643fc292d28745455a81a7962155ff14e83d06aa0cc",
+    "core_fp": "530f07dde3c8dad11afc45ef5e33b4e74d4c6f8d81a20aa5bd62bc97adc0a45d"
   }
 ]
