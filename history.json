@@ -7616,5 +7616,14 @@
     "core": "I left my phone ___ the taxi.",
     "fp": "9e6f11606b2a8aa4f5cab331f6293130811b5089d4d59cbdef1d8fd6944b3792",
     "core_fp": "eafffec4da54e2621afccb141646d19486d145443b79425bfebfb77ff08ab9f8"
+  },
+  {
+    "ts": 1780933699,
+    "kind": "riddle",
+    "level": "B1",
+    "core": "You wear it on your back.\nStudents put books inside.",
+    "fp": "41071e2ace150383794f8db271fa5defa2af641e99f4f5451787a2deff61d002",
+    "core_fp": "d84ee38a5a924c41a5363b94d6fee6d2a0301a56c69bd08d665ada8f199c6823",
+    "answer": "backpack"
   }
 ]
