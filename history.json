@@ -7625,5 +7625,14 @@
     "fp": "41071e2ace150383794f8db271fa5defa2af641e99f4f5451787a2deff61d002",
     "core_fp": "d84ee38a5a924c41a5363b94d6fee6d2a0301a56c69bd08d665ada8f199c6823",
     "answer": "backpack"
+  },
+  {
+    "ts": 1780949671,
+    "kind": "riddle",
+    "level": "B1",
+    "core": "You press it at the door\nIt makes a sound",
+    "fp": "003926826db82d86802fe6b67384959358bd56db6e5fa3275340eb0656cbc304",
+    "core_fp": "eccec333ebc7a524587e8d759a4488822b3db45543692164490cd8d46adcfbcf",
+    "answer": "doorbell"
   }
 ]
