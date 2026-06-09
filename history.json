@@ -7675,5 +7675,13 @@
     "core": "I forgot my keys ___ home.",
     "fp": "c1f206001d04841886cb4b32700c64ece81dc7d3f2e9ed43b866178c2fe8a72a",
     "core_fp": "158527b03653c14f668034851c204aa184bdceafa34c75046a6029c5f1791ffb"
+  },
+  {
+    "ts": 1781043763,
+    "kind": "ua_en",
+    "level": "A1",
+    "core": "Він у кімнаті.",
+    "fp": "94b6bd87c2ac5922a45324beaa6dcfb1e585b2dfb226eb509949d9a3a985eab0",
+    "core_fp": "d94d680a51eb8100c717f1c0489f3ae2b97847d3163d728842b14aa4304dbd8f"
   }
 ]
