@@ -7667,5 +7667,13 @@
     "core": "Де найближчий банкомат?",
     "fp": "cdb6b5766abf0d608899b14aa6a4fc5657caf78495825aa0c912e85e858fc511",
     "core_fp": "43c2de08fcc361ea510895e92ccd5cc18644f88c09e80189f06ffa6056816132"
+  },
+  {
+    "ts": 1781035504,
+    "kind": "grammar_gap",
+    "level": "A2",
+    "core": "I forgot my keys ___ home.",
+    "fp": "c1f206001d04841886cb4b32700c64ece81dc7d3f2e9ed43b866178c2fe8a72a",
+    "core_fp": "158527b03653c14f668034851c204aa184bdceafa34c75046a6029c5f1791ffb"
   }
 ]
