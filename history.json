@@ -7659,5 +7659,13 @@
     "core": "I ___ the train at 8.",
     "fp": "f9affc5bd0f612a4b1acf74bf0b0b86b994a8d5fb5b7da0e53655a4fbeabb9b0",
     "core_fp": "50d21d2933775fdfbf0dccaafb8fddc42f2fc3f845f4982fc4a23570243ceb18"
+  },
+  {
+    "ts": 1781018106,
+    "kind": "ua_en",
+    "level": "A2",
+    "core": "Де найближчий банкомат?",
+    "fp": "cdb6b5766abf0d608899b14aa6a4fc5657caf78495825aa0c912e85e858fc511",
+    "core_fp": "43c2de08fcc361ea510895e92ccd5cc18644f88c09e80189f06ffa6056816132"
   }
 ]
