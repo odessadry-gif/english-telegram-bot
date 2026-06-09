@@ -7651,5 +7651,13 @@
     "core": "Я хочу повернути це",
     "fp": "f7ea2e0eeb6bea7d367b1cfa2bb717b5e8aebbfa1b69b5a15f1d7015ae1730c9",
     "core_fp": "ccad2dcab3d254b4b410d259a5cb96f5cc59ac1c2fff60ae7dda38b5362a8ed9"
+  },
+  {
+    "ts": 1780987788,
+    "kind": "grammar_gap",
+    "level": "A2",
+    "core": "I ___ the train at 8.",
+    "fp": "f9affc5bd0f612a4b1acf74bf0b0b86b994a8d5fb5b7da0e53655a4fbeabb9b0",
+    "core_fp": "50d21d2933775fdfbf0dccaafb8fddc42f2fc3f845f4982fc4a23570243ceb18"
   }
 ]
