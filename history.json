@@ -7708,5 +7708,13 @@
     "core": "Я не можу це знайти",
     "fp": "e6e8725af65e9187d9f3ae3299a3400e4afdfb119c3c3e95065b44578b91ce1b",
     "core_fp": "bdc68be6b425d19c48abdb30f9034b368b6cf5f92ad0239bce1783816abd86c1"
+  },
+  {
+    "ts": 1781131876,
+    "kind": "grammar_gap",
+    "level": "B1",
+    "core": "She ___ the door before she left.",
+    "fp": "4346765a515e8f6a4da693e1abac369499ee06fe3d0c119234d01e8cdcaef83f",
+    "core_fp": "d07b7e5138896fe30d7d37462f4eb60c51c1c163d135a95cd8922347bd75d065"
   }
 ]
