@@ -7700,5 +7700,13 @@
     "core": "The next train is ___ 10 minutes.",
     "fp": "c7187ff6a3c369b88c3ea59046a97130bb587a990c8885b87b3f4ac14ee7750f",
     "core_fp": "ed87988b06879cea333b26689541f8110bc7abbc805ec934d9fc63629aa42788"
+  },
+  {
+    "ts": 1781105341,
+    "kind": "ua_en",
+    "level": "B1",
+    "core": "Я не можу це знайти",
+    "fp": "e6e8725af65e9187d9f3ae3299a3400e4afdfb119c3c3e95065b44578b91ce1b",
+    "core_fp": "bdc68be6b425d19c48abdb30f9034b368b6cf5f92ad0239bce1783816abd86c1"
   }
 ]
