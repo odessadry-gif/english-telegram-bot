@@ -7692,5 +7692,13 @@
     "fp": "c78ed1bfa98b76cc885f53f0e37b2da125614d329a6ce689e4b2fdab5ecd6eb3",
     "core_fp": "51b778e9d1a026db7b1cefe5d8ee8a318617df9d48199cb4db6e98d8dd0c4703",
     "answer": "napkin"
+  },
+  {
+    "ts": 1781085284,
+    "kind": "grammar_gap",
+    "level": "A2",
+    "core": "The next train is ___ 10 minutes.",
+    "fp": "c7187ff6a3c369b88c3ea59046a97130bb587a990c8885b87b3f4ac14ee7750f",
+    "core_fp": "ed87988b06879cea333b26689541f8110bc7abbc805ec934d9fc63629aa42788"
   }
 ]
