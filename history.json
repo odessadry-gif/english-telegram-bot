@@ -7724,5 +7724,14 @@
     "core": "Він мій друг.",
     "fp": "7a51d8cd1af30eea8773650427d9cc690aea3437096342fbdfcb382998ccbfad",
     "core_fp": "4225045a498c366724c38b5b009e11a6e0558f2988247cfb2e6dba5e51b8ae78"
+  },
+  {
+    "ts": 1781173245,
+    "kind": "riddle",
+    "level": "A1",
+    "core": "You wash your hands with it.\nIt is in the bathroom.",
+    "fp": "e8149ab89fda945c94548534ae08e8efbf5b42173849ffa51df59a083895da23",
+    "core_fp": "852d206a02ffc022cfc323d46b6786849d2c84025a49966e62edb3388c6874f5",
+    "answer": "soap"
   }
 ]
