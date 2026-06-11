@@ -7733,5 +7733,13 @@
     "fp": "e8149ab89fda945c94548534ae08e8efbf5b42173849ffa51df59a083895da23",
     "core_fp": "852d206a02ffc022cfc323d46b6786849d2c84025a49966e62edb3388c6874f5",
     "answer": "soap"
+  },
+  {
+    "ts": 1781193437,
+    "kind": "ua_en",
+    "level": "A2",
+    "core": "Зачиніть, будь ласка, вікно",
+    "fp": "c7cb0c5afc22e1a1325ab498d326ff72d6088946f42acd8380e8d76189f205c2",
+    "core_fp": "e93c30b3d5817302bdc54cabb8feb123c3febd13cb51c382a18cc2602f5c9f0f"
   }
 ]
