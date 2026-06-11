@@ -7716,5 +7716,13 @@
     "core": "She ___ the door before she left.",
     "fp": "4346765a515e8f6a4da693e1abac369499ee06fe3d0c119234d01e8cdcaef83f",
     "core_fp": "d07b7e5138896fe30d7d37462f4eb60c51c1c163d135a95cd8922347bd75d065"
+  },
+  {
+    "ts": 1781149306,
+    "kind": "ua_en",
+    "level": "A1",
+    "core": "Він мій друг.",
+    "fp": "7a51d8cd1af30eea8773650427d9cc690aea3437096342fbdfcb382998ccbfad",
+    "core_fp": "4225045a498c366724c38b5b009e11a6e0558f2988247cfb2e6dba5e51b8ae78"
   }
 ]
