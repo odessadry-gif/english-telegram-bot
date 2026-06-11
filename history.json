@@ -7741,5 +7741,13 @@
     "core": "Зачиніть, будь ласка, вікно",
     "fp": "c7cb0c5afc22e1a1325ab498d326ff72d6088946f42acd8380e8d76189f205c2",
     "core_fp": "e93c30b3d5817302bdc54cabb8feb123c3febd13cb51c382a18cc2602f5c9f0f"
+  },
+  {
+    "ts": 1781209114,
+    "kind": "grammar_gap",
+    "level": "B1",
+    "core": "She drinks tea ___ the morning.",
+    "fp": "db8e9c0d517a959fe073405e3bc7ce11129b40235365bb6dc7ba8b21f65c0616",
+    "core_fp": "3aee40787288fe3c3ae910efd5258e09c90d90519c023469bc1838145d0e41be"
   }
 ]
