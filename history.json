@@ -7774,5 +7774,13 @@
     "core": "I will be at home ___ 7 and 9.",
     "fp": "7c9e6f96e28ed5567084c6bdca9de0b2edcc4527ee603d7e0cde6a8d8f5fd3c8",
     "core_fp": "b6eaa2a1240fc6492b666373405a11a56563887ddeb04f2ab1a307f453eef012"
+  },
+  {
+    "ts": 1781285785,
+    "kind": "grammar_gap",
+    "level": "A1",
+    "core": "He ___ late today.",
+    "fp": "ccdf3234a17c8ee8b77f2a3a8c60647096d7b1d6c426d9a827952173a1a52499",
+    "core_fp": "736ac8181e12a77c712d7dedc3543f216732a6128c7b17a0da109554c5934409"
   }
 ]
