@@ -7766,5 +7766,13 @@
     "fp": "0cd6a64f3fd52c78a8e4e82d62e6f3c914390b3e8bbd56459eea10bbf44fd52b",
     "core_fp": "ad51a683b3c948fab06e0ccd653fe5f1e5a5d46da327561db617ca8392a802d9",
     "answer": "text"
+  },
+  {
+    "ts": 1781276137,
+    "kind": "grammar_gap",
+    "level": "B1",
+    "core": "I will be at home ___ 7 and 9.",
+    "fp": "7c9e6f96e28ed5567084c6bdca9de0b2edcc4527ee603d7e0cde6a8d8f5fd3c8",
+    "core_fp": "b6eaa2a1240fc6492b666373405a11a56563887ddeb04f2ab1a307f453eef012"
   }
 ]
