@@ -7757,5 +7757,14 @@
     "core": "She works ___ night.",
     "fp": "d3a7dd0c1018d395c7b576a4d5653af016439edc5a51843e79ae08d09f002e60",
     "core_fp": "dafe179d10e92bbf6ec95f83170c85deafcf3bf2265c9a273dfb50f136254812"
+  },
+  {
+    "ts": 1781259212,
+    "kind": "riddle",
+    "level": "B1",
+    "core": "You send it on your phone.\nIt has words.",
+    "fp": "0cd6a64f3fd52c78a8e4e82d62e6f3c914390b3e8bbd56459eea10bbf44fd52b",
+    "core_fp": "ad51a683b3c948fab06e0ccd653fe5f1e5a5d46da327561db617ca8392a802d9",
+    "answer": "text"
   }
 ]
