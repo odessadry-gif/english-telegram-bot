@@ -7790,5 +7790,13 @@
     "core": "Де мої окуляри?",
     "fp": "6dec4dafc4dcfaf6f62130b95da9afb4d3545f90cfa6c4c9c86bad60c60cb043",
     "core_fp": "a80a134362d8228c57da33da5567ef887a2265ed3d6ec6dc3c92c3ccc6c09821"
+  },
+  {
+    "ts": 1781303018,
+    "kind": "grammar_gap",
+    "level": "A2",
+    "core": "Where is ___ luggage?",
+    "fp": "88e2c51386fdb8418c2a4271ded667bab8b370b8b7e2bacc1068385c648d81bf",
+    "core_fp": "1eaeef9e819a6dca87a679705836fd4cf5cf0f18bb8b6b54fa45bec022c70281"
   }
 ]
