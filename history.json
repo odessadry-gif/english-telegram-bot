@@ -7782,5 +7782,13 @@
     "core": "He ___ late today.",
     "fp": "ccdf3234a17c8ee8b77f2a3a8c60647096d7b1d6c426d9a827952173a1a52499",
     "core_fp": "736ac8181e12a77c712d7dedc3543f216732a6128c7b17a0da109554c5934409"
+  },
+  {
+    "ts": 1781294875,
+    "kind": "ua_en",
+    "level": "A1",
+    "core": "Де мої окуляри?",
+    "fp": "6dec4dafc4dcfaf6f62130b95da9afb4d3545f90cfa6c4c9c86bad60c60cb043",
+    "core_fp": "a80a134362d8228c57da33da5567ef887a2265ed3d6ec6dc3c92c3ccc6c09821"
   }
 ]
