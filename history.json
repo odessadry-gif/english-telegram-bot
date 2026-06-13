@@ -7847,5 +7847,13 @@
     "core": "Що це означає?",
     "fp": "b45229dadaf495a1af98efacbf857d3db14809d3048657675182aa931a2762d8",
     "core_fp": "832612054137feca73a1a0f626c9573c1b26661dbf3ffc52df9a93c5132d54bf"
+  },
+  {
+    "ts": 1781388165,
+    "kind": "ua_en",
+    "level": "A1",
+    "core": "Покажіть мені карту",
+    "fp": "3ed6426e14b29e60d974b04189aa92780e10292aafcd4924924a342d8cb54e69",
+    "core_fp": "52f2f2d7efb4eeff143cd3021944b99afc71288bc20d64f2ebf397eca4db3b41"
   }
 ]
