@@ -7839,5 +7839,13 @@
     "core": "Мені не вистачає часу",
     "fp": "c10abbbaf8e3010a65d534cccc39996564325f8d41e73452a641e5d7acb89415",
     "core_fp": "7010183f50292c12132e7eaed2f92ea9d0637002cd22fc9a3e41700f01049d6d"
+  },
+  {
+    "ts": 1781378530,
+    "kind": "ua_en",
+    "level": "B1",
+    "core": "Що це означає?",
+    "fp": "b45229dadaf495a1af98efacbf857d3db14809d3048657675182aa931a2762d8",
+    "core_fp": "832612054137feca73a1a0f626c9573c1b26661dbf3ffc52df9a93c5132d54bf"
   }
 ]
