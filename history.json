@@ -7823,5 +7823,13 @@
     "core": "He ___ a taxi now.",
     "fp": "5e46a3dfc0d3c70896b08c20f6ad063a4507e6b951e21b5634b4d5f7a7961ff9",
     "core_fp": "9cbda23949521ea2e1bbe28ada2ca362b4a953704ad0f0a33c3f23baa021d21e"
+  },
+  {
+    "ts": 1781358851,
+    "kind": "grammar_gap",
+    "level": "B1",
+    "core": "She asked me to ___ her at the hotel.",
+    "fp": "266326d185815bc040fb4a30eb094f98fbc0eb492a07e24eacb1824e4e544596",
+    "core_fp": "b470eeb3158872e8c1de81e223c77b41298f681e960beb308b7fe156773309e7"
   }
 ]
