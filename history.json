@@ -7831,5 +7831,13 @@
     "core": "She asked me to ___ her at the hotel.",
     "fp": "266326d185815bc040fb4a30eb094f98fbc0eb492a07e24eacb1824e4e544596",
     "core_fp": "b470eeb3158872e8c1de81e223c77b41298f681e960beb308b7fe156773309e7"
+  },
+  {
+    "ts": 1781367220,
+    "kind": "ua_en",
+    "level": "B1",
+    "core": "Мені не вистачає часу",
+    "fp": "c10abbbaf8e3010a65d534cccc39996564325f8d41e73452a641e5d7acb89415",
+    "core_fp": "7010183f50292c12132e7eaed2f92ea9d0637002cd22fc9a3e41700f01049d6d"
   }
 ]
