@@ -7807,5 +7807,13 @@
     "fp": "39f1490bfe156cbe8af5ca165b41a68d9aadf69815e6576f014a7ce3caf0018e",
     "core_fp": "21e4c2a495690e2fe0b06c4a9f5fe7e0c32909e0329daeda96595400b5a49c93",
     "answer": "sandwich"
+  },
+  {
+    "ts": 1781340911,
+    "kind": "grammar_gap",
+    "level": "B1",
+    "core": "I usually ___ coffee in the morning.",
+    "fp": "2789aba8c6d8238225e3eba5eb1dce7d222af44594783fea8a0592aeac195200",
+    "core_fp": "9f8b92ab60ce1e053c5ad0c2f1f687d74d12905aa8542cf6facd9732abb579f5"
   }
 ]
