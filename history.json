@@ -7798,5 +7798,14 @@
     "core": "Where is ___ luggage?",
     "fp": "88e2c51386fdb8418c2a4271ded667bab8b370b8b7e2bacc1068385c648d81bf",
     "core_fp": "1eaeef9e819a6dca87a679705836fd4cf5cf0f18bb8b6b54fa45bec022c70281"
+  },
+  {
+    "ts": 1781321361,
+    "kind": "riddle",
+    "level": "B1",
+    "core": "You order it in a cafe.\nIt has bread.",
+    "fp": "39f1490bfe156cbe8af5ca165b41a68d9aadf69815e6576f014a7ce3caf0018e",
+    "core_fp": "21e4c2a495690e2fe0b06c4a9f5fe7e0c32909e0329daeda96595400b5a49c93",
+    "answer": "sandwich"
   }
 ]
