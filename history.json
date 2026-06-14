@@ -7871,5 +7871,14 @@
     "core": "I ___ the bus to work.",
     "fp": "c5d24fcda6fd86a21bc45253ea7b74325b0d3d9ebd962637d5e5928dc0a666f2",
     "core_fp": "c72b4464a4555b4f8d3fdcb81b4da043453b37c7716a271730d9215004a5856a"
+  },
+  {
+    "ts": 1781445883,
+    "kind": "riddle",
+    "level": "A1",
+    "core": "You cut food with it.\nIt is on the table.",
+    "fp": "4d9d95126d9b191a7ade415b250f5cb99fc89fe66c32fdebc823ccbcb61a1045",
+    "core_fp": "80aa3726eb1c800bbdf7df0df63d5d734c20838c468454c09971e5e39cb26185",
+    "answer": "knife"
   }
 ]
