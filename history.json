@@ -7880,5 +7880,13 @@
     "fp": "4d9d95126d9b191a7ade415b250f5cb99fc89fe66c32fdebc823ccbcb61a1045",
     "core_fp": "80aa3726eb1c800bbdf7df0df63d5d734c20838c468454c09971e5e39cb26185",
     "answer": "knife"
+  },
+  {
+    "ts": 1781454002,
+    "kind": "ua_en",
+    "level": "B1",
+    "core": "У мене температура.",
+    "fp": "3dbee6d564ec618b68204aac3559e6e6a7f9a008a702527aab834935ae39bd8c",
+    "core_fp": "7967ef2caf0ad79a09a4952954fa3dec5a2024f4d8d027af64cd7434b7de0fcd"
   }
 ]
