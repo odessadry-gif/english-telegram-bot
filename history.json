@@ -7896,5 +7896,13 @@
     "core": "She works ___ Monday to Friday.",
     "fp": "868bffb78293bbc1604ea272741e95cea59315942951e2898d258f32906b0480",
     "core_fp": "5180e0dfee0d4fb149a0a8cbe1e67d05d1b2dc1617168750b452c0847ba1b8f0"
+  },
+  {
+    "ts": 1781474870,
+    "kind": "grammar_gap",
+    "level": "B1",
+    "core": "My phone is ___ my pocket.",
+    "fp": "a8523e6b4c8f002e104ffbfd9a0c7a2a4db450ec278d116b6a0f8dd5d19142e2",
+    "core_fp": "d653be2d779ad31047d4d71a2f4af33e015c558c2b920a0bd29fc25e09bcee35"
   }
 ]
