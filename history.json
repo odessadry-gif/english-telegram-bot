@@ -7863,5 +7863,13 @@
     "core": "Can you ___ me a taxi?",
     "fp": "b0375a80e92d923b0b19557759d4ed3e3723ba826c3ec606ec7a3598f44f94f8",
     "core_fp": "3b0273f195ab639bccb5b783461333b62f1ce1b5df25a27f518712cc23943b05"
+  },
+  {
+    "ts": 1781429410,
+    "kind": "grammar_gap",
+    "level": "A2",
+    "core": "I ___ the bus to work.",
+    "fp": "c5d24fcda6fd86a21bc45253ea7b74325b0d3d9ebd962637d5e5928dc0a666f2",
+    "core_fp": "c72b4464a4555b4f8d3fdcb81b4da043453b37c7716a271730d9215004a5856a"
   }
 ]
