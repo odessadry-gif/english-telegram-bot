@@ -7855,5 +7855,13 @@
     "core": "Покажіть мені карту",
     "fp": "3ed6426e14b29e60d974b04189aa92780e10292aafcd4924924a342d8cb54e69",
     "core_fp": "52f2f2d7efb4eeff143cd3021944b99afc71288bc20d64f2ebf397eca4db3b41"
+  },
+  {
+    "ts": 1781408708,
+    "kind": "grammar_gap",
+    "level": "A2",
+    "core": "Can you ___ me a taxi?",
+    "fp": "b0375a80e92d923b0b19557759d4ed3e3723ba826c3ec606ec7a3598f44f94f8",
+    "core_fp": "3b0273f195ab639bccb5b783461333b62f1ce1b5df25a27f518712cc23943b05"
   }
 ]
