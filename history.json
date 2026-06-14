@@ -7888,5 +7888,13 @@
     "core": "У мене температура.",
     "fp": "3dbee6d564ec618b68204aac3559e6e6a7f9a008a702527aab834935ae39bd8c",
     "core_fp": "7967ef2caf0ad79a09a4952954fa3dec5a2024f4d8d027af64cd7434b7de0fcd"
+  },
+  {
+    "ts": 1781465078,
+    "kind": "grammar_gap",
+    "level": "B1",
+    "core": "She works ___ Monday to Friday.",
+    "fp": "868bffb78293bbc1604ea272741e95cea59315942951e2898d258f32906b0480",
+    "core_fp": "5180e0dfee0d4fb149a0a8cbe1e67d05d1b2dc1617168750b452c0847ba1b8f0"
   }
 ]
