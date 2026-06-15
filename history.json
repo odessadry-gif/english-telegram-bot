@@ -7921,5 +7921,14 @@
     "core": "Я забув про це",
     "fp": "3a5a38b6d364ecb75895e4f165e15ae6debc67239923c4fc1dccaf23eead99a6",
     "core_fp": "d9054493c7ba3cebc7e155c9be3c8d5a04d7c0429424ef7e6aa76aa557d261ea"
+  },
+  {
+    "ts": 1781544602,
+    "kind": "riddle",
+    "level": "A2",
+    "core": "You add it to tea.\nIt is white and sweet",
+    "fp": "40d0060962e86da4e860999e46a4158631f1c6c9cb4598f04320b064335466e9",
+    "core_fp": "75049ed10e08994829971f64c94bd073349641a8b4f3e733a2a11671793a42ca",
+    "answer": "sugar"
   }
 ]
