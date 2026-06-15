@@ -7904,5 +7904,14 @@
     "core": "My phone is ___ my pocket.",
     "fp": "a8523e6b4c8f002e104ffbfd9a0c7a2a4db450ec278d116b6a0f8dd5d19142e2",
     "core_fp": "d653be2d779ad31047d4d71a2f4af33e015c558c2b920a0bd29fc25e09bcee35"
+  },
+  {
+    "ts": 1781496335,
+    "kind": "riddle",
+    "level": "A1",
+    "core": "You cut paper with it.\nYou use it at school.",
+    "fp": "ec15816d94bee95e352be7f7c77c202dff9cbf96b52b52b76f265f4e7ed15b2d",
+    "core_fp": "b39eee2a1bae52670dba7f3366145d258f5a09be621bf88ca20ed4b8ed564169",
+    "answer": "scissors"
   }
 ]
