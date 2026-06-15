@@ -7930,5 +7930,13 @@
     "fp": "40d0060962e86da4e860999e46a4158631f1c6c9cb4598f04320b064335466e9",
     "core_fp": "75049ed10e08994829971f64c94bd073349641a8b4f3e733a2a11671793a42ca",
     "answer": "sugar"
+  },
+  {
+    "ts": 1781556793,
+    "kind": "ua_en",
+    "level": "A2",
+    "core": "Де поїзд?",
+    "fp": "75392bb13c155ad279b4a6a24e1521bb17bf070eabf702d7db96bbbd9422328a",
+    "core_fp": "f7cdfb85c4231784e0eb6405149e125d5971c8967ffde9ab5c9529618ff2aead"
   }
 ]
