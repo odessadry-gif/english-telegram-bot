@@ -7938,5 +7938,13 @@
     "core": "Де поїзд?",
     "fp": "75392bb13c155ad279b4a6a24e1521bb17bf070eabf702d7db96bbbd9422328a",
     "core_fp": "f7cdfb85c4231784e0eb6405149e125d5971c8967ffde9ab5c9529618ff2aead"
+  },
+  {
+    "ts": 1781564589,
+    "kind": "grammar_gap",
+    "level": "A2",
+    "core": "She ___ at home now.",
+    "fp": "bb849daddd30d1d911e4b2912f2aa698bedcd04450c634a00e7c959e4fe42757",
+    "core_fp": "4d706a674a9b482b1e41ec1b6a5fe736bcbb92c5d781cc6b88a87abb7dd69c31"
   }
 ]
