@@ -7913,5 +7913,13 @@
     "fp": "ec15816d94bee95e352be7f7c77c202dff9cbf96b52b52b76f265f4e7ed15b2d",
     "core_fp": "b39eee2a1bae52670dba7f3366145d258f5a09be621bf88ca20ed4b8ed564169",
     "answer": "scissors"
+  },
+  {
+    "ts": 1781524757,
+    "kind": "ua_en",
+    "level": "B1",
+    "core": "Я забув про це",
+    "fp": "3a5a38b6d364ecb75895e4f165e15ae6debc67239923c4fc1dccaf23eead99a6",
+    "core_fp": "d9054493c7ba3cebc7e155c9be3c8d5a04d7c0429424ef7e6aa76aa557d261ea"
   }
 ]
