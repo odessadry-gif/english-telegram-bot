@@ -7979,5 +7979,13 @@
     "core": "Please put your bag ___ the chair.",
     "fp": "475c24985059778bfcd27728804b897158328f798cf8ddf9301e8bd0dfde2871",
     "core_fp": "af8fbf327b6b414dd3028d7428eb3db9fcd680fae35f4d9461b3fd0cdcbc2533"
+  },
+  {
+    "ts": 1781650375,
+    "kind": "grammar_gap",
+    "level": "A1",
+    "core": "I ___ hungry now.",
+    "fp": "d96416151d4207ebaafcce43ac5f928c81301e2b5f7946f3595aedb070d6da95",
+    "core_fp": "d8a6c5854f6ca73d8849807795e666301e4ba9428c42c2d33213b857c95296b4"
   }
 ]
