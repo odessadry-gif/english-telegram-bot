@@ -7962,5 +7962,14 @@
     "core": "The bus leaves ___ 7.",
     "fp": "a9061ecc97ef21c8c9c670efc29acdc7c1a7021931aab8c215cd7c10879cfa46",
     "core_fp": "8225bef6b9878f62fb93fccf5fb83e0dd360f13c4cfd87832ef22e2f74b69913"
+  },
+  {
+    "ts": 1781628422,
+    "kind": "riddle",
+    "level": "B1",
+    "core": "You open it when it rains\nYou hold it above your head",
+    "fp": "5655f43dfec66b9670c83b6c88c0daf20290c661048d710265350d50014a660a",
+    "core_fp": "ee559187f08f06b657438b1dceed9fcbd494a8f286b8f1933e9c7ae66c5f2e59",
+    "answer": "umbrella"
   }
 ]
