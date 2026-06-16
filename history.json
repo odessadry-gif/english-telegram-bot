@@ -7946,5 +7946,13 @@
     "core": "She ___ at home now.",
     "fp": "bb849daddd30d1d911e4b2912f2aa698bedcd04450c634a00e7c959e4fe42757",
     "core_fp": "4d706a674a9b482b1e41ec1b6a5fe736bcbb92c5d781cc6b88a87abb7dd69c31"
+  },
+  {
+    "ts": 1781581870,
+    "kind": "grammar_gap",
+    "level": "A1",
+    "core": "He ___ at work.",
+    "fp": "a473237cfded0262b98b5c5ba920f6e9e1247d3a8a494daed438c3b4309f2ffe",
+    "core_fp": "d76a58062eeedcca43e43829ca6bc41178c1dbf392ce4f312c016622e3304a11"
   }
 ]
