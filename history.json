@@ -7971,5 +7971,13 @@
     "fp": "5655f43dfec66b9670c83b6c88c0daf20290c661048d710265350d50014a660a",
     "core_fp": "ee559187f08f06b657438b1dceed9fcbd494a8f286b8f1933e9c7ae66c5f2e59",
     "answer": "umbrella"
+  },
+  {
+    "ts": 1781642883,
+    "kind": "grammar_gap",
+    "level": "B1",
+    "core": "Please put your bag ___ the chair.",
+    "fp": "475c24985059778bfcd27728804b897158328f798cf8ddf9301e8bd0dfde2871",
+    "core_fp": "af8fbf327b6b414dd3028d7428eb3db9fcd680fae35f4d9461b3fd0cdcbc2533"
   }
 ]
