@@ -7954,5 +7954,13 @@
     "core": "He ___ at work.",
     "fp": "a473237cfded0262b98b5c5ba920f6e9e1247d3a8a494daed438c3b4309f2ffe",
     "core_fp": "d76a58062eeedcca43e43829ca6bc41178c1dbf392ce4f312c016622e3304a11"
+  },
+  {
+    "ts": 1781607993,
+    "kind": "grammar_gap",
+    "level": "B1",
+    "core": "The bus leaves ___ 7.",
+    "fp": "a9061ecc97ef21c8c9c670efc29acdc7c1a7021931aab8c215cd7c10879cfa46",
+    "core_fp": "8225bef6b9878f62fb93fccf5fb83e0dd360f13c4cfd87832ef22e2f74b69913"
   }
 ]
