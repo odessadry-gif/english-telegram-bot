@@ -8012,5 +8012,13 @@
     "core": "Я дуже втомлений",
     "fp": "06e0dd007b1c979517141bb772c35f358585501977f3a5edcaf2ad5055fffe3d",
     "core_fp": "089acad131a4be0f6d32f900c75bf0b512b3993c732c051b7f3301bddc6abc61"
+  },
+  {
+    "ts": 1781727050,
+    "kind": "grammar_gap",
+    "level": "A2",
+    "core": "She is ___ a red bag.",
+    "fp": "a154f3e2f43cfd1c3fa9ce714cebc5874fe84f784522e38c9e88f05a79ac43e3",
+    "core_fp": "982d6b26fde349d4ec4fceee463154c6cd0af8d60f6583c75d66aa0c6c09ceab"
   }
 ]
