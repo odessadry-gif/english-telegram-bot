@@ -8004,5 +8004,13 @@
     "core": "The taxi will ___ in ten minutes.",
     "fp": "a94c2725c2d8bff5d176641eacfdd76ede431270c18526774797c6935f93b3a7",
     "core_fp": "acef2e2ec394c5daffbf030b54ed0dd27e3193a1b686f6a53fe31398ad86aa03"
+  },
+  {
+    "ts": 1781709712,
+    "kind": "ua_en",
+    "level": "A1",
+    "core": "Я дуже втомлений",
+    "fp": "06e0dd007b1c979517141bb772c35f358585501977f3a5edcaf2ad5055fffe3d",
+    "core_fp": "089acad131a4be0f6d32f900c75bf0b512b3993c732c051b7f3301bddc6abc61"
   }
 ]
