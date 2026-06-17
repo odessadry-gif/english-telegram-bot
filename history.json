@@ -7987,5 +7987,14 @@
     "core": "I ___ hungry now.",
     "fp": "d96416151d4207ebaafcce43ac5f928c81301e2b5f7946f3595aedb070d6da95",
     "core_fp": "d8a6c5854f6ca73d8849807795e666301e4ba9428c42c2d33213b857c95296b4"
+  },
+  {
+    "ts": 1781668652,
+    "kind": "riddle",
+    "level": "B1",
+    "core": "It fits two or three people.\nYou sit on it in the living room",
+    "fp": "b5917763f02d14d82631d1b5ee2bdc70fddbd3ea4ab292032a988e105119484c",
+    "core_fp": "8d9149eda931717acfa699fa1eb00321e70089df3622d79e0d439a0b351a761a",
+    "answer": "sofa"
   }
 ]
