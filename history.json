@@ -7996,5 +7996,13 @@
     "fp": "b5917763f02d14d82631d1b5ee2bdc70fddbd3ea4ab292032a988e105119484c",
     "core_fp": "8d9149eda931717acfa699fa1eb00321e70089df3622d79e0d439a0b351a761a",
     "answer": "sofa"
+  },
+  {
+    "ts": 1781693443,
+    "kind": "grammar_gap",
+    "level": "B1",
+    "core": "The taxi will ___ in ten minutes.",
+    "fp": "a94c2725c2d8bff5d176641eacfdd76ede431270c18526774797c6935f93b3a7",
+    "core_fp": "acef2e2ec394c5daffbf030b54ed0dd27e3193a1b686f6a53fe31398ad86aa03"
   }
 ]
