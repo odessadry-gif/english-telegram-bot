@@ -8044,5 +8044,13 @@
     "core": "Ти вільний сьогодні?",
     "fp": "8961bbcd6ebcf123da0e0255e1728e1a5d0d9724aa09a20cf3eb3938a712da46",
     "core_fp": "f02fc231086b2fa01c4381e2e4c95fca07c0acd2e34e982ac3196a838e19f707"
+  },
+  {
+    "ts": 1781814205,
+    "kind": "grammar_gap",
+    "level": "B1",
+    "core": "I never ___ coffee in the morning.",
+    "fp": "941a7bdb4d0b77ce551bb8c1608c699a18bb5e0791446e86b01655054c8fbf5b",
+    "core_fp": "0d2dc1502419e112dda2c65f417a10ce0cb6de73d1986d33bf34c214dce8b1ac"
   }
 ]
