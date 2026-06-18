@@ -8052,5 +8052,13 @@
     "core": "I never ___ coffee in the morning.",
     "fp": "941a7bdb4d0b77ce551bb8c1608c699a18bb5e0791446e86b01655054c8fbf5b",
     "core_fp": "0d2dc1502419e112dda2c65f417a10ce0cb6de73d1986d33bf34c214dce8b1ac"
+  },
+  {
+    "ts": 1781823326,
+    "kind": "grammar_gap",
+    "level": "B1",
+    "core": "The bus leaves ___ 7 o'clock.",
+    "fp": "56a14d712b739a8acdd9d92f349141ab896daef12577e52748290274e70c162f",
+    "core_fp": "83d193e8919efdce20a3c8580939c2237793218a90a85232e0e777a1e65cf43c"
   }
 ]
