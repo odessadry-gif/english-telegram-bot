@@ -8036,5 +8036,13 @@
     "core": "Yesterday I ___ the wrong train.",
     "fp": "7dc3d8fedc85ea0c21429685fd2839adddc4330f24f114baa4a8555896b7126d",
     "core_fp": "ad46e30e8ecf907a325f04cf0b038d12a1bff161144a4638da2c8bd6423256e7"
+  },
+  {
+    "ts": 1781795891,
+    "kind": "ua_en",
+    "level": "A2",
+    "core": "Ти вільний сьогодні?",
+    "fp": "8961bbcd6ebcf123da0e0255e1728e1a5d0d9724aa09a20cf3eb3938a712da46",
+    "core_fp": "f02fc231086b2fa01c4381e2e4c95fca07c0acd2e34e982ac3196a838e19f707"
   }
 ]
