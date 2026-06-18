@@ -8020,5 +8020,13 @@
     "core": "She is ___ a red bag.",
     "fp": "a154f3e2f43cfd1c3fa9ce714cebc5874fe84f784522e38c9e88f05a79ac43e3",
     "core_fp": "982d6b26fde349d4ec4fceee463154c6cd0af8d60f6583c75d66aa0c6c09ceab"
+  },
+  {
+    "ts": 1781754016,
+    "kind": "grammar_gap",
+    "level": "B1",
+    "core": "I am looking ___ my lost phone.",
+    "fp": "c39479909cddafb369c13d13557e4c2e49b8ca4521ff7c8593bb050917961f3b",
+    "core_fp": "1d9e9ca023130e27a59ccb8cdc14a8df2a128dec93afe88e51585119412374b4"
   }
 ]
