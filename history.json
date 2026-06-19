@@ -8077,5 +8077,13 @@
     "fp": "0d6ad65ae3c6a82cd457f7714a8a300b7eab1f39cfa086458b346af4820fa2d1",
     "core_fp": "82e698e0642d32a9ac4da11cf9862dd9354a3535eb9dc8a718d5dfaebf710d2c",
     "answer": "calendar"
+  },
+  {
+    "ts": 1781881168,
+    "kind": "grammar_gap",
+    "level": "A2",
+    "core": "She drinks coffee ___ the morning.",
+    "fp": "e6b211f75fcb8d110fb598c2170b19d73f98d4e249f314c550d4bcb1aaa24892",
+    "core_fp": "3b303c3a663c9c5277774bca168797d3ca5165b97a287f67d23f33773109eea6"
   }
 ]
