@@ -8102,5 +8102,13 @@
     "fp": "30f1ca5664e7ec05ab5ed357644cb58349fb4c83a00b4dbfb52cf2f713b9335d",
     "core_fp": "7747bb898fcbe35dc4aa2f9e86a1a2a805da059fc7bd57fb0b76bfeb44f7ea8e",
     "answer": "socks"
+  },
+  {
+    "ts": 1781906577,
+    "kind": "grammar_gap",
+    "level": "A1",
+    "core": "I ___ at work.",
+    "fp": "cc96386ecf217b455c5293f28e9237416f440b9141a997b63ab780f79f913d0e",
+    "core_fp": "0d08dac8413a83cebdd02a9d8f4bc75dc40f90d198bf46025978b321e2f6c796"
   }
 ]
