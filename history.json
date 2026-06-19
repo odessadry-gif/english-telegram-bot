@@ -8085,5 +8085,13 @@
     "core": "She drinks coffee ___ the morning.",
     "fp": "e6b211f75fcb8d110fb598c2170b19d73f98d4e249f314c550d4bcb1aaa24892",
     "core_fp": "3b303c3a663c9c5277774bca168797d3ca5165b97a287f67d23f33773109eea6"
+  },
+  {
+    "ts": 1781889855,
+    "kind": "ua_en",
+    "level": "A1",
+    "core": "Де автобус?",
+    "fp": "5c18924369477453f366362dad8f08be6610fbe292edb28974be5391173aeb37",
+    "core_fp": "434e3eb9a8490244c6eda2d0b5953cf9f75116d7ef809df0940db996a762af49"
   }
 ]
