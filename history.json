@@ -8093,5 +8093,14 @@
     "core": "Де автобус?",
     "fp": "5c18924369477453f366362dad8f08be6610fbe292edb28974be5391173aeb37",
     "core_fp": "434e3eb9a8490244c6eda2d0b5953cf9f75116d7ef809df0940db996a762af49"
+  },
+  {
+    "ts": 1781898586,
+    "kind": "riddle",
+    "level": "B1",
+    "core": "You put them on in the morning.\nThey keep your feet warm.",
+    "fp": "30f1ca5664e7ec05ab5ed357644cb58349fb4c83a00b4dbfb52cf2f713b9335d",
+    "core_fp": "7747bb898fcbe35dc4aa2f9e86a1a2a805da059fc7bd57fb0b76bfeb44f7ea8e",
+    "answer": "socks"
   }
 ]
