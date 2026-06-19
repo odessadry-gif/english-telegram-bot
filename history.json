@@ -8060,5 +8060,13 @@
     "core": "The bus leaves ___ 7 o'clock.",
     "fp": "56a14d712b739a8acdd9d92f349141ab896daef12577e52748290274e70c162f",
     "core_fp": "83d193e8919efdce20a3c8580939c2237793218a90a85232e0e777a1e65cf43c"
+  },
+  {
+    "ts": 1781841777,
+    "kind": "ua_en",
+    "level": "A1",
+    "core": "Він у машині.",
+    "fp": "8a86453ea95a1aa37833c9af3709a2367b23ea78f308c0e933aa1ab50ccbff40",
+    "core_fp": "68fe2bb333f59e94ee4eeca035ce2d8c8214a9ca31fdef127efd23c12a32fbe2"
   }
 ]
