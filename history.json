@@ -8126,5 +8126,13 @@
     "core": "Дайте мені квиток.",
     "fp": "8575957083e2981f2eec02f85fc66b08017bfaeee4ef1955b5f78e35fdeb57f4",
     "core_fp": "d5f41433a69822f7cf66e4e1070ab9b0d279139d9998bfa6f4c3ad3d4d03dca7"
+  },
+  {
+    "ts": 1781954189,
+    "kind": "grammar_gap",
+    "level": "B1",
+    "core": "Where ___ the nearest taxi stand?",
+    "fp": "da71e35e118bd9ca1cf8d4470e5720b1850d0a199a46cdf6c443d3de91dce015",
+    "core_fp": "bee0588818287f1655213ec331a1b3971c69bd7e15bf8df79fea123baf068350"
   }
 ]
