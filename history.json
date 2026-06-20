@@ -8143,5 +8143,13 @@
     "fp": "e97ac43e0282bd6a20abaf21d98004d37b6825e3ac5e5e572fbac4cb69c3c3e1",
     "core_fp": "998e8bb3d27874cf0a82f4137d398313fc4a01937e152118b72473db235356dc",
     "answer": "printer"
+  },
+  {
+    "ts": 1781983444,
+    "kind": "grammar_gap",
+    "level": "B1",
+    "core": "She is talking ___ the phone.",
+    "fp": "1a9a4da547a10f24a422f6f86905639b15b28bb484af76fe9ee06de75eff08a3",
+    "core_fp": "bf1986b6468f61b1a672f4badd913152632a9cd5f7978b2ed26c84183ef51735"
   }
 ]
