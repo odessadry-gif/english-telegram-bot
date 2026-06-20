@@ -8118,5 +8118,13 @@
     "core": "Де найближча зупинка?",
     "fp": "0b3d64142f691360ac7c41c5cc40b27f2f6cf713d96cdbbfda83c60b2d3d4046",
     "core_fp": "30d6c4185732d79c0050669c2ab0c3a3417b13c5ff8ee453f2387caa4222cd54"
+  },
+  {
+    "ts": 1781945557,
+    "kind": "ua_en",
+    "level": "A1",
+    "core": "Дайте мені квиток.",
+    "fp": "8575957083e2981f2eec02f85fc66b08017bfaeee4ef1955b5f78e35fdeb57f4",
+    "core_fp": "d5f41433a69822f7cf66e4e1070ab9b0d279139d9998bfa6f4c3ad3d4d03dca7"
   }
 ]
