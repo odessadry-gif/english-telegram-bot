@@ -8110,5 +8110,13 @@
     "core": "I ___ at work.",
     "fp": "cc96386ecf217b455c5293f28e9237416f440b9141a997b63ab780f79f913d0e",
     "core_fp": "0d08dac8413a83cebdd02a9d8f4bc75dc40f90d198bf46025978b321e2f6c796"
+  },
+  {
+    "ts": 1781926002,
+    "kind": "ua_en",
+    "level": "B1",
+    "core": "Де найближча зупинка?",
+    "fp": "0b3d64142f691360ac7c41c5cc40b27f2f6cf713d96cdbbfda83c60b2d3d4046",
+    "core_fp": "30d6c4185732d79c0050669c2ab0c3a3417b13c5ff8ee453f2387caa4222cd54"
   }
 ]
