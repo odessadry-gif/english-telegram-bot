@@ -8134,5 +8134,14 @@
     "core": "Where ___ the nearest taxi stand?",
     "fp": "da71e35e118bd9ca1cf8d4470e5720b1850d0a199a46cdf6c443d3de91dce015",
     "core_fp": "bee0588818287f1655213ec331a1b3971c69bd7e15bf8df79fea123baf068350"
+  },
+  {
+    "ts": 1781972472,
+    "kind": "riddle",
+    "level": "B1",
+    "core": "It prints pages.\nYou use it at work.",
+    "fp": "e97ac43e0282bd6a20abaf21d98004d37b6825e3ac5e5e572fbac4cb69c3c3e1",
+    "core_fp": "998e8bb3d27874cf0a82f4137d398313fc4a01937e152118b72473db235356dc",
+    "answer": "printer"
   }
 ]
