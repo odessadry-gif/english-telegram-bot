@@ -8191,5 +8191,14 @@
     "core": "Please ___ a seat.",
     "fp": "cef3aacc9349d72360e17bd0db68eec186a3f15c46c89d3474470e47d4ba1772",
     "core_fp": "99d7b73444a5da9e7089affa234ef7ad8cc7e61a043b73676c2e81dcad197e88"
+  },
+  {
+    "ts": 1782070081,
+    "kind": "riddle",
+    "level": "A2",
+    "core": "It is on a bus or train.\nYou sit on it.",
+    "fp": "4466f755cda8529b816973714086feea844c4e9147382f19b3d5974f986fa802",
+    "core_fp": "462ae3838af30bb87b537657796b47510d4ea1b2db3469c4dea56d48704f150b",
+    "answer": "seat"
   }
 ]
