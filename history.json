@@ -8167,5 +8167,13 @@
     "core": "I ___ a ticket.",
     "fp": "222db1dec0934c299accd209b030616c369b92878551cadae0de01faf5eda1bf",
     "core_fp": "81858ef893a981096afd3666cc3326dbc190cd3445c0feba82ccca25676ed8ed"
+  },
+  {
+    "ts": 1782035129,
+    "kind": "grammar_gap",
+    "level": "B1",
+    "core": "After dinner, we will ___ the bill.",
+    "fp": "8fd8f769f1e88bb5e473308b0d0da640bd243b97a17855a66e670c4ba31ed34d",
+    "core_fp": "1cb710a97fd131ec46014af68123b8543d85834bf44768c26897cefc00f0a104"
   }
 ]
