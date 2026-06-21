@@ -8175,5 +8175,13 @@
     "core": "After dinner, we will ___ the bill.",
     "fp": "8fd8f769f1e88bb5e473308b0d0da640bd243b97a17855a66e670c4ba31ed34d",
     "core_fp": "1cb710a97fd131ec46014af68123b8543d85834bf44768c26897cefc00f0a104"
+  },
+  {
+    "ts": 1782050772,
+    "kind": "grammar_gap",
+    "level": "B1",
+    "core": "She left her keys ___ the table.",
+    "fp": "18144731333f1e02982471f15ce91f5cb57b5cd3e272be27c59979f4ca3dff58",
+    "core_fp": "e56b4b17fe51bb173b24b7c28f135c6c04e23cd354b738f32fbdd2b5aadf5566"
   }
 ]
