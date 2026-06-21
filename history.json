@@ -8183,5 +8183,13 @@
     "core": "She left her keys ___ the table.",
     "fp": "18144731333f1e02982471f15ce91f5cb57b5cd3e272be27c59979f4ca3dff58",
     "core_fp": "e56b4b17fe51bb173b24b7c28f135c6c04e23cd354b738f32fbdd2b5aadf5566"
+  },
+  {
+    "ts": 1782059414,
+    "kind": "grammar_gap",
+    "level": "A2",
+    "core": "Please ___ a seat.",
+    "fp": "cef3aacc9349d72360e17bd0db68eec186a3f15c46c89d3474470e47d4ba1772",
+    "core_fp": "99d7b73444a5da9e7089affa234ef7ad8cc7e61a043b73676c2e81dcad197e88"
   }
 ]
