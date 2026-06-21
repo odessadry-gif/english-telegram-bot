@@ -8159,5 +8159,13 @@
     "core": "Мені потрібен квиток в один кінець",
     "fp": "a73444d2383442b7ff415e7a2e5f8f2196cb1fa5f9ed125f7697da64876e2ba4",
     "core_fp": "97068ff4fd4e2b1d37add5a232c0be990d01ea15ab6073bc23f24bd59e30da5e"
+  },
+  {
+    "ts": 1782014193,
+    "kind": "grammar_gap",
+    "level": "A1",
+    "core": "I ___ a ticket.",
+    "fp": "222db1dec0934c299accd209b030616c369b92878551cadae0de01faf5eda1bf",
+    "core_fp": "81858ef893a981096afd3666cc3326dbc190cd3445c0feba82ccca25676ed8ed"
   }
 ]
