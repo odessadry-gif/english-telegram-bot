@@ -45,15 +45,15 @@ RECENT_RIDDLE_ANSWER_LIMIT = 120
 
 QUIZ_TYPE_CYCLE_SIZE = 20
 QUIZ_TYPE_CYCLE_QUOTAS = {
-    "grammar_gap": 10,
-    "ua_en": 6,
+    "grammar_gap": 8,
+    "ua_en": 8,
     "riddle": 4,
 }
 
 LEVEL_WEIGHTS = {
-    "A1": 20,
-    "A2": 35,
-    "B1": 45,
+    "A1": 10,
+    "A2": 40,
+    "B1": 50,
 }
 
 client = None
@@ -63,19 +63,14 @@ ARTICLES_RE = re.compile(r"^(a|an|the)\s+", re.IGNORECASE)
 # ========= HARD FILTERS =========
 BANNED_HARD_PHRASES = [
     "put it on my tab",
-    "confirm the time",
     "touch base",
     "circle back",
-    "keep me posted",
     "heads up",
     "it slipped my mind",
     "rain check",
     "piece of cake",
     "under the weather",
-    "would you mind",
     "i was wondering if",
-    "as soon as possible",
-    "get in touch",
     "much appreciated",
     "appreciate it",
     "figure out",
@@ -86,18 +81,11 @@ BANNED_HARD_PHRASES = [
 
 BANNED_HARD_WORDS = [
     "venue",
-    "schedule",
-    "confirm",
-    "available",
-    "reservation",
     "beverage",
     "purchase",
     "itemized",
-    "receipt",
     "account",
     "complimentary",
-    "destination",
-    "departure",
     "itinerary",
     "accommodation",
     "arrangement",
@@ -144,6 +132,47 @@ GOOD_SIMPLE_MARKERS = [
     "where is",
     "how much",
     "what time",
+    "meeting",
+    "message",
+    "email",
+    "doctor",
+    "pharmacy",
+    "medicine",
+    "headache",
+    "weather",
+    "rain",
+    "traffic",
+    "plan",
+    "appointment",
+    "deadline",
+    "receipt",
+    "reservation",
+    "departure",
+    "available",
+    "schedule",
+    "password",
+    "laptop",
+    "charger",
+    "address",
+    "document",
+    "bank",
+    "office",
+    "post office",
+    "price",
+    "cash",
+    "card",
+    "problem",
+    "help",
+    "explain",
+    "repeat",
+    "busy",
+    "free",
+    "already",
+    "yet",
+    "just",
+    "should",
+    "could",
+    "would",
 ]
 
 # ========= HELPERS =========
@@ -535,28 +564,31 @@ def build_prompt(quiz_type: str, target_level: str, avoid_items: list[str], avoi
     common_rules = """
 LEVEL:
 - Target level for this poll: {target_level}
-- A1 = very basic words and simple present / be
-- A2 = practical everyday phrases and simple travel/food situations
-- B1 = natural everyday English, short useful phrases, still clear and not advanced
+- A1 = basic survival phrases, be/have/simple present, still not babyish
+- A2 = practical everyday phrases, past simple, future with will/going to, simple modals
+- B1 = natural everyday English, short useful situations, modals, comparatives, already/yet/just, polite requests
 
 CORE TOPICS:
-- daily life: home, work, shopping, time, plans, phone, simple routines
-- travel: airport, train, taxi, hotel, tickets, luggage, directions
-- food & cafe: menu, ordering, drinks, bill, preferences, simple requests
-- social phrases: greetings, small talk, meeting, apologies, invitations
-- help & problems: asking for help, being late, lost items, simple complaints
+- rotate topics aggressively; do not overuse taxi, ticket, bus, phone, table
+- daily life: home, chores, plans, weather, money, shopping, appointments
+- work & study: email, meeting, deadline, laptop, printer, schedule, explaining a problem
+- travel: airport, train, hotel, tickets, luggage, directions, delays, reservations
+- food & cafe: ordering, preferences, bill, receipt, allergies, service, takeaway
+- health & errands: doctor, pharmacy, headache, medicine, documents, bank, post office
+- social phrases: invitations, apologies, opinions, agreeing, refusing politely, making plans
+- help & problems: asking for help, being late, lost items, changing plans, simple complaints
 
 GLOBAL RULES:
 - exactly 4 options
 - exactly 1 correct answer
 - no second correct answer
 - wrong answers must be clearly wrong
-- no perfect tenses
+- present perfect is allowed only for B1 if it is very clear and common
 - no idioms
 - no business English
-- no tricky grammar
+- no tricky grammar traps
 - no advanced service phrases
-- very clear and useful in real life
+- clear and useful in real life, but not too childish
 - explanation_uk must be short and simple
 - use natural everyday English
 """.format(target_level=target_level).strip()
@@ -570,7 +602,7 @@ TYPE:
 grammar_gap
 
 GOAL:
-Make a super clear {target_level} fill-the-gap question.
+Make a clear but varied {target_level} fill-the-gap question.
 Only ONE answer must fit.
 No doubtful phrasing.
 Avoid slippery cases like article + drink/food if it may confuse beginners.
@@ -584,23 +616,23 @@ Fill the gap:
 
 RULES FOR SENTENCE:
 - exactly one blank: ___
-- short sentence
-- answer in 1-2 seconds
+- short sentence, but with a real-life context
 - one obvious best option
 - include enough context
 - good for the target level: {target_level}
-- prefer verbs, basic nouns, pronouns, time markers, simple prepositions
+- prefer useful verbs, modals, time markers, prepositions, everyday collocations
+- for B1, use slightly richer contexts: plans changed, appointment, receipt, deadline, weather, medicine, reservation, lost item
 - avoid phrases where two words can sound okay
 
 GOOD EXAMPLES:
-- I am ___ now.
-- She ___ at home.
-- We need a ___ for two.
-- Where is my ___?
-- He goes to work by ___.
-- I’m on my ___.
-- Can I pay by ___?
-- The train is at ___ 5.
+- I haven't finished it ___.
+- You should ___ a doctor.
+- The meeting starts ___ ten.
+- I need to change my ___.
+- She missed the train ___ of traffic.
+- Can you send me the ___?
+- We are running ___ of time.
+- I booked the room ___ Monday.
 
 BAD EXAMPLES:
 - I’d like a ___ coffee.
@@ -621,7 +653,7 @@ EXTRA CHECK:
 - only one answer works
 - no ambiguity
 - fast to solve
-- simple enough for beginners
+- useful for A2-B1 learners
 
 {avoid_block}
 
@@ -637,7 +669,7 @@ TYPE:
 ua_en
 
 GOAL:
-Make a very clear Ukrainian-to-English multiple choice quiz.
+Make a clear, practical Ukrainian-to-English multiple choice quiz.
 Target level: {target_level}.
 Only ONE translation must be correct.
 
@@ -657,16 +689,20 @@ RULES:
 - no two English options may both fit
 - avoid formal language
 - avoid long sentences
+- include varied situations: work/study, health, errands, plans, weather, shopping, online, travel, cafe
+- for B1, allow natural phrases with already/yet/just/should/could/would
 - for Ukrainian "немає", prefer natural English like "don't/doesn't have any"; avoid "have no" as the correct answer
 - never use "some" in negative options like "don't have some"
 - never use "haven't/hasn't + noun" without "got"
 
 GOOD EXAMPLES:
-- Я голодний.
-- Де мій квиток?
-- Мені потрібне таксі.
-- Я вже йду.
-- Скільки це коштує?
+- Я ще не закінчив.
+- Мені потрібно перенести зустріч.
+- У мене болить голова.
+- Ви можете повторити?
+- Я забув зарядний пристрій.
+- Коли відправлення?
+- Я вже оплатив рахунок.
 
 JSON schema:
 {{
@@ -680,7 +716,7 @@ JSON schema:
 EXTRA CHECK:
 - exactly one correct translation
 - no optional synonyms that also fit
-- simple and useful
+- practical and varied
 
 {avoid_block}
 
@@ -697,7 +733,7 @@ riddle
 
 GOAL:
 Make a clear one-word English riddle for {target_level}.
-It must be fun and simple.
+It must be fun, useful, and not too childish.
 
 {common_rules}
 
@@ -708,21 +744,23 @@ What is it?
 
 RULES:
 - answer must be ONE English word
-- clues must be very easy
-- user should solve in 2-4 seconds
+- clues must be clear
+- user should solve in 3-6 seconds
 - no poetic clues
 - no abstract words
 - no rare nouns
+- avoid overused answers like bus, ticket, phone, table
+- prefer useful everyday words from work, study, health, shopping, weather, travel, home
 - options must be 4 one-word answers if possible
 - only one answer fits clearly
 
 GOOD EXAMPLES:
-It is yellow.
-Monkeys like it.
+You use it to write a message.
+It has a screen and keys.
 What is it?
 
-You sleep on it.
-It is in your bedroom.
+You take it when your head hurts.
+You buy it at a pharmacy.
 What is it?
 
 JSON schema:
@@ -764,6 +802,9 @@ Rules:
 - very clear
 - no ambiguity
 - useful in real life
+- rotate topics beyond travel: work, study, health, shopping, weather, plans, online, errands
+- make it a little richer than A1 when target is A2 or B1
+- no idioms
 
 Question format exactly:
 💬
@@ -792,9 +833,12 @@ Rules:
 - 1 correct translation only
 - short phrase
 - very clear
+- rotate topics beyond travel: work, study, health, shopping, weather, plans, online, errands
+- for B1, allow natural phrases with already/yet/just/should/could/would
 - for Ukrainian "немає", prefer natural English like "don't/doesn't have any"; avoid "have no" as the correct answer
 - never use "some" in negative options like "don't have some"
 - never use "haven't/hasn't + noun" without "got"
+- no idioms
 
 Question format exactly:
 💬
@@ -822,7 +866,10 @@ Rules:
 - 4 unique options
 - 1 correct answer only
 - answer = one word
-- very easy and clear
+- clear, useful, and not too childish
+- prefer work, study, health, shopping, weather, home, errands
+- avoid overused answers like bus, ticket, phone, table
+- no idioms
 
 Question format exactly:
 💬
