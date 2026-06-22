@@ -8216,5 +8216,14 @@
     "core": "Can you ___ the window?",
     "fp": "1d9eaf435b94cba70a05c44c977ba60d1a30576167f4a453b5a59d7a03fc7cca",
     "core_fp": "dbeaa3af1a5d679dd3b1db358b93a18161fb8937085e0855021d2422d0e4e29b"
+  },
+  {
+    "ts": 1782128944,
+    "kind": "riddle",
+    "level": "A2",
+    "core": "You book it to see a doctor.\nIt has a date and time.",
+    "fp": "97d7167743d450050245a5dedbdd3e2a3c900e30db4f0236d60e1fe52f602b30",
+    "core_fp": "cbd5731a5ef5e0146083cb1771adfd36288521d08d7ef3a0a223118142d1843a",
+    "answer": "appointment"
   }
 ]
