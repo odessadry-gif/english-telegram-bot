@@ -8208,5 +8208,13 @@
     "core": "Я заплатив карткою",
     "fp": "17c3771a0aa4af031f03c4118781c9caca96b8d455c9566572148ccb039a8b35",
     "core_fp": "373408e47f4c624aeed5dad04728b81ca79b9c1fb4d70059fd2b4b3c66cfe4d6"
+  },
+  {
+    "ts": 1782100729,
+    "kind": "grammar_gap",
+    "level": "A2",
+    "core": "Can you ___ the window?",
+    "fp": "1d9eaf435b94cba70a05c44c977ba60d1a30576167f4a453b5a59d7a03fc7cca",
+    "core_fp": "dbeaa3af1a5d679dd3b1db358b93a18161fb8937085e0855021d2422d0e4e29b"
   }
 ]
