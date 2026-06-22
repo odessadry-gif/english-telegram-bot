@@ -8225,5 +8225,13 @@
     "fp": "97d7167743d450050245a5dedbdd3e2a3c900e30db4f0236d60e1fe52f602b30",
     "core_fp": "cbd5731a5ef5e0146083cb1771adfd36288521d08d7ef3a0a223118142d1843a",
     "answer": "appointment"
+  },
+  {
+    "ts": 1782147082,
+    "kind": "ua_en",
+    "level": "B1",
+    "core": "Мені потрібно побачити лікаря.",
+    "fp": "71a989199589d17b1d9d135c758c5d6489abf41359226a077de74e731c233b63",
+    "core_fp": "8abf6181179f93d791e93e24d58ddd5cd43f7dc54f1666c237ae4a159eddb932"
   }
 ]
