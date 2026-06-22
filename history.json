@@ -8241,5 +8241,13 @@
     "core": "У мене болить спина",
     "fp": "44731b7fe4a9d34ea7868a5a5c2d9edf4c26fc38b2afae0f7e1befb8e52d43e1",
     "core_fp": "55b50b6d1054533963997ca53cc730afa7c034af62edd65c1ba9c469f2955b28"
+  },
+  {
+    "ts": 1782168315,
+    "kind": "ua_en",
+    "level": "B1",
+    "core": "Чи можете приготувати без горіхів?",
+    "fp": "170924eee83e5240ecde56bffed4906cf11b86c14c8829019e8dfd08797db05e",
+    "core_fp": "bdd0ee25043c34bba01b20ade49d4e9c7e27237eeded7e1a09e3628bfed31332"
   }
 ]
