@@ -8274,5 +8274,14 @@
     "core": "Мені треба зняти гроші.",
     "fp": "69e34cb43c2ca2667c1005dcbebc6ed0c78a5cf9be72c2253529ad266a8fb370",
     "core_fp": "e232905a0c0d68f1b7a102a24e41c147b06281942d4008e131ca1e8d2fc9a2f4"
+  },
+  {
+    "ts": 1782227745,
+    "kind": "riddle",
+    "level": "A2",
+    "core": "You take it to a café or work.\nIt folds like a book.",
+    "fp": "00a878e5348fea1e0f7570e6e11783b9ca09d45cf784e98cbf1ea83bec2add88",
+    "core_fp": "06775e0c3436de69db86e72d7dea1907d3f3bcf389b7e7f2ecee09bcea052f6d",
+    "answer": "laptop"
   }
 ]
