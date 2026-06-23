@@ -8258,5 +8258,13 @@
     "fp": "7ad3edde4c45908856c1d6136eabfa58331892c81ff62b34dfa51c19472f029c",
     "core_fp": "13626aa41c3fe54abe70cc1ed87c093702f34f2f79cf4b1644e621d60c73e6b8",
     "answer": "receipt"
+  },
+  {
+    "ts": 1782197505,
+    "kind": "ua_en",
+    "level": "B1",
+    "core": "Потрібна ваша допомога",
+    "fp": "b4ef6cebfe0a2eb0ad3646f505c21682b6e1e3cd29b698a977bdc15f4886d60e",
+    "core_fp": "b96f895304add46ff1f09981205ec7f07ae1992f2fbd83084866fd3cc18e833b"
   }
 ]
