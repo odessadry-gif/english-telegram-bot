@@ -8291,5 +8291,13 @@
     "core": "You should see a doctor if the pain doesn't get ___ in two days.",
     "fp": "b1023cb8ec3b3457463b31c754c2232eb1e7294d27f282869d8f376d30d5283d",
     "core_fp": "7df722b5f66d2391994d4eafc80d4e09a354e1b56dbce2201a071c6d6fe70143"
+  },
+  {
+    "ts": 1782252616,
+    "kind": "ua_en",
+    "level": "B1",
+    "core": "Вона повинна одягнути пальто",
+    "fp": "ee5a0f2f31b325695ef2a85eb70c56457bb49a2242ef0ed488bec0e3244452b2",
+    "core_fp": "a23ff4da7d30b1dd786c77ef24f9fe68469bccd0f40ef725a62319e46c1dc66d"
   }
 ]
