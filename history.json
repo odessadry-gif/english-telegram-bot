@@ -8266,5 +8266,13 @@
     "core": "Потрібна ваша допомога",
     "fp": "b4ef6cebfe0a2eb0ad3646f505c21682b6e1e3cd29b698a977bdc15f4886d60e",
     "core_fp": "b96f895304add46ff1f09981205ec7f07ae1992f2fbd83084866fd3cc18e833b"
+  },
+  {
+    "ts": 1782215943,
+    "kind": "ua_en",
+    "level": "B1",
+    "core": "Мені треба зняти гроші.",
+    "fp": "69e34cb43c2ca2667c1005dcbebc6ed0c78a5cf9be72c2253529ad266a8fb370",
+    "core_fp": "e232905a0c0d68f1b7a102a24e41c147b06281942d4008e131ca1e8d2fc9a2f4"
   }
 ]
