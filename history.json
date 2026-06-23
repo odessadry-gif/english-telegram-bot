@@ -8283,5 +8283,13 @@
     "fp": "00a878e5348fea1e0f7570e6e11783b9ca09d45cf784e98cbf1ea83bec2add88",
     "core_fp": "06775e0c3436de69db86e72d7dea1907d3f3bcf389b7e7f2ecee09bcea052f6d",
     "answer": "laptop"
+  },
+  {
+    "ts": 1782244762,
+    "kind": "grammar_gap",
+    "level": "B1",
+    "core": "You should see a doctor if the pain doesn't get ___ in two days.",
+    "fp": "b1023cb8ec3b3457463b31c754c2232eb1e7294d27f282869d8f376d30d5283d",
+    "core_fp": "7df722b5f66d2391994d4eafc80d4e09a354e1b56dbce2201a071c6d6fe70143"
   }
 ]
