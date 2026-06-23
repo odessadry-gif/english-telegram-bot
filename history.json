@@ -8249,5 +8249,14 @@
     "core": "Чи можете приготувати без горіхів?",
     "fp": "170924eee83e5240ecde56bffed4906cf11b86c14c8829019e8dfd08797db05e",
     "core_fp": "bdd0ee25043c34bba01b20ade49d4e9c7e27237eeded7e1a09e3628bfed31332"
+  },
+  {
+    "ts": 1782183403,
+    "kind": "riddle",
+    "level": "A2",
+    "core": "It shows what you bought.\nKeep it for a return.",
+    "fp": "7ad3edde4c45908856c1d6136eabfa58331892c81ff62b34dfa51c19472f029c",
+    "core_fp": "13626aa41c3fe54abe70cc1ed87c093702f34f2f79cf4b1644e621d60c73e6b8",
+    "answer": "receipt"
   }
 ]
