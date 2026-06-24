@@ -8315,5 +8315,13 @@
     "core": "Я запізнюся на зустріч",
     "fp": "06f617af0b96d615867bc73e64c87b84d9361bb3ed73513f0e381036bb7a2f89",
     "core_fp": "bd669b7801411e0665af876273867ea2e35a0fccc0c7d7c52afcd48d7cac80f1"
+  },
+  {
+    "ts": 1782301439,
+    "kind": "grammar_gap",
+    "level": "B1",
+    "core": "He promised he ___ help me move next Saturday.",
+    "fp": "bec09dde49543382505e1a17a734d097567e65d9780f443d9e48664394aa70ca",
+    "core_fp": "fdcb31ea9dc89ef8023dc7f42e9738e6f3d556fdfed824ac4f41660444e50558"
   }
 ]
