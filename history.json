@@ -8339,5 +8339,13 @@
     "core": "She ___ the meeting yesterday.",
     "fp": "5b495de19b57ceafb834597bfe91560d756c51e7d23fc3d383ad6e517ebf43f0",
     "core_fp": "21fbd355d348dab47eda386fbab567eee82478aa4e4c4f401221eb251ea12214"
+  },
+  {
+    "ts": 1782330210,
+    "kind": "grammar_gap",
+    "level": "A2",
+    "core": "I didn't go to work because I ___ sick.",
+    "fp": "357e174a4fcd8f1d9e6f318377bb664fbe616dd0171b1f1083b0cac08f6a0df2",
+    "core_fp": "8a97d939e1f5bccc06ee5aa26056432f46ab64a4bd49cad8bc2322011ae93920"
   }
 ]
