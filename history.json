@@ -8307,5 +8307,13 @@
     "core": "I can't come to the meeting ___ I have a dentist appointment.",
     "fp": "2215805aa81cb0387f4770f251e959f18a9146241db024bf8899c470b9b8267a",
     "core_fp": "6a6cb9363da1ad21f0e9b17b61b974439302337e99245763b4f86a155e0f157e"
+  },
+  {
+    "ts": 1782283901,
+    "kind": "ua_en",
+    "level": "A2",
+    "core": "Я запізнюся на зустріч",
+    "fp": "06f617af0b96d615867bc73e64c87b84d9361bb3ed73513f0e381036bb7a2f89",
+    "core_fp": "bd669b7801411e0665af876273867ea2e35a0fccc0c7d7c52afcd48d7cac80f1"
   }
 ]
