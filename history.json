@@ -8347,5 +8347,13 @@
     "core": "I didn't go to work because I ___ sick.",
     "fp": "357e174a4fcd8f1d9e6f318377bb664fbe616dd0171b1f1083b0cac08f6a0df2",
     "core_fp": "8a97d939e1f5bccc06ee5aa26056432f46ab64a4bd49cad8bc2322011ae93920"
+  },
+  {
+    "ts": 1782339301,
+    "kind": "grammar_gap",
+    "level": "B1",
+    "core": "I need to pick up my prescription ___ the pharmacy closes at 6.",
+    "fp": "5612101e895b77f22a6f6b655c65d359e24d7713745dabe798c2db73146fed31",
+    "core_fp": "03ee6856eeb154a928a583e450eb7958c8bc5b59e203aeacd788ad13c46da030"
   }
 ]
