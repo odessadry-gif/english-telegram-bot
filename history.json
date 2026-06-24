@@ -8299,5 +8299,13 @@
     "core": "Вона повинна одягнути пальто",
     "fp": "ee5a0f2f31b325695ef2a85eb70c56457bb49a2242ef0ed488bec0e3244452b2",
     "core_fp": "a23ff4da7d30b1dd786c77ef24f9fe68469bccd0f40ef725a62319e46c1dc66d"
+  },
+  {
+    "ts": 1782269862,
+    "kind": "grammar_gap",
+    "level": "A2",
+    "core": "I can't come to the meeting ___ I have a dentist appointment.",
+    "fp": "2215805aa81cb0387f4770f251e959f18a9146241db024bf8899c470b9b8267a",
+    "core_fp": "6a6cb9363da1ad21f0e9b17b61b974439302337e99245763b4f86a155e0f157e"
   }
 ]
