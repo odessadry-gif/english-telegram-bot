@@ -8331,5 +8331,13 @@
     "core": "Тобі слід відпочити.",
     "fp": "7539caece0e5382924b86a91d2e4d7289d423bb11d98f7f5ac788b9f7670ec29",
     "core_fp": "fda0623bbefcca887dcc0926d3bb27ab6fab6446b844279ebc2a6f50a9ee2a7d"
+  },
+  {
+    "ts": 1782320593,
+    "kind": "grammar_gap",
+    "level": "A2",
+    "core": "She ___ the meeting yesterday.",
+    "fp": "5b495de19b57ceafb834597bfe91560d756c51e7d23fc3d383ad6e517ebf43f0",
+    "core_fp": "21fbd355d348dab47eda386fbab567eee82478aa4e4c4f401221eb251ea12214"
   }
 ]
