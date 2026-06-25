@@ -8355,5 +8355,13 @@
     "core": "I need to pick up my prescription ___ the pharmacy closes at 6.",
     "fp": "5612101e895b77f22a6f6b655c65d359e24d7713745dabe798c2db73146fed31",
     "core_fp": "03ee6856eeb154a928a583e450eb7958c8bc5b59e203aeacd788ad13c46da030"
+  },
+  {
+    "ts": 1782356223,
+    "kind": "ua_en",
+    "level": "A2",
+    "core": "Мені потрібно змінити бронювання",
+    "fp": "ef58d89d3cb4d4bcf885f69d22f8f47dbd1312ba4395114e69388af04c2a3e59",
+    "core_fp": "e8e1c88836c5593c39a6c0e5dc72b13518fae8d2ebec2904d296521e747a239b"
   }
 ]
