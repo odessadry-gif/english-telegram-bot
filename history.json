@@ -8371,5 +8371,13 @@
     "core": "Мені потрібно принести документи",
     "fp": "e3732fbd366b705c3689810f1a3f35c26b9feb247c20d4ff97d9e19233233fde",
     "core_fp": "8b0c8a33db7f9809b376dfec55033834745715d8a97c7aefea8b482a745bb9bc"
+  },
+  {
+    "ts": 1782387533,
+    "kind": "grammar_gap",
+    "level": "B1",
+    "core": "If it rains tomorrow, we ___ the picnic.",
+    "fp": "4558f874ce52e42d50d7679cb69e117638344739682862f63ab8f9a597af8d53",
+    "core_fp": "c7042467599424b98921966e7f6df8a64841448eb074ac71f2421104923a29cd"
   }
 ]
