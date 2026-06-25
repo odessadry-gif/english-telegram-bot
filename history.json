@@ -8396,5 +8396,14 @@
     "fp": "c4313f567cf188b45f5b48ef028761d21b34307aea179a3737f9c74391ec74b4",
     "core_fp": "ca8c116023d695caf4100176829da064f579b1aadb6a27dda0d49532ab23e8c5",
     "answer": "iron"
+  },
+  {
+    "ts": 1782417490,
+    "kind": "riddle",
+    "level": "A1",
+    "core": "You put it on an envelope.\nYou buy it at the post office.",
+    "fp": "51b454415e5f1333979a8dcc4ae598c73d1fce098cca355d5e71e42cd4304cb8",
+    "core_fp": "49d6d2871988e07f5564b2ae4c251fb76363c7187e7222ba199adde0a929fd02",
+    "answer": "stamp"
   }
 ]
