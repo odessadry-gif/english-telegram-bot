@@ -8387,5 +8387,14 @@
     "core": "Я приберу квартиру сьогодні",
     "fp": "d646a33602eab9a9fb9c35f69e0725ba4c55bda4212419b789b89e2acfa3e9c2",
     "core_fp": "7aa097875e065ff1e3e02331979cb7091c10155a406ff078bf30c482bd927d82"
+  },
+  {
+    "ts": 1782407447,
+    "kind": "riddle",
+    "level": "A2",
+    "core": "You use it on clothes.\nIt makes shirts smooth.",
+    "fp": "c4313f567cf188b45f5b48ef028761d21b34307aea179a3737f9c74391ec74b4",
+    "core_fp": "ca8c116023d695caf4100176829da064f579b1aadb6a27dda0d49532ab23e8c5",
+    "answer": "iron"
   }
 ]
