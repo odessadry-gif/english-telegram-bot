@@ -8363,5 +8363,13 @@
     "core": "Мені потрібно змінити бронювання",
     "fp": "ef58d89d3cb4d4bcf885f69d22f8f47dbd1312ba4395114e69388af04c2a3e59",
     "core_fp": "e8e1c88836c5593c39a6c0e5dc72b13518fae8d2ebec2904d296521e747a239b"
+  },
+  {
+    "ts": 1782370158,
+    "kind": "ua_en",
+    "level": "A2",
+    "core": "Мені потрібно принести документи",
+    "fp": "e3732fbd366b705c3689810f1a3f35c26b9feb247c20d4ff97d9e19233233fde",
+    "core_fp": "8b0c8a33db7f9809b376dfec55033834745715d8a97c7aefea8b482a745bb9bc"
   }
 ]
