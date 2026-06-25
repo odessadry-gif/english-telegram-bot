@@ -8379,5 +8379,13 @@
     "core": "If it rains tomorrow, we ___ the picnic.",
     "fp": "4558f874ce52e42d50d7679cb69e117638344739682862f63ab8f9a597af8d53",
     "core_fp": "c7042467599424b98921966e7f6df8a64841448eb074ac71f2421104923a29cd"
+  },
+  {
+    "ts": 1782397638,
+    "kind": "ua_en",
+    "level": "A2",
+    "core": "Я приберу квартиру сьогодні",
+    "fp": "d646a33602eab9a9fb9c35f69e0725ba4c55bda4212419b789b89e2acfa3e9c2",
+    "core_fp": "7aa097875e065ff1e3e02331979cb7091c10155a406ff078bf30c482bd927d82"
   }
 ]
