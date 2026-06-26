@@ -8413,5 +8413,13 @@
     "core": "У мене болять зуби",
     "fp": "9c60761234fd7b27a79392fffeb55456efc0aa85700624a83a48dbc4f99ea527",
     "core_fp": "85a13306d644e2a27066eee90f0700f21f64b3684c0711142a28abace3596821"
+  },
+  {
+    "ts": 1782444517,
+    "kind": "grammar_gap",
+    "level": "A2",
+    "core": "Please sign the form ___ you leave.",
+    "fp": "6261f6adcd384ec3deb3e7b4f142e60b12d3472f77431d5489f56c3e1ce9e1be",
+    "core_fp": "72fe47504a95110af5339197156f8c8659f66562eb7b008a6447266b95b50bf5"
   }
 ]
