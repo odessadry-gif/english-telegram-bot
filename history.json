@@ -8447,5 +8447,13 @@
     "core": "I couldn't join the meeting ___ I had no internet.",
     "fp": "4613b4668f1c1e1a0c6e8769ea671cc7b3a06c41a169819f2d42e0cbd823f6d6",
     "core_fp": "028b0ad4d84017fcf04d901fc1a8277383822fea82d3bdd6b76269fb99b39fe9"
+  },
+  {
+    "ts": 1782493153,
+    "kind": "grammar_gap",
+    "level": "B1",
+    "core": "My flight was delayed ___ bad weather.",
+    "fp": "607b8a929174d4a8332e1010d4cdcbfaf1a52a4f7468e7de7e1851e9dc1b8c79",
+    "core_fp": "ffc1ad157dd42213b8c7d8b537890f0d5ac366bc506f63a0cddb88c5189b6028"
   }
 ]
