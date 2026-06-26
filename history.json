@@ -8430,5 +8430,14 @@
     "fp": "08497d43bc60f9ed58351ba308bd3f39238172456d2fa67ad87d4e98c2f0e7ac",
     "core_fp": "d096a656e7b9763acda35dc20c39d6d440085401d08c5dbcc00f723925bdf2c9",
     "answer": "prescription"
+  },
+  {
+    "ts": 1782474805,
+    "kind": "riddle",
+    "level": "A2",
+    "core": "You buy medicine there.\nYou go when you are sick.",
+    "fp": "d52c5c61b38905c19c8b9d913cd23045486a99217394fa9d44834783afacdd3d",
+    "core_fp": "d79ba4ceedbbca51c6e903ce9ca696614927723ec276219c65dcdbe3b9b23ab1",
+    "answer": "pharmacy"
   }
 ]
