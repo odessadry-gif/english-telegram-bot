@@ -8439,5 +8439,13 @@
     "fp": "d52c5c61b38905c19c8b9d913cd23045486a99217394fa9d44834783afacdd3d",
     "core_fp": "d79ba4ceedbbca51c6e903ce9ca696614927723ec276219c65dcdbe3b9b23ab1",
     "answer": "pharmacy"
+  },
+  {
+    "ts": 1782483597,
+    "kind": "grammar_gap",
+    "level": "B1",
+    "core": "I couldn't join the meeting ___ I had no internet.",
+    "fp": "4613b4668f1c1e1a0c6e8769ea671cc7b3a06c41a169819f2d42e0cbd823f6d6",
+    "core_fp": "028b0ad4d84017fcf04d901fc1a8277383822fea82d3bdd6b76269fb99b39fe9"
   }
 ]
