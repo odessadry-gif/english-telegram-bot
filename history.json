@@ -8421,5 +8421,14 @@
     "core": "Please sign the form ___ you leave.",
     "fp": "6261f6adcd384ec3deb3e7b4f142e60b12d3472f77431d5489f56c3e1ce9e1be",
     "core_fp": "72fe47504a95110af5339197156f8c8659f66562eb7b008a6447266b95b50bf5"
+  },
+  {
+    "ts": 1782464364,
+    "kind": "riddle",
+    "level": "B1",
+    "core": "A doctor writes it.\nYou take it to a pharmacy",
+    "fp": "08497d43bc60f9ed58351ba308bd3f39238172456d2fa67ad87d4e98c2f0e7ac",
+    "core_fp": "d096a656e7b9763acda35dc20c39d6d440085401d08c5dbcc00f723925bdf2c9",
+    "answer": "prescription"
   }
 ]
