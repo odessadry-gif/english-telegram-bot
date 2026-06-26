@@ -8463,5 +8463,13 @@
     "core": "Я забув пароль",
     "fp": "ea597c136dbc9fd8b402ae29a10f4f7f0bdb49369d0974794cfd9126452b8b64",
     "core_fp": "56085d03b239a65f16fb9ff576eeaeffd3236e545cd21763cd0b047eb1fea14f"
+  },
+  {
+    "ts": 1782511883,
+    "kind": "ua_en",
+    "level": "B1",
+    "core": "Вам слід звернутися до лікаря",
+    "fp": "8c98f010228cb8fc041a394453b4f59792c34beb0fafb52abaaa26188c32cb3b",
+    "core_fp": "82e258ed630749cba8bcc83ba5cd06283230b40a273fc10af2123343bf8c1d89"
   }
 ]
