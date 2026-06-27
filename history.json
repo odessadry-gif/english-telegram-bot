@@ -8471,5 +8471,13 @@
     "core": "Вам слід звернутися до лікаря",
     "fp": "8c98f010228cb8fc041a394453b4f59792c34beb0fafb52abaaa26188c32cb3b",
     "core_fp": "82e258ed630749cba8bcc83ba5cd06283230b40a273fc10af2123343bf8c1d89"
+  },
+  {
+    "ts": 1782528720,
+    "kind": "grammar_gap",
+    "level": "A2",
+    "core": "My meeting was cancelled, so I ___ home early.",
+    "fp": "65294a0a4a2ec64fb4adac3b5da8a98ffaa994b0076947eacbe337f625d2b695",
+    "core_fp": "aa558a96b1ca37cfcbe946f92e0a73696f27a371bbe7862ebdc6418fd5201879"
   }
 ]
