@@ -8495,5 +8495,13 @@
     "core": "Ви можете відкрити вікно?",
     "fp": "9955e2535bddc1e5846256ea61627c36754c17ed9a7ee9eb9c8beeff768e95f7",
     "core_fp": "a8624c6a864907eeb4374b846728bd353e5f986ce5e34b44d61fbe07f54dc957"
+  },
+  {
+    "ts": 1782576220,
+    "kind": "grammar_gap",
+    "level": "B1",
+    "core": "The train is due ___ 5:30.",
+    "fp": "bbaa61b07c61d8730cbb821ca8a72be60b89a50a8d467338f70e631bcc2d95a2",
+    "core_fp": "2757e3a75c8da331f8865487fa0f55614262c6d4f573a48b5c3d7b7ebec4dff0"
   }
 ]
