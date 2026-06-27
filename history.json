@@ -8479,5 +8479,13 @@
     "core": "My meeting was cancelled, so I ___ home early.",
     "fp": "65294a0a4a2ec64fb4adac3b5da8a98ffaa994b0076947eacbe337f625d2b695",
     "core_fp": "aa558a96b1ca37cfcbe946f92e0a73696f27a371bbe7862ebdc6418fd5201879"
+  },
+  {
+    "ts": 1782557783,
+    "kind": "ua_en",
+    "level": "A2",
+    "core": "Я загубив паспорт.",
+    "fp": "1bc14974b787dc863608a71bdf89ce72959b6b4c7d4f0aa99cab27c30e10a136",
+    "core_fp": "918c5433f91615a88474f6a4fcd939d0426ef34bd6820442d86d9553047b0630"
   }
 ]
