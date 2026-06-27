@@ -8503,5 +8503,14 @@
     "core": "The train is due ___ 5:30.",
     "fp": "bbaa61b07c61d8730cbb821ca8a72be60b89a50a8d467338f70e631bcc2d95a2",
     "core_fp": "2757e3a75c8da331f8865487fa0f55614262c6d4f573a48b5c3d7b7ebec4dff0"
+  },
+  {
+    "ts": 1782587882,
+    "kind": "riddle",
+    "level": "B1",
+    "core": "You must finish work before it.\nIt has a date.",
+    "fp": "bb490efbac5e0174d889ef5d0d76f2360218c946e52ec91cf2ae073871cac4cf",
+    "core_fp": "1e44b9b8653598ad6da65c5e03e6d5788cd8bee79ed4c367bfc9e910ea6e702a",
+    "answer": "deadline"
   }
 ]
