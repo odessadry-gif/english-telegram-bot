@@ -8512,5 +8512,13 @@
     "fp": "bb490efbac5e0174d889ef5d0d76f2360218c946e52ec91cf2ae073871cac4cf",
     "core_fp": "1e44b9b8653598ad6da65c5e03e6d5788cd8bee79ed4c367bfc9e910ea6e702a",
     "answer": "deadline"
+  },
+  {
+    "ts": 1782597630,
+    "kind": "grammar_gap",
+    "level": "A2",
+    "core": "The meeting starts ___ 3 pm.",
+    "fp": "f87895fb4239a8ebf56e276baf8c6a9fd4df204c33b87b6d00411ff5fbbeece9",
+    "core_fp": "a37e1a88e656c956623f50b7d70f08ec36163cc959e83d6a5641680fb09d1fab"
   }
 ]
