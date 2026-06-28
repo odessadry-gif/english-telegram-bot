@@ -8529,5 +8529,13 @@
     "fp": "4f9ecf7cec550faed664686bc71787a1c4f763fc7d769b010381c40f6cb4a0b3",
     "core_fp": "69ca00916cabbfc89008c20e12ab63a515af8325a042bf77ae227eba61d88e26",
     "answer": "card"
+  },
+  {
+    "ts": 1782636503,
+    "kind": "ua_en",
+    "level": "A2",
+    "core": "Я забув свій гаманець",
+    "fp": "85838ee51c1329bc9767475ddb949c7bbb951ec62aa371822e3d37f135217ba9",
+    "core_fp": "6fb352b5b2c9efe6c75f34b6c0b295878189d9ac4f7b280826df83c472174711"
   }
 ]
