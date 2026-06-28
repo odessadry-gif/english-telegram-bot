@@ -8520,5 +8520,14 @@
     "core": "The meeting starts ___ 3 pm.",
     "fp": "f87895fb4239a8ebf56e276baf8c6a9fd4df204c33b87b6d00411ff5fbbeece9",
     "core_fp": "a37e1a88e656c956623f50b7d70f08ec36163cc959e83d6a5641680fb09d1fab"
+  },
+  {
+    "ts": 1782617629,
+    "kind": "riddle",
+    "level": "A2",
+    "core": "You pay with it in shops.\nIt is a small plastic piece.",
+    "fp": "4f9ecf7cec550faed664686bc71787a1c4f763fc7d769b010381c40f6cb4a0b3",
+    "core_fp": "69ca00916cabbfc89008c20e12ab63a515af8325a042bf77ae227eba61d88e26",
+    "answer": "card"
   }
 ]
