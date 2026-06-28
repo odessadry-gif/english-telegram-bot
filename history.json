@@ -8545,5 +8545,13 @@
     "core": "Чи можна забронювати столик?",
     "fp": "3fc38a069035b59e5aa92a54c9a68794d1a9488c9f01490efef54653a3f05caa",
     "core_fp": "22a0cf452366ba3de5418ac722de05d29fadc8f1308601c514232de7a0de973e"
+  },
+  {
+    "ts": 1782654067,
+    "kind": "grammar_gap",
+    "level": "A2",
+    "core": "If you have a fever, you should stay ___ bed.",
+    "fp": "c140822812c648e1e1b3cc39314ba64137b176cbc978a7e2e15a6651d880d94b",
+    "core_fp": "32665d0b0b847a2c88470c93382e6b1d986fed41c30afca1999dd795f01b71b9"
   }
 ]
