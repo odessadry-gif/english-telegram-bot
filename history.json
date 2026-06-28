@@ -8561,5 +8561,13 @@
     "core": "Мені потрібно оновити сторінку",
     "fp": "a1b07e6cd577f2db13a92aa51942902bf615048d3dcbd5f4c4bef57871e7447b",
     "core_fp": "63ea0f41d086016dc75028647ef4ec6b632b33d69da58042781ffb6f3cdd0100"
+  },
+  {
+    "ts": 1782674147,
+    "kind": "grammar_gap",
+    "level": "B1",
+    "core": "I haven't paid the bill ___.",
+    "fp": "a7d6676a079acf4df802d2f4476b6bb65110b2180a74a141ec13155114e0bc26",
+    "core_fp": "f8589282395b8cc9ae161d936b3f112f4b3b6991f5ae42f5919c578df50e55c1"
   }
 ]
