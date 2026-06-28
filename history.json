@@ -8553,5 +8553,13 @@
     "core": "If you have a fever, you should stay ___ bed.",
     "fp": "c140822812c648e1e1b3cc39314ba64137b176cbc978a7e2e15a6651d880d94b",
     "core_fp": "32665d0b0b847a2c88470c93382e6b1d986fed41c30afca1999dd795f01b71b9"
+  },
+  {
+    "ts": 1782662911,
+    "kind": "ua_en",
+    "level": "B1",
+    "core": "Мені потрібно оновити сторінку",
+    "fp": "a1b07e6cd577f2db13a92aa51942902bf615048d3dcbd5f4c4bef57871e7447b",
+    "core_fp": "63ea0f41d086016dc75028647ef4ec6b632b33d69da58042781ffb6f3cdd0100"
   }
 ]
