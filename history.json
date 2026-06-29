@@ -8610,5 +8610,14 @@
     "fp": "2310e9687fbef9ec23f30000ff8ecc109ad45ff591d4f33c82b9e1e9eb2448d3",
     "core_fp": "9705f4c0a6675657c1bd5e52e545f879275fdf210973dbd00d85aa0ae2c2b49c",
     "answer": "bank"
+  },
+  {
+    "ts": 1782771240,
+    "kind": "riddle",
+    "level": "B1",
+    "core": "You need it to log in.\nKeep it secret.",
+    "fp": "97f7e411633bdc8004e65041e66f7932868e8d24550f9bac05a40e73d4641212",
+    "core_fp": "3824791591fad8632df96bcb5953abadd1d0aaa847da6a6dcb57843f4ba6f751",
+    "answer": "password"
   }
 ]
