@@ -8593,5 +8593,13 @@
     "core": "I agreed to help him, but I ___ change my plans.",
     "fp": "b2753047ce97237cea62e4dd172935e90be153dcf4535fde0e3af6460c03f667",
     "core_fp": "99d6379349d55f22f5313f78d8b8132f016513889774f4d034c64f4bdfa93f48"
+  },
+  {
+    "ts": 1782747712,
+    "kind": "ua_en",
+    "level": "B1",
+    "core": "Вона вже вийшла?",
+    "fp": "924ccc077a55c4f69d3bc98145bf0fbd3828864b713337ad5e2a91f5f1c15147",
+    "core_fp": "a415d1bd3e3de8767bdcb4c3ee3e237f557abbd89c8a5ffdea456894297659e8"
   }
 ]
