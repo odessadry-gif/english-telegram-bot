@@ -8601,5 +8601,14 @@
     "core": "Вона вже вийшла?",
     "fp": "924ccc077a55c4f69d3bc98145bf0fbd3828864b713337ad5e2a91f5f1c15147",
     "core_fp": "a415d1bd3e3de8767bdcb4c3ee3e237f557abbd89c8a5ffdea456894297659e8"
+  },
+  {
+    "ts": 1782762823,
+    "kind": "riddle",
+    "level": "A2",
+    "core": "You save money there.\nYou use an ATM there.",
+    "fp": "2310e9687fbef9ec23f30000ff8ecc109ad45ff591d4f33c82b9e1e9eb2448d3",
+    "core_fp": "9705f4c0a6675657c1bd5e52e545f879275fdf210973dbd00d85aa0ae2c2b49c",
+    "answer": "bank"
   }
 ]
