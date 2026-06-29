@@ -8577,5 +8577,13 @@
     "core": "Please arrive ___ least 30 minutes before the flight.",
     "fp": "4531879dd0f95e56509f301f0c14df1f06c0952df01e6bfe1bc8a9ba1131db4f",
     "core_fp": "43c9961d0cedee7a8d1bdd9fe3c1e467243ff73a9e3e1fcbe936ab7e5709b40c"
+  },
+  {
+    "ts": 1782704325,
+    "kind": "grammar_gap",
+    "level": "B1",
+    "core": "We decided ___ at 7 instead of 6.",
+    "fp": "0718435b8927a51e281d4c0d693a0bb1a59b8471b250d2ca8b2107edc2148d7a",
+    "core_fp": "233ad0525c650ff51c76df1656b39debea261e62a05065e919ffbdee6252da71"
   }
 ]
