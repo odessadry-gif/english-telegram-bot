@@ -8585,5 +8585,13 @@
     "core": "We decided ___ at 7 instead of 6.",
     "fp": "0718435b8927a51e281d4c0d693a0bb1a59b8471b250d2ca8b2107edc2148d7a",
     "core_fp": "233ad0525c650ff51c76df1656b39debea261e62a05065e919ffbdee6252da71"
+  },
+  {
+    "ts": 1782730404,
+    "kind": "grammar_gap",
+    "level": "B1",
+    "core": "I agreed to help him, but I ___ change my plans.",
+    "fp": "b2753047ce97237cea62e4dd172935e90be153dcf4535fde0e3af6460c03f667",
+    "core_fp": "99d6379349d55f22f5313f78d8b8132f016513889774f4d034c64f4bdfa93f48"
   }
 ]
