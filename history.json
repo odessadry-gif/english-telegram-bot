@@ -8660,5 +8660,13 @@
     "core": "Please bring your ID ___ you can enter the building.",
     "fp": "74b28fe3d3ea12a0d899162e8f7a2178f9f500b5a85eab74992b3e9e06526a74",
     "core_fp": "d5b7516f0df2bba9b2d2e7a4834b6c936b3de82c72eb2734ab3040e2881591ab"
+  },
+  {
+    "ts": 1782857679,
+    "kind": "grammar_gap",
+    "level": "A2",
+    "core": "I need to cancel my appointment ___ I am sick.",
+    "fp": "ce35d47d3e8ad4674b254620130a047f9e0848ab4abb9fb232297a211f8b4be0",
+    "core_fp": "1da3fd0b28528fa058bdaa2b57d8b70442955421ef9916b5bf49fe9b5d86e855"
   }
 ]
