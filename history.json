@@ -8619,5 +8619,13 @@
     "fp": "97f7e411633bdc8004e65041e66f7932868e8d24550f9bac05a40e73d4641212",
     "core_fp": "3824791591fad8632df96bcb5953abadd1d0aaa847da6a6dcb57843f4ba6f751",
     "answer": "password"
+  },
+  {
+    "ts": 1782789959,
+    "kind": "ua_en",
+    "level": "B1",
+    "core": "Я хочу це повернути",
+    "fp": "0a309102554d01e9522af2db231f65919a63d8e9f4d9f42df639affcd3d76f02",
+    "core_fp": "8fbc44df3c924186890249ad4f93c612192fd87a5eb42bcb3b034c4a2f160247"
   }
 ]
