@@ -8635,5 +8635,13 @@
     "core": "Я забув зарядний пристрій",
     "fp": "40dca85cd587c420a3cf20b8172c7a80a3ff7536ef35472683503302ad0f7b73",
     "core_fp": "3990c2410d56fa41fb0c11dcedd38cc62e4e6bf84399d8e91ad761dd1f50544e"
+  },
+  {
+    "ts": 1782828807,
+    "kind": "grammar_gap",
+    "level": "B1",
+    "core": "I have to resend the email because I sent it to the wrong ___.",
+    "fp": "849d8492c8c51984d94754fb2e605d031a2cc1eb0c58d6b1ca2b9048a49abdf9",
+    "core_fp": "f063952d1a96c183fa3649cae732a269cc319c7967ded395bcece823384f7426"
   }
 ]
