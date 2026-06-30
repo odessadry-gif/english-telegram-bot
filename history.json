@@ -8627,5 +8627,13 @@
     "core": "Я хочу це повернути",
     "fp": "0a309102554d01e9522af2db231f65919a63d8e9f4d9f42df639affcd3d76f02",
     "core_fp": "8fbc44df3c924186890249ad4f93c612192fd87a5eb42bcb3b034c4a2f160247"
+  },
+  {
+    "ts": 1782811760,
+    "kind": "ua_en",
+    "level": "B1",
+    "core": "Я забув зарядний пристрій",
+    "fp": "40dca85cd587c420a3cf20b8172c7a80a3ff7536ef35472683503302ad0f7b73",
+    "core_fp": "3990c2410d56fa41fb0c11dcedd38cc62e4e6bf84399d8e91ad761dd1f50544e"
   }
 ]
