@@ -8652,5 +8652,13 @@
     "fp": "464dd0b1bf9bf011140efbdc9bdcf54da6768853c3b2940dabe090260dcec3e0",
     "core_fp": "1178554a5c1f140b89014c01073977f235068854f5a2d5196fd1d983e4b820b8",
     "answer": "fever"
+  },
+  {
+    "ts": 1782849123,
+    "kind": "grammar_gap",
+    "level": "A2",
+    "core": "Please bring your ID ___ you can enter the building.",
+    "fp": "74b28fe3d3ea12a0d899162e8f7a2178f9f500b5a85eab74992b3e9e06526a74",
+    "core_fp": "d5b7516f0df2bba9b2d2e7a4834b6c936b3de82c72eb2734ab3040e2881591ab"
   }
 ]
