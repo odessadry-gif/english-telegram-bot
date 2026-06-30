@@ -8643,5 +8643,14 @@
     "core": "I have to resend the email because I sent it to the wrong ___.",
     "fp": "849d8492c8c51984d94754fb2e605d031a2cc1eb0c58d6b1ca2b9048a49abdf9",
     "core_fp": "f063952d1a96c183fa3649cae732a269cc319c7967ded395bcece823384f7426"
+  },
+  {
+    "ts": 1782839156,
+    "kind": "riddle",
+    "level": "B1",
+    "core": "Your body is hotter than usual\nYou may have chills",
+    "fp": "464dd0b1bf9bf011140efbdc9bdcf54da6768853c3b2940dabe090260dcec3e0",
+    "core_fp": "1178554a5c1f140b89014c01073977f235068854f5a2d5196fd1d983e4b820b8",
+    "answer": "fever"
   }
 ]
