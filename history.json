@@ -8700,5 +8700,14 @@
     "core": "We decided ___ the meeting until next week.",
     "fp": "0f31c7e8f9ac29798413aef8cea9b483d8e1cb93cfee33e064c26c1806a75d12",
     "core_fp": "abd6b51fd08c5d2444819f9567e2c82de4bfac02314eca78b7b73b5631d6c7b0"
+  },
+  {
+    "ts": 1782944735,
+    "kind": "riddle",
+    "level": "B1",
+    "core": "People join to talk about work.\nIt can be online or in a room.",
+    "fp": "a270f5c3389c3fbab3c76eebca820762006e47d67bb7a05a32a23d2331b7b236",
+    "core_fp": "48c3880900107c5c1afec7db6e479143af89fa6b6f03caaa635246da7dc683eb",
+    "answer": "meeting"
   }
 ]
