@@ -8692,5 +8692,13 @@
     "core": "Мені потрібні ліки",
     "fp": "bda09fc799cd6d42032f3aa7d3dea54b14ff46669af037f0a11c1c403d772643",
     "core_fp": "12b9184c7f8ca161d317a83eb548e19718b9ebf28d075b7f3ba1fa968cc4aa07"
+  },
+  {
+    "ts": 1782935460,
+    "kind": "grammar_gap",
+    "level": "B1",
+    "core": "We decided ___ the meeting until next week.",
+    "fp": "0f31c7e8f9ac29798413aef8cea9b483d8e1cb93cfee33e064c26c1806a75d12",
+    "core_fp": "abd6b51fd08c5d2444819f9567e2c82de4bfac02314eca78b7b73b5631d6c7b0"
   }
 ]
