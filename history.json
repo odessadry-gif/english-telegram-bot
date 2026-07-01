@@ -8684,5 +8684,13 @@
     "core": "Де найближча аптека?",
     "fp": "731bc1671d450915699687693013394deeebf0aeacc01f182d660aa8b668730a",
     "core_fp": "2ae480c1ef32f860f35a3a7bda648520664ef1540ce774555d224ce9f15fc987"
+  },
+  {
+    "ts": 1782916203,
+    "kind": "ua_en",
+    "level": "A2",
+    "core": "Мені потрібні ліки",
+    "fp": "bda09fc799cd6d42032f3aa7d3dea54b14ff46669af037f0a11c1c403d772643",
+    "core_fp": "12b9184c7f8ca161d317a83eb548e19718b9ebf28d075b7f3ba1fa968cc4aa07"
   }
 ]
