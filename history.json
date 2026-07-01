@@ -8668,5 +8668,13 @@
     "core": "I need to cancel my appointment ___ I am sick.",
     "fp": "ce35d47d3e8ad4674b254620130a047f9e0848ab4abb9fb232297a211f8b4be0",
     "core_fp": "1da3fd0b28528fa058bdaa2b57d8b70442955421ef9916b5bf49fe9b5d86e855"
+  },
+  {
+    "ts": 1782876867,
+    "kind": "ua_en",
+    "level": "A2",
+    "core": "Він не прийшов",
+    "fp": "792e0d6195175f4c697161858b7e770e1760935ef94ecf28466f6af14c60e533",
+    "core_fp": "500308afe01f8413ea553cff035a64eddf84b645a366e15c5a411819c9b79598"
   }
 ]
