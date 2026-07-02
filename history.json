@@ -8750,5 +8750,13 @@
     "core": "Мені потрібно зустрітися з лікарем",
     "fp": "2149fcbe54b7c247d069e721e78479b7d97edd5a2f91499ecf5d77fef29418b9",
     "core_fp": "82b26e2b3eb0aa48e5b950de7e060e3e6f5d0b501b52314fc184eca9fb8fb095"
+  },
+  {
+    "ts": 1783020033,
+    "kind": "grammar_gap",
+    "level": "A1",
+    "core": "He ___ his homework every day.",
+    "fp": "5dea9f886331f62fed786c03418241fca628a4c6a39ebcdfb49342a4c0f99ce5",
+    "core_fp": "9a0523eb74e9a0e06da63034cd8d64329111c78fd93b35957be7ef0daa62f0cf"
   }
 ]
