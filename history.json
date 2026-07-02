@@ -8734,5 +8734,13 @@
     "core": "Мені потрібен інший розмір",
     "fp": "ef755d6872caeb41b69f6dd292fbfe0abc6ac991b5c58f405b2fc68bc7887527",
     "core_fp": "097f71a03a030e6991da8e779c6faa4002db4772acd246efeb881bbb7b6f9201"
+  },
+  {
+    "ts": 1783000419,
+    "kind": "grammar_gap",
+    "level": "A2",
+    "core": "I'm meeting Anna ___ Monday.",
+    "fp": "27af82d0b4a9cb6d8b5866ef6c9e10a11c496ec67c5e8d0537ab972676eb5822",
+    "core_fp": "f24241dae3ceb033692601d1880e50cb9ec383645bd60f73d458f211b8f33c14"
   }
 ]
