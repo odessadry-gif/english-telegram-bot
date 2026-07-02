@@ -8742,5 +8742,13 @@
     "core": "I'm meeting Anna ___ Monday.",
     "fp": "27af82d0b4a9cb6d8b5866ef6c9e10a11c496ec67c5e8d0537ab972676eb5822",
     "core_fp": "f24241dae3ceb033692601d1880e50cb9ec383645bd60f73d458f211b8f33c14"
+  },
+  {
+    "ts": 1783010870,
+    "kind": "ua_en",
+    "level": "A2",
+    "core": "Мені потрібно зустрітися з лікарем",
+    "fp": "2149fcbe54b7c247d069e721e78479b7d97edd5a2f91499ecf5d77fef29418b9",
+    "core_fp": "82b26e2b3eb0aa48e5b950de7e060e3e6f5d0b501b52314fc184eca9fb8fb095"
   }
 ]
