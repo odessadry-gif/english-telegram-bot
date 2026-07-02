@@ -8717,5 +8717,14 @@
     "core": "I booked a table ___ two people.",
     "fp": "38b75f3885f43e39ad40a3749581d3c6dc7b041d9b626865bb1af677de50547b",
     "core_fp": "d8dcb3a19a3c59c926fa624ce35a07bb04a6a9a8b892ddc0e97df334e4d3ed8a"
+  },
+  {
+    "ts": 1782974831,
+    "kind": "riddle",
+    "level": "A2",
+    "core": "You switch it on when the room is cold.\nIt makes the room warm.",
+    "fp": "2a930c64010d4c81f15cff91ebfbc314f8000a6b2124128d292a8dee45bf6b25",
+    "core_fp": "d1e13dd17f459009b61bb8da5717ad02ad17b6eab3796d66c8bc6d6cc3e51218",
+    "answer": "heater"
   }
 ]
