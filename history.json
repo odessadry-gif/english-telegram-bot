@@ -8709,5 +8709,13 @@
     "fp": "a270f5c3389c3fbab3c76eebca820762006e47d67bb7a05a32a23d2331b7b236",
     "core_fp": "48c3880900107c5c1afec7db6e479143af89fa6b6f03caaa635246da7dc683eb",
     "answer": "meeting"
+  },
+  {
+    "ts": 1782961118,
+    "kind": "grammar_gap",
+    "level": "A2",
+    "core": "I booked a table ___ two people.",
+    "fp": "38b75f3885f43e39ad40a3749581d3c6dc7b041d9b626865bb1af677de50547b",
+    "core_fp": "d8dcb3a19a3c59c926fa624ce35a07bb04a6a9a8b892ddc0e97df334e4d3ed8a"
   }
 ]
