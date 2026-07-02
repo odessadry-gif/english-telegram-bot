@@ -8726,5 +8726,13 @@
     "fp": "2a930c64010d4c81f15cff91ebfbc314f8000a6b2124128d292a8dee45bf6b25",
     "core_fp": "d1e13dd17f459009b61bb8da5717ad02ad17b6eab3796d66c8bc6d6cc3e51218",
     "answer": "heater"
+  },
+  {
+    "ts": 1782991996,
+    "kind": "ua_en",
+    "level": "B1",
+    "core": "Мені потрібен інший розмір",
+    "fp": "ef755d6872caeb41b69f6dd292fbfe0abc6ac991b5c58f405b2fc68bc7887527",
+    "core_fp": "097f71a03a030e6991da8e779c6faa4002db4772acd246efeb881bbb7b6f9201"
   }
 ]
