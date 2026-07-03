@@ -8766,5 +8766,14 @@
     "core": "I have ___ the medicine, but I still feel sick.",
     "fp": "3acda8bcf5b22552ea9a63284eeed491f76aba91289d4b4b62f467cb51088472",
     "core_fp": "b178e5e61fd55717795525f8788c8f23a43ec82009970585b3288ee1db306b90"
+  },
+  {
+    "ts": 1783046649,
+    "kind": "riddle",
+    "level": "B1",
+    "core": "You send it to invite friends.\nIt shows date and place",
+    "fp": "ef4fce53d6990c76746456e45e489434e3eeccab7e723418e9bae6173f206ec1",
+    "core_fp": "eaaa24bbdf30e4225a0efb37f27ac2d3b51c14ab517285de9e2134b9935fb176",
+    "answer": "invitation"
   }
 ]
