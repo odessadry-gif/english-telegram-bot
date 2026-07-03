@@ -8807,5 +8807,14 @@
     "core": "Можна це приміряти?",
     "fp": "39125dbae7ecac9000caecdb9abc33dcf31427b1b3f4437c2d646934d075dcb4",
     "core_fp": "c8b2e2433f3bb54dd035e4a0f3d350dec0ef8fff20ec9d45936d6a0e7ed593db"
+  },
+  {
+    "ts": 1783106280,
+    "kind": "riddle",
+    "level": "B1",
+    "core": "Helps you find word meanings.\nYou use it when you study.",
+    "fp": "bae0a633a2aa80c45420bf78b42dde6d46969b1ececaadf867c49d901c05fba5",
+    "core_fp": "347723e816561855a845a56507e9a50fbf723ee4ee295accc7946e23d76e10c9",
+    "answer": "dictionary"
   }
 ]
