@@ -8799,5 +8799,13 @@
     "core": "Мені потрібно подзвонити йому",
     "fp": "8f3867482ec064667759e5a357c5267388f62980cce9bc5ce2e70389ec164e5c",
     "core_fp": "f488bff1b22f82e596285f8b9f67da69de856147c815bae3a80e61a971e4ca71"
+  },
+  {
+    "ts": 1783095789,
+    "kind": "ua_en",
+    "level": "B1",
+    "core": "Можна це приміряти?",
+    "fp": "39125dbae7ecac9000caecdb9abc33dcf31427b1b3f4437c2d646934d075dcb4",
+    "core_fp": "c8b2e2433f3bb54dd035e4a0f3d350dec0ef8fff20ec9d45936d6a0e7ed593db"
   }
 ]
