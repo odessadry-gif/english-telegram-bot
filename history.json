@@ -8825,5 +8825,13 @@
     "fp": "15ffdf82e192f00f270c50824cd7cba37937d869b8f9d096cec08c2e10f76d52",
     "core_fp": "109abb8b3421428bd7b431d2dea1ec6196947c95e5b09021939acab7702da22a",
     "answer": "delay"
+  },
+  {
+    "ts": 1783145821,
+    "kind": "grammar_gap",
+    "level": "A2",
+    "core": "Please put the plates ___ the cupboard.",
+    "fp": "4e519277f3cba3cc51d3020604c9d12687ee0bb99e3ce8f1c6179d1aaa0bc748",
+    "core_fp": "e2e015dc7ccf5a84ef851e2553d5c7a8230770671ed25986037bee26a7470b30"
   }
 ]
