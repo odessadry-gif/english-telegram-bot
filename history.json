@@ -8833,5 +8833,13 @@
     "core": "Please put the plates ___ the cupboard.",
     "fp": "4e519277f3cba3cc51d3020604c9d12687ee0bb99e3ce8f1c6179d1aaa0bc748",
     "core_fp": "e2e015dc7ccf5a84ef851e2553d5c7a8230770671ed25986037bee26a7470b30"
+  },
+  {
+    "ts": 1783162348,
+    "kind": "grammar_gap",
+    "level": "A2",
+    "core": "Can you send me the file ___ email?",
+    "fp": "789bf66e08a72933f15b72f52d651ff85fce9f6695ab1960103133227a76821e",
+    "core_fp": "d2bcf165b4032d43bbd5e2d3edc8b7edf627e84f96bd3b31f4656ff3cf4d234b"
   }
 ]
