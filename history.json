@@ -8857,5 +8857,14 @@
     "core": "Мені потрібно забрати посилку",
     "fp": "16bd2334f3fc7977f5b4d3a03f5d0ce876061aa1c679cd6e63da274b6b455567",
     "core_fp": "0e9b6768b817b76e003ebc39867057518ff294565f1c0ca69800a4c040738e1d"
+  },
+  {
+    "ts": 1783192535,
+    "kind": "riddle",
+    "level": "A2",
+    "core": "You wear it outside.\nIt has buttons or a zipper.",
+    "fp": "da7653e9a067229ace946a7fa8817ef19a6cb8083545499879e2be707eccfdc5",
+    "core_fp": "81189d5a94e1c013ce6a8b813794c441a7e40acf5e4038fe2a3067088fcb5e86",
+    "answer": "coat"
   }
 ]
