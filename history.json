@@ -8816,5 +8816,14 @@
     "fp": "bae0a633a2aa80c45420bf78b42dde6d46969b1ececaadf867c49d901c05fba5",
     "core_fp": "347723e816561855a845a56507e9a50fbf723ee4ee295accc7946e23d76e10c9",
     "answer": "dictionary"
+  },
+  {
+    "ts": 1783133073,
+    "kind": "riddle",
+    "level": "A2",
+    "core": "The train is late.\nYou wait because of it.",
+    "fp": "15ffdf82e192f00f270c50824cd7cba37937d869b8f9d096cec08c2e10f76d52",
+    "core_fp": "109abb8b3421428bd7b431d2dea1ec6196947c95e5b09021939acab7702da22a",
+    "answer": "delay"
   }
 ]
