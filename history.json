@@ -8841,5 +8841,13 @@
     "core": "Can you send me the file ___ email?",
     "fp": "789bf66e08a72933f15b72f52d651ff85fce9f6695ab1960103133227a76821e",
     "core_fp": "d2bcf165b4032d43bbd5e2d3edc8b7edf627e84f96bd3b31f4656ff3cf4d234b"
+  },
+  {
+    "ts": 1783171151,
+    "kind": "ua_en",
+    "level": "A2",
+    "core": "Я зателефоную пізніше",
+    "fp": "574e9e69ebb49df507d1984337d0fd4272f8944fd1ce25524c964b3bc9b9243a",
+    "core_fp": "9907db3b8e5291342341b157fe21967274d14313c1899f4a0047f8716f27fab4"
   }
 ]
