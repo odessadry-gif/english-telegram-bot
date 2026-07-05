@@ -8898,5 +8898,13 @@
     "core": "She promised ___ the documents by Friday.",
     "fp": "737aa2d10db8160642223cd4ff7dace6b0934fc74db934a9736c2c957bae5409",
     "core_fp": "22256c50f764e6af0f28e1cef04e72365de5a5b481ad4bcb903474e036776d9e"
+  },
+  {
+    "ts": 1783258015,
+    "kind": "grammar_gap",
+    "level": "A1",
+    "core": "The meeting ___ at 9 every Monday.",
+    "fp": "cb89c447d6c5375dd3dc666cb0bfc5a8097b1bb72bd69ffe47d12cf0e2abe913",
+    "core_fp": "fd6d7aff2641ee5a5edc53e75f83407589d7878994660d74d06461acab158805"
   }
 ]
