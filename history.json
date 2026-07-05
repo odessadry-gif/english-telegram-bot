@@ -8890,5 +8890,13 @@
     "core": "Чи можна це оплатити карткою?",
     "fp": "d327485c2a5faa7ac6e756bb165fc9012d969b28224b5097b15ad82d57c14376",
     "core_fp": "16edf5d0ed4898ee4c3a72f745353482dcde55c3a6512746b4228fce37a56250"
+  },
+  {
+    "ts": 1783249344,
+    "kind": "grammar_gap",
+    "level": "B1",
+    "core": "She promised ___ the documents by Friday.",
+    "fp": "737aa2d10db8160642223cd4ff7dace6b0934fc74db934a9736c2c957bae5409",
+    "core_fp": "22256c50f764e6af0f28e1cef04e72365de5a5b481ad4bcb903474e036776d9e"
   }
 ]
