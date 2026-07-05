@@ -8874,5 +8874,13 @@
     "core": "You should call the doctor if the symptoms ___ worse.",
     "fp": "435a657dc45e2b9a942b14b49b74af480d5dc9989fc248473b2bb1362b1fd4cf",
     "core_fp": "c11e317566ff644e043ed7f8596cc152e1d2d58d15014cfae7f1c27d9cd5d760"
+  },
+  {
+    "ts": 1783219760,
+    "kind": "grammar_gap",
+    "level": "A2",
+    "core": "Can I try this shirt ___?",
+    "fp": "510feb4518588e2b345cc315072574aba4aa93d1bfd42504ec357c59ce1be351",
+    "core_fp": "57196c26ffe4bb689ab7a672c618ab3ff20e8dd56f3c677d4903e8a8a9c2a1a6"
   }
 ]
