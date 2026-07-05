@@ -8914,5 +8914,13 @@
     "core": "I forgot my wallet ___ the taxi.",
     "fp": "2a2ccec440a181dc6e6c2a8247a1f7e8f66810c5b1f04394b6f5dd03f2d35cc4",
     "core_fp": "8259cbf811d31c064d8dd942135b1b1758e51b7ee4d9557b73ba41b67ff7bae7"
+  },
+  {
+    "ts": 1783278797,
+    "kind": "grammar_gap",
+    "level": "A2",
+    "core": "You must ___ the form before the appointment.",
+    "fp": "956a24f8f5f40e26fb574252b6fb7113648ea9f25a9c56274fc7a9e252991909",
+    "core_fp": "f2b7001014254bfed684f4e69f210adeff8a05b3100bc854f055826d0194b869"
   }
 ]
