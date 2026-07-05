@@ -8906,5 +8906,13 @@
     "core": "The meeting ___ at 9 every Monday.",
     "fp": "cb89c447d6c5375dd3dc666cb0bfc5a8097b1bb72bd69ffe47d12cf0e2abe913",
     "core_fp": "fd6d7aff2641ee5a5edc53e75f83407589d7878994660d74d06461acab158805"
+  },
+  {
+    "ts": 1783267557,
+    "kind": "grammar_gap",
+    "level": "A2",
+    "core": "I forgot my wallet ___ the taxi.",
+    "fp": "2a2ccec440a181dc6e6c2a8247a1f7e8f66810c5b1f04394b6f5dd03f2d35cc4",
+    "core_fp": "8259cbf811d31c064d8dd942135b1b1758e51b7ee4d9557b73ba41b67ff7bae7"
   }
 ]
