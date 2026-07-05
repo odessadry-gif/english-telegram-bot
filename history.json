@@ -8922,5 +8922,14 @@
     "core": "You must ___ the form before the appointment.",
     "fp": "956a24f8f5f40e26fb574252b6fb7113648ea9f25a9c56274fc7a9e252991909",
     "core_fp": "f2b7001014254bfed684f4e69f210adeff8a05b3100bc854f055826d0194b869"
+  },
+  {
+    "ts": 1783289049,
+    "kind": "riddle",
+    "level": "B1",
+    "core": "It fastens papers\nYou press its top with your hand",
+    "fp": "0ab1937fefaf99e8adc07826cc75a064704cce975ea9257ac439805ca1fadf25",
+    "core_fp": "394bdd9af5bf52a3c88b1bb65add48c1908d19f18234c938b4781b19e83601fb",
+    "answer": "stapler"
   }
 ]
