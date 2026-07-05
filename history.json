@@ -8882,5 +8882,13 @@
     "core": "Can I try this shirt ___?",
     "fp": "510feb4518588e2b345cc315072574aba4aa93d1bfd42504ec357c59ce1be351",
     "core_fp": "57196c26ffe4bb689ab7a672c618ab3ff20e8dd56f3c677d4903e8a8a9c2a1a6"
+  },
+  {
+    "ts": 1783233542,
+    "kind": "ua_en",
+    "level": "B1",
+    "core": "Чи можна це оплатити карткою?",
+    "fp": "d327485c2a5faa7ac6e756bb165fc9012d969b28224b5097b15ad82d57c14376",
+    "core_fp": "16edf5d0ed4898ee4c3a72f745353482dcde55c3a6512746b4228fce37a56250"
   }
 ]
