@@ -8931,5 +8931,13 @@
     "fp": "0ab1937fefaf99e8adc07826cc75a064704cce975ea9257ac439805ca1fadf25",
     "core_fp": "394bdd9af5bf52a3c88b1bb65add48c1908d19f18234c938b4781b19e83601fb",
     "answer": "stapler"
+  },
+  {
+    "ts": 1783306556,
+    "kind": "ua_en",
+    "level": "A2",
+    "core": "Принтер не працює",
+    "fp": "23040324037c3624a675162ff9c48cf12be96e8d02d9ac3c2d91e8ef1824f7bf",
+    "core_fp": "220478da4eaa924d28062777157136371938ee725f761cdbfc187699a68e33de"
   }
 ]
