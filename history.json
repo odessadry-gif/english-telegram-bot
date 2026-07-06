@@ -8955,5 +8955,13 @@
     "core": "Ви можете повторити?",
     "fp": "553aae46ca63adc407315204cf2d4358a782b3adaaba6040b823245f8651042e",
     "core_fp": "4ee9e91523b57b34603f478633254872f103ef9dc2b8ac7eb74fb70fa577e30d"
+  },
+  {
+    "ts": 1783359781,
+    "kind": "ua_en",
+    "level": "B1",
+    "core": "Ти вільний завтра?",
+    "fp": "7259576c8ef45e6bda551c3bd4d9ebf6a72d8ca4a00df86642f42163dfb81293",
+    "core_fp": "8584fa7057a5a1c754e21cce5248818a1d93b129f34bd0f11fe103a62244dcb2"
   }
 ]
