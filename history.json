@@ -8971,5 +8971,13 @@
     "core": "Тобі слід взяти парасольку.",
     "fp": "2dbb6d36b8d7898e0912b1ebe8b3462c3dfbacaad0ffb472bf59bbc0d8fc7c46",
     "core_fp": "9941fd6eb54fc4daa07bcf64d6a485518bfe0effca3db63fcf38c9f8aa7dc171"
+  },
+  {
+    "ts": 1783375897,
+    "kind": "grammar_gap",
+    "level": "A2",
+    "core": "I will call you when I ___ home.",
+    "fp": "3eb22cfb4487029428b82aa09c4d5c69c62ce0a76184ea2d22be5477cdd626a2",
+    "core_fp": "09c74f59653bc31774913f50ab7b249a9156ce6cfb8d8ef482ae8892ec7ac457"
   }
 ]
