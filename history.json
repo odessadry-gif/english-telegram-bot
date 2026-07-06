@@ -8963,5 +8963,13 @@
     "core": "Ти вільний завтра?",
     "fp": "7259576c8ef45e6bda551c3bd4d9ebf6a72d8ca4a00df86642f42163dfb81293",
     "core_fp": "8584fa7057a5a1c754e21cce5248818a1d93b129f34bd0f11fe103a62244dcb2"
+  },
+  {
+    "ts": 1783367571,
+    "kind": "ua_en",
+    "level": "B1",
+    "core": "Тобі слід взяти парасольку.",
+    "fp": "2dbb6d36b8d7898e0912b1ebe8b3462c3dfbacaad0ffb472bf59bbc0d8fc7c46",
+    "core_fp": "9941fd6eb54fc4daa07bcf64d6a485518bfe0effca3db63fcf38c9f8aa7dc171"
   }
 ]
