@@ -9004,5 +9004,13 @@
     "fp": "1d538fe8e3ec359e2257d9768053eab20847f7ff5354bfc9ffc2f723847bb8eb",
     "core_fp": "102778a5de61fd8a4c794a40c9157547374294608af18c3696acdadcf97a5644",
     "answer": "battery"
+  },
+  {
+    "ts": 1783444295,
+    "kind": "ua_en",
+    "level": "A2",
+    "core": "Я замовив каву",
+    "fp": "112bb76d6b0544d236b3d6bc544679b5413547cc52ee75a6d2b13e137ac80007",
+    "core_fp": "017cfd616a78ab9e9a270b63eca157b80498ba0fb5f6a517ec9fd02d48bd790e"
   }
 ]
