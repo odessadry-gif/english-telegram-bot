@@ -8987,5 +8987,13 @@
     "core": "I need to print the document ___ the meeting.",
     "fp": "872fd9ba7770194ee34225a272306da85ef3dd7df11670bc92b2958a1fdf9960",
     "core_fp": "4ced6ca6586f78b263c2dca6fe7a7ba209255e2d98fe1bdad819aa51059d3dd3"
+  },
+  {
+    "ts": 1783424773,
+    "kind": "ua_en",
+    "level": "B1",
+    "core": "Коли відправляється поїзд?",
+    "fp": "9bdc5201cd382c537303be6741eca7547811750797116ead6eafcf4ae73f158d",
+    "core_fp": "a786abc17c1d7a1b5eb6cf373c4cd47c57628863b2a018f72c50f600b9ec9a53"
   }
 ]
