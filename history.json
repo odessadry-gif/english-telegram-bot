@@ -8979,5 +8979,13 @@
     "core": "I will call you when I ___ home.",
     "fp": "3eb22cfb4487029428b82aa09c4d5c69c62ce0a76184ea2d22be5477cdd626a2",
     "core_fp": "09c74f59653bc31774913f50ab7b249a9156ce6cfb8d8ef482ae8892ec7ac457"
+  },
+  {
+    "ts": 1783392725,
+    "kind": "grammar_gap",
+    "level": "A2",
+    "core": "I need to print the document ___ the meeting.",
+    "fp": "872fd9ba7770194ee34225a272306da85ef3dd7df11670bc92b2958a1fdf9960",
+    "core_fp": "4ced6ca6586f78b263c2dca6fe7a7ba209255e2d98fe1bdad819aa51059d3dd3"
   }
 ]
