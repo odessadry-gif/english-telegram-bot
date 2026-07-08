@@ -9077,5 +9077,14 @@
     "core": "Я погоджуюсь",
     "fp": "783b4234939f1decc0e37329f210ff7146cc85ca63e975f5057166f169b75688",
     "core_fp": "6136d078b41b7bd54e994795b10ce163c5653f990e8df840b1aacafb93e62fac"
+  },
+  {
+    "ts": 1783548450,
+    "kind": "riddle",
+    "level": "A2",
+    "core": "You take it when you are ill.\nIt can be a pill or a syrup.",
+    "fp": "2b1e97a5a4628650b6d329a87b77587380057a493042e7efb53cc66cc44434e6",
+    "core_fp": "eb8083902153c9eb1805754ccd4f5b3e94be6177e06eb024cddc269575908ae8",
+    "answer": "medicine"
   }
 ]
