@@ -9053,5 +9053,13 @@
     "core": "The prescription is ready; can you pick it ___ the pharmacy today?",
     "fp": "7bf3c9b516211ec8e6de6987073a135f657e5f4ca923002c4d6d367c309a6b01",
     "core_fp": "9d3e7a8895c74b984313ec926038a1f96ace6a545724d4e62ba25ef86b114e48"
+  },
+  {
+    "ts": 1783519169,
+    "kind": "grammar_gap",
+    "level": "B1",
+    "core": "Please turn ___ the kettle; it's boiling.",
+    "fp": "2907fab0b2a828b841b92c1d4ade75987456e8d7312b2be16099d736e25268f3",
+    "core_fp": "c289cbe7411525d359c5e161af80dd12d79578920aef057acdc5da3de6aeb21d"
   }
 ]
