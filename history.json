@@ -9028,5 +9028,14 @@
     "core": "Де реєстрація на рейс?",
     "fp": "4e89e5ea770ed8fb5a6e04615bfbd83d87c5227db9f0dd4f22267b4bec90cef3",
     "core_fp": "135a81a4e38c6eb0a3b05218ceb4e1c7a3444230f3bed6b9d2b9308aa7643b92"
+  },
+  {
+    "ts": 1783490257,
+    "kind": "riddle",
+    "level": "A2",
+    "core": "You press a button to go up or down.\nIt is inside a building.",
+    "fp": "c38096e82e023ab6446791404dbdbf763495fcb09966ee58c657f17ba0814f8a",
+    "core_fp": "c0bb25b8af86cab201f1d59c047873cbb6fc63a102bd602aed0c43db23ee3526",
+    "answer": "elevator"
   }
 ]
