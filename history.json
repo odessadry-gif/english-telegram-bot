@@ -9069,5 +9069,13 @@
     "core": "You should ___ a doctor.",
     "fp": "772aacdfec0226b89b66943afbc883cda3f9443660f3fb6dbabb653fcc398fda",
     "core_fp": "0b366b6f2c901ba4505828a0f840a122caf828fe3b6920a8435f7ae0c351c1d3"
+  },
+  {
+    "ts": 1783538458,
+    "kind": "ua_en",
+    "level": "A1",
+    "core": "Я погоджуюсь",
+    "fp": "783b4234939f1decc0e37329f210ff7146cc85ca63e975f5057166f169b75688",
+    "core_fp": "6136d078b41b7bd54e994795b10ce163c5653f990e8df840b1aacafb93e62fac"
   }
 ]
