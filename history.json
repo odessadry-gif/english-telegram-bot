@@ -9061,5 +9061,13 @@
     "core": "Please turn ___ the kettle; it's boiling.",
     "fp": "2907fab0b2a828b841b92c1d4ade75987456e8d7312b2be16099d736e25268f3",
     "core_fp": "c289cbe7411525d359c5e161af80dd12d79578920aef057acdc5da3de6aeb21d"
+  },
+  {
+    "ts": 1783528099,
+    "kind": "grammar_gap",
+    "level": "A2",
+    "core": "You should ___ a doctor.",
+    "fp": "772aacdfec0226b89b66943afbc883cda3f9443660f3fb6dbabb653fcc398fda",
+    "core_fp": "0b366b6f2c901ba4505828a0f840a122caf828fe3b6920a8435f7ae0c351c1d3"
   }
 ]
