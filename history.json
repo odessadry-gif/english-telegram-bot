@@ -9037,5 +9037,13 @@
     "fp": "c38096e82e023ab6446791404dbdbf763495fcb09966ee58c657f17ba0814f8a",
     "core_fp": "c0bb25b8af86cab201f1d59c047873cbb6fc63a102bd602aed0c43db23ee3526",
     "answer": "elevator"
+  },
+  {
+    "ts": 1783499025,
+    "kind": "grammar_gap",
+    "level": "B1",
+    "core": "Would you mind ___ the door?",
+    "fp": "7fae010b69c9ada79c54395025ca8bb2a754359ea4f86a0b2a320e98d3deeca1",
+    "core_fp": "f306bf838ae0f4536990336204d23765613886b0c639a1f1f6c816ce58a3af67"
   }
 ]
