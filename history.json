@@ -9020,5 +9020,13 @@
     "core": "Я не зрозумів питання.",
     "fp": "74a3cde0b5c0eb4d2230229fe18a2bf9899eac7c7b87e53ec86918885cd41787",
     "core_fp": "e44ace725c264213b9dd70f9d434d97cc532ebd884083db01657f09ee54f6697"
+  },
+  {
+    "ts": 1783477687,
+    "kind": "ua_en",
+    "level": "B1",
+    "core": "Де реєстрація на рейс?",
+    "fp": "4e89e5ea770ed8fb5a6e04615bfbd83d87c5227db9f0dd4f22267b4bec90cef3",
+    "core_fp": "135a81a4e38c6eb0a3b05218ceb4e1c7a3444230f3bed6b9d2b9308aa7643b92"
   }
 ]
