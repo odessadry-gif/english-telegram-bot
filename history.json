@@ -9045,5 +9045,13 @@
     "core": "Would you mind ___ the door?",
     "fp": "7fae010b69c9ada79c54395025ca8bb2a754359ea4f86a0b2a320e98d3deeca1",
     "core_fp": "f306bf838ae0f4536990336204d23765613886b0c639a1f1f6c816ce58a3af67"
+  },
+  {
+    "ts": 1783508533,
+    "kind": "grammar_gap",
+    "level": "A2",
+    "core": "The prescription is ready; can you pick it ___ the pharmacy today?",
+    "fp": "7bf3c9b516211ec8e6de6987073a135f657e5f4ca923002c4d6d367c309a6b01",
+    "core_fp": "9d3e7a8895c74b984313ec926038a1f96ace6a545724d4e62ba25ef86b114e48"
   }
 ]
