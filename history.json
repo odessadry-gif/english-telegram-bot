@@ -9102,5 +9102,13 @@
     "core": "She explained the problem ___ email.",
     "fp": "ddce2e11ff44436599a80ef12606e077d2afe2cfcc0a9e5a86576605bfacbc77",
     "core_fp": "5bd2b60228319d5e400dc6b2135c18b125f6312360636b3cefd56246dbefd577"
+  },
+  {
+    "ts": 1783598133,
+    "kind": "grammar_gap",
+    "level": "A2",
+    "core": "I can't come to work ___ I have a fever.",
+    "fp": "a003956ccc3dcb0208f54d54276c9404a94188432654ac112b2715e599b91c4e",
+    "core_fp": "14a955af4b0277bd008c184c23949b71cd130741668372234ca7933149bc12c6"
   }
 ]
