@@ -9086,5 +9086,13 @@
     "fp": "2b1e97a5a4628650b6d329a87b77587380057a493042e7efb53cc66cc44434e6",
     "core_fp": "eb8083902153c9eb1805754ccd4f5b3e94be6177e06eb024cddc269575908ae8",
     "answer": "medicine"
+  },
+  {
+    "ts": 1783564972,
+    "kind": "ua_en",
+    "level": "B1",
+    "core": "Мені треба було прийти раніше.",
+    "fp": "413b3626b1a9c3077b1b65aa3cf480bf802186a05c7d322c88e07fc9e9c5ea53",
+    "core_fp": "7ea7ea497d1bf80d820f3a559ad8330b47e105936c88f4fda24487cc443accc1"
   }
 ]
