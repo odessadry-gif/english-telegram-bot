@@ -9127,5 +9127,13 @@
     "core": "Я не можу знайти ключі",
     "fp": "7e0de3b576f0e3baaeabbfd7a4ed4fc559532fb2e938e1c495d5bc97496433dc",
     "core_fp": "1c8d0affa1357d45b5ce0001a33fbb49d8f1c0028bb87c1995bc33d1957c3489"
+  },
+  {
+    "ts": 1783626098,
+    "kind": "ua_en",
+    "level": "A2",
+    "core": "У мене висока температура",
+    "fp": "1fa252ca9f141e19ef95fcedf4f1bcbb1fc9792ec5a2048905f03b9de656f7f8",
+    "core_fp": "318508facb58cb330ec6f9a851f27864fa348343d6e6dbad484700d669159c2a"
   }
 ]
