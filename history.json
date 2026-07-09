@@ -9110,5 +9110,14 @@
     "core": "I can't come to work ___ I have a fever.",
     "fp": "a003956ccc3dcb0208f54d54276c9404a94188432654ac112b2715e599b91c4e",
     "core_fp": "14a955af4b0277bd008c184c23949b71cd130741668372234ca7933149bc12c6"
+  },
+  {
+    "ts": 1783608770,
+    "kind": "riddle",
+    "level": "B1",
+    "core": "You put it on your skin.\nIt stops sunburn.",
+    "fp": "8ecc0ced5521d67601e157480f9f93d4535e62f5205f379e31b759ed2a957864",
+    "core_fp": "e953260684405942882ab7e77f0d51843cbce623f7174352c6c3d2e350ac5a50",
+    "answer": "sunscreen"
   }
 ]
