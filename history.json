@@ -9094,5 +9094,13 @@
     "core": "Мені треба було прийти раніше.",
     "fp": "413b3626b1a9c3077b1b65aa3cf480bf802186a05c7d322c88e07fc9e9c5ea53",
     "core_fp": "7ea7ea497d1bf80d820f3a559ad8330b47e105936c88f4fda24487cc443accc1"
+  },
+  {
+    "ts": 1783579330,
+    "kind": "grammar_gap",
+    "level": "B1",
+    "core": "She explained the problem ___ email.",
+    "fp": "ddce2e11ff44436599a80ef12606e077d2afe2cfcc0a9e5a86576605bfacbc77",
+    "core_fp": "5bd2b60228319d5e400dc6b2135c18b125f6312360636b3cefd56246dbefd577"
   }
 ]
