@@ -9159,5 +9159,13 @@
     "core": "Please put the cup ___ the table.",
     "fp": "43688ddd72030e44097cb1d55cec44ec44cdbdedd227fda24a768e67f33a0c45",
     "core_fp": "61bb7fcd8293cd08ace57b1ccf256160edf31d697c7b040f30b6afd602897a92"
+  },
+  {
+    "ts": 1783684171,
+    "kind": "ua_en",
+    "level": "B1",
+    "core": "Вони вже зателефонували?",
+    "fp": "110f8aa427ac6b292aaaaf2d44fc0772e3b8faf314c9cd2fa380003abc76ea33",
+    "core_fp": "d784c245557c8d3a3b589b4fdf96f3e930d35a02fc6c6d9f86589fb20bcc1d97"
   }
 ]
