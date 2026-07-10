@@ -9184,5 +9184,13 @@
     "core": "Мені треба піти зараз",
     "fp": "93194ecbcc49a7a99655096bf1436b572b1e438f28b423ab6923999e015bb5f6",
     "core_fp": "0108352a78f25dcc5e7baf205a3da635efcdea73ccb70842b7a4d5954105de47"
+  },
+  {
+    "ts": 1783720782,
+    "kind": "grammar_gap",
+    "level": "A2",
+    "core": "Please turn off the lights ___ you leave.",
+    "fp": "498722d70aa513507009538c6821f1a51bd30a80ad8464fbf70e0271015c177b",
+    "core_fp": "a29b8298dcd731c713a114073147a242075553ad3eeeb92fb14c97e60838cbbb"
   }
 ]
