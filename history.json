@@ -9167,5 +9167,14 @@
     "core": "Вони вже зателефонували?",
     "fp": "110f8aa427ac6b292aaaaf2d44fc0772e3b8faf314c9cd2fa380003abc76ea33",
     "core_fp": "d784c245557c8d3a3b589b4fdf96f3e930d35a02fc6c6d9f86589fb20bcc1d97"
+  },
+  {
+    "ts": 1783702520,
+    "kind": "riddle",
+    "level": "B1",
+    "core": "You send it at work or school.\nIt has a subject and a message.",
+    "fp": "b3ba6bd39165efb331ee0a282ca6831bba61005a42221c4bc19e1af11183a3af",
+    "core_fp": "eb6bc05ad701f1dc380546c60c58be0f00b29fc3f19ce6bbe5b389f0568dedcf",
+    "answer": "email"
   }
 ]
