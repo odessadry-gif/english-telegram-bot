@@ -9143,5 +9143,13 @@
     "core": "You must show your ticket ___ you board the train.",
     "fp": "33aca36822e2e79f00c02a0f00aaebd300cabd9bb4f05287ec254900f0d28c4b",
     "core_fp": "149a444c66ea42a6c36ef0372454ea9f9f679a1248d250ea156a017b8d22fccc"
+  },
+  {
+    "ts": 1783651521,
+    "kind": "grammar_gap",
+    "level": "B1",
+    "core": "I missed the meeting ___ my alarm didn't go off.",
+    "fp": "b312d3f68f012923ba1de5671de1ef279cd85003fd0df89dcbd31c6bde20baef",
+    "core_fp": "7174d93ad6a59e77fd77357495aa87bdbde70c95c48079dda01338319494328a"
   }
 ]
