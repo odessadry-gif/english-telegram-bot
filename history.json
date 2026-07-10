@@ -9151,5 +9151,13 @@
     "core": "I missed the meeting ___ my alarm didn't go off.",
     "fp": "b312d3f68f012923ba1de5671de1ef279cd85003fd0df89dcbd31c6bde20baef",
     "core_fp": "7174d93ad6a59e77fd77357495aa87bdbde70c95c48079dda01338319494328a"
+  },
+  {
+    "ts": 1783665761,
+    "kind": "grammar_gap",
+    "level": "A1",
+    "core": "Please put the cup ___ the table.",
+    "fp": "43688ddd72030e44097cb1d55cec44ec44cdbdedd227fda24a768e67f33a0c45",
+    "core_fp": "61bb7fcd8293cd08ace57b1ccf256160edf31d697c7b040f30b6afd602897a92"
   }
 ]
