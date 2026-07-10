@@ -9176,5 +9176,13 @@
     "fp": "b3ba6bd39165efb331ee0a282ca6831bba61005a42221c4bc19e1af11183a3af",
     "core_fp": "eb6bc05ad701f1dc380546c60c58be0f00b29fc3f19ce6bbe5b389f0568dedcf",
     "answer": "email"
+  },
+  {
+    "ts": 1783711415,
+    "kind": "ua_en",
+    "level": "B1",
+    "core": "Мені треба піти зараз",
+    "fp": "93194ecbcc49a7a99655096bf1436b572b1e438f28b423ab6923999e015bb5f6",
+    "core_fp": "0108352a78f25dcc5e7baf205a3da635efcdea73ccb70842b7a4d5954105de47"
   }
 ]
