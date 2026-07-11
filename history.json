@@ -9232,5 +9232,14 @@
     "core": "Як довго ви чекаєте?",
     "fp": "7f9e2673d604adbabebf1a9f1fd9a78f95207a96f1cb4844ea24a85bf1fcdb87",
     "core_fp": "575b68d9f01a364f73b0e9b9b0ba622ab865c8d85a49a7f4623503acfcead8ae"
+  },
+  {
+    "ts": 1783785381,
+    "kind": "riddle",
+    "level": "A2",
+    "core": "You heat food quickly.\nIt has a door and buttons.",
+    "fp": "a4cef16e3d6ac25877a1e559e39ae4729099de59ea4ed929049a424084c74af5",
+    "core_fp": "18470eeb2b10c48c7fe3fcbea273ddd9b77248ca47287cb2f836d2a75ec9c17b",
+    "answer": "microwave"
   }
 ]
