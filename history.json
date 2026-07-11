@@ -9192,5 +9192,13 @@
     "core": "Please turn off the lights ___ you leave.",
     "fp": "498722d70aa513507009538c6821f1a51bd30a80ad8464fbf70e0271015c177b",
     "core_fp": "a29b8298dcd731c713a114073147a242075553ad3eeeb92fb14c97e60838cbbb"
+  },
+  {
+    "ts": 1783736722,
+    "kind": "grammar_gap",
+    "level": "A2",
+    "core": "She left her passport ___ home.",
+    "fp": "837dce588251b6bc1b7e3409d82ba5a5c3c7aa5f351743e1cdefca1a900d1e77",
+    "core_fp": "332d0558b37d63ed5b86206c6a34d23e5b9ca19ef58e1fb6573113062be83b4e"
   }
 ]
