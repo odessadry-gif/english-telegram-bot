@@ -9241,5 +9241,13 @@
     "fp": "a4cef16e3d6ac25877a1e559e39ae4729099de59ea4ed929049a424084c74af5",
     "core_fp": "18470eeb2b10c48c7fe3fcbea273ddd9b77248ca47287cb2f836d2a75ec9c17b",
     "answer": "microwave"
+  },
+  {
+    "ts": 1783796352,
+    "kind": "ua_en",
+    "level": "B1",
+    "core": "Ти можеш мені допомогти?",
+    "fp": "b17f90d97586fbe8cd011dbc2d57d1c3729a2a9915680adb6f2941a928cd3919",
+    "core_fp": "eca033f71363748a8a131eaaec6bd7e8fe20c4c7e27351872db9de5c8d274e7f"
   }
 ]
