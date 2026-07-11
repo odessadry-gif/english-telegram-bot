@@ -9200,5 +9200,13 @@
     "core": "She left her passport ___ home.",
     "fp": "837dce588251b6bc1b7e3409d82ba5a5c3c7aa5f351743e1cdefca1a900d1e77",
     "core_fp": "332d0558b37d63ed5b86206c6a34d23e5b9ca19ef58e1fb6573113062be83b4e"
+  },
+  {
+    "ts": 1783748292,
+    "kind": "ua_en",
+    "level": "A2",
+    "core": "Завтра дощитиме",
+    "fp": "0e591f4a1925c5dcf2f4de12a30ceb16d30bf24afc76781066e8a4e9633c23ea",
+    "core_fp": "ec824c78ed13703f4703065081eb2885f4703afa63a38919c7c7c392ea30030e"
   }
 ]
