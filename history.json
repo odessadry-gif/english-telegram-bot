@@ -9249,5 +9249,13 @@
     "core": "Ти можеш мені допомогти?",
     "fp": "b17f90d97586fbe8cd011dbc2d57d1c3729a2a9915680adb6f2941a928cd3919",
     "core_fp": "eca033f71363748a8a131eaaec6bd7e8fe20c4c7e27351872db9de5c8d274e7f"
+  },
+  {
+    "ts": 1783806424,
+    "kind": "grammar_gap",
+    "level": "A2",
+    "core": "I ___ my homework yesterday.",
+    "fp": "54e7d8f4f0cf785665f8d24b6d906b18f9428666296706846e2883936de8e995",
+    "core_fp": "447c574db9ccaa608f44ac48bdebfeae5b7ff428f108421acb566bc6665c5d44"
   }
 ]
