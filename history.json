@@ -9208,5 +9208,13 @@
     "core": "Завтра дощитиме",
     "fp": "0e591f4a1925c5dcf2f4de12a30ceb16d30bf24afc76781066e8a4e9633c23ea",
     "core_fp": "ec824c78ed13703f4703065081eb2885f4703afa63a38919c7c7c392ea30030e"
+  },
+  {
+    "ts": 1783756274,
+    "kind": "grammar_gap",
+    "level": "A1",
+    "core": "How much ___ this shirt?",
+    "fp": "0b6301efb41bac643c77d4f25ca4692f0693a6e8dd72ad585ebb0dfde2567198",
+    "core_fp": "c9fa38706c17e157a57e9c99a5f8e320d440822c54ab501790a0aaf986593539"
   }
 ]
