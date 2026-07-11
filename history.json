@@ -9216,5 +9216,13 @@
     "core": "How much ___ this shirt?",
     "fp": "0b6301efb41bac643c77d4f25ca4692f0693a6e8dd72ad585ebb0dfde2567198",
     "core_fp": "c9fa38706c17e157a57e9c99a5f8e320d440822c54ab501790a0aaf986593539"
+  },
+  {
+    "ts": 1783764744,
+    "kind": "grammar_gap",
+    "level": "A2",
+    "core": "The doctor told me to stay ___ bed for two days.",
+    "fp": "9d79e4d1bdb1fb6559371bd7aa454028de5b9e8343f5964776674890a8f5fc03",
+    "core_fp": "190856706445ebc1d562e4c6aa15da2f764b480caac314ff0d49b916dd00e3e7"
   }
 ]
