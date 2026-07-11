@@ -9224,5 +9224,13 @@
     "core": "The doctor told me to stay ___ bed for two days.",
     "fp": "9d79e4d1bdb1fb6559371bd7aa454028de5b9e8343f5964776674890a8f5fc03",
     "core_fp": "190856706445ebc1d562e4c6aa15da2f764b480caac314ff0d49b916dd00e3e7"
+  },
+  {
+    "ts": 1783775612,
+    "kind": "ua_en",
+    "level": "B1",
+    "core": "Як довго ви чекаєте?",
+    "fp": "7f9e2673d604adbabebf1a9f1fd9a78f95207a96f1cb4844ea24a85bf1fcdb87",
+    "core_fp": "575b68d9f01a364f73b0e9b9b0ba622ab865c8d85a49a7f4623503acfcead8ae"
   }
 ]
