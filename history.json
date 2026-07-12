@@ -9257,5 +9257,13 @@
     "core": "I ___ my homework yesterday.",
     "fp": "54e7d8f4f0cf785665f8d24b6d906b18f9428666296706846e2883936de8e995",
     "core_fp": "447c574db9ccaa608f44ac48bdebfeae5b7ff428f108421acb566bc6665c5d44"
+  },
+  {
+    "ts": 1783843957,
+    "kind": "ua_en",
+    "level": "B1",
+    "core": "Квиток в один бік",
+    "fp": "773749160b6f04b9afed192d13afc0abfc3b031b5981358a08c5d204ece2534d",
+    "core_fp": "5af5e4cbf03f4ec16623db4690518cabc7cb05e6795f4978566662ea0dcf872f"
   }
 ]
